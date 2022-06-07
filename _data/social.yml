@@ -22,17 +22,17 @@ twitter:
 vimeo:
 wordpress:
 youtube: # Youtube channel token like: UCqECaJ8Gagnn7YCbPEzWH6g
-twitch: sirrandoo
+twitch: friedrichpsitalon
 tiktok:
 
 # Share button options
 share:
-  facebook: true
-  twitter: true
+  facebook:
+  twitter:
   tumblr:
   pinterest:
   pocket:
-  reddit: true
+  reddit:
   linkedin:
   wordpress:
-  email: true
+  email: 
