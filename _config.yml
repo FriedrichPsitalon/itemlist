@@ -1,5 +1,5 @@
 # Metadata
-title: "FriedrichPsitalon's Purchase List"
+title: "Friedrich Psitalon's Purchase List"
 favicon: assets/img/favicon.png
 description: A custom version of Toolkit's item list to support all the latest features of Utils.
 
@@ -56,7 +56,7 @@ commands:
   shortcut: true
   # Whether or not the command list will display the command's required user level.
   userlevel: true
-  # Whether or not the command list will display the command's uage.
+  # Whether or not the command list will display the command's usage.
   usage: true
   # Whether or not the command list will display the mod that added it.
   mod: true
