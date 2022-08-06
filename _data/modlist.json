@@ -3,13 +3,13 @@
     "author": "Andreas Pardeike",
     "name": "Harmony",
     "steamId": "2009463077",
-    "version": "1.3.0.0"
+    "version": "1.4.0.0"
   },
   {
     "author": "Mlie",
     "name": "Relevant Stats In Description",
     "steamId": "2692669482",
-    "version": "1.3.7"
+    "version": "1.3.8"
   },
   {
     "author": "Taranchuk",
@@ -22,6 +22,12 @@
     "name": "HugsLib",
     "steamId": "818773962",
     "version": "9.0.1"
+  },
+  {
+    "author": "jecrell and contributors",
+    "name": "JecsTools",
+    "steamId": "932008009",
+    "version": "1.3.0.4"
   },
   {
     "author": "EdB",
@@ -51,7 +57,7 @@
     "author": "m00nl1ght-dev",
     "name": "Map Preview",
     "steamId": "2800857642",
-    "version": "0.0.0.0"
+    "version": "1.9.9.0"
   },
   {
     "author": "pureMJ",
@@ -78,10 +84,16 @@
     "version": "2.0.10.0"
   },
   {
+    "author": "Torann",
+    "name": "A RimWorld of Magic",
+    "steamId": "1201382956",
+    "version": "2.5.7.6"
+  },
+  {
     "author": "SirRandoo",
     "name": "ToolkitUtils",
     "steamId": "2009500580",
-    "version": "6.2.0.5"
+    "version": "6.2.0.7"
   },
   {
     "author": "Roolo",
@@ -117,7 +129,7 @@
     "author": "The White Crayon (Updated for 1.1 by Ogliss)",
     "name": "Quarry",
     "steamId": "2007576583",
-    "version": "1.0.0.0"
+    "version": "2.0.0"
   },
   {
     "author": "Haplo",
@@ -165,7 +177,7 @@
     "author": "avilmask",
     "name": "Common Sense",
     "steamId": "1561769193",
-    "version": "1.1.46"
+    "version": "1.1.48"
   },
   {
     "author": "Hatti",
@@ -177,7 +189,7 @@
     "author": "CrashM",
     "name": "CM Color Coded Mood Bar [1.1+]",
     "steamId": "2006605356",
-    "version": "1.3.3136.1"
+    "version": "1.3.3389.1"
   },
   {
     "author": "Ratys",
@@ -202,5 +214,83 @@
     "name": "Hospitality",
     "steamId": null,
     "version": null
+  },
+  {
+    "author": "Uuugggg",
+    "name": "Replace Stuff",
+    "steamId": "1372003680",
+    "version": "1.1.0.0"
+  },
+  {
+    "author": "Devdisigdu",
+    "name": "Bulk Components",
+    "steamId": null,
+    "version": null
+  },
+  {
+    "author": "aRandomKiwi",
+    "name": "Hunt for Me",
+    "steamId": "1593245720",
+    "version": "3.5.4.0"
+  },
+  {
+    "author": "spoonshortage",
+    "name": "A Dog Said... Animal Prosthetics",
+    "steamId": null,
+    "version": null
+  },
+  {
+    "author": "Mlie",
+    "name": "All Memories Fade",
+    "steamId": "2800155563",
+    "version": "1.3.3"
+  },
+  {
+    "author": "Oskar Potocki,  XeoNovaDan,  Orion,  Kikohi,  Taranchuk,  Sarg Bjornson and  Erdelf",
+    "name": "Vanilla Expanded Framework",
+    "steamId": "2023507013",
+    "version": "1.0.0.0"
+  },
+  {
+    "author": "Oskar Potocki and  Kikohi",
+    "name": "Vanilla Expanded - Ideology Patches",
+    "steamId": null,
+    "version": null
+  },
+  {
+    "author": "Oskar Potocki",
+    "name": "Vanilla Weapons Expanded - Non-Lethal",
+    "steamId": null,
+    "version": null
+  },
+  {
+    "author": "Little White Mouse",
+    "name": "LWM's Deep Storage",
+    "steamId": "1617282896",
+    "version": "1.3.0.1"
+  },
+  {
+    "author": "Roolo",
+    "name": "Giddy-up! Ride and Roll",
+    "steamId": null,
+    "version": null
+  },
+  {
+    "author": "Roolo",
+    "name": "Search and Destroy",
+    "steamId": null,
+    "version": null
+  },
+  {
+    "author": "SirRandoo",
+    "name": "ToolkitRaids",
+    "steamId": "2091359241",
+    "version": "1.0.5.0"
+  },
+  {
+    "author": "aRandomKiwi",
+    "name": "Raids For Me",
+    "steamId": "1633517937",
+    "version": "1.0.4.0"
   }
 ]
