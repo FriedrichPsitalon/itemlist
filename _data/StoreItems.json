@@ -70,19 +70,19 @@
       "abr": "archotecheye",
       "category": "Archotech",
       "defname": "ArchotechEye",
-      "price": 4667
+      "price": 3500
     },
     {
       "abr": "archotecharm",
       "category": "Archotech",
       "defname": "ArchotechArm",
-      "price": 4667
+      "price": 3500
     },
     {
       "abr": "archotechleg",
       "category": "Archotech",
       "defname": "ArchotechLeg",
-      "price": 4667
+      "price": 3500
     },
     {
       "abr": "deathacidifier",
@@ -574,19 +574,19 @@
       "abr": "healermechserum",
       "category": "Items",
       "defname": "MechSerumHealer",
-      "price": 2167
+      "price": 750
     },
     {
       "abr": "resurrectormechserum",
       "category": "Items",
       "defname": "MechSerumResurrector",
-      "price": 2833
+      "price": 1500
     },
     {
       "abr": "techprofsubpersonacore",
       "category": "Items",
       "defname": "TechprofSubpersonaCore",
-      "price": 1667
+      "price": 2250
     },
     {
       "abr": "thrumbohorn",
@@ -1180,13 +1180,13 @@
       "abr": "marinehelmet",
       "category": "Headgear",
       "defname": "Apparel_PowerArmorHelmet",
-      "price": 1058
+      "price": 550
     },
     {
       "abr": "reconhelmet",
       "category": "Headgear",
       "defname": "Apparel_ArmorHelmetRecon",
-      "price": 875
+      "price": 550
     },
     {
       "abr": "psychicfoilhelmet",
@@ -1264,7 +1264,7 @@
       "abr": "platearmor",
       "category": "Armor",
       "defname": "Apparel_PlateArmor",
-      "price": 792
+      "price": 600
     },
     {
       "abr": "flakvest",
@@ -1288,13 +1288,13 @@
       "abr": "marinearmor",
       "category": "Armor",
       "defname": "Apparel_PowerArmor",
-      "price": 3392
+      "price": 1200
     },
     {
       "abr": "reconarmor",
       "category": "Armor",
       "defname": "Apparel_ArmorRecon",
-      "price": 2567
+      "price": 1200
     },
     {
       "abr": "sandstoneblocks",
@@ -1756,7 +1756,7 @@
       "abr": "thrumbo",
       "category": "Animals",
       "defname": "Thrumbo",
-      "price": 6667
+      "price": 3000
     },
     {
       "abr": "cobra",
@@ -1822,7 +1822,7 @@
       "abr": "megasloth",
       "category": "Animals",
       "defname": "Megasloth",
-      "price": 1167
+      "price": 1500
     },
     {
       "abr": "capybara",
@@ -2074,7 +2074,7 @@
       "abr": "tacticalcorneaimplant",
       "category": "Archotech",
       "defname": "TacticalCorneaImplant",
-      "price": 4167
+      "price": 2250
     },
     {
       "abr": "auxiliaryai(constructing)",
@@ -2230,7 +2230,7 @@
       "abr": "adrenalineribreplacement",
       "category": "Bionic",
       "defname": "AdrenalineRib",
-      "price": 917
+      "price": 900
     },
     {
       "abr": "painkillerribreplacement",
@@ -2242,49 +2242,49 @@
       "abr": "leg",
       "category": "Natural",
       "defname": "Leg",
-      "price": 2167
+      "price": 900
     },
     {
       "abr": "arm",
       "category": "Natural",
       "defname": "Arm",
-      "price": 2167
+      "price": 900
     },
     {
       "abr": "stomach",
       "category": "Natural",
       "defname": "Stomach",
-      "price": 1667
+      "price": 900
     },
     {
       "abr": "heart",
       "category": "Natural",
       "defname": "Heart",
-      "price": 3333
+      "price": 900
     },
     {
       "abr": "liver",
       "category": "Natural",
       "defname": "Liver",
-      "price": 3333
+      "price": 900
     },
     {
       "abr": "lung",
       "category": "Natural",
       "defname": "Lung",
-      "price": 2500
+      "price": 900
     },
     {
       "abr": "kidney",
       "category": "Natural",
       "defname": "Kidney",
-      "price": 1667
+      "price": 900
     },
     {
       "abr": "eyeball",
       "category": "Natural",
       "defname": "Eye",
-      "price": 2500
+      "price": 900
     },
     {
       "abr": "nose",
@@ -2308,7 +2308,7 @@
       "abr": "goldeneye",
       "category": "Prosthetic",
       "defname": "GoldenEye",
-      "price": 47
+      "price": 500
     },
     {
       "abr": "artificialnose",
@@ -2452,7 +2452,7 @@
       "abr": "syntheticheart",
       "category": "Bionic",
       "defname": "BionicHeart",
-      "price": 1467
+      "price": 1183
     },
     {
       "abr": "doormat",
@@ -2530,19 +2530,19 @@
       "abr": "haulerbasestation",
       "category": "Furniture",
       "defname": "AIRobot_RechargeStation_Hauler",
-      "price": 2917
+      "price": 2000
     },
     {
       "abr": "cleanerbasestation",
       "category": "Furniture",
       "defname": "AIRobot_RechargeStation_Cleaner",
-      "price": 1917
+      "price": 1000
     },
     {
       "abr": "haulingbot",
       "category": "Animal",
       "defname": "AIRobot_Hauler",
-      "price": 17
+      "price": 50
     },
     {
       "abr": "cleaningbot",
@@ -3196,7 +3196,7 @@
       "abr": "gauranlenseed",
       "category": "Items",
       "defname": "GauranlenSeed",
-      "price": 117
+      "price": 500
     },
     {
       "abr": "gibbetcage",
@@ -3520,139 +3520,139 @@
       "abr": "arcanescript:???",
       "category": "Skill books",
       "defname": "BookOfQuestion",
-      "price": 2500
+      "price": 1250
     },
     {
       "abr": "arcanespell:gateway",
       "category": "Scrolls",
       "defname": "SpellOf_FoldReality",
-      "price": 4767
+      "price": 4500
     },
     {
       "abr": "arcanetome:bard",
       "category": "Skill books",
       "defname": "BookOfBard",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:brightmage",
       "category": "Skill books",
       "defname": "BookOfTheSun",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:chaosmage",
       "category": "Skill books",
       "defname": "BookOfChaos",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:chronomancer",
       "category": "Skill books",
       "defname": "BookOfChronomancer",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:demonology",
       "category": "Skill books",
       "defname": "BookOfDemons",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:earth",
       "category": "Skill books",
       "defname": "BookOfEarth",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:enchanter",
       "category": "Skill books",
       "defname": "BookOfEnchanter",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:fire",
       "category": "Skill books",
       "defname": "BookOfInnerFire",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:golemancer",
       "category": "Skill books",
       "defname": "BookOfGolemancy",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:hemomancy",
       "category": "Skill books",
       "defname": "BookOfHemomancy",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:ice",
       "category": "Skill books",
       "defname": "BookOfHeartOfFrost",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:lightning",
       "category": "Skill books",
       "defname": "BookOfStormBorn",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:nature",
       "category": "Skill books",
       "defname": "BookOfDruid",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:necromancer",
       "category": "Skill books",
       "defname": "BookOfNecromancer",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:power",
       "category": "Skill books",
       "defname": "BookOfArcanist",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:priest",
       "category": "Skill books",
       "defname": "BookOfPriest",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:shadow",
       "category": "Skill books",
       "defname": "BookOfShadow",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:shaman",
       "category": "Skill books",
       "defname": "BookOfShamanism",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:summoning",
       "category": "Skill books",
       "defname": "BookOfSummoner",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "arcanetome:technomancy",
       "category": "Skill books",
       "defname": "BookOfMagitech",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "armorofthevaliant",
       "category": "Magic apparel",
       "defname": "RoyalArmor",
-      "price": 2750
+      "price": 2000
     },
     {
       "abr": "bardspell:battlehymn",
@@ -3712,61 +3712,61 @@
       "abr": "combatform:faceless",
       "category": "Skill books",
       "defname": "BookOfFaceless",
-      "price": 4292
+      "price": 2500
     },
     {
       "abr": "combatform:gladiator",
       "category": "Skill books",
       "defname": "BookOfGladiator",
-      "price": 4292
+      "price": 2500
     },
     {
       "abr": "combatpower:psionic",
       "category": "Skill books",
       "defname": "BookOfPsionic",
-      "price": 4750
+      "price": 2500
     },
     {
       "abr": "combatstyle:apothecary",
       "category": "Skill books",
       "defname": "BookOfApothecary",
-      "price": 4292
+      "price": 2500
     },
     {
       "abr": "combatstyle:bladedancer",
       "category": "Skill books",
       "defname": "BookOfBladedancer",
-      "price": 4292
+      "price": 2500
     },
     {
       "abr": "combatstyle:commander",
       "category": "Skill books",
       "defname": "BookOfCommander",
-      "price": 4292
+      "price": 2500
     },
     {
       "abr": "combatstyle:deathknight",
       "category": "Skill books",
       "defname": "BookOfDeathKnight",
-      "price": 4292
+      "price": 2500
     },
     {
       "abr": "combatstyle:monk",
       "category": "Skill books",
       "defname": "BookOfMonk",
-      "price": 4292
+      "price": 2500
     },
     {
       "abr": "combatstyle:ranger",
       "category": "Skill books",
       "defname": "BookOfRanger",
-      "price": 4292
+      "price": 2500
     },
     {
       "abr": "combatstyle:sniper",
       "category": "Skill books",
       "defname": "BookOfSniper",
-      "price": 4292
+      "price": 2500
     },
     {
       "abr": "dartgun",
@@ -3778,7 +3778,7 @@
       "abr": "decimation",
       "category": "Melee",
       "defname": "TM_Decimation",
-      "price": 6058
+      "price": 4500
     },
     {
       "abr": "demonflesh",
@@ -3802,7 +3802,7 @@
       "abr": "demon'sfang",
       "category": "Melee",
       "defname": "TM_DemonFang",
-      "price": 6150
+      "price": 4500
     },
     {
       "abr": "demonscale",
@@ -3814,25 +3814,25 @@
       "abr": "direwolf",
       "category": "Animals",
       "defname": "TM_Dire_WolfR",
-      "price": 3667
+      "price": 2000
     },
     {
       "abr": "divinetome:paladin",
       "category": "Skill books",
       "defname": "BookOfValiant",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "dreamcatcherbuckskin",
       "category": "Magic apparel",
       "defname": "TM_DreamcatcherBuckskin",
-      "price": 4242
+      "price": 2500
     },
     {
       "abr": "dreamcatchercoronet",
       "category": "Magic apparel",
       "defname": "TM_DreamcatcherCoronet",
-      "price": 3008
+      "price": 1500
     },
     {
       "abr": "druidspell:briarpatch",
@@ -4084,13 +4084,13 @@
       "abr": "gemofarcaneinsight",
       "category": "Magic artifacts",
       "defname": "GemstoneOfInsight_Magic",
-      "price": 5000
+      "price": 1500
     },
     {
       "abr": "gemofphysicalinsight",
       "category": "Magic artifacts",
       "defname": "GemstoneOfInsight_Might",
-      "price": 4000
+      "price": 1000
     },
     {
       "abr": "geomancerspell:meteor",
@@ -4108,7 +4108,7 @@
       "abr": "glorymaul",
       "category": "Melee",
       "defname": "TM_GloryMaul",
-      "price": 2825
+      "price": 2250
     },
     {
       "abr": "golemancerspell:awarenessbrand",
@@ -4432,7 +4432,7 @@
       "abr": "majorarcanegemofwonder",
       "category": "Refined magicyte",
       "defname": "TM_EStone_wonder_major",
-      "price": 10917
+      "price": 6000
     },
     {
       "abr": "manapotion",
@@ -4516,7 +4516,7 @@
       "abr": "minorarcanegemofwonder",
       "category": "Refined magicyte",
       "defname": "TM_EStone_wonder_minor",
-      "price": 1983
+      "price": 1500
     },
     {
       "abr": "mysterymeat",
@@ -4540,7 +4540,7 @@
       "abr": "necroticorb",
       "category": "Magic artifacts",
       "defname": "TM_Artifact_NecroticOrb",
-      "price": 3000
+      "price": 2250
     },
     {
       "abr": "non-lethalpistol",
@@ -4552,7 +4552,7 @@
       "abr": "orbofconviction",
       "category": "Magic artifacts",
       "defname": "TM_Artifact_OrbOfConviction",
-      "price": 2500
+      "price": 2250
     },
     {
       "abr": "orbofsouls(empty)",
@@ -4582,7 +4582,7 @@
       "abr": "paragon'shelm",
       "category": "Magic apparel",
       "defname": "ParagonHelm",
-      "price": 1725
+      "price": 1500
     },
     {
       "abr": "pomanafruit",
@@ -4660,7 +4660,7 @@
       "abr": "serum:supersoldier",
       "category": "Skill books",
       "defname": "BookOfSuperSoldier",
-      "price": 5500
+      "price": 2500
     },
     {
       "abr": "shamanspell:guardianspirit",
@@ -4714,13 +4714,13 @@
       "abr": "staffofblazingpower",
       "category": "Magic foci",
       "defname": "TM_BlazingPowerStaff",
-      "price": 6250
+      "price": 4500
     },
     {
       "abr": "staffofthedefender",
       "category": "Magic foci",
       "defname": "TM_DefenderStaff",
-      "price": 5583
+      "price": 3500
     },
     {
       "abr": "stone",
@@ -4822,157 +4822,157 @@
       "abr": "thrumbow",
       "category": "Ranged",
       "defname": "TM_ThrumBow",
-      "price": 7467
+      "price": 6000
     },
     {
       "abr": "thrumboaxe",
       "category": "Melee",
       "defname": "TM_ThrumboAxe",
-      "price": 7750
+      "price": 4500
     },
     {
       "abr": "thrumbosaber",
       "category": "Melee",
       "defname": "TM_ThrumboSaber",
-      "price": 5833
+      "price": 3000
     },
     {
       "abr": "tornscript:bard",
       "category": "Skill books",
       "defname": "Torn_BookOfBard",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:brightmage",
       "category": "Skill books",
       "defname": "Torn_BookOfTheSun",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:chaos",
       "category": "Skill books",
       "defname": "Torn_BookOfChaos",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:chronomancy",
       "category": "Skill books",
       "defname": "Torn_BookOfChronomancer",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:demonology",
       "category": "Skill books",
       "defname": "Torn_BookOfDemons",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:enchanter",
       "category": "Skill books",
       "defname": "Torn_BookOfEnchanter",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:fire",
       "category": "Skill books",
       "defname": "Torn_BookOfInnerFire",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:geomancy",
       "category": "Skill books",
       "defname": "Torn_BookOfEarth",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:golemancer",
       "category": "Skill books",
       "defname": "Torn_BookOfGolemancy",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:hemomancy",
       "category": "Skill books",
       "defname": "Torn_BookOfHemomancy",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:ice",
       "category": "Skill books",
       "defname": "Torn_BookOfHeartOfFrost",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:lightning",
       "category": "Skill books",
       "defname": "Torn_BookOfStormBorn",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:nature",
       "category": "Skill books",
       "defname": "Torn_BookOfNature",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:necromancy",
       "category": "Skill books",
       "defname": "Torn_BookOfUndead",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:paladin",
       "category": "Skill books",
       "defname": "Torn_BookOfValiant",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:power",
       "category": "Skill books",
       "defname": "Torn_BookOfArcanist",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:priest",
       "category": "Skill books",
       "defname": "Torn_BookOfPriest",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:shaman",
       "category": "Skill books",
       "defname": "Torn_BookOfShamanism",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:summoning",
       "category": "Skill books",
       "defname": "Torn_BookOfSummoner",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "tornscript:technomancy",
       "category": "Skill books",
       "defname": "Torn_BookOfMagitech",
-      "price": 2917
+      "price": 1000
     },
     {
       "abr": "unfinishedarcanebook",
       "category": "Skill books",
       "defname": "UnfinishedAdvArcane",
-      "price": 4392
+      "price": -10
     },
     {
       "abr": "unfinishedmartialbook",
       "category": "Skill books",
       "defname": "UnfinishedMartial",
-      "price": 3425
+      "price": -10
     },
     {
       "abr": "unfinishedtornscript",
       "category": "Skill books",
       "defname": "UnfinishedArcane",
-      "price": 2333
+      "price": -10
     },
     {
       "abr": "unrefinedmagicyte",
@@ -5014,7 +5014,7 @@
       "abr": "winter'sreign",
       "category": "Magic foci",
       "defname": "TM_WinterStaff",
-      "price": 7500
+      "price": 5000
     },
     {
       "abr": "wizardhat",
@@ -5129,7 +5129,55 @@
       "category": "Animals",
       "defname": "Tortoise",
       "price": 333
+    },
+    {
+      "abr": "guestbed",
+      "category": "Furniture",
+      "defname": "BedGuest",
+      "price": 155
+    },
+    {
+      "abr": "guestdoublebed",
+      "category": "Furniture",
+      "defname": "DoubleBedGuest",
+      "price": 292
+    },
+    {
+      "abr": "guestroyalbed",
+      "category": "Furniture",
+      "defname": "RoyalBedGuest",
+      "price": 1467
+    },
+    {
+      "abr": "guesthospitalbed",
+      "category": "Furniture",
+      "defname": "HospitalBedGuest",
+      "price": 667
+    },
+    {
+      "abr": "guestbedroll",
+      "category": "Furniture",
+      "defname": "BedrollGuest",
+      "price": 137
+    },
+    {
+      "abr": "guestdoublebedroll",
+      "category": "Furniture",
+      "defname": "BedrollDoubleGuest",
+      "price": 290
+    },
+    {
+      "abr": "guestslabbed",
+      "category": "Furniture",
+      "defname": "SlabBedGuest",
+      "price": 102
+    },
+    {
+      "abr": "guestslabdoublebed",
+      "category": "Furniture",
+      "defname": "SlabDoubleBedGuest",
+      "price": 288
     }
   ],
-  "total": 855
+  "total": 863
 }
