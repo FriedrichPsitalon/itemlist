@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>RimStream Compendium</title>
+<meta property="og:title" content="RimStream Compendium">
+<meta property="og:description" content="Everything buyable in the stream shop — items, events, traits, and pawn kinds.">
+<meta property="og:image" content="social-preview.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RimStream Compendium">
+<meta name="twitter:description" content="Everything buyable in the stream shop — items, events, traits, and pawn kinds.">
+<meta name="twitter:image" content="social-preview.png">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --bg: #0a0605;
+    --panel: #170c0b;
+    --ink: #eae2d0;
+    --ink-dim: #a89c86;
+    --ink-faint: #6f6552;
+    --accent: #b8352c;
+    --accent-soft: #7a221c;
+    --cool: #5e7d8c;
+    --rule: #3d1f1c;
+    --rule-soft: #26130f;
+    --junk: #55503f;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, .display {
+    font-family: 'Arvo', Georgia, serif;
+  }
+
+  a { color: inherit; }
+
+  /* ---------- Header ---------- */
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #000000;
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 24px 16px;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto 14px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .brand img.mascot-icon {
+    height: 52px;
+    display: block;
+    border-radius: 4px;
+  }
+
+  .wordmark {
+    height: 46px;
+    display: block;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+    margin: 0;
+  }
+
+  .search-row {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  #search {
+    width: 100%;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    padding: 11px 14px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    border-radius: 3px;
+    outline: none;
+  }
+
+  #search:focus { border-color: var(--accent-soft); }
+
+  #search::placeholder { color: var(--ink-faint); }
+
+  .filters {
+    max-width: 1100px;
+    margin: 12px auto 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .filter-label {
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    margin-right: 2px;
+  }
+
+  select.chip-select {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    color: var(--ink-dim);
+    font-family: inherit;
+    font-size: 0.8rem;
+    padding: 6px 8px;
+    border-radius: 3px;
+    outline: none;
+  }
+
+  select.chip-select:focus { border-color: var(--accent-soft); }
+
+  .tag-toggle {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    color: var(--ink-dim);
+    font-family: inherit;
+    font-size: 0.78rem;
+    padding: 5px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  .tag-toggle:hover { border-color: var(--accent-soft); }
+
+  .tag-toggle.active {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+
+  #result-count {
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    margin-left: auto;
+  }
+
+  /* ---------- List ---------- */
+
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 8px 24px 80px;
+  }
+
+  .row {
+    border-bottom: 1px solid var(--rule-soft);
+    padding: 12px 4px;
+    cursor: pointer;
+  }
+
+  .row:hover { background: rgba(198, 138, 62, 0.045); }
+
+  .row-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .row-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: capitalize;
+    flex: 0 0 auto;
+  }
+
+  .row.is-generic .row-label { color: var(--ink-dim); font-weight: 500; }
+
+  .row-cat {
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+
+  .row-snippet {
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    margin-left: auto;
+    text-align: right;
+    max-width: 45%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .row-detail {
+    display: none;
+    margin-top: 10px;
+    padding: 12px 14px;
+    background: var(--panel);
+    border-left: 2px solid var(--accent-soft);
+    border-radius: 0 3px 3px 0;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .row.expanded .row-detail { display: block; }
+  .row.expanded { background: rgba(198, 138, 62, 0.045); }
+
+  .row-detail .description {
+    color: var(--ink);
+    margin: 0 0 10px;
+    max-width: 62ch;
+  }
+
+  .row-detail .meta-line {
+    font-size: 0.76rem;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 4px 18px;
+  }
+
+  .stat {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    border-bottom: 1px dotted var(--rule-soft);
+    padding: 2px 0;
+  }
+
+  .stat .k { color: var(--ink-faint); }
+  .stat .v {
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .bullet-list {
+    margin: 0 0 10px;
+    padding-left: 18px;
+    font-size: 0.8rem;
+    color: var(--ink-dim);
+  }
+
+  .bullet-list li { margin-bottom: 2px; }
+
+  .no-desc-note {
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    font-style: italic;
+  }
+
+  #empty-state {
+    display: none;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--ink-faint);
+  }
+
+  footer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 24px 40px;
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    border-top: 1px solid var(--rule-soft);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="brand">
+      <img class="mascot-icon" src="mascot-icon.png" alt="">
+      <img class="wordmark" src="rimstream-banner.png" alt="RimStream">
+    </div>
+    <p class="subtitle">Everything buyable in the stream shop &mdash; items, events, traits, and pawn kinds.</p>
+  </div>
+  <div class="search-row">
+    <input id="search" type="text" placeholder="Search by name&hellip;" autocomplete="off">
+  </div>
+  <div class="filters">
+    <span class="filter-label">Type</span>
+    <select id="filter-type" class="chip-select">
+      <option value="">All</option>
+      <option value="item">Items</option>
+      <option value="event">Events</option>
+      <option value="trait">Traits</option>
+      <option value="race">Pawn Kinds</option>
+    </select>
+    <span class="filter-label">Category</span>
+    <select id="filter-category" class="chip-select"><option value="">All</option></select>
+    <span class="filter-label">Source</span>
+    <select id="filter-source" class="chip-select"><option value="">All</option></select>
+    <span id="result-count"></span>
+  </div>
+  <div class="filters" id="tag-row"></div>
+</header>
+
+<main id="list"></main>
+
+<div id="empty-state">No items match that search.</div>
+
+<footer>
+  <span id="footer-count"></span> things indexed. Click any row to see its full details.
+</footer>
+
+<script>
+let ITEMS = [];
+let activeTags = new Set();
+
+function sourceOf(it) {
+  return it.source || it.mod || '';
+}
+
+async function init() {
+  const res = await fetch('compendium.json');
+  ITEMS = await res.json();
+
+  const categories = new Set();
+  const sources = new Set();
+  const tagCounts = {};
+  ITEMS.forEach(it => {
+    (it.thingCategories || []).forEach(c => categories.add(c));
+    const s = sourceOf(it);
+    if (s) sources.add(s);
+    (it.tags || []).forEach(t => { tagCounts[t] = (tagCounts[t] || 0) + 1; });
+  });
+
+  populateSelect('filter-category', [...categories].sort());
+  populateSelect('filter-source', [...sources].sort());
+
+  const tagRow = document.getElementById('tag-row');
+  const skipTags = new Set(['Event', 'Trait', 'Pawn Kind']); // already covered by the Type filter
+  const orderedTags = Object.keys(tagCounts)
+    .filter(t => !skipTags.has(t))
+    .sort((a, b) => tagCounts[b] - tagCounts[a]);
+  tagRow.innerHTML = `<span class="filter-label">Tags</span>` + orderedTags.map(t =>
+    `<button type="button" class="tag-toggle" data-tag="${escapeHtml(t)}">${escapeHtml(t)} (${tagCounts[t]})</button>`
+  ).join('');
+  tagRow.querySelectorAll('.tag-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const t = btn.dataset.tag;
+      if (activeTags.has(t)) { activeTags.delete(t); btn.classList.remove('active'); }
+      else { activeTags.add(t); btn.classList.add('active'); }
+      render();
+    });
+  });
+
+  document.getElementById('footer-count').textContent = ITEMS.length;
+
+  document.getElementById('search').addEventListener('input', debounce(render, 120));
+  document.getElementById('filter-type').addEventListener('change', render);
+  document.getElementById('filter-category').addEventListener('change', render);
+  document.getElementById('filter-source').addEventListener('change', render);
+
+  render();
+}
+
+function populateSelect(id, values) {
+  const el = document.getElementById(id);
+  values.forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v;
+    opt.textContent = v;
+    el.appendChild(opt);
+  });
+}
+
+function debounce(fn, ms) {
+  let t;
+  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
+}
+
+function matches(item, query, type, cat, source, tags) {
+  if (type && item.type !== type) return false;
+  if (cat && !(item.thingCategories || []).includes(cat)) return false;
+  if (source && sourceOf(item) !== source) return false;
+  if (tags.size) {
+    const itemTags = new Set(item.tags || []);
+    for (const t of tags) if (!itemTags.has(t)) return false;
+  }
+  if (query) {
+    const hay = (item.label || item.defName || '').toLowerCase();
+    if (!hay.includes(query)) return false;
+  }
+  return true;
+}
+
+const MAX_RENDER = 400;
+
+function render() {
+  const query = document.getElementById('search').value.trim().toLowerCase();
+  const type = document.getElementById('filter-type').value;
+  const cat = document.getElementById('filter-category').value;
+  const source = document.getElementById('filter-source').value;
+
+  const filtered = ITEMS.filter(it => matches(it, query, type, cat, source, activeTags));
+
+  document.getElementById('result-count').textContent =
+    filtered.length + (filtered.length === 1 ? ' result' : ' results');
+
+  const list = document.getElementById('list');
+  const empty = document.getElementById('empty-state');
+
+  if (filtered.length === 0) {
+    list.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  const shown = filtered.slice(0, MAX_RENDER);
+  list.innerHTML = shown.map(rowHtml).join('');
+
+  if (filtered.length > MAX_RENDER) {
+    const note = document.createElement('div');
+    note.style.cssText = 'padding:16px 4px;color:var(--ink-faint);font-size:0.8rem;';
+    note.textContent = `Showing first ${MAX_RENDER} of ${filtered.length} \u2014 narrow your search to see more.`;
+    list.appendChild(note);
+  }
+
+  list.querySelectorAll('.row').forEach(row => {
+    row.addEventListener('click', () => row.classList.toggle('expanded'));
+  });
+}
+
+function escapeHtml(s) {
+  if (s == null) return '';
+  return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+const TYPE_LABEL = { item: 'Item', event: 'Event', trait: 'Trait', race: 'Pawn Kind' };
+
+function subtitleOf(item) {
+  if (item.type === 'item') return (item.thingCategories && item.thingCategories[0]) || '';
+  if (item.type === 'event') return item.karmaType ? item.karmaType + ' event' : 'Event';
+  return TYPE_LABEL[item.type] || '';
+}
+
+function snippetOf(item) {
+  if (item.description) return escapeHtml(item.description).slice(0, 70);
+  if (item.type === 'event') {
+    const bits = [];
+    if (item.price != null) bits.push(item.price + ' coins');
+    if (item.karmaType) bits.push(item.karmaType);
+    return escapeHtml(bits.join(' \u00b7 '));
+  }
+  return '';
+}
+
+function rowHtml(item) {
+  const isGeneric = item.kind && item.kind.startsWith('generic');
+  const label = escapeHtml(item.label || item.defName);
+
+  return `
+    <div class="row ${isGeneric ? 'is-generic' : ''}">
+      <div class="row-head">
+        <span class="row-label">${label}</span>
+        <span class="row-cat">${escapeHtml(subtitleOf(item))}</span>
+        <span class="row-snippet">${snippetOf(item)}</span>
+      </div>
+      <div class="row-detail">
+        ${detailHtml(item)}
+      </div>
+    </div>
+  `;
+}
+
+function bulletList(items) {
+  if (!items || !items.length) return '';
+  return `<ul class="bullet-list">` + items.map(s => `<li>${escapeHtml(s)}</li>`).join('') + `</ul>`;
+}
+
+function statGridFromDict(stats) {
+  if (!stats || !Object.keys(stats).length) return '';
+  return `<div class="stat-grid">` +
+    Object.entries(stats).map(([k, v]) =>
+      `<div class="stat"><span class="k">${escapeHtml(k)}</span><span class="v">${escapeHtml(String(v))}</span></div>`
+    ).join('') +
+    `</div>`;
+}
+
+function tagLine(item) {
+  const visible = (item.tags || []).filter(t => !['Event', 'Trait', 'Pawn Kind'].includes(t));
+  if (!visible.length) return '';
+  return `<div class="meta-line">Tags: ${escapeHtml(visible.join(', '))}</div>`;
+}
+
+function detailHtml(item) {
+  if (item.type === 'event') {
+    let meta = [];
+    if (item.price != null) meta.push(item.price + ' coins');
+    if (item.karmaType) meta.push(item.karmaType + ' karma');
+    if (item.mod) meta.push('from ' + item.mod);
+    if (item.hasGlobalCooldown) meta.push('global cooldown: ' + item.globalCooldown + 's');
+    if (item.hasLocalCooldown) meta.push('local cooldown: ' + item.localCooldown + 's');
+    return `<div class="meta-line">${escapeHtml(meta.join(' \u00b7 '))}</div>`;
+  }
+
+  if (item.type === 'trait') {
+    let priceBits = [];
+    if (item.addPrice != null) priceBits.push('add: ' + item.addPrice + ' coins');
+    if (item.removePrice != null) priceBits.push('remove: ' + item.removePrice + ' coins');
+    const priceLine = priceBits.length ? `<div class="meta-line">${escapeHtml(priceBits.join(' \u00b7 '))}</div>` : '';
+    const desc = item.description ? `<p class="description">${escapeHtml(item.description)}</p>` : '';
+    const effects = bulletList(item.effects);
+    const conflicts = item.conflicts && item.conflicts.length
+      ? `<div class="meta-line">Conflicts with: ${escapeHtml(item.conflicts.join(', '))}</div>` : '';
+    return `${desc}${priceLine}${effects}${conflicts}`;
+  }
+
+  if (item.type === 'race') {
+    const desc = item.description ? `<p class="description">${escapeHtml(item.description)}</p>` : '';
+    const priceLine = item.price != null ? `<div class="meta-line">${item.price} coins</div>` : '';
+    const effects = bulletList(item.effects);
+    return `${desc}${priceLine}${effects}`;
+  }
+
+  // item
+  if (!item.description) {
+    return `<p class="no-desc-note">No description curated yet for this item.</p>`;
+  }
+  let meta = [];
+  if (item.techLevel) meta.push(item.techLevel + ' tech');
+  if (item.source) meta.push('from ' + item.source);
+  const metaLine = meta.length ? `<div class="meta-line">${escapeHtml(meta.join(' \u00b7 '))}</div>` : '';
+  return `<p class="description">${escapeHtml(item.description)}</p>${metaLine}${tagLine(item)}${statGridFromDict(item.stats)}`;
+}
+
+init();
+</script>
+
+</body>
+</html>
