@@ -43,6 +43,14 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  body {
+    background-image:
+      radial-gradient(ellipse 900px 700px at 0% 20%, rgba(184, 53, 44, 0.09), transparent 60%),
+      radial-gradient(ellipse 900px 700px at 100% 80%, rgba(184, 53, 44, 0.07), transparent 60%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
   h1, h2, .display {
     font-family: 'Arvo', Georgia, serif;
   }
@@ -99,6 +107,29 @@
     font-size: 0.85rem;
     color: var(--ink-faint);
     margin: 0;
+  }
+
+  .site-nav {
+    display: flex;
+    gap: 14px;
+    margin-top: 6px;
+    justify-content: flex-end;
+  }
+
+  .site-nav a {
+    font-size: 0.8rem;
+    color: var(--ink-dim);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+
+  .site-nav a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  .header-right {
+    text-align: right;
   }
 
   .search-row {
@@ -169,6 +200,50 @@
     color: var(--ink);
   }
 
+  .tag-toggle.dead {
+    opacity: 0.32;
+  }
+
+  .group-section {
+    margin: 4px 0;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .group-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 4px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .group-head:hover { background: rgba(184, 53, 44, 0.045); }
+
+  .group-head .chevron {
+    color: var(--accent);
+    font-size: 0.7rem;
+    transition: transform 0.15s;
+    display: inline-block;
+  }
+
+  .group-section.collapsed .chevron { transform: rotate(-90deg); }
+
+  .group-head .group-title {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--ink);
+  }
+
+  .group-head .group-count {
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+  }
+
+  .group-body { display: block; }
+  .group-section.collapsed .group-body { display: none; }
+  .group-section.collapsed { border-bottom-color: var(--rule); }
+
   #result-count {
     font-size: 0.78rem;
     color: var(--ink-faint);
@@ -210,6 +285,26 @@
     font-size: 0.75rem;
     color: var(--ink-faint);
     white-space: nowrap;
+  }
+
+  .row-badge {
+    font-size: 0.78rem;
+    white-space: nowrap;
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 1px solid var(--rule);
+  }
+
+  .row-badge.cost {
+    color: #d9b25a;
+    border-color: #5a4420;
+    background: rgba(217, 178, 90, 0.07);
+  }
+
+  .row-badge.vital {
+    color: var(--ink-dim);
+    border-color: var(--rule);
+    background: rgba(234, 226, 208, 0.04);
   }
 
   .row-snippet {
@@ -284,6 +379,43 @@
     font-style: italic;
   }
 
+  .browse-section {
+    margin: 18px 0 28px;
+  }
+
+  .browse-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+  }
+
+  .browse-head h2 {
+    font-size: 1.05rem;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .browse-head .view-all {
+    font-size: 0.78rem;
+    color: var(--accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+  }
+
+  .browse-head .view-all:hover { text-decoration: underline; }
+
+  .browse-intro {
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    margin: 4px 0 4px;
+  }
+
   #empty-state {
     display: none;
     text-align: center;
@@ -309,7 +441,13 @@
       <img class="mascot-icon" src="mascot-icon.png" alt="">
       <img class="wordmark" src="rimstream-banner.png" alt="RimStream">
     </div>
-    <p class="subtitle">Everything buyable in the stream shop &mdash; items, events, traits, and pawn kinds.</p>
+    <div class="header-right">
+      <p class="subtitle">Everything buyable in the stream shop &mdash; items, events, traits, and pawn kinds.</p>
+      <nav class="site-nav">
+        <a href="../">Home</a>
+        <a href="../guide/">Guide</a>
+      </nav>
+    </div>
   </div>
   <div class="search-row">
     <input id="search" type="text" placeholder="Search by name&hellip;" autocomplete="off">
@@ -343,6 +481,9 @@
 <script>
 let ITEMS = [];
 let activeTags = new Set();
+let TAG_GROUPS = {};
+let collapsedGroups = new Set();
+const BROWSE_ORDER = [];
 
 function sourceOf(it) {
   return it.source || it.mod || '';
@@ -380,6 +521,11 @@ async function init() {
       else { activeTags.add(t); btn.classList.add('active'); }
       render();
     });
+  });
+
+  BROWSE_ORDER.push(...orderedTags);
+  orderedTags.forEach(t => {
+    TAG_GROUPS[t] = ITEMS.filter(it => (it.tags || []).includes(t));
   });
 
   document.getElementById('footer-count').textContent = ITEMS.length;
@@ -422,13 +568,136 @@ function matches(item, query, type, cat, source, tags) {
   return true;
 }
 
+function prettyLabel(s) {
+  if (!s) return s;
+  let out = s.replace(/^(TM_|VME_|EPOE_|EPIA_|VWE_|LT_|AIRobot_|Building_RT_?)/, '');
+  out = out.replace(/([a-z])([A-Z])/g, '$1 $2');
+  return out.trim() || s;
+}
+
+function groupingFieldFor(type, tagsArr) {
+  if (type === 'event') return 'karmaType';
+  if (type === 'trait') return 'karmaLane';
+  if (tagsArr.includes('Technology') || tagsArr.includes('Implant')) return 'techLevel';
+  return 'category';
+}
+
+function groupKeyOf(item, field) {
+  if (field === 'category') return (item.thingCategories && item.thingCategories[0]) || 'Uncategorized';
+  return item[field] || 'Unspecified';
+}
+
+function updateTagDimming(query, type, cat, source) {
+  document.querySelectorAll('.tag-toggle').forEach(btn => {
+    const t = btn.dataset.tag;
+    if (activeTags.has(t)) { btn.classList.remove('dead'); return; }
+    const hypothetical = new Set(activeTags);
+    hypothetical.add(t);
+    const hasAny = ITEMS.some(it => matches(it, query, type, cat, source, hypothetical));
+    btn.classList.toggle('dead', !hasAny);
+  });
+}
+
 const MAX_RENDER = 400;
+
+function isDefaultState(query, type, cat, source) {
+  return !query && !type && !cat && !source && activeTags.size === 0;
+}
+
+function activateTag(t) {
+  activeTags.add(t);
+  const btn = document.querySelector(`.tag-toggle[data-tag="${CSS.escape(t)}"]`);
+  if (btn) btn.classList.add('active');
+  render();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderBrowse() {
+  document.getElementById('result-count').textContent = ITEMS.length + ' things total';
+  const list = document.getElementById('list');
+  document.getElementById('empty-state').style.display = 'none';
+
+  const intro = `<p class="browse-intro">No search or filter active &mdash; browsing a sample from each tag. Pick a tag above, or search by name, to see everything.</p>`;
+
+  const sections = BROWSE_ORDER.map(tag => {
+    const items = TAG_GROUPS[tag] || [];
+    if (!items.length) return '';
+    const preview = items.slice(0, 5);
+    return `
+      <div class="browse-section">
+        <div class="browse-head">
+          <h2>${escapeHtml(tag)} <span style="color:var(--ink-faint);font-weight:400;">(${items.length})</span></h2>
+          <button type="button" class="view-all" data-tag="${escapeHtml(tag)}">View all &rarr;</button>
+        </div>
+        ${preview.map(rowHtml).join('')}
+      </div>
+    `;
+  }).join('');
+
+  list.innerHTML = intro + sections;
+
+  list.querySelectorAll('.view-all').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      activateTag(btn.dataset.tag);
+    });
+  });
+  list.querySelectorAll('.row').forEach(row => {
+    row.addEventListener('click', () => row.classList.toggle('expanded'));
+  });
+}
+
+function renderGrouped(filtered, type, tagsArr) {
+  const field = groupingFieldFor(type, tagsArr);
+  const buckets = {};
+  filtered.forEach(it => {
+    const key = groupKeyOf(it, field);
+    (buckets[key] = buckets[key] || []).push(it);
+  });
+  const contextKey = type + '|' + tagsArr.join(',');
+  const orderedKeys = Object.keys(buckets).sort((a, b) => buckets[b].length - buckets[a].length);
+
+  const list = document.getElementById('list');
+  list.innerHTML = orderedKeys.map(key => {
+    const groupId = contextKey + '::' + key;
+    const isCollapsed = collapsedGroups.has(groupId);
+    return `
+      <div class="group-section ${isCollapsed ? 'collapsed' : ''}" data-group-id="${escapeHtml(groupId)}">
+        <div class="group-head">
+          <span class="chevron">&#9660;</span>
+          <span class="group-title">${escapeHtml(prettyLabel(key))}</span>
+          <span class="group-count">(${buckets[key].length})</span>
+        </div>
+        <div class="group-body">${buckets[key].map(rowHtml).join('')}</div>
+      </div>
+    `;
+  }).join('');
+
+  list.querySelectorAll('.group-head').forEach(head => {
+    head.addEventListener('click', () => {
+      const section = head.closest('.group-section');
+      const id = section.dataset.groupId;
+      if (collapsedGroups.has(id)) collapsedGroups.delete(id);
+      else collapsedGroups.add(id);
+      section.classList.toggle('collapsed');
+    });
+  });
+  list.querySelectorAll('.row').forEach(row => {
+    row.addEventListener('click', (e) => { e.stopPropagation(); row.classList.toggle('expanded'); });
+  });
+}
 
 function render() {
   const query = document.getElementById('search').value.trim().toLowerCase();
   const type = document.getElementById('filter-type').value;
   const cat = document.getElementById('filter-category').value;
   const source = document.getElementById('filter-source').value;
+
+  if (isDefaultState(query, type, cat, source)) {
+    renderBrowse();
+    updateTagDimming(query, type, cat, source);
+    return;
+  }
 
   const filtered = ITEMS.filter(it => matches(it, query, type, cat, source, activeTags));
 
@@ -441,9 +710,20 @@ function render() {
   if (filtered.length === 0) {
     list.innerHTML = '';
     empty.style.display = 'block';
+    updateTagDimming(query, type, cat, source);
     return;
   }
   empty.style.display = 'none';
+
+  const tagsArr = [...activeTags];
+  const facetCount = (type ? 1 : 0) + tagsArr.length;
+  const shouldGroup = !query && facetCount === 1;
+
+  if (shouldGroup) {
+    renderGrouped(filtered, type, tagsArr);
+    updateTagDimming(query, type, cat, source);
+    return;
+  }
 
   const shown = filtered.slice(0, MAX_RENDER);
   list.innerHTML = shown.map(rowHtml).join('');
@@ -458,6 +738,7 @@ function render() {
   list.querySelectorAll('.row').forEach(row => {
     row.addEventListener('click', () => row.classList.toggle('expanded'));
   });
+  updateTagDimming(query, type, cat, source);
 }
 
 function escapeHtml(s) {
@@ -468,13 +749,18 @@ function escapeHtml(s) {
 const TYPE_LABEL = { item: 'Item', event: 'Event', trait: 'Trait', race: 'Pawn Kind' };
 
 function subtitleOf(item) {
-  if (item.type === 'item') return (item.thingCategories && item.thingCategories[0]) || '';
+  if (item.type === 'item') return prettyLabel((item.thingCategories && item.thingCategories[0]) || '');
   if (item.type === 'event') return item.karmaType ? item.karmaType + ' event' : 'Event';
   return TYPE_LABEL[item.type] || '';
 }
 
 function snippetOf(item) {
-  if (item.description) return escapeHtml(item.description).slice(0, 70);
+  if (item.description) {
+    const words = item.description.trim().split(/\s+/);
+    const short = words.slice(0, 5).join(' ');
+    const suffix = words.length > 5 ? '\u2026' : '';
+    return escapeHtml(short) + suffix;
+  }
   if (item.type === 'event') {
     const bits = [];
     if (item.price != null) bits.push(item.price + ' coins');
@@ -484,15 +770,34 @@ function snippetOf(item) {
   return '';
 }
 
+function costOf(item) {
+  if (item.type === 'item') return item.price != null ? item.price + ' coins' : null;
+  if (item.type === 'event') return item.price != null ? item.price + ' coins' : null;
+  if (item.type === 'trait') return item.addPrice != null ? item.addPrice + ' coins' : null;
+  if (item.type === 'race') return item.price != null ? item.price + ' coins' : null;
+  return null;
+}
+
+function vitalBadgeText(item) {
+  if (!item.vitalStat) return null;
+  return item.vitalStat.value + ' ' + item.vitalStat.label;
+}
+
 function rowHtml(item) {
   const isGeneric = item.kind && item.kind.startsWith('generic');
   const label = escapeHtml(item.label || item.defName);
+  const cost = costOf(item);
+  const vital = vitalBadgeText(item);
+
+  const badges =
+    (cost ? `<span class="row-badge cost">${escapeHtml(cost)}</span>` : '') +
+    (vital ? `<span class="row-badge vital">${escapeHtml(vital)}</span>` : '');
 
   return `
     <div class="row ${isGeneric ? 'is-generic' : ''}">
       <div class="row-head">
         <span class="row-label">${label}</span>
-        <span class="row-cat">${escapeHtml(subtitleOf(item))}</span>
+        ${badges}
         <span class="row-snippet">${snippetOf(item)}</span>
       </div>
       <div class="row-detail">
@@ -557,6 +862,7 @@ function detailHtml(item) {
     return `<p class="no-desc-note">No description curated yet for this item.</p>`;
   }
   let meta = [];
+  if (item.price != null) meta.push(item.price + ' coins');
   if (item.techLevel) meta.push(item.techLevel + ' tech');
   if (item.source) meta.push('from ' + item.source);
   const metaLine = meta.length ? `<div class="meta-line">${escapeHtml(meta.join(' \u00b7 '))}</div>` : '';
