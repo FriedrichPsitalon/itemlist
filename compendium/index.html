@@ -835,7 +835,9 @@ function detailHtml(item) {
     if (item.mod) meta.push('from ' + item.mod);
     if (item.hasGlobalCooldown) meta.push('global cooldown: ' + item.globalCooldown + 's');
     if (item.hasLocalCooldown) meta.push('local cooldown: ' + item.localCooldown + 's');
-    return `<div class="meta-line">${escapeHtml(meta.join(' \u00b7 '))}</div>`;
+    const desc = item.description ? `<p class="description">${escapeHtml(item.description)}</p>` : '';
+    const metaLine = meta.length ? `<div class="meta-line">${escapeHtml(meta.join(' \u00b7 '))}</div>` : '';
+    return `${desc}${metaLine}`;
   }
 
   if (item.type === 'trait') {
