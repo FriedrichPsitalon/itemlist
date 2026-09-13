@@ -874,5 +874,31 @@ function detailHtml(item) {
 init();
 </script>
 
+<script>
+// Lets links like ?tag=Chaos or ?q=gun pre-filter the compendium on load.
+(function () {
+  const params = new URLSearchParams(location.search);
+  const tagParam = params.get('tag');
+  const qParam = params.get('q');
+  if (!tagParam && !qParam) return;
+
+  const start = Date.now();
+  (function whenReady() {
+    if (typeof ITEMS === 'undefined' || !ITEMS.length) {
+      if (Date.now() - start < 5000) requestAnimationFrame(whenReady);
+      return;
+    }
+    if (tagParam) {
+      const match = BROWSE_ORDER.find(t => t.toLowerCase() === tagParam.toLowerCase());
+      if (match) activateTag(match);
+    }
+    if (qParam) {
+      document.getElementById('search').value = qParam;
+      render();
+    }
+  })();
+})();
+</script>
+
 </body>
 </html>
