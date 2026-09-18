@@ -1,0 +1,221 @@
+/* ==========================================================================
+   RimStream Guide theme
+   Overrides Type-on-Strap's default palette to match the Compendium store's
+   dark rust/parchment look. Drop-in only — no theme rebuild, no _config.yml
+   change. Loaded via the <link> already in guide-classes.md / guide-jobs.md.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+
+/* ---------- Palette (matches compendium/index.html) ---------- */
+/* Re-declared against every data-theme value the base theme defines, since
+   Type-on-Strap toggles skins via html[data-theme="..."] and we want the
+   same look no matter which one is active. */
+html,
+html[data-theme="light"],
+html[data-theme="dark"] {
+  --background: #0a0605;
+  --text: #eae2d0;
+  --link: #b8352c;
+  --header-background: #000000;
+  --header-text: #eae2d0;
+  --header-link: #a89c86;
+  --meta: #6f6552;
+  --border: #3d1f1c;
+  --blockquote: #170c0b;
+  --code-background: #170c0b;
+  --code-inline: #d9b25a;
+  --text-shadow: transparent;
+  --h1: #eae2d0;
+  --h2: #eae2d0;
+  --h3: #eae2d0;
+  --h4: #eae2d0;
+  --h5: #eae2d0;
+  --h6: #eae2d0;
+
+  /* Local aliases for the rules below, matching the Store's own names. */
+  --bg: var(--background);
+  --panel: #170c0b;
+  --ink: var(--text);
+  --ink-dim: #a89c86;
+  --ink-faint: #6f6552;
+  --accent: #b8352c;
+  --accent-soft: #7a221c;
+  --rule: #3d1f1c;
+  --rule-soft: #26130f;
+}
+
+/* ---------- Base ---------- */
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-image:
+    radial-gradient(ellipse 900px 700px at 0% 20%, rgba(184, 53, 44, 0.09), transparent 60%),
+    radial-gradient(ellipse 900px 700px at 100% 80%, rgba(184, 53, 44, 0.07), transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Theme wraps page content in a plain <div class="content">. Match the
+   Store's centered column width instead of the theme's default. */
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+}
+
+::selection { background: var(--accent-soft); color: var(--ink); }
+
+/* ---------- Top nav (.site-header, shared across the whole site) ---------- */
+
+.site-header {
+  background: var(--header-background);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header .site-title {
+  font-family: 'Arvo', Georgia, serif;
+  color: var(--ink);
+}
+
+.site-header a { color: var(--header-link); }
+.site-header a:hover,
+nav a:hover { color: var(--accent); }
+
+/* ---------- Page banner (header#main / title / subtitle) ---------- */
+
+header#main {
+  background-image: none !important;
+  background: transparent;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+h1.title {
+  font-family: 'Arvo', Georgia, serif;
+  color: var(--ink);
+  text-shadow: none;
+}
+
+.subtitle {
+  color: var(--ink-faint);
+  text-shadow: none;
+}
+
+/* ---------- Article body typography ---------- */
+
+.post-content {
+  line-height: 1.6;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  font-family: 'Arvo', Georgia, serif;
+  color: var(--ink);
+}
+
+.post-content h2,
+.post-content h3 {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.3em;
+  margin-top: 1.8em;
+}
+
+.post-content p,
+.post-content li {
+  color: var(--ink-dim);
+}
+
+.post-content strong {
+  color: var(--ink);
+}
+
+.post-content a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.post-content a:hover {
+  border-bottom-color: var(--accent);
+}
+
+.post-content hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 2em 0;
+}
+
+.post-content code {
+  background: var(--code-background);
+  color: var(--code-inline);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.post-content blockquote {
+  background: var(--blockquote);
+  border-left: 2px solid var(--accent-soft);
+  margin: 1em 0;
+  padding: 0.6em 1em;
+  color: var(--ink-dim);
+}
+
+/* ---------- Suggested implants / gear panels ---------- */
+/* These render as <details open markdown="1"> blocks — style them like the
+   Store's expanded-row detail cards. */
+
+.post-content details {
+  background: var(--panel);
+  border-left: 2px solid var(--accent-soft);
+  border-radius: 0 3px 3px 0;
+  margin: 1em 0;
+  padding: 12px 16px;
+}
+
+.post-content details summary {
+  font-family: 'Arvo', Georgia, serif;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+}
+
+.post-content details summary::-webkit-details-marker {
+  display: none;
+}
+
+.post-content details summary::before {
+  content: '▸';
+  color: var(--accent);
+  display: inline-block;
+  margin-right: 0.5em;
+  transition: transform 0.15s;
+}
+
+.post-content details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.post-content details > *:not(summary) {
+  margin-top: 0.75em;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--rule-soft);
+  color: var(--ink-faint);
+  font-size: 0.85em;
+}
+
+.site-footer a { color: var(--ink-dim); }
+.site-footer a:hover { color: var(--accent); }
