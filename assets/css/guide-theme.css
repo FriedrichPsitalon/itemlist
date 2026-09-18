@@ -60,10 +60,13 @@ body {
   background-attachment: fixed;
 }
 
-/* Theme wraps page content in a plain <div class="content">. Match the
-   Store's centered column width instead of the theme's default. */
+/* Theme wraps page content in a plain <div class="content">. The Store
+   caps at 1100px, but that's sized for short list rows — this page is long
+   paragraphs, so the same width leaves a lot of empty black on a big
+   monitor. Give it more room, scaling with the window instead of a fixed
+   cap, so it isn't razor-thin on a phone or a canyon on an ultrawide. */
 .content {
-  max-width: 1100px;
+  max-width: min(1500px, 92vw);
   margin: 0 auto;
   padding: 0 24px 40px;
 }
@@ -112,6 +115,18 @@ h1.title {
 
 .post-content {
   line-height: 1.6;
+}
+
+/* Widening .content above fixes the empty-margin problem, but letting
+   paragraph text stretch the full width would make lines uncomfortably
+   long to read on a big monitor. Cap prose specifically, while headings,
+   the jump list, and the detail boxes are free to use the full column. */
+.post-content > p,
+.post-content > ul,
+.post-content > ol,
+.post-content details p,
+.post-content details ul {
+  max-width: 75ch;
 }
 
 .post-content h1,
