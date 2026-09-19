@@ -26,51 +26,27 @@ One more thing, and this one matters for everybody, not just newcomers: just by 
 
 </details>
 
-## How you actually take part
+## Getting Involved
 
-You earn coins just for being in chat. **2 coins every 2 minutes**, and everyone starts with 20 — so you can spend something the moment you show up. Stay active and you earn at full rate; go quiet and that decays down to nothing by around the one-hour mark. Subscribers earn 50% faster, on top of all that.
+Coins are earned by being in chat. Two minutes is two coins; you start with 20. Lurk and your coins/minute starts to drop — bottoms out after an hour. Subscribers get 50% more.
 
-Once you've got at least 5 coins saved, you can spend them — on gear and buffs for your pawn, on events that help the colony, or on events that absolutely do not. All three are legitimate ways to play. See below for where each one lives.
+Coins can be spent to [help](/itemlist/compendium/?tag=Help), to [harm](/itemlist/compendium/?tag=Chaos), or to [involve yourself directly](#build-a-pawn). Helping and harming impact your karma, which also impacts your coin flow. If you're truly violent and evil, the game will slow you down some — but you can still be evil, fear not.
 
-One thing worth knowing up front: karma is your trust score. Keep it decent and nothing changes. Tank it — usually by spamming purchases that keep backfiring — and some of the nastier options start locking up until it recovers. Not permanent, just a brake on pure chaos-spam.
+For exact commands — and there are a lot of them — check the [Info page](/itemlist/info).
 
-Everyone's drawing from the same pool, by the way — events are time soft-locked to prevent abuse. RimWorld runs on its own clock, so the cooldowns refresh roughly every two hours, assuming no pauses or speed-ups — both of which will probably happen often. Early bird gets the apocalypse, but if you miss a chance to cause it, chances are you'll get at least one more shot later that night.
+## Spending Coins
 
-For the exact commands — buying, checking your balance, and so on — see the **[Info](/itemlist/info)** page.
+<a id="build-a-pawn"></a>
 
-## Three ways to spend it
+**Get directly involved:** you can get a pawn with your name in the game, and then gear them, boost them, trait them, implant them — all the things. [Browse the Compendium](/itemlist/compendium/) — there's a lot of routes. How to develop them depends on your job intent — see below.
 
-**Build a pawn** — first, if you don't already have one, you can buy a pawn to adopt (there are a few ways to do it). From there: gear, skill boosts, good traits. Invest in your colonist and watch them (hopefully) thrive.
-→ [Browse the full Compendium](/itemlist/compendium/) — gear, traits, and pawn kinds span more than one category, so there's no single filter for this; search or browse from there.
+- `!buy pawn` — 10 coins get you a default colonist in default gear with your name on it. Totally random.
+- `!buy wildman` or `!buy prisoner` — also 10 coins, but a specific background. Have to actually be recruited by the colony.
+- `!buy maninblack` — 15 coins, but you get a mysterious gunslinger with a duster, flak vest, cowboy hat, and a revolver. You're aimin' to clean up this here settlement.
 
-<details markdown="1">
-<summary>Ways to get a pawn to adopt →</summary>
+**Chaos Reigns!** — [bad events galore!](/itemlist/compendium/?tag=Chaos) When you want to make someone's day worse, all the options are here.
 
-**`!buy pawn`** — 1 coin. *The pinned pick — start here.*
-Guaranteed: a fresh colonist joins immediately, no recruiting involved. No special gear, though — they get whatever RimWorld's ordinary colonist-generation randomizer rolls for them, same as any other new arrival. Cheapest option in the entire shop by a wide margin.
-
-**`!buy maninblack`** — 15 coins.
-Also guaranteed — this triggers RimWorld's own "Stranger in Black" wanderer-join event, not a Twitch Toolkit invention. Unlike `pawn`, the gear here isn't random: this pawn's outfit is locked to a collared shirt, pants, duster, flak vest, and cowboy hat (all dark gray/black), plus a revolver-class gun. Pay more, but they arrive already dressed and armed for a Western theme.
-
-**`!buy wildman`** — 10 coins.
-Not guaranteed — this one has to actually be recruited in-game after they wander in, and recruiting can fail and take repeated attempts. No guaranteed weapon or outfit either; they show up essentially bare. The appeal here is purely "found them in the wild," not efficiency.
-
-**`!buy prisoner`** — 10 coins.
-Also not an instant colonist — this drops a captive into your cells, who then has to be recruited (or converted) the normal RimWorld way, and can refuse or escape while you wait. Despite arriving via a raid-style drop, they're unarmed: cheap, plain industrial-tier clothing, no headgear, no weapon at all. Cheap way to get a "villain redemption arc" pawn if that's the story you're after.
-
-Not the pawn source it sounds like: `!buy travelergroup` (10 coins) is just RimWorld's ordinary passing-visitor-group event — Twitch Toolkit doesn't add any special recruit mechanic to it. Any pawn already standing on your map, from this event or not, can be recruited through the game's normal social-interaction odds anyway, so this doesn't actually improve your chances of gaining a colonist.
-
-*Gear specifics above come from RimWorld's own pawn definitions, cross-checked against a community-mirrored copy of the game's files rather than your own install — accurate as of that snapshot, but worth a quick in-game spot-check if a future update ever makes these look off.*
-
-</details>
-
-**Cause chaos** — bad events, hostile raids, manhunting boomalopes. Actively make someone's day worse. (You can't actually slap a bad trait on somebody else's pawn — but a manhunting boomalope herd covers for that just fine.)
-→ [Browse chaos picks](/itemlist/compendium/?tag=Chaos)
-
-**Mix things up** — a little of both, or neither in particular. For people who just want something, anything, to happen.
-→ [Browse mix picks](/itemlist/compendium/?tag=Mix)
-
-Not sure where to start? Every list above leads with one pinned "if you only try one thing, do this" pick, so you don't have to read the whole catalog just to get going.
+**Make Things Interesting** — maybe you just want to see something happen? [Neutral events here.](/itemlist/compendium/?tag=Mix)
 
 ## Picking your pawn's job
 
