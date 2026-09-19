@@ -13365,7 +13365,7 @@
  },
  {
   "defName": "Horse",
-  "price": 917,
+  "price": 6,
   "abr": "horse",
   "label": "horse",
   "description": "A large hoofed mammal with a short coat, a long mane, and a long tail. Horses have been domesticated since ancient times.\\n\\nWhen in a caravan, people can ride horses to increase the caravan's speed.",
@@ -17563,7 +17563,7 @@
  },
  {
   "defName": "MeleeWeapon_PlasmaSword",
-  "price": 3333,
+  "price": 18,
   "abr": "plasmasword",
   "label": "plasmasword",
   "description": "A metal-cored sword with a cutting edge. Plasma is wrapped around the core, held in place by an energy field. Targets are both sliced by the metal core, as well as burned or ignited by the plasma sheath.",
@@ -32632,7 +32632,7 @@
   "defName": "tornados",
   "label": "tornados",
   "description": "Multiple tornadoes touch down at once, each carving its own path of destruction.",
-  "price": 2600,
+  "price": 90,
   "karmaType": "Bad",
   "mod": "Twitch Toolkit",
   "eventType": "Default",

@@ -9,12 +9,12 @@
 <title>RimStream Compendium</title>
 <meta property="og:title" content="RimStream Compendium">
 <meta property="og:description" content="Everything buyable in the stream shop — items, events, traits, and pawn kinds.">
-<meta property="og:image" content="social-preview.png">
+<meta property="og:image" content="https://friedrichpsitalon.github.io/itemlist/compendium/social-preview.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="RimStream Compendium">
 <meta name="twitter:description" content="Everything buyable in the stream shop — items, events, traits, and pawn kinds.">
-<meta name="twitter:image" content="social-preview.png">
+<meta name="twitter:image" content="https://friedrichpsitalon.github.io/itemlist/compendium/social-preview.png">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Inter:wght@400;500;600&display=swap');
 
@@ -619,7 +619,32 @@ async function init() {
     }
   });
 
+  applyUrlParams();
   render();
+}
+
+// Deep links: ?tag=Chaos (or ?tag=Melee,Magic) and ?q=gun pre-filter the view on load.
+// Tag names are matched case-insensitively; unknown tags are ignored.
+function applyUrlParams() {
+  const params = new URLSearchParams(window.location.search);
+
+  const q = params.get('q');
+  if (q) document.getElementById('search').value = q;
+
+  const tagParam = params.getAll('tag').join(',');
+  if (tagParam) {
+    const known = {};
+    document.querySelectorAll('.tag-toggle').forEach(btn => {
+      known[btn.dataset.tag.toLowerCase()] = btn;
+    });
+    tagParam.split(',').forEach(raw => {
+      const btn = known[raw.trim().toLowerCase()];
+      if (btn) {
+        activeTags.add(btn.dataset.tag);
+        btn.classList.add('active');
+      }
+    });
+  }
 }
 
 function populateSelect(id, values) {
