@@ -11,7 +11,11 @@ hide_title: true
 
 # Guide
 
-Two ways in, depending on what you already know:
+New to the stream, or to Twitch Toolkit? Start here:
+
+- **[Info](/itemlist/info)** — what Twitch Toolkit is, what coins and karma are, and how to actually spend coins in chat.
+
+Already know the basics? Two ways in, depending on what you already know:
 
 - **[Jobs](/itemlist/guide/jobs/)** — start here if you know what you want a pawn to *do* (mining, healing, tanking, crowd control, and so on) and want to see which class or classes cover it.
 - **[Classes](/itemlist/guide/classes/)** — start here if you want the full rundown of a specific class's bonuses, penalties, and spells.
