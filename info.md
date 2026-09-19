@@ -4,6 +4,8 @@ layout: page
 permalink: /info
 ---
 
+<link rel="stylesheet" href="{{- 'assets/css/guide-theme.css' | relative_url -}}"/>
+
 {%- assign utils = false -%}
 {%- assign lootboxes = false -%}
 {%- assign puppeteer = false -%}
