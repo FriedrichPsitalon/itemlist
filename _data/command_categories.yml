@@ -1,0 +1,15 @@
+# Groups for the Commands page (commands.html). Order here is display order
+# (left to right / top to bottom). "key" must match the "category" field set
+# on each entry in commands.json.
+- key: purchase
+  label: Purchases & Customization
+- key: recover
+  label: Fix & Recover
+- key: check
+  label: Check Your Pawn
+- key: social
+  label: Social & Roleplay
+- key: colony
+  label: Colony & Economy
+- key: help
+  label: Help & Reference
