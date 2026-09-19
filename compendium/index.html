@@ -353,15 +353,24 @@
   .stat {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
+    min-width: 0;
     font-size: 0.78rem;
     border-bottom: 1px dotted var(--rule-soft);
     padding: 2px 0;
   }
 
-  .stat .k { color: var(--ink-faint); }
+  .stat .k {
+    color: var(--ink-faint);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 8px;
+  }
   .stat .v {
     color: var(--ink);
     font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
   }
 
   .bullet-list {
@@ -379,18 +388,42 @@
     margin-top: 8px;
   }
 
+  .purchase-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px dotted var(--rule-soft);
+  }
+
+  .purchase-pair {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .price-big {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #e6bd52;
+    font-variant-numeric: tabular-nums;
+  }
+
   .copy-btn {
-    font-size: 0.76rem;
-    color: var(--accent);
-    background: rgba(184, 53, 44, 0.08);
-    border: 1px solid var(--accent-soft);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
     border-radius: 4px;
-    padding: 5px 10px;
+    padding: 6px 12px;
     cursor: pointer;
     font-family: inherit;
   }
 
-  .copy-btn:hover { background: rgba(184, 53, 44, 0.16); }
+  .copy-btn:hover { background: var(--accent); }
 
   .copy-btn.copied {
     color: #7fbf7f;
@@ -869,14 +902,6 @@ function buyCommandsFor(item) {
   return [];
 }
 
-function copyButtonsHtml(item) {
-  const cmds = buyCommandsFor(item);
-  if (!cmds.length) return '';
-  return `<div class="copy-row">` + cmds.map(c =>
-    `<button type="button" class="copy-btn" data-cmd="${escapeHtml(c.cmd)}">${escapeHtml(c.label)}</button>`
-  ).join('') + `</div>`;
-}
-
 async function copyToClipboard(text, btn) {
   const original = btn.textContent;
   try {
@@ -889,48 +914,77 @@ async function copyToClipboard(text, btn) {
   setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 1400);
 }
 
+function priceTag(value) {
+  return `<span class="price-big">${value} coins</span>`;
+}
+
+function purchaseBarHtml(item) {
+  if (item.type === 'item' || item.type === 'event') {
+    if (item.price == null) return '';
+    const cmds = buyCommandsFor(item);
+    const btn = cmds[0]
+      ? `<button type="button" class="copy-btn" data-cmd="${escapeHtml(cmds[0].cmd)}">${escapeHtml(cmds[0].label)}</button>`
+      : '';
+    return `<div class="purchase-bar">${priceTag(item.price)}${btn}</div>`;
+  }
+  if (item.type === 'trait') {
+    const cmds = buyCommandsFor(item);
+    const addCmd = cmds.find(c => c.label.includes('add'));
+    const remCmd = cmds.find(c => c.label.includes('remove'));
+    let parts = [];
+    if (item.addPrice != null) {
+      const btn = addCmd ? `<button type="button" class="copy-btn" data-cmd="${escapeHtml(addCmd.cmd)}">${escapeHtml(addCmd.label)}</button>` : '';
+      parts.push(`<div class="purchase-pair">${priceTag(item.addPrice)}${btn}</div>`);
+    }
+    if (item.removePrice != null) {
+      const btn = remCmd ? `<button type="button" class="copy-btn" data-cmd="${escapeHtml(remCmd.cmd)}">${escapeHtml(remCmd.label)}</button>` : '';
+      parts.push(`<div class="purchase-pair">${priceTag(item.removePrice)}${btn}</div>`);
+    }
+    return parts.length ? `<div class="purchase-bar">${parts.join('')}</div>` : '';
+  }
+  if (item.type === 'race') {
+    return item.price != null ? `<div class="purchase-bar">${priceTag(item.price)}</div>` : '';
+  }
+  return '';
+}
+
 function detailHtml(item) {
+  const purchaseBar = purchaseBarHtml(item);
+
   if (item.type === 'event') {
     let meta = [];
-    if (item.price != null) meta.push(item.price + ' coins');
     if (item.karmaType) meta.push(item.karmaType + ' karma');
     if (item.mod) meta.push('from ' + item.mod);
     if (item.hasGlobalCooldown) meta.push('global cooldown: ' + item.globalCooldown + 's');
     if (item.hasLocalCooldown) meta.push('local cooldown: ' + item.localCooldown + 's');
     const desc = item.description ? `<p class="description">${escapeHtml(item.description)}</p>` : '';
     const metaLine = meta.length ? `<div class="meta-line">${escapeHtml(meta.join(' \u00b7 '))}</div>` : '';
-    return `${desc}${metaLine}${copyButtonsHtml(item)}`;
+    return `${purchaseBar}${desc}${metaLine}`;
   }
 
   if (item.type === 'trait') {
-    let priceBits = [];
-    if (item.addPrice != null) priceBits.push('add: ' + item.addPrice + ' coins');
-    if (item.removePrice != null) priceBits.push('remove: ' + item.removePrice + ' coins');
-    const priceLine = priceBits.length ? `<div class="meta-line">${escapeHtml(priceBits.join(' \u00b7 '))}</div>` : '';
     const desc = item.description ? `<p class="description">${escapeHtml(item.description)}</p>` : '';
     const effects = bulletList(item.effects);
     const conflicts = item.conflicts && item.conflicts.length
       ? `<div class="meta-line">Conflicts with: ${escapeHtml(item.conflicts.join(', '))}</div>` : '';
-    return `${desc}${priceLine}${effects}${conflicts}${copyButtonsHtml(item)}`;
+    return `${purchaseBar}${desc}${effects}${conflicts}`;
   }
 
   if (item.type === 'race') {
     const desc = item.description ? `<p class="description">${escapeHtml(item.description)}</p>` : '';
-    const priceLine = item.price != null ? `<div class="meta-line">${item.price} coins</div>` : '';
     const effects = bulletList(item.effects);
-    return `${desc}${priceLine}${effects}`;
+    return `${purchaseBar}${desc}${effects}`;
   }
 
   // item
   if (!item.description) {
-    return `<p class="no-desc-note">No description curated yet for this item.</p>${copyButtonsHtml(item)}`;
+    return `${purchaseBar}<p class="no-desc-note">No description curated yet for this item.</p>`;
   }
   let meta = [];
-  if (item.price != null) meta.push(item.price + ' coins');
   if (item.techLevel) meta.push(item.techLevel + ' tech');
   if (item.source) meta.push('from ' + item.source);
   const metaLine = meta.length ? `<div class="meta-line">${escapeHtml(meta.join(' \u00b7 '))}</div>` : '';
-  return `<p class="description">${escapeHtml(item.description)}</p>${metaLine}${tagLine(item)}${statGridFromDict(item.stats)}${copyButtonsHtml(item)}`;
+  return `${purchaseBar}<p class="description">${escapeHtml(item.description)}</p>${metaLine}${tagLine(item)}${statGridFromDict(item.stats)}`;
 }
 
 init();
