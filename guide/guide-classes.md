@@ -1,5 +1,5 @@
 ---
-title: Guide - Classes
+title: Classes
 layout: page
 permalink: /guide/classes/
 hide_title: true

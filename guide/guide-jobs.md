@@ -1,5 +1,5 @@
 ---
-title: Guide - Jobs
+title: Jobs
 layout: page
 permalink: /guide/jobs/
 hide_title: true
