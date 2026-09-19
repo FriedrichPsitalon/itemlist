@@ -234,3 +234,151 @@ h1.title {
 
 .site-footer a { color: var(--ink-dim); }
 .site-footer a:hover { color: var(--accent); }
+
+/* ==========================================================================
+   Commands page (commands.html)
+   Tab bar (.tab / .tabLinks, driven by the site's existing tabs.js) plus the
+   card-list layout for each command. Not a <table>, so this doesn't reuse
+   filter.js's table-column search — commands.html has its own small script.
+   ========================================================================== */
+
+.search {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  margin-bottom: 18px;
+}
+.search::placeholder { color: var(--ink-faint); }
+.search:focus { outline: 2px solid var(--accent-soft); outline-offset: 1px; }
+
+.tab {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border: none;
+  background: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 14px;
+  margin-bottom: 4px;
+}
+
+.tab button {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 8px 13px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  background: var(--panel);
+  white-space: nowrap;
+}
+
+.tab button:hover {
+  color: var(--ink);
+  border-color: var(--ink-faint);
+  background-color: var(--rule-soft);
+}
+
+.tab button.tabLinks.active {
+  background-color: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.tab .tab-count {
+  color: var(--ink-faint);
+  font-size: 0.75rem;
+}
+.tab button.tabLinks.active .tab-count { color: var(--ink-dim); }
+
+.cmd-count {
+  color: var(--ink-faint);
+  font-size: 0.8rem;
+  margin: 14px 2px 18px;
+}
+
+.cmd-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--rule);
+}
+
+.cmd {
+  display: grid;
+  grid-template-columns: minmax(160px, 240px) 1fr;
+  gap: 16px;
+  padding: 14px 4px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+@media (max-width: 560px) {
+  .cmd { grid-template-columns: 1fr; gap: 6px; }
+}
+
+.cmd-name {
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--ink);
+}
+
+.cmd-list code.cmd-usage {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--accent);
+  margin-top: 3px;
+  word-break: break-word;
+  background: none;
+  padding: 0;
+}
+
+.cmd-category {
+  display: none;
+  margin-top: 6px;
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.cmd-desc {
+  color: var(--ink-dim);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  padding-top: 1px;
+}
+
+.cmd-desc .shortcut-of {
+  display: block;
+  color: var(--ink-faint);
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.cmd-desc .example-of {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.82rem;
+}
+.cmd-desc .example-of .example-label {
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+.cmd-list .example-of code {
+  color: var(--accent);
+  background: var(--rule-soft);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.cmd-empty {
+  color: var(--ink-faint);
+  text-align: center;
+  padding: 40px 0;
+  font-size: 0.9rem;
+}
