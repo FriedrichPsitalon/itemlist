@@ -1,0 +1,10 @@
+# Extra nav entries that aren't backed by a Jekyll page (or shouldn't use
+# that page's own title/hide settings). Type-on-Strap's navbar merges this
+# list in with site.pages and sorts everything by `position`.
+#
+# The Compendium (compendium/index.html) is a plain static HTML file with
+# no front matter, so Jekyll never sees it as a "page" and it can't get a
+# nav entry the normal way (via a page's own title). This is that entry.
+- title: Store
+  url: /compendium/
+  position: 1
