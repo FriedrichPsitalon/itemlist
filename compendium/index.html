@@ -373,6 +373,31 @@
 
   .bullet-list li { margin-bottom: 2px; }
 
+  .copy-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .copy-btn {
+    font-size: 0.76rem;
+    color: var(--accent);
+    background: rgba(184, 53, 44, 0.08);
+    border: 1px solid var(--accent-soft);
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .copy-btn:hover { background: rgba(184, 53, 44, 0.16); }
+
+  .copy-btn.copied {
+    color: #7fbf7f;
+    border-color: #3d5a3d;
+    background: rgba(127, 191, 127, 0.08);
+  }
+
   .no-desc-note {
     font-size: 0.78rem;
     color: var(--ink-faint);
@@ -535,6 +560,32 @@ async function init() {
   document.getElementById('filter-category').addEventListener('change', render);
   document.getElementById('filter-source').addEventListener('change', render);
 
+  document.getElementById('list').addEventListener('click', (e) => {
+    const copyBtn = e.target.closest('.copy-btn');
+    if (copyBtn) {
+      copyToClipboard(copyBtn.dataset.cmd, copyBtn);
+      return;
+    }
+    const viewAllBtn = e.target.closest('.view-all');
+    if (viewAllBtn) {
+      activateTag(viewAllBtn.dataset.tag);
+      return;
+    }
+    const groupHead = e.target.closest('.group-head');
+    if (groupHead) {
+      const section = groupHead.closest('.group-section');
+      const id = section.dataset.groupId;
+      if (collapsedGroups.has(id)) collapsedGroups.delete(id);
+      else collapsedGroups.add(id);
+      section.classList.toggle('collapsed');
+      return;
+    }
+    const row = e.target.closest('.row');
+    if (row) {
+      row.classList.toggle('expanded');
+    }
+  });
+
   render();
 }
 
@@ -635,16 +686,6 @@ function renderBrowse() {
   }).join('');
 
   list.innerHTML = intro + sections;
-
-  list.querySelectorAll('.view-all').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      activateTag(btn.dataset.tag);
-    });
-  });
-  list.querySelectorAll('.row').forEach(row => {
-    row.addEventListener('click', () => row.classList.toggle('expanded'));
-  });
 }
 
 function renderGrouped(filtered, type, tagsArr) {
@@ -672,19 +713,6 @@ function renderGrouped(filtered, type, tagsArr) {
       </div>
     `;
   }).join('');
-
-  list.querySelectorAll('.group-head').forEach(head => {
-    head.addEventListener('click', () => {
-      const section = head.closest('.group-section');
-      const id = section.dataset.groupId;
-      if (collapsedGroups.has(id)) collapsedGroups.delete(id);
-      else collapsedGroups.add(id);
-      section.classList.toggle('collapsed');
-    });
-  });
-  list.querySelectorAll('.row').forEach(row => {
-    row.addEventListener('click', (e) => { e.stopPropagation(); row.classList.toggle('expanded'); });
-  });
 }
 
 function render() {
@@ -735,9 +763,6 @@ function render() {
     list.appendChild(note);
   }
 
-  list.querySelectorAll('.row').forEach(row => {
-    row.addEventListener('click', () => row.classList.toggle('expanded'));
-  });
   updateTagDimming(query, type, cat, source);
 }
 
@@ -827,6 +852,43 @@ function tagLine(item) {
   return `<div class="meta-line">Tags: ${escapeHtml(visible.join(', '))}</div>`;
 }
 
+function buyCommandsFor(item) {
+  if (item.type === 'item') {
+    if (!item.abr) return [];
+    return [{ label: 'Copy buy command', cmd: `!buy ${item.abr}` }];
+  }
+  if (item.type === 'event') {
+    return [{ label: 'Copy buy command', cmd: `!buy ${item.defName}` }];
+  }
+  if (item.type === 'trait') {
+    const cmds = [];
+    if (item.canAdd) cmds.push({ label: 'Copy add command', cmd: `!buy trait ${item.label}` });
+    if (item.canRemove) cmds.push({ label: 'Copy remove command', cmd: `!buy removetrait ${item.label}` });
+    return cmds;
+  }
+  return [];
+}
+
+function copyButtonsHtml(item) {
+  const cmds = buyCommandsFor(item);
+  if (!cmds.length) return '';
+  return `<div class="copy-row">` + cmds.map(c =>
+    `<button type="button" class="copy-btn" data-cmd="${escapeHtml(c.cmd)}">${escapeHtml(c.label)}</button>`
+  ).join('') + `</div>`;
+}
+
+async function copyToClipboard(text, btn) {
+  const original = btn.textContent;
+  try {
+    await navigator.clipboard.writeText(text);
+    btn.textContent = 'Copied!';
+  } catch (e) {
+    btn.textContent = 'Copy failed';
+  }
+  btn.classList.add('copied');
+  setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 1400);
+}
+
 function detailHtml(item) {
   if (item.type === 'event') {
     let meta = [];
@@ -837,7 +899,7 @@ function detailHtml(item) {
     if (item.hasLocalCooldown) meta.push('local cooldown: ' + item.localCooldown + 's');
     const desc = item.description ? `<p class="description">${escapeHtml(item.description)}</p>` : '';
     const metaLine = meta.length ? `<div class="meta-line">${escapeHtml(meta.join(' \u00b7 '))}</div>` : '';
-    return `${desc}${metaLine}`;
+    return `${desc}${metaLine}${copyButtonsHtml(item)}`;
   }
 
   if (item.type === 'trait') {
@@ -849,7 +911,7 @@ function detailHtml(item) {
     const effects = bulletList(item.effects);
     const conflicts = item.conflicts && item.conflicts.length
       ? `<div class="meta-line">Conflicts with: ${escapeHtml(item.conflicts.join(', '))}</div>` : '';
-    return `${desc}${priceLine}${effects}${conflicts}`;
+    return `${desc}${priceLine}${effects}${conflicts}${copyButtonsHtml(item)}`;
   }
 
   if (item.type === 'race') {
@@ -861,43 +923,17 @@ function detailHtml(item) {
 
   // item
   if (!item.description) {
-    return `<p class="no-desc-note">No description curated yet for this item.</p>`;
+    return `<p class="no-desc-note">No description curated yet for this item.</p>${copyButtonsHtml(item)}`;
   }
   let meta = [];
   if (item.price != null) meta.push(item.price + ' coins');
   if (item.techLevel) meta.push(item.techLevel + ' tech');
   if (item.source) meta.push('from ' + item.source);
   const metaLine = meta.length ? `<div class="meta-line">${escapeHtml(meta.join(' \u00b7 '))}</div>` : '';
-  return `<p class="description">${escapeHtml(item.description)}</p>${metaLine}${tagLine(item)}${statGridFromDict(item.stats)}`;
+  return `<p class="description">${escapeHtml(item.description)}</p>${metaLine}${tagLine(item)}${statGridFromDict(item.stats)}${copyButtonsHtml(item)}`;
 }
 
 init();
-</script>
-
-<script>
-// Lets links like ?tag=Chaos or ?q=gun pre-filter the compendium on load.
-(function () {
-  const params = new URLSearchParams(location.search);
-  const tagParam = params.get('tag');
-  const qParam = params.get('q');
-  if (!tagParam && !qParam) return;
-
-  const start = Date.now();
-  (function whenReady() {
-    if (typeof ITEMS === 'undefined' || !ITEMS.length) {
-      if (Date.now() - start < 5000) requestAnimationFrame(whenReady);
-      return;
-    }
-    if (tagParam) {
-      const match = BROWSE_ORDER.find(t => t.toLowerCase() === tagParam.toLowerCase());
-      if (match) activateTag(match);
-    }
-    if (qParam) {
-      document.getElementById('search').value = qParam;
-      render();
-    }
-  })();
-})();
 </script>
 
 </body>
