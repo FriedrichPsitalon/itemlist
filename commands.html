@@ -2,95 +2,135 @@
 layout: page
 title: Commands
 permalink: /commands
+hide_title: true
 ---
 
-<script src="{{- 'assets/js/filter.js' | relative_url -}}"></script>
 <link rel="stylesheet" href="{{- 'assets/css/core.css' | relative_url -}} "/>
 <link rel="stylesheet" href="{{- 'assets/css/guide-theme.css' | relative_url -}}"/>
-<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<script src="{{- 'assets/js/tabs.js' | relative_url -}}"></script>
 
-{%- assign showCommands = site.data.commands.size -%}
+<a id="top"></a>
 
-{%- assign buy = "" -%}
-{%- assign commands_sorted = site.data.commands | sort: "name" -%}
+<h1>Commands</h1>
+<p class="sub">Every command you can use in chat, grouped by what it's for.</p>
 
-{%- for command in commands_sorted -%}
-    {%- if command.name == "Buy" -%}
-        {%- capture buy -%}
-            {{- command.usage | split: " " | first -}}
-        {%- endcapture -%}
-        {%- break -%}
-    {%- endif -%}
+{%- assign anyone_commands = site.data.commands | where: "userLevel", "Anyone" -%}
+
+<input class="search" id="cmdSearch" type="text" placeholder="Search all commands…" autocomplete="off">
+
+<div class="tab" id="cmdTabs">
+    {%- for cat in site.data.command_categories -%}
+        {%- assign catCommands = anyone_commands | where: "category", cat.key -%}
+        <button class="tabLinks"
+                data-cat="{{- cat.key -}}"
+                onclick="changeTab(event, '{{- cat.key -}}'); window.cmdLastTab = '{{- cat.key -}}'; window.cmdUpdateCount('{{- cat.key -}}');">
+            {{- cat.label | escape -}} <span class="tab-count">{{- catCommands.size -}}</span>
+        </button>
+    {%- endfor -%}
+</div>
+
+<p class="cmd-count" id="cmdCount"></p>
+
+{%- for cat in site.data.command_categories -%}
+    {%- assign catCommands = anyone_commands | where: "category", cat.key | sort: "name" -%}
+    <div class="tabContent" id="{{- cat.key -}}">
+        <div class="cmd-list">
+            {%- for cmd in catCommands -%}
+                <div class="cmd"
+                     data-name="{{- cmd.name | escape -}}"
+                     data-usage="{{- cmd.usage | escape -}}"
+                     data-desc="{{- cmd.description | escape -}}"
+                     data-category="{{- cat.label | escape -}}">
+                    <div>
+                        <div class="cmd-name">{{- cmd.name | escape -}}</div>
+                        <code class="cmd-usage">{{- cmd.usage | escape -}}</code>
+                    </div>
+                    <div class="cmd-desc">
+                        {{- cmd.description | escape -}}
+                        {%- if cmd.shortcut -%}
+                            <span class="shortcut-of">Shortcut for the underlying !buy command.</span>
+                        {%- endif -%}
+                        {%- if cmd.example -%}
+                            <span class="example-of"><span class="example-label">e.g.</span> <code>{{- cmd.example | escape -}}</code></span>
+                        {%- endif -%}
+                        <span class="cmd-category">{{- cat.label | escape -}}</span>
+                    </div>
+                </div>
+            {%- endfor -%}
+        </div>
+    </div>
 {%- endfor -%}
 
-<div id="commands">
-    {%- if showCommands > 0 -%}
-        {%- include search.html
-            id='commands'
-            type='Command'
-            placeholder=site.data.language.search_commands -%}
+<p class="cmd-empty" id="cmdEmpty" style="display: none;">No commands match that search.</p>
 
-        <table class="sortable" style="display: table">
-            <thead>
-                <tr>
-                    <th style="width: 35%">{{- site.data.language.command_name_header -}}</th>
-                    
-                    {%- if site.commands.userlevel -%}
-                        <th style="width: 18%">{{- site.data.language.user_level_header -}}</th>
-                    {%- endif -%}
+<script>
+    (function () {
+        var searchEl = document.getElementById("cmdSearch");
+        var tabsEl = document.getElementById("cmdTabs");
+        var countEl = document.getElementById("cmdCount");
+        var emptyEl = document.getElementById("cmdEmpty");
+        var allRows = document.getElementsByClassName("cmd");
+        var allContent = document.getElementsByClassName("tabContent");
+        var totalCount = allRows.length;
 
-                    <th>{{- site.data.language.description_header -}}</th>
-                </tr>
-            </thead>
+        function showTab(key) {
+            [].forEach.call(allContent, function (el) {
+                el.style.display = el.id === key ? "block" : "none";
+            });
+            [].forEach.call(tabsEl.getElementsByClassName("tabLinks"), function (btn) {
+                btn.className = btn.className.replace(" active", "");
+                if (btn.dataset.cat === key) {
+                    btn.className += " active";
+                }
+            });
+        }
 
-            <tbody>
-                {%- for command in commands_sorted -%}
-                    <tr>
-                        <td id="{{- command.name | slugify -}}">
-                            <a href="#{{- command.name | slugify -}}">{{- command.name -}}</a>
+        function updateCountForTab(key) {
+            var visible = 0;
+            [].forEach.call(allRows, function (row) {
+                if (row.closest(".tabContent").id === key) {
+                    visible++;
+                }
+            });
+            countEl.textContent = visible + " commands";
+        }
+        window.cmdUpdateCount = updateCountForTab;
 
-                            {%- if site.commands.mod -%}
-                                <br/>
-                                <span class="metadata">
-                                    {{- site.data.language.from | replace: '%s', command.data.mod -}}
-                                </span>
-                            {%- endif -%}
+        searchEl.addEventListener("input", function () {
+            var q = searchEl.value.trim().toUpperCase();
 
-                            {%- if site.commands.usage -%}
-                                <br/>
-                                <span class="metadata">
-                                    {% capture usage %}
-                                        {{ command.usage | prepend: " " | replace: "(", "&lt;" | replace: ")", "&gt;" }}
-                                    {% endcapture %}
+            if (q.length === 0) {
+                tabsEl.style.display = "flex";
+                [].forEach.call(allRows, function (row) {
+                    row.style.display = "grid";
+                    row.querySelector(".cmd-category").style.display = "none";
+                });
+                showTab(window.cmdLastTab);
+                updateCountForTab(window.cmdLastTab);
+                emptyEl.style.display = "none";
+                return;
+            }
 
-                                    {{- site.data.language.usage | replace: '%s', usage -}}
-                                </span>
-                            {%- endif -%}
-                        </td>
+            tabsEl.style.display = "none";
+            [].forEach.call(allContent, function (el) { el.style.display = "block"; });
 
-                        {%- if site.commands.userlevel -%}
-                            <td>{{- command.userLevel -}}</td>
-                        {%- endif -%}
-                        
-                        <td>
-                            {{- command.description -}}
+            var visible = 0;
+            [].forEach.call(allRows, function (row) {
+                var haystack = (row.dataset.name + " " + row.dataset.usage + " " + row.dataset.desc).toUpperCase();
+                var match = haystack.indexOf(q) !== -1;
+                row.style.display = match ? "grid" : "none";
+                row.querySelector(".cmd-category").style.display = match ? "block" : "none";
+                if (match) { visible++; }
+            });
 
-                            {%- if site.commands.shortcut and command.shortcut -%}
-                                <br/>
-                                <span class="metadata">
-                                    {% capture shortcut %}
-                                        {{ buy }} {{ command.usage | slice: 1, command.usage.size | replace: "(" , "&lt;" | replace: ")", "&gt;" }}
-                                    {% endcapture %}
+            countEl.textContent = visible + " of " + totalCount + " commands";
+            emptyEl.style.display = visible === 0 ? "block" : "none";
+        });
 
-                                    {{- site.data.language.shortcut | replace: '%s', shortcut -}}
-                                </span>
-                            {%- endif -%}
-                        </td>
-                    </tr>
-                {%- endfor -%}
-            </tbody>
-        </table>
-    {%- else -%}
-        <p style="text-align: center;">{{- site.data.languages.no_commands -}}</p>
-    {%- endif -%}
-</div>
+        var firstTab = tabsEl.querySelector(".tabLinks");
+        if (firstTab) {
+            firstTab.click();
+            updateCountForTab(firstTab.dataset.cat);
+        }
+    })();
+</script>
