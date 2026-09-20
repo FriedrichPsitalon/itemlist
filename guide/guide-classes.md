@@ -4,6 +4,8 @@ layout: page
 permalink: /guide/classes/
 hide_title: true
 hide: true
+description: "Every class's full kit: bonuses, penalties, and complete spell list."
+thumbnail: compendium/social-preview.png
 ---
 
 <link rel="stylesheet" href="/itemlist/assets/css/guide-theme.css">

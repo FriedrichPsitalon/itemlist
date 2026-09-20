@@ -3,6 +3,8 @@ title: Guide
 layout: page
 permalink: /guide/
 hide_title: true
+description: "How to play along with RimStream: earning coins, what chat can buy, and how to build a pawn."
+thumbnail: compendium/social-preview.png
 ---
 
 <link rel="stylesheet" href="/itemlist/assets/css/guide-theme.css">

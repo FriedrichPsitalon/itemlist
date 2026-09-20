@@ -4,6 +4,8 @@ layout: page
 permalink: /guide/jobs/
 hide_title: true
 hide: true
+description: "Picking a job for your pawn, and which classes, attributes, implants, gear and enchantments go with it."
+thumbnail: compendium/social-preview.png
 ---
 
 <link rel="stylesheet" href="/itemlist/assets/css/guide-theme.css">
