@@ -33604,7 +33604,7 @@
   "defName": "pawn",
   "label": "pawn",
   "description": "Purchases a new pawn to join the colony (or to adopt, if the buyer doesn't have one yet).",
-  "price": 1,
+  "price": 10,
   "karmaType": "Good",
   "mod": "Twitch Toolkit",
   "eventType": "Default",
