@@ -2,6 +2,9 @@
 title: Info
 layout: page
 permalink: /info
+hide_title: true
+description: "How the stream works: what Twitch Toolkit is, how coins and karma work, and how to start buying things."
+thumbnail: compendium/social-preview.png
 ---
 
 <link rel="stylesheet" href="{{- 'assets/css/guide-theme.css' | relative_url -}}"/>

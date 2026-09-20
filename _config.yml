@@ -1,10 +1,10 @@
 # Metadata
-title: "Rimstream Information Center"
+title: "RimStream"
 favicon: assets/img/favicon.png
-description: A custom version of Toolkit's item list to support all the latest features of Utils.
+description: "Chat spends coins, the colony pays for it. Read the guide, search the shop, or pick a way in."
 
 baseurl: '/itemlist' # the subpath of your site, e.g. /blog
-url: '' # the base hostname & protocol for your site, e.g. http://example.com
+url: 'https://friedrichpsitalon.github.io' # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ''
 github_username: 'FriedrichPsitalon'
 
