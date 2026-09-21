@@ -8,13 +8,13 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>RimStream Compendium</title>
 <meta property="og:title" content="RimStream Compendium">
-<meta property="og:description" content="Everything buyable in the stream shop — items, events, traits, and races.">
-<meta property="og:image" content="https://friedrichpsitalon.github.io/itemlist/compendium/social-preview.png">
+<meta property="og:description" content="Everything buyable in the stream shop — items, events, traits, and pawn kinds.">
+<meta property="og:image" content="social-preview.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="RimStream Compendium">
-<meta name="twitter:description" content="Everything buyable in the stream shop — items, events, traits, and races.">
-<meta name="twitter:image" content="https://friedrichpsitalon.github.io/itemlist/compendium/social-preview.png">
+<meta name="twitter:description" content="Everything buyable in the stream shop — items, events, traits, and pawn kinds.">
+<meta name="twitter:image" content="social-preview.png">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Inter:wght@400;500;600&display=swap');
 
@@ -65,17 +65,19 @@
     z-index: 10;
     background: #000000;
     border-bottom: 1px solid var(--rule);
-    padding: 16px 24px 16px;
+    padding: 0 24px 16px;
   }
 
-  .header-top {
+  .topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 1100px;
-    margin: 0 auto 14px;
+    margin: 0 auto;
     gap: 16px;
     flex-wrap: wrap;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule-soft);
   }
 
   h1 {
@@ -89,35 +91,38 @@
   .brand {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    text-decoration: none;
   }
 
   .brand img.mascot-icon {
-    height: 52px;
+    height: 34px;
     display: block;
     border-radius: 4px;
   }
 
-  .wordmark {
-    height: 46px;
-    display: block;
+  .brand-text {
+    font-family: 'Arvo', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--ink);
   }
 
-  .subtitle {
+  .page-lead {
+    max-width: 1100px;
+    margin: 12px auto 14px;
     font-size: 0.85rem;
     color: var(--ink-faint);
-    margin: 0;
   }
 
   .site-nav {
     display: flex;
-    gap: 14px;
-    margin-top: 6px;
-    justify-content: flex-end;
+    align-items: center;
+    gap: 18px;
   }
 
   .site-nav a {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--ink-dim);
     text-decoration: none;
     border-bottom: 1px solid transparent;
@@ -128,8 +133,10 @@
     border-bottom-color: var(--accent);
   }
 
-  .header-right {
-    text-align: right;
+  .site-nav .current {
+    font-size: 0.85rem;
+    color: var(--ink);
+    font-weight: 600;
   }
 
   .search-row {
@@ -474,60 +481,6 @@
     margin: 4px 0 4px;
   }
 
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-
-  .row-head:focus-visible,
-  .group-head:focus-visible,
-  .tag-toggle:focus-visible,
-  .copy-btn:focus-visible,
-  .view-all:focus-visible,
-  #search:focus-visible,
-  select.chip-select:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-
-  #notice {
-    max-width: 1052px;
-    width: calc(100% - 48px);
-    margin: 12px auto 0;
-    padding: 8px 12px;
-    font-size: 0.8rem;
-    color: var(--ink-dim);
-    background: var(--panel);
-    border: 1px solid var(--rule);
-    border-left: 3px solid var(--accent);
-  }
-  #notice[hidden] { display: none; }
-
-  .load-note, .load-error {
-    padding: 40px 4px;
-    color: var(--ink-faint);
-    text-align: center;
-  }
-  .load-error { color: var(--ink-dim); }
-  .load-error button {
-    margin-left: 10px;
-    font: inherit;
-    font-size: 0.8rem;
-    color: var(--ink);
-    background: var(--panel);
-    border: 1px solid var(--accent-soft);
-    padding: 4px 12px;
-    cursor: pointer;
-  }
-  .load-error button:hover { border-color: var(--accent); }
-
   #empty-state {
     display: none;
     text-align: center;
@@ -548,53 +501,47 @@
 <body>
 
 <header>
-  <h1 class="sr-only">RimStream Compendium</h1>
-  <div class="header-top">
-    <div class="brand">
+  <div class="topbar">
+    <a class="brand" href="../">
       <img class="mascot-icon" src="mascot-icon.png" alt="">
-      <img class="wordmark" src="rimstream-banner.png" alt="RimStream">
-    </div>
-    <div class="header-right">
-      <p class="subtitle">Everything buyable in the stream shop &mdash; items, events, traits, and races.</p>
-      <nav class="site-nav">
-        <a href="../">Home</a>
-        <a href="../commands">Commands</a>
-        <a href="../guide/">Guide</a>
-        <a href="../info">Info</a>
-        <a href="../modlist">Mod List</a>
-      </nav>
-    </div>
+      <span class="brand-text">RimStream</span>
+    </a>
+    <nav class="site-nav">
+      <a href="../commands/">Commands</a>
+      <a href="../guide/">Guide</a>
+      <a href="../info/">Info</a>
+      <a href="../modlist/">Mod List</a>
+      <span class="current">Store</span>
+    </nav>
   </div>
+  <p class="page-lead">Everything buyable in the stream shop &mdash; items, events, traits, and pawn kinds.</p>
   <div class="search-row">
-    <label class="sr-only" for="search">Search the shop</label>
-    <input id="search" type="text" placeholder="Search by name, command, or keyword&hellip;" autocomplete="off">
+    <input id="search" type="text" placeholder="Search by name&hellip;" autocomplete="off">
   </div>
   <div class="filters">
-    <label class="filter-label" for="filter-type">Type</label>
+    <span class="filter-label">Type</span>
     <select id="filter-type" class="chip-select">
       <option value="">All</option>
       <option value="item">Items</option>
       <option value="event">Events</option>
       <option value="trait">Traits</option>
-      <option value="race">Races</option>
+      <option value="race">Pawn Kinds</option>
     </select>
-    <label class="filter-label" for="filter-category">Category</label>
+    <span class="filter-label">Category</span>
     <select id="filter-category" class="chip-select"><option value="">All</option></select>
-    <label class="filter-label" for="filter-source">Source</label>
+    <span class="filter-label">Source</span>
     <select id="filter-source" class="chip-select"><option value="">All</option></select>
-    <span id="result-count" aria-live="polite"></span>
+    <span id="result-count"></span>
   </div>
   <div class="filters" id="tag-row"></div>
 </header>
 
-<div id="notice" role="status" hidden></div>
-
-<main id="list"><p class="load-note">Loading the shop&hellip;</p></main>
+<main id="list"></main>
 
 <div id="empty-state">No items match that search.</div>
 
-<footer id="site-footer" hidden>
-  <span id="footer-count"></span> things indexed. Select any row to see its full details.
+<footer>
+  <span id="footer-count"></span> things indexed. Click any row to see its full details.
 </footer>
 
 <script>
@@ -608,36 +555,9 @@ function sourceOf(it) {
   return it.source || it.mod || '';
 }
 
-let initializing = true;
-
 async function init() {
-  try {
-    const res = await fetch('compendium.json');
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    ITEMS = await res.json();
-  } catch (err) {
-    console.error('Could not load compendium.json', err);
-    document.getElementById('list').innerHTML =
-      `<p class="load-error">Couldn't load the shop data. Check your connection, then try again.` +
-      `<button type="button" onclick="location.reload()">Reload</button></p>`;
-    return;
-  }
-
-  // Precompute search text once: names/commands first, then tags and description
-  ITEMS.forEach(it => {
-    const name = [it.label, it.defName, it.abr].filter(Boolean).join(' ').toLowerCase();
-    it._n = name;
-    it._a = name + ' ' + (it.tags || []).join(' ').toLowerCase() + ' ' + (it.description || '').toLowerCase();
-  });
-
-  // Rows that share a label (100 "meat" items, two "elephant tusk", two "human") are
-  // told apart by their defName, e.g. Meat_Alligator -> "meat alligator"
-  const labelCounts = {};
-  ITEMS.forEach(it => {
-    const k = it.type + '|' + (it.label || it.defName);
-    labelCounts[k] = (labelCounts[k] || 0) + 1;
-  });
-  ITEMS.forEach(it => { it._dup = labelCounts[it.type + '|' + (it.label || it.defName)] > 1; });
+  const res = await fetch('compendium.json');
+  ITEMS = await res.json();
 
   const categories = new Set();
   const sources = new Set();
@@ -658,14 +578,13 @@ async function init() {
     .filter(t => !skipTags.has(t))
     .sort((a, b) => tagCounts[b] - tagCounts[a]);
   tagRow.innerHTML = `<span class="filter-label">Tags</span>` + orderedTags.map(t =>
-    `<button type="button" class="tag-toggle" aria-pressed="false" data-tag="${escapeHtml(t)}">${escapeHtml(t)} (${tagCounts[t]})</button>`
+    `<button type="button" class="tag-toggle" data-tag="${escapeHtml(t)}">${escapeHtml(t)} (${tagCounts[t]})</button>`
   ).join('');
   tagRow.querySelectorAll('.tag-toggle').forEach(btn => {
     btn.addEventListener('click', () => {
       const t = btn.dataset.tag;
       if (activeTags.has(t)) { activeTags.delete(t); btn.classList.remove('active'); }
       else { activeTags.add(t); btn.classList.add('active'); }
-      btn.setAttribute('aria-pressed', String(activeTags.has(t)));
       render();
     });
   });
@@ -676,7 +595,6 @@ async function init() {
   });
 
   document.getElementById('footer-count').textContent = ITEMS.length;
-  document.getElementById('site-footer').hidden = false;
 
   document.getElementById('search').addEventListener('input', debounce(render, 120));
   document.getElementById('filter-type').addEventListener('change', render);
@@ -701,88 +619,15 @@ async function init() {
       if (collapsedGroups.has(id)) collapsedGroups.delete(id);
       else collapsedGroups.add(id);
       section.classList.toggle('collapsed');
-      groupHead.setAttribute('aria-expanded', String(!section.classList.contains('collapsed')));
       return;
     }
     const row = e.target.closest('.row');
     if (row) {
       row.classList.toggle('expanded');
-      const head = row.querySelector('.row-head');
-      if (head) head.setAttribute('aria-expanded', String(row.classList.contains('expanded')));
     }
   });
 
-  // Enter or Space on a focused row/group header works like a click
-  document.getElementById('list').addEventListener('keydown', (e) => {
-    if (e.key !== 'Enter' && e.key !== ' ') return;
-    const head = e.target.closest('.row-head, .group-head');
-    if (head && e.target === head) { e.preventDefault(); head.click(); }
-  });
-
-  applyUrlParams();
   render();
-  initializing = false;
-}
-
-// Deep links: ?q=gun, ?tag=Chaos (or ?tag=Melee,Magic), ?type=event, ?cat=..., ?source=...
-// Tag names are matched case-insensitively. Unknown tags are ignored, with a notice.
-// syncUrl() writes the same parameters back as filters change, so the address bar is always shareable.
-function applyUrlParams() {
-  const params = new URLSearchParams(window.location.search);
-
-  const q = params.get('q');
-  if (q) document.getElementById('search').value = q;
-
-  [['type', 'filter-type'], ['cat', 'filter-category'], ['source', 'filter-source']].forEach(([key, id]) => {
-    const v = params.get(key);
-    const sel = document.getElementById(id);
-    if (v && [...sel.options].some(o => o.value === v)) sel.value = v;
-  });
-
-  const tagParam = params.getAll('tag').join(',');
-  if (tagParam) {
-    const known = {};
-    document.querySelectorAll('.tag-toggle').forEach(btn => {
-      known[btn.dataset.tag.toLowerCase()] = btn;
-    });
-    const unknown = [];
-    tagParam.split(',').forEach(raw => {
-      const name = raw.trim();
-      if (!name) return;
-      const btn = known[name.toLowerCase()];
-      if (btn) {
-        activeTags.add(btn.dataset.tag);
-        btn.classList.add('active');
-        btn.setAttribute('aria-pressed', 'true');
-      } else {
-        unknown.push(name);
-      }
-    });
-    if (unknown.length) {
-      const el = document.getElementById('notice');
-      el.textContent = (unknown.length === 1 ? 'There is no tag called ' : 'There are no tags called ') +
-        unknown.map(t => '"' + t + '"').join(', ') + ', so ' + (unknown.length === 1 ? 'it was' : 'they were') +
-        ' ignored. Use the tags above to filter.';
-      el.hidden = false;
-    }
-  }
-}
-
-function syncUrl() {
-  const p = new URLSearchParams();
-  const q = document.getElementById('search').value.trim();
-  if (q) p.set('q', q);
-  if (activeTags.size) p.set('tag', [...activeTags].join(','));
-  const type = document.getElementById('filter-type').value;
-  const cat = document.getElementById('filter-category').value;
-  const source = document.getElementById('filter-source').value;
-  if (type) p.set('type', type);
-  if (cat) p.set('cat', cat);
-  if (source) p.set('source', source);
-  const qs = p.toString().replace(/%2C/g, ',');
-  try {
-    history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '') + window.location.hash);
-  } catch (e) { /* some browsers block this on local files; the page still works */ }
 }
 
 function populateSelect(id, values) {
@@ -809,8 +654,8 @@ function matches(item, query, type, cat, source, tags) {
     for (const t of tags) if (!itemTags.has(t)) return false;
   }
   if (query) {
-    const hay = item._a || (item.label || item.defName || '').toLowerCase();
-    for (const word of query.split(/\s+/)) if (!hay.includes(word)) return false;
+    const hay = (item.label || item.defName || '').toLowerCase();
+    if (!hay.includes(query)) return false;
   }
   return true;
 }
@@ -854,7 +699,7 @@ function isDefaultState(query, type, cat, source) {
 function activateTag(t) {
   activeTags.add(t);
   const btn = document.querySelector(`.tag-toggle[data-tag="${CSS.escape(t)}"]`);
-  if (btn) { btn.classList.add('active'); btn.setAttribute('aria-pressed', 'true'); }
+  if (btn) btn.classList.add('active');
   render();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -900,7 +745,7 @@ function renderGrouped(filtered, type, tagsArr) {
     const isCollapsed = collapsedGroups.has(groupId);
     return `
       <div class="group-section ${isCollapsed ? 'collapsed' : ''}" data-group-id="${escapeHtml(groupId)}">
-        <div class="group-head" role="button" tabindex="0" aria-expanded="${!isCollapsed}">
+        <div class="group-head">
           <span class="chevron">&#9660;</span>
           <span class="group-title">${escapeHtml(prettyLabel(key))}</span>
           <span class="group-count">(${buckets[key].length})</span>
@@ -912,12 +757,6 @@ function renderGrouped(filtered, type, tagsArr) {
 }
 
 function render() {
-  if (!initializing) document.getElementById('notice').hidden = true;
-  renderView();
-  syncUrl();
-}
-
-function renderView() {
   const query = document.getElementById('search').value.trim().toLowerCase();
   const type = document.getElementById('filter-type').value;
   const cat = document.getElementById('filter-category').value;
@@ -955,13 +794,6 @@ function renderView() {
     return;
   }
 
-  if (query) {
-    // Matches in the name or !buy command come before matches that only show up in tags or descriptions
-    const words = query.split(/\s+/);
-    const nameHit = it => words.every(w => (it._n || '').includes(w)) ? 1 : 0;
-    filtered.sort((a, b) => nameHit(b) - nameHit(a));
-  }
-
   const shown = filtered.slice(0, MAX_RENDER);
   list.innerHTML = shown.map(rowHtml).join('');
 
@@ -980,7 +812,7 @@ function escapeHtml(s) {
   return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
-const TYPE_LABEL = { item: 'Item', event: 'Event', trait: 'Trait', race: 'Race' };
+const TYPE_LABEL = { item: 'Item', event: 'Event', trait: 'Trait', race: 'Pawn Kind' };
 
 function subtitleOf(item) {
   if (item.type === 'item') return prettyLabel((item.thingCategories && item.thingCategories[0]) || '');
@@ -1017,16 +849,9 @@ function vitalBadgeText(item) {
   return item.vitalStat.value + ' ' + item.vitalStat.label;
 }
 
-function displayLabel(item) {
-  if (item._dup) {
-    return item.defName.replace(/_/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase();
-  }
-  return item.label || item.defName;
-}
-
 function rowHtml(item) {
   const isGeneric = item.kind && item.kind.startsWith('generic');
-  const label = escapeHtml(displayLabel(item));
+  const label = escapeHtml(item.label || item.defName);
   const cost = costOf(item);
   const vital = vitalBadgeText(item);
 
@@ -1036,7 +861,7 @@ function rowHtml(item) {
 
   return `
     <div class="row ${isGeneric ? 'is-generic' : ''}">
-      <div class="row-head" role="button" tabindex="0" aria-expanded="false">
+      <div class="row-head">
         <span class="row-label">${label}</span>
         ${badges}
         <span class="row-snippet">${snippetOf(item)}</span>
