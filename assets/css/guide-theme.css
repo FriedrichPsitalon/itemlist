@@ -382,3 +382,66 @@ h1.title {
   padding: 40px 0;
   font-size: 0.9rem;
 }
+
+/* ==========================================================================
+   Class ability perks — added for the Classes page perk breakdown project.
+   Two-level collapse: ability name -> description -> nested Perks toggle.
+   ========================================================================== */
+
+.ability-list { list-style: none; margin: 0 0 1em; padding: 0; }
+.ability-list > li { border-bottom: 1px solid var(--rule-soft); }
+.ability-list > li:last-child { border-bottom: none; }
+
+.ability-row { padding: 0; }
+.ability-row > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 8px 10px 2px;
+  display: flex;
+  gap: 0.55em;
+  align-items: baseline;
+}
+.ability-row > summary::-webkit-details-marker { display: none; }
+.ability-row > summary::before {
+  content: '▸';
+  color: var(--accent);
+  flex: none;
+  transition: transform 0.15s;
+}
+.ability-row[open] > summary::before { transform: rotate(90deg); }
+.ability-row > summary:hover strong { color: var(--accent); }
+
+.ability-body { padding: 4px 0 10px 1.55em; }
+.ability-body > p.ability-desc { margin: 0 0 10px; color: var(--ink-dim); }
+
+.perk-toggle { margin: 0; }
+.perk-toggle > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+.perk-toggle > summary::-webkit-details-marker { display: none; }
+.perk-toggle > summary::before {
+  content: '▸';
+  transition: transform 0.15s;
+}
+.perk-toggle[open] > summary::before { transform: rotate(90deg); }
+.perk-toggle > .perk-panel { margin-top: 8px; }
+
+.perk-panel {
+  margin: 0 0 14px 1.5em;
+  padding: 10px 14px;
+  background: var(--panel);
+  border-left: 2px solid var(--rule);
+  border-radius: 0 3px 3px 0;
+}
+.perk-cap-line { color: var(--ink-faint); font-size: 0.82rem; font-style: italic; margin: 0 0 6px; }
+.perk-panel ul { margin: 0; padding-left: 1.2em; }
+.perk-panel li { font-size: 0.92rem; margin-bottom: 0.3em; }
+.perk-panel li:last-child { margin-bottom: 0; }
