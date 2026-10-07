@@ -516,7 +516,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": "Fully heals your own pawn.",
+    "description": "Removes one injury or malady from your own pawn per use. Despite the name, it does not fully heal you in one go \u2014 run it again to clear additional problems.",
     "name": "Heal me",
     "usage": "!healme",
     "userLevel": "Anyone",
@@ -536,7 +536,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": "Fully heals every pawn in the colony.",
+    "description": "Removes one injury or malady from every pawn in the colony per use. Despite the name, it does not fully heal anyone in one go \u2014 run it again to clear additional problems.",
     "name": "Healall",
     "usage": "!healall",
     "userLevel": "Anyone",
@@ -656,7 +656,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": "Fully heals a pawn of your choosing.",
+    "description": "Removes one injury or malady from a pawn of your choosing per use. Despite the name, it does not fully heal in one go \u2014 run it again to clear additional problems.",
     "name": "Heal any pawn",
     "usage": "!healanypawn",
     "userLevel": "Anyone",
@@ -756,7 +756,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": "Fully heals a chosen pawn, curing all injuries and diseases.",
+    "description": "Fully heals a chosen pawn, curing all injuries and diseases \u2014 charges once per injury or malady removed, not a flat fee, so a badly hurt pawn costs much more than a lightly hurt one.",
     "name": "Full heal",
     "usage": "!fullheal",
     "userLevel": "Anyone",
