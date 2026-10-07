@@ -45,6 +45,7 @@ For exact commands — and there are a lot of them — check the [Info page](/it
 - `!buy pawn` — 10 coins get you a default colonist in default gear with your name on it. Totally random.
 - `!buy wildman` or `!buy prisoner` — also 10 coins, but a specific background. Have to actually be recruited by the colony.
 - `!buy maninblack` — 15 coins, but you get a mysterious gunslinger with a duster, flak vest, cowboy hat, and a revolver. You're aimin' to clean up this here settlement.
+- `!joinqueue` — free. Puts you in line to adopt a colonist who already exists and is unclaimed, rather than one built from scratch. Less control over who you get, but they come with some history already on them.
 
 **Chaos Reigns!** — [bad events galore!](/itemlist/compendium/?tag=Chaos) When you want to make someone's day worse, all the options are here.
 
