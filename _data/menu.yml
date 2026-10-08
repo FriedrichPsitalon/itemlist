@@ -5,6 +5,9 @@
 # The Compendium (compendium/index.html) is a plain static HTML file with
 # no front matter, so Jekyll never sees it as a "page" and it can't get a
 # nav entry the normal way (via a page's own title). This is that entry.
+- title: Gear Calculator
+  url: /calculator/
+  position: 0
 - title: Store
   url: /compendium/
   position: 1

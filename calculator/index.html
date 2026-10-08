@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" sizes="32x32" href="../compendium/favicon-32.png">
 <title>RimStream Gear Calculator</title>
-<meta name="robots" content="noindex">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Inter:wght@400;500;600&display=swap');
 
@@ -48,6 +47,7 @@
   .site-nav { display: flex; gap: 18px; font-size: .85rem; }
   .site-nav a { color: var(--ink-dim); text-decoration: none; border-bottom: 1px solid transparent; }
   .site-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .site-nav .current { color: var(--ink); font-weight: 600; }
   .lead { max-width: 1500px; margin: 0 auto; font-size: .85rem; color: var(--ink-faint); }
 
   main { max-width: 1500px; margin: 0 auto; padding: 16px; display: grid; gap: 16px;
@@ -181,8 +181,12 @@
       <span class="brand-text">RimStream</span>
     </a>
     <nav class="site-nav">
+      <a href="../commands">Commands</a>
+      <a href="../guide/">Guide</a>
+      <a href="../info">Info</a>
+      <a href="../modlist">Mod List</a>
+      <span class="current">Gear Calculator</span>
       <a href="../compendium/">Store</a>
-      <span>Gear Calculator</span>
     </nav>
   </div>
   <p class="lead">Pick a weapon, armor or clothing item, then compare every material and quality &mdash; stats, materials needed and coin price &mdash; and copy the exact chat command.</p>
