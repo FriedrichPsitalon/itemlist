@@ -1,16 +1,37 @@
-# Materials Calculator - plan (branch: calculator)
+# Materials calculator
 
-Lives at /calculator/ on the Compendium site (GitHub Pages deploys from main only; this branch is safe to push).
+Lives at `/calculator/` on the Compendium site. It is a plain static page (no build step, no nav entry, so it stays unlinked until it's ready).
+GitHub Pages deploys from `main` only; all work happens on the `calculator` branch.
 
-## Findings from prep
-- Buy syntax (ToolkitUtils): `!buy pants[devilstrand,excellent] 3` - material and quality in brackets, no space before the bracket, quantity last.
-- Base store price: `_data/StoreItems.json` (`abr`, `price`, `defname`). Gladius = 60 coins. Note compendium.json "price" is a different scale (6) - use StoreItems.
-- Viable materials list: Toolkit's `itemMaterials.json` (~90 names, includes modded stuff).
-- compendium.json has material stats (StuffPower_*, multipliers) for ~51 materials but NOT: allowed stuff per item, costStuffCount, quality factors, per-material armor/DPS.
-- ToolkitUtils has configurable per-quality price multipliers (awful..legendary) + buyItemMaterial/buyItemQuality toggles. Values aren't in the saved settings file (defaults), so they need confirming.
+## Working on it from another computer
+```bash
+git clone https://github.com/FriedrichPsitalon/itemlist.git
+cd itemlist
+git checkout calculator
+python -m http.server 8765      # then open http://localhost:8765/calculator/
+```
+Edit `calculator/index.html` (all CSS/JS inline) and refresh. `calc-data.json` is committed, so no game or Python is needed for page work.
 
-## Steps
-1. Extend RimstreamLabelExporter mod -> `itemStats.json` (stuff categories, costStuffCount, per-stuff stats, quality factors). Needs one RimWorld launch.
-2. Bot publishes that file to the repo like tally.json (or copy manually).
-3. Build static calculator (vanilla JS, no build step) using the site theme.
-4. Snapshot/compare tray + Copy button producing `!buy item[material,quality]`.
+## Refreshing the data (only on the PC with RimWorld)
+1. Launch RimWorld to the main menu. The `Rimstream Label Exporter` mod rewrites
+   `...\LocalLow\Ludeon Studios\RimWorld by Ludeon Studios\TwitchToolkit\itemStats.json`
+   whenever the game version or mod list changes (source: `RimstreamBot-src/rimworld-mod/Source/ItemStatsExporter.cs`).
+2. `python calculator/build_data.py` merges it with `_data/StoreItems.json` and Toolkit's `itemMaterials.json` / `itemdata.json` into `calculator/calc-data.json`.
+3. Commit and push the branch.
+
+## The price rule (fitted to real store prices, Oct 2026)
+| You type | Price |
+|---|---|
+| `!buy gladius` | base price |
+| `!buy gladius[steel]` | round((base + units x material price) x 1.05) |
+| `!buy gladius[good]` | round(base x quality factor x 1.1) |
+| `!buy gladius[steel,good]` | round(round((base + units x material price) x 1.05) x quality factor x 1.1) |
+
+Quality factors: awful 0.5, poor 0.75, normal 1, good 1.25, excellent 1.5, masterwork 2.5, legendary 5.
+`units` = the item's `costStuffCount` from the game; material price = its `StoreItems.json` price.
+13 of 15 observed prices match exactly; two shroud prices (excellent, masterwork) were off by 1 coin.
+Naming a quality, even `normal`, costs 10% more than leaving it off.
+
+## Still to verify in the store
+- Materials with spaces (`alpaca wool`): does the buy command want `[alpacawool]` or `[alpaca wool]`? The calculator emits the store name without spaces.
+- Whether `$item[...]` is a shortcut for `!buy item[...]` (the calculator copies `!buy ...`).
