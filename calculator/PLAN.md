@@ -32,6 +32,6 @@ Quality factors: awful 0.5, poor 0.75, normal 1, good 1.25, excellent 1.5, maste
 13 of 15 observed prices match exactly; two shroud prices (excellent, masterwork) were off by 1 coin.
 Naming a quality, even `normal`, costs 10% more than leaving it off.
 
-## Still to verify in the store
-- Materials with spaces (`alpaca wool`): does the buy command want `[alpacawool]` or `[alpaca wool]`? The calculator emits the store name without spaces.
-- Whether `$item[...]` is a shortcut for `!buy item[...]` (the calculator copies `!buy ...`).
+## Confirmed in the store (Oct 2026)
+- Materials with spaces must be typed without the space: `[alpacawool]` works, `[alpaca wool]` does not. The calculator uses the store name without spaces.
+- `$item[...]` is just a game shorthand for `!buy item[...]`; both work. The calculator copies the `!buy` form.
