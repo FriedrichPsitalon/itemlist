@@ -145,6 +145,15 @@
   .pickbar.ready .copy-btn:not(:disabled), .pickbar.ready .ghost-btn.go { box-shadow: 0 0 10px rgba(184,53,44,.55); }
   .pickbar.ready .ghost-btn.go { border-color: var(--accent); }
   .magic-row span:last-child { color: #c9aed3; }
+  .tipped { cursor: help; text-decoration: underline dotted var(--ink-faint); text-underline-offset: 3px; }
+  .stat[data-tip] { cursor: help; }
+  .stat[data-tip] .k { text-decoration: underline dotted var(--ink-faint); text-underline-offset: 3px; }
+  .acc-toggle { cursor: pointer; color: var(--ink); }
+  .hint { font-size: .64rem; color: var(--accent); margin-top: 1px; white-space: nowrap; }
+  .oor { opacity: .45; }
+  .tooltip { position: fixed; left: 0; top: 0; z-index: 60; max-width: 300px; padding: 9px 11px; background: #000;
+    color: var(--ink); border: 1px solid var(--accent-soft); border-radius: 6px; font-size: .78rem; line-height: 1.45;
+    box-shadow: 0 8px 24px rgba(0,0,0,.6); pointer-events: none; text-transform: none; letter-spacing: 0; font-weight: 400; }
   .compare .special-row td { white-space: normal; min-width: 150px; max-width: 220px; font-size: .72rem; vertical-align: top; }
 
   /* ---- tray ---- */
@@ -224,6 +233,7 @@ const STAT_DEFS = {
   dps:        { label: 'DPS',            better: 'high', fmt: v => v.toFixed(1) },
   ap:         { label: 'Armor pen.',     better: 'high', fmt: pct },
   dmg:        { label: 'Damage / shot',  better: 'high', fmt: v => v.toFixed(1) },
+  accTouch:   { label: 'Acc. touch',     better: 'high', fmt: pct },
   accShort:   { label: 'Acc. short',     better: 'high', fmt: pct },
   accMed:     { label: 'Acc. medium',    better: 'high', fmt: pct },
   accLong:    { label: 'Acc. long',      better: 'high', fmt: pct },
@@ -240,10 +250,55 @@ const STAT_DEFS = {
 };
 const STAT_ORDER = {
   melee:   ['dps', 'ap', 'hp', 'flam', 'mass', 'work'],
-  ranged:  ['dps', 'dmg', 'ap', 'accShort', 'accMed', 'accLong', 'range', 'hp', 'flam', 'mass', 'work'],
+  ranged:  ['dps', 'dmg', 'ap', 'accTouch', 'accShort', 'accMed', 'accLong', 'range', 'hp', 'flam', 'mass', 'work'],
   apparel: ['sharp', 'blunt', 'heat', 'cold', 'warm', 'hp', 'flam', 'mass', 'work'],
 };
 function pct(v) { return (v * 100).toFixed(0) + '%'; }
+
+// Ranged accuracy bands, in map tiles (squares). Hit chance between two bands is interpolated.
+const BANDS = [
+  { id: 'accTouch', name: 'Touch', tiles: 3 },
+  { id: 'accShort', name: 'Short', tiles: 12 },
+  { id: 'accMed',   name: 'Medium', tiles: 25 },
+  { id: 'accLong',  name: 'Long', tiles: 40 },
+];
+const BAND_IDS = BANDS.map(b => b.id);
+const bandOf = id => BANDS.find(b => b.id === id);
+const weaponRange = item => (item.ranged ? item.ranged.range : null);
+const beyondRange = (item, id) => { const b = bandOf(id), r = weaponRange(item); return !!(b && r != null && b.tiles > r); };
+function cycleBand() { state.accBand = BAND_IDS[(BAND_IDS.indexOf(state.accBand) + 1) % BAND_IDS.length]; renderTray(); }
+
+// Explanations shown on hover / keyboard focus.
+function tipText(id, item, value) {
+  const r = weaponRange(item);
+  if (bandOf(id)) {
+    const b = bandOf(id);
+    const reach = r == null ? '' : (b.tiles > r
+      ? ' This weapon only reaches ' + r.toFixed(1) + ' tiles, so it can\u2019t fire this far and this figure never applies.'
+      : ' This weapon reaches ' + r.toFixed(1) + ' tiles, so it can fire at this distance.');
+    return b.name + ' accuracy: the chance to hit a target ' + (b.id === 'accTouch' ? 'up to ' : 'about ') + b.tiles +
+      ' tiles away (1 tile = 1 map square).' + reach +
+      ' Between bands the chance is blended, so a target 18 tiles away falls between the Short (12) and Medium (25) figures. Shooter skill, weather and cover also change the real chance.';
+  }
+  if (id === 'range') return 'How far the weapon can shoot, in tiles. It never fires past this, even if a longer accuracy band lists a number. Bands: Touch 3 \u00B7 Short 12 \u00B7 Medium 25 \u00B7 Long 40 tiles.';
+  if (id === 'ap') {
+    let t = 'Armor penetration cancels part of the target\u2019s armor: effective armor = armor \u2212 AP (never below 0). Each hit rolls against that: under half of it the hit is fully absorbed, under all of it the damage is halved, otherwise it lands in full.';
+    if (value !== undefined) {
+      const e = Math.max(0, 0.5 - value);
+      t += ' Example: against armor that blocks 50%, this weapon\u2019s ' + pct(value) + ' AP leaves ' + pct(e) + ' \u2014 ' +
+        pct(e / 2) + ' of hits absorbed, ' + pct(e / 2) + ' halved, ' + pct(1 - e) + ' full damage.';
+    }
+    return t;
+  }
+  if (id === 'dps') return item.kind === 'ranged'
+    ? 'Estimated damage per second at Medium range (25 tiles): damage \u00D7 shots per burst \u00D7 Medium accuracy, divided by the time one attack cycle takes. Before armor.'
+    : 'Average damage per second across the weapon\u2019s attacks, before the target\u2019s armor.';
+  return null;
+}
+function tipAttrs(id, item, value, extra) {
+  const tip = tipText(id, item, value);
+  return tip ? { 'data-tip': tip + (extra || ''), tabindex: 0 } : {};
+}
 
 // ---------------------------------------------------------------- state
 let DATA = null;
@@ -252,7 +307,7 @@ const state = {
   group: 'weapon', def: null, search: '',
   mats: new Set(), quals: new Set(['std']),
   pick: null, qty: 1,
-  sort: { col: null, dir: 1 }, compare: false,
+  sort: { col: null, dir: 1 }, compare: false, accBand: 'accShort',
   tray: [],
 };
 
@@ -303,6 +358,7 @@ function compute(item, mat, q) {
     const cooldown = raw('RangedWeapon_Cooldown') || 0;
     const cycle = r.warmup + cooldown + Math.max(0, r.burstShots - 1) * r.ticksBetweenShots / 60;
     set('dmg', dmg); set('range', r.range);
+    if (raw('AccuracyTouch') !== undefined) set('accTouch', acc('AccuracyTouch'));
     if (raw('AccuracyShort') !== undefined) { set('accShort', acc('AccuracyShort')); set('accMed', acc('AccuracyMedium')); set('accLong', acc('AccuracyLong')); }
     if (cycle > 0 && raw('AccuracyMedium') !== undefined) set('dps', dmg * r.burstShots * acc('AccuracyMedium') / cycle);
     if (r.armorPenetration > 0) set('ap', r.armorPenetration * dmgMul);
@@ -371,6 +427,31 @@ async function copyText(text, btn) {
   setTimeout(() => { btn.textContent = old; btn.classList.remove('copied'); }, 1400);
 }
 
+// ---------------------------------------------------------------- tooltips
+const tipBox = el('div', { class: 'tooltip', id: 'tooltip', role: 'tooltip', hidden: true });
+document.body.append(tipBox);
+let tipTarget = null;
+function showTip(t) {
+  tipTarget = t;
+  tipBox.textContent = t.getAttribute('data-tip');
+  tipBox.style.left = '0px'; tipBox.style.top = '0px';
+  tipBox.hidden = false;
+  const r = t.getBoundingClientRect(), b = tipBox.getBoundingClientRect();
+  const left = Math.min(Math.max(8, r.left), Math.max(8, innerWidth - b.width - 8));
+  let top = r.bottom + 8;
+  if (top + b.height > innerHeight - 8) top = Math.max(8, r.top - b.height - 8);
+  tipBox.style.left = left + 'px'; tipBox.style.top = top + 'px';
+}
+function hideTip() { tipBox.hidden = true; tipTarget = null; }
+document.addEventListener('mouseover', e => {
+  const t = e.target.closest ? e.target.closest('[data-tip]') : null;
+  if (t) { if (t !== tipTarget) showTip(t); } else if (tipTarget) hideTip();
+});
+document.addEventListener('focusin', e => { const t = e.target.closest('[data-tip]'); if (t) showTip(t); else hideTip(); });
+document.addEventListener('focusout', hideTip);
+document.addEventListener('scroll', hideTip, true);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') hideTip(); });
+
 // ---------------------------------------------------------------- picker
 function renderTabs() {
   const tabs = document.getElementById('tabs');
@@ -438,6 +519,7 @@ function sortRows(rows, ids) {
 }
 
 function renderBuilder() {
+  hideTip();
   const host = document.getElementById('builder');
   const item = byDef[state.def];
   if (!item) { host.replaceChildren(el('p', { class: 'empty', text: 'Choose an item on the left to start.' })); return; }
@@ -461,7 +543,8 @@ function renderBuilder() {
       '), normal quality. Needs ' + item.units + ' units of material to make.' }));
   }
   kids.push(el('div', { class: 'stat-grid' }, ...ids.map(id =>
-    el('div', { class: 'stat' }, el('div', { class: 'k', text: STAT_DEFS[id].label }),
+    el('div', Object.assign({ class: 'stat' + (beyondRange(item, id) ? ' oor' : '') }, tipAttrs(id, item, orig[id])),
+      el('div', { class: 'k', text: STAT_DEFS[id].label }),
       el('div', { class: 'v', text: STAT_DEFS[id].fmt(orig[id] || 0) })))));
   const fx = effectsOf(item);
   if (fx.length || (item.special || []).length) {
@@ -511,7 +594,7 @@ function renderBuilder() {
     const sorted = sortRows(rows, ids);
     const head = el('tr', null,
       th('mat', 'Material'), th('q', 'Quality'),
-      ...ids.map(id => th(id, STAT_DEFS[id].label)),
+      ...ids.map(id => th(id, STAT_DEFS[id].label, tipText(id, item))),
       el('th', { text: 'Materials needed' }), th('price', 'Coins'), el('th', { text: 'vs original' }), el('th', { text: '' }));
     const body = el('tbody');
     for (const r of sorted) {
@@ -542,8 +625,8 @@ function renderBuilder() {
     return el('button', { class: 'chip', type: 'button', 'aria-pressed': String(on), onclick: () => { fn(); renderBuilder(); } },
       label, price != null ? el('span', { class: 'cp', text: price }) : null);
   }
-  function th(col, label) {
-    return el('th', { text: label, 'aria-sort': state.sort.col === col ? (state.sort.dir === 1 ? 'ascending' : 'descending') : 'none',
+  function th(col, label, tip) {
+    return el('th', { text: label, class: tip ? 'tipped' : null, 'data-tip': tip, tabindex: tip ? 0 : null, 'aria-sort': state.sort.col === col ? (state.sort.dir === 1 ? 'ascending' : 'descending') : 'none',
       onclick: () => { state.sort = { col, dir: state.sort.col === col ? -state.sort.dir : 1 }; renderBuilder(); } });
   }
   function toggle(set, v) { set.has(v) ? set.delete(v) : set.add(v); }
@@ -607,6 +690,7 @@ function snapData(s) {
   return { item, stats: compute(item, s.mat, s.q), price: priceOf(item, s.mat, s.q), cmd: commandOf(item, s.mat, s.q, s.qty) };
 }
 function renderTray() {
+  hideTip();
   const host = document.getElementById('tray');
   document.querySelector('main').classList.toggle('wide', state.compare && state.tray.length > 1);
   document.getElementById('tray-clear').hidden = !state.tray.length;
@@ -618,20 +702,32 @@ function renderTray() {
   if (state.compare && state.tray.length > 1) { host.replaceChildren(compareTable()); return; }
   host.replaceChildren(...state.tray.map(s => {
     const d = snapData(s), item = d.item;
-    const ids = statIds(item, d.stats).slice(0, 4);
+    const ids = statIds(item, d.stats).filter(id => !BAND_IDS.includes(id)).slice(0, 4);
+    const band = bandOf(state.accBand), hasAcc = d.stats[band.id] !== undefined;
     return el('div', { class: 'snap' },
       el('h3', { text: itemName(item.label), title: 'Open this item', onclick: () => selectItem(s.def, s) }),
       el('div', { class: 'sub', text: (item.madeFromStuff ? matLabel(item, s.mat) : 'fixed material') + (item.hasQuality ? ' · ' + qLabel(s.q) : '') }),
       el('div', { class: 'row' }, el('span', { class: 'faint', text: 'Price' }),
         el('span', null, el('b', { style: 'color:var(--gold)', text: coins(d.price * s.qty) }),
           el('span', { class: 'faint small', text: '  (orig ' + item.price * s.qty + ')' }))),
-      ...ids.map(id => el('div', { class: 'row' }, el('span', { class: 'faint', text: STAT_DEFS[id].label }), el('span', { text: STAT_DEFS[id].fmt(d.stats[id]) }))),
+      ...ids.map(id => el('div', { class: 'row' },
+        el('span', Object.assign({ class: 'faint' + (tipText(id, item, d.stats[id]) ? ' tipped' : ''), text: STAT_DEFS[id].label }, tipAttrs(id, item, d.stats[id]))),
+        el('span', { text: STAT_DEFS[id].fmt(d.stats[id]) }))),
+      hasAcc ? el('div', { class: 'row' },
+        accToggle(item, band, 'Acc. (' + band.name.toLowerCase() + ')'),
+        el('span', { class: beyondRange(item, band.id) ? 'oor' : '', text: STAT_DEFS[band.id].fmt(d.stats[band.id]) })) : null,
       ...effectsOf(item).map(e => el('div', { class: 'row magic-row' }, el('span', { class: 'faint', text: e.label }), el('span', { text: fmtEffect(e) }))),
       (item.special || []).length ? el('div', { class: 'small faint', style: 'margin-top:4px', text: item.special.join(' ') }) : null,
       el('div', { class: 'actions' },
         el('button', { class: 'copy-btn small', type: 'button', text: 'Copy', onclick: e => copyText(d.cmd, e.target) }),
         el('button', { class: 'ghost-btn small x', type: 'button', text: 'Remove', onclick: () => { state.tray = state.tray.filter(t => t.id !== s.id); saveTray(); renderTray(); } })));
   }));
+}
+// Clickable label that cycles the accuracy band shown in the snapshot cards and compare table.
+function accToggle(item, band, text) {
+  return el('span', Object.assign({ class: 'tipped acc-toggle', role: 'button', text,
+    onclick: cycleBand, onkeydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); cycleBand(); } } },
+    tipAttrs(band.id, item, undefined, ' Click to switch to the next range.')));
 }
 function compareTable() {
   const snaps = state.tray.map(s => ({ s, ...snapData(s) }));
@@ -640,6 +736,10 @@ function compareTable() {
     if (sn.stats[id] !== undefined && sn.stats[id] !== 0 && !allIds.includes(id)) allIds.push(id);
   }
   allIds.sort((a, b) => Object.keys(STAT_DEFS).indexOf(a) - Object.keys(STAT_DEFS).indexOf(b));
+  // the four accuracy bands collapse into one row whose range the viewer cycles by clicking
+  const accAt = allIds.findIndex(id => BAND_IDS.includes(id));
+  if (accAt >= 0) { allIds.splice(accAt, 0, 'acc'); }
+  for (let i = allIds.length - 1; i >= 0; i--) if (BAND_IDS.includes(allIds[i])) allIds.splice(i, 1);
   const t = el('table', { class: 'compare-t' });
   const head = el('tr', null, el('th', { text: '' }), ...snaps.map(sn => el('th', { text: itemName(sn.item.label), style: 'cursor:default' })));
   const rows = [
@@ -654,11 +754,31 @@ function compareTable() {
     body.append(el('tr', null, el('td', { text: label }), ...vals.map(v => el('td', { class: better && v === best && snaps.length > 1 ? 'best' : '', text: typeof v === 'number' ? v.toLocaleString() : v }))));
   }
   for (const id of allIds) {
+    if (id === 'acc') {
+      const band = bandOf(state.accBand);
+      const withAcc = snaps.find(sn => sn.stats[band.id] !== undefined || BAND_IDS.some(b => sn.stats[b] !== undefined));
+      const vals = snaps.map(sn => sn.stats[band.id]);
+      const inReach = vals.filter((v, i) => v !== undefined && !beyondRange(snaps[i].item, band.id));
+      const best = inReach.length ? Math.max(...inReach) : null;
+      body.append(el('tr', null,
+        el('td', null, accToggle(withAcc.item, band, 'Acc. (' + band.name.toLowerCase() + ')'), el('div', { class: 'hint', text: 'Click to change' })),
+        ...vals.map((v, i) => {
+          const far = v !== undefined && beyondRange(snaps[i].item, band.id);
+          const cell = el('td', { class: (far ? 'oor ' : '') + (v !== undefined && !far && v === best && inReach.length > 1 ? 'best' : ''),
+            text: v === undefined ? '—' : STAT_DEFS[band.id].fmt(v) });
+          if (far) { cell.setAttribute('data-tip', 'Beyond this weapon\u2019s range (' + weaponRange(snaps[i].item).toFixed(1) + ' tiles): it can\u2019t fire this far.'); cell.tabIndex = 0; }
+          return cell;
+        })));
+      continue;
+    }
     const vals = snaps.map(sn => sn.stats[id]);
     const nums = vals.filter(v => v !== undefined);
     const best = STAT_DEFS[id].better === 'high' ? Math.max(...nums) : Math.min(...nums);
-    body.append(el('tr', null, el('td', { text: STAT_DEFS[id].label }), ...vals.map(v =>
-      el('td', { class: v !== undefined && v === best && nums.length > 1 ? 'best' : '', text: v === undefined ? '—' : STAT_DEFS[id].fmt(v) }))));
+    const tipItem = snaps.find(sn => sn.stats[id] !== undefined);
+    body.append(el('tr', null,
+      el('td', null, el('span', Object.assign({ class: tipText(id, tipItem.item) ? 'tipped' : '', text: STAT_DEFS[id].label }, tipAttrs(id, tipItem.item)))),
+      ...vals.map(v =>
+        el('td', { class: v !== undefined && v === best && nums.length > 1 ? 'best' : '', text: v === undefined ? '—' : STAT_DEFS[id].fmt(v) }))));
   }
   // built-in bonuses: one row per label (split by unit when items mix flat and % values)
   const units = {};
