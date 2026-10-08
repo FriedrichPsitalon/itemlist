@@ -432,6 +432,20 @@
 
   .copy-btn:hover { background: var(--accent); }
 
+  .calc-btn {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 6px 12px;
+    text-decoration: none;
+    font-family: inherit;
+  }
+
+  .calc-btn:hover { border-color: var(--accent); color: var(--accent); }
+
   .copy-btn.copied {
     color: #7fbf7f;
     border-color: #3d5a3d;
@@ -551,14 +565,19 @@ let activeTags = new Set();
 let TAG_GROUPS = {};
 let collapsedGroups = new Set();
 const BROWSE_ORDER = [];
+let CALC_DEFS = new Set();   // defNames the Gear Calculator can compare (calculator/calc-items.json)
 
 function sourceOf(it) {
   return it.source || it.mod || '';
 }
 
 async function init() {
-  const res = await fetch('compendium.json');
+  const [res, calcDefs] = await Promise.all([
+    fetch('compendium.json'),
+    fetch('../calculator/calc-items.json').then(r => (r.ok ? r.json() : [])).catch(() => []),
+  ]);
   ITEMS = await res.json();
+  CALC_DEFS = new Set(calcDefs);
 
   const categories = new Set();
   const sources = new Set();
@@ -603,6 +622,7 @@ async function init() {
   document.getElementById('filter-source').addEventListener('change', render);
 
   document.getElementById('list').addEventListener('click', (e) => {
+    if (e.target.closest('.calc-btn')) return;   // plain link to the calculator; don't also toggle the row
     const copyBtn = e.target.closest('.copy-btn');
     if (copyBtn) {
       copyToClipboard(copyBtn.dataset.cmd, copyBtn);
@@ -934,7 +954,10 @@ function purchaseBarHtml(item) {
     const btn = cmds[0]
       ? `<button type="button" class="copy-btn" data-cmd="${escapeHtml(cmds[0].cmd)}">${escapeHtml(cmds[0].label)}</button>`
       : '';
-    return `<div class="purchase-bar">${priceTag(item.price)}${btn}</div>`;
+    const compare = item.type === 'item' && CALC_DEFS.has(item.defName)
+      ? `<a class="calc-btn" href="../calculator/?item=${encodeURIComponent(item.defName)}">Compare materials</a>`
+      : '';
+    return `<div class="purchase-bar">${priceTag(item.price)}${btn}${compare}</div>`;
   }
   if (item.type === 'trait') {
     const cmds = buyCommandsFor(item);

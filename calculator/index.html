@@ -828,9 +828,12 @@ async function boot() {
     DATA.gameVersion + ') with the stream’s mods. Data updated ' + DATA.generated + '.';
   loadTray();
   renderTabs(); renderList(); renderTray();
-  const first = DATA.items.find(i => i.def === 'MeleeWeapon_Gladius') || DATA.items.find(i => i.group === state.group);
+  // Deep link from the Store: calculator/?item=<defName>
+  let linked = null;
+  try { linked = byDef[new URLSearchParams(location.search).get('item')] || null; } catch (e) { /* no query support */ }
+  const first = linked || DATA.items.find(i => i.def === 'MeleeWeapon_Gladius') || DATA.items.find(i => i.group === state.group);
   selectItem(first.def);
-  window.scrollTo(0, 0);
+  if (!linked) window.scrollTo(0, 0);
 }
 boot();
 </script>

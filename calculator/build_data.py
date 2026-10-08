@@ -193,6 +193,9 @@ def main():
     dest = os.path.join(HERE, 'calc-data.json')
     with open(dest, 'w', encoding='utf8') as f:
         json.dump(out, f, separators=(',', ':'))
+    # Tiny list the Store page reads to know which items get a "Compare materials" button.
+    with open(os.path.join(HERE, 'calc-items.json'), 'w', encoding='utf8') as f:
+        json.dump(sorted(i['def'] for i in items), f, separators=(',', ':'))
     groups = {}
     for i in items:
         groups[i['group']] = groups.get(i['group'], 0) + 1
