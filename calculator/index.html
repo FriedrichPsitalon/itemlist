@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="../compendium/favicon-32.png">
+<title>RimStream Gear Calculator</title>
+<meta name="robots" content="noindex">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --bg: #0a0605;
+    --panel: #170c0b;
+    --panel-2: #1f1110;
+    --ink: #eae2d0;
+    --ink-dim: #a89c86;
+    --ink-faint: #6f6552;
+    --accent: #b8352c;
+    --accent-soft: #7a221c;
+    --cool: #5e7d8c;
+    --rule: #3d1f1c;
+    --rule-soft: #26130f;
+    --gold: #e6bd52;
+    --good: #7fb069;
+    --bad: #d9675d;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  body {
+    background-image:
+      radial-gradient(ellipse 900px 700px at 0% 20%, rgba(184,53,44,.09), transparent 60%),
+      radial-gradient(ellipse 900px 700px at 100% 80%, rgba(184,53,44,.07), transparent 60%);
+    background-attachment: fixed; min-height: 100vh;
+  }
+  h1, h2, h3, .display { font-family: 'Arvo', Georgia, serif; margin: 0; }
+  a { color: inherit; }
+  button { font-family: inherit; }
+
+  header { background: #000; border-bottom: 1px solid var(--rule); padding: 0 16px 14px; }
+  .topbar { display: flex; align-items: center; justify-content: space-between; max-width: 1500px;
+    margin: 0 auto; gap: 16px; flex-wrap: wrap; padding: 14px 0; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand img { height: 34px; border-radius: 4px; display: block; }
+  .brand-text { font-family: 'Arvo', Georgia, serif; font-weight: 700; font-size: 1.3rem; }
+  .site-nav { display: flex; gap: 18px; font-size: .85rem; }
+  .site-nav a { color: var(--ink-dim); text-decoration: none; border-bottom: 1px solid transparent; }
+  .site-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .lead { max-width: 1500px; margin: 0 auto; font-size: .85rem; color: var(--ink-faint); }
+
+  main { max-width: 1500px; margin: 0 auto; padding: 16px; display: grid; gap: 16px;
+    grid-template-columns: minmax(0, 1fr); align-items: start; }
+  main > * { min-width: 0; }
+  @media (min-width: 1100px) { main { grid-template-columns: 250px minmax(0,1fr) 310px; } }
+
+  .panel { background: var(--panel); border: 1px solid var(--rule-soft); border-radius: 8px; padding: 14px; }
+  .panel h2 { font-size: 1rem; margin-bottom: 10px; }
+  .muted { color: var(--ink-dim); } .faint { color: var(--ink-faint); } .small { font-size: .78rem; }
+
+  /* ---- picker ---- */
+  .tabs { display: flex; gap: 6px; margin-bottom: 10px; }
+  .tab { flex: 1; padding: 7px 4px; font-size: .82rem; font-weight: 600; color: var(--ink-dim);
+    background: transparent; border: 1px solid var(--rule); border-radius: 5px; cursor: pointer; }
+  .tab[aria-selected="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); }
+  #search { width: 100%; padding: 8px 10px; margin-bottom: 10px; color: var(--ink); background: var(--bg);
+    border: 1px solid var(--rule); border-radius: 5px; font-family: inherit; font-size: .85rem; }
+  #search:focus { outline: none; border-color: var(--accent-soft); }
+  #item-list { list-style: none; margin: 0; padding: 0; max-height: 46vh; overflow-y: auto; }
+  @media (min-width: 1100px) { #item-list { max-height: calc(100vh - 290px); } }
+  #item-list button { display: flex; width: 100%; justify-content: space-between; gap: 8px; text-align: left;
+    padding: 7px 8px; background: transparent; color: var(--ink); border: 0; border-bottom: 1px solid var(--rule-soft);
+    font-size: .85rem; cursor: pointer; border-radius: 4px; }
+  #item-list button:hover { background: var(--panel-2); }
+  #item-list button[aria-current="true"] { background: var(--accent-soft); }
+  #item-list .p { color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  /* ---- builder ---- */
+  .item-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+  .item-head h2 { font-size: 1.5rem; margin: 0; }
+  .badge { display: inline-block; font-size: .7rem; padding: 2px 8px; border: 1px solid var(--rule); border-radius: 10px;
+    color: var(--ink-dim); margin-right: 6px; }
+  .price-big { font-size: 1.35rem; font-weight: 700; color: var(--gold); font-variant-numeric: tabular-nums; }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; margin-top: 12px; }
+  .stat { background: var(--bg); border: 1px solid var(--rule-soft); border-radius: 6px; padding: 8px 10px; }
+  .stat .k { font-size: .7rem; color: var(--ink-faint); text-transform: uppercase; letter-spacing: .04em; }
+  .stat .v { font-size: 1.05rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .section-title { display: flex; align-items: center; gap: 10px; margin: 18px 0 8px; font-size: .78rem;
+    text-transform: uppercase; letter-spacing: .06em; color: var(--ink-faint); }
+  .section-title button { font-size: .72rem; color: var(--ink-dim); background: none; border: 1px solid var(--rule);
+    border-radius: 4px; padding: 2px 8px; cursor: pointer; text-transform: none; letter-spacing: 0; }
+  .section-title button:hover { border-color: var(--accent); color: var(--ink); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .group-label { width: 100%; font-size: .7rem; color: var(--ink-faint); margin-top: 6px; }
+  .chip { font-size: .8rem; padding: 5px 10px; color: var(--ink-dim); background: transparent;
+    border: 1px solid var(--rule); border-radius: 14px; cursor: pointer; }
+  .chip:hover { border-color: var(--accent-soft); }
+  .chip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); }
+  .chip .cp { color: var(--gold); margin-left: 4px; font-variant-numeric: tabular-nums; }
+
+  .table-wrap { overflow-x: auto; border: 1px solid var(--rule-soft); border-radius: 6px; }
+  table { border-collapse: collapse; width: 100%; font-size: .82rem; font-variant-numeric: tabular-nums; }
+  th, td { padding: 7px 10px; text-align: right; white-space: nowrap; border-bottom: 1px solid var(--rule-soft); }
+  th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) { text-align: left; }
+  th { position: sticky; top: 0; background: var(--panel-2); font-size: .7rem; text-transform: uppercase;
+    letter-spacing: .04em; color: var(--ink-dim); cursor: pointer; user-select: none; }
+  th[aria-sort="ascending"]::after { content: " \25B2"; } th[aria-sort="descending"]::after { content: " \25BC"; }
+  tbody tr { cursor: pointer; }
+  tbody tr:hover { background: var(--panel-2); }
+  tbody tr.picked { background: rgba(184,53,44,.25); outline: 1px solid var(--accent); }
+  tbody tr.orig td:first-child::before { content: "\2605 "; color: var(--gold); }
+  .scroll-y { max-height: 55vh; overflow-y: auto; }
+  .up { color: var(--good); } .down { color: var(--bad); }
+  .delta { font-size: .72rem; margin-left: 4px; }
+  .mini { font-size: .72rem; padding: 3px 8px; color: var(--ink); background: var(--accent-soft);
+    border: 1px solid var(--accent); border-radius: 4px; cursor: pointer; }
+  .mini:hover { background: var(--accent); }
+
+  .pickbar { position: sticky; bottom: 0; margin-top: 14px; padding: 12px; background: #120a09;
+    border: 1px solid var(--accent-soft); border-radius: 8px; box-shadow: 0 -6px 18px rgba(0,0,0,.5); }
+  @media (max-width: 700px) { .pickbar { position: static; } }
+  .pickbar .line { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+  .pickbar code { font-family: ui-monospace, Consolas, monospace; font-size: .9rem; color: var(--ink);
+    background: var(--bg); border: 1px solid var(--rule); border-radius: 4px; padding: 5px 8px; word-break: break-all; }
+  .qty { width: 58px; padding: 5px 6px; color: var(--ink); background: var(--bg); border: 1px solid var(--rule);
+    border-radius: 4px; font-family: inherit; }
+  .copy-btn { font-size: .85rem; font-weight: 600; color: var(--ink); background: var(--accent-soft);
+    border: 1px solid var(--accent); border-radius: 4px; padding: 7px 14px; cursor: pointer; }
+  .copy-btn:hover { background: var(--accent); }
+  .copy-btn.copied { background: #2f5d2e; border-color: #4f8d4d; }
+  .ghost-btn { font-size: .85rem; color: var(--ink); background: transparent; border: 1px solid var(--rule);
+    border-radius: 4px; padding: 7px 14px; cursor: pointer; }
+  .ghost-btn:hover { border-color: var(--accent); }
+  .note { font-size: .76rem; color: var(--ink-faint); margin-top: 8px; }
+
+  /* ---- tray ---- */
+  .tray-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .snap { border: 1px solid var(--rule); border-radius: 8px; padding: 10px; margin-bottom: 10px; background: var(--bg); }
+  .snap h3 { font-size: .98rem; cursor: pointer; }
+  .snap h3:hover { color: var(--accent); }
+  .snap .sub { font-size: .78rem; color: var(--ink-dim); margin: 2px 0 6px; }
+  .snap .row { display: flex; justify-content: space-between; font-size: .8rem; padding: 2px 0; }
+  .snap .actions { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+  .snap .x { margin-left: auto; }
+  .compare { overflow-x: auto; margin-bottom: 10px; border: 1px solid var(--rule-soft); border-radius: 6px; }
+  .compare td, .compare th { text-align: right; font-size: .76rem; }
+  .compare td:first-child, .compare th:first-child { text-align: left; color: var(--ink-faint); position: sticky; left: 0; background: var(--panel); }
+  .compare .best { color: var(--good); font-weight: 600; }
+  .empty { color: var(--ink-faint); font-size: .85rem; padding: 18px 4px; text-align: center; }
+  footer { max-width: 1500px; margin: 0 auto; padding: 8px 16px 40px; font-size: .74rem; color: var(--ink-faint); }
+</style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <a class="brand" href="../">
+      <img src="../compendium/mascot-icon.png" alt="">
+      <span class="brand-text">RimStream</span>
+    </a>
+    <nav class="site-nav">
+      <a href="../compendium/">Store</a>
+      <span>Gear Calculator</span>
+    </nav>
+  </div>
+  <p class="lead">Pick a weapon, armor or clothing item, then compare every material and quality &mdash; stats, materials needed and coin price &mdash; and copy the exact chat command.</p>
+</header>
+
+<main>
+  <section class="panel" aria-label="Choose an item">
+    <h2>Item</h2>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <input id="search" type="search" placeholder="Search&hellip;" autocomplete="off" aria-label="Search items">
+    <ul id="item-list"></ul>
+  </section>
+
+  <section class="panel" id="builder" aria-live="polite">
+    <p class="empty">Loading&hellip;</p>
+  </section>
+
+  <aside class="panel" aria-label="Saved snapshots">
+    <div class="tray-head">
+      <h2>Snapshots</h2>
+      <span>
+        <button class="ghost-btn small" id="compare-toggle" type="button" hidden>Compare table</button>
+        <button class="ghost-btn small" id="tray-clear" type="button" hidden>Clear</button>
+      </span>
+    </div>
+    <div id="tray"></div>
+  </aside>
+</main>
+<footer id="footer"></footer>
+
+<script>
+'use strict';
+
+// ---------------------------------------------------------------- constants
+const GROUPS = [['weapon', 'Weapons'], ['armor', 'Armor'], ['clothing', 'Clothing']];
+const QUALITY_LABEL = { std: 'Normal (no quality named)', awful: 'Awful', poor: 'Poor', good: 'Good',
+  excellent: 'Excellent', masterwork: 'Masterwork', legendary: 'Legendary' };
+const QUALITY_SHORT = { std: 'Normal', awful: 'Awful', poor: 'Poor', good: 'Good',
+  excellent: 'Excellent', masterwork: 'Masterwork', legendary: 'Legendary' };
+const QUALITY_ORDER = ['std', 'awful', 'poor', 'good', 'excellent', 'masterwork', 'legendary'];
+const GAME_QUALITY_INDEX = { awful: 0, poor: 1, std: 2, good: 3, excellent: 4, masterwork: 5, legendary: 6 };
+const PRICE_QUALITY = {};   // id -> price factor, filled from the data file
+const CAT_LABEL = { Metallic: 'Metals', Woody: 'Wood', Stony: 'Stone', Fabric: 'Fabrics', Leathery: 'Leathers' };
+const CAT_ORDER = ['Metallic', 'Woody', 'Stony', 'Fabric', 'Leathery'];
+
+// Display stats. `better`: which direction is an improvement (for green/red deltas).
+const STAT_DEFS = {
+  dps:        { label: 'DPS',            better: 'high', fmt: v => v.toFixed(1) },
+  ap:         { label: 'Armor pen.',     better: 'high', fmt: pct },
+  dmg:        { label: 'Damage / shot',  better: 'high', fmt: v => v.toFixed(1) },
+  accShort:   { label: 'Acc. short',     better: 'high', fmt: pct },
+  accMed:     { label: 'Acc. medium',    better: 'high', fmt: pct },
+  accLong:    { label: 'Acc. long',      better: 'high', fmt: pct },
+  range:      { label: 'Range',          better: 'high', fmt: v => v.toFixed(0) },
+  sharp:      { label: 'Sharp armor',    better: 'high', fmt: pct },
+  blunt:      { label: 'Blunt armor',    better: 'high', fmt: pct },
+  heat:       { label: 'Heat armor',     better: 'high', fmt: pct },
+  cold:       { label: 'Cold insulation', better: 'high', fmt: v => v.toFixed(1) + '°C' },
+  warm:       { label: 'Heat insulation', better: 'high', fmt: v => v.toFixed(1) + '°C' },
+  hp:         { label: 'Hit points',     better: 'high', fmt: v => v.toFixed(0) },
+  flam:       { label: 'Flammability',   better: 'low',  fmt: pct },
+  mass:       { label: 'Mass (kg)',      better: 'low',  fmt: v => v.toFixed(2) },
+  work:       { label: 'Work to make',   better: 'low',  fmt: v => Math.round(v).toLocaleString() },
+};
+const STAT_ORDER = {
+  melee:   ['dps', 'ap', 'hp', 'flam', 'mass', 'work'],
+  ranged:  ['dps', 'dmg', 'ap', 'accShort', 'accMed', 'accLong', 'range', 'hp', 'flam', 'mass', 'work'],
+  apparel: ['sharp', 'blunt', 'heat', 'cold', 'warm', 'hp', 'flam', 'mass', 'work'],
+};
+function pct(v) { return (v * 100).toFixed(0) + '%'; }
+
+// ---------------------------------------------------------------- state
+let DATA = null;
+const byDef = {};
+const state = {
+  group: 'weapon', def: null, search: '',
+  mats: new Set(), quals: new Set(['std']),
+  pick: { mat: '', q: 'std' }, qty: 1,
+  sort: { col: null, dir: 1 }, compare: false,
+  tray: [],
+};
+
+// ---------------------------------------------------------------- pricing (verified against real store prices)
+function roundHalfUp(x) { return Math.floor(x + 0.5 + 1e-9); }
+// Naming a material: (base + units x material price) x 1.05. Naming a quality: x quality factor x 1.1.
+// Leaving both off is the plain base price.
+function priceOf(item, mat, q) {
+  let p = item.price;
+  if (mat) p = roundHalfUp((item.price + item.units * DATA.materials[mat].price) * DATA.rules.materialMarkup);
+  if (q && q !== 'std') p = roundHalfUp(p * PRICE_QUALITY[q] * DATA.rules.qualityMarkup);
+  return p;
+}
+function commandOf(item, mat, q, qty) {
+  const parts = [];
+  if (mat) parts.push(DATA.materials[mat].token);
+  if (q && q !== 'std') parts.push(q);
+  return '!buy ' + item.token + (parts.length ? '[' + parts.join(',') + ']' : '') + (qty > 1 ? ' ' + qty : '');
+}
+
+// ---------------------------------------------------------------- stats
+function statKey(item, mat) {
+  if (!item.madeFromStuff) return '';
+  if (mat) return mat;
+  return item.stats[item.defaultStuff] ? item.defaultStuff : item.mats[0];
+}
+function compute(item, mat, q) {
+  const row = item.stats[statKey(item, mat)] || [];
+  const raw = n => { const i = item.statNames.indexOf(n); return i < 0 ? undefined : row[i]; };
+  const qi = GAME_QUALITY_INDEX[q || 'std'];
+  const f = n => (item.hasQuality && item.qf[n]) ? item.qf[n][qi] : 1;
+  const out = {};
+  const set = (id, v) => { if (v !== undefined && !Number.isNaN(v)) out[id] = v; };
+
+  set('hp', raw('MaxHitPoints')); set('mass', raw('Mass')); set('work', raw('WorkToMake'));
+  set('flam', raw('Flammability'));
+  if (item.kind === 'melee') {
+    const m = f('MeleeWeapon_DamageMultiplier');
+    set('dps', raw('MeleeWeapon_AverageDPS') * m);
+    set('ap', raw('MeleeWeapon_AverageArmorPenetration') * m);
+  } else if (item.kind === 'ranged' && item.ranged) {
+    const r = item.ranged, dmgMul = f('RangedWeapon_DamageMultiplier');
+    const dmg = r.damage * dmgMul;
+    const acc = n => Math.min(1, raw(n) * f(n));
+    const cooldown = raw('RangedWeapon_Cooldown') || 0;
+    const cycle = r.warmup + cooldown + Math.max(0, r.burstShots - 1) * r.ticksBetweenShots / 60;
+    set('dmg', dmg); set('range', r.range);
+    if (raw('AccuracyShort') !== undefined) { set('accShort', acc('AccuracyShort')); set('accMed', acc('AccuracyMedium')); set('accLong', acc('AccuracyLong')); }
+    if (cycle > 0 && raw('AccuracyMedium') !== undefined) set('dps', dmg * r.burstShots * acc('AccuracyMedium') / cycle);
+    if (r.armorPenetration > 0) set('ap', r.armorPenetration * dmgMul);
+  } else if (item.kind === 'apparel') {
+    set('sharp', (raw('ArmorRating_Sharp') || 0) * f('ArmorRating_Sharp'));
+    set('blunt', (raw('ArmorRating_Blunt') || 0) * f('ArmorRating_Blunt'));
+    set('heat', (raw('ArmorRating_Heat') || 0) * f('ArmorRating_Heat'));
+    set('cold', (raw('Insulation_Cold') || 0) * f('Insulation_Cold'));
+    set('warm', (raw('Insulation_Heat') || 0) * f('Insulation_Heat'));
+  }
+  return out;
+}
+function statIds(item, ...samples) {
+  // Show a stat when any compared value is non-zero (so unarmored shirts don't list 0% armor).
+  const base = compute(item, '', 'std');
+  return STAT_ORDER[item.kind === 'melee' ? 'melee' : item.kind === 'ranged' ? 'ranged' : 'apparel']
+    .filter(id => base[id] !== undefined && (base[id] !== 0 || samples.some(s => s && s[id])));
+}
+function deltaSpan(id, v, orig) {
+  if (orig === undefined || v === undefined) return null;
+  const d = v - orig;
+  const eps = id === 'work' || id === 'hp' ? 0.5 : 0.0005;
+  if (Math.abs(d) < eps) return null;
+  const better = STAT_DEFS[id].better === 'high' ? d > 0 : d < 0;
+  const s = document.createElement('span');
+  s.className = 'delta ' + (better ? 'up' : 'down');
+  const rel = orig !== 0 ? Math.round(d / Math.abs(orig) * 100) : null;
+  s.textContent = rel === null ? (d > 0 ? '+' : '') + STAT_DEFS[id].fmt(d) : (d > 0 ? '+' : '') + rel + '%';
+  return s;
+}
+
+// ---------------------------------------------------------------- dom helpers
+function el(tag, props, ...kids) {
+  const n = document.createElement(tag);
+  if (props) for (const k of Object.keys(props)) {
+    if (k === 'class') n.className = props[k];
+    else if (k === 'text') n.textContent = props[k];
+    else if (k.startsWith('on')) n.addEventListener(k.slice(2), props[k]);
+    else if (props[k] === true) n.setAttribute(k, '');
+    else if (props[k] !== false && props[k] != null) n.setAttribute(k, props[k]);
+  }
+  for (const kid of kids) if (kid != null) n.append(kid);
+  return n;
+}
+const coins = n => n.toLocaleString() + (n === 1 ? ' coin' : ' coins');
+const title = s => s.replace(/\b[a-z]/g, c => c.toUpperCase());
+// Keep the game's own casing for item names ("Shroud of the Soulreaper"); only capitalize the first letter.
+const itemName = s => s.charAt(0).toUpperCase() + s.slice(1);
+function matLabel(item, mat) {
+  if (!item.madeFromStuff) return '—';
+  if (!mat) return 'Default (' + title(DATA.materials[statKey(item, '')]?.label || 'unknown') + ')';
+  return title(DATA.materials[mat].label);
+}
+function qLabel(q) { return QUALITY_SHORT[q || 'std']; }
+
+async function copyText(text, btn) {
+  const old = btn.textContent;
+  try { await navigator.clipboard.writeText(text); btn.textContent = 'Copied!'; btn.classList.add('copied'); }
+  catch (e) { btn.textContent = 'Copy failed'; }
+  setTimeout(() => { btn.textContent = old; btn.classList.remove('copied'); }, 1400);
+}
+
+// ---------------------------------------------------------------- picker
+function renderTabs() {
+  const tabs = document.getElementById('tabs');
+  tabs.replaceChildren(...GROUPS.map(([id, label]) => {
+    const n = DATA.items.filter(i => i.group === id).length;
+    return el('button', { class: 'tab', role: 'tab', type: 'button', 'aria-selected': String(state.group === id),
+      text: label + ' (' + n + ')', onclick: () => { state.group = id; renderTabs(); renderList(); } });
+  }));
+}
+function renderList() {
+  const q = state.search.trim().toLowerCase();
+  const items = DATA.items.filter(i => i.group === state.group && (!q || i.label.toLowerCase().includes(q) || i.token.includes(q)));
+  const ul = document.getElementById('item-list');
+  ul.replaceChildren(...items.map(i => el('li', null,
+    el('button', { type: 'button', 'aria-current': String(i.def === state.def), onclick: () => selectItem(i.def) },
+      el('span', { text: i.label }), el('span', { class: 'p', text: i.price })))));
+  if (!items.length) ul.append(el('li', { class: 'empty', text: 'No matches.' }));
+}
+
+function selectItem(def, preset) {
+  const item = byDef[def];
+  state.def = def;
+  state.group = item.group;
+  state.mats = new Set(item.madeFromStuff ? ['', ...item.mats] : ['']);
+  state.quals = new Set(['std']);
+  state.pick = { mat: '', q: 'std' };
+  state.qty = 1;
+  state.sort = { col: null, dir: 1 };
+  if (preset) {
+    state.mats.add(preset.mat); state.quals.add(preset.q);
+    state.pick = { mat: preset.mat, q: preset.q }; state.qty = preset.qty || 1;
+  }
+  renderTabs(); renderList(); renderBuilder();
+  if (window.matchMedia('(max-width: 1099px)').matches) document.getElementById('builder').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ---------------------------------------------------------------- builder
+// Materials in display order: category, then price, then name (the default/"leave out" entry first).
+function orderedMats(item) {
+  const cat = m => { const i = CAT_ORDER.indexOf((DATA.materials[m].cats.find(c => CAT_ORDER.includes(c))) || ''); return i < 0 ? 99 : i; };
+  return item.mats.slice().sort((a, b) => cat(a) - cat(b) || DATA.materials[a].price - DATA.materials[b].price || a.localeCompare(b));
+}
+function buildRows(item) {
+  const mats = item.madeFromStuff ? ['', ...orderedMats(item)].filter(m => state.mats.has(m)) : [''];
+  const quals = item.hasQuality ? QUALITY_ORDER.filter(q => state.quals.has(q)) : ['std'];
+  const rows = [];
+  for (const m of mats) for (const q of quals) {
+    const stats = compute(item, m, q);
+    rows.push({ mat: m, q, stats, price: priceOf(item, m, q) });
+  }
+  return rows;
+}
+function sortRows(rows, ids) {
+  const { col, dir } = state.sort;
+  if (!col) return rows;
+  const val = r => col === 'price' ? r.price : col === 'mat' ? (r.mat ? DATA.materials[r.mat].label : '') :
+    col === 'q' ? QUALITY_ORDER.indexOf(r.q) : r.stats[col];
+  return rows.slice().sort((a, b) => {
+    const x = val(a), y = val(b);
+    if (x === undefined) return 1; if (y === undefined) return -1;
+    return (typeof x === 'string' ? x.localeCompare(y) : x - y) * dir;
+  });
+}
+
+function renderBuilder() {
+  const host = document.getElementById('builder');
+  const item = byDef[state.def];
+  if (!item) { host.replaceChildren(el('p', { class: 'empty', text: 'Choose an item on the left to start.' })); return; }
+
+  const orig = compute(item, '', 'std');
+  const rows = buildRows(item);
+  const ids = statIds(item, ...rows.map(r => r.stats));
+  const origPrice = item.price;
+
+  const kids = [];
+  // header + original stats
+  kids.push(el('div', { class: 'item-head' },
+    el('div', null, el('h2', { text: itemName(item.label) }),
+      el('div', { style: 'margin-top:6px' }, el('span', { class: 'badge', text: item.cat }),
+        el('span', { class: 'badge', text: item.hasQuality ? 'Has quality' : 'No quality' }),
+        el('span', { class: 'badge', text: item.madeFromStuff ? 'Choose material' : 'Fixed material' }))),
+    el('div', { style: 'text-align:right' }, el('div', { class: 'price-big', text: coins(origPrice) }),
+      el('div', { class: 'small faint', text: 'original price' }))));
+  if (item.madeFromStuff) {
+    const dm = DATA.materials[statKey(item, '')];
+    kids.push(el('p', { class: 'small muted', text: 'Original stats shown for the default material' + (dm ? ' (' + title(dm.label) + ')' : '') +
+      ', normal quality. Needs ' + item.units + ' units of material to make.' }));
+  }
+  kids.push(el('div', { class: 'stat-grid' }, ...ids.map(id =>
+    el('div', { class: 'stat' }, el('div', { class: 'k', text: STAT_DEFS[id].label }),
+      el('div', { class: 'v', text: STAT_DEFS[id].fmt(orig[id] || 0) })))));
+
+  // materials
+  if (item.madeFromStuff) {
+    const set = state.mats;
+    kids.push(el('div', { class: 'section-title' }, 'Materials',
+      el('button', { type: 'button', text: 'All', onclick: () => { state.mats = new Set(['', ...item.mats]); renderBuilder(); } }),
+      el('button', { type: 'button', text: 'None', onclick: () => { state.mats = new Set(); renderBuilder(); } })));
+    const chips = el('div', { class: 'chips' });
+    chips.append(chip('Default (leave out)', set.has(''), () => toggle(set, ''), priceOf(item, '', 'std')));
+    const groups = {};
+    for (const m of item.mats) {
+      const cat = (DATA.materials[m].cats.find(c => CAT_ORDER.includes(c))) || 'Other';
+      (groups[cat] = groups[cat] || []).push(m);
+    }
+    for (const cat of [...CAT_ORDER, 'Other']) {
+      if (!groups[cat]) continue;
+      chips.append(el('div', { class: 'group-label', text: CAT_LABEL[cat] || cat }));
+      for (const m of groups[cat].sort((a, b) => DATA.materials[a].price - DATA.materials[b].price || a.localeCompare(b)))
+        chips.append(chip(title(DATA.materials[m].label), set.has(m), () => toggle(set, m), priceOf(item, m, 'std')));
+    }
+    kids.push(chips);
+  }
+
+  // qualities
+  if (item.hasQuality) {
+    kids.push(el('div', { class: 'section-title' }, 'Qualities',
+      el('button', { type: 'button', text: 'All', onclick: () => { state.quals = new Set(QUALITY_ORDER); renderBuilder(); } }),
+      el('button', { type: 'button', text: 'Normal only', onclick: () => { state.quals = new Set(['std']); renderBuilder(); } })));
+    kids.push(el('div', { class: 'chips' }, ...QUALITY_ORDER.map(q =>
+      chip(QUALITY_LABEL[q], state.quals.has(q), () => toggle(state.quals, q)))));
+  }
+
+  // comparison table
+  kids.push(el('div', { class: 'section-title', text: 'Compare — click a row to pick it' }));
+  if (!rows.length) {
+    kids.push(el('p', { class: 'empty', text: 'Turn on at least one material and quality above.' }));
+  } else {
+    const sorted = sortRows(rows, ids);
+    const head = el('tr', null,
+      th('mat', 'Material'), th('q', 'Quality'),
+      ...ids.map(id => th(id, STAT_DEFS[id].label)),
+      el('th', { text: 'Materials needed' }), th('price', 'Coins'), el('th', { text: 'vs original' }), el('th', { text: '' }));
+    const body = el('tbody');
+    for (const r of sorted) {
+      const tr = el('tr', { class: (r.mat === state.pick.mat && r.q === state.pick.q ? 'picked ' : '') + (!r.mat && r.q === 'std' ? 'orig' : ''),
+        onclick: () => { state.pick = { mat: r.mat, q: r.q }; renderBuilder(); } });
+      tr.append(el('td', { text: matLabel(item, r.mat) }), el('td', { text: qLabel(r.q) }));
+      for (const id of ids) {
+        const td = el('td', { text: r.stats[id] === undefined ? '—' : STAT_DEFS[id].fmt(r.stats[id]) });
+        const d = deltaSpan(id, r.stats[id], orig[id]); if (d) td.append(d);
+        tr.append(td);
+      }
+      tr.append(el('td', { text: needText(item, r.mat) }),
+        el('td', { text: r.price.toLocaleString() }), el('td', { class: r.price > origPrice ? 'down' : r.price < origPrice ? 'up' : 'faint', text: priceDiff(r.price, origPrice) }),
+        el('td', null, el('button', { class: 'mini', type: 'button', text: 'Snapshot',
+          onclick: e => { e.stopPropagation(); addSnapshot(item.def, r.mat, r.q); } })));
+      body.append(tr);
+    }
+    kids.push(el('div', { class: 'table-wrap scroll-y' }, el('table', null, el('thead', null, head), body)));
+  }
+
+  // pick bar (filled by renderPickBar so typing a quantity doesn't rebuild the whole table)
+  kids.push(el('div', { class: 'pickbar', id: 'pickbar' }));
+  host.replaceChildren(...kids);
+  renderPickBar(item);
+
+  function chip(label, on, fn, price) {
+    return el('button', { class: 'chip', type: 'button', 'aria-pressed': String(on), onclick: () => { fn(); renderBuilder(); } },
+      label, price != null ? el('span', { class: 'cp', text: price }) : null);
+  }
+  function th(col, label) {
+    return el('th', { text: label, 'aria-sort': state.sort.col === col ? (state.sort.dir === 1 ? 'ascending' : 'descending') : 'none',
+      onclick: () => { state.sort = { col, dir: state.sort.col === col ? -state.sort.dir : 1 }; renderBuilder(); } });
+  }
+  function toggle(set, v) { set.has(v) ? set.delete(v) : set.add(v); }
+}
+function priceDiff(p, o) {
+  if (p === o) return '—';
+  return (p > o ? '+' : '−') + Math.abs(p - o).toLocaleString() + ' (' + (p > o ? '+' : '−') + Math.round(Math.abs(p - o) / o * 100) + '%)';
+}
+function needText(item, mat) {
+  if (!item.madeFromStuff) return Object.keys(item.extra).length ? extraText(item) : '—';
+  const m = DATA.materials[statKey(item, mat)];
+  const base = item.units + ' × ' + title(m.label) + (mat ? '' : ' (default)');
+  return base + (Object.keys(item.extra).length ? ' + ' + extraText(item) : '');
+}
+function extraText(item) {
+  return Object.entries(item.extra).map(([k, n]) => n + ' × ' + title((DATA.ingredients[k] || {}).label || k)).join(', ');
+}
+
+function renderPickBar(item) {
+  const host = document.getElementById('pickbar');
+  const pk = state.pick, price = priceOf(item, pk.mat, pk.q) * state.qty, cmd = commandOf(item, pk.mat, pk.q, state.qty);
+  const qty = el('input', { class: 'qty', type: 'number', min: 1, max: 99, value: state.qty, 'aria-label': 'Quantity',
+    onchange: e => { state.qty = Math.max(1, Math.min(99, parseInt(e.target.value, 10) || 1)); renderPickBar(item); } });
+  const copy = el('button', { class: 'copy-btn', type: 'button', text: 'Copy buy command', onclick: e => copyText(cmd, e.target) });
+  host.replaceChildren(
+    el('div', { class: 'line' },
+      el('div', null, el('div', { class: 'small faint', text: 'Your pick' }),
+        el('div', { text: itemName(item.label) + ' · ' + (item.madeFromStuff ? matLabel(item, pk.mat) : 'fixed material') + (item.hasQuality ? ' · ' + qLabel(pk.q) : '') })),
+      el('div', null, el('span', { class: 'small faint', text: 'Qty ' }), qty),
+      el('div', { class: 'price-big', text: coins(price) }),
+      el('code', { text: cmd }), copy,
+      el('button', { class: 'ghost-btn', type: 'button', text: 'Snapshot this', onclick: () => addSnapshot(item.def, pk.mat, pk.q, state.qty) })),
+    pk.q === 'std' && (item.hasQuality) ? el('p', { class: 'note', text: 'Tip: naming a quality adds 10% to the price, even Normal — leave quality off for the base price.' }) : null);
+}
+
+// ---------------------------------------------------------------- snapshots
+function loadTray() {
+  try { const t = JSON.parse(localStorage.getItem('rs-calc-tray') || '[]'); if (Array.isArray(t)) state.tray = t.filter(s => byDef[s.def]); } catch (e) { /* storage unavailable */ }
+}
+function saveTray() { try { localStorage.setItem('rs-calc-tray', JSON.stringify(state.tray)); } catch (e) { /* ignore */ } }
+function addSnapshot(def, mat, q, qty) {
+  const s = { def, mat: mat || '', q: q || 'std', qty: qty || 1, id: Date.now() + Math.random() };
+  state.tray.push(s); saveTray(); renderTray();
+}
+function snapData(s) {
+  const item = byDef[s.def];
+  return { item, stats: compute(item, s.mat, s.q), price: priceOf(item, s.mat, s.q), cmd: commandOf(item, s.mat, s.q, s.qty) };
+}
+function renderTray() {
+  const host = document.getElementById('tray');
+  document.getElementById('tray-clear').hidden = !state.tray.length;
+  const ct = document.getElementById('compare-toggle'); ct.hidden = state.tray.length < 2; ct.textContent = state.compare ? 'Show cards' : 'Compare table';
+  if (!state.tray.length) {
+    host.replaceChildren(el('p', { class: 'empty', text: 'Pick a build and press Snapshot to park it here, then go look at another item.' }));
+    return;
+  }
+  if (state.compare && state.tray.length > 1) { host.replaceChildren(compareTable()); return; }
+  host.replaceChildren(...state.tray.map(s => {
+    const d = snapData(s), item = d.item;
+    const ids = statIds(item, d.stats).slice(0, 4);
+    return el('div', { class: 'snap' },
+      el('h3', { text: itemName(item.label), title: 'Open this item', onclick: () => selectItem(s.def, s) }),
+      el('div', { class: 'sub', text: (item.madeFromStuff ? matLabel(item, s.mat) : 'fixed material') + (item.hasQuality ? ' · ' + qLabel(s.q) : '') }),
+      el('div', { class: 'row' }, el('span', { class: 'faint', text: 'Price' }),
+        el('span', null, el('b', { style: 'color:var(--gold)', text: coins(d.price * s.qty) }),
+          el('span', { class: 'faint small', text: '  (orig ' + item.price * s.qty + ')' }))),
+      ...ids.map(id => el('div', { class: 'row' }, el('span', { class: 'faint', text: STAT_DEFS[id].label }), el('span', { text: STAT_DEFS[id].fmt(d.stats[id]) }))),
+      el('div', { class: 'actions' },
+        el('button', { class: 'copy-btn small', type: 'button', text: 'Copy', onclick: e => copyText(d.cmd, e.target) }),
+        el('button', { class: 'ghost-btn small x', type: 'button', text: 'Remove', onclick: () => { state.tray = state.tray.filter(t => t.id !== s.id); saveTray(); renderTray(); } })));
+  }));
+}
+function compareTable() {
+  const snaps = state.tray.map(s => ({ s, ...snapData(s) }));
+  const allIds = [];
+  for (const sn of snaps) for (const id of Object.keys(STAT_DEFS)) {
+    if (sn.stats[id] !== undefined && sn.stats[id] !== 0 && !allIds.includes(id)) allIds.push(id);
+  }
+  allIds.sort((a, b) => Object.keys(STAT_DEFS).indexOf(a) - Object.keys(STAT_DEFS).indexOf(b));
+  const t = el('table', { class: 'compare-t' });
+  const head = el('tr', null, el('th', { text: '' }), ...snaps.map(sn => el('th', { text: itemName(sn.item.label), style: 'cursor:default' })));
+  const rows = [
+    ['Material', sn => sn.item.madeFromStuff ? matLabel(sn.item, sn.s.mat) : '—'],
+    ['Quality', sn => sn.item.hasQuality ? qLabel(sn.s.q) : '—'],
+    ['Coins', sn => sn.price * sn.s.qty, 'low'],
+  ];
+  const body = el('tbody');
+  for (const [label, fn, better] of rows) {
+    const vals = snaps.map(fn);
+    const best = better ? Math.min(...vals) : null;
+    body.append(el('tr', null, el('td', { text: label }), ...vals.map(v => el('td', { class: better && v === best && snaps.length > 1 ? 'best' : '', text: typeof v === 'number' ? v.toLocaleString() : v }))));
+  }
+  for (const id of allIds) {
+    const vals = snaps.map(sn => sn.stats[id]);
+    const nums = vals.filter(v => v !== undefined);
+    const best = STAT_DEFS[id].better === 'high' ? Math.max(...nums) : Math.min(...nums);
+    body.append(el('tr', null, el('td', { text: STAT_DEFS[id].label }), ...vals.map(v =>
+      el('td', { class: v !== undefined && v === best && nums.length > 1 ? 'best' : '', text: v === undefined ? '—' : STAT_DEFS[id].fmt(v) }))));
+  }
+  body.append(el('tr', null, el('td', { text: '' }), ...snaps.map(sn =>
+    el('td', null, el('button', { class: 'copy-btn small', type: 'button', text: 'Copy', onclick: e => copyText(sn.cmd, e.target) })))));
+  t.append(el('thead', null, head), body);
+  return el('div', { class: 'compare' }, t);
+}
+
+// ---------------------------------------------------------------- boot
+async function boot() {
+  try {
+    const res = await fetch('calc-data.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    DATA = await res.json();
+  } catch (e) {
+    document.getElementById('builder').replaceChildren(el('p', { class: 'empty', text: 'Could not load the calculator data. Try refreshing.' }));
+    return;
+  }
+  for (const q of DATA.qualities) PRICE_QUALITY[q.id] = q.factor;
+  for (const i of DATA.items) byDef[i.def] = i;
+  document.getElementById('search').addEventListener('input', e => { state.search = e.target.value; renderList(); });
+  document.getElementById('tray-clear').addEventListener('click', () => { state.tray = []; state.compare = false; saveTray(); renderTray(); });
+  document.getElementById('compare-toggle').addEventListener('click', () => { state.compare = !state.compare; renderTray(); });
+  document.getElementById('footer').textContent = 'Prices follow the store’s rules and can differ by 1 coin from rounding. Stats are computed from the game (v' +
+    DATA.gameVersion + ') with the stream’s mods. Data updated ' + DATA.generated + '.';
+  loadTray();
+  renderTabs(); renderList(); renderTray();
+  const first = DATA.items.find(i => i.def === 'MeleeWeapon_Gladius') || DATA.items.find(i => i.group === state.group);
+  selectItem(first.def);
+  window.scrollTo(0, 0);
+}
+boot();
+</script>
+</body>
+</html>
