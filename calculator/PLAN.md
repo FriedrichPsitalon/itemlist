@@ -19,6 +19,13 @@ Edit `calculator/index.html` (all CSS/JS inline) and refresh. `calc-data.json` i
 2. `python calculator/build_data.py` merges it with `_data/StoreItems.json` and Toolkit's `itemMaterials.json` / `itemdata.json` into `calculator/calc-data.json`.
 3. Commit and push the branch.
 
+## Where the numbers on the page come from
+- **Stats, materials, unit costs, default material:** `itemStats.json` from the game (see above).
+- **Built-in bonuses:** vanilla "worn" bonuses (`equippedStatOffsets`, e.g. social impact, move speed, incoming damage) come from the game export;
+  RimWorld of Magic bonuses (Max Energy, Energy Regen, Class XP Gain...) and special-effect text are parsed from each item's description in
+  `compendium/compendium.json`. Niche vanilla stats are hidden via `HIDDEN_BONUS_STATS` in `build_data.py`.
+- **Default material:** pre-selected and starred. It is priced as "material left off" (base price) and the copied command omits it.
+
 ## The price rule (fitted to real store prices, Oct 2026)
 | You type | Price |
 |---|---|

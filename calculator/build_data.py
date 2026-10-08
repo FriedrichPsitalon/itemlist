@@ -31,6 +31,14 @@ WIKI_FALLBACK = {
     'MeleeWeapon_DamageMultiplier': [0.8, 0.9, 1, 1.1, 1.2, 1.45, 1.65],
     'RangedWeapon_DamageMultiplier': [0.9, 1, 1, 1, 1, 1.25, 1.5],
 }
+# Vanilla "worn bonus" stats (equippedStatOffsets) that only matter in niche situations. Dropped from the
+# page so the bonuses that decide a purchase stay readable; edit this set to change what is hidden.
+HIDDEN_BONUS_STATS = {'SlaveSuppressionOffset', 'VacuumResistance', 'ToxicEnvironmentResistance',
+                      'DecompressionResistance', 'DecompressionResistanceOffset', 'HypoxiaResistance',
+                      'HypoxiaResistanceOffset', 'VacuumSpeedMultiplier'}
+# Bonus stats where a smaller number is the better one (the game exporter only flags IncomingDamageFactor).
+LOWER_BETTER_BONUS_STATS = {'AimingDelayFactor', 'MentalBreakThreshold', 'MeleeCooldownFactor', 'RangedCooldownFactor'}
+BONUS_UNITS = {'MoveSpeed': ' c/s', 'CarryingCapacity': ' kg'}
 EXCLUDED_CATEGORIES = {'Drugs', 'Raw resources', 'Misc', 'Utility', 'Magic artifacts'}
 
 
@@ -136,8 +144,11 @@ def main():
             label = e['label'][:1].upper() + e['label'][1:]
             if any(x['label'].lower() == label.lower() for x in effects):
                 continue
+            if e['stat'] in HIDDEN_BONUS_STATS:
+                continue
             effects.append({'label': label, 'value': round(e['value'] * 100, 1) if e['pct'] else e['value'],
-                            'unit': '%' if e['pct'] else '', 'better': 'low' if e.get('lowerBetter') else 'high'})
+                            'unit': '%' if e['pct'] else BONUS_UNITS.get(e['stat'], ''),
+                            'better': 'low' if (e.get('lowerBetter') or e['stat'] in LOWER_BETTER_BONUS_STATS) else 'high'})
         cost_extra = {k: v for k, v in it['costList'].items() if k not in ('',)}
         items.append({
             'def': def_name,
