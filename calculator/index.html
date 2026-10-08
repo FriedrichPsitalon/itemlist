@@ -53,7 +53,10 @@
   main { max-width: 1500px; margin: 0 auto; padding: 16px; display: grid; gap: 16px;
     grid-template-columns: minmax(0, 1fr); align-items: start; }
   main > * { min-width: 0; }
-  @media (min-width: 1100px) { main { grid-template-columns: 250px minmax(0,1fr) 310px; } }
+  @media (min-width: 1100px) {
+    main { grid-template-columns: 250px minmax(0,1fr) 310px; }
+    main.wide { grid-template-columns: 250px minmax(0,1fr) min(640px, 46vw); }   /* room for the compare table */
+  }
 
   .panel { background: var(--panel); border: 1px solid var(--rule-soft); border-radius: 8px; padding: 14px; }
   .panel h2 { font-size: 1rem; margin-bottom: 10px; }
@@ -133,6 +136,16 @@
     border-radius: 4px; padding: 7px 14px; cursor: pointer; }
   .ghost-btn:hover { border-color: var(--accent); }
   .note { font-size: .76rem; color: var(--ink-faint); margin-top: 8px; }
+  .stat.magic { border-color: #4a2b4f; background: #150d17; }
+  .stat.magic .k { color: #a58ab0; }
+  .special { font-size: .8rem; color: var(--ink-dim); margin: 8px 0 0; max-width: 70ch; }
+  .prompt { color: var(--ink-dim); font-size: .9rem; flex: 1 1 220px; }
+  .pickbar.ready { border-color: var(--accent); }
+  button:disabled { opacity: .35; cursor: not-allowed; }
+  .pickbar.ready .copy-btn:not(:disabled), .pickbar.ready .ghost-btn.go { box-shadow: 0 0 10px rgba(184,53,44,.55); }
+  .pickbar.ready .ghost-btn.go { border-color: var(--accent); }
+  .magic-row span:last-child { color: #c9aed3; }
+  .compare .special-row td { white-space: normal; min-width: 150px; max-width: 220px; font-size: .72rem; vertical-align: top; }
 
   /* ---- tray ---- */
   .tray-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
@@ -196,7 +209,7 @@
 
 // ---------------------------------------------------------------- constants
 const GROUPS = [['weapon', 'Weapons'], ['armor', 'Armor'], ['clothing', 'Clothing']];
-const QUALITY_LABEL = { std: 'Normal (no quality named)', awful: 'Awful', poor: 'Poor', good: 'Good',
+const QUALITY_LABEL = { std: 'Normal', awful: 'Awful', poor: 'Poor', good: 'Good',
   excellent: 'Excellent', masterwork: 'Masterwork', legendary: 'Legendary' };
 const QUALITY_SHORT = { std: 'Normal', awful: 'Awful', poor: 'Poor', good: 'Good',
   excellent: 'Excellent', masterwork: 'Masterwork', legendary: 'Legendary' };
@@ -238,7 +251,7 @@ const byDef = {};
 const state = {
   group: 'weapon', def: null, search: '',
   mats: new Set(), quals: new Set(['std']),
-  pick: { mat: '', q: 'std' }, qty: 1,
+  pick: null, qty: 1,
   sort: { col: null, dir: 1 }, compare: false,
   tray: [],
 };
@@ -247,15 +260,18 @@ const state = {
 function roundHalfUp(x) { return Math.floor(x + 0.5 + 1e-9); }
 // Naming a material: (base + units x material price) x 1.05. Naming a quality: x quality factor x 1.1.
 // Leaving both off is the plain base price.
+// The item's default material (starred in the UI) is what you get when no material is named, so it
+// costs the base price and needs no bracket entry.
+function isDefaultMat(item, mat) { return !mat || mat === item.defaultStuff; }
 function priceOf(item, mat, q) {
   let p = item.price;
-  if (mat) p = roundHalfUp((item.price + item.units * DATA.materials[mat].price) * DATA.rules.materialMarkup);
+  if (!isDefaultMat(item, mat)) p = roundHalfUp((item.price + item.units * DATA.materials[mat].price) * DATA.rules.materialMarkup);
   if (q && q !== 'std') p = roundHalfUp(p * PRICE_QUALITY[q] * DATA.rules.qualityMarkup);
   return p;
 }
 function commandOf(item, mat, q, qty) {
   const parts = [];
-  if (mat) parts.push(DATA.materials[mat].token);
+  if (!isDefaultMat(item, mat)) parts.push(DATA.materials[mat].token);
   if (q && q !== 'std') parts.push(q);
   return '!buy ' + item.token + (parts.length ? '[' + parts.join(',') + ']' : '') + (qty > 1 ? ' ' + qty : '');
 }
@@ -337,8 +353,14 @@ const title = s => s.replace(/\b[a-z]/g, c => c.toUpperCase());
 const itemName = s => s.charAt(0).toUpperCase() + s.slice(1);
 function matLabel(item, mat) {
   if (!item.madeFromStuff) return '—';
-  if (!mat) return 'Default (' + title(DATA.materials[statKey(item, '')]?.label || 'unknown') + ')';
-  return title(DATA.materials[mat].label);
+  const m = mat || statKey(item, '');
+  return title(DATA.materials[m].label) + (isDefaultMat(item, m) ? '*' : '');
+}
+// Built-in bonuses (magic items etc.): {label, value, unit, better}
+function effectsOf(item) { return item.effects || []; }
+function fmtEffect(e) {
+  const n = Math.abs(e.value), txt = Number.isInteger(n) ? String(n) : n.toFixed(1).replace(/\.0$/, '');
+  return (e.value < 0 ? '\u2212' : '+') + txt + e.unit;
 }
 function qLabel(q) { return QUALITY_SHORT[q || 'std']; }
 
@@ -372,27 +394,29 @@ function selectItem(def, preset) {
   const item = byDef[def];
   state.def = def;
   state.group = item.group;
-  state.mats = new Set(item.madeFromStuff ? ['', ...item.mats] : ['']);
+  const defMat = item.madeFromStuff ? statKey(item, '') : '';
+  state.mats = new Set([defMat]);
   state.quals = new Set(['std']);
-  state.pick = { mat: '', q: 'std' };
+  state.pick = null;
   state.qty = 1;
   state.sort = { col: null, dir: 1 };
   if (preset) {
-    state.mats.add(preset.mat); state.quals.add(preset.q);
-    state.pick = { mat: preset.mat, q: preset.q }; state.qty = preset.qty || 1;
+    const pm = item.madeFromStuff ? (preset.mat || defMat) : '';
+    state.mats.add(pm); state.quals.add(preset.q);
+    state.pick = { mat: pm, q: preset.q }; state.qty = preset.qty || 1;
   }
   renderTabs(); renderList(); renderBuilder();
   if (window.matchMedia('(max-width: 1099px)').matches) document.getElementById('builder').scrollIntoView({ behavior: 'smooth' });
 }
 
 // ---------------------------------------------------------------- builder
-// Materials in display order: category, then price, then name (the default/"leave out" entry first).
+// Materials in display order: category, then price, then name.
 function orderedMats(item) {
   const cat = m => { const i = CAT_ORDER.indexOf((DATA.materials[m].cats.find(c => CAT_ORDER.includes(c))) || ''); return i < 0 ? 99 : i; };
   return item.mats.slice().sort((a, b) => cat(a) - cat(b) || DATA.materials[a].price - DATA.materials[b].price || a.localeCompare(b));
 }
 function buildRows(item) {
-  const mats = item.madeFromStuff ? ['', ...orderedMats(item)].filter(m => state.mats.has(m)) : [''];
+  const mats = item.madeFromStuff ? orderedMats(item).filter(m => state.mats.has(m)) : [''];
   const quals = item.hasQuality ? QUALITY_ORDER.filter(q => state.quals.has(q)) : ['std'];
   const rows = [];
   for (const m of mats) for (const q of quals) {
@@ -433,22 +457,28 @@ function renderBuilder() {
     el('div', { style: 'text-align:right' }, el('div', { class: 'price-big', text: coins(origPrice) }),
       el('div', { class: 'small faint', text: 'original price' }))));
   if (item.madeFromStuff) {
-    const dm = DATA.materials[statKey(item, '')];
-    kids.push(el('p', { class: 'small muted', text: 'Original stats shown for the default material' + (dm ? ' (' + title(dm.label) + ')' : '') +
-      ', normal quality. Needs ' + item.units + ' units of material to make.' }));
+    kids.push(el('p', { class: 'small muted', text: 'Original stats are for the default material (' + matLabel(item, '') +
+      '), normal quality. Needs ' + item.units + ' units of material to make.' }));
   }
   kids.push(el('div', { class: 'stat-grid' }, ...ids.map(id =>
     el('div', { class: 'stat' }, el('div', { class: 'k', text: STAT_DEFS[id].label }),
       el('div', { class: 'v', text: STAT_DEFS[id].fmt(orig[id] || 0) })))));
+  const fx = effectsOf(item);
+  if (fx.length || (item.special || []).length) {
+    kids.push(el('div', { class: 'section-title', text: 'Built-in bonuses' }));
+    if (fx.length) kids.push(el('div', { class: 'stat-grid' }, ...fx.map(e =>
+      el('div', { class: 'stat magic' }, el('div', { class: 'k', text: e.label }), el('div', { class: 'v', text: fmtEffect(e) })))));
+    for (const t of item.special || []) kids.push(el('p', { class: 'special', text: t }));
+  }
 
   // materials
   if (item.madeFromStuff) {
     const set = state.mats;
     kids.push(el('div', { class: 'section-title' }, 'Materials',
-      el('button', { type: 'button', text: 'All', onclick: () => { state.mats = new Set(['', ...item.mats]); renderBuilder(); } }),
-      el('button', { type: 'button', text: 'None', onclick: () => { state.mats = new Set(); renderBuilder(); } })));
+      el('button', { type: 'button', text: 'All', onclick: () => { state.mats = new Set(item.mats); renderBuilder(); } }),
+      el('button', { type: 'button', text: 'None', onclick: () => { state.mats = new Set(); renderBuilder(); } }),
+      el('button', { type: 'button', text: 'Default only', onclick: () => { state.mats = new Set([statKey(item, '')]); renderBuilder(); } })));
     const chips = el('div', { class: 'chips' });
-    chips.append(chip('Default (leave out)', set.has(''), () => toggle(set, ''), priceOf(item, '', 'std')));
     const groups = {};
     for (const m of item.mats) {
       const cat = (DATA.materials[m].cats.find(c => CAT_ORDER.includes(c))) || 'Other';
@@ -458,9 +488,10 @@ function renderBuilder() {
       if (!groups[cat]) continue;
       chips.append(el('div', { class: 'group-label', text: CAT_LABEL[cat] || cat }));
       for (const m of groups[cat].sort((a, b) => DATA.materials[a].price - DATA.materials[b].price || a.localeCompare(b)))
-        chips.append(chip(title(DATA.materials[m].label), set.has(m), () => toggle(set, m), priceOf(item, m, 'std')));
+        chips.append(chip(matLabel(item, m), set.has(m), () => toggle(set, m), priceOf(item, m, 'std')));
     }
     kids.push(chips);
+    kids.push(el('p', { class: 'note', text: '* Default material. It costs the base price, and the copied command leaves the material off.' }));
   }
 
   // qualities
@@ -484,8 +515,9 @@ function renderBuilder() {
       el('th', { text: 'Materials needed' }), th('price', 'Coins'), el('th', { text: 'vs original' }), el('th', { text: '' }));
     const body = el('tbody');
     for (const r of sorted) {
-      const tr = el('tr', { class: (r.mat === state.pick.mat && r.q === state.pick.q ? 'picked ' : '') + (!r.mat && r.q === 'std' ? 'orig' : ''),
-        onclick: () => { state.pick = { mat: r.mat, q: r.q }; renderBuilder(); } });
+      const isPick = state.pick && r.mat === state.pick.mat && r.q === state.pick.q;
+      const tr = el('tr', { class: (isPick ? 'picked ' : '') + (isDefaultMat(item, r.mat) && r.q === 'std' ? 'orig' : ''),
+        onclick: () => { state.pick = isPick ? null : { mat: r.mat, q: r.q }; renderBuilder(); } });
       tr.append(el('td', { text: matLabel(item, r.mat) }), el('td', { text: qLabel(r.q) }));
       for (const id of ids) {
         const td = el('td', { text: r.stats[id] === undefined ? '—' : STAT_DEFS[id].fmt(r.stats[id]) });
@@ -523,7 +555,7 @@ function priceDiff(p, o) {
 function needText(item, mat) {
   if (!item.madeFromStuff) return Object.keys(item.extra).length ? extraText(item) : '—';
   const m = DATA.materials[statKey(item, mat)];
-  const base = item.units + ' × ' + title(m.label) + (mat ? '' : ' (default)');
+  const base = item.units + ' × ' + title(m.label);
   return base + (Object.keys(item.extra).length ? ' + ' + extraText(item) : '');
 }
 function extraText(item) {
@@ -532,28 +564,42 @@ function extraText(item) {
 
 function renderPickBar(item) {
   const host = document.getElementById('pickbar');
-  const pk = state.pick, price = priceOf(item, pk.mat, pk.q) * state.qty, cmd = commandOf(item, pk.mat, pk.q, state.qty);
+  const pk = state.pick;
+  host.classList.toggle('ready', !!pk);
+  if (!pk) {
+    host.replaceChildren(el('div', { class: 'line' },
+      el('div', { class: 'prompt', text: 'Click a row above to interact with it' }),
+      el('button', { class: 'copy-btn', type: 'button', text: 'Copy buy command', disabled: true }),
+      el('button', { class: 'ghost-btn', type: 'button', text: 'Snapshot', disabled: true })));
+    return;
+  }
+  const price = priceOf(item, pk.mat, pk.q) * state.qty, cmd = commandOf(item, pk.mat, pk.q, state.qty);
   const qty = el('input', { class: 'qty', type: 'number', min: 1, max: 99, value: state.qty, 'aria-label': 'Quantity',
     onchange: e => { state.qty = Math.max(1, Math.min(99, parseInt(e.target.value, 10) || 1)); renderPickBar(item); } });
-  const copy = el('button', { class: 'copy-btn', type: 'button', text: 'Copy buy command', onclick: e => copyText(cmd, e.target) });
-  host.replaceChildren(
-    el('div', { class: 'line' },
-      el('div', null, el('div', { class: 'small faint', text: 'Your pick' }),
-        el('div', { text: itemName(item.label) + ' · ' + (item.madeFromStuff ? matLabel(item, pk.mat) : 'fixed material') + (item.hasQuality ? ' · ' + qLabel(pk.q) : '') })),
-      el('div', null, el('span', { class: 'small faint', text: 'Qty ' }), qty),
-      el('div', { class: 'price-big', text: coins(price) }),
-      el('code', { text: cmd }), copy,
-      el('button', { class: 'ghost-btn', type: 'button', text: 'Snapshot this', onclick: () => addSnapshot(item.def, pk.mat, pk.q, state.qty) })),
-    pk.q === 'std' && (item.hasQuality) ? el('p', { class: 'note', text: 'Tip: naming a quality adds 10% to the price, even Normal — leave quality off for the base price.' }) : null);
+  host.replaceChildren(el('div', { class: 'line' },
+    el('div', null,
+      el('div', { text: itemName(item.label) + ' · ' + (item.madeFromStuff ? matLabel(item, pk.mat) : 'fixed material') + (item.hasQuality ? ' · ' + qLabel(pk.q) : '') })),
+    el('div', null, el('span', { class: 'small faint', text: 'Qty ' }), qty),
+    el('div', { class: 'price-big', text: coins(price) }),
+    el('code', { text: cmd }),
+    el('button', { class: 'copy-btn', type: 'button', text: 'Copy buy command', onclick: e => copyText(cmd, e.target) }),
+    el('button', { class: 'ghost-btn go', type: 'button', text: 'Snapshot', onclick: () => addSnapshot(item.def, pk.mat, pk.q, state.qty) })));
 }
 
 // ---------------------------------------------------------------- snapshots
 function loadTray() {
-  try { const t = JSON.parse(localStorage.getItem('rs-calc-tray') || '[]'); if (Array.isArray(t)) state.tray = t.filter(s => byDef[s.def]); } catch (e) { /* storage unavailable */ }
+  try {
+    const t = JSON.parse(localStorage.getItem('rs-calc-tray') || '[]');
+    if (Array.isArray(t)) state.tray = t.filter(s => byDef[s.def]).map(s => {
+      const item = byDef[s.def];
+      return Object.assign(s, { mat: item.madeFromStuff && item.mats.includes(s.mat) ? s.mat : (item.madeFromStuff ? statKey(item, '') : '') });
+    });
+  } catch (e) { /* storage unavailable */ }
 }
 function saveTray() { try { localStorage.setItem('rs-calc-tray', JSON.stringify(state.tray)); } catch (e) { /* ignore */ } }
 function addSnapshot(def, mat, q, qty) {
-  const s = { def, mat: mat || '', q: q || 'std', qty: qty || 1, id: Date.now() + Math.random() };
+  const item = byDef[def];
+  const s = { def, mat: item.madeFromStuff ? (mat || statKey(item, '')) : '', q: q || 'std', qty: qty || 1, id: Date.now() + Math.random() };
   state.tray.push(s); saveTray(); renderTray();
 }
 function snapData(s) {
@@ -562,6 +608,7 @@ function snapData(s) {
 }
 function renderTray() {
   const host = document.getElementById('tray');
+  document.querySelector('main').classList.toggle('wide', state.compare && state.tray.length > 1);
   document.getElementById('tray-clear').hidden = !state.tray.length;
   const ct = document.getElementById('compare-toggle'); ct.hidden = state.tray.length < 2; ct.textContent = state.compare ? 'Show cards' : 'Compare table';
   if (!state.tray.length) {
@@ -579,6 +626,8 @@ function renderTray() {
         el('span', null, el('b', { style: 'color:var(--gold)', text: coins(d.price * s.qty) }),
           el('span', { class: 'faint small', text: '  (orig ' + item.price * s.qty + ')' }))),
       ...ids.map(id => el('div', { class: 'row' }, el('span', { class: 'faint', text: STAT_DEFS[id].label }), el('span', { text: STAT_DEFS[id].fmt(d.stats[id]) }))),
+      ...effectsOf(item).map(e => el('div', { class: 'row magic-row' }, el('span', { class: 'faint', text: e.label }), el('span', { text: fmtEffect(e) }))),
+      (item.special || []).length ? el('div', { class: 'small faint', style: 'margin-top:4px', text: item.special.join(' ') }) : null,
       el('div', { class: 'actions' },
         el('button', { class: 'copy-btn small', type: 'button', text: 'Copy', onclick: e => copyText(d.cmd, e.target) }),
         el('button', { class: 'ghost-btn small x', type: 'button', text: 'Remove', onclick: () => { state.tray = state.tray.filter(t => t.id !== s.id); saveTray(); renderTray(); } })));
@@ -611,6 +660,25 @@ function compareTable() {
     body.append(el('tr', null, el('td', { text: STAT_DEFS[id].label }), ...vals.map(v =>
       el('td', { class: v !== undefined && v === best && nums.length > 1 ? 'best' : '', text: v === undefined ? '—' : STAT_DEFS[id].fmt(v) }))));
   }
+  // built-in bonuses: one row per label (split by unit when items mix flat and % values)
+  const units = {};
+  for (const sn of snaps) for (const e of effectsOf(sn.item)) (units[e.label] = units[e.label] || new Set()).add(e.unit);
+  const seen = new Set();
+  for (const sn of snaps) for (const e of effectsOf(sn.item)) {
+    const key = e.label + '|' + e.unit;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const name = e.label + (units[e.label].size > 1 ? (e.unit ? ' (%)' : ' (flat)') : '');
+    const vals = snaps.map(x => effectsOf(x.item).find(f => f.label === e.label && f.unit === e.unit));
+    const nums = vals.filter(Boolean).map(f => f.value);
+    const best = e.better === 'low' ? Math.min(...nums) : Math.max(...nums);
+    body.append(el('tr', null, el('td', { text: name }), ...vals.map(f =>
+      el('td', { class: f && f.value === best && nums.length > 1 ? 'best' : '', text: f ? fmtEffect(f) : '—' }))));
+  }
+  if (snaps.some(sn => (sn.item.special || []).length)) {
+    body.append(el('tr', { class: 'special-row' }, el('td', { text: 'Special' }), ...snaps.map(sn =>
+      el('td', { text: (sn.item.special || []).join(' ') || '—' }))));
+  }
   body.append(el('tr', null, el('td', { text: '' }), ...snaps.map(sn =>
     el('td', null, el('button', { class: 'copy-btn small', type: 'button', text: 'Copy', onclick: e => copyText(sn.cmd, e.target) })))));
   t.append(el('thead', null, head), body);
@@ -632,7 +700,7 @@ async function boot() {
   document.getElementById('search').addEventListener('input', e => { state.search = e.target.value; renderList(); });
   document.getElementById('tray-clear').addEventListener('click', () => { state.tray = []; state.compare = false; saveTray(); renderTray(); });
   document.getElementById('compare-toggle').addEventListener('click', () => { state.compare = !state.compare; renderTray(); });
-  document.getElementById('footer').textContent = 'Prices follow the store’s rules and can differ by 1 coin from rounding. Stats are computed from the game (v' +
+  document.getElementById('footer').textContent = 'The cheapest way to buy is to leave the default material and normal quality off the command. Prices follow the store’s rules and can differ by 1 coin from rounding. Stats are computed from the game (v' +
     DATA.gameVersion + ') with the stream’s mods. Data updated ' + DATA.generated + '.';
   loadTray();
   renderTabs(); renderList(); renderTray();

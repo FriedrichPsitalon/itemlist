@@ -13,6 +13,7 @@ Standard library only, so it runs anywhere Python 3 does.
 import datetime
 import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -31,6 +32,33 @@ WIKI_FALLBACK = {
     'RangedWeapon_DamageMultiplier': [0.9, 1, 1, 1, 1, 1.25, 1.5],
 }
 EXCLUDED_CATEGORIES = {'Drugs', 'Raw resources', 'Misc', 'Utility', 'Magic artifacts'}
+
+
+# Built-in bonuses (RimWorld of Magic etc.) are listed in the item's description as
+# "Label: +x" / "Label: +x%" lines under a header line ending in ":". Anything else under
+# that header ("Shroud of Undeath: reduces ...") is a special effect shown as text.
+EFFECT_RE = re.compile(r"^([A-Za-z][A-Za-z' /-]{1,32}?):\s*([+\-−])\s?(\d[\d.,]*)\s*(%?)\s*$")
+EFFECT_ALIASES = {'Arcane Res': 'Arcane Resistance'}
+LOWER_IS_BETTER = ('cost', 'cooldown')
+
+
+def parse_effects(description):
+    lines = [l.strip() for l in (description or '').splitlines() if l.strip()]
+    effects, special, seen_header = [], [], False
+    for line in lines:
+        m = EFFECT_RE.match(line)
+        if m:
+            label = EFFECT_ALIASES.get(m.group(1).strip(), m.group(1).strip())
+            sign = -1 if m.group(2) in '-−' else 1
+            value = sign * float(m.group(3).replace(',', ''))
+            unit = '%' if m.group(4) else ''
+            effects.append({'label': label, 'value': value, 'unit': unit,
+                            'better': 'low' if any(w in label.lower() for w in LOWER_IS_BETTER) else 'high'})
+        elif line.endswith(':'):
+            seen_header = True
+        elif seen_header and ':' in line and len(line) <= 220:
+            special.append(line)
+    return effects, special
 
 
 def load(path):
@@ -102,6 +130,14 @@ def main():
                         or (stuff_mult >= 0.4 and s['category'] != 'Headgear'))
             group = 'armor' if is_armor else 'clothing'
 
+        effects, special = parse_effects((compendium.get(def_name) or {}).get('description'))
+        for e in it.get('equipped', []):
+            # vanilla stat offsets the item gives its wearer; skip any the description already listed
+            label = e['label'][:1].upper() + e['label'][1:]
+            if any(x['label'].lower() == label.lower() for x in effects):
+                continue
+            effects.append({'label': label, 'value': round(e['value'] * 100, 1) if e['pct'] else e['value'],
+                            'unit': '%' if e['pct'] else '', 'better': 'low' if e.get('lowerBetter') else 'high'})
         cost_extra = {k: v for k, v in it['costList'].items() if k not in ('',)}
         items.append({
             'def': def_name,
@@ -120,6 +156,8 @@ def main():
             'statNames': stat_names,
             'qf': qf,
             'stats': by_mat,
+            'effects': effects,
+            'special': special,
             'tools': it.get('tools'),
             'ranged': it.get('ranged'),
         })
