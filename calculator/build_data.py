@@ -3,7 +3,7 @@
 
 Inputs (all read-only):
   itemStats.json      - written by the Rimstream Label Exporter RimWorld mod (game data)
-  itemMaterials.json  - Toolkit's list of materials it accepts in !buy item[material]
+  itemMaterials.json  - material names written by the Rimstream Label Exporter mod (every stuff label the game knows)
   itemdata.json       - Toolkit's per-item flags (IsStuffAllowed ...)
   _data/StoreItems.json - store prices (this repo)
 

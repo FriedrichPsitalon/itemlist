@@ -16,7 +16,7 @@ Edit `calculator/index.html` (all CSS/JS inline) and refresh. `calc-data.json` i
 1. Launch RimWorld to the main menu. The `Rimstream Label Exporter` mod rewrites
    `...\LocalLow\Ludeon Studios\RimWorld by Ludeon Studios\TwitchToolkit\itemStats.json`
    whenever the game version or mod list changes (source: `RimstreamBot-src/rimworld-mod/Source/ItemStatsExporter.cs`).
-2. `python calculator/build_data.py` merges it with `_data/StoreItems.json` and Toolkit's `itemMaterials.json` / `itemdata.json` into `calculator/calc-data.json`.
+2. `python calculator/build_data.py` merges it with `_data/StoreItems.json` and the Rimstream mod's `itemMaterials.json` (every material label the game knows) / `itemdata.json` into `calculator/calc-data.json`.
 3. Commit and push the branch.
 
 ## Where the numbers on the page come from
