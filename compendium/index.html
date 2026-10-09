@@ -6,13 +6,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<title>RimStream Compendium</title>
-<meta property="og:title" content="RimStream Compendium">
+<title>RimStream Store</title>
+<meta property="og:title" content="RimStream Store">
 <meta property="og:description" content="Everything buyable in the stream shop — items, events, traits, and pawn kinds.">
 <meta property="og:image" content="social-preview.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="RimStream Compendium">
+<meta name="twitter:title" content="RimStream Store">
 <meta name="twitter:description" content="Everything buyable in the stream shop — items, events, traits, and pawn kinds.">
 <meta name="twitter:image" content="social-preview.png">
 <style>
@@ -23,8 +23,11 @@
     --panel: #170c0b;
     --ink: #eae2d0;
     --ink-dim: #a89c86;
-    --ink-faint: #6f6552;
+    /* lifted from #6f6552 so small text clears 4.5:1 on the page, panel and glow backgrounds */
+    --ink-faint: #867e6e;
     --accent: #b8352c;
+    /* accent for text and links: #b8352c was only ~3.4:1 */
+    --accent-text: #c75f58;
     --accent-soft: #7a221c;
     --cool: #5e7d8c;
     --rule: #3d1f1c;
@@ -56,6 +59,25 @@
   }
 
   a { color: inherit; }
+
+  :focus-visible {
+    outline: 2px solid var(--accent-text);
+    outline-offset: 2px;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.85em;
+  }
 
   /* ---------- Header ---------- */
 
@@ -129,8 +151,8 @@
   }
 
   .site-nav a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
+    color: var(--accent-text);
+    border-bottom-color: var(--accent-text);
   }
 
   .site-nav .current {
@@ -157,6 +179,7 @@
   }
 
   #search:focus { border-color: var(--accent-soft); }
+  #search:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
 
   #search::placeholder { color: var(--ink-faint); }
 
@@ -187,6 +210,7 @@
   }
 
   select.chip-select:focus { border-color: var(--accent-soft); }
+  select.chip-select:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
 
   .tag-toggle {
     background: var(--panel);
@@ -220,15 +244,21 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    width: 100%;
     padding: 10px 4px;
     cursor: pointer;
     user-select: none;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    text-align: left;
   }
 
   .group-head:hover { background: rgba(184, 53, 44, 0.045); }
 
   .group-head .chevron {
-    color: var(--accent);
+    color: var(--accent-text);
     font-size: 0.7rem;
     transition: transform 0.15s;
     display: inline-block;
@@ -267,16 +297,30 @@
 
   .row {
     border-bottom: 1px solid var(--rule-soft);
-    padding: 12px 4px;
-    cursor: pointer;
+    padding: 8px 4px;
   }
 
   .row:hover { background: rgba(198, 138, 62, 0.045); }
 
   .row-head {
     display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .row-toggle {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
     align-items: baseline;
     gap: 12px;
+    padding: 5px 0;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
   }
 
   .row-label {
@@ -287,12 +331,6 @@
   }
 
   .row.is-generic .row-label { color: var(--ink-dim); font-weight: 500; }
-
-  .row-cat {
-    font-size: 0.75rem;
-    color: var(--ink-faint);
-    white-space: nowrap;
-  }
 
   .row-badge {
     font-size: 0.78rem;
@@ -327,7 +365,7 @@
 
   .row-detail {
     display: none;
-    margin-top: 10px;
+    margin-top: 8px;
     padding: 12px 14px;
     background: var(--panel);
     border-left: 2px solid var(--accent-soft);
@@ -349,6 +387,13 @@
     font-size: 0.76rem;
     color: var(--ink-faint);
     margin-bottom: 10px;
+  }
+
+  .row-detail .share-note {
+    font-size: 0.8rem;
+    color: var(--ink-dim);
+    margin: 0 0 10px;
+    max-width: 62ch;
   }
 
   .stat-grid {
@@ -389,16 +434,10 @@
 
   .bullet-list li { margin-bottom: 2px; }
 
-  .copy-row {
-    display: flex;
-    gap: 8px;
-    margin-top: 8px;
-  }
-
   .purchase-bar {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px 16px;
     flex-wrap: wrap;
     margin-bottom: 12px;
     padding-bottom: 12px;
@@ -409,6 +448,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-wrap: wrap;
   }
 
   .price-big {
@@ -416,6 +456,15 @@
     font-weight: 700;
     color: #e6bd52;
     font-variant-numeric: tabular-nums;
+  }
+
+  .cmd-preview {
+    background: rgba(234, 226, 208, 0.06);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 4px 8px;
+    color: var(--ink);
+    user-select: all;
   }
 
   .copy-btn {
@@ -432,6 +481,13 @@
 
   .copy-btn:hover { background: var(--accent); }
 
+  .copy-quick {
+    flex: 0 0 auto;
+    min-width: 68px;
+    padding: 4px 10px;
+    font-size: 0.78rem;
+  }
+
   .calc-btn {
     font-size: 0.82rem;
     font-weight: 600;
@@ -444,7 +500,7 @@
     font-family: inherit;
   }
 
-  .calc-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .calc-btn:hover { border-color: var(--accent-text); color: var(--accent-text); }
 
   .copy-btn.copied {
     color: #7fbf7f;
@@ -452,10 +508,65 @@
     background: rgba(127, 191, 127, 0.08);
   }
 
+  .qty {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--ink-dim);
+  }
+
+  .qty-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+    background: var(--bg);
+    color: var(--ink);
+    font: inherit;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .qty-btn:hover { border-color: var(--accent-text); }
+
+  .qty-input {
+    width: 56px;
+    height: 28px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+    background: var(--bg);
+    color: var(--ink);
+    font: inherit;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .qty-total {
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-faint);
+    margin-left: 4px;
+  }
+
+  .usage-block {
+    margin: 0 0 12px;
+    font-size: 0.82rem;
+    color: var(--ink-dim);
+  }
+
+  .usage-block p { margin: 0 0 6px; }
+
   .no-desc-note {
     font-size: 0.78rem;
     color: var(--ink-faint);
     font-style: italic;
+  }
+
+  .min-note {
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    margin: -4px 0 10px;
   }
 
   .browse-section {
@@ -479,7 +590,7 @@
 
   .browse-head .view-all {
     font-size: 0.78rem;
-    color: var(--accent);
+    color: var(--accent-text);
     background: none;
     border: none;
     cursor: pointer;
@@ -493,6 +604,22 @@
     font-size: 0.8rem;
     color: var(--ink-faint);
     margin: 4px 0 4px;
+  }
+
+  .desc-head {
+    font-size: 1.05rem;
+    margin: 32px 0 4px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+  }
+
+  .desc-head .count { color: var(--ink-faint); font-weight: 400; }
+
+  .more-note {
+    padding: 16px 4px;
+    color: var(--ink-faint);
+    font-size: 0.8rem;
   }
 
   #empty-state {
@@ -510,6 +637,10 @@
     color: var(--ink-faint);
     border-top: 1px solid var(--rule-soft);
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .group-head .chevron { transition: none; }
+  }
 </style>
 </head>
 <body>
@@ -520,21 +651,22 @@
       <img class="mascot-icon" src="mascot-icon.png" alt="">
       <span class="brand-text">RimStream</span>
     </a>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="Site">
       <a href="../commands">Commands</a>
       <a href="../guide/">Guide</a>
       <a href="../info">Info</a>
       <a href="../modlist">Mod List</a>
       <a href="../calculator/">Gear Calculator</a>
-      <span class="current">Store</span>
+      <span class="current" aria-current="page">Store</span>
     </nav>
   </div>
-  <p class="page-lead">Everything buyable in the stream shop &mdash; items, events, traits, and pawn kinds.</p>
+  <p class="page-lead">Everything buyable in the stream shop &mdash; items, events, traits, and pawn kinds. Click a row for details. Copy puts the chat command on your clipboard.</p>
   <div class="search-row">
-    <input id="search" type="text" placeholder="Search by name&hellip;" autocomplete="off">
+    <label class="visually-hidden" for="search">Search the store</label>
+    <input id="search" type="search" placeholder="Search by name or command&hellip;" autocomplete="off">
   </div>
   <div class="filters">
-    <span class="filter-label">Type</span>
+    <label class="filter-label" for="filter-type">Type</label>
     <select id="filter-type" class="chip-select">
       <option value="">All</option>
       <option value="item">Items</option>
@@ -542,41 +674,56 @@
       <option value="trait">Traits</option>
       <option value="race">Pawn Kinds</option>
     </select>
-    <span class="filter-label">Category</span>
+    <label class="filter-label" for="filter-category">Category</label>
     <select id="filter-category" class="chip-select"><option value="">All</option></select>
-    <span class="filter-label">Source</span>
+    <label class="filter-label" for="filter-source">Source</label>
     <select id="filter-source" class="chip-select"><option value="">All</option></select>
-    <span id="result-count"></span>
+    <span id="result-count" role="status"></span>
   </div>
   <div class="filters" id="tag-row"></div>
 </header>
 
 <main id="list"></main>
 
-<div id="empty-state">No items match that search.</div>
+<div id="empty-state">Nothing matches that search.</div>
 
 <footer>
-  <span id="footer-count"></span> things indexed. Click any row to see its full details.
+  <span id="footer-count"></span> things indexed. The minimum spend is <span id="min-spend">4</span> coins per purchase, so the cheapest items start at a bulk quantity.
 </footer>
 
+<div id="live" class="visually-hidden" aria-live="polite" role="status"></div>
+
+<script src="store-logic.js"></script>
 <script>
+const SL = StoreLogic;
 let ITEMS = [];
 let activeTags = new Set();
 let TAG_GROUPS = {};
 let collapsedGroups = new Set();
 const BROWSE_ORDER = [];
 let CALC_DEFS = new Set();   // defNames the Gear Calculator can compare (calculator/calc-items.json)
+const MAX_RENDER = 400;
+const MAX_DESC_RENDER = 50;
+const SKIP_TAGS = new Set(['Event', 'Trait', 'Pawn Kind']); // already covered by the Type filter
 
 function sourceOf(it) {
   return it.source || it.mod || '';
 }
 
+const $ = id => document.getElementById(id);
+
 async function init() {
-  const [res, calcDefs] = await Promise.all([
+  const [res, calcDefs, economy] = await Promise.all([
     fetch('compendium.json'),
     fetch('../calculator/calc-items.json').then(r => (r.ok ? r.json() : [])).catch(() => []),
+    fetch('economy.json').then(r => (r.ok ? r.json() : null)).catch(() => null),
   ]);
-  ITEMS = await res.json();
+  if (economy && economy.min_spend) SL.setMinSpend(economy.min_spend);
+  $('min-spend').textContent = SL.getMinSpend();
+
+  // Rows flagged hidden are kept in the data (so nothing is lost) but never shown.
+  ITEMS = (await res.json()).filter(it => !it.hidden);
+  ITEMS.forEach((it, i) => { it._i = i; SL.prepare(it); });
   CALC_DEFS = new Set(calcDefs);
 
   const categories = new Set();
@@ -592,67 +739,206 @@ async function init() {
   populateSelect('filter-category', [...categories].sort());
   populateSelect('filter-source', [...sources].sort());
 
-  const tagRow = document.getElementById('tag-row');
-  const skipTags = new Set(['Event', 'Trait', 'Pawn Kind']); // already covered by the Type filter
+  const tagRow = $('tag-row');
   const orderedTags = Object.keys(tagCounts)
-    .filter(t => !skipTags.has(t))
+    .filter(t => !SKIP_TAGS.has(t))
     .sort((a, b) => tagCounts[b] - tagCounts[a]);
   tagRow.innerHTML = `<span class="filter-label">Tags</span>` + orderedTags.map(t =>
-    `<button type="button" class="tag-toggle" data-tag="${escapeHtml(t)}">${escapeHtml(t)} (${tagCounts[t]})</button>`
+    `<button type="button" class="tag-toggle" aria-pressed="false" data-tag="${escapeHtml(t)}">${escapeHtml(t)} (${tagCounts[t]})</button>`
   ).join('');
   tagRow.querySelectorAll('.tag-toggle').forEach(btn => {
     btn.addEventListener('click', () => {
       const t = btn.dataset.tag;
-      if (activeTags.has(t)) { activeTags.delete(t); btn.classList.remove('active'); }
-      else { activeTags.add(t); btn.classList.add('active'); }
+      setTag(t, !activeTags.has(t));
       render();
     });
   });
 
   BROWSE_ORDER.push(...orderedTags);
   orderedTags.forEach(t => {
-    TAG_GROUPS[t] = ITEMS.filter(it => (it.tags || []).includes(t));
+    TAG_GROUPS[t] = ITEMS.filter(it => (it.tags || []).includes(t)).sort(browseSort);
   });
 
-  document.getElementById('footer-count').textContent = ITEMS.length;
+  $('footer-count').textContent = ITEMS.length;
 
-  document.getElementById('search').addEventListener('input', debounce(render, 120));
-  document.getElementById('filter-type').addEventListener('change', render);
-  document.getElementById('filter-category').addEventListener('change', render);
-  document.getElementById('filter-source').addEventListener('change', render);
+  applyUrlState(orderedTags);
 
-  document.getElementById('list').addEventListener('click', (e) => {
-    if (e.target.closest('.calc-btn')) return;   // plain link to the calculator; don't also toggle the row
-    const copyBtn = e.target.closest('.copy-btn');
-    if (copyBtn) {
-      copyToClipboard(copyBtn.dataset.cmd, copyBtn);
-      return;
-    }
-    const viewAllBtn = e.target.closest('.view-all');
-    if (viewAllBtn) {
-      activateTag(viewAllBtn.dataset.tag);
-      return;
-    }
-    const groupHead = e.target.closest('.group-head');
-    if (groupHead) {
-      const section = groupHead.closest('.group-section');
-      const id = section.dataset.groupId;
-      if (collapsedGroups.has(id)) collapsedGroups.delete(id);
-      else collapsedGroups.add(id);
-      section.classList.toggle('collapsed');
-      return;
-    }
-    const row = e.target.closest('.row');
-    if (row) {
-      row.classList.toggle('expanded');
-    }
-  });
+  $('search').addEventListener('input', debounce(render, 120));
+  $('filter-type').addEventListener('change', render);
+  $('filter-category').addEventListener('change', render);
+  $('filter-source').addEventListener('change', render);
+
+  const list = $('list');
+  list.addEventListener('click', onListClick);
+  list.addEventListener('input', onListInput);
+  list.addEventListener('change', onListChange);
 
   render();
 }
 
+function setTag(t, on) {
+  const btn = document.querySelector(`.tag-toggle[data-tag="${CSS.escape(t)}"]`);
+  if (on) activeTags.add(t); else activeTags.delete(t);
+  if (btn) {
+    btn.classList.toggle('active', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+}
+
+/* ---------- deep links: ?q=wolf+meat  ?tag=Help  ?tag=Magic&tag=Spell  ?type=event ---------- */
+
+function applyUrlState(knownTags) {
+  const p = new URLSearchParams(location.search);
+  if (p.get('q')) $('search').value = p.get('q');
+  const type = p.get('type');
+  if (type && [...$('filter-type').options].some(o => o.value === type)) $('filter-type').value = type;
+  const byLower = new Map(knownTags.map(t => [t.toLowerCase(), t]));
+  p.getAll('tag').flatMap(v => v.split(',')).forEach(v => {
+    const t = byLower.get(v.trim().toLowerCase());
+    if (t) setTag(t, true);
+  });
+}
+
+function syncUrl() {
+  try {
+    const p = new URLSearchParams();
+    const q = $('search').value.trim();
+    if (q) p.set('q', q);
+    const type = $('filter-type').value;
+    if (type) p.set('type', type);
+    activeTags.forEach(t => p.append('tag', t));
+    const qs = p.toString();
+    const next = location.pathname + (qs ? '?' + qs : '') + location.hash;
+    if (next !== location.pathname + location.search + location.hash) history.replaceState(null, '', next);
+  } catch (e) { /* history can be blocked (sandboxed frames); the page works without it */ }
+}
+
+/* ---------- events ---------- */
+
+function onListClick(e) {
+  if (e.target.closest('.calc-btn')) return;   // plain link to the calculator; don't also toggle the row
+  const copyBtn = e.target.closest('.copy-btn');
+  if (copyBtn) {
+    copyFrom(copyBtn);
+    return;
+  }
+  const qtyBtn = e.target.closest('.qty-btn');
+  if (qtyBtn) {
+    const input = qtyBtn.parentElement.querySelector('.qty-input');
+    setQty(input, (parseInt(input.value, 10) || 1) + parseInt(qtyBtn.dataset.step, 10));
+    return;
+  }
+  const viewAllBtn = e.target.closest('.view-all');
+  if (viewAllBtn) {
+    activateTag(viewAllBtn.dataset.tag);
+    return;
+  }
+  const groupHead = e.target.closest('.group-head');
+  if (groupHead) {
+    const section = groupHead.closest('.group-section');
+    const id = section.dataset.groupId;
+    if (collapsedGroups.has(id)) collapsedGroups.delete(id);
+    else collapsedGroups.add(id);
+    const collapsed = section.classList.toggle('collapsed');
+    groupHead.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    return;
+  }
+  const toggle = e.target.closest('.row-toggle');
+  if (toggle) toggleRow(toggle.closest('.row'));
+}
+
+function onListInput(e) {
+  if (e.target.classList.contains('qty-input')) setQty(e.target, parseInt(e.target.value, 10), true);
+}
+
+function onListChange(e) {
+  if (e.target.classList.contains('qty-input')) setQty(e.target, parseInt(e.target.value, 10));
+}
+
+function toggleRow(row, force) {
+  const open = force !== undefined ? force : !row.classList.contains('expanded');
+  const detail = row.querySelector('.row-detail');
+  if (open && !detail.firstChild) detail.innerHTML = detailHtml(ITEMS[row.dataset.i]);
+  row.classList.toggle('expanded', open);
+  row.querySelector('.row-toggle').setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+
+function setQty(input, value, typing) {
+  const row = input.closest('.row');
+  const item = ITEMS[row.dataset.i];
+  const min = SL.minQty(item);
+  // While typing, wait until the number is valid so "12" isn't forced to the minimum at the "1".
+  if (typing && !(value >= min)) return;
+  const qty = Math.min(999, Math.max(min, value || min));
+  if (!typing || qty !== value) input.value = qty;
+  const cmd = SL.commandsFor(item, qty)[0].cmd;
+  row.querySelectorAll('[data-cmd-for="buy"]').forEach(b => {
+    b.dataset.cmd = cmd;
+    if (b.hasAttribute('aria-label')) b.setAttribute('aria-label', 'Copy ' + cmd);
+  });
+  const preview = row.querySelector('.cmd-preview[data-cmd-for="buy"]');
+  if (preview) preview.textContent = cmd;
+  const total = row.querySelector('.qty-total');
+  if (total) total.textContent = '= ' + SL.coins(item.price * qty);
+}
+
+/* ---------- copying ---------- */
+
+async function copyText(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch (e) { /* fall through to the old way */ }
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.setAttribute('readonly', '');
+  ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
+  document.body.appendChild(ta);
+  ta.select();
+  ta.setSelectionRange(0, text.length);
+  let ok = false;
+  try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+  ta.remove();
+  return ok;
+}
+
+function announce(msg) {
+  const live = $('live');
+  live.textContent = '';
+  setTimeout(() => { live.textContent = msg; }, 30);
+}
+
+async function copyFrom(btn) {
+  const text = btn.dataset.cmd;
+  const original = btn.dataset.label || btn.textContent;
+  btn.dataset.label = original;
+  const ok = await copyText(text);
+  if (ok) {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    announce('Copied ' + text);
+  } else {
+    // Last resort: open the row and select the command so Ctrl+C works.
+    const row = btn.closest('.row');
+    toggleRow(row, true);
+    const code = row.querySelector(`.cmd-preview[data-cmd="${CSS.escape(text)}"], .cmd-preview`);
+    if (code) {
+      const range = document.createRange();
+      range.selectNodeContents(code);
+      const sel = getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    }
+    btn.textContent = 'Copy failed';
+    announce('Copy failed. The command is selected; press Control C to copy it.');
+  }
+  setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 1600);
+}
+
 function populateSelect(id, values) {
-  const el = document.getElementById(id);
+  const el = $(id);
   values.forEach(v => {
     const opt = document.createElement('option');
     opt.value = v;
@@ -666,19 +952,18 @@ function debounce(fn, ms) {
   return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
 }
 
-function matches(item, query, type, cat, source, tags) {
-  if (type && item.type !== type) return false;
-  if (cat && !(item.thingCategories || []).includes(cat)) return false;
-  if (source && sourceOf(item) !== source) return false;
-  if (tags.size) {
-    const itemTags = new Set(item.tags || []);
-    for (const t of tags) if (!itemTags.has(t)) return false;
-  }
-  if (query) {
-    const hay = (item.label || item.defName || '').toLowerCase();
-    if (!hay.includes(query)) return false;
-  }
-  return true;
+/* ---------- filtering ---------- */
+
+function facetPass(type, cat, source, tags) {
+  return item => {
+    if (type && item.type !== type) return false;
+    if (cat && !(item.thingCategories || []).includes(cat)) return false;
+    if (source && sourceOf(item) !== source) return false;
+    if (tags && tags.size) {
+      for (const t of tags) if (!(item.tags || []).includes(t)) return false;
+    }
+    return true;
+  };
 }
 
 function prettyLabel(s) {
@@ -700,42 +985,55 @@ function groupKeyOf(item, field) {
   return item[field] || 'Unspecified';
 }
 
-function updateTagDimming(query, type, cat, source) {
+function updateTagDimming(pool) {
   document.querySelectorAll('.tag-toggle').forEach(btn => {
     const t = btn.dataset.tag;
     if (activeTags.has(t)) { btn.classList.remove('dead'); return; }
-    const hypothetical = new Set(activeTags);
-    hypothetical.add(t);
-    const hasAny = ITEMS.some(it => matches(it, query, type, cat, source, hypothetical));
+    const hasAny = pool.some(it => {
+      const tags = it.tags || [];
+      if (!tags.includes(t)) return false;
+      for (const a of activeTags) if (!tags.includes(a)) return false;
+      return true;
+    });
     btn.classList.toggle('dead', !hasAny);
   });
 }
-
-const MAX_RENDER = 400;
 
 function isDefaultState(query, type, cat, source) {
   return !query && !type && !cat && !source && activeTags.size === 0;
 }
 
 function activateTag(t) {
-  activeTags.add(t);
-  const btn = document.querySelector(`.tag-toggle[data-tag="${CSS.escape(t)}"]`);
-  if (btn) btn.classList.add('active');
+  setTag(t, true);
   render();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function renderBrowse() {
-  document.getElementById('result-count').textContent = ITEMS.length + ' things total';
-  const list = document.getElementById('list');
-  document.getElementById('empty-state').style.display = 'none';
+/* ---------- browse mode: a few curated, affordable picks per tag ---------- */
 
-  const intro = `<p class="browse-intro">No search or filter active &mdash; browsing a sample from each tag. Pick a tag above, or search by name, to see everything.</p>`;
+function browsePrice(it) {
+  const p = SL.basePrice(it);
+  return p == null ? Infinity : p;
+}
+
+function browseSort(a, b) {
+  const ga = a.kind && a.kind.startsWith('generic') ? 1 : 0;
+  const gb = b.kind && b.kind.startsWith('generic') ? 1 : 0;
+  return ga - gb || browsePrice(a) - browsePrice(b) ||
+    (a.label || a.defName).toLowerCase().localeCompare((b.label || b.defName).toLowerCase());
+}
+
+function renderBrowse() {
+  $('result-count').textContent = ITEMS.length + ' things total';
+  $('empty-state').style.display = 'none';
+
+  const intro = `<p class="browse-intro">No search or filter active &mdash; showing a few of the cheapest curated entries under each tag. Pick a tag above, or search by name, to see everything.</p>`;
+  const floor = SL.getMinSpend();
 
   const sections = BROWSE_ORDER.map(tag => {
     const items = TAG_GROUPS[tag] || [];
     if (!items.length) return '';
-    const preview = items.slice(0, 5);
+    const preview = items.filter(it => browsePrice(it) >= floor).slice(0, 5);
     return `
       <div class="browse-section">
         <div class="browse-head">
@@ -747,7 +1045,7 @@ function renderBrowse() {
     `;
   }).join('');
 
-  list.innerHTML = intro + sections;
+  $('list').innerHTML = intro + sections;
 }
 
 function renderGrouped(filtered, type, tagsArr) {
@@ -760,17 +1058,16 @@ function renderGrouped(filtered, type, tagsArr) {
   const contextKey = type + '|' + tagsArr.join(',');
   const orderedKeys = Object.keys(buckets).sort((a, b) => buckets[b].length - buckets[a].length);
 
-  const list = document.getElementById('list');
-  list.innerHTML = orderedKeys.map(key => {
+  $('list').innerHTML = orderedKeys.map(key => {
     const groupId = contextKey + '::' + key;
     const isCollapsed = collapsedGroups.has(groupId);
     return `
       <div class="group-section ${isCollapsed ? 'collapsed' : ''}" data-group-id="${escapeHtml(groupId)}">
-        <div class="group-head">
-          <span class="chevron">&#9660;</span>
+        <button type="button" class="group-head" aria-expanded="${isCollapsed ? 'false' : 'true'}">
+          <span class="chevron" aria-hidden="true">&#9660;</span>
           <span class="group-title">${escapeHtml(prettyLabel(key))}</span>
           <span class="group-count">(${buckets[key].length})</span>
-        </div>
+        </button>
         <div class="group-body">${buckets[key].map(rowHtml).join('')}</div>
       </div>
     `;
@@ -778,91 +1075,90 @@ function renderGrouped(filtered, type, tagsArr) {
 }
 
 function render() {
-  const query = document.getElementById('search').value.trim().toLowerCase();
-  const type = document.getElementById('filter-type').value;
-  const cat = document.getElementById('filter-category').value;
-  const source = document.getElementById('filter-source').value;
+  const raw = $('search').value;
+  const query = SL.cleanQuery(raw);
+  const type = $('filter-type').value;
+  const cat = $('filter-category').value;
+  const source = $('filter-source').value;
+  syncUrl();
 
   if (isDefaultState(query, type, cat, source)) {
     renderBrowse();
-    updateTagDimming(query, type, cat, source);
+    updateTagDimming(ITEMS);
     return;
   }
 
-  const filtered = ITEMS.filter(it => matches(it, query, type, cat, source, activeTags));
+  // Search once without the tag filter (that pool also drives tag dimming), then narrow by tags.
+  const pool = SL.search(ITEMS, raw, facetPass(type, cat, source, null));
+  const tagPass = it => [...activeTags].every(t => (it.tags || []).includes(t));
+  const main = pool.main.filter(tagPass);
+  const desc = pool.desc.filter(tagPass);
 
-  document.getElementById('result-count').textContent =
-    filtered.length + (filtered.length === 1 ? ' result' : ' results');
+  $('result-count').textContent =
+    main.length + (main.length === 1 ? ' result' : ' results') +
+    (desc.length ? ` + ${desc.length} in descriptions` : '');
 
-  const list = document.getElementById('list');
-  const empty = document.getElementById('empty-state');
+  const list = $('list');
+  const empty = $('empty-state');
+  updateTagDimming(pool.main.concat(pool.desc));
 
-  if (filtered.length === 0) {
+  if (main.length === 0 && desc.length === 0) {
     list.innerHTML = '';
     empty.style.display = 'block';
-    updateTagDimming(query, type, cat, source);
     return;
   }
   empty.style.display = 'none';
 
   const tagsArr = [...activeTags];
   const facetCount = (type ? 1 : 0) + tagsArr.length;
-  const shouldGroup = !query && facetCount === 1;
-
-  if (shouldGroup) {
-    renderGrouped(filtered, type, tagsArr);
-    updateTagDimming(query, type, cat, source);
+  if (!query && facetCount === 1) {
+    renderGrouped(main, type, tagsArr);
     return;
   }
 
-  const shown = filtered.slice(0, MAX_RENDER);
-  list.innerHTML = shown.map(rowHtml).join('');
-
-  if (filtered.length > MAX_RENDER) {
-    const note = document.createElement('div');
-    note.style.cssText = 'padding:16px 4px;color:var(--ink-faint);font-size:0.8rem;';
-    note.textContent = `Showing first ${MAX_RENDER} of ${filtered.length} \u2014 narrow your search to see more.`;
-    list.appendChild(note);
+  let html = main.slice(0, MAX_RENDER).map(rowHtml).join('');
+  if (main.length > MAX_RENDER) {
+    html += `<div class="more-note">Showing first ${MAX_RENDER} of ${main.length} &mdash; narrow your search to see more.</div>`;
   }
-
-  updateTagDimming(query, type, cat, source);
+  if (desc.length) {
+    html += `<h2 class="desc-head">Mentioned in a description <span class="count">(${desc.length})</span></h2>`;
+    html += desc.slice(0, MAX_DESC_RENDER).map(rowHtml).join('');
+    if (desc.length > MAX_DESC_RENDER) {
+      html += `<div class="more-note">Showing first ${MAX_DESC_RENDER} of ${desc.length} description matches.</div>`;
+    }
+  }
+  list.innerHTML = html;
 }
 
 function escapeHtml(s) {
   if (s == null) return '';
-  return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
+
+/* ---------- rows ---------- */
 
 const TYPE_LABEL = { item: 'Item', event: 'Event', trait: 'Trait', race: 'Pawn Kind' };
 
-function subtitleOf(item) {
-  if (item.type === 'item') return prettyLabel((item.thingCategories && item.thingCategories[0]) || '');
-  if (item.type === 'event') return item.karmaType ? item.karmaType + ' event' : 'Event';
-  return TYPE_LABEL[item.type] || '';
-}
-
 function snippetOf(item) {
+  if (item.type === 'event' && item.usage) return `<code>${escapeHtml(item.usage)}</code>`;
   if (item.description) {
     const words = item.description.trim().split(/\s+/);
     const short = words.slice(0, 5).join(' ');
-    const suffix = words.length > 5 ? '\u2026' : '';
+    const suffix = words.length > 5 ? '…' : '';
     return escapeHtml(short) + suffix;
   }
   if (item.type === 'event') {
     const bits = [];
-    if (item.price != null) bits.push(item.price + ' coins');
+    if (item.price != null) bits.push(SL.coins(item.price));
     if (item.karmaType) bits.push(item.karmaType);
-    return escapeHtml(bits.join(' \u00b7 '));
+    return escapeHtml(bits.join(' · '));
   }
   return '';
 }
 
 function costOf(item) {
-  if (item.type === 'item') return item.price != null ? item.price + ' coins' : null;
-  if (item.type === 'event') return item.price != null ? item.price + ' coins' : null;
-  if (item.type === 'trait') return item.addPrice != null ? item.addPrice + ' coins' : null;
-  if (item.type === 'race') return item.price != null ? item.price + ' coins' : null;
-  return null;
+  const p = SL.basePrice(item);
+  return p != null ? SL.coins(p) : null;
 }
 
 function vitalBadgeText(item) {
@@ -880,16 +1176,23 @@ function rowHtml(item) {
     (cost ? `<span class="row-badge cost">${escapeHtml(cost)}</span>` : '') +
     (vital ? `<span class="row-badge vital">${escapeHtml(vital)}</span>` : '');
 
+  // One-click copy on the collapsed row. Events that need extra words show their usage instead.
+  const quick = SL.commandsFor(item).find(c => c.id !== 'example');
+  const quickBtn = quick
+    ? `<button type="button" class="copy-btn copy-quick" data-cmd="${escapeHtml(quick.cmd)}" data-cmd-for="${quick.id === 'buy' ? 'buy' : 'quick'}" aria-label="Copy ${escapeHtml(quick.cmd)}">Copy</button>`
+    : '';
+
   return `
-    <div class="row ${isGeneric ? 'is-generic' : ''}">
+    <div class="row ${isGeneric ? 'is-generic' : ''}" data-i="${item._i}">
       <div class="row-head">
-        <span class="row-label">${label}</span>
-        ${badges}
-        <span class="row-snippet">${snippetOf(item)}</span>
+        <button type="button" class="row-toggle" aria-expanded="false">
+          <span class="row-label">${label}</span>
+          ${badges}
+          <span class="row-snippet">${snippetOf(item)}</span>
+        </button>
+        ${quickBtn}
       </div>
-      <div class="row-detail">
-        ${detailHtml(item)}
-      </div>
+      <div class="row-detail"></div>
     </div>
   `;
 }
@@ -909,73 +1212,70 @@ function statGridFromDict(stats) {
 }
 
 function tagLine(item) {
-  const visible = (item.tags || []).filter(t => !['Event', 'Trait', 'Pawn Kind'].includes(t));
+  const visible = (item.tags || []).filter(t => !SKIP_TAGS.has(t));
   if (!visible.length) return '';
   return `<div class="meta-line">Tags: ${escapeHtml(visible.join(', '))}</div>`;
 }
 
-function buyCommandsFor(item) {
-  if (item.type === 'item') {
-    if (!item.abr) return [];
-    return [{ label: 'Copy buy command', cmd: `!buy ${item.abr}` }];
-  }
-  if (item.type === 'event') {
-    return [{ label: 'Copy buy command', cmd: `!buy ${item.defName}` }];
-  }
-  if (item.type === 'trait') {
-    const cmds = [];
-    if (item.canAdd) cmds.push({ label: 'Copy add command', cmd: `!buy trait ${item.label}` });
-    if (item.canRemove) cmds.push({ label: 'Copy remove command', cmd: `!buy removetrait ${item.label}` });
-    return cmds;
-  }
-  return [];
-}
-
-async function copyToClipboard(text, btn) {
-  const original = btn.textContent;
-  try {
-    await navigator.clipboard.writeText(text);
-    btn.textContent = 'Copied!';
-  } catch (e) {
-    btn.textContent = 'Copy failed';
-  }
-  btn.classList.add('copied');
-  setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 1400);
-}
-
 function priceTag(value) {
-  return `<span class="price-big">${value} coins</span>`;
+  return `<span class="price-big">${escapeHtml(SL.coins(value))}</span>`;
+}
+
+function copyBtnHtml(c, forAttr) {
+  return `<button type="button" class="copy-btn" data-cmd="${escapeHtml(c.cmd)}"${forAttr ? ` data-cmd-for="${forAttr}"` : ''}>${escapeHtml(c.label)}</button>`;
 }
 
 function purchaseBarHtml(item) {
-  if (item.type === 'item' || item.type === 'event') {
+  if (item.type === 'item') {
     if (item.price == null) return '';
-    const cmds = buyCommandsFor(item);
-    const btn = cmds[0]
-      ? `<button type="button" class="copy-btn" data-cmd="${escapeHtml(cmds[0].cmd)}">${escapeHtml(cmds[0].label)}</button>`
+    const min = SL.minQty(item);
+    const cmd = SL.commandsFor(item, min)[0];
+    const qty = cmd
+      ? `<div class="qty" role="group" aria-label="Quantity">
+           <button type="button" class="qty-btn" data-step="-1" aria-label="Decrease quantity">&minus;</button>
+           <input class="qty-input" type="number" inputmode="numeric" min="${min}" max="999" value="${min}" aria-label="Quantity">
+           <button type="button" class="qty-btn" data-step="1" aria-label="Increase quantity">+</button>
+           <span class="qty-total">= ${escapeHtml(SL.coins(item.price * min))}</span>
+         </div>`
       : '';
-    const compare = item.type === 'item' && CALC_DEFS.has(item.defName)
+    const preview = cmd ? `<code class="cmd-preview" data-cmd-for="buy">${escapeHtml(cmd.cmd)}</code>` : '';
+    const btn = cmd ? copyBtnHtml(cmd, 'buy') : '';
+    const compare = CALC_DEFS.has(item.defName)
       ? `<a class="calc-btn" href="../calculator/?item=${encodeURIComponent(item.defName)}">Compare materials</a>`
       : '';
-    return `<div class="purchase-bar">${priceTag(item.price)}${btn}${compare}</div>`;
+    const note = min > 1
+      ? `<p class="min-note">The minimum spend is ${SL.getMinSpend()} coins, so this one starts at ${min}.</p>`
+      : '';
+    return `<div class="purchase-bar">${priceTag(item.price)}${qty}${preview}${btn}${compare}</div>${note}`;
+  }
+  if (item.type === 'event') {
+    if (item.price == null) return '';
+    if (item.usage) {
+      const ex = SL.commandsFor(item)[0];
+      return `<div class="purchase-bar">${priceTag(item.price)}</div>
+        <div class="usage-block">
+          <p>Needs extra words: <code>${escapeHtml(item.usage)}</code></p>
+          <div class="purchase-pair"><code class="cmd-preview" data-cmd="${escapeHtml(ex.cmd)}">${escapeHtml(ex.cmd)}</code>${copyBtnHtml(ex)}</div>
+        </div>`;
+    }
+    const c = SL.commandsFor(item)[0];
+    return `<div class="purchase-bar">${priceTag(item.price)}<code class="cmd-preview" data-cmd="${escapeHtml(c.cmd)}">${escapeHtml(c.cmd)}</code>${copyBtnHtml(c)}</div>`;
   }
   if (item.type === 'trait') {
-    const cmds = buyCommandsFor(item);
-    const addCmd = cmds.find(c => c.label.includes('add'));
-    const remCmd = cmds.find(c => c.label.includes('remove'));
-    let parts = [];
-    if (item.addPrice != null) {
-      const btn = addCmd ? `<button type="button" class="copy-btn" data-cmd="${escapeHtml(addCmd.cmd)}">${escapeHtml(addCmd.label)}</button>` : '';
-      parts.push(`<div class="purchase-pair">${priceTag(item.addPrice)}${btn}</div>`);
-    }
-    if (item.removePrice != null) {
-      const btn = remCmd ? `<button type="button" class="copy-btn" data-cmd="${escapeHtml(remCmd.cmd)}">${escapeHtml(remCmd.label)}</button>` : '';
-      parts.push(`<div class="purchase-pair">${priceTag(item.removePrice)}${btn}</div>`);
-    }
+    const cmds = SL.commandsFor(item);
+    const addCmd = cmds.find(c => c.id === 'add');
+    const remCmd = cmds.find(c => c.id === 'remove');
+    const pair = (price, c) => `<div class="purchase-pair">${priceTag(price)}${c ? `<code class="cmd-preview" data-cmd="${escapeHtml(c.cmd)}">${escapeHtml(c.cmd)}</code>${copyBtnHtml(c)}` : ''}</div>`;
+    const parts = [];
+    if (item.addPrice != null) parts.push(pair(item.addPrice, addCmd));
+    if (item.removePrice != null) parts.push(pair(item.removePrice, remCmd));
     return parts.length ? `<div class="purchase-bar">${parts.join('')}</div>` : '';
   }
   if (item.type === 'race') {
-    return item.price != null ? `<div class="purchase-bar">${priceTag(item.price)}</div>` : '';
+    return item.price != null
+      ? `<div class="purchase-bar">${priceTag(item.price)}</div>
+         <p class="no-desc-note">No copy button yet: the chat command for pawn kinds hasn't been confirmed.</p>`
+      : '';
   }
   return '';
 }
@@ -990,7 +1290,7 @@ function detailHtml(item) {
     if (item.hasGlobalCooldown) meta.push('global cooldown: ' + item.globalCooldown + 's');
     if (item.hasLocalCooldown) meta.push('local cooldown: ' + item.localCooldown + 's');
     const desc = item.description ? `<p class="description">${escapeHtml(item.description)}</p>` : '';
-    const metaLine = meta.length ? `<div class="meta-line">${escapeHtml(meta.join(' \u00b7 '))}</div>` : '';
+    const metaLine = meta.length ? `<div class="meta-line">${escapeHtml(meta.join(' · '))}</div>` : '';
     return `${purchaseBar}${desc}${metaLine}`;
   }
 
@@ -1009,14 +1309,15 @@ function detailHtml(item) {
   }
 
   // item
+  const shareNote = item.note ? `<p class="share-note">${escapeHtml(item.note)}</p>` : '';
   if (!item.description) {
-    return `${purchaseBar}<p class="no-desc-note">No description curated yet for this item.</p>`;
+    return `${purchaseBar}${shareNote}<p class="no-desc-note">No description curated yet for this item.</p>`;
   }
   let meta = [];
   if (item.techLevel) meta.push(item.techLevel + ' tech');
   if (item.source) meta.push('from ' + item.source);
-  const metaLine = meta.length ? `<div class="meta-line">${escapeHtml(meta.join(' \u00b7 '))}</div>` : '';
-  return `${purchaseBar}<p class="description">${escapeHtml(item.description)}</p>${metaLine}${tagLine(item)}${statGridFromDict(item.stats)}`;
+  const metaLine = meta.length ? `<div class="meta-line">${escapeHtml(meta.join(' · '))}</div>` : '';
+  return `${purchaseBar}${shareNote}<p class="description">${escapeHtml(item.description)}</p>${metaLine}${tagLine(item)}${statGridFromDict(item.stats)}`;
 }
 
 init();

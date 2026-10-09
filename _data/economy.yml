@@ -1,0 +1,16 @@
+# The numbers viewers need to know that aren't in the synced Toolkit data files.
+# The Guide and the Store both read from here, so change a number once and every page follows.
+# Item and event prices are NOT here: the Guide reads those straight from StoreIncidents.json.
+
+# Coins a viewer earns per minute in chat (before the lurk decay and the subscriber bonus).
+earn_per_minute: 10
+
+# Coins a brand-new viewer starts with. Was 20 before the x10 change; confirm against the home install.
+starting_balance: 200
+
+# A purchase must cost at least this many coins, so very cheap items need a quantity
+# (the bot answers "try again in a larger quantity" otherwise).
+min_spend: 4
+
+# Extra coin flow for subscribers, in percent.
+sub_bonus_percent: 50

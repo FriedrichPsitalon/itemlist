@@ -16,11 +16,11 @@ html[data-theme="light"],
 html[data-theme="dark"] {
   --background: #0a0605;
   --text: #eae2d0;
-  --link: #b8352c;
+  --link: #c75f58;
   --header-background: #000000;
   --header-text: #eae2d0;
   --header-link: #a89c86;
-  --meta: #6f6552;
+  --meta: #867e6e;
   --border: #3d1f1c;
   --blockquote: #170c0b;
   --code-background: #170c0b;
@@ -38,8 +38,9 @@ html[data-theme="dark"] {
   --panel: #170c0b;
   --ink: var(--text);
   --ink-dim: #a89c86;
-  --ink-faint: #6f6552;
+  --ink-faint: #867e6e;
   --accent: #b8352c;
+  --accent-text: #c75f58;
   --accent-soft: #7a221c;
   --rule: #3d1f1c;
   --rule-soft: #26130f;
@@ -90,7 +91,7 @@ body {
 
 .site-header a { color: var(--header-link); }
 .site-header a:hover,
-nav a:hover { color: var(--accent); }
+nav a:hover { color: var(--accent-text); }
 
 /* ---------- Page banner (header#main / title / subtitle) ---------- */
 
@@ -154,7 +155,7 @@ h1.title {
 }
 
 .post-content a {
-  color: var(--accent);
+  color: var(--accent-text);
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
@@ -210,7 +211,7 @@ h1.title {
 
 .post-content details summary::before {
   content: '▸';
-  color: var(--accent);
+  color: var(--accent-text);
   display: inline-block;
   margin-right: 0.5em;
   transition: transform 0.15s;
@@ -233,7 +234,7 @@ h1.title {
 }
 
 .site-footer a { color: var(--ink-dim); }
-.site-footer a:hover { color: var(--accent); }
+.site-footer a:hover { color: var(--accent-text); }
 
 /* ==========================================================================
    Commands page (commands.html)
@@ -328,7 +329,7 @@ h1.title {
 .cmd-list code.cmd-usage {
   display: block;
   font-size: 0.82rem;
-  color: var(--accent);
+  color: var(--accent-text);
   margin-top: 3px;
   word-break: break-word;
   background: none;
@@ -370,7 +371,7 @@ h1.title {
 }
 
 .cmd-list .example-of code {
-  color: var(--accent);
+  color: var(--accent-text);
   background: var(--rule-soft);
   padding: 1px 6px;
   border-radius: 3px;
@@ -404,12 +405,12 @@ h1.title {
 .ability-row > summary::-webkit-details-marker { display: none; }
 .ability-row > summary::before {
   content: '▸';
-  color: var(--accent);
+  color: var(--accent-text);
   flex: none;
   transition: transform 0.15s;
 }
 .ability-row[open] > summary::before { transform: rotate(90deg); }
-.ability-row > summary:hover strong { color: var(--accent); }
+.ability-row > summary:hover strong { color: var(--accent-text); }
 
 .ability-body { padding: 4px 0 10px 1.55em; }
 .ability-body > p.ability-desc { margin: 0 0 10px; color: var(--ink-dim); }
@@ -421,7 +422,7 @@ h1.title {
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
-  color: var(--accent);
+  color: var(--accent-text);
   font-size: 0.85rem;
   font-family: 'Inter', sans-serif;
   font-weight: 600;

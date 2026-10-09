@@ -14,8 +14,9 @@
     --panel-2: #1f1110;
     --ink: #eae2d0;
     --ink-dim: #a89c86;
-    --ink-faint: #6f6552;
+    --ink-faint: #867e6e;
     --accent: #b8352c;
+    --accent-text: #c75f58;
     --accent-soft: #7a221c;
     --cool: #5e7d8c;
     --rule: #3d1f1c;
@@ -46,7 +47,7 @@
   .brand-text { font-family: 'Arvo', Georgia, serif; font-weight: 700; font-size: 1.3rem; }
   .site-nav { display: flex; gap: 18px; font-size: .85rem; }
   .site-nav a { color: var(--ink-dim); text-decoration: none; border-bottom: 1px solid transparent; }
-  .site-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .site-nav a:hover { color: var(--accent-text); border-bottom-color: var(--accent); }
   .site-nav .current { color: var(--ink); font-weight: 600; }
   .lead { max-width: 1500px; margin: 0 auto; font-size: .85rem; color: var(--ink-faint); }
 
@@ -149,7 +150,7 @@
   .stat[data-tip] { cursor: help; }
   .stat[data-tip] .k { text-decoration: underline dotted var(--ink-faint); text-underline-offset: 3px; }
   .acc-toggle { cursor: pointer; color: var(--ink); }
-  .hint { font-size: .64rem; color: var(--accent); margin-top: 1px; white-space: nowrap; }
+  .hint { font-size: .64rem; color: var(--accent-text); margin-top: 1px; white-space: nowrap; }
   .oor { opacity: .45; }
   .tooltip { position: fixed; left: 0; top: 0; z-index: 60; max-width: 300px; padding: 9px 11px; background: #000;
     color: var(--ink); border: 1px solid var(--accent-soft); border-radius: 6px; font-size: .78rem; line-height: 1.45;
@@ -160,7 +161,7 @@
   .tray-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
   .snap { border: 1px solid var(--rule); border-radius: 8px; padding: 10px; margin-bottom: 10px; background: var(--bg); }
   .snap h3 { font-size: .98rem; cursor: pointer; }
-  .snap h3:hover { color: var(--accent); }
+  .snap h3:hover { color: var(--accent-text); }
   .snap .sub { font-size: .78rem; color: var(--ink-dim); margin: 2px 0 6px; }
   .snap .row { display: flex; justify-content: space-between; font-size: .8rem; padding: 2px 0; }
   .snap .actions { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
