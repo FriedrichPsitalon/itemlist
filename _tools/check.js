@@ -57,8 +57,8 @@ items.forEach(it => SL.commandsFor(it).forEach(c => { (cmdOwners[c.cmd] = cmdOwn
 const sharedCmds = Object.entries(cmdOwners).filter(([, v]) => v.length > 1);
 check('no two visible rows share a copy command', sharedCmds.length === 0, sharedCmds.map(([c, v]) => `${c}: ${v.join(' | ')}`).join('\n        '));
 
-const oneCoinEvents = items.filter(x => x.type === 'event' && x.price <= 1 && x.defName !== 'pawn');
-check('no visible event is priced at 1 coin (pawn is the one real purchase)', oneCoinEvents.length === 0, oneCoinEvents.map(x => x.defName).join(', '));
+const oneCoinEvents = items.filter(x => x.type === 'event' && x.price <= 1);
+check('no visible event is priced at 1 coin', oneCoinEvents.length === 0, oneCoinEvents.map(x => x.defName).join(', '));
 
 const bareNeedingArgs = items.filter(x => x.usage && SL.commandsFor(x).some(c => c.cmd.replace(/^!\w+\s*/, '') === ''));
 check('events that need arguments never copy a bare command', bareNeedingArgs.length === 0, bareNeedingArgs.map(x => x.defName).join(', '));
@@ -81,8 +81,9 @@ const priceById = new Map(storeItems.map(s => [s.defname, s.price]));
 const incPrice = new Map(incidents.map(i => [i.abr, i.price]));
 const badItem = all.filter(x => x.type === 'item' && priceById.get(x.defName) !== x.price);
 check('every item price equals StoreItems.json', badItem.length === 0, badItem.map(x => x.defName).join(', '));
-const badEv = all.filter(x => x.type === 'event' && incPrice.has(x.defName) && incPrice.get(x.defName) !== x.price);
-check('every event price equals StoreIncidents.json', badEv.length === 0, badEv.map(x => x.defName).join(', '));
+// pawn is the one deliberate exception: StoreIncidents lists a placeholder 1, economy.yml holds the real price
+const badEv = all.filter(x => x.type === 'event' && x.defName !== 'pawn' && incPrice.has(x.defName) && incPrice.get(x.defName) !== x.price);
+check('every event price equals StoreIncidents.json (except pawn)', badEv.length === 0, badEv.map(x => x.defName).join(', '));
 
 // quantity rule
 const cheap = items.find(x => x.type === 'item' && x.price === 1);
@@ -96,6 +97,8 @@ const eco = {};
 fs.readFileSync(path.join(ROOT, '_data', 'economy.yml'), 'utf8').split(/\r?\n/).forEach(l => { const m = /^(\w+):\s*(\d+)/.exec(l); if (m) eco[m[1]] = +m[2]; });
 const hay = storeItems.find(s => s.abr === 'hay');
 check('the Guide\'s hay example still fits (hay costs less than the minimum spend)', hay && hay.price < eco.min_spend, `hay ${hay && hay.price}, min ${eco.min_spend}`);
+const pawnRow = all.find(x => x.defName === 'pawn');
+check('the pawn row shows the real price from economy.yml', pawnRow && pawnRow.price === eco.pawn_price && eco.pawn_price > 1, `${pawnRow && pawnRow.price} vs ${eco.pawn_price}`);
 check('economy.yml min_spend matches the page default', eco.min_spend === SL.getMinSpend(), `${eco.min_spend} vs ${SL.getMinSpend()}`);
 
 console.log(failed ? `\n${failed} check(s) failed` : '\nall checks passed');

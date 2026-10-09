@@ -9,12 +9,11 @@ thumbnail: compendium/social-preview.png
 
 {%- comment -%}
   Every number on this page comes from the data, so it can't drift:
-  earn rate, starting balance and minimum spend from _data/economy.yml,
-  prices from the synced _data/StoreIncidents.json. Don't type a coin amount into the text below.
+  earn rate, starting balance, minimum spend and the pawn price from _data/economy.yml,
+  the other prices from the synced _data/StoreIncidents.json. Don't type a coin amount into the text below.
 {%- endcomment -%}
 {%- assign eco = site.data.economy -%}
 {%- assign inc = site.data.StoreIncidents.incitems -%}
-{%- assign p_pawn = inc | where: "abr", "pawn" | first -%}
 {%- assign p_wildman = inc | where: "abr", "wildman" | first -%}
 {%- assign p_prisoner = inc | where: "abr", "prisoner" | first -%}
 {%- assign p_maninblack = inc | where: "abr", "maninblack" | first -%}
@@ -66,7 +65,7 @@ There's a minimum: a purchase has to come to at least {{ eco.min_spend }} coins.
 
 **Get directly involved:** you can get a pawn with your name in the game, and then gear them, boost them, trait them, implant them — all the things. [Browse the Store](/itemlist/compendium/) — there's a lot of routes. How to develop them depends on your job intent — see below.
 
-- `!buy pawn` — {% include coins.html n=p_pawn.price %} gets you a default colonist in default gear with your name on it. Totally random.
+- `!buy pawn` — {% include coins.html n=eco.pawn_price %} gets you a default colonist in default gear with your name on it. Totally random.
 - `!buy wildman` ({% include coins.html n=p_wildman.price %}) or `!buy prisoner` ({% include coins.html n=p_prisoner.price %}) — a specific background. Have to actually be recruited by the colony.
 - `!buy maninblack` — {% include coins.html n=p_maninblack.price %}, but you get a mysterious gunslinger with a duster, flak vest, cowboy hat, and a revolver. You're aimin' to clean up this here settlement.
 - `!joinqueue` — free. Puts you in line to adopt a colonist who already exists and is unclaimed, rather than one built from scratch. Less control over who you get, but they come with some history already on them.

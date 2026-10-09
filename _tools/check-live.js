@@ -68,7 +68,7 @@ const text = html => html.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/st
   expect(`earn rate is ${eco.earn_per_minute} coins a minute`, new RegExp(`${eco.earn_per_minute} coins a minute`));
   expect(`starting balance is ${eco.starting_balance}`, new RegExp(`start with ${eco.starting_balance}\\b`));
   expect(`minimum spend is ${eco.min_spend}`, new RegExp(`at least ${eco.min_spend} coins`));
-  expect(`!buy pawn costs ${price('pawn')}`, new RegExp(`!buy pawn — ${coinsRe(price('pawn'))}`));
+  expect(`!buy pawn costs ${eco.pawn_price}`, new RegExp(`!buy pawn — ${coinsRe(eco.pawn_price)}`));
   expect(`!buy wildman costs ${price('wildman')}`, new RegExp(`!buy wildman \\(${coinsRe(price('wildman'))}\\)`));
   expect(`!buy prisoner costs ${price('prisoner')}`, new RegExp(`!buy prisoner \\(${coinsRe(price('prisoner'))}\\)`));
   expect(`!buy maninblack costs ${price('maninblack')}`, new RegExp(`!buy maninblack — ${coinsRe(price('maninblack'))}`));

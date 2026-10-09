@@ -10027,7 +10027,7 @@
    "ElephantTusk",
    "TM_ElephantTusk"
   ],
-  "note": "2 different items answer to the command !buy elephanttusk (elephant tusk (Core), elephant tusk (RWoM)). The store can't tell them apart, so you can't choose which one you get."
+  "note": "2 items share the command !buy elephanttusk, and the store always hands over the elephant tusk (Core). The others (elephant tusk (RWoM)) can't be ordered."
  },
  {
   "defName": "Elk",
@@ -16495,7 +16495,7 @@
   "price": 5,
   "abr": "demonflesh",
   "label": "demon flesh",
-  "description": "Raw meat. 2 different creatures share this command, so chat can't choose which one arrives.",
+  "description": "Raw meat. 2 creatures share this command; the store always delivers the meat of the demon.",
   "kind": "generic-meat",
   "type": "item",
   "tags": [],
@@ -16505,7 +16505,7 @@
    "Meat_TM_DemonR",
    "Meat_TM_LesserDemonR"
   ],
-  "note": "2 different items answer to the command !buy demonflesh (demon, lesser demon). The store can't tell them apart, so you can't choose which one you get."
+  "note": "2 items share the command !buy demonflesh, and the store always hands over the demon. The others (lesser demon) can't be ordered."
  },
  {
   "defName": "Meat_TM_Dire_WolfR",
@@ -16664,7 +16664,7 @@
   "price": 5,
   "abr": "elementaldust",
   "label": "elemental dust",
-  "description": "Raw meat. 12 different creatures share this command, so chat can't choose which one arrives.",
+  "description": "Raw meat. 12 creatures share this command; the store always delivers the meat of the lesser earth elemental.",
   "kind": "generic-meat",
   "type": "item",
   "tags": [],
@@ -16684,7 +16684,7 @@
    "Meat_TM_Wind_ElementalR",
    "Meat_TM_GreaterWind_ElementalR"
   ],
-  "note": "12 different items answer to the command !buy elementaldust (lesser earth elemental, earth elemental, greater earth elemental, lesser fire elemental, fire elemental, greater fire elemental, lesser water elemental, water elemental, greater water elemental, lesser wind elemental, wind elemental, greater wind elemental). The store can't tell them apart, so you can't choose which one you get."
+  "note": "12 items share the command !buy elementaldust, and the store always hands over the lesser earth elemental. The others (earth elemental, greater earth elemental, lesser fire elemental, fire elemental, greater fire elemental, lesser water elemental, water elemental, greater water elemental, lesser wind elemental, wind elemental, greater wind elemental) can't be ordered."
  },
  {
   "defName": "Meat_TM_LesserFire_ElementalR",
@@ -16730,7 +16730,7 @@
   "price": 5,
   "abr": "stone",
   "label": "stone (sentinel meat)",
-  "description": "Raw meat. 3 different creatures share this command, so chat can't choose which one arrives.",
+  "description": "Raw meat. 3 creatures share this command; the store always delivers the meat of the lesser sentinel.",
   "kind": "generic-meat",
   "type": "item",
   "tags": [],
@@ -16741,14 +16741,14 @@
    "Meat_TM_SentinelR",
    "Meat_TM_Greater_SentinelR"
   ],
-  "note": "3 different items answer to the command !buy stone (lesser sentinel, sentinel, greater sentinel). The store can't tell them apart, so you can't choose which one you get."
+  "note": "3 items share the command !buy stone, and the store always hands over the lesser sentinel. The others (sentinel, greater sentinel) can't be ordered."
  },
  {
   "defName": "Meat_TM_MinionR",
   "price": 5,
   "abr": "mysterymeat",
   "label": "mystery meat",
-  "description": "Raw meat. 2 different creatures share this command, so chat can't choose which one arrives.",
+  "description": "Raw meat. 2 creatures share this command; the store always delivers the meat of the minion.",
   "kind": "generic-meat",
   "type": "item",
   "tags": [],
@@ -16758,7 +16758,7 @@
    "Meat_TM_MinionR",
    "Meat_TM_GreaterMinionR"
   ],
-  "note": "2 different items answer to the command !buy mysterymeat (minion, greater minion). The store can't tell them apart, so you can't choose which one you get."
+  "note": "2 items share the command !buy mysterymeat, and the store always hands over the minion. The others (greater minion) can't be ordered."
  },
  {
   "defName": "Meat_TM_Poppi",
@@ -17005,7 +17005,7 @@
   "price": 5,
   "abr": "wolfmeat",
   "label": "wolf meat",
-  "description": "Raw meat. 2 different creatures share this command, so chat can't choose which one arrives.",
+  "description": "Raw meat. 2 creatures share this command; the store always delivers the meat of the timber wolf.",
   "kind": "generic-meat",
   "type": "item",
   "tags": [],
@@ -17015,7 +17015,7 @@
    "Meat_Wolf_Timber",
    "Meat_TM_Dire_WolfR"
   ],
-  "note": "2 different items answer to the command !buy wolfmeat (timber wolf, dire wolf). The store can't tell them apart, so you can't choose which one you get."
+  "note": "2 items share the command !buy wolfmeat, and the store always hands over the timber wolf. The others (dire wolf) can't be ordered."
  },
  {
   "defName": "Meat_Wolverine",
@@ -33798,7 +33798,7 @@
   "defName": "pawn",
   "label": "pawn",
   "description": "Purchases a new pawn to join the colony (or to adopt, if the buyer doesn't have one yet).",
-  "price": 1,
+  "price": 100,
   "karmaType": "Good",
   "mod": "Twitch Toolkit",
   "eventType": "Default",

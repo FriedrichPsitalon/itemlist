@@ -28,6 +28,13 @@ const ROOT = path.resolve(__dirname, '..');
 const FILE = path.join(ROOT, 'compendium', 'compendium.json');
 const STORE = path.join(ROOT, '_data', 'StoreItems.json');
 
+// Plain "key: number" lines from _data/economy.yml.
+const ECONOMY = {};
+fs.readFileSync(path.join(ROOT, '_data', 'economy.yml'), 'utf8').split(/\r?\n/).forEach(l => {
+  const m = /^(\w+):\s*(\d+)/.exec(l);
+  if (m) ECONOMY[m[1]] = +m[2];
+});
+
 // Reel's Expanded Storage items the mod itself retired (1.6 "Old" / "No longer used" folders).
 const RETIRED_DEFNAMES = new Set([
   'ReelStorageBarrel', 'ReelStorageFridge', 'ReelStorageWoodCrate', 'ReelStorageLargeLocker',
@@ -118,6 +125,9 @@ function clean(rows, storeOrder) {
       r.hidden = true;
       r.hiddenReason = 'Shortcut command, documented on the Commands page; not a product.';
     }
+    // StoreIncidents.json lists `pawn` at a placeholder 1; the real price is charged by a separate
+    // Toolkit setting and recorded in _data/economy.yml (confirmed in game, Oct 2026).
+    if (r.defName === 'pawn' && ECONOMY.pawn_price) r.price = ECONOMY.pawn_price;
     const u = EVENT_USAGE[r.defName];
     if (u) {
       r.usage = u.usage;
@@ -156,12 +166,13 @@ function clean(rows, storeOrder) {
     rep.variantLabel = rep.variantLabel || rep.label;
     rep.sharedWith = members.map(m => m.defName);
     const names = members.map(variantName);
-    rep.note = `${members.length} different items answer to the command !buy ${abr} (${names.join(', ')}). ` +
-      'The store can\'t tell them apart, so you can\'t choose which one you get.';
+    // Tested in game (Oct 2026): the store hands over the first one in StoreItems.json.
+    rep.note = `${members.length} items share the command !buy ${abr}, and the store always hands over the ${variantName(rep)}. ` +
+      `The others (${names.slice(1).join(', ')}) can't be ordered.`;
     if (GROUP_LABELS[abr]) rep.label = GROUP_LABELS[abr];
     if (rep.kind === 'generic-meat') {
-      rep.description = `Raw meat. ${members.length} different creatures share this command, ` +
-        'so chat can\'t choose which one arrives.';
+      rep.description = `Raw meat. ${members.length} creatures share this command; ` +
+        `the store always delivers the meat of the ${variantName(rep)}.`;
     }
     others.forEach(o => {
       o.hidden = true;
