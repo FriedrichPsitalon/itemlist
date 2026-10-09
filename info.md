@@ -51,7 +51,7 @@ users, but this short guide will help you get the hang of things.
 ## What is Twitch Toolkit?
 
 Twitch Toolkit is a mod by hodlhodl that allows viewers to affect the game in a number of ways. The
-most prominent is its [store]({{- "/" | relative_url -}}), which allows you to purchase a number of
+most prominent is its [store]({{- "/compendium/" | relative_url -}}), which allows you to purchase a number of
 things the streamer curated. Depending on the purchase, these things appear in-game or affect the
 game in some way. Another way viewers can interact with the game is through the mod's polls. The
 choices in these polls depend heavily on what's enabled in the mod.
@@ -64,10 +64,10 @@ Coins are the mod's currency. You can view your balance by using the `{{ bal }}`
 You'll notice the balance command may have some new emojis. If that's the case, here is an overview
 of the emojis as follows:
 
-- 💰 represents the amount of coins you current have.
+- 💰 represents the amount of coins you currently have.
 - ⚖ represents your current karma.
-- 📈 represents the amount of coins you gain everytime the mod awards coins.
-- 📉 represents the amount of coins you lose everytime to mod awards coins.
+- 📈 represents the amount of coins you gain every time the mod awards coins.
+- 📉 represents the amount of coins you lose every time the mod awards coins.
 
 {% endif %}
 
@@ -83,8 +83,8 @@ You'll always get a new lootbox everyday.
 ## What is Karma?
 
 Karma is a system in the mod that tries to limit the amount of negative events a viewer can purchase at
-one time. This system works by directly modifying that amount of coins viewers get everytime the mod
-awards coins. This means that the lower you karma is, the lower your coin gain is. The hope is that
+one time. This system works by directly modifying that amount of coins viewers get every time the mod
+awards coins. This means that the lower your karma is, the lower your coin gain is. The hope is that
 negative events get spread out more so the colony can recover.
 
 ## How Do I Use Twitch Toolkit?
