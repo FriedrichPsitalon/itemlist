@@ -91,5 +91,12 @@ const dear = items.find(x => x.type === 'item' && x.price >= 4);
 check('an item at or above the minimum copies with no quantity', SL.minQty(dear) === 1 && SL.commandsFor(dear)[0].cmd === `!buy ${dear.abr}`);
 check('"1 coin" is not "1 coins"', SL.coins(1) === '1 coin' && SL.coins(2) === '2 coins');
 
+// The Guide's "!buy hay <min spend>" example only makes sense while hay is cheaper than the minimum.
+const eco = {};
+fs.readFileSync(path.join(ROOT, '_data', 'economy.yml'), 'utf8').split(/\r?\n/).forEach(l => { const m = /^(\w+):\s*(\d+)/.exec(l); if (m) eco[m[1]] = +m[2]; });
+const hay = storeItems.find(s => s.abr === 'hay');
+check('the Guide\'s hay example still fits (hay costs less than the minimum spend)', hay && hay.price < eco.min_spend, `hay ${hay && hay.price}, min ${eco.min_spend}`);
+check('economy.yml min_spend matches the page default', eco.min_spend === SL.getMinSpend(), `${eco.min_spend} vs ${SL.getMinSpend()}`);
+
 console.log(failed ? `\n${failed} check(s) failed` : '\nall checks passed');
 process.exit(failed ? 1 : 0);
