@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="../../compendium/favicon-32.png">
+<title>RimStream Paper Doll</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --bg: #0a0605; --panel: #170c0b; --panel-2: #1f1110;
+    --ink: #eae2d0; --ink-dim: #a89c86; --ink-faint: #6f6552;
+    --accent: #b8352c; --accent-soft: #7a221c;
+    --rule: #3d1f1c; --rule-soft: #26130f;
+    --gold: #e6bd52; --good: #7fb069; --bad: #d9675d;
+    --cand: #4fd0e0;          /* the piece you are trying on */
+    --conflict: #ff4d3d;      /* clashes */
+    --skin: #c99b7b;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  body {
+    background-image:
+      radial-gradient(ellipse 900px 700px at 0% 20%, rgba(184,53,44,.09), transparent 60%),
+      radial-gradient(ellipse 900px 700px at 100% 80%, rgba(184,53,44,.07), transparent 60%);
+    background-attachment: fixed; min-height: 100vh;
+  }
+  h1, h2, h3, .display { font-family: 'Arvo', Georgia, serif; margin: 0; }
+  a { color: inherit; }
+  button, select, input { font-family: inherit; }
+
+  header { background: #000; border-bottom: 1px solid var(--rule); padding: 0 16px 14px; }
+  .topbar { display: flex; align-items: center; justify-content: space-between; max-width: 1600px;
+    margin: 0 auto; gap: 16px; flex-wrap: wrap; padding: 14px 0; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand img { height: 34px; border-radius: 4px; display: block; }
+  .brand-text { font-family: 'Arvo', Georgia, serif; font-weight: 700; font-size: 1.3rem; }
+  .site-nav { display: flex; gap: 18px; font-size: .85rem; flex-wrap: wrap; }
+  .site-nav a { color: var(--ink-dim); text-decoration: none; border-bottom: 1px solid transparent; }
+  .site-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .site-nav .current { color: var(--ink); font-weight: 600; }
+  .lead { max-width: 1600px; margin: 0 auto; font-size: .85rem; color: var(--ink-faint); }
+
+  main { max-width: 1600px; margin: 0 auto; padding: 16px; display: grid; gap: 16px;
+    grid-template-columns: minmax(0, 1fr); align-items: start; }
+  main > * { min-width: 0; }
+  @media (min-width: 1150px) { main { grid-template-columns: 290px minmax(0, 1fr) 390px; } }
+
+  .panel { background: var(--panel); border: 1px solid var(--rule-soft); border-radius: 8px; padding: 14px; }
+  .panel h2 { font-size: 1rem; margin-bottom: 10px; }
+  .muted { color: var(--ink-dim); } .faint { color: var(--ink-faint); } .small { font-size: .78rem; }
+  .up { color: var(--good); } .down { color: var(--bad); }
+
+  /* ---- buttons / inputs ---- */
+  .tabs { display: flex; gap: 6px; margin-bottom: 10px; }
+  .tab { flex: 1; padding: 7px 4px; font-size: .82rem; font-weight: 600; color: var(--ink-dim);
+    background: transparent; border: 1px solid var(--rule); border-radius: 5px; cursor: pointer; }
+  .tab:hover { border-color: var(--accent-soft); }
+  .tab[aria-selected="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); }
+  .field { padding: 7px 9px; color: var(--ink); background: var(--bg); border: 1px solid var(--rule);
+    border-radius: 5px; font-size: .84rem; max-width: 100%; }
+  .field:focus { outline: none; border-color: var(--accent-soft); }
+  select.field { padding-right: 4px; }
+  .copy-btn { font-size: .85rem; font-weight: 600; color: var(--ink); background: var(--accent-soft);
+    border: 1px solid var(--accent); border-radius: 4px; padding: 7px 14px; cursor: pointer; }
+  .copy-btn:hover { background: var(--accent); }
+  .copy-btn.copied { background: #2f5d2e; border-color: #4f8d4d; }
+  .swap-btn { background: #6b2a14; border-color: var(--conflict); }
+  .swap-btn:hover { background: #8a3418; }
+  .ghost-btn { font-size: .82rem; color: var(--ink); background: transparent; border: 1px solid var(--rule);
+    border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+  .ghost-btn:hover { border-color: var(--accent); }
+  .ghost-btn.on { background: var(--accent-soft); border-color: var(--accent); }
+  .mini { font-size: .72rem; padding: 3px 8px; }
+  button:disabled { opacity: .35; cursor: not-allowed; }
+  .row-between { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+  /* ---- picker ---- */
+  .filters { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+  .filters label { font-size: .78rem; color: var(--ink-dim); display: flex; gap: 5px; align-items: center; cursor: pointer; }
+  #search { width: 100%; margin-bottom: 8px; }
+  #plist { max-height: 52vh; overflow-y: auto; }
+  @media (min-width: 1150px) { #plist { max-height: calc(100vh - 330px); } }
+  .ghead { font-size: .66rem; text-transform: uppercase; letter-spacing: .07em; color: var(--ink-faint);
+    margin: 10px 0 3px; padding-left: 4px; }
+  .prow { display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 6px; text-align: left;
+    padding: 6px 8px; background: transparent; color: var(--ink); border: 0; border-bottom: 1px solid var(--rule-soft);
+    font-size: .84rem; cursor: pointer; border-radius: 4px; }
+  .prow:hover { background: var(--panel-2); }
+  .prow[aria-current="true"] { background: rgba(79,208,224,.14); outline: 1px solid var(--cand); }
+  .prow .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .badge { flex: none; font-size: .66rem; padding: 1px 7px; border-radius: 9px; border: 1px solid var(--rule); color: var(--ink-dim); }
+  .badge.fits { color: var(--good); border-color: #3b5a30; }
+  .badge.swap { color: #ffb199; border-color: #8a3418; background: rgba(255,77,61,.1); }
+  .badge.worn { color: var(--gold); border-color: #6b5a22; }
+
+  /* ---- stage ---- */
+  .stage-top { display: flex; gap: 8px; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 10px; }
+  .seg { display: inline-flex; gap: 0; }
+  .seg button { font-size: .8rem; padding: 6px 12px; color: var(--ink-dim); background: transparent;
+    border: 1px solid var(--rule); cursor: pointer; }
+  .seg button:first-child { border-radius: 5px 0 0 5px; } .seg button:last-child { border-radius: 0 5px 5px 0; }
+  .seg button + button { border-left: 0; }
+  .seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--ink); border-color: var(--accent); }
+  .seg button:hover { color: var(--ink); }
+  .ltabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+  .ltab { position: relative; font-size: .8rem; padding: 6px 11px; color: var(--ink-dim); background: transparent;
+    border: 1px solid var(--rule); border-radius: 14px; cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
+  .ltab:hover { border-color: var(--accent-soft); }
+  .ltab[aria-selected="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); }
+  .ltab .n { font-size: .7rem; color: var(--ink-faint); }
+  .ltab .dot { width: 8px; height: 8px; border-radius: 50%; display: none; }
+  .ltab .dot.c { background: var(--cand); } .ltab .dot.x { background: var(--conflict); }
+  .ltab[data-cand] .dot.c, .ltab[data-clash] .dot.x { display: inline-block; }
+
+  .doll-wrap { position: relative; margin: 4px auto 0; max-width: 620px; }
+  svg#doll { width: 100%; height: auto; display: block; }
+  .reg { cursor: help; }
+  .bz .zb > * { fill: var(--skin); stroke: none; }
+  .bz .zs > * { fill: url(#shX); stroke: none; }
+  .bz[data-shade="r"] .zs > * { fill: url(#shR); }
+  .bz .zl0 > * { fill: none; stroke: #130807; stroke-width: 3; stroke-linejoin: round; }
+  .zh > * { fill: rgba(0,0,0,0); stroke: none; }
+  .zo > * { fill: none; stroke: none; pointer-events: none; }
+  .reg[data-over="conflict"] .zo > * { fill: url(#hatch); }
+  .zl > * { fill: none; stroke: transparent; stroke-width: 3; stroke-linejoin: round; pointer-events: none; }
+  .reg[data-r="waist"] .zl > * { stroke: rgba(255,255,255,.28); stroke-width: 1.6; stroke-dasharray: 4 3; }
+  .reg[data-line="cand"] .zl > * { stroke: var(--cand); stroke-width: 3.2; stroke-dasharray: 6 3; }
+  .reg[data-line="conflict"] .zl > * { stroke: var(--conflict); stroke-width: 3.4; stroke-dasharray: none; }
+  .reg[data-remove] .zl > * { stroke: #cfc7b4; stroke-dasharray: 3 4; }
+  .reg[data-hl] .zl > * { stroke: var(--gold); stroke-width: 4; stroke-dasharray: none; }
+  .reg:hover .zl > *, .reg.hot .zl > * { stroke: #fff; stroke-width: 3.6; stroke-dasharray: none; }
+  /* garments, drawn over the pawn */
+  .gm .f { fill: var(--gc); stroke: none; }
+  .gm .sh { fill: url(#shX); stroke: none; }
+  .gm .o { fill: none; stroke: #130807; stroke-width: 3; stroke-linejoin: round; }
+  .gm .d { fill: none; stroke: rgba(0,0,0,.42); stroke-width: 2; stroke-linecap: round; }
+  .gm .dh { fill: none; stroke: rgba(255,255,255,.35); stroke-width: 2; stroke-linecap: round; }
+  .gm .dash { stroke-dasharray: 3 3; }
+  .gm .rv { fill: rgba(255,255,255,.65); stroke: none; }
+  .gm .dk { fill: rgba(0,0,0,.62); stroke: none; }
+  .gm .gold { fill: #e3b94a; stroke: #130807; stroke-width: 2; }
+  .gm .hb-o { fill: none; stroke: #130807; stroke-width: 10; stroke-linecap: round; }
+  .gm .hb-f { fill: none; stroke: var(--gc); stroke-width: 5.5; stroke-linecap: round; }
+  .gm.ghost { --gc: var(--cand); opacity: .8; }
+  .gm.ghost .o { stroke: var(--cand); stroke-dasharray: 6 3; }
+  .gm.removing { opacity: .35; }
+  .gm.removing .o { stroke-dasharray: 3 4; }
+  .gm.hl .o { stroke: var(--gold); stroke-width: 4; }
+  .warn { font-size: 20px; fill: #fff; stroke: #000; stroke-width: .8px; paint-order: stroke; text-anchor: middle;
+    dominant-baseline: central; pointer-events: none; display: none; }
+  .reg[data-over="conflict"] .warn { display: block; }
+  .lead-line { stroke: #4b3733; stroke-width: 1; }
+  .lbl { cursor: help; }
+  .lbl-name { font-size: 12px; fill: var(--ink-dim); }
+  .lbl-val { font-size: 14px; font-weight: 600; fill: var(--ink); font-variant-numeric: tabular-nums; }
+  .lbl.faintv .lbl-val { fill: var(--ink-faint); font-weight: 400; }
+  .lbl.conflict .lbl-name, .lbl.conflict .lbl-val { fill: #ffb199; }
+  .lbl.hot .lbl-name { fill: #fff; }
+  .lbl .stk { fill: var(--ink-faint); font-size: 10.5px; }
+  .lbl .dl-up { fill: var(--good); font-size: 12px; } .lbl .dl-down { fill: var(--bad); font-size: 12px; }
+  @media (max-width: 760px) { .lbl-name { font-size: 15px; } .lbl-val { font-size: 17px; } .lbl .stk { font-size: 12px; } }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: center; font-size: .74rem; color: var(--ink-faint); margin: 2px 0 10px; }
+  .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -2px; margin-right: 5px; border: 1px solid #130807; }
+
+  .clearbar { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 4px 0 12px; }
+  .clear-all { font-size: 1rem; padding: 10px 26px; background: #4a1511; border-color: var(--conflict); letter-spacing: .02em; }
+  .clear-all:hover:not(:disabled) { background: #7a2118; }
+  .candbar { border: 1px solid var(--rule); border-radius: 8px; padding: 12px; background: #120a09; }
+  .candbar.on { border-color: var(--cand); box-shadow: 0 0 12px rgba(79,208,224,.25); }
+  .candbar.clash { border-color: var(--conflict); box-shadow: 0 0 12px rgba(255,77,61,.28); }
+  .candbar .ttl { font-weight: 600; font-size: 1rem; }
+  .candbar .line { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-top: 8px; }
+  .chipstat { font-size: .78rem; color: var(--ink-dim); background: var(--bg); border: 1px solid var(--rule-soft);
+    border-radius: 5px; padding: 3px 8px; font-variant-numeric: tabular-nums; }
+  .chipstat b { color: var(--ink); font-weight: 600; }
+  .gold { color: var(--gold); font-variant-numeric: tabular-nums; font-weight: 600; }
+  .okline { color: var(--good); font-size: .84rem; }
+  .clashline { font-size: .84rem; color: #ffb199; margin-top: 4px; }
+  .clashline b { color: #fff; }
+
+  .worn h3 { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-faint); margin: 16px 0 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; }
+  .wrow { display: grid; grid-template-columns: 14px minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, .9fr) auto auto auto; gap: 8px;
+    align-items: center; padding: 6px 8px; border-bottom: 1px solid var(--rule-soft); border-radius: 4px; font-size: .84rem; }
+  .wrow:hover { background: var(--panel-2); }
+  .wrow .sw { width: 14px; height: 14px; border-radius: 3px; border: 1px solid #130807; }
+  .wrow .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .wrow .lay { font-size: .68rem; color: var(--ink-faint); display: block; }
+  .wrow select.field { padding: 4px 4px; font-size: .78rem; width: 100%; }
+  .wrow a.lnk { font-size: .72rem; color: var(--ink-dim); }
+  .xbtn { background: transparent; color: var(--ink-dim); border: 1px solid var(--rule); border-radius: 4px; width: 26px; height: 26px; cursor: pointer; line-height: 1; }
+  .xbtn:hover { color: #fff; border-color: var(--conflict); background: rgba(255,77,61,.12); }
+  @media (max-width: 760px) {
+    .wrow { grid-template-columns: 14px minmax(0, 1fr) minmax(0, 1fr) auto; }
+    .wrow .nm { grid-column: 2 / 4; } .wrow .gold, .wrow a.lnk { grid-column: auto; }
+  }
+  .empty { color: var(--ink-faint); font-size: .85rem; padding: 14px 4px; text-align: center; }
+
+  /* ---- stats ---- */
+  .stat-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+  .previewing { font-size: .78rem; padding: 6px 9px; border-radius: 6px; margin-bottom: 10px; border: 1px solid var(--cand);
+    background: rgba(79,208,224,.08); color: var(--ink); }
+  .previewing.clash { border-color: var(--conflict); background: rgba(255,77,61,.08); }
+  .previewing.rm { border-color: #cfc7b4; background: rgba(255,255,255,.04); }
+  table.st { border-collapse: collapse; width: 100%; font-size: .8rem; font-variant-numeric: tabular-nums; }
+  table.st th, table.st td { padding: 5px 6px; text-align: right; white-space: nowrap; border-bottom: 1px solid var(--rule-soft); }
+  table.st th:first-child, table.st td:first-child { text-align: left; }
+  table.st th { font-size: .66rem; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-faint); font-weight: 500; }
+  table.st tr.area { cursor: help; }
+  table.st tr.area:hover, table.st tr.area.hot { background: var(--panel-2); }
+  table.st td.hit { color: var(--ink-faint); font-size: .72rem; }
+  table.st td.v { position: relative; }
+  table.st td.v.dim { color: var(--ink-faint); }
+  table.st tr.tot td { font-weight: 600; border-top: 1px solid var(--rule); }
+  table.st tr.sec td { padding-top: 12px; font-size: .66rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-faint); border-bottom: 0; }
+  .bar { position: absolute; left: 0; top: 2px; bottom: 2px; background: rgba(184,53,44,.32); border-radius: 2px; z-index: 0; }
+  .bar.blunt { background: rgba(196,150,60,.30); } .bar.heat { background: rgba(217,120,50,.32); }
+  td.v > span { position: relative; z-index: 1; }
+  .delta { font-size: .68rem; margin-left: 4px; }
+  .note { font-size: .74rem; color: var(--ink-faint); margin-top: 10px; line-height: 1.45; }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .apbox { display: flex; gap: 8px; align-items: center; font-size: .78rem; color: var(--ink-dim); margin-bottom: 8px; flex-wrap: wrap; }
+  .tipped { cursor: help; text-decoration: underline dotted var(--ink-faint); text-underline-offset: 3px; }
+
+  /* ---- tooltip ---- */
+  .tooltip { position: fixed; left: 0; top: 0; z-index: 60; max-width: 340px; padding: 10px 12px; background: #000;
+    color: var(--ink); border: 1px solid var(--accent-soft); border-radius: 6px; font-size: .78rem; line-height: 1.45;
+    box-shadow: 0 8px 24px rgba(0,0,0,.6); pointer-events: none; }
+  .tooltip h4 { margin: 0 0 2px; font-family: 'Arvo', Georgia, serif; font-size: .92rem; }
+  .tooltip .sub { color: var(--ink-faint); font-size: .72rem; margin-bottom: 6px; }
+  .tooltip .tl { display: flex; justify-content: space-between; gap: 14px; padding: 2px 0; font-variant-numeric: tabular-nums; }
+  .tooltip .tl .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; border: 1px solid #130807; }
+  .tooltip hr { border: 0; border-top: 1px solid var(--rule); margin: 6px 0; }
+  .tooltip .selt { color: var(--gold); }
+  .tooltip .cl { color: #ffb199; }
+  .tooltip .quip { color: var(--gold); font-style: italic; margin: 2px 0 6px; }
+  .tooltip .why { color: var(--ink-faint); font-size: .7rem; margin-top: 6px; }
+
+  /* ---- buy dialog ---- */
+  dialog { background: var(--panel); color: var(--ink); border: 1px solid var(--accent-soft); border-radius: 10px;
+    padding: 18px; width: min(640px, 94vw); box-shadow: 0 20px 60px rgba(0,0,0,.7); }
+  dialog::backdrop { background: rgba(0,0,0,.65); }
+  dialog h2 { font-size: 1.15rem; margin-bottom: 6px; }
+  .cmdrow { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; align-items: center; padding: 7px 4px;
+    border-bottom: 1px solid var(--rule-soft); }
+  .cmdrow code { font-family: ui-monospace, Consolas, monospace; font-size: .86rem; background: var(--bg);
+    border: 1px solid var(--rule); border-radius: 4px; padding: 4px 8px; word-break: break-all; }
+  .cmdrow .who { grid-column: 1 / -1; font-size: .74rem; color: var(--ink-dim); }
+  .cmdrow.done code { opacity: .5; text-decoration: line-through; }
+  .cmdrow.next code { border-color: var(--accent); }
+  footer { max-width: 1600px; margin: 0 auto; padding: 8px 16px 40px; font-size: .74rem; color: var(--ink-faint); }
+</style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <a class="brand" href="../../">
+      <img src="../../compendium/mascot-icon.png" alt="">
+      <span class="brand-text">RimStream</span>
+    </a>
+    <nav class="site-nav">
+      <a href="../../commands">Commands</a>
+      <a href="../../guide/">Guide</a>
+      <a href="../../info">Info</a>
+      <a href="../../modlist">Mod List</a>
+      <a href="../">Gear Calculator</a>
+      <span class="current">Paper Doll</span>
+      <a href="../../compendium/">Store</a>
+    </nav>
+  </div>
+  <p class="lead">Dress a pawn, see which pieces fight over the same slots, and watch your armor and insulation change as you swap materials and quality.</p>
+</header>
+
+<main>
+  <section class="panel" id="picker" aria-label="Choose a piece">
+    <h2>Pieces</h2>
+    <div class="tabs" id="gtabs" role="tablist"></div>
+    <input id="search" class="field" type="search" placeholder="Search&hellip;" autocomplete="off" aria-label="Search pieces">
+    <div class="filters">
+      <select id="lfilter" class="field" aria-label="Filter by layer"></select>
+      <label><input type="checkbox" id="fitonly"> Only what fits</label>
+    </div>
+    <div id="plist"></div>
+  </section>
+
+  <section class="panel" id="stage" aria-label="Pawn">
+    <div class="stage-top">
+      <div class="seg" id="otabs" role="group" aria-label="Outfit"></div>
+      <div class="seg" id="dmgtog" role="group" aria-label="Damage type shown on the doll"></div>
+    </div>
+    <div class="ltabs" id="ltabs" role="tablist" aria-label="Layer"></div>
+    <div class="doll-wrap"><svg id="doll" viewBox="0 0 520 452" role="img" aria-label="Pawn with armor zones"></svg></div>
+    <div class="legend">
+      <span><i style="background:var(--skin)"></i>Empty</span>
+      <span><i style="background:#e6bd52"></i>Worn (one colour per piece)</span>
+      <span><i style="background:var(--cand)"></i>Trying on</span>
+      <span><i style="background:repeating-linear-gradient(45deg,#7a1010 0 3px,#ff3b30 3px 6px)"></i>Clash</span>
+    </div>
+    <div class="clearbar" id="clearbar"></div>
+    <div class="candbar" id="cand"></div>
+    <div class="worn"><h3>Worn</h3><div id="worn"></div></div>
+  </section>
+
+  <aside class="panel" id="statpanel" aria-label="Outfit stats"></aside>
+</main>
+<footer id="footer"></footer>
+
+<dialog id="buy"></dialog>
+
+<script src="../calc-core.js"></script>
+<script>
+'use strict';
+
+// ================================================================ constants
+const TYPES = ['sharp', 'blunt', 'heat'];
+const TYPE_LABEL = { sharp: 'Sharp', blunt: 'Blunt', heat: 'Heat' };
+const AP_OPTIONS = [[0, 'None'], [0.15, '15%'], [0.3, '30%'], [0.5, '50%'], [0.75, '75%']];
+const COMFY = { min: 16, max: 26 };            // an ordinary pawn's comfortable range, in degrees C
+const SKIN = '#c99b7b';
+const PALETTE = ['#f0c93a', '#7fb069', '#b58fd0', '#e8782e', '#6f8fd8', '#d77fa1', '#a9b84a', '#d9e2e8', '#4fb89a', '#8a8a96'];
+const STORE_KEY = 'rs-doll-v1';
+const SHADE_MIN = 0.5;   // a piece only paints a doll zone when it covers at least this share of it (the tooltip still lists smaller overlaps)
+
+// Doll zones. `zones` is the SVG shape markup; `lbl` places the label (side, y) and where its leader line lands (tx, ty).
+const REGION_DEFS = [
+  { id: 'head', label: 'Head', sub: 'skull, brain, ears', shade: 'r', lbl: { side: 'L', y: 50, tx: 224, ty: 42 },
+    zones: '<path d="M211 82 A50 52 0 1 1 309 82 Z"/><ellipse cx="207" cy="90" rx="8" ry="11"/><ellipse cx="313" cy="90" rx="8" ry="11"/>' },
+  { id: 'eyes', label: 'Eyes', sub: '', shade: 'x', lbl: { side: 'R', y: 90, tx: 306, ty: 92 },
+    zones: '<path d="M211 82 H309 A50 52 0 0 1 299.4 104 H220.6 A50 52 0 0 1 211 82 Z"/>' },
+  { id: 'face', label: 'Face', sub: 'nose, jaw', shade: 'r', lbl: { side: 'L', y: 112, tx: 230, ty: 112 },
+    zones: '<path d="M220.6 104 H299.4 A50 52 0 0 1 260 124 A50 52 0 0 1 220.6 104 Z"/>' },
+  { id: 'neck', label: 'Neck', sub: '', shade: 'x', lbl: { side: 'R', y: 134, tx: 276, ty: 134 },
+    zones: '<path d="M244 120 H276 V146 H244 Z"/>' },
+  { id: 'shoulders', label: 'Shoulders', sub: '', shade: 'r', lbl: { side: 'L', y: 160, tx: 196, ty: 160 },
+    zones: '<ellipse cx="218" cy="160" rx="24" ry="20"/><ellipse cx="302" cy="160" rx="24" ry="20"/>' },
+  { id: 'torso', label: 'Torso', sub: 'chest and organs', shade: 'x', lbl: { side: 'R', y: 200, tx: 298, ty: 200 },
+    zones: '<path d="M224 150 Q224 142 234 142 H286 Q296 142 296 150 L294 272 H226 Z"/>' },
+  { id: 'arms', label: 'Arms', sub: '', shade: 'x', lbl: { side: 'L', y: 232, tx: 194, ty: 232 },
+    zones: '<rect x="194" y="172" width="24" height="112" rx="12"/><rect x="302" y="172" width="24" height="112" rx="12"/>' },
+  { id: 'hands', label: 'Hands', sub: '', shade: 'r', lbl: { side: 'L', y: 300, tx: 195, ty: 296 },
+    zones: '<circle cx="206" cy="296" r="13"/><circle cx="314" cy="296" r="13"/>' },
+  { id: 'waist', label: 'Utility belt', sub: 'waist slot', shade: 'x', lbl: { side: 'R', y: 262, tx: 296, ty: 262 },
+    zones: '<path d="M226 252 H294 V272 H226 Z"/>' },
+  { id: 'legs', label: 'Legs', sub: '', shade: 'x', lbl: { side: 'L', y: 360, tx: 227, ty: 350 },
+    zones: '<path d="M227 272 H259 V392 Q259 408 243 408 Q227 408 227 392 Z"/><path d="M261 272 H293 V392 Q293 408 277 408 Q261 408 261 392 Z"/>' },
+  { id: 'feet', label: 'Feet', sub: '', shade: 'r', lbl: { side: 'R', y: 424, tx: 302, ty: 420 },
+    quip: "Fun fact: nobody in RimWorld owns shoes! The base game has no boots at all, so every pawn marches into battle barefoot, and not one vanilla armor suit covers the feet. Only modded pieces (hello, Ancient Mail) can protect them. Mind the toes!",
+    zones: '<ellipse cx="238" cy="420" rx="22" ry="11"/><ellipse cx="282" cy="420" rx="22" ry="11"/>' },
+];
+const PAINT_ORDER = ['legs', 'feet', 'torso', 'neck', 'arms', 'hands', 'shoulders', 'waist', 'head', 'eyes', 'face'];
+
+// Which doll zone a body part belongs to (decided from the part's body-part groups, so it follows the game's data).
+function regionOfPart(p) {
+  const has = g => p.groups.includes(g);
+  if (has('Torso')) return 'torso';
+  if (has('Neck')) return 'neck';
+  if (has('Shoulders')) return 'shoulders';
+  if (has('Arms')) return 'arms';
+  if (has('Hands') || has('LeftHand') || has('RightHand')) return 'hands';
+  if (has('Waist')) return 'waist';
+  if (has('Legs')) return 'legs';
+  if (has('Feet')) return 'feet';
+  if (has('UpperHead')) return 'head';
+  if (has('Eyes')) return 'eyes';
+  if (has('FullHead')) return 'face';
+  return null;
+}
+
+// ================================================================ state
+const byDef = {};
+let PARTS = [], REGION = {}, LAYER = {}, APPAREL = [];
+const state = {
+  outfits: [[], []], active: 0, compare: false,
+  view: 'all', dmg: 'sharp', ap: 0,
+  cand: null, hover: null, hoverWorn: null, hoverRemove: null, hotRegion: null,
+  live: new Set(),          // why the try-on piece is on the pawn: 'picker', 'candHover', 'candFocus', 'arrived'
+  undo: null,               // {index, entries} from "Remove all clothing"
+  group: 'all', layerFilter: 'any', search: '', fitOnly: false,
+  nextId: 1,
+};
+const OUTFIT_NAME = ['Outfit A', 'Outfit B'];
+
+// ================================================================ data prep
+function prepare() {
+  PARTS = DATA.body.map(p => Object.assign({}, p, { region: null }));
+  PARTS.forEach(p => { p.region = regionOfPart(p); p.gset = new Set(p.groups); });
+  REGION_DEFS.forEach(r => { r.parts = []; r.w = 0; });
+  for (const r of REGION_DEFS) REGION[r.id] = r;
+  PARTS.forEach((p, i) => { if (p.region) { REGION[p.region].parts.push(i); REGION[p.region].w += p.w; } });
+  REGION_DEFS.forEach(r => { r.equal = r.w <= 0; });
+  for (const l of DATA.layers) LAYER[l.id] = l;
+  for (const it of DATA.items) {
+    byDef[it.def] = it;
+    if (it.apparel) {
+      it._cov = PARTS.map(p => it.apparel.groups.some(g => p.gset.has(g)));
+      it._rc = {};
+      for (const r of REGION_DEFS) {
+        let hit = 0, tot = 0;
+        for (const i of r.parts) { const w = r.equal ? 1 : PARTS[i].w; tot += w; if (it._cov[i]) hit += w; }
+        it._rc[r.id] = tot ? hit / tot : 0;
+      }
+      APPAREL.push(it);
+    }
+  }
+  APPAREL.sort((a, b) => layerSig(a).order - layerSig(b).order || layerSig(a).text.localeCompare(layerSig(b).text) || a.label.localeCompare(b.label));
+}
+function layerName(id) { return title((LAYER[id] || { label: id.replace(/^TM_/, '').toLowerCase() }).label); }
+function layerOrder(id) { return (LAYER[id] || { order: 250 }).order; }
+function layerSig(item) {
+  const ls = item.apparel.layers.slice().sort((a, b) => layerOrder(a) - layerOrder(b));
+  return { text: ls.map(layerName).join(' + '), order: layerOrder(ls[0]) * 10 + ls.length };
+}
+const defMat = item => item.madeFromStuff ? statKey(item, '') : '';
+function mkEntry(def, mat, q) {
+  const item = byDef[def];
+  return { id: state.nextId++, def,
+    mat: item.madeFromStuff ? (item.mats.includes(mat) ? mat : defMat(item)) : '',
+    q: item.hasQuality && QUALITY_ORDER.includes(q) ? q : 'std' };
+}
+const itemOf = e => byDef[e.def];
+const entryLabel = e => itemName(itemOf(e).label);
+const pieceStats = e => compute(itemOf(e), e.mat, e.q);
+
+// ================================================================ clash rules
+// Two pieces clash when they share an apparel layer AND both cover some body part (the game's own rule).
+function clashInfo(a, b) {
+  const layers = a.apparel.layers.filter(l => b.apparel.layers.includes(l));
+  if (!layers.length) return null;
+  const regions = new Set();
+  for (let i = 0; i < PARTS.length; i++) if (a._cov[i] && b._cov[i]) regions.add(PARTS[i].region);
+  regions.delete(null);
+  return regions.size ? { layers, regions } : null;
+}
+function clashesOf(item, entries) {
+  const out = [];
+  for (const e of entries) { const info = clashInfo(item, itemOf(e)); if (info) out.push({ entry: e, info }); }
+  return out;
+}
+const regionList = set => REGION_DEFS.filter(r => set.has(r.id)).map(r => r.label.toLowerCase()).join(', ');
+
+// ================================================================ armor maths
+// One layer of armor rolls on every hit: below half its rating the hit is absorbed, below the full rating the damage
+// is halved, otherwise it lands. Armor penetration is subtracted from the rating first. Layers roll one after another,
+// outermost first, so the average damage that gets through compounds layer by layer.
+// Two refinements from the game's rules: a sharp hit that one layer halves becomes blunt, so the layers beneath
+// judge it by their blunt rating; and heat damage ignores armor penetration.
+const halfChance = x => Math.min(x, 1) - Math.min(x / 2, 1);
+function passThrough(rating, ap) {
+  const x = Math.max(0, rating - ap);
+  return halfChance(x) * 0.5 + (1 - Math.min(x, 1));
+}
+// Average share of damage that gets past every layer covering one body part, working from the outside in.
+function partPass(covering, type, ap) {
+  const layers = covering.slice().sort((a, b) => outermost(b.item) - outermost(a.item));
+  if (type === 'heat') ap = 0;
+  if (type !== 'sharp') { let p = 1; for (const pc of layers) p *= passThrough(pc.st[type] || 0, ap); return p; }
+  let stillSharp = 1, nowBlunt = 1;                     // expected damage left, given the hit is sharp / has turned blunt
+  for (let k = layers.length - 1; k >= 0; k--) {
+    const xs = Math.max(0, (layers[k].st.sharp || 0) - ap), xb = Math.max(0, (layers[k].st.blunt || 0) - ap);
+    stillSharp = halfChance(xs) * 0.5 * nowBlunt + (1 - Math.min(xs, 1)) * stillSharp;
+    nowBlunt = nowBlunt * (halfChance(xb) * 0.5 + (1 - Math.min(xb, 1)));
+  }
+  return stillSharp;
+}
+function regionValue(pieces, rid, type, ap) {
+  const R = REGION[rid];
+  let num = 0, den = 0;
+  for (const i of R.parts) {
+    const w = R.equal ? 1 : PARTS[i].w;
+    num += w * (1 - partPass(pieces.filter(pc => pc.item._cov[i]), type, ap)); den += w;
+  }
+  return den ? num / den : 0;
+}
+function outfitStats(entries, ap) {
+  const pieces = entries.map(e => ({ e, item: itemOf(e), st: pieceStats(e) }));
+  const out = { pieces, region: {}, overall: {}, cold: 0, warm: 0, price: 0, mass: 0, bonus: [] };
+  for (const t of TYPES) out.overall[t] = 0;
+  for (const R of REGION_DEFS) {
+    const here = pieces.filter(pc => pc.item._rc[R.id] > 0);
+    const rec = { here, cover: here.length ? Math.max(...here.map(pc => pc.item._rc[R.id])) : 0 };
+    for (const t of TYPES) {
+      rec[t] = regionValue(pieces, R.id, t, ap);
+      out.overall[t] += R.w * rec[t];
+    }
+    out.region[R.id] = rec;
+  }
+  const bonus = {};
+  for (const pc of pieces) {
+    out.cold += pc.st.cold || 0; out.warm += pc.st.warm || 0; out.mass += pc.st.mass || 0;
+    out.price += priceOf(pc.item, pc.e.mat, pc.e.q);
+    for (const fx of pc.item.effects || []) {
+      const k = fx.label + '|' + fx.unit;
+      (bonus[k] = bonus[k] || { label: fx.label, unit: fx.unit, value: 0, better: fx.better }).value += fx.value;
+    }
+  }
+  out.bonus = Object.values(bonus).filter(b => Math.abs(b.value) > 1e-9);
+  return out;
+}
+
+// ================================================================ what the page is showing right now
+function previewAdd() {
+  if (state.hover) {
+    if (state.cand && state.cand.def === state.hover) return Object.assign({ id: -1 }, state.cand);
+    const it = byDef[state.hover];
+    return { id: -1, def: it.def, mat: defMat(it), q: 'std' };
+  }
+  return state.cand && state.live.size ? Object.assign({ id: -1 }, state.cand) : null;
+}
+function computeView() {
+  const base = state.outfits[state.active];
+  const add = previewAdd();
+  const removeEntry = state.hoverRemove != null ? base.find(e => e.id === state.hoverRemove) || null : null;
+  let after = removeEntry ? base.filter(e => e !== removeEntry) : base.slice();
+  let clashes = [];
+  if (add) {
+    clashes = clashesOf(byDef[add.def], after);
+    after = after.filter(e => !clashes.some(c => c.entry === e)).concat([add]);
+  }
+  return { base, add, addItem: add ? byDef[add.def] : null, removeEntry, clashes, after, changed: !!(add || removeEntry) };
+}
+
+// ================================================================ outfit editing
+function equip(cand) {
+  const out = state.outfits[state.active];
+  const item = byDef[cand.def];
+  const gone = new Set(clashesOf(item, out).map(c => c.entry));
+  state.outfits[state.active] = out.filter(e => !gone.has(e)).concat([mkEntry(cand.def, cand.mat, cand.q)]);
+  state.cand = null; state.hover = null; state.undo = null; state.live.clear();
+  renderAll();
+}
+function removeWorn(id) {
+  state.outfits[state.active] = state.outfits[state.active].filter(e => e.id !== id);
+  state.hoverRemove = null; state.hoverWorn = null; state.undo = null;
+  renderAll();
+}
+function clearAll() {
+  const i = state.active, had = state.outfits[i];
+  if (!had.length) return;
+  state.undo = { index: i, entries: had };
+  state.outfits[i] = []; state.hoverRemove = null; state.hoverWorn = null;
+  renderAll();
+}
+function undoClear() {
+  if (!state.undo) return;
+  state.outfits[state.undo.index] = state.undo.entries; state.undo = null;
+  renderAll();
+}
+function renderClearBar() {
+  const out = state.outfits[state.active];
+  const kids = [el('button', { class: 'copy-btn clear-all', type: 'button', text: 'Remove all clothing', disabled: !out.length,
+    'data-tip': 'Takes everything off ' + OUTFIT_NAME[state.active] + '. You can undo it right after.', onclick: clearAll })];
+  if (state.undo && state.undo.index === state.active) kids.push(el('button', { class: 'ghost-btn', type: 'button', text: 'Undo', onclick: undoClear }));
+  document.getElementById('clearbar').replaceChildren(...kids);
+}
+
+// ================================================================ persistence + sharing
+const encodeOutfit = list => list.map(e => [e.def, e.mat, e.q].join(':')).join(',');
+function decodeOutfit(s) {
+  const out = [];
+  for (const part of (s || '').split(',')) {
+    const [def, mat, q] = part.split(':');
+    if (!def || !byDef[def] || !byDef[def].apparel) continue;
+    const e = mkEntry(def, mat, q);
+    if (!clashesOf(byDef[def], out).length) out.push(e);   // drop anything that can't be worn together
+  }
+  return out;
+}
+function paramString() {
+  const p = new URLSearchParams();
+  if (state.outfits[0].length) p.set('a', encodeOutfit(state.outfits[0]));
+  if (state.outfits[1].length) p.set('b', encodeOutfit(state.outfits[1]));
+  if (state.active) p.set('act', 'b');
+  if (state.compare) p.set('cmp', '1');
+  if (state.dmg !== 'sharp') p.set('dmg', state.dmg);
+  if (state.ap) p.set('ap', String(state.ap));
+  return p.toString();
+}
+function syncUrl() {
+  const qs = paramString();
+  try { history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '')); } catch (e) { /* ignore */ }
+  try { localStorage.setItem(STORE_KEY, qs); } catch (e) { /* ignore */ }
+}
+function loadParams(qs) {
+  const p = new URLSearchParams(qs);
+  state.outfits = [decodeOutfit(p.get('a')), decodeOutfit(p.get('b'))];
+  state.active = p.get('act') === 'b' ? 1 : 0;
+  state.compare = p.get('cmp') === '1';
+  state.dmg = TYPES.includes(p.get('dmg')) ? p.get('dmg') : 'sharp';
+  const ap = parseFloat(p.get('ap'));
+  state.ap = AP_OPTIONS.some(o => o[0] === ap) ? ap : 0;
+}
+
+// ================================================================ tooltips
+const tipBox = el('div', { class: 'tooltip', role: 'tooltip', hidden: true });
+document.body.append(tipBox);
+function placeTip(x, y) {
+  const b = tipBox.getBoundingClientRect();
+  let left = x + 16, top = y + 16;
+  if (left + b.width > innerWidth - 8) left = Math.max(8, x - b.width - 16);
+  if (top + b.height > innerHeight - 8) top = Math.max(8, innerHeight - b.height - 8);
+  tipBox.style.left = left + 'px'; tipBox.style.top = top + 'px';
+}
+function showTip(node, x, y) {
+  tipBox.replaceChildren(node);
+  tipBox.hidden = false;
+  tipBox.style.left = '0px'; tipBox.style.top = '0px';
+  placeTip(x, y);
+}
+function hideTip() { tipBox.hidden = true; }
+document.addEventListener('mouseover', e => {
+  const t = e.target.closest ? e.target.closest('[data-tip]') : null;
+  if (!t) return;
+  showTip(el('div', { text: t.getAttribute('data-tip') }), e.clientX, e.clientY);
+});
+document.addEventListener('mousemove', e => {
+  if (tipBox.hidden) return;
+  if (e.target.closest && (e.target.closest('[data-tip]') || e.target.closest('.reg') || e.target.closest('.lbl') || e.target.closest('tr.area'))) placeTip(e.clientX, e.clientY);
+});
+document.addEventListener('mouseout', e => {
+  const t = e.target.closest ? e.target.closest('[data-tip]') : null;
+  if (t && !(e.relatedTarget && t.contains(e.relatedTarget))) hideTip();
+});
+document.addEventListener('scroll', hideTip, true);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') hideTip(); });
+
+const pctTxt = v => Math.round(v * 100) + '%';
+const ptsTxt = d => (d > 0 ? '+' : '−') + Math.abs(Math.round(d * 100)) + ' pts';
+
+// The mouseover breakdown for one body area: which pieces protect it and how much each one adds.
+function regionTip(rid) {
+  const view = computeView(), R = REGION[rid];
+  const before = outfitStats(view.base, state.ap), reg = before.region[rid];
+  const t = state.dmg;
+  const box = el('div');
+  box.append(el('h4', { text: R.label }),
+    el('div', { class: 'sub', text: (R.sub ? R.sub + ' · ' : '') + (R.w > 0 ? 'takes about ' + Math.round(R.w * 100) + '% of hits' : 'a slot only, never struck') }));
+  if (R.quip) box.append(el('div', { class: 'quip', text: R.quip }));
+  if (!reg.here.length) {
+    box.append(el('div', { class: 'faint', text: 'Nothing covers this area.' }));
+  } else {
+    box.append(el('div', { class: 'tl' }, el('span', { text: 'Damage absorbed on average' }),
+      el('span', { text: TYPES.map(x => TYPE_LABEL[x][0] + ' ' + pctTxt(reg[x])).join(' · ') })));
+    box.append(el('hr'));
+    const ordered = reg.here.slice().sort((a, b) => Math.max(...b.item.apparel.layers.map(layerOrder)) - Math.max(...a.item.apparel.layers.map(layerOrder)));
+    for (const pc of ordered) {
+      const rest = reg.here.filter(x => x !== pc);
+      const marginal = reg[t] - regionValue(rest, rid, t, state.ap);
+      const color = PALETTE[pc.e.id % PALETTE.length];
+      box.append(el('div', { class: 'tl' },
+        el('span', null, el('i', { class: 'sw', style: 'background:' + color }), entryLabel(pc.e),
+          el('span', { class: 'faint', text: ' · ' + pc.item.apparel.layers.map(layerName).join('+').toLowerCase() })),
+        el('span', { class: 'selt', text: 'rating ' + pctTxt(pc.st[t] || 0) + ' · adds ' + ptsTxt(marginal) })));
+    }
+    if (reg.cover < 0.999) box.append(el('div', { class: 'faint', text: 'Only part of this area is covered (' + Math.round(reg.cover * 100) + '%).' }));
+    box.append(el('div', { class: 'why', text: 'Each layer gets its own roll to block or halve a hit, so layers add less than their ratings sum to' + (t === 'sharp' ? ' (and a sharp hit that gets halved turns blunt for the layers beneath)' : '') + '. “Adds” is what that piece contributes on top of the others.' }));
+  }
+  for (const c of view.clashes) if (c.info.regions.has(rid)) {
+    box.append(el('hr'), el('div', { class: 'cl', text: '⚠ ' + entryLabel(view.add) + ' clashes with ' + entryLabel(c.entry) + ' here (' + c.info.layers.map(layerName).join(', ').toLowerCase() + ' layer).' }));
+  }
+  if (view.changed) {
+    const after = outfitStats(view.after, state.ap);
+    box.append(el('hr'), el('div', { class: 'tl' }, el('span', { text: 'After this change (' + TYPE_LABEL[t].toLowerCase() + ')' }),
+      el('span', { text: pctTxt(before.region[rid][t]) + ' → ' + pctTxt(after.region[rid][t]) })));
+  }
+  return box;
+}
+
+// ================================================================ doll
+let dollBuilt = false;
+// Hair and face are decoration under the garments; a garment that covers them hides them (see drawGarments).
+const DECOR = '<g id="d-hair"><path d="M209 82 C204 34 232 15 260 15 C288 15 316 34 311 82 C303 58 284 47 260 47 C236 47 217 58 209 82 Z" fill="#4b3426" stroke="#130807" stroke-width="3" stroke-linejoin="round"/>' +
+  '<path d="M232 30 Q250 22 266 24" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="3" stroke-linecap="round"/></g>' +
+  '<g id="d-eyes"><ellipse cx="241" cy="94" rx="6.5" ry="5.5" fill="#f4efe6" stroke="#130807" stroke-width="1.6"/><ellipse cx="279" cy="94" rx="6.5" ry="5.5" fill="#f4efe6" stroke="#130807" stroke-width="1.6"/>' +
+  '<circle cx="242" cy="94.5" r="3" fill="#2a1a12"/><circle cx="278" cy="94.5" r="3" fill="#2a1a12"/>' +
+  '<path d="M232 85 Q241 80 250 85 M270 85 Q279 80 288 85" fill="none" stroke="#2a1a12" stroke-width="2.4" stroke-linecap="round"/></g>' +
+  '<g id="d-mouth"><path d="M260 101 Q256 109 261 111" fill="none" stroke="rgba(0,0,0,.38)" stroke-width="2" stroke-linecap="round"/>' +
+  '<path d="M249 117 Q260 123 271 117" fill="none" stroke="#2a1a12" stroke-width="2.4" stroke-linecap="round"/></g>';
+
+// ---------------------------------------------------------------- garments
+// Each piece is classified into a shape (archetype) from its layers, body-part groups and name; the shape is drawn over the
+// pawn in the piece's colour, and armor gets plate styling while clothing gets soft styling.
+const GP = (d, eo) => ['f', 'sh', 'o'].map(c => '<path class="' + c + '"' + (eo ? ' fill-rule="evenodd"' : '') + ' d="' + d + '"/>').join('');
+const GL = (d, dash) => '<path class="d' + (dash ? ' dash' : '') + '" d="' + d + '"/>';
+const GH = d => '<path class="dh" d="' + d + '"/>';
+const GR = (x, y) => '<circle class="rv" cx="' + x + '" cy="' + y + '" r="2.3"/>';
+const GC = (x, y, r) => '<circle class="d" cx="' + x + '" cy="' + y + '" r="' + r + '"/>';
+const GOLD = (x, y, r) => '<circle class="gold" cx="' + x + '" cy="' + y + '" r="' + r + '"/>';
+const gsym = m => m + '<g transform="translate(520 0) scale(-1 1)">' + m + '</g>';
+const HEAD_HIDES = { hat: ['hair'], wizard: ['hair'], cap: ['hair'], helmOpen: ['hair'], helmet: ['hair', 'eyes', 'mouth'],
+  hood: ['hair'], maskFull: ['eyes', 'mouth'], maskMouth: ['mouth'], blindfold: ['eyes'] };
+
+function archetype(item) {
+  if (item._arch) return item._arch;
+  const A = item.apparel, g = A.groups, l = A.layers, n = item.label.toLowerCase();
+  const has = x => g.includes(x), hard = item.group === 'armor';
+  let kind;
+  if (l.includes('Overhead') || l.includes('EyeCover')) {
+    if (l.includes('EyeCover') || /blindfold/.test(n)) kind = 'blindfold';
+    else if (/crown|coronet|headdress/.test(n)) kind = 'crown';
+    else if (/headset|gunlink/.test(n)) kind = 'headset';
+    else if (/wizard/.test(n)) kind = 'wizard';
+    else if (/mask|veil|visage/.test(n)) kind = (has('FullHead') || has('Eyes')) ? 'maskFull' : 'maskMouth';
+    else if (g.length === 1 && has('Neck')) kind = 'collar';
+    else if (/helmet|\bhelm/.test(n) || (hard && has('UpperHead'))) kind = has('FullHead') ? 'helmet' : 'helmOpen';
+    else if (has('FullHead')) kind = 'hood';
+    else if (/hat|shadecone/.test(n)) kind = 'hat';
+    else kind = 'cap';
+  } else if (l.includes('TM_Cloak')) kind = 'cloak';
+  else if (/cape/.test(n)) kind = 'cape';
+  else if (/robe|shroud/.test(n)) kind = 'robe';
+  else if (/vacsuit|\bsuit\b/.test(n)) kind = 'suit';
+  else if (hard && has('Torso') && has('Arms') && has('Legs')) kind = 'plate';
+  else if (l.includes('Middle') && l.includes('Shell') && has('Torso')) kind = 'plate';
+  else if (l.includes('OnSkin') && has('Arms') && !has('Legs')) kind = 'shirt';
+  else if (has('Legs') && !has('Torso')) kind = 'pants';
+  else if (has('Torso') && has('Arms')) kind = 'jacket';
+  else if (has('Torso')) kind = 'vest';
+  else kind = 'belt';
+  const head = ['blindfold', 'crown', 'headset', 'wizard', 'maskFull', 'maskMouth', 'collar', 'helmet', 'helmOpen', 'hood', 'hat', 'cap'].includes(kind);
+  return (item._arch = { kind, hard, head, hides: HEAD_HIDES[kind] || [] });
+}
+
+const GB = {   // body parts, drawn for the pawn's left side where mirrored (gsym)
+  torso(hard, hem) {
+    const wide = hem > 270;
+    let m = GP('M223 150 Q223 140 236 140 H284 Q297 140 297 150 L' + (wide ? 300 : 296) + ' ' + hem + ' H' + (wide ? 220 : 224) + ' Z');
+    if (hard) m += GH('M232 160 Q260 176 288 160') + GL('M260 168 V' + (hem - 8)) + GL('M232 196 H288') + GL('M234 ' + (hem - 36) + ' H286') +
+      GR(238, 182) + GR(282, 182) + GR(240, hem - 50) + GR(280, hem - 50);
+    else m += GL('M260 156 V' + (hem - 8), 1) + GL('M238 192 Q245 214 239 ' + (hem - 22)) + GL('M282 192 Q275 214 281 ' + (hem - 22));
+    return m;
+  },
+  collar(hard) {
+    return hard ? GP('M243 126 H277 V146 H243 Z') + GL('M243 134 H277') + GL('M243 140 H277')
+      : GP('M245 138 L260 160 L275 138 L270 133 L260 148 L250 133 Z');
+  },
+  pauldrons: () => gsym(GP('M193 160 Q191 138 220 137 Q246 140 245 160 Q244 178 222 181 Q195 181 193 160 Z') + GH('M200 150 Q220 142 240 152') + GL('M198 166 Q220 158 242 170')),
+  sleeves(hard, long) {
+    const end = long ? 280 : 214;
+    return hard
+      ? gsym(GP('M193 182 Q193 175 199 175 H213 Q219 175 219 182 L220 282 Q220 288 213 288 H199 Q192 288 192 282 Z') + GL('M192 206 H220') + GL('M192 236 H220') + GL('M192 262 H220') + GR(198, 194))
+      : gsym(GP('M191 160 Q193 143 216 141 L225 152 L223 178 L220 ' + end + ' Q206 ' + (end + 6) + ' 192 ' + end + ' L193 178 Z') + GL('M200 196 Q204 222 200 ' + (end - 14)));
+  },
+  legs(hard) {
+    const leg = 'M225 268 H259 V398 Q259 405 252 405 H232 Q225 405 225 398 Z';
+    return gsym(GP(leg) + (hard ? GC(243, 334, 8) + GL('M227 298 H257') + GL('M226 390 H258') : GL('M243 284 V388', 1) + GL('M226 392 H258'))) +
+      GP('M224 262 H296 V276 H224 Z');
+  },
+  skirt: () => GP('M224 262 H296 L320 398 Q290 410 260 404 Q230 410 200 398 Z') + GL('M260 270 V402') + GL('M240 276 L226 396') + GL('M280 276 L294 396'),
+  robeSleeves: () => gsym(GP('M189 156 Q192 142 216 141 L225 152 L223 178 L227 258 Q210 282 186 270 Q186 214 189 156 Z') + GL('M200 190 Q197 230 200 262')),
+  boots: () => gsym(GP('M226 394 H258 V412 Q262 434 246 434 H224 Q212 434 214 424 Q216 416 226 414 Z') + GL('M227 402 H257')),
+};
+
+function garmentMarkup(item) {
+  if (item._gm) return item._gm;
+  const a = archetype(item), hard = a.hard, g = item.apparel.groups, has = x => g.includes(x);
+  let m = '';
+  switch (a.kind) {
+    case 'shirt': m = GB.sleeves(false, true) + GB.torso(false, 262) + GB.collar(false); break;
+    case 'pants': m = GB.legs(hard); break;
+    case 'vest': m = GB.torso(hard, 258) + (has('Neck') ? GB.collar(hard) : ''); break;
+    case 'jacket': m = (has('Legs') ? GB.legs(hard) : '') + GB.sleeves(hard, true) + GB.torso(hard, 286) + (hard && has('Shoulders') ? GB.pauldrons() : '') + (has('Neck') ? GB.collar(hard) : ''); break;
+    case 'suit': m = GB.legs(hard) + GB.sleeves(hard, true) + GB.torso(hard, 262) + GB.collar(hard) + (has('Feet') ? GB.boots() : ''); break;
+    case 'plate': m = (has('Feet') ? GB.boots() : '') + (has('Legs') ? GB.legs(true) : '') + (has('Arms') ? GB.sleeves(true, true) : '') + GB.torso(true, 262) +
+      (has('Shoulders') ? GB.pauldrons() : '') + (has('Neck') ? GB.collar(true) : ''); break;
+    case 'robe': m = GB.skirt() + (has('Arms') ? GB.robeSleeves() : '') + GB.torso(false, 262) + GB.collar(false); break;
+    case 'cape': m = gsym(GP('M197 148 Q192 136 216 132 L248 138 L248 152 L241 296 Q238 354 248 394 Q214 408 172 394 Q186 300 197 148 Z') + GL('M214 160 Q208 270 204 380') + GL('M228 170 Q226 280 226 388')) +
+      GP('M241 130 Q260 148 279 130 L279 141 Q260 160 241 141 Z') + GOLD(260, 150, 4.5); break;
+    case 'cloak': m = GP('M196 150 Q196 134 222 131 Q242 142 260 144 Q278 142 298 131 Q324 134 324 150 L332 228 Q300 242 260 238 Q220 242 188 228 Z') +
+      GL('M260 146 V236') + GL('M226 160 Q222 200 214 226') + GL('M294 160 Q298 200 306 226') + GOLD(260, 146, 4.5); break;
+    case 'belt': m = GP('M224 254 H296 V272 H224 Z') + GOLD(260, 263, 5); break;
+    // ---- headgear
+    case 'hat': m = GP('M186 64 C186 55 222 52 260 52 C298 52 334 55 334 64 C334 74 298 80 260 80 C222 80 186 74 186 64 Z') +
+      GP('M222 62 C220 30 236 24 260 24 C284 24 300 30 298 62 Z') + GL('M222 54 H298'); break;
+    case 'wizard': m = GP('M186 64 C186 55 222 52 260 52 C298 52 334 55 334 64 C334 74 298 80 260 80 C222 80 186 74 186 64 Z') +
+      GP('M226 62 Q236 34 258 8 Q262 5 266 9 Q286 36 294 62 Z') + GL('M227 54 H293'); break;
+    case 'cap': m = GP('M208 78 C204 34 232 18 260 18 C288 18 316 34 312 78 Q260 62 208 78 Z') + GP('M207 70 Q260 54 313 70 L312 84 Q260 68 208 84 Z'); break;
+    case 'helmOpen': m = GP('M206 88 C202 30 232 16 260 16 C288 16 318 30 314 88 Q260 80 206 88 Z') + GL('M260 18 V76') +
+      GP('M205 80 Q260 70 315 80 L314 90 Q260 80 206 90 Z') + GR(224, 62) + GR(296, 62) + GH('M228 40 Q248 26 268 28'); break;
+    case 'helmet': m = GP('M204 88 C202 32 230 12 260 12 C290 12 318 32 316 88 C316 120 292 136 260 136 C228 136 204 120 204 88 Z') + GL('M260 14 V82') +
+      '<path class="dk" d="M220 86 Q260 82 300 86 V100 Q260 104 220 100 Z"/>' + GL('M240 114 H280') + GL('M242 121 H278') + GL('M246 128 H274') + GR(214, 70) + GR(306, 70) + GH('M226 40 Q248 24 270 26'); break;
+    case 'hood': m = GP('M198 96 C194 36 226 10 260 10 C294 10 326 36 322 96 L326 132 Q292 150 260 150 Q228 150 194 132 Z M224 86 Q224 60 260 60 Q296 60 296 86 L296 112 Q260 134 224 112 Z', true) + GL('M214 40 Q205 90 207 128'); break;
+    case 'maskFull': m = gsym(GL('M216 96 L204 90')) + GP('M216 92 Q260 82 304 92 Q306 126 260 138 Q214 126 216 92 Z') +
+      '<path class="dk" d="M226 97 H252 V105 H226 Z"/><path class="dk" d="M268 97 H294 V105 H268 Z"/>' + (/gas/.test(item.label.toLowerCase()) ? GOLD(260, 124, 7) : GL('M246 120 H274')); break;
+    case 'maskMouth': m = gsym(GL('M222 110 L208 98')) + GP('M222 108 Q260 100 298 108 Q296 130 260 138 Q224 130 222 108 Z') + GL('M236 120 Q260 128 284 120'); break;
+    case 'blindfold': m = GP('M210 84 Q260 78 310 84 V100 Q260 106 210 100 Z') + GP('M310 88 L326 80 L324 100 Z'); break;
+    case 'crown': m = GP('M224 54 L228 28 L244 44 L260 22 L276 44 L292 28 L296 54 Z') + GOLD(260, 44, 3.5) + GOLD(238, 50, 2.5) + GOLD(282, 50, 2.5); break;
+    case 'headset': m = '<path class="hb-o" d="M212 82 Q210 28 260 28 Q310 28 308 82"/><path class="hb-f" d="M212 82 Q210 28 260 28 Q310 28 308 82"/>' +
+      gsym(GP('M198 80 H212 V102 H198 Q191 91 198 80 Z')) + GL('M212 102 Q224 120 244 122'); break;
+    case 'collar': m = GP('M243 130 Q260 140 277 130 V143 Q260 153 243 143 Z') + GOLD(260, 144, 3); break;
+    default: m = '';
+  }
+  return (item._gm = m);
+}
+
+// Draw every piece in view (inner layers first), the try-on piece as a cyan ghost, and hide hair/face where they are covered.
+function drawGarments(view, hlItem) {
+  const list = [];
+  for (const e of view.base) if (inView(itemOf(e).apparel.layers))
+    list.push({ e, item: itemOf(e), cls: e === view.removeEntry ? 'removing' : (e === hlItem ? 'hl' : '') });
+  list.sort((a, b) => outermost(a.item) - outermost(b.item));
+  if (view.addItem && inView(view.addItem.apparel.layers)) list.push({ e: view.add, item: view.addItem, cls: 'ghost' });
+  const hidden = new Set();
+  let html = '';
+  for (const x of list) {
+    const a = archetype(x.item);
+    html += '<g class="gm ' + x.cls + '"' + (x.cls === 'ghost' ? '' : ' style="--gc:' + PALETTE[x.e.id % PALETTE.length] + '"') + '>' + garmentMarkup(x.item) + '</g>';
+    if (x.cls !== 'removing') a.hides.forEach(h => hidden.add(h));
+  }
+  document.getElementById('garments').innerHTML = html;
+  for (const k of ['hair', 'eyes', 'mouth']) { const n = document.getElementById('d-' + k); if (n) n.style.display = hidden.has(k) ? 'none' : ''; }
+}
+
+function buildDoll() {
+  const svg = document.getElementById('doll');
+  const wrap = (shapes, cls) => '<g class="' + cls + '">' + shapes + '</g>';
+  const body = PAINT_ORDER.filter(id => id !== 'waist').map(id => {
+    const R = REGION[id];
+    return '<g class="bz" data-shade="' + R.shade + '">' + wrap(R.zones, 'zb') + wrap(R.zones, 'zs') + wrap(R.zones, 'zl0') + '</g>';
+  }).join('');
+  const zones = PAINT_ORDER.map(id => {
+    const R = REGION[id];
+    return '<g class="reg" data-r="' + id + '" tabindex="0">' + wrap(R.zones, 'zh') + wrap(R.zones, 'zo') + wrap(R.zones, 'zl') +
+      '<text class="warn" data-w="' + id + '">⚠</text></g>';
+  }).join('');
+  const labels = REGION_DEFS.map(R => {
+    const L = R.lbl, left = L.side === 'L', x = left ? 150 : 370, ax = left ? 156 : 364;
+    return '<g class="lbl" data-l="' + R.id + '"><rect class="lbl-hit" x="' + (left ? 2 : 366) + '" y="' + (L.y - 18) + '" width="150" height="38" fill="rgba(0,0,0,0)"/>' +
+      '<line class="lead-line" x1="' + ax + '" y1="' + L.y + '" x2="' + L.tx + '" y2="' + L.ty + '"/>' +
+      '<text class="lbl-name" x="' + x + '" y="' + (L.y - 3) + '" text-anchor="' + (left ? 'end' : 'start') + '"></text>' +
+      '<text class="lbl-val" x="' + x + '" y="' + (L.y + 13) + '" text-anchor="' + (left ? 'end' : 'start') + '"></text></g>';
+  }).join('');
+  svg.innerHTML =
+    '<defs><pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">' +
+    '<rect width="9" height="9" fill="#6e0f0a"/><rect width="4.5" height="9" fill="#ff3b30"/></pattern>' +
+    '<linearGradient id="shX" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".32"/><stop offset=".3" stop-color="#000" stop-opacity="0"/>' +
+    '<stop offset=".62" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#000" stop-opacity=".34"/></linearGradient>' +
+    '<radialGradient id="shR" cx=".38" cy=".3" r=".85"><stop offset="0" stop-color="#fff" stop-opacity=".24"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/>' +
+    '<stop offset="1" stop-color="#000" stop-opacity=".36"/></radialGradient></defs>' +
+    '<ellipse cx="260" cy="436" rx="96" ry="8" fill="rgba(0,0,0,.4)"/>' +
+    '<g id="body">' + body + '</g><g id="decor" pointer-events="none">' + DECOR + '</g><g id="garments" pointer-events="none"></g>' +
+    '<g id="zones">' + zones + '</g>' + labels;
+  // warning glyph sits in the middle of each zone
+  svg.querySelectorAll('.reg').forEach(g => {
+    const bb = g.querySelector('.zh').getBBox(), w = g.querySelector('.warn');
+    w.setAttribute('x', bb.x + bb.width / 2); w.setAttribute('y', bb.y + bb.height / 2);
+    g.addEventListener('mouseenter', e => { state.hotRegion = g.dataset.r; markHot(); showTip(regionTip(g.dataset.r), e.clientX, e.clientY); });
+    g.addEventListener('mouseleave', () => { state.hotRegion = null; markHot(); hideTip(); });
+    g.addEventListener('focus', () => { const r = g.getBoundingClientRect(); state.hotRegion = g.dataset.r; markHot(); showTip(regionTip(g.dataset.r), r.right, r.top); });
+    g.addEventListener('blur', () => { state.hotRegion = null; markHot(); hideTip(); });
+  });
+  svg.querySelectorAll('.lbl').forEach(g => {
+    const rid = g.dataset.l;
+    g.addEventListener('mouseenter', e => { state.hotRegion = rid; markHot(); showTip(regionTip(rid), e.clientX, e.clientY); });
+    g.addEventListener('mouseleave', () => { state.hotRegion = null; markHot(); hideTip(); });
+  });
+  dollBuilt = true;
+}
+function markHot() {
+  document.querySelectorAll('#doll .reg').forEach(g => g.classList.toggle('hot', g.dataset.r === state.hotRegion));
+  document.querySelectorAll('#doll .lbl').forEach(g => g.classList.toggle('hot', g.dataset.l === state.hotRegion));
+  document.querySelectorAll('tr.area').forEach(tr => tr.classList.toggle('hot', tr.dataset.r === state.hotRegion));
+}
+const inView = (layers) => state.view === 'all' || layers.includes(state.view);
+const outermost = item => Math.max(...item.apparel.layers.map(layerOrder));
+
+function renderDoll() {
+  if (!dollBuilt) buildDoll();
+  const view = computeView();
+  const before = outfitStats(view.base, state.ap);
+  const after = view.changed ? outfitStats(view.after, state.ap) : null;
+  const t = state.dmg;
+  const hlItem = state.hoverWorn != null ? view.base.find(e => e.id === state.hoverWorn) : null;
+  for (const R of REGION_DEFS) {
+    const g = document.querySelector('#doll .reg[data-r="' + R.id + '"]');
+    const cand = !!(view.addItem && view.addItem._rc[R.id] >= SHADE_MIN && inView(view.addItem.apparel.layers));
+    const clash = view.clashes.some(c => c.info.regions.has(R.id) && inView(c.info.layers));
+    const removing = !!(view.removeEntry && itemOf(view.removeEntry)._rc[R.id] >= SHADE_MIN && inView(itemOf(view.removeEntry).apparel.layers));
+    g.dataset.over = clash ? 'conflict' : (cand ? 'cand' : '');
+    if (clash) g.dataset.line = 'conflict'; else if (cand) g.dataset.line = 'cand'; else delete g.dataset.line;
+    if (removing) g.dataset.remove = '1'; else delete g.dataset.remove;
+    if (hlItem && itemOf(hlItem)._rc[R.id] >= SHADE_MIN && inView(itemOf(hlItem).apparel.layers)) g.dataset.hl = '1'; else delete g.dataset.hl;
+
+    // label: name + the figure for the chosen damage type
+    const L = document.querySelector('#doll .lbl[data-l="' + R.id + '"]');
+    const b = before.region[R.id], a = after ? after.region[R.id] : null;
+    const nm = L.querySelector('.lbl-name'), vl = L.querySelector('.lbl-val');
+    const stack = view.base.filter(e => itemOf(e)._rc[R.id] > 0).length;
+    nm.textContent = (clash ? '⚠ ' : '') + R.label;
+    if (stack > 1) { const sp = document.createElementNS('http://www.w3.org/2000/svg', 'tspan'); sp.setAttribute('class', 'stk'); sp.textContent = '  ×' + stack; nm.append(sp); }
+    vl.replaceChildren();
+    const shown = b.here.length === 0 && !(a && a.here.length);
+    L.classList.toggle('faintv', shown);
+    L.classList.toggle('conflict', clash);
+    if (shown) { vl.textContent = R.w > 0 ? '0%' : '—'; continue; }
+    if (a && Math.abs(a[t] - b[t]) >= 0.005) {
+      vl.append(document.createTextNode(pctTxt(b[t]) + ' → ' + pctTxt(a[t]) + ' '));
+      const sp = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+      sp.setAttribute('class', a[t] > b[t] ? 'dl-up' : 'dl-down'); sp.textContent = a[t] > b[t] ? '▲' : '▼';
+      vl.append(sp);
+    } else vl.textContent = pctTxt(b[t]);
+  }
+  drawGarments(view, hlItem);
+  markHot();
+}
+
+// ================================================================ layer tabs
+function renderLayerTabs() {
+  const view = computeView();
+  const used = DATA.layers.filter(l => APPAREL.some(i => i.apparel.layers.includes(l.id)));
+  const tabs = [{ id: 'all', label: 'All layers' }].concat(used.map(l => ({ id: l.id, label: layerName(l.id) })));
+  document.getElementById('ltabs').replaceChildren(...tabs.map(tb => {
+    const n = tb.id === 'all' ? view.base.length : view.base.filter(e => itemOf(e).apparel.layers.includes(tb.id)).length;
+    const candHere = view.addItem && (tb.id === 'all' || view.addItem.apparel.layers.includes(tb.id));
+    const clashHere = view.clashes.some(c => tb.id === 'all' || c.info.layers.includes(tb.id));
+    const b = el('button', { class: 'ltab', type: 'button', role: 'tab', 'aria-selected': String(state.view === tb.id),
+      'data-cand': candHere ? '1' : null, 'data-clash': clashHere ? '1' : null,
+      onclick: () => { state.view = tb.id; renderLayerTabs(); renderDoll(); } },
+      tb.label, el('span', { class: 'n', text: String(n) }), el('span', { class: 'dot c' }), el('span', { class: 'dot x' }));
+    return b;
+  }));
+}
+
+// ================================================================ picker
+function fitText(item) {
+  const cl = clashesOf(item, state.outfits[state.active]);
+  return { cl, worn: state.outfits[state.active].some(e => e.def === item.def) };
+}
+function renderPicker() {
+  const q = state.search.trim().toLowerCase();
+  const list = document.getElementById('plist');
+  const rows = [];
+  let lastGroup = null;
+  for (const item of APPAREL) {
+    if (state.group !== 'all' && item.group !== state.group) continue;
+    if (state.layerFilter !== 'any' && !item.apparel.layers.includes(state.layerFilter)) continue;
+    if (q && !item.label.toLowerCase().includes(q) && !item.token.includes(q)) continue;
+    const { cl, worn } = fitText(item);
+    if (state.fitOnly && (cl.length || worn)) continue;
+    const sig = layerSig(item).text;
+    if (sig !== lastGroup) { rows.push(el('div', { class: 'ghead', text: sig })); lastGroup = sig; }
+    const badge = worn ? el('span', { class: 'badge worn', text: 'worn' })
+      : cl.length ? el('span', { class: 'badge swap', text: 'swaps ' + cl.length, 'data-tip': 'Would take off: ' + cl.map(c => entryLabel(c.entry)).join(', ') })
+      : el('span', { class: 'badge fits', text: 'fits' });
+    rows.push(el('button', { class: 'prow', type: 'button', 'aria-current': String(!!state.cand && state.cand.def === item.def),
+      onmouseenter: () => { state.hover = item.def; renderPreview(); },
+      onmouseleave: () => { state.hover = null; renderPreview(); },
+      onclick: () => selectCandidate(item.def) },
+      el('span', { class: 'nm', text: itemName(item.label) }), badge));
+  }
+  list.replaceChildren(...(rows.length ? rows : [el('div', { class: 'empty', text: 'Nothing matches.' })]));
+}
+function selectCandidate(def, mat, q) {
+  const item = byDef[def];
+  const keep = state.cand && state.cand.def === def ? state.cand : null;
+  state.cand = keep && mat === undefined ? keep : {
+    def,
+    mat: item.madeFromStuff ? (item.mats.includes(mat) ? mat : defMat(item)) : '',
+    q: item.hasQuality && QUALITY_ORDER.includes(q) ? q : 'std' };
+  state.hover = null;
+  renderPicker(); renderCand(); renderPreview();
+}
+
+// ================================================================ candidate bar
+function matSelect(item, value, onChange, q) {
+  const sel = el('select', { class: 'field', 'aria-label': 'Material', onchange: e => onChange(e.target.value) },
+    ...orderedMats(item).map(m => el('option', { value: m,
+      text: title(DATA.materials[m].label) + (isDefaultMat(item, m) ? ' *' : '') + '  ·  ' + priceOf(item, m, q).toLocaleString() })));
+  sel.value = value;
+  return sel;
+}
+function qualSelect(item, value, onChange, mat) {
+  const sel = el('select', { class: 'field', 'aria-label': 'Quality', onchange: e => onChange(e.target.value) },
+    ...QUALITY_ORDER.map(q => el('option', { value: q, text: QUALITY_LABEL[q] + '  ·  ' + priceOf(item, mat, q).toLocaleString() })));
+  sel.value = value;
+  return sel;
+}
+function statChips(st) {
+  const c = [];
+  for (const t of TYPES) if (st[t] !== undefined) c.push(el('span', { class: 'chipstat' }, TYPE_LABEL[t] + ' ', el('b', { text: pctTxt(st[t]) })));
+  if (st.cold) c.push(el('span', { class: 'chipstat' }, 'Cold ', el('b', { text: st.cold.toFixed(1) + '°C' })));
+  if (st.warm) c.push(el('span', { class: 'chipstat' }, 'Heat ins. ', el('b', { text: st.warm.toFixed(1) + '°C' })));
+  return c;
+}
+function renderCand() {
+  const host = document.getElementById('cand');
+  const c = state.cand;
+  state.live.delete('candFocus');   // the controls are rebuilt below, so any focus on them is gone
+  host.className = 'candbar' + (c ? ' on' : '');
+  if (!c) {
+    host.replaceChildren(el('div', { class: 'muted', text: 'Hover a piece on the left to peek at where it would sit, or click it to try it on. Green “fits” means nothing in the way; orange means something would have to come off.' }));
+    return;
+  }
+  const item = byDef[c.def], st = compute(item, c.mat, c.q);
+  const out = state.outfits[state.active];
+  const cl = clashesOf(item, out);
+  if (cl.length) host.classList.add('clash');
+  const kids = [];
+  kids.push(el('div', { class: 'row-between' },
+    el('div', { class: 'ttl', text: itemName(item.label) }),
+    el('div', { class: 'gold', text: coins(priceOf(item, c.mat, c.q)) })));
+  const sels = el('div', { class: 'line' });
+  if (item.madeFromStuff) sels.append(el('label', { class: 'small muted' }, 'Material ', matSelect(item, c.mat, v => { c.mat = v; renderCand(); renderPreview(); }, c.q)));
+  if (item.hasQuality) sels.append(el('label', { class: 'small muted' }, 'Quality ', qualSelect(item, c.q, v => { c.q = v; renderCand(); renderPreview(); }, c.mat)));
+  sels.append(...statChips(st));
+  kids.push(sels);
+  if (cl.length) {
+    for (const x of cl) kids.push(el('div', { class: 'clashline' }, '⚠ Clashes with ', el('b', { text: entryLabel(x.entry) }),
+      ' — both use the ' + x.info.layers.map(layerName).join(' and ').toLowerCase() + ' layer over: ' + regionList(x.info.regions) + '.'));
+  } else kids.push(el('div', { class: 'okline', text: '✓ Fits — nothing in the way.' }));
+  const btns = el('div', { class: 'line' });
+  btns.append(cl.length
+    ? el('button', { class: 'copy-btn swap-btn', type: 'button', text: 'Swap pieces?',
+        'data-tip': 'Takes off ' + cl.map(x => entryLabel(x.entry)).join(' and ') + ' and puts on ' + itemName(item.label) + '.',
+        onclick: () => equip(c) })
+    : el('button', { class: 'copy-btn', type: 'button', text: 'Put on', onclick: () => equip(c) }),
+    el('button', { class: 'ghost-btn', type: 'button', text: 'Cancel', onclick: () => { state.cand = null; renderPicker(); renderPreview(); } }),
+    el('a', { class: 'small muted', href: calcLink(item, c.mat, c.q), text: 'See every material in the calculator' }));
+  kids.push(btns);
+  kids.push(el('div', { class: 'note', text: 'The pawn only wears this preview while your pointer is over the piece list or this card.' }));
+  host.replaceChildren(...kids);
+}
+const calcLink = (item, mat, q) => '../?item=' + encodeURIComponent(item.def) +
+  (item.madeFromStuff && mat ? '&mat=' + encodeURIComponent(mat) : '') + (q && q !== 'std' ? '&q=' + q : '');
+
+// ================================================================ worn list
+function renderWorn() {
+  const host = document.getElementById('worn');
+  const out = state.outfits[state.active];
+  if (!out.length) { host.replaceChildren(el('div', { class: 'empty', text: 'Nothing worn in ' + OUTFIT_NAME[state.active] + ' yet.' })); return; }
+  const sorted = out.slice().sort((a, b) => outermost(itemOf(a)) - outermost(itemOf(b)));
+  host.replaceChildren(...sorted.map(e => {
+    const item = itemOf(e);
+    const row = el('div', { class: 'wrow',
+      onmouseenter: () => { state.hoverWorn = e.id; renderDoll(); },
+      onmouseleave: () => { state.hoverWorn = null; renderDoll(); } },
+      el('span', { class: 'sw', style: 'background:' + PALETTE[e.id % PALETTE.length] }),
+      el('div', { class: 'nm' }, itemName(item.label), el('span', { class: 'lay', text: layerSig(item).text.toLowerCase() })),
+      item.madeFromStuff ? matSelect(item, e.mat, v => { e.mat = v; changed(); }, e.q) : el('span', { class: 'faint small', text: 'fixed material' }),
+      item.hasQuality ? qualSelect(item, e.q, v => { e.q = v; changed(); }, e.mat) : el('span', { class: 'faint small', text: '' }),
+      el('span', { class: 'gold', text: priceOf(item, e.mat, e.q).toLocaleString() }),
+      el('a', { class: 'lnk', href: calcLink(item, e.mat, e.q), text: 'calc' }),
+      el('button', { class: 'xbtn', type: 'button', text: '×', 'aria-label': 'Take off ' + entryLabel(e),
+        'data-tip': 'Take it off',
+        onmouseenter: ev => { ev.stopPropagation(); state.hoverRemove = e.id; renderPreview(); },
+        onmouseleave: () => { state.hoverRemove = null; renderPreview(); },
+        onclick: () => removeWorn(e.id) }));
+    return row;
+  }));
+}
+function changed() { state.undo = null; renderPicker(); renderPreview(); renderWorn(); renderClearBar(); syncUrl(); }
+
+// ================================================================ stats panel
+function dmgToggle() {
+  return el('div', { class: 'seg' }, ...TYPES.map(t => el('button', { type: 'button', 'aria-pressed': String(state.dmg === t), text: TYPE_LABEL[t],
+    onclick: () => { state.dmg = t; syncUrl(); renderAll(); } })));
+}
+// Move speed is a flat offset in cells per second; the game's baseline pawn walks at DATA.pawn.moveSpeed.
+const isSpeed = b => /^move speed$/i.test(b.label);
+const baseSpeed = () => (DATA.pawn && DATA.pawn.moveSpeed) || 4.6;
+const speedPct = v => { const p = Math.round(v / baseSpeed() * 100); return (p > 0 ? '+' : p < 0 ? '\u2212' : '') + Math.abs(p) + '%'; };
+function speedTip(b, rows) {
+  if (!isSpeed(b)) return null;
+  const base = baseSpeed();
+  const parts = ['A normal pawn walks at ' + base + ' cells per second.'];
+  for (const [who, v] of rows) {
+    if (Math.abs(v) < 1e-9) { parts.push(who + ': no change.'); continue; }
+    parts.push(who + ': ' + (base + v).toFixed(1) + ' c/s, which is ' + Math.abs(Math.round(v / base * 100)) + '% ' + (v < 0 ? 'slower' : 'faster') + ' on foot.');
+  }
+  parts.push('Terrain, injuries and other gear shift it further.');
+  return parts.join(' ');
+}
+function deltaSpan(d, fmt, goodWhenUp) {
+  if (!d || Math.abs(d) < 1e-9) return null;
+  const up = d > 0;
+  return el('span', { class: 'delta ' + ((up === goodWhenUp) ? 'up' : 'down'), text: (up ? '▲' : '▼') + fmt(Math.abs(d)) });
+}
+const ptsFmt = d => String(Math.round(d * 100));
+function valueCell(type, v, dv) {
+  const td = el('td', { class: 'v' + (v < 0.0005 ? ' dim' : '') });
+  td.append(el('i', { class: 'bar ' + type, style: 'width:' + Math.min(100, Math.round(v * 100)) + '%' }), el('span', { text: pctTxt(v) }));
+  if (dv !== undefined) { const d = deltaSpan(dv, ptsFmt, true); if (d) td.firstChild.nextSibling.append(d); }
+  return td;
+}
+function apControl() {
+  const sel = el('select', { class: 'field', 'aria-label': 'Attacker armor penetration',
+    onchange: e => { state.ap = parseFloat(e.target.value); syncUrl(); renderPreview(); } },
+    ...AP_OPTIONS.map(([v, label]) => el('option', { value: String(v), text: label })));
+  sel.value = String(state.ap);
+  return el('div', { class: 'apbox' },
+    el('span', { class: 'tipped', text: 'Attacker armor-pen',
+      'data-tip': 'Armor penetration cancels part of each layer’s rating before it rolls (rating − AP, never below 0). Raise it to see how armor holds up against high-penetration weapons. It does not apply to heat damage.' }), sel);
+}
+const areaRows = (st, st2) => REGION_DEFS.filter(R => R.id !== 'waist' || st.region.waist.here.length || (st2 && st2.region.waist.here.length));
+
+function renderStats() {
+  const host = document.getElementById('statpanel');
+  const view = computeView();
+  const kids = [];
+  kids.push(el('div', { class: 'stat-head' }, el('h2', { text: 'Defense · ' + OUTFIT_NAME[state.active] }),
+    el('div', { class: 'row-between' },
+      el('button', { class: 'ghost-btn mini', type: 'button', text: 'Share link', onclick: e => { syncUrl(); copyText(location.href, e.target); } }),
+      el('button', { class: 'ghost-btn mini', type: 'button', text: 'Buy outfit…', disabled: !state.outfits[state.active].length, onclick: openBuy }))));
+  kids.push(state.compare ? compareBody(view) : normalBody(view));
+  host.replaceChildren(...kids);
+  markHot();
+}
+function previewNotice(view) {
+  if (view.add) {
+    const sw = view.clashes.length;
+    return el('div', { class: 'previewing' + (sw ? ' clash' : '') },
+      sw ? 'Previewing a swap: ' : 'Previewing: ', el('b', { text: entryLabel(view.add) }),
+      sw ? ' replaces ' + view.clashes.map(c => entryLabel(c.entry)).join(' + ') + '.' : ' added on top.',
+      ' Numbers show the result.');
+  }
+  if (view.removeEntry) return el('div', { class: 'previewing rm' }, 'Previewing taking off ', el('b', { text: entryLabel(view.removeEntry) }), '.');
+  return null;
+}
+function totalRows(body, before, after, cols) {
+  // insulation, price, weight and built-in bonuses: before (and after, when previewing)
+  const a = after || before;
+  const row = (label, fmt, key, goodUp, tip, dfmt) => {
+    const bv = before[key], av = a[key];
+    const tr = el('tr', null, el('td', { colspan: cols - 1 }, el('span', { class: tip ? 'tipped' : '', text: label, 'data-tip': tip || null })));
+    const td = el('td', { text: fmt(av) });
+    if (after) { const d = deltaSpan(av - bv, dfmt || fmt, goodUp); if (d) td.append(d); }
+    tr.append(td); body.append(tr);
+  };
+  body.append(el('tr', { class: 'sec' }, el('td', { colspan: cols, text: 'Warmth, cost and extras' })));
+  const deg = v => (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(1) + '°C';
+  const degAbs = v => Math.abs(v).toFixed(1) + '°C';
+  row('Cold insulation', deg, 'cold', true, 'Lowers the temperature this outfit stays comfortable in. An ordinary pawn is comfortable from ' + COMFY.min + '°C; with this outfit: ' + (COMFY.min - a.cold).toFixed(0) + '°C.', degAbs);
+  row('Heat insulation', deg, 'warm', true, 'Raises the temperature this outfit stays comfortable in. An ordinary pawn is comfortable up to ' + COMFY.max + '°C; with this outfit: ' + (COMFY.max + a.warm).toFixed(0) + '°C.', degAbs);
+  row('Store price', v => v.toLocaleString() + ' coins', 'price', false);
+  row('Weight', v => v.toFixed(1) + ' kg', 'mass', false);
+  const keys = new Map();
+  for (const b of before.bonus.concat(a.bonus)) keys.set(b.label + '|' + b.unit, b);
+  for (const [k, b] of keys) {
+    const bv = (before.bonus.find(x => x.label + '|' + x.unit === k) || { value: 0 }).value;
+    const av = (a.bonus.find(x => x.label + '|' + x.unit === k) || { value: 0 }).value;
+    const fmt = v => (v < 0 ? '−' : '+') + (Math.abs(v) % 1 ? Math.abs(v).toFixed(1) : Math.abs(v)) + b.unit;
+    const tip = speedTip(b, [['With this outfit', av]]);
+    const tr = el('tr', tip ? { 'data-tip': tip } : null, el('td', { colspan: cols - 1, class: tip ? 'tipped' : '', text: b.label }));
+    const td = el('td', { text: fmt(av) });
+    if (tip) td.append(el('span', { class: 'faint', text: ' (' + speedPct(av) + ')' }));
+    if (after) { const d = deltaSpan(av - bv, v => fmt(v).replace(/^[+−]/, ''), b.better !== 'low'); if (d) td.append(d); }
+    tr.append(td); body.append(tr);
+  }
+}
+function normalBody(view) {
+  const before = outfitStats(view.base, state.ap);
+  const after = view.changed ? outfitStats(view.after, state.ap) : null;
+  const box = el('div');
+  const notice = previewNotice(view); if (notice) box.append(notice);
+  box.append(apControl());
+  const body = el('tbody');
+  const head = el('tr', null, el('th', { text: 'Area' }), el('th', { text: 'Hits', class: 'tipped', 'data-tip': 'How often a hit lands on this area, from the game’s body data.' }),
+    ...TYPES.map(t => el('th', { text: TYPE_LABEL[t] })));
+  for (const R of areaRows(before, after)) {
+    const b = before.region[R.id], a = after ? after.region[R.id] : null;
+    const tr = el('tr', { class: 'area', 'data-r': R.id,
+      onmouseenter: e => { state.hotRegion = R.id; markHot(); showTip(regionTip(R.id), e.clientX, e.clientY); },
+      onmouseleave: () => { state.hotRegion = null; markHot(); hideTip(); } },
+      el('td', { text: R.label }), el('td', { class: 'hit', text: R.w > 0 ? Math.round(R.w * 100) + '%' : '' }));
+    for (const t of TYPES) tr.append(valueCell(t, a ? a[t] : b[t], a ? a[t] - b[t] : undefined));
+    body.append(tr);
+  }
+  const tot = el('tr', { class: 'tot' }, el('td', { text: 'Overall', class: 'tipped',
+    'data-tip': 'Average share of damage absorbed per hit, counting each area by how often it is struck.' }), el('td', { text: '' }));
+  for (const t of TYPES) tot.append(valueCell(t, (after || before).overall[t], after ? after.overall[t] - before.overall[t] : undefined));
+  body.append(tot);
+  totalRows(body, before, after, 5);
+  box.append(el('table', { class: 'st' }, el('thead', null, head), body));
+  box.append(el('p', { class: 'note', text: 'Figures are the average share of a hit that armor stops (blocked or halved), not the plain rating, because each layer rolls separately and a halved sharp hit turns blunt. Hover an area, on the doll or here, to see which pieces carry it.' }));
+  return box;
+}
+function compareBody(view) {
+  const stats = [0, 1].map(i => outfitStats(i === state.active ? view.after : state.outfits[i], state.ap));
+  const t = state.dmg;
+  const box = el('div');
+  const notice = previewNotice(view); if (notice) box.append(notice);
+  box.append(el('div', { class: 'row-between', style: 'margin-bottom:8px' }, el('span', { class: 'small muted', text: 'Comparing ' + TYPE_LABEL[t].toLowerCase() + ' armor' }), dmgToggle()), apControl());
+  const head = el('tr', null, el('th', { text: 'Area' }),
+    el('th', { text: 'Outfit A' + (state.active === 0 && view.changed ? '*' : '') }), el('th', { text: 'Outfit B' + (state.active === 1 && view.changed ? '*' : '') }), el('th', { text: 'B vs A' }));
+  const body = el('tbody');
+  const cell = (v) => { const td = el('td', { class: 'v' + (v < 0.0005 ? ' dim' : '') }); td.append(el('i', { class: 'bar ' + t, style: 'width:' + Math.min(100, Math.round(v * 100)) + '%' }), el('span', { text: pctTxt(v) })); return td; };
+  const dcell = (d) => { const td = el('td', { text: '' }); if (Math.abs(d) >= 0.005) td.append(el('span', { class: d > 0 ? 'up' : 'down', text: (d > 0 ? '+' : '−') + Math.abs(Math.round(d * 100)) })); else td.append(el('span', { class: 'faint', text: '=' })); return td; };
+  for (const R of areaRows(stats[0], stats[1])) {
+    const a = stats[0].region[R.id][t], b = stats[1].region[R.id][t];
+    body.append(el('tr', { class: 'area', 'data-r': R.id,
+      onmouseenter: e => { state.hotRegion = R.id; markHot(); showTip(regionTip(R.id), e.clientX, e.clientY); },
+      onmouseleave: () => { state.hotRegion = null; markHot(); hideTip(); } },
+      el('td', { text: R.label }), cell(a), cell(b), dcell(b - a)));
+  }
+  body.append(el('tr', { class: 'tot' }, el('td', { text: 'Overall' }), cell(stats[0].overall[t]), cell(stats[1].overall[t]), dcell(stats[1].overall[t] - stats[0].overall[t])));
+  const sec = txt => body.append(el('tr', { class: 'sec' }, el('td', { colspan: 4, text: txt })));
+  sec('Warmth, cost and extras');
+  const line = (label, fmt, key, goodUp) => {
+    const a = stats[0][key], b = stats[1][key], d = b - a;
+    body.append(el('tr', null, el('td', { text: label }), el('td', { text: fmt(a) }), el('td', { text: fmt(b) }),
+      el('td', { class: Math.abs(d) < 1e-9 ? 'faint' : ((d > 0) === goodUp ? 'up' : 'down'), text: Math.abs(d) < 1e-9 ? '=' : (d > 0 ? '+' : '−') + fmt(Math.abs(d)).replace(/^[+−]/, '') })));
+  };
+  const deg = v => (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(1) + '°C';
+  line('Cold insulation', deg, 'cold', true); line('Heat insulation', deg, 'warm', true);
+  line('Store price', v => v.toLocaleString(), 'price', false); line('Weight (kg)', v => v.toFixed(1), 'mass', false);
+  const keys = new Map();
+  for (const s of stats) for (const b of s.bonus) keys.set(b.label + '|' + b.unit, b);
+  for (const [k, b] of keys) {
+    const get = s => (s.bonus.find(x => x.label + '|' + x.unit === k) || { value: 0 }).value;
+    const a = get(stats[0]), c = get(stats[1]), d = c - a, fmt = v => (v < 0 ? '−' : '+') + (Math.abs(v) % 1 ? Math.abs(v).toFixed(1) : Math.abs(v)) + b.unit;
+    const tip = speedTip(b, [['Outfit A', a], ['Outfit B', c]]);
+    body.append(el('tr', tip ? { 'data-tip': tip } : null, el('td', { class: tip ? 'tipped' : '', text: b.label }),
+      el('td', { text: fmt(a) + (tip ? ' (' + speedPct(a) + ')' : '') }), el('td', { text: fmt(c) + (tip ? ' (' + speedPct(c) + ')' : '') }),
+      el('td', { class: Math.abs(d) < 1e-9 ? 'faint' : ((d > 0) === (b.better !== 'low') ? 'up' : 'down'), text: Math.abs(d) < 1e-9 ? '=' : (d > 0 ? '+' : '−') + fmt(Math.abs(d)).replace(/^[+−]/, '') })));
+  }
+  box.append(el('table', { class: 'st' }, el('thead', null, head), body));
+  if (view.changed) box.append(el('p', { class: 'note', text: '* includes the piece you are previewing.' }));
+  return box;
+}
+
+// ================================================================ buy dialog
+function openBuy() {
+  const dlg = document.getElementById('buy');
+  const out = state.outfits[state.active].slice().sort((a, b) => outermost(itemOf(a)) - outermost(itemOf(b)));
+  const cmds = out.map(e => ({ name: entryLabel(e), text: commandOf(itemOf(e), e.mat, e.q, 1), price: priceOf(itemOf(e), e.mat, e.q) }));
+  const total = cmds.reduce((s, c) => s + c.price, 0);
+  let next = 0;
+  const rows = cmds.map((c, i) => {
+    const row = el('div', { class: 'cmdrow' + (i === 0 ? ' next' : '') },
+      el('code', { text: c.text }), el('span', { class: 'gold', text: c.price.toLocaleString() }),
+      el('button', { class: 'ghost-btn mini', type: 'button', text: 'Copy', onclick: ev => { copyText(c.text, ev.target); row.classList.add('done'); } }),
+      el('div', { class: 'who', text: c.name }));
+    return row;
+  });
+  const nextBtn = el('button', { class: 'copy-btn', type: 'button' });
+  const label = () => { nextBtn.textContent = next >= cmds.length ? 'All copied — start over' : 'Copy next (' + (next + 1) + ' of ' + cmds.length + ')'; };
+  label();
+  nextBtn.onclick = () => {
+    if (next >= cmds.length) { next = 0; rows.forEach((r, i) => { r.classList.remove('done'); r.classList.toggle('next', i === 0); }); label(); return; }
+    navigator.clipboard.writeText(cmds[next].text).catch(() => {});
+    rows[next].classList.add('done'); rows[next].classList.remove('next');
+    next++;
+    if (rows[next]) rows[next].classList.add('next');
+    label();
+  };
+  dlg.replaceChildren(
+    el('h2', { text: 'Buy ' + OUTFIT_NAME[state.active] }),
+    el('p', { class: 'small muted', text: cmds.length + ' commands, ' + total.toLocaleString() + ' coins in all. Paste them into chat one at a time — sending several in a burst can trip Twitch’s chat rate limits, so give each a moment.' }),
+    el('div', null, ...rows),
+    el('p', { class: 'note', text: 'Normal quality and each piece’s default material are left off the command because naming them costs extra.' }),
+    el('div', { class: 'actions' }, nextBtn, el('button', { class: 'ghost-btn', type: 'button', text: 'Close', onclick: () => dlg.close() })));
+  dlg.showModal();
+}
+document.getElementById('buy').addEventListener('click', e => { if (e.target === e.currentTarget) e.currentTarget.close(); });
+
+// ================================================================ top-level rendering
+function renderOutfitTabs() {
+  const host = document.getElementById('otabs');
+  const mk = (i) => el('button', { type: 'button', 'aria-pressed': String(state.active === i), text: OUTFIT_NAME[i] + ' (' + state.outfits[i].length + ')',
+    onclick: () => { state.active = i; state.hoverRemove = null; state.hoverWorn = null; renderAll(); } });
+  host.replaceChildren(mk(0), mk(1));
+  const bar = host.parentNode;
+  bar.querySelectorAll('.extra').forEach(n => n.remove());
+  const extra = el('div', { class: 'extra row-between' },
+    el('button', { class: 'ghost-btn mini' + (state.compare ? ' on' : ''), type: 'button', text: state.compare ? 'Comparing A vs B' : 'Compare A vs B',
+      'aria-pressed': String(state.compare), onclick: () => { state.compare = !state.compare; renderAll(); } }),
+    el('button', { class: 'ghost-btn mini', type: 'button', text: 'Copy to ' + OUTFIT_NAME[1 - state.active].slice(-1),
+      'data-tip': 'Start ' + OUTFIT_NAME[1 - state.active] + ' as a copy of this outfit, then tweak it.',
+      disabled: !state.outfits[state.active].length,
+      onclick: () => { state.outfits[1 - state.active] = state.outfits[state.active].map(e => mkEntry(e.def, e.mat, e.q)); renderAll(); } }));
+  host.after(extra);
+  document.getElementById('dmgtog').replaceChildren(...TYPES.map(t => el('button', { type: 'button', 'aria-pressed': String(state.dmg === t), text: TYPE_LABEL[t],
+    'data-tip': 'Which damage type the figures on the doll show.',
+    onclick: () => { state.dmg = t; syncUrl(); renderAll(); } })));
+}
+function renderPreview() { renderLayerTabs(); renderDoll(); renderStats(); }
+function renderAll() {
+  renderOutfitTabs(); renderPicker(); renderLayerTabs(); renderDoll(); renderCand(); renderClearBar(); renderWorn(); renderStats(); syncUrl();
+}
+
+// ================================================================ boot
+async function boot() {
+  try {
+    const res = await fetch('../calc-data.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    DATA = await res.json();
+    if (!DATA.body || !DATA.layers) throw new Error('data file has no body info');
+  } catch (e) {
+    document.querySelector('main').replaceChildren(el('p', { class: 'empty', text: location.protocol === 'file:'
+      ? 'This page loads its data with a web request, so it has to be served rather than opened from disk. Run "py -m http.server 8765" in the repo root and open http://localhost:8765/calculator/paperdoll/ instead.'
+      : 'Could not load the data. Try refreshing.' }));
+    return;
+  }
+  for (const q of DATA.qualities) PRICE_QUALITY[q.id] = q.factor;
+  prepare();
+
+  // piece-list controls
+  const gt = document.getElementById('gtabs');
+  const groups = [['all', 'All'], ['armor', 'Armor'], ['clothing', 'Clothing']];
+  const drawTabs = () => gt.replaceChildren(...groups.map(([id, label]) => el('button', { class: 'tab', type: 'button', role: 'tab',
+    'aria-selected': String(state.group === id), text: label, onclick: () => { state.group = id; drawTabs(); renderPicker(); } })));
+  drawTabs();
+  const lf = document.getElementById('lfilter');
+  lf.append(el('option', { value: 'any', text: 'Any layer' }));
+  for (const l of DATA.layers) if (APPAREL.some(i => i.apparel.layers.includes(l.id))) lf.append(el('option', { value: l.id, text: layerName(l.id) }));
+  lf.addEventListener('change', () => { state.layerFilter = lf.value; renderPicker(); });
+  document.getElementById('search').addEventListener('input', e => { state.search = e.target.value; renderPicker(); });
+  document.getElementById('fitonly').addEventListener('change', e => { state.fitOnly = e.target.checked; renderPicker(); });
+
+  // restore: a shared link wins, then whatever this browser had last
+  const q = new URLSearchParams(location.search);
+  if (q.has('a') || q.has('b')) loadParams(location.search);
+  else { let saved = ''; try { saved = localStorage.getItem(STORE_KEY) || ''; } catch (e) { /* none */ } loadParams(saved); }
+  // from the calculator: ?add=<def>&m=<material>&q=<quality> puts the piece on the doll as a preview
+  const add = q.get('add');
+  if (add && byDef[add] && byDef[add].apparel) {
+    state.live.add('arrived');   // keep it on the pawn until the pointer has visited the list or card
+    state.cand = { def: add, mat: '', q: 'std' };
+    const it = byDef[add];
+    state.cand.mat = it.madeFromStuff ? (it.mats.includes(q.get('m')) ? q.get('m') : defMat(it)) : '';
+    state.cand.q = it.hasQuality && QUALITY_ORDER.includes(q.get('q')) ? q.get('q') : 'std';
+    if (state.cand.def && state.cand.mat === '' && it.madeFromStuff) state.cand.mat = defMat(it);
+  }
+  document.getElementById('footer').textContent = 'Clashes follow the game’s own rule: two pieces can’t be worn together when they share an apparel layer and cover a common body part. Body, layers and hit chances come from RimWorld ' +
+    DATA.gameVersion + '. Materials, qualities and prices match the Gear Calculator. Data updated ' + DATA.generated + '.';
+  const liveZone = (node, token) => {
+    node.addEventListener('mouseenter', () => { state.live.add(token); renderPreview(); });
+    node.addEventListener('mouseleave', () => { state.live.delete(token); state.live.delete('arrived'); renderPreview(); });
+  };
+  liveZone(document.getElementById('picker'), 'picker');
+  const candHost = document.getElementById('cand');
+  liveZone(candHost, 'candHover');
+  candHost.addEventListener('focusin', () => { state.live.add('candFocus'); renderPreview(); });
+  candHost.addEventListener('focusout', e => { if (!candHost.contains(e.relatedTarget)) { state.live.delete('candFocus'); renderPreview(); } });
+  renderAll();
+}
+boot();
+</script>
+</body>
+</html>

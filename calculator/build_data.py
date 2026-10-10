@@ -7,6 +7,10 @@ Inputs (all read-only):
   itemdata.json       - Toolkit's per-item flags (IsStuffAllowed ...)
   _data/StoreItems.json - store prices (this repo)
 
+Also read (optional, read-only): the game's own Bodies_Humanlike.xml / ApparelLayerDefs.xml, for the paper doll page
+  (body parts, their body-part groups and hit-chance weights, apparel layer names). Found under the Steam install, or
+  set RIMWORLD_DIR. If the game is not on this PC the previous values in calc-data.json are kept.
+
 Usage:  python build_data.py [path-to-TwitchToolkit-data-folder]
 Standard library only, so it runs anywhere Python 3 does.
 """
@@ -15,6 +19,7 @@ import json
 import os
 import re
 import sys
+import xml.etree.ElementTree as ET
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
@@ -67,6 +72,63 @@ def parse_effects(description):
         elif seen_header and ':' in line and len(line) <= 220:
             special.append(line)
     return effects, special
+
+
+# ---- body + layers for the paper doll (read from the game's own XML) ---------------------------------------------
+DEFAULT_GAME = r'C:\Program Files (x86)\Steam\steamapps\common\RimWorld'
+LAYER_LABEL_FALLBACK = {'TM_Cloak': 'cloak', 'TM_Artifact': 'artifact'}   # RimWorld of Magic layers (no XML on this PC)
+
+
+def game_data_dir():
+    root = os.environ.get('RIMWORLD_DIR') or DEFAULT_GAME
+    d = os.path.join(root, 'Data', 'Core', 'Defs')
+    return d if os.path.isdir(d) else None
+
+
+def load_body(core_defs):
+    """Flatten the Human BodyDef: every part with its body-part groups and its share of hits (self coverage)."""
+    root = ET.parse(os.path.join(core_defs, 'Bodies', 'Bodies_Humanlike.xml')).getroot()
+    human = next(b for b in root.findall('BodyDef') if b.findtext('defName') == 'Human')
+    parts = []
+
+    def walk(node, parent_abs, parent_depth):
+        cov = float(node.findtext('coverage') or 1)
+        absolute = parent_abs * cov
+        depth = node.findtext('depth') or parent_depth
+        entry = {'id': node.findtext('customLabel') or node.findtext('def'), 'def': node.findtext('def'),
+                 'groups': [li.text for li in node.findall('groups/li')], 'depth': depth, '_abs': absolute}
+        parts.append(entry)
+        kids = [walk(li, absolute, depth) for li in node.findall('parts/li')]
+        entry['w'] = absolute - sum(k['_abs'] for k in kids)   # share of hits that land on this part itself
+        return entry
+
+    walk(human.find('corePart'), 1.0, 'Outside')
+    for p in parts:
+        p['w'] = round(max(p['w'], 0), 5)
+        del p['_abs']
+    return parts
+
+
+def load_pawn(core_defs):
+    """Baseline numbers for an ordinary human pawn (walking speed, cells per second)."""
+    root = ET.parse(os.path.join(core_defs, 'ThingDefs_Races', 'Races_Humanlike.xml')).getroot()
+    for t in root.findall('ThingDef'):
+        if t.findtext('defName') == 'Human':
+            return {'moveSpeed': float(t.findtext('statBases/MoveSpeed') or 4.6)}
+    return {'moveSpeed': 4.6}
+
+
+def load_layers(core_defs, used):
+    order = {}
+    path = os.path.join(core_defs, 'Misc', 'ApparelLayerDefs', 'ApparelLayerDefs.xml')
+    root = ET.parse(path).getroot()
+    for d in root.findall('ApparelLayerDef'):
+        order[d.findtext('defName')] = (d.findtext('label'), int(d.findtext('drawOrder') or 0))
+    layers = []
+    for l in sorted(used, key=lambda x: order.get(x, (None, 999))[1]):
+        label, draw = order.get(l, (LAYER_LABEL_FALLBACK.get(l) or l.replace('TM_', '').lower(), 250))
+        layers.append({'id': l, 'label': label, 'order': draw})
+    return layers
 
 
 def load(path):
@@ -171,6 +233,9 @@ def main():
             'special': special,
             'tools': it.get('tools'),
             'ranged': it.get('ranged'),
+            # Which apparel layers it takes and which body-part groups it covers (two pieces clash when they share both).
+            'apparel': ({'layers': it['apparel']['layers'], 'groups': it['apparel']['bodyParts']}
+                        if it['kind'] == 'apparel' and it.get('apparel') else None),
         })
 
     items.sort(key=lambda i: (i['group'], i['label'].lower()))
@@ -181,6 +246,22 @@ def main():
             ingredient_labels[k] = {'label': stats['stuffs'].get(k, {}).get('label') or (store.get(k) or {}).get('abr') or k,
                                     'price': (store.get(k) or {}).get('price')}
 
+    # Paper doll data. Without the game installed, keep what the last build stored.
+    previous = {}
+    try:
+        previous = load(os.path.join(HERE, 'calc-data.json'))
+    except (OSError, ValueError):
+        pass
+    used_layers = sorted({l for i in items if i['apparel'] for l in i['apparel']['layers']})
+    core = game_data_dir()
+    if core:
+        body, layers, pawn = load_body(core), load_layers(core, used_layers), load_pawn(core)
+    else:
+        body, layers, pawn = previous.get('body'), previous.get('layers'), previous.get('pawn') or {'moveSpeed': 4.6}
+        if not body or not layers:
+            sys.exit('Need the RimWorld install (set RIMWORLD_DIR) to read the human body the first time.')
+        print('RimWorld not found: kept the body and layers from the previous calc-data.json')
+
     out = {
         'generated': datetime.date.today().isoformat(),
         'gameVersion': stats.get('gameVersion'),
@@ -188,6 +269,9 @@ def main():
         'rules': {'materialMarkup': 1.05, 'qualityMarkup': 1.1},
         'materials': materials,
         'ingredients': ingredient_labels,
+        'body': body,
+        'layers': layers,
+        'pawn': pawn,
         'items': items,
     }
     dest = os.path.join(HERE, 'calc-data.json')

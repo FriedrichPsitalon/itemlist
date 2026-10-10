@@ -135,6 +135,7 @@
   .ghost-btn { font-size: .85rem; color: var(--ink); background: transparent; border: 1px solid var(--rule);
     border-radius: 4px; padding: 7px 14px; cursor: pointer; }
   .ghost-btn:hover { border-color: var(--accent); }
+  a.ghost-btn { text-decoration: none; display: inline-block; }
   .note { font-size: .76rem; color: var(--ink-faint); margin-top: 8px; }
   .stat.magic { border-color: #4a2b4f; background: #150d17; }
   .stat.magic .k { color: #a58ab0; }
@@ -217,20 +218,14 @@
 </main>
 <footer id="footer"></footer>
 
+<script src="calc-core.js"></script>
 <script>
 'use strict';
 
 // ---------------------------------------------------------------- constants
 const GROUPS = [['weapon', 'Weapons'], ['armor', 'Armor'], ['clothing', 'Clothing']];
-const QUALITY_LABEL = { std: 'Normal', awful: 'Awful', poor: 'Poor', good: 'Good',
-  excellent: 'Excellent', masterwork: 'Masterwork', legendary: 'Legendary' };
 const QUALITY_SHORT = { std: 'Normal', awful: 'Awful', poor: 'Poor', good: 'Good',
   excellent: 'Excellent', masterwork: 'Masterwork', legendary: 'Legendary' };
-const QUALITY_ORDER = ['std', 'awful', 'poor', 'good', 'excellent', 'masterwork', 'legendary'];
-const GAME_QUALITY_INDEX = { awful: 0, poor: 1, std: 2, good: 3, excellent: 4, masterwork: 5, legendary: 6 };
-const PRICE_QUALITY = {};   // id -> price factor, filled from the data file
-const CAT_LABEL = { Metallic: 'Metals', Woody: 'Wood', Stony: 'Stone', Fabric: 'Fabrics', Leathery: 'Leathers' };
-const CAT_ORDER = ['Metallic', 'Woody', 'Stony', 'Fabric', 'Leathery'];
 
 // Display stats. `better`: which direction is an improvement (for green/red deltas).
 const STAT_DEFS = {
@@ -305,7 +300,6 @@ function tipAttrs(id, item, value, extra) {
 }
 
 // ---------------------------------------------------------------- state
-let DATA = null;
 const byDef = {};
 const state = {
   group: 'weapon', def: null, search: '',
@@ -315,66 +309,7 @@ const state = {
   tray: [],
 };
 
-// ---------------------------------------------------------------- pricing (verified against real store prices)
-function roundHalfUp(x) { return Math.floor(x + 0.5 + 1e-9); }
-// Naming a material: (base + units x material price) x 1.05. Naming a quality: x quality factor x 1.1.
-// Leaving both off is the plain base price.
-// The item's default material (starred in the UI) is what you get when no material is named, so it
-// costs the base price and needs no bracket entry.
-function isDefaultMat(item, mat) { return !mat || mat === item.defaultStuff; }
-function priceOf(item, mat, q) {
-  let p = item.price;
-  if (!isDefaultMat(item, mat)) p = roundHalfUp((item.price + item.units * DATA.materials[mat].price) * DATA.rules.materialMarkup);
-  if (q && q !== 'std') p = roundHalfUp(p * PRICE_QUALITY[q] * DATA.rules.qualityMarkup);
-  return p;
-}
-function commandOf(item, mat, q, qty) {
-  const parts = [];
-  if (!isDefaultMat(item, mat)) parts.push(DATA.materials[mat].token);
-  if (q && q !== 'std') parts.push(q);
-  return '!buy ' + item.token + (parts.length ? '[' + parts.join(',') + ']' : '') + (qty > 1 ? ' ' + qty : '');
-}
 
-// ---------------------------------------------------------------- stats
-function statKey(item, mat) {
-  if (!item.madeFromStuff) return '';
-  if (mat) return mat;
-  return item.stats[item.defaultStuff] ? item.defaultStuff : item.mats[0];
-}
-function compute(item, mat, q) {
-  const row = item.stats[statKey(item, mat)] || [];
-  const raw = n => { const i = item.statNames.indexOf(n); return i < 0 ? undefined : row[i]; };
-  const qi = GAME_QUALITY_INDEX[q || 'std'];
-  const f = n => (item.hasQuality && item.qf[n]) ? item.qf[n][qi] : 1;
-  const out = {};
-  const set = (id, v) => { if (v !== undefined && !Number.isNaN(v)) out[id] = v; };
-
-  set('hp', raw('MaxHitPoints')); set('mass', raw('Mass')); set('work', raw('WorkToMake'));
-  set('flam', raw('Flammability'));
-  if (item.kind === 'melee') {
-    const m = f('MeleeWeapon_DamageMultiplier');
-    set('dps', raw('MeleeWeapon_AverageDPS') * m);
-    set('ap', raw('MeleeWeapon_AverageArmorPenetration') * m);
-  } else if (item.kind === 'ranged' && item.ranged) {
-    const r = item.ranged, dmgMul = f('RangedWeapon_DamageMultiplier');
-    const dmg = r.damage * dmgMul;
-    const acc = n => Math.min(1, raw(n) * f(n));
-    const cooldown = raw('RangedWeapon_Cooldown') || 0;
-    const cycle = r.warmup + cooldown + Math.max(0, r.burstShots - 1) * r.ticksBetweenShots / 60;
-    set('dmg', dmg); set('range', r.range);
-    if (raw('AccuracyTouch') !== undefined) set('accTouch', acc('AccuracyTouch'));
-    if (raw('AccuracyShort') !== undefined) { set('accShort', acc('AccuracyShort')); set('accMed', acc('AccuracyMedium')); set('accLong', acc('AccuracyLong')); }
-    if (cycle > 0 && raw('AccuracyMedium') !== undefined) set('dps', dmg * r.burstShots * acc('AccuracyMedium') / cycle);
-    if (r.armorPenetration > 0) set('ap', r.armorPenetration * dmgMul);
-  } else if (item.kind === 'apparel') {
-    set('sharp', (raw('ArmorRating_Sharp') || 0) * f('ArmorRating_Sharp'));
-    set('blunt', (raw('ArmorRating_Blunt') || 0) * f('ArmorRating_Blunt'));
-    set('heat', (raw('ArmorRating_Heat') || 0) * f('ArmorRating_Heat'));
-    set('cold', (raw('Insulation_Cold') || 0) * f('Insulation_Cold'));
-    set('warm', (raw('Insulation_Heat') || 0) * f('Insulation_Heat'));
-  }
-  return out;
-}
 function statIds(item, ...samples) {
   // Show a stat when any compared value is non-zero (so unarmored shirts don't list 0% armor).
   const base = compute(item, '', 'std');
@@ -395,27 +330,6 @@ function deltaSpan(id, v, orig) {
 }
 
 // ---------------------------------------------------------------- dom helpers
-function el(tag, props, ...kids) {
-  const n = document.createElement(tag);
-  if (props) for (const k of Object.keys(props)) {
-    if (k === 'class') n.className = props[k];
-    else if (k === 'text') n.textContent = props[k];
-    else if (k.startsWith('on')) n.addEventListener(k.slice(2), props[k]);
-    else if (props[k] === true) n.setAttribute(k, '');
-    else if (props[k] !== false && props[k] != null) n.setAttribute(k, props[k]);
-  }
-  for (const kid of kids) if (kid != null) n.append(kid);
-  return n;
-}
-const coins = n => n.toLocaleString() + (n === 1 ? ' coin' : ' coins');
-const title = s => s.replace(/\b[a-z]/g, c => c.toUpperCase());
-// Keep the game's own casing for item names ("Shroud of the Soulreaper"); only capitalize the first letter.
-const itemName = s => s.charAt(0).toUpperCase() + s.slice(1);
-function matLabel(item, mat) {
-  if (!item.madeFromStuff) return '—';
-  const m = mat || statKey(item, '');
-  return title(DATA.materials[m].label) + (isDefaultMat(item, m) ? '*' : '');
-}
 // Built-in bonuses (magic items etc.): {label, value, unit, better}
 function effectsOf(item) { return item.effects || []; }
 function fmtEffect(e) {
@@ -423,13 +337,6 @@ function fmtEffect(e) {
   return (e.value < 0 ? '\u2212' : '+') + txt + e.unit;
 }
 function qLabel(q) { return QUALITY_SHORT[q || 'std']; }
-
-async function copyText(text, btn) {
-  const old = btn.textContent;
-  try { await navigator.clipboard.writeText(text); btn.textContent = 'Copied!'; btn.classList.add('copied'); }
-  catch (e) { btn.textContent = 'Copy failed'; }
-  setTimeout(() => { btn.textContent = old; btn.classList.remove('copied'); }, 1400);
-}
 
 // ---------------------------------------------------------------- tooltips
 const tipBox = el('div', { class: 'tooltip', id: 'tooltip', role: 'tooltip', hidden: true });
@@ -495,11 +402,6 @@ function selectItem(def, preset) {
 }
 
 // ---------------------------------------------------------------- builder
-// Materials in display order: category, then price, then name.
-function orderedMats(item) {
-  const cat = m => { const i = CAT_ORDER.indexOf((DATA.materials[m].cats.find(c => CAT_ORDER.includes(c))) || ''); return i < 0 ? 99 : i; };
-  return item.mats.slice().sort((a, b) => cat(a) - cat(b) || DATA.materials[a].price - DATA.materials[b].price || a.localeCompare(b));
-}
 function buildRows(item) {
   const mats = item.madeFromStuff ? orderedMats(item).filter(m => state.mats.has(m)) : [''];
   const quals = item.hasQuality ? QUALITY_ORDER.filter(q => state.quals.has(q)) : ['std'];
@@ -635,6 +537,9 @@ function renderBuilder() {
   }
   function toggle(set, v) { set.has(v) ? set.delete(v) : set.add(v); }
 }
+// Hands a piece of apparel to the Paper Doll page as a try-on (it keeps the viewer's saved outfit).
+const dollLink = (item, mat, q) => 'paperdoll/?add=' + encodeURIComponent(item.def) +
+  (item.madeFromStuff && mat ? '&m=' + encodeURIComponent(mat) : '') + (q && q !== 'std' ? '&q=' + q : '');
 function priceDiff(p, o) {
   if (p === o) return '—';
   return (p > o ? '+' : '−') + Math.abs(p - o).toLocaleString() + ' (' + (p > o ? '+' : '−') + Math.round(Math.abs(p - o) / o * 100) + '%)';
@@ -657,7 +562,8 @@ function renderPickBar(item) {
     host.replaceChildren(el('div', { class: 'line' },
       el('div', { class: 'prompt', text: 'Click a row above to interact with it' }),
       el('button', { class: 'copy-btn', type: 'button', text: 'Copy buy command', disabled: true }),
-      el('button', { class: 'ghost-btn', type: 'button', text: 'Snapshot', disabled: true })));
+      el('button', { class: 'ghost-btn', type: 'button', text: 'Snapshot', disabled: true }),
+      item.kind === 'apparel' ? el('button', { class: 'ghost-btn', type: 'button', text: 'Try on doll', disabled: true }) : null));
     return;
   }
   const price = priceOf(item, pk.mat, pk.q) * state.qty, cmd = commandOf(item, pk.mat, pk.q, state.qty);
@@ -670,7 +576,9 @@ function renderPickBar(item) {
     el('div', { class: 'price-big', text: coins(price) }),
     el('code', { text: cmd }),
     el('button', { class: 'copy-btn', type: 'button', text: 'Copy buy command', onclick: e => copyText(cmd, e.target) }),
-    el('button', { class: 'ghost-btn go', type: 'button', text: 'Snapshot', onclick: () => addSnapshot(item.def, pk.mat, pk.q, state.qty) })));
+    el('button', { class: 'ghost-btn go', type: 'button', text: 'Snapshot', onclick: () => addSnapshot(item.def, pk.mat, pk.q, state.qty) }),
+    item.kind === 'apparel' ? el('a', { class: 'ghost-btn go', href: dollLink(item, pk.mat, pk.q), text: 'Try on doll',
+      title: 'See where it sits on a pawn and what it clashes with' }) : null));
 }
 
 // ---------------------------------------------------------------- snapshots
@@ -724,6 +632,7 @@ function renderTray() {
       (item.special || []).length ? el('div', { class: 'small faint', style: 'margin-top:4px', text: item.special.join(' ') }) : null,
       el('div', { class: 'actions' },
         el('button', { class: 'copy-btn small', type: 'button', text: 'Copy', onclick: e => copyText(d.cmd, e.target) }),
+        item.kind === 'apparel' ? el('a', { class: 'ghost-btn small', href: dollLink(item, s.mat, s.q), text: 'Try on doll' }) : null,
         el('button', { class: 'ghost-btn small x', type: 'button', text: 'Remove', onclick: () => { state.tray = state.tray.filter(t => t.id !== s.id); saveTray(); renderTray(); } })));
   }));
 }
@@ -829,10 +738,18 @@ async function boot() {
   loadTray();
   renderTabs(); renderList(); renderTray();
   // Deep link from the Store: calculator/?item=<defName>
-  let linked = null;
-  try { linked = byDef[new URLSearchParams(location.search).get('item')] || null; } catch (e) { /* no query support */ }
+  // Optional &mat=<material def>&q=<quality> (the Paper Doll links here) preselects that exact build.
+  let linked = null, preset = null;
+  try {
+    const qp = new URLSearchParams(location.search);
+    linked = byDef[qp.get('item')] || null;
+    if (linked && (qp.has('mat') || qp.has('q'))) {
+      const m = qp.get('mat'), q = qp.get('q');
+      preset = { mat: linked.madeFromStuff && linked.mats.includes(m) ? m : '', q: linked.hasQuality && QUALITY_ORDER.includes(q) ? q : 'std' };
+    }
+  } catch (e) { /* no query support */ }
   const first = linked || DATA.items.find(i => i.def === 'MeleeWeapon_Gladius') || DATA.items.find(i => i.group === state.group);
-  selectItem(first.def);
+  selectItem(first.def, preset);
   if (!linked) window.scrollTo(0, 0);
 }
 boot();
