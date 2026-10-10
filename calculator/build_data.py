@@ -142,7 +142,13 @@ def main():
     viable = set(load(os.path.join(tk, 'itemMaterials.json')))
     idata = load(os.path.join(tk, 'itemdata.json'))
     compendium = {x['defName']: x for x in load(os.path.join(REPO, 'compendium', 'compendium.json'))}
-    store = {i['defname']: i for i in load(os.path.join(REPO, '_data', 'StoreItems.json'))['items']}
+    store_items = load(os.path.join(REPO, '_data', 'StoreItems.json'))['items']
+    store = {i['defname']: i for i in store_items}
+    # Several items can share one !buy command; the store always delivers the first one listed
+    # (tested in game, Oct 2026), so a later item with the same command can't be bought by that name.
+    first_for_abr = {}
+    for i in store_items:
+        first_for_abr.setdefault(i['abr'], i['defname'])
 
     materials = {}
     for def_name, st in stats['stuffs'].items():
@@ -164,6 +170,9 @@ def main():
     for def_name, it in stats['items'].items():
         s = store.get(def_name)
         if not s:
+            continue
+        if first_for_abr.get(s['abr']) != def_name:
+            skipped.append((def_name, 'shares its command with ' + first_for_abr.get(s['abr'], '?')))
             continue
         if s['category'] in EXCLUDED_CATEGORIES:
             skipped.append((def_name, s['category']))

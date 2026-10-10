@@ -7,6 +7,17 @@ description: "How to play along with RimStream: earning coins, what chat can buy
 thumbnail: compendium/social-preview.png
 ---
 
+{%- comment -%}
+  Every number on this page comes from the data, so it can't drift:
+  earn rate, starting balance, minimum spend and the pawn price from _data/economy.yml,
+  the other prices from the synced _data/StoreIncidents.json. Don't type a coin amount into the text below.
+{%- endcomment -%}
+{%- assign eco = site.data.economy -%}
+{%- assign inc = site.data.StoreIncidents.incitems -%}
+{%- assign p_wildman = inc | where: "abr", "wildman" | first -%}
+{%- assign p_prisoner = inc | where: "abr", "prisoner" | first -%}
+{%- assign p_maninblack = inc | where: "abr", "maninblack" | first -%}
+
 <link rel="stylesheet" href="/itemlist/assets/css/guide-theme.css">
 
 <a id="top"></a>
@@ -30,21 +41,33 @@ One more thing, and this one matters for everybody, not just newcomers: just by 
 
 ## Getting Involved
 
-Coins are earned by being in chat. Two minutes is two coins; you start with 20. Lurk and your coins/minute starts to drop — bottoms out after an hour. Subscribers get 50% more.
+Coins are earned by being in chat: **{{ eco.earn_per_minute }} coins a minute**, and you start with **{{ eco.starting_balance }}**. Lurk and your coins/minute starts to drop — bottoms out after an hour. Subscribers get {{ eco.sub_bonus_percent }}% more.
 
 Coins can be spent to [help](/itemlist/compendium/?tag=Help), to [harm](/itemlist/compendium/?tag=Chaos), or to [involve yourself directly](#build-a-pawn). Helping and harming impact your karma, which also impacts your coin flow. If you're truly violent and evil, the game will slow you down some — but you can still be evil, fear not.
 
-For exact commands — and there are a lot of them — check the [Info page](/itemlist/info).
+For exact commands — and there are a lot of them — check the [Commands page](/itemlist/commands).
 
 ## Spending Coins
 
+<a id="how-to-buy"></a>
+
+**How to buy anything, start to finish:**
+
+1. Find it in the [Store](/itemlist/compendium/).
+2. Click **Copy** on its row.
+3. Paste it into Twitch chat and send it. `!bal` shows what you've got left.
+
+A few things need extra words after the command — a skill, a trait, a quantity. The Store shows you an example when they do, and the [Commands page](/itemlist/commands) covers the rest.
+
+There's a minimum: a purchase has to come to at least {{ eco.min_spend }} coins. The very cheap stuff is sold by the bunch, so it's `!buy hay {{ eco.min_spend }}`, not `!buy hay`. Ask for too little and the bot tells you to try again with a larger quantity. Just ask again with a bigger number.
+
 <a id="build-a-pawn"></a>
 
-**Get directly involved:** you can get a pawn with your name in the game, and then gear them, boost them, trait them, implant them — all the things. [Browse the Compendium](/itemlist/compendium/) — there's a lot of routes. How to develop them depends on your job intent — see below.
+**Get directly involved:** you can get a pawn with your name in the game, and then gear them, boost them, trait them, implant them — all the things. [Browse the Store](/itemlist/compendium/) — there's a lot of routes. How to develop them depends on your job intent — see below.
 
-- `!buy pawn` — 10 coins get you a default colonist in default gear with your name on it. Totally random.
-- `!buy wildman` or `!buy prisoner` — also 10 coins, but a specific background. Have to actually be recruited by the colony.
-- `!buy maninblack` — 15 coins, but you get a mysterious gunslinger with a duster, flak vest, cowboy hat, and a revolver. You're aimin' to clean up this here settlement.
+- `!buy pawn` — {% include coins.html n=eco.pawn_price %} gets you a default colonist in default gear with your name on it. Totally random.
+- `!buy wildman` ({% include coins.html n=p_wildman.price %}) or `!buy prisoner` ({% include coins.html n=p_prisoner.price %}) — a specific background. Have to actually be recruited by the colony.
+- `!buy maninblack` — {% include coins.html n=p_maninblack.price %}, but you get a mysterious gunslinger with a duster, flak vest, cowboy hat, and a revolver. You're aimin' to clean up this here settlement.
 - `!joinqueue` — free. Puts you in line to adopt a colonist who already exists and is unclaimed, rather than one built from scratch. Less control over who you get, but they come with some history already on them.
 
 **Chaos Reigns!** — [bad events galore!](/itemlist/compendium/?tag=Chaos) When you want to make someone's day worse, all the options are here.

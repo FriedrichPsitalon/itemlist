@@ -1,0 +1,20 @@
+# The numbers viewers need to know that aren't in the synced Toolkit data files.
+# The Guide and the Store both read from here, so change a number once and every page follows.
+# Item and event prices are NOT here: the Guide reads those straight from StoreIncidents.json.
+
+# Coins a viewer earns per minute in chat (before the lurk decay and the subscriber bonus).
+earn_per_minute: 10
+
+# Coins a brand-new viewer starts with (was 20 before the x10 change; 200 confirmed).
+starting_balance: 200
+
+# What `!buy pawn` really costs. StoreIncidents.json lists pawn at a placeholder of 1, but the
+# Toolkit charges this amount (confirmed in game). The Guide and the Store use this number for pawn.
+pawn_price: 100
+
+# A purchase must cost at least this many coins, so very cheap items need a quantity
+# (the bot answers "try again in a larger quantity" otherwise).
+min_spend: 4
+
+# Extra coin flow for subscribers, in percent.
+sub_bonus_percent: 50
