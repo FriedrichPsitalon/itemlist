@@ -730,6 +730,7 @@ async function boot() {
     return;
   }
   for (const q of DATA.qualities) PRICE_QUALITY[q.id] = q.factor;
+  DATA.items = DATA.items.filter(i => !i.dollOnly);   // worn apparel the calculator doesn't list (the Paper Doll does)
   for (const i of DATA.items) byDef[i.def] = i;
   document.getElementById('search').addEventListener('input', e => { state.search = e.target.value; renderList(); });
   document.getElementById('tray-clear').addEventListener('click', () => { state.tray = []; state.compare = false; saveTray(); renderTray(); });

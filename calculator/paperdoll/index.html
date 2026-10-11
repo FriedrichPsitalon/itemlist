@@ -169,6 +169,15 @@
   .clearbar { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 4px 0 12px; }
   .clear-all { font-size: 1rem; padding: 10px 26px; background: #4a1511; border-color: var(--conflict); letter-spacing: .02em; }
   .clear-all:hover:not(:disabled) { background: #7a2118; }
+  .importbox { border: 1px solid var(--rule); border-radius: 8px; padding: 12px; margin: 0 0 12px; background: #120a09; }
+  .importbox .imp-title { font-size: 1rem; }
+  .importbox textarea { width: 100%; resize: vertical; font-family: ui-monospace, Consolas, monospace; font-size: .8rem; margin-top: 4px; }
+  .importbox code { font-family: ui-monospace, Consolas, monospace; background: var(--bg); border: 1px solid var(--rule); border-radius: 4px; padding: 1px 6px; }
+  .imp-res { margin-top: 8px; font-size: .84rem; }
+  .imp-list { list-style: none; margin: 0; padding: 0; }
+  .imp-list li { padding: 2px 0; }
+  .imp-ok { color: var(--ink); } .imp-ok b { color: var(--good); }
+  .imp-bad { color: #ffb199; font-size: .84rem; }
   .candbar { border: 1px solid var(--rule); border-radius: 8px; padding: 12px; background: #120a09; }
   .candbar.on { border-color: var(--cand); box-shadow: 0 0 12px rgba(79,208,224,.25); }
   .candbar.clash { border-color: var(--conflict); box-shadow: 0 0 12px rgba(255,77,61,.28); }
@@ -301,6 +310,13 @@
       <span><i style="background:repeating-linear-gradient(45deg,#7a1010 0 3px,#ff3b30 3px 6px)"></i>Clash</span>
     </div>
     <div class="clearbar" id="clearbar"></div>
+    <div class="importbox" id="importbox" hidden>
+      <div class="row-between"><h3 class="imp-title">Import your pawn from chat</h3><button class="ghost-btn mini" id="import-close" type="button">Close</button></div>
+      <p class="small muted">In chat, type <code>!mypawngear</code>, copy the reply and paste it below. The reply has to include an <b>Apparel:</b> list.</p>
+      <textarea id="import-text" class="field" rows="3" spellcheck="false" aria-label="Reply to !mypawngear"></textarea>
+      <div id="import-result" class="imp-res"></div>
+      <div class="actions"><button class="copy-btn" id="import-go" type="button" disabled>Put these on</button><button class="ghost-btn" id="import-example" type="button">Paste an example</button></div>
+    </div>
     <div class="candbar" id="cand"></div>
     <div class="worn"><h3>Worn</h3><div id="worn"></div></div>
   </section>
@@ -378,6 +394,7 @@ const state = {
   view: 'all', dmg: 'sharp', ap: 0,
   cand: null, hover: null, hoverWorn: null, hoverRemove: null, hotRegion: null,
   live: new Set(),          // why the try-on piece is on the pawn: 'picker', 'candHover', 'candFocus', 'arrived'
+  importOpen: false,        // the "Import from chat" panel
   undo: null,               // {index, entries} from "Remove all clothing"
   group: 'all', layerFilter: 'any', search: '', fitOnly: false,
   nextId: 1,
@@ -553,6 +570,8 @@ function renderClearBar() {
   const out = state.outfits[state.active];
   const kids = [el('button', { class: 'copy-btn clear-all', type: 'button', text: 'Remove all clothing', disabled: !out.length,
     'data-tip': 'Takes everything off ' + OUTFIT_NAME[state.active] + '. You can undo it right after.', onclick: clearAll })];
+  kids.push(el('button', { class: 'ghost-btn clear-side' + (state.importOpen ? ' on' : ''), type: 'button', text: 'Import from chat',
+    'data-tip': 'Paste your pawn\u2019s !mypawngear reply from chat and put your gear on the doll.', onclick: () => toggleImport() }));
   if (state.undo && state.undo.index === state.active) kids.push(el('button', { class: 'ghost-btn', type: 'button', text: 'Undo', onclick: undoClear }));
   document.getElementById('clearbar').replaceChildren(...kids);
 }
@@ -709,9 +728,12 @@ function archetype(item) {
     else if (has('FullHead')) kind = 'hood';
     else if (/hat|shadecone/.test(n)) kind = 'hat';
     else kind = 'cap';
-  } else if (l.includes('TM_Cloak')) kind = 'cloak';
+  } else if (l.includes('TM_Artifact')) kind = 'artifact';
+  else if (l.includes('TM_Cloak')) kind = 'cloak';
   else if (/cape/.test(n)) kind = 'cape';
-  else if (/robe|shroud/.test(n)) kind = 'robe';
+  else if (/robe|shroud|duster|lab coat|burka|tribalwear/.test(n)) kind = 'robe';
+  else if (/t-shirt|kid shirt/.test(n)) kind = 'tee';
+  else if (/romper/.test(n)) kind = 'suit';
   else if (/vacsuit|\bsuit\b/.test(n)) kind = 'suit';
   else if (hard && has('Torso') && has('Arms') && has('Legs')) kind = 'plate';
   else if (l.includes('Middle') && l.includes('Shell') && has('Torso')) kind = 'plate';
@@ -760,6 +782,15 @@ function garmentMarkup(item) {
   let m = '';
   switch (a.kind) {
     case 'shirt': m = GB.sleeves(false, true) + GB.torso(false, 262) + GB.collar(false); break;
+    case 'tee': m = GB.sleeves(false, false) + GB.torso(false, 262); break;
+    case 'artifact': {            // rings, pendants, bracers and orbs from the magic mod
+      if (has('Neck')) m += '<path class="d" d="M246 140 Q260 168 274 140"/>' + GOLD(260, 166, 6) + '<circle class="rv" cx="258" cy="164" r="1.8"/>';
+      if (has('RightHand')) m += GP('M199 296 a7 7 0 1 0 14 0 a7 7 0 1 0 -14 0 Z') + GOLD(206, 288, 3);
+      if (has('LeftHand')) m += GP('M307 296 a7 7 0 1 0 14 0 a7 7 0 1 0 -14 0 Z') + GOLD(314, 288, 3);
+      if (has('Arms')) m += gsym(GP('M192 250 H220 V276 H192 Z') + GOLD(206, 263, 3.5));
+      if (!m) m = GOLD(260, 200, 6);
+      break;
+    }
     case 'pants': m = GB.legs(hard); break;
     case 'vest': m = GB.torso(hard, 258) + (has('Neck') ? GB.collar(hard) : ''); break;
     case 'jacket': m = (has('Legs') ? GB.legs(hard) : '') + GB.sleeves(hard, true) + GB.torso(hard, 286) + (hard && has('Shoulders') ? GB.pauldrons() : '') + (has('Neck') ? GB.collar(hard) : ''); break;
@@ -1018,7 +1049,7 @@ function renderCand() {
         onclick: () => equip(c) })
     : el('button', { class: 'copy-btn', type: 'button', text: 'Put on', onclick: () => equip(c) }),
     el('button', { class: 'ghost-btn', type: 'button', text: 'Cancel', onclick: () => { state.cand = null; renderPicker(); renderPreview(); } }),
-    el('a', { class: 'small muted', href: calcLink(item, c.mat, c.q), text: 'See every material in the calculator' }));
+    ...(item.dollOnly ? [] : [el('a', { class: 'small muted', href: calcLink(item, c.mat, c.q), text: 'See every material in the calculator' })]));
   kids.push(btns);
   kids.push(el('div', { class: 'note', text: 'The pawn only wears this preview while your pointer is over the piece list or this card.' }));
   host.replaceChildren(...kids);
@@ -1042,7 +1073,7 @@ function renderWorn() {
       item.madeFromStuff ? matSelect(item, e.mat, v => { e.mat = v; changed(); }, e.q) : el('span', { class: 'faint small', text: 'fixed material' }),
       item.hasQuality ? qualSelect(item, e.q, v => { e.q = v; changed(); }, e.mat) : el('span', { class: 'faint small', text: '' }),
       el('span', { class: 'gold', text: priceOf(item, e.mat, e.q).toLocaleString() }),
-      el('a', { class: 'lnk', href: calcLink(item, e.mat, e.q), text: 'calc' }),
+      item.dollOnly ? el('span') : el('a', { class: 'lnk', href: calcLink(item, e.mat, e.q), text: 'calc' }),
       el('button', { class: 'xbtn', type: 'button', text: '×', 'aria-label': 'Take off ' + entryLabel(e),
         'data-tip': 'Take it off',
         onmouseenter: ev => { ev.stopPropagation(); state.hoverRemove = e.id; renderPreview(); },
@@ -1256,6 +1287,122 @@ function openBuy() {
 }
 document.getElementById('buy').addEventListener('click', e => { if (e.target === e.currentTarget) e.currentTarget.close(); });
 
+// ================================================================ import from chat (!mypawngear)
+// With the apparel option switched on, ToolkitUtils replies like:
+//   【Gear】 Overall armor: 🗡 Sharp 62%, 🍳 Blunt 31%, 🔥 Heat 28% ⎮ Weapon: Revolver (good) ⎮ Apparel: Steel plate armor (good 87%), Cowboy hat (normal)
+// (sections are joined with "⎮", or " | " when the broadcaster has emojis off). Each worn piece is RimWorld's own label:
+// "{material} {item}" plus " (quality hp% T)", where the hit points only show when damaged and T means tainted.
+const QUALITY_WORD = { awful: 'awful', poor: 'poor', normal: 'std', good: 'good', excellent: 'excellent', masterwork: 'masterwork', legendary: 'legendary' };
+const normName = s => s.toLowerCase().replace(/[‘’]/g, "'").replace(/\s+/g, ' ').trim();
+let labelIndex = null, matIndex = null, importPlan = null;
+function importIndexes() {
+  if (labelIndex) return;
+  labelIndex = APPAREL.map(it => ({ it, label: normName(it.label) })).sort((a, b) => b.label.length - a.label.length);   // longest first
+  matIndex = {};
+  for (const [def, m] of Object.entries(DATA.materials))
+    for (const n of [m.label, m.adj, m.token]) if (n && !matIndex[normName(n)]) matIndex[normName(n)] = def;
+}
+function splitTop(s) {            // split on commas that aren't inside brackets
+  const out = []; let depth = 0, cur = '';
+  for (const ch of s) {
+    if (ch === '(') depth++; else if (ch === ')') depth = Math.max(0, depth - 1);
+    if (ch === ',' && depth === 0) { out.push(cur); cur = ''; } else cur += ch;
+  }
+  out.push(cur);
+  return out.map(x => x.trim()).filter(Boolean);
+}
+function parsePiece(raw) {
+  let text = raw.replace(/\s+/g, ' ').trim(), quality = null, hp = null;
+  for (let k = 0; k < 3; k++) {            // peel "(good 87% T)" style groups off the end
+    const m = text.match(/\(([^()]*)\)\s*$/); if (!m) break;
+    text = text.slice(0, m.index).trim();
+    for (const w of m[1].toLowerCase().split(/[\s,]+/)) {
+      if (QUALITY_WORD[w]) quality = QUALITY_WORD[w]; else if (/^\d+%$/.test(w)) hp = parseInt(w, 10);
+    }
+  }
+  return { text, quality, hp };
+}
+function parseGearReply(raw) {
+  importIndexes();
+  // only the line that carries the Apparel list, so pasted neighbouring chat lines can't leak into the last piece
+  const line = raw.split(String.fromCharCode(10)).find(l => /apparel\s*:/i.test(l)) || raw;
+  const flat = line.replace(/[​-‍﻿]/g, '').replace(/\s+/g, ' ');
+  const m = flat.match(/apparel\s*:\s*(.*?)\s*(?:[⎮|]|$)/i);
+  if (!m) return { found: false, pieces: [], unmatched: [] };
+  const raws = splitTop(m[1]), pieces = [], unmatched = [];
+  if (raws.length === 1 && /^none\.?$/i.test(raws[0])) return { found: true, empty: true, pieces, unmatched };
+  for (const r of raws) {
+    const p = parsePiece(r), n = normName(p.text);
+    let hit = null;
+    for (const { it, label } of labelIndex) {
+      if (n === label) { hit = { it, prefix: '' }; break; }
+      if (n.endsWith(' ' + label)) { hit = { it, prefix: n.slice(0, n.length - label.length - 1) }; break; }
+    }
+    if (!hit) { unmatched.push(r); continue; }
+    const it = hit.it;
+    let mat = '', note = '';
+    if (it.madeFromStuff) {
+      const def = matIndex[hit.prefix];
+      if (def && it.mats.includes(def)) mat = def;
+      else { mat = defMat(it); if (hit.prefix) note = 'couldn’t place the material “' + hit.prefix + '”, used the default'; }
+    }
+    pieces.push({ def: it.def, mat, q: it.hasQuality ? (p.quality || 'std') : 'std', hp: p.hp, raw: r, note });
+  }
+  return { found: true, pieces, unmatched };
+}
+// Turn parsed pieces into an outfit, dropping any that can't be worn together (the game would never allow them).
+function planImport(parsed) {
+  const entries = [], dropped = [];
+  for (const p of parsed.pieces) {
+    const item = byDef[p.def];
+    const clash = clashesOf(item, entries);
+    if (clash.length) { dropped.push({ p, with: clash.map(c => entryLabel(c.entry)) }); continue; }
+    entries.push(mkEntry(p.def, p.mat, p.q));
+  }
+  return { entries, dropped };
+}
+const IMPORT_EXAMPLE = '@viewer 【Gear】 Overall armor: 🗡 Sharp 41%, 🍳 Blunt 12%, 🔥 Heat 15% ⎮ Weapon: Revolver (good) ⎮ ' +
+  'Apparel: Cloth formal shirt (good), Flak pants (excellent 92%), Steel simple helmet (normal), Cloth cape (poor 40%)';
+function runImportPreview() {
+  const text = document.getElementById('import-text').value, host = document.getElementById('import-result');
+  const go = document.getElementById('import-go');
+  importPlan = null; go.disabled = true; go.textContent = 'Put these on';
+  if (!text.trim()) { host.replaceChildren(); return; }
+  const parsed = parseGearReply(text);
+  if (!parsed.found) {
+    host.replaceChildren(el('div', { class: 'imp-bad', text: 'I can’t find an “Apparel:” list in that text. Paste the whole reply to !mypawngear. If the reply only shows armor numbers and a weapon, the broadcaster has the apparel list switched off.' }));
+    return;
+  }
+  if (parsed.empty) { host.replaceChildren(el('div', { class: 'faint small', text: 'That pawn isn’t wearing anything.' })); return; }
+  const plan = planImport(parsed), rows = [];
+  for (const e of plan.entries) {
+    const item = itemOf(e), p = parsed.pieces.find(x => x.def === e.def);
+    rows.push(el('li', { class: 'imp-ok' }, '✓ ', el('b', { text: itemName(item.label) }),
+      el('span', { class: 'faint', text: '  ' + (item.madeFromStuff ? matLabel(item, e.mat).replace('*', '') + ' · ' : '') + (item.hasQuality ? QUALITY_LABEL[e.q] : '') +
+        (p && p.hp != null ? ' · ' + p.hp + '% hit points' : '') + (p && p.note ? ' — ' + p.note : '') })));
+  }
+  for (const d of plan.dropped) rows.push(el('li', { class: 'imp-bad' }, '⚠ ', el('b', { text: itemName(byDef[d.p.def].label) }), ' clashes with ' + d.with.join(', ') + ', so I left it off.'));
+  for (const u of parsed.unmatched) rows.push(el('li', { class: 'imp-bad' }, '✗ “' + u + '” isn’t in the store data, so it can’t go on the doll.'));
+  host.replaceChildren(el('ul', { class: 'imp-list' }, ...rows));
+  if (plan.entries.length) { importPlan = plan; go.disabled = false; go.textContent = 'Put these on ' + OUTFIT_NAME[state.active] + ' (' + plan.entries.length + ')'; }
+}
+function toggleImport(force) {
+  state.importOpen = typeof force === 'boolean' ? force : !state.importOpen;
+  document.getElementById('importbox').hidden = !state.importOpen;
+  renderClearBar();
+  if (state.importOpen) { runImportPreview(); document.getElementById('import-text').focus(); }
+}
+function importGo() {
+  if (!importPlan) return;
+  const i = state.active;
+  if (state.outfits[i].length) state.undo = { index: i, entries: state.outfits[i] };
+  state.outfits[i] = importPlan.entries; importPlan = null;
+  document.getElementById('import-text').value = '';
+  state.cand = null; state.hover = null; state.live.clear();
+  toggleImport(false);
+  renderAll();
+}
+
 // ================================================================ top-level rendering
 function renderOutfitTabs() {
   const host = document.getElementById('otabs');
@@ -1326,6 +1473,10 @@ async function boot() {
   }
   document.getElementById('footer').textContent = 'Clashes follow the game’s own rule: two pieces can’t be worn together when they share an apparel layer and cover a common body part. Body, layers and hit chances come from RimWorld ' +
     DATA.gameVersion + '. Materials, qualities and prices match the Gear Calculator. Data updated ' + DATA.generated + '.';
+  document.getElementById('import-text').addEventListener('input', runImportPreview);
+  document.getElementById('import-go').addEventListener('click', importGo);
+  document.getElementById('import-close').addEventListener('click', () => toggleImport(false));
+  document.getElementById('import-example').addEventListener('click', () => { document.getElementById('import-text').value = IMPORT_EXAMPLE; runImportPreview(); });
   const liveZone = (node, token) => {
     node.addEventListener('mouseenter', () => { state.live.add(token); renderPreview(); });
     node.addEventListener('mouseleave', () => { state.live.delete(token); state.live.delete('arrived'); renderPreview(); });

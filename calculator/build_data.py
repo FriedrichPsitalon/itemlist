@@ -164,6 +164,11 @@ def main():
             'price': s['price'],
             'cats': st['categories'],
         }
+        # RimWorld labels a worn piece "{adjective-or-label} {item}" ("golden ...", "wooden ..."), so keep the adjective
+        # when it differs from the label; the Paper Doll's chat import matches on it.
+        adj = (st.get('adjective') or '').strip()
+        if adj and adj.lower() != st['label'].lower():
+            materials[def_name]['adj'] = adj
 
     items = []
     skipped = []
@@ -174,9 +179,16 @@ def main():
         if first_for_abr.get(s['abr']) != def_name:
             skipped.append((def_name, 'shares its command with ' + first_for_abr.get(s['abr'], '?')))
             continue
+        doll_only = False
         if s['category'] in EXCLUDED_CATEGORIES:
-            skipped.append((def_name, s['category']))
-            continue
+            # The calculator skips these categories, but the store files everyday clothing (shirts, pants, dusters, sashes)
+            # under "Misc", belts and packs under "Utility" and rings/bracers under "Magic artifacts", and viewers' pawns
+            # wear them. Worn apparel is kept for the Paper Doll only; the calculator and the Store page ignore dollOnly items.
+            if it['kind'] == 'apparel' and it.get('apparel'):
+                doll_only = True
+            else:
+                skipped.append((def_name, s['category']))
+                continue
         allow_stuff = idata.get(def_name, {}).get('IsStuffAllowed', True)
         mats = [m for m in it['materials'] if m == '' or m in materials] if allow_stuff else []
         if it['madeFromStuff'] and not allow_stuff:
@@ -242,6 +254,7 @@ def main():
             'special': special,
             'tools': it.get('tools'),
             'ranged': it.get('ranged'),
+            **({'dollOnly': True} if doll_only else {}),
             # Which apparel layers it takes and which body-part groups it covers (two pieces clash when they share both).
             'apparel': ({'layers': it['apparel']['layers'], 'groups': it['apparel']['bodyParts']}
                         if it['kind'] == 'apparel' and it.get('apparel') else None),
@@ -288,7 +301,7 @@ def main():
         json.dump(out, f, separators=(',', ':'))
     # Tiny list the Store page reads to know which items get a "Compare materials" button.
     with open(os.path.join(HERE, 'calc-items.json'), 'w', encoding='utf8') as f:
-        json.dump(sorted(i['def'] for i in items), f, separators=(',', ':'))
+        json.dump(sorted(i['def'] for i in items if not i.get('dollOnly')), f, separators=(',', ':'))
     groups = {}
     for i in items:
         groups[i['group']] = groups.get(i['group'], 0) + 1
