@@ -8,6 +8,9 @@
 - title: Gear Calculator
   url: /calculator/
   position: 0
+- title: Paper Doll
+  url: /calculator/paperdoll/
+  position: 1
 - title: Store
   url: /compendium/
-  position: 1
+  position: 2

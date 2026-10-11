@@ -13,7 +13,7 @@ const path = require('path');
 
 const BASE = (process.argv[2] || 'https://friedrichpsitalon.github.io/itemlist').replace(/\/$/, '');
 const ROOT = path.resolve(__dirname, '..');
-const PAGES = ['/', '/guide/', '/guide/jobs/', '/guide/classes/', '/info', '/commands', '/modlist', '/calculator/', '/compendium/'];
+const PAGES = ['/', '/guide/', '/guide/jobs/', '/guide/classes/', '/info', '/commands', '/modlist', '/calculator/', '/calculator/paperdoll/', '/compendium/'];
 
 let failed = 0;
 function check(name, ok, detail) {
