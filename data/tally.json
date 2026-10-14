@@ -1,6 +1,6 @@
 {
   "marble golem": 1,
-  "steel": 4,
+  "steel": 1024,
   "wand of fire": 3,
   "shroud of the soulreaper": 7,
   "druid spell: regrow limb": 1,
@@ -8,5 +8,24 @@
   "Revive random pawn": 1,
   "necrotic orb": 2,
   "couch": 1,
-  "piranha": 2
+  "piranha": 2,
+  "Trader caravan arrival": 3,
+  "unique hellcat rifle": 1,
+  "techprint (specialized limbs)": 1,
+  "armadillo": 1,
+  "kidney": 2,
+  "unique sniper rifle": 1,
+  "Master Sniper": 1,
+  "warg": 1,
+  "sniper rifle": 1,
+  "skilltrainer (crafting)": 1,
+  "skilltrainer (shooting)": 1,
+  "major arcane gem of conservation": 1,
+  "muffalo": 3,
+  "body modder": 1,
+  "archotech eye": 2,
+  "reinforced barrel": 2,
+  "Military aid": 1,
+  "Fire mage": 1,
+  "thick skinned": 1
 }
