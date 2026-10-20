@@ -444,8 +444,7 @@ function renderBuilder() {
       el('div', { style: 'margin-top:6px' }, el('span', { class: 'badge', text: item.cat }),
         el('span', { class: 'badge', text: item.hasQuality ? 'Has quality' : 'No quality' }),
         el('span', { class: 'badge', text: item.madeFromStuff ? 'Choose material' : 'Fixed material' }))),
-    el('div', { style: 'text-align:right' }, el('div', { class: 'price-big', text: coins(origPrice) }),
-      el('div', { class: 'small faint', text: 'original price' }))));
+    priceHead(item, rows, origPrice)));
   if (item.madeFromStuff) {
     kids.push(el('p', { class: 'small muted', text: 'Original stats are for the default material (' + matLabel(item, '') +
       '), normal quality. Needs ' + item.units + ' units of material to make.' }));
@@ -478,7 +477,7 @@ function renderBuilder() {
     for (const cat of [...CAT_ORDER, 'Other']) {
       if (!groups[cat]) continue;
       chips.append(el('div', { class: 'group-label', text: CAT_LABEL[cat] || cat }));
-      for (const m of groups[cat].sort((a, b) => DATA.materials[a].price - DATA.materials[b].price || a.localeCompare(b)))
+      for (const m of groups[cat].sort((a, b) => unitCostOf(a) - unitCostOf(b) || a.localeCompare(b)))
         chips.append(chip(matLabel(item, m), set.has(m), () => toggle(set, m), priceOf(item, m, 'std')));
     }
     kids.push(chips);
@@ -542,6 +541,26 @@ function renderBuilder() {
 // Hands a piece of apparel to the Paper Doll page as a try-on (it keeps the viewer's saved outfit).
 const dollLink = (item, mat, q) => 'paperdoll/?add=' + encodeURIComponent(item.def) +
   (item.madeFromStuff && mat ? '&m=' + encodeURIComponent(mat) : '') + (q && q !== 'std' ? '&q=' + q : '');
+// Upper-right price: the original price, or the range across the versions currently selected below
+// (so a viewer who has Steel and Gold Legendary both on sees both ends, not just the cheap one).
+function priceHead(item, rows, origPrice) {
+  const prices = rows.map(r => r.price);
+  const lo = Math.min(...prices), hi = Math.max(...prices);
+  let big = coins(origPrice), small = 'original price', tip = null;
+  if (prices.length === 1) {
+    big = coins(lo);
+    const r = rows[0];
+    small = isDefaultMat(item, r.mat) && r.q === 'std' ? 'original price' : 'selected version';
+  } else if (prices.length > 1) {
+    big = lo === hi ? coins(lo) : lo.toLocaleString() + ' \u2013 ' + hi.toLocaleString() + ' coins';
+    small = prices.length + ' versions selected';
+    tip = 'The cheapest and most expensive of the ' + prices.length + ' versions selected below. The item\u2019s original price is ' +
+      coins(origPrice) + '. Click a row to see one version\u2019s exact price.';
+  }
+  const props = { style: 'text-align:right' };
+  if (tip) { props['data-tip'] = tip; props.tabindex = 0; }
+  return el('div', props, el('div', { class: 'price-big', text: big }), el('div', { class: 'small faint' + (tip ? ' tipped' : ''), text: small }));
+}
 function priceDiff(p, o) {
   if (p === o) return '—';
   return (p > o ? '+' : '−') + Math.abs(p - o).toLocaleString() + ' (' + (p > o ? '+' : '−') + Math.round(Math.abs(p - o) / o * 100) + '%)';

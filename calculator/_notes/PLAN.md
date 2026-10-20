@@ -26,18 +26,22 @@ Edit `calculator/index.html` (all CSS/JS inline) and refresh. `calc-data.json` i
   `compendium/compendium.json`. Niche vanilla stats are hidden via `HIDDEN_BONUS_STATS` in `build_data.py`.
 - **Default material:** pre-selected and starred. It is priced as "material left off" (base price) and the copied command omits it.
 
-## The price rule (fitted to real store prices, Oct 2026)
+## The price rule (read from ToolkitUtils' own code, Oct 2026; matches 22 of 22 real chat quotes)
+Source: `PurchaseHelper.GetItemPrice` in ToolkitUtils.dll. All arithmetic is in 32-bit floats and rounds UP (`Mathf.CeilToInt`) at every step.
+
 | You type | Price |
 |---|---|
-| `!buy gladius` | base price |
-| `!buy gladius[steel]` | round((base + units x material price) x 1.05) |
-| `!buy gladius[good]` | round(base x quality factor x 1.1) |
-| `!buy gladius[steel,good]` | round(round((base + units x material price) x 1.05) x quality factor x 1.1) |
+| `!buy gladius` | base price (the store price) |
+| `!buy gladius[steel]` | ceil((base + units x unit cost) x 1.05) |
+| `!buy gladius[good]` | ceil( ceil(base x quality factor) x 1.1 ) |
+| `!buy gladius[steel,good]` | ceil( ceil( ceil((base + units x unit cost) x 1.05) x quality factor ) x 1.1 ) |
 
-Quality factors: awful 0.5, poor 0.75, normal 1, good 1.25, excellent 1.5, masterwork 2.5, legendary 5.
-`units` = the item's `costStuffCount` from the game; material price = its `StoreItems.json` price.
-13 of 15 observed prices match exactly; two shroud prices (excellent, masterwork) were off by 1 coin.
-Naming a quality, even `normal`, costs 10% more than leaving it off.
+- Quality factors are Toolkit settings (defaults, which the stream uses): awful 0.5, poor 0.75, normal 1, good 1.25, excellent 1.5, masterwork 2.5, legendary 5.
+- `units` = the item's `costStuffCount` from the game.
+- **Unit cost** = the material's store price, but **x10 for materials the game flags `smallVolume`**. Of the materials we use only **Gold and Silver** have that flag (checked against the core game and mod defs). The set lives in `SMALL_VOLUME_MATERIALS` in `build_data.py`; add to it if a future material is flagged. The data carries `unitCost` per material and the page uses it (`unitCostOf` in `calc-core.js`).
+- Naming a quality, even `normal`, costs 10% more than leaving it off.
+- To verify after a change: the page's `priceOf` must reproduce real quotes, e.g. Stellic crown `[gold,legendary]` = 10,049, `[gold]` = 1,827, `[silver]` = 2,720, `[steel]` = 132, `[plasteel]` = 578; shroud `[hyperweave,excellent]` = 2,600, `[sheepwool]` = 1,155; gladius `[gold]` = 1,113, `[steel,legendary]` = 638.
+- Store prices in the files are already on the stream's x10-inflated item scale (gladius 60), so no extra scaling is applied to them.
 
 ## Confirmed in the store (Oct 2026)
 - Materials with spaces must be typed without the space: `[alpacawool]` works, `[alpaca wool]` does not. The calculator uses the store name without spaces.

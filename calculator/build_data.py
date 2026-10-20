@@ -45,6 +45,10 @@ HIDDEN_BONUS_STATS = {'SlaveSuppressionOffset', 'VacuumResistance', 'ToxicEnviro
 LOWER_BETTER_BONUS_STATS = {'AimingDelayFactor', 'MentalBreakThreshold', 'MeleeCooldownFactor', 'RangedCooldownFactor'}
 BONUS_UNITS = {'MoveSpeed': ' c/s', 'CarryingCapacity': ' kg'}
 EXCLUDED_CATEGORIES = {'Drugs', 'Raw resources', 'Misc', 'Utility', 'Magic artifacts'}
+# ToolkitUtils' PurchaseHelper.GetItemPrice counts a material at TEN times its store price when the game flags it
+# smallVolume (read from the mod's code and the game/mod defs, Oct 2026; matches 22 real chat quotes). Of the
+# materials the calculator uses, only gold and silver carry that flag. Add a defName here if a future material does.
+SMALL_VOLUME_MATERIALS = {'Gold', 'Silver'}
 
 
 # Built-in bonuses (RimWorld of Magic etc.) are listed in the item's description as
@@ -161,7 +165,8 @@ def main():
         materials[def_name] = {
             'token': s['abr'],
             'label': st['label'],
-            'price': s['price'],
+            'price': s['price'],                                            # store price
+            'unitCost': s['price'] * (10 if def_name in SMALL_VOLUME_MATERIALS else 1),   # what one unit adds to an item's price
             'cats': st['categories'],
         }
         # RimWorld labels a worn piece "{adjective-or-label} {item}" ("golden ...", "wooden ..."), so keep the adjective

@@ -15,16 +15,21 @@ const CAT_ORDER = ['Metallic', 'Woody', 'Stony', 'Fabric', 'Leathery'];
 let DATA = null;
 
 // ---------------------------------------------------------------- pricing (verified against real store prices)
-function roundHalfUp(x) { return Math.floor(x + 0.5 + 1e-9); }
-// Naming a material: (base + units x material price) x 1.05. Naming a quality: x quality factor x 1.1.
-// Leaving both off is the plain base price.
+// ToolkitUtils (PurchaseHelper.GetItemPrice) does this in 32-bit floats and rounds UP (Mathf.CeilToInt) at every step:
+//   naming a material:  ceil((base + units x unit cost) x 1.05)
+//   naming a quality:   ceil(ceil(price x quality factor) x 1.1)
+//   naming neither:     the plain store price
+// A material's unit cost is its store price, x10 for the few the game flags smallVolume (gold, silver).
+const f32 = Math.fround;
+const ceil32 = x => Math.ceil(f32(x));
+const unitCostOf = mat => { const m = DATA.materials[mat]; return m.unitCost != null ? m.unitCost : m.price; };
 // The item's default material (starred in the UI) is what you get when no material is named, so it
 // costs the base price and needs no bracket entry.
 function isDefaultMat(item, mat) { return !mat || mat === item.defaultStuff; }
 function priceOf(item, mat, q) {
   let p = item.price;
-  if (!isDefaultMat(item, mat)) p = roundHalfUp((item.price + item.units * DATA.materials[mat].price) * DATA.rules.materialMarkup);
-  if (q && q !== 'std') p = roundHalfUp(p * PRICE_QUALITY[q] * DATA.rules.qualityMarkup);
+  if (!isDefaultMat(item, mat)) p = ceil32(f32(item.price + item.units * unitCostOf(mat)) * f32(DATA.rules.materialMarkup));
+  if (q && q !== 'std') p = ceil32(f32(ceil32(f32(p) * f32(PRICE_QUALITY[q]))) * f32(DATA.rules.qualityMarkup));
   return p;
 }
 function commandOf(item, mat, q, qty) {
@@ -79,7 +84,7 @@ function compute(item, mat, q) {
 // Materials in display order: category, then price, then name.
 function orderedMats(item) {
   const cat = m => { const i = CAT_ORDER.indexOf((DATA.materials[m].cats.find(c => CAT_ORDER.includes(c))) || ''); return i < 0 ? 99 : i; };
-  return item.mats.slice().sort((a, b) => cat(a) - cat(b) || DATA.materials[a].price - DATA.materials[b].price || a.localeCompare(b));
+  return item.mats.slice().sort((a, b) => cat(a) - cat(b) || unitCostOf(a) - unitCostOf(b) || a.localeCompare(b));
 }
 function el(tag, props, ...kids) {
   const n = document.createElement(tag);
