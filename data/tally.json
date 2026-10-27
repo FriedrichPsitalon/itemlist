@@ -9,7 +9,7 @@
   "necrotic orb": 2,
   "couch": 1,
   "piranha": 2,
-  "Trader caravan arrival": 6,
+  "Trader caravan arrival": 7,
   "unique hellcat rifle": 1,
   "techprint (specialized limbs)": 1,
   "armadillo": 1,
@@ -89,5 +89,15 @@
   "macaw": 4,
   "trigger-happy": 1,
   "quick sleeper": 1,
-  "ancient hydrant": 1
+  "ancient hydrant": 1,
+  "leg": 1,
+  "nose": 2,
+  "beer": 100,
+  "medicine cabinet": 1,
+  "shard": 70,
+  "mechanoid transponder": 1,
+  "Orbital trader arrival": 1,
+  "Technomancer": 1,
+  "technomancer spell: kinetic shield": 1,
+  "guest royal bed": 1
 }
