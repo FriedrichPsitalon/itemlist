@@ -5,7 +5,7 @@
   "shroud of the soulreaper": 7,
   "druid spell: regrow limb": 1,
   "unrefined magicyte": 1500,
-  "Revive random pawn": 1,
+  "Revive random pawn": 2,
   "necrotic orb": 2,
   "couch": 1,
   "piranha": 2,
@@ -99,5 +99,15 @@
   "Orbital trader arrival": 1,
   "Technomancer": 1,
   "technomancer spell: kinetic shield": 1,
-  "guest royal bed": 1
+  "guest royal bed": 1,
+  "lung": 1,
+  "vegetarian fine meal": 1,
+  "bionic finger": 1,
+  "stone crab": 4,
+  "stone pile": 1,
+  "industrial skip": 1,
+  "sun lamp": 1,
+  "berries": 1,
+  "torture crown": 1,
+  "resurrector mech serum": 1
 }
