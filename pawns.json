@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "updatedUtc": "2000-01-01T00:00:00Z",
+  "adoption": { "status": "unavailable", "sources": [] },
+  "colonists": 0,
+  "unadopted": 0,
+  "pawns": []
+}
