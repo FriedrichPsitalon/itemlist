@@ -11,6 +11,9 @@
 - title: Paper Doll
   url: /calculator/paperdoll/
   position: 1
+- title: Pawn Board
+  url: /pawns/
+  position: 2
 - title: Store
   url: /compendium/
-  position: 2
+  position: 3

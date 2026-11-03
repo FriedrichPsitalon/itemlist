@@ -56,6 +56,11 @@
 
   main { max-width: 1500px; margin: 0 auto; padding: 16px; }
 
+  .howto { margin: 0 0 14px; padding: 10px 14px; background: var(--panel); border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent); border-radius: 6px; color: var(--ink); font-size: .95rem; }
+  .howto code { font-family: ui-monospace, Consolas, monospace; font-size: .92em; color: var(--gold);
+    background: var(--panel-2); border: 1px solid var(--rule); border-radius: 4px; padding: 1px 6px; }
+
   .bar { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin-bottom: 14px; }
   .bar .count { font-family: 'Arvo', Georgia, serif; font-size: 1.15rem; }
   .status { display: inline-flex; align-items: center; gap: 7px; font-size: .8rem; color: var(--ink-dim); }
@@ -137,6 +142,8 @@
       <a href="../guide/">Guide</a>
       <a href="../info">Info</a>
       <a href="../modlist">Mod List</a>
+      <a href="../calculator/">Gear Calculator</a>
+      <a href="../calculator/paperdoll/">Paper Doll</a>
       <span class="current">Pawn Board</span>
       <a href="../compendium/">Store</a>
     </nav>
@@ -145,6 +152,8 @@
 </header>
 
 <main>
+  <p class="howto">To adopt one of these pawns, just type <code>/joinqueue</code> and let Friedrich know!</p>
+
   <div class="bar">
     <span class="count" id="count">Loading&hellip;</span>
     <span class="status" id="status"><span class="dot"></span><span id="statusText">Loading</span></span>
