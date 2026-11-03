@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="32x32" href="../compendium/favicon-32.png">
+<title>RimStream Pawn Board</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --bg: #0a0605;
+    --panel: #170c0b;
+    --panel-2: #1f1110;
+    --ink: #eae2d0;
+    --ink-dim: #a89c86;
+    --ink-faint: #867e6e;
+    --accent: #b8352c;
+    --accent-text: #c75f58;
+    --cool: #5e7d8c;
+    --cool-text: #8fb4c4;
+    --rule: #3d1f1c;
+    --rule-soft: #26130f;
+    --gold: #e6bd52;
+    --good: #7fb069;
+    --bad: #d9675d;
+    --warn: #e0a24a;
+    --violet: #a58ac9;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  body {
+    background-image:
+      radial-gradient(ellipse 900px 700px at 0% 20%, rgba(184,53,44,.09), transparent 60%),
+      radial-gradient(ellipse 900px 700px at 100% 80%, rgba(184,53,44,.07), transparent 60%);
+    background-attachment: fixed; min-height: 100vh;
+  }
+  h1, h2, .display { font-family: 'Arvo', Georgia, serif; margin: 0; }
+  a { color: inherit; }
+  button, input, select { font-family: inherit; }
+
+  header { background: #000; border-bottom: 1px solid var(--rule); padding: 0 16px 14px; }
+  .topbar { display: flex; align-items: center; justify-content: space-between; max-width: 1500px;
+    margin: 0 auto; gap: 16px; flex-wrap: wrap; padding: 14px 0; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand img { height: 34px; border-radius: 4px; display: block; }
+  .brand-text { font-family: 'Arvo', Georgia, serif; font-weight: 700; font-size: 1.3rem; }
+  .site-nav { display: flex; gap: 18px; font-size: .85rem; flex-wrap: wrap; }
+  .site-nav a { color: var(--ink-dim); text-decoration: none; border-bottom: 1px solid transparent; }
+  .site-nav a:hover { color: var(--accent-text); border-bottom-color: var(--accent); }
+  .site-nav .current { color: var(--ink); font-weight: 600; }
+  .lead { max-width: 1500px; margin: 0 auto; font-size: .85rem; color: var(--ink-faint); }
+
+  main { max-width: 1500px; margin: 0 auto; padding: 16px; }
+
+  .bar { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin-bottom: 14px; }
+  .bar .count { font-family: 'Arvo', Georgia, serif; font-size: 1.15rem; }
+  .status { display: inline-flex; align-items: center; gap: 7px; font-size: .8rem; color: var(--ink-dim); }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ink-faint); flex: none; }
+  .status.fresh .dot { background: var(--good); }
+  .status.stale { color: var(--warn); }
+  .status.stale .dot { background: var(--warn); }
+  .status.error { color: var(--bad); }
+  .status.error .dot { background: var(--bad); }
+  .spacer { flex: 1 1 auto; }
+  .controls { display: flex; gap: 10px; flex-wrap: wrap; }
+  input[type=search], select {
+    background: var(--panel); color: var(--ink); border: 1px solid var(--rule); border-radius: 6px;
+    padding: 8px 10px; font-size: .9rem; min-width: 0;
+  }
+  input[type=search] { width: 260px; max-width: 100%; }
+  input:focus-visible, select:focus-visible, button:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 1px; }
+  .btn { background: var(--panel-2); color: var(--ink); border: 1px solid var(--rule); border-radius: 6px;
+    padding: 8px 12px; font-size: .85rem; cursor: pointer; }
+  .btn:hover { border-color: var(--accent); }
+
+  .notice { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 18px 20px;
+    color: var(--ink-dim); line-height: 1.5; }
+  .notice strong { color: var(--ink); }
+
+  /* the list: a header row of column titles, then one row per pawn */
+  .cols, .pawn { display: grid; gap: 4px 18px;
+    grid-template-columns: minmax(140px,1fr) minmax(170px,1.15fr) minmax(120px,.9fr) minmax(150px,1fr) minmax(150px,1fr) minmax(190px,1.35fr); }
+  .cols { padding: 0 14px 8px; font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); }
+  .pawn { background: var(--panel); border: 1px solid var(--rule-soft); border-radius: 8px; padding: 12px 14px;
+    margin-bottom: 8px; align-items: start; font-size: .88rem; line-height: 1.45; }
+  .pawn:hover { border-color: var(--rule); background: var(--panel-2); }
+  .cell { min-width: 0; overflow-wrap: anywhere; }
+  .cell .lab { display: none; font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 2px; }
+  .name { font-family: 'Arvo', Georgia, serif; font-weight: 700; font-size: 1rem; }
+  .sub { color: var(--ink-faint); font-size: .78rem; }
+  .bs { color: var(--ink-faint); font-size: .72rem; margin-right: 4px; }
+  .none { color: var(--ink-faint); }
+  .tag { display: inline-block; margin: 0 4px 4px 0; padding: 1px 8px; border: 1px solid var(--rule); border-radius: 999px;
+    background: var(--panel-2); font-size: .8rem; white-space: nowrap; }
+  .skill { display: block; }
+  .skill b { font-weight: 600; }
+  .lvl { color: var(--ink-dim); font-variant-numeric: tabular-nums; }
+  .star { color: var(--gold); letter-spacing: -1px; }
+  .hp { display: inline-block; max-width: 100%; margin: 0 4px 4px 0; padding: 1px 8px; border-radius: 6px; font-size: .8rem; border: 1px solid var(--rule); }
+  .hp.bionic { color: var(--cool-text); border-color: var(--cool); }
+  .hp.missing { color: var(--bad); border-color: #6b2b27; }
+  .hp.chronic { color: var(--warn); border-color: #6b5326; }
+  .hp.scar { color: var(--ink-dim); }
+  .hp.addiction { color: var(--violet); border-color: #4b3d66; }
+  .hp.injury, .hp.illness { color: var(--bad); border-color: var(--accent); }
+  .hp .now { font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; margin-left: 5px; opacity: .85; }
+  .hp .where { color: var(--ink-faint); }
+  .cant { display: block; margin-top: 3px; font-size: .78rem; color: var(--ink-faint); }
+
+  @media (max-width: 960px) {
+    .cols { display: none; }
+    .pawn { grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+    .pawn .cell:first-child { grid-column: 1 / -1; }
+    .cell .lab { display: block; }
+  }
+  @media (max-width: 560px) {
+    .pawn { grid-template-columns: 1fr; }
+    input[type=search] { width: 100%; }
+    .controls { width: 100%; }
+    .controls select { flex: 1 1 auto; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <a class="brand" href="../">
+      <img src="../compendium/mascot-icon.png" alt="">
+      <span class="brand-text">RimStream</span>
+    </a>
+    <nav class="site-nav">
+      <a href="../commands">Commands</a>
+      <a href="../guide/">Guide</a>
+      <a href="../info">Info</a>
+      <a href="../modlist">Mod List</a>
+      <span class="current">Pawn Board</span>
+      <a href="../compendium/">Store</a>
+    </nav>
+  </div>
+  <p class="lead">Colonists nobody has adopted yet &mdash; what they're good at, what they're like, and what's wrong with them. Updates by itself.</p>
+</header>
+
+<main>
+  <div class="bar">
+    <span class="count" id="count">Loading&hellip;</span>
+    <span class="status" id="status"><span class="dot"></span><span id="statusText">Loading</span></span>
+    <span class="spacer"></span>
+    <div class="controls">
+      <input type="search" id="q" placeholder="Search: a name, trait, skill, bionic&hellip;" aria-label="Search pawns">
+      <select id="sort" aria-label="Sort pawns">
+        <option value="name">Sort: name</option>
+        <option value="best">Sort: best skill</option>
+        <option value="youngest">Sort: youngest</option>
+        <option value="oldest">Sort: oldest</option>
+      </select>
+      <button class="btn" id="refresh" type="button">Refresh</button>
+    </div>
+  </div>
+
+  <div id="notice" class="notice" hidden></div>
+
+  <div class="cols" id="cols" hidden>
+    <span>Name</span><span>Backstory</span><span>Traits</span><span>Passions</span><span>Top skills</span><span>Bionics / injuries</span>
+  </div>
+  <div id="list"></div>
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  var REPO = 'FriedrichPsitalon/itemlist', BRANCH = 'data', FILE = 'pawns.json';
+  var REFRESH_MS = 90 * 1000;
+  var FRESH_MIN = 8, STALE_MIN = 12;   // the bot sends the file at least every 5 minutes while the game runs
+
+  // ?src=<url> reads the data from somewhere else (testing the page with a sample file).
+  var override = new URLSearchParams(location.search).get('src');
+
+  var data = null, lastOk = 0, lastFail = null;
+  var el = {
+    count: document.getElementById('count'), status: document.getElementById('status'),
+    statusText: document.getElementById('statusText'), q: document.getElementById('q'),
+    sort: document.getElementById('sort'), refresh: document.getElementById('refresh'),
+    notice: document.getElementById('notice'), cols: document.getElementById('cols'), list: document.getElementById('list')
+  };
+
+  function fetchJson(url, headers) {
+    return fetch(url, { headers: headers || {}, cache: 'no-store' }).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    });
+  }
+
+  // The GitHub API serves the file the moment the bot commits it (raw.githubusercontent.com caches for ~5 minutes),
+  // but it allows only 60 anonymous requests an hour per visitor, so fall back to raw when that runs out.
+  function load() {
+    if (override) return fetchJson(override);
+    var api = 'https://api.github.com/repos/' + REPO + '/contents/' + FILE + '?ref=' + BRANCH;
+    var raw = 'https://raw.githubusercontent.com/' + REPO + '/' + BRANCH + '/' + FILE + '?t=' + Date.now();
+    return fetchJson(api, { 'Accept': 'application/vnd.github.raw+json' }).catch(function () { return fetchJson(raw); });
+  }
+
+  function refresh() {
+    el.refresh.disabled = true;
+    load().then(function (j) {
+      if (!j || j.schema !== 1 || !Array.isArray(j.pawns)) throw new Error('unexpected data');
+      data = j; lastOk = Date.now(); lastFail = null;
+    }).catch(function (e) {
+      lastFail = e.message || String(e);
+    }).then(function () {
+      el.refresh.disabled = false;
+      render();
+    });
+  }
+
+  function minutesOld() {
+    var t = data && Date.parse(data.updatedUtc);
+    return t ? (Date.now() - t) / 60000 : Infinity;
+  }
+
+  function ago(min) {
+    if (!isFinite(min)) return 'never';
+    if (min < 1) return 'just now';
+    if (min < 60) return Math.round(min) + ' min ago';
+    var h = min / 60;
+    if (h < 48) return Math.round(h) + ' hr ago';
+    return Math.round(h / 24) + ' days ago';
+  }
+
+  function node(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function stars(p) { return p >= 2 ? '★★' : p === 1 ? '★' : ''; }
+
+  function skillLine(s, withLevel) {
+    var row = node('span', 'skill');
+    row.appendChild(node('b', null, s.skill));
+    if (withLevel) row.appendChild(node('span', 'lvl', ' ' + s.level));
+    if (s.passion) { row.appendChild(document.createTextNode(' ')); row.appendChild(node('span', 'star', stars(s.passion))); }
+    return row;
+  }
+
+  function cell(label) {
+    var c = node('div', 'cell');
+    c.appendChild(node('div', 'lab', label));
+    return c;
+  }
+
+  function healthText(h) {
+    var t = h.label + (h.count > 1 ? ' ×' + h.count : '');
+    return h.parts && h.parts.length ? t + ' (' + h.parts.join(', ') + ')' : t;
+  }
+
+  function pawnRow(p) {
+    var row = node('article', 'pawn');
+
+    var c = cell('Name');
+    c.appendChild(node('div', 'name', p.nick || p.name));
+    c.appendChild(node('div', 'sub', (p.name !== p.nick ? p.name + ' · ' : '') + p.gender + ', ' + p.age));
+    row.appendChild(c);
+
+    c = cell('Backstory');
+    var any = false;
+    [['Child', p.childhood], ['Adult', p.adulthood]].forEach(function (b) {
+      if (!b[1]) return;
+      any = true;
+      var d = node('div');
+      d.appendChild(node('span', 'bs', b[0]));
+      d.appendChild(document.createTextNode(b[1]));
+      c.appendChild(d);
+    });
+    if (!any) c.appendChild(node('span', 'none', '—'));
+    row.appendChild(c);
+
+    c = cell('Traits');
+    if (p.traits.length) p.traits.forEach(function (t) { c.appendChild(node('span', 'tag', t)); });
+    else c.appendChild(node('span', 'none', 'None'));
+    row.appendChild(c);
+
+    c = cell('Passions');
+    if (p.passions.length) p.passions.forEach(function (s) { c.appendChild(skillLine({ skill: s.skill, passion: s.passion }, false)); });
+    else c.appendChild(node('span', 'none', 'None'));
+    row.appendChild(c);
+
+    c = cell('Top skills');
+    p.topSkills.forEach(function (s) { c.appendChild(skillLine(s, true)); });
+    if (p.incapable && p.incapable.length) c.appendChild(node('span', 'cant', 'Incapable of: ' + p.incapable.join(', ')));
+    row.appendChild(c);
+
+    c = cell('Bionics / injuries');
+    if (p.health.length) {
+      p.health.forEach(function (h) {
+        var chip = node('span', 'hp ' + h.kind, healthText(h));
+        if (h.kind === 'injury' || h.kind === 'illness') chip.appendChild(node('span', 'now', 'now'));
+        c.appendChild(chip);
+      });
+    } else c.appendChild(node('span', 'none', 'None'));
+    row.appendChild(c);
+
+    return row;
+  }
+
+  // Everything the row shows, lower-cased, so one search box matches names, traits, skills, parts, backstories.
+  function haystack(p) {
+    return [p.name, p.nick, p.gender, p.childhood, p.adulthood, p.traits.join(' '),
+      p.passions.map(function (s) { return s.skill; }).join(' '),
+      p.topSkills.map(function (s) { return s.skill; }).join(' '),
+      (p.incapable || []).join(' '),
+      p.health.map(function (h) { return h.kind + ' ' + h.label + ' ' + (h.parts || []).join(' '); }).join(' ')
+    ].join(' ').toLowerCase();
+  }
+
+  function best(p) { return p.topSkills.length ? p.topSkills[0].level : 0; }
+
+  var sorters = {
+    name: function (a, b) { return (a.nick || a.name).localeCompare(b.nick || b.name); },
+    best: function (a, b) { return best(b) - best(a) || sorters.name(a, b); },
+    youngest: function (a, b) { return a.age - b.age || sorters.name(a, b); },
+    oldest: function (a, b) { return b.age - a.age || sorters.name(a, b); }
+  };
+
+  function setNotice(html) {
+    el.notice.hidden = !html;
+    el.notice.textContent = '';
+    if (html) {
+      var s = node('strong', null, html[0]);
+      el.notice.appendChild(s);
+      el.notice.appendChild(document.createTextNode(' ' + html[1]));
+    }
+  }
+
+  function renderStatus() {
+    el.status.className = 'status';
+    if (!data) {
+      if (lastFail) { el.status.classList.add('error'); el.statusText.textContent = 'Could not load the list (' + lastFail + ')'; }
+      else el.statusText.textContent = 'Loading';
+      return;
+    }
+    var min = minutesOld(), text;
+    if (!isFinite(min) || min > 60 * 24 * 365) { text = 'No data yet'; el.status.classList.add('stale'); }
+    else {
+      text = 'Updated ' + ago(min);
+      if (min <= FRESH_MIN) el.status.classList.add('fresh');
+      else if (min > STALE_MIN) { el.status.classList.add('stale'); text += ' — the stream may be offline'; }
+    }
+    if (lastFail) { text += ' · refresh failed, showing the last list'; el.status.classList.add('stale'); }
+    el.statusText.textContent = text;
+  }
+
+  function render() {
+    renderStatus();
+    el.list.textContent = '';
+    el.cols.hidden = true;
+    if (!data) { el.count.textContent = lastFail ? 'Unavailable' : 'Loading…'; setNotice(null); return; }
+
+    var status = data.adoption && data.adoption.status;
+    if (minutesOld() > 60 * 24 * 365) {   // the placeholder file the board starts with
+      el.count.textContent = 'No list yet';
+      setNotice(['Nothing published yet.', 'The list appears as soon as the game and the bot are running.']);
+      return;
+    }
+    if (status !== 'ok') {
+      el.count.textContent = 'List unavailable';
+      setNotice(['Adoption tracking is offline right now.', 'The game can’t tell which colonists are taken, so the list is hidden rather than guessed. Check back in a few minutes.']);
+      return;
+    }
+
+    var q = el.q.value.trim().toLowerCase();
+    var shown = data.pawns.filter(function (p) { return !q || haystack(p).indexOf(q) !== -1; });
+    shown.sort(sorters[el.sort.value] || sorters.name);
+
+    el.count.textContent = (q ? shown.length + ' of ' : '') + data.pawns.length + ' unadopted pawn' + (data.pawns.length === 1 ? '' : 's');
+    if (!data.pawns.length) {
+      setNotice(['Everyone has a home.', 'Every colonist in the game has been adopted. New arrivals will show up here.']);
+      return;
+    }
+    if (!shown.length) { setNotice(['No match.', 'Nobody on the list matches “' + el.q.value.trim() + '”.']); return; }
+    setNotice(null);
+
+    el.cols.hidden = false;
+    var frag = document.createDocumentFragment();
+    shown.forEach(function (p) { frag.appendChild(pawnRow(p)); });
+    el.list.appendChild(frag);
+  }
+
+  el.q.addEventListener('input', render);
+  el.sort.addEventListener('change', render);
+  el.refresh.addEventListener('click', refresh);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden && Date.now() - lastOk > REFRESH_MS) refresh(); });
+  setInterval(function () { if (!document.hidden) refresh(); }, REFRESH_MS);
+  setInterval(renderStatus, 15000);   // keep "updated N min ago" moving between fetches
+  refresh();
+})();
+</script>
+</body>
+</html>
