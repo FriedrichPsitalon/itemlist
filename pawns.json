@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-04T03:54:25Z",
+  "updatedUtc": "2026-11-04T03:56:25Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -203,7 +203,7 @@
           "passion": 0
         },
         {
-          "skill": "Shooting",
+          "skill": "Social",
           "level": 3,
           "passion": 0
         }
