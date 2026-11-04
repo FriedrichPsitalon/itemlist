@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-04T02:49:24Z",
+  "updatedUtc": "2026-11-04T02:50:24Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -157,19 +157,31 @@
         },
         {
           "kind": "injury",
-          "label": "Crush",
-          "count": 1,
+          "label": "Bruise (human)",
+          "count": 2,
           "parts": [
+            "torso",
             "right leg"
           ]
         },
         {
           "kind": "injury",
-          "label": "Strike (human)",
+          "label": "Crush",
           "count": 2,
           "parts": [
+            "right leg",
+            "left arm"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Strike (human)",
+          "count": 4,
+          "parts": [
             "left lung",
-            "right arm"
+            "right arm",
+            "stomach",
+            "left shoulder"
           ]
         }
       ]
