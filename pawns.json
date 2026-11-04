@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-04T03:46:25Z",
+  "updatedUtc": "2026-11-04T03:48:25Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -324,7 +324,7 @@
           "passion": 0
         },
         {
-          "skill": "Melee",
+          "skill": "Crafting",
           "level": 1,
           "passion": 0
         }
