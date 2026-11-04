@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-04T02:19:24Z",
+  "updatedUtc": "2026-11-04T02:25:24Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 22,
+  "colonists": 19,
   "unadopted": 10,
   "pawns": [
     {
