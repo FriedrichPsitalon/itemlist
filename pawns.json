@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-04T02:48:24Z",
+  "updatedUtc": "2026-11-04T02:49:24Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -153,6 +153,23 @@
           "count": 1,
           "parts": [
             "left leg"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crush",
+          "count": 1,
+          "parts": [
+            "right leg"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Strike (human)",
+          "count": 2,
+          "parts": [
+            "left lung",
+            "right arm"
           ]
         }
       ]
