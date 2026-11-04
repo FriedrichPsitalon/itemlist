@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-04T01:56:23Z",
+  "updatedUtc": "2026-11-04T02:00:23Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -350,7 +350,8 @@
       "traits": [
         "Brave",
         "Absent-minded",
-        "Perfectionist"
+        "Perfectionist",
+        "Magically gifted"
       ],
       "passions": [
         {
