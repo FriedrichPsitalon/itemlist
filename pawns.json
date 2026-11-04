@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-04T02:43:24Z",
+  "updatedUtc": "2026-11-04T02:48:24Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -53,8 +53,8 @@
         }
       ],
       "incapable": [
-        "Mining",
         "Cooking",
+        "Mining",
         "Social"
       ],
       "health": []
@@ -193,19 +193,19 @@
       ],
       "topSkills": [
         {
-          "skill": "Melee",
-          "level": 4,
-          "passion": 0
-        },
-        {
           "skill": "Intellectual",
           "level": 4,
           "passion": 0
         },
         {
-          "skill": "Crafting",
-          "level": 2,
-          "passion": 1
+          "skill": "Melee",
+          "level": 4,
+          "passion": 0
+        },
+        {
+          "skill": "Shooting",
+          "level": 3,
+          "passion": 0
         }
       ],
       "incapable": [],
@@ -282,23 +282,23 @@
           "passion": 0
         },
         {
-          "skill": "Shooting",
+          "skill": "Social",
           "level": 0,
           "passion": 0
         },
         {
-          "skill": "Social",
+          "skill": "Crafting",
           "level": 0,
           "passion": 0
         }
       ],
       "incapable": [
-        "Artistic",
         "Mining",
-        "Medical",
-        "Cooking",
         "Construction",
-        "Plants"
+        "Cooking",
+        "Artistic",
+        "Plants",
+        "Medical"
       ],
       "health": []
     },
@@ -314,12 +314,12 @@
       "passions": [],
       "topSkills": [
         {
-          "skill": "Animals",
+          "skill": "Social",
           "level": 1,
           "passion": 0
         },
         {
-          "skill": "Social",
+          "skill": "Animals",
           "level": 1,
           "passion": 0
         },
@@ -330,12 +330,12 @@
         }
       ],
       "incapable": [
-        "Medical",
-        "Mining",
-        "Cooking",
-        "Construction",
         "Artistic",
-        "Plants"
+        "Plants",
+        "Mining",
+        "Medical",
+        "Construction",
+        "Cooking"
       ],
       "health": []
     },
@@ -453,8 +453,8 @@
         }
       ],
       "incapable": [
-        "Social",
-        "Medical"
+        "Medical",
+        "Social"
       ],
       "health": []
     },
