@@ -1,399 +1,67 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-04T04:02:25Z",
+  "updatedUtc": "2026-11-09T07:21:27Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 23,
-  "unadopted": 11,
+  "colonists": 3,
+  "unadopted": 3,
   "pawns": [
     {
-      "id": "Human1833284",
-      "name": "Gil 'Giggles' Durnin",
-      "nick": "Giggles",
-      "age": 32,
-      "gender": "Female",
-      "childhood": "Traumatized youth",
-      "adulthood": "Mental patient",
-      "traits": [
-        "Wanderlust",
-        "Tortured artist",
-        "Teetotaler"
-      ],
-      "passions": [
-        {
-          "skill": "Artistic",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 9,
-          "passion": 2
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Artistic",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 7,
-          "passion": 0
-        }
-      ],
-      "incapable": [
-        "Cooking",
-        "Mining",
-        "Social"
-      ],
-      "health": []
-    },
-    {
-      "id": "Human533153",
-      "name": "Wade Gibson",
-      "nick": "Wade",
-      "age": 14,
+      "id": "Human705",
+      "name": "Robert 'Duckie' Szott",
+      "nick": "Duckie",
+      "age": 50,
       "gender": "Male",
-      "childhood": "Colony child",
-      "adulthood": "Colonist",
+      "childhood": "Sickly child",
+      "adulthood": "Deep space miner",
       "traits": [
-        "Psychically deaf",
-        "Neat",
-        "Brave",
-        "Jogger",
-        "Brightmage"
+        "Lazy"
       ],
       "passions": [
         {
-          "skill": "Shooting",
-          "level": 16,
+          "skill": "Mining",
+          "level": 12,
           "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 0,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 16,
-          "passion": 1
-        },
-        {
-          "skill": "Construction",
-          "level": 11,
-          "passion": 1
-        },
-        {
-          "skill": "Intellectual",
-          "level": 11,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 0,
-          "passion": 1
-        },
-        {
-          "skill": "Animals",
-          "level": 0,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Shooting",
-          "level": 16,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 16,
-          "passion": 1
-        },
-        {
-          "skill": "Construction",
-          "level": 11,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "bionic",
-          "label": "Bionic eye",
-          "count": 1,
-          "parts": [
-            "left eye"
-          ]
-        },
-        {
-          "kind": "bionic",
-          "label": "Bionic hand",
-          "count": 2,
-          "parts": [
-            "right hand",
-            "left hand"
-          ]
-        },
-        {
-          "kind": "bionic",
-          "label": "Bionic leg",
-          "count": 1,
-          "parts": [
-            "left leg"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human2193517",
-      "name": "Poinug 'Warthog' Maen",
-      "nick": "Warthog",
-      "age": 11,
-      "gender": "Male",
-      "childhood": "Child",
-      "adulthood": null,
-      "traits": [
-        "Rebel",
-        "Perfectionist"
-      ],
-      "passions": [
-        {
-          "skill": "Crafting",
-          "level": 2,
-          "passion": 1
         },
         {
           "skill": "Medical",
-          "level": 1,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 1,
-          "passion": 1
-        },
-        {
-          "skill": "Cooking",
-          "level": 0,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Intellectual",
-          "level": 4,
-          "passion": 0
-        },
-        {
-          "skill": "Melee",
-          "level": 4,
-          "passion": 0
-        },
-        {
-          "skill": "Social",
-          "level": 3,
-          "passion": 0
-        }
-      ],
-      "incapable": [],
-      "health": []
-    },
-    {
-      "id": "Human2232364",
-      "name": "Szron Jifoiv",
-      "nick": "Jifoiv",
-      "age": 49,
-      "gender": "Male",
-      "childhood": "Fire keeper",
-      "adulthood": "Butcher",
-      "traits": [
-        "Xenophobe",
-        "Snob"
-      ],
-      "passions": [
-        {
-          "skill": "Animals",
           "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Cooking",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Crafting",
-          "level": 6,
           "passion": 2
         },
         {
           "skill": "Intellectual",
           "level": 6,
           "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Animals",
-          "level": 11,
-          "passion": 2
         },
         {
           "skill": "Cooking",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Crafting",
-          "level": 6,
-          "passion": 2
-        }
-      ],
-      "incapable": [],
-      "health": []
-    },
-    {
-      "id": "Human2188977",
-      "name": "Legalia Durnin",
-      "nick": "Durnin",
-      "age": 4,
-      "gender": "Female",
-      "childhood": "Child",
-      "adulthood": null,
-      "traits": [],
-      "passions": [],
-      "topSkills": [
-        {
-          "skill": "Melee",
-          "level": 2,
-          "passion": 0
-        },
-        {
-          "skill": "Social",
-          "level": 0,
-          "passion": 0
-        },
-        {
-          "skill": "Crafting",
-          "level": 0,
-          "passion": 0
-        }
-      ],
-      "incapable": [
-        "Mining",
-        "Construction",
-        "Cooking",
-        "Artistic",
-        "Plants",
-        "Medical"
-      ],
-      "health": []
-    },
-    {
-      "id": "Human2188981",
-      "name": "Archie 'Prissy' Durnin",
-      "nick": "Prissy",
-      "age": 4,
-      "gender": "Female",
-      "childhood": "Child",
-      "adulthood": null,
-      "traits": [],
-      "passions": [],
-      "topSkills": [
-        {
-          "skill": "Social",
-          "level": 1,
-          "passion": 0
-        },
-        {
-          "skill": "Animals",
-          "level": 1,
-          "passion": 0
-        },
-        {
-          "skill": "Crafting",
-          "level": 1,
-          "passion": 0
-        }
-      ],
-      "incapable": [
-        "Artistic",
-        "Plants",
-        "Mining",
-        "Medical",
-        "Construction",
-        "Cooking"
-      ],
-      "health": []
-    },
-    {
-      "id": "Human2095108",
-      "name": "Masaru Mosley",
-      "nick": "Masaru",
-      "age": 23,
-      "gender": "Male",
-      "childhood": "Shelter child",
-      "adulthood": "Machine collector",
-      "traits": [
-        "Brave",
-        "Absent-minded",
-        "Perfectionist",
-        "Enchanter"
-      ],
-      "passions": [
-        {
-          "skill": "Intellectual",
-          "level": 20,
-          "passion": 2
-        },
-        {
-          "skill": "Crafting",
-          "level": 11,
-          "passion": 1
-        },
-        {
-          "skill": "Shooting",
-          "level": 11,
-          "passion": 1
-        },
-        {
-          "skill": "Medical",
-          "level": 6,
-          "passion": 1
-        },
-        {
-          "skill": "Melee",
           "level": 5,
           "passion": 1
+        },
+        {
+          "skill": "Construction",
+          "level": 4,
+          "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Intellectual",
-          "level": 20,
+          "skill": "Mining",
+          "level": 12,
           "passion": 2
         },
         {
-          "skill": "Crafting",
+          "skill": "Medical",
           "level": 11,
-          "passion": 1
+          "passion": 2
         },
         {
-          "skill": "Shooting",
-          "level": 11,
+          "skill": "Intellectual",
+          "level": 6,
           "passion": 1
         }
       ],
@@ -401,236 +69,107 @@
       "health": []
     },
     {
-      "id": "Human2813132",
-      "name": "Twitch 'TwoTesh' #Teshuwenzi",
-      "nick": "TwoTesh",
-      "age": 36,
+      "id": "Human708",
+      "name": "Eleanor 'Ellie' Pickle",
+      "nick": "Ellie",
+      "age": 30,
       "gender": "Female",
-      "childhood": "Vatgrown soldier",
-      "adulthood": "Escaped convict",
+      "childhood": "Coma child",
+      "adulthood": "Medieval sailor",
       "traits": [
-        "Psychopath",
-        "Night owl",
-        "Arcane mage"
+        "Mountain lover",
+        "Psychopath"
       ],
       "passions": [
         {
-          "skill": "Mining",
-          "level": 17,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 15,
+          "skill": "Social",
+          "level": 9,
           "passion": 2
         },
         {
           "skill": "Melee",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 17,
+          "level": 8,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Mining",
-          "level": 17,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 17,
-          "passion": 1
-        },
-        {
-          "skill": "Shooting",
-          "level": 15,
-          "passion": 2
-        }
-      ],
-      "incapable": [
-        "Medical",
-        "Social"
-      ],
-      "health": []
-    },
-    {
-      "id": "Human500442",
-      "name": "Twitch 'Teshuwenzi' #Teshuwenzi",
-      "nick": "Teshuwenzi",
-      "age": 36,
-      "gender": "Female",
-      "childhood": "Vatgrown soldier",
-      "adulthood": "Escaped convict",
-      "traits": [
-        "Psychopath",
-        "Night owl",
-        "Arcane mage"
-      ],
-      "passions": [
-        {
-          "skill": "Mining",
-          "level": 19,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 15,
+          "skill": "Social",
+          "level": 9,
           "passion": 2
         },
         {
           "skill": "Melee",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 16,
+          "level": 8,
           "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Mining",
-          "level": 19,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 16,
-          "passion": 1
-        },
-        {
-          "skill": "Shooting",
-          "level": 15,
-          "passion": 2
-        }
-      ],
-      "incapable": [
-        "Social",
-        "Medical"
-      ],
-      "health": [
-        {
-          "kind": "bionic",
-          "label": "Hook hand",
-          "count": 1,
-          "parts": [
-            "right hand"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human1676175",
-      "name": "Squorg 'Wart' Poipoilag",
-      "nick": "Wart",
-      "age": 45,
-      "gender": "Female",
-      "childhood": "Sickly child",
-      "adulthood": "Forester",
-      "traits": [
-        "Kind"
-      ],
-      "passions": [
-        {
-          "skill": "Intellectual",
-          "level": 18,
-          "passion": 2
-        },
-        {
-          "skill": "Medical",
-          "level": 15,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 13,
-          "passion": 2
         },
         {
           "skill": "Animals",
-          "level": 3,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 2,
-          "passion": 1
-        },
-        {
-          "skill": "Cooking",
-          "level": 0,
-          "passion": 1
+          "level": 6,
+          "passion": 0
         }
       ],
-      "topSkills": [
-        {
-          "skill": "Intellectual",
-          "level": 18,
-          "passion": 2
-        },
-        {
-          "skill": "Medical",
-          "level": 15,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 13,
-          "passion": 2
-        }
+      "incapable": [
+        "Construction",
+        "Mining",
+        "Cooking",
+        "Plants",
+        "Crafting"
       ],
-      "incapable": [],
       "health": []
     },
     {
-      "id": "Human3198748",
-      "name": "Antoinette Idir",
-      "nick": "Antoinette",
+      "id": "Human711",
+      "name": "Naomi Francis",
+      "nick": "Naomi",
       "age": 40,
       "gender": "Female",
-      "childhood": "Cult child",
-      "adulthood": "Message carrier",
+      "childhood": "Musical kid",
+      "adulthood": "Urbworld entrepreneur",
       "traits": [
-        "Nudist",
-        "Snob"
+        "Very neurotic",
+        "Academian"
       ],
       "passions": [
         {
-          "skill": "Artistic",
-          "level": 9,
+          "skill": "Medical",
+          "level": 4,
           "passion": 2
         },
         {
-          "skill": "Animals",
-          "level": 7,
-          "passion": 2
+          "skill": "Intellectual",
+          "level": 10,
+          "passion": 1
         }
       ],
       "topSkills": [
         {
+          "skill": "Intellectual",
+          "level": 10,
+          "passion": 1
+        },
+        {
           "skill": "Artistic",
-          "level": 9,
-          "passion": 2
+          "level": 10,
+          "passion": 0
         },
         {
-          "skill": "Animals",
+          "skill": "Social",
           "level": 7,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 5,
           "passion": 0
         }
       ],
       "incapable": [],
-      "health": []
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Stab scar",
+          "count": 1,
+          "parts": [
+            "left arm"
+          ]
+        }
+      ]
     }
   ]
 }
