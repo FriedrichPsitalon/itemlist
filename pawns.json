@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-10T02:42:45Z",
+  "updatedUtc": "2026-11-10T02:48:45Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -121,8 +121,8 @@
         }
       ],
       "incapable": [
-        "Social",
-        "Medical"
+        "Medical",
+        "Social"
       ],
       "health": [
         {
@@ -338,9 +338,9 @@
         }
       ],
       "incapable": [
-        "Social",
         "Medical",
-        "Artistic"
+        "Artistic",
+        "Social"
       ],
       "health": []
     },
@@ -421,7 +421,7 @@
         },
         {
           "skill": "Intellectual",
-          "level": 12,
+          "level": 13,
           "passion": 1
         },
         {
@@ -430,12 +430,12 @@
           "passion": 1
         },
         {
-          "skill": "Artistic",
+          "skill": "Animals",
           "level": 0,
           "passion": 1
         },
         {
-          "skill": "Animals",
+          "skill": "Artistic",
           "level": 0,
           "passion": 1
         }
@@ -453,7 +453,7 @@
         },
         {
           "skill": "Intellectual",
-          "level": 12,
+          "level": 13,
           "passion": 1
         }
       ],
@@ -522,17 +522,17 @@
       ],
       "topSkills": [
         {
-          "skill": "Intellectual",
-          "level": 5,
-          "passion": 0
-        },
-        {
           "skill": "Melee",
           "level": 5,
           "passion": 0
         },
         {
-          "skill": "Social",
+          "skill": "Intellectual",
+          "level": 5,
+          "passion": 0
+        },
+        {
+          "skill": "Shooting",
           "level": 3,
           "passion": 0
         }
@@ -557,23 +557,23 @@
           "passion": 0
         },
         {
-          "skill": "Animals",
+          "skill": "Shooting",
           "level": 1,
           "passion": 0
         },
         {
-          "skill": "Shooting",
+          "skill": "Animals",
           "level": 1,
           "passion": 0
         }
       ],
       "incapable": [
-        "Mining",
+        "Medical",
         "Construction",
         "Cooking",
         "Artistic",
         "Plants",
-        "Medical"
+        "Mining"
       ],
       "health": []
     },
@@ -651,23 +651,23 @@
           "passion": 0
         },
         {
-          "skill": "Social",
+          "skill": "Crafting",
           "level": 1,
           "passion": 0
         },
         {
-          "skill": "Animals",
+          "skill": "Social",
           "level": 1,
           "passion": 0
         }
       ],
       "incapable": [
         "Artistic",
-        "Plants",
-        "Mining",
         "Medical",
+        "Plants",
+        "Cooking",
         "Construction",
-        "Cooking"
+        "Mining"
       ],
       "health": []
     },
@@ -775,8 +775,8 @@
         }
       ],
       "incapable": [
-        "Cooking",
         "Mining",
+        "Cooking",
         "Social"
       ],
       "health": []
