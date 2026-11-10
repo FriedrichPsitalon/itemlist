@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-10T01:12:44Z",
+  "updatedUtc": "2026-11-10T01:13:44Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -470,7 +470,7 @@
       "traits": [
         "Perfectionist",
         "Teetotaler",
-        "Physically adept"
+        "Shadow"
       ],
       "passions": [
         {
