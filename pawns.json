@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-10T03:11:45Z",
+  "updatedUtc": "2026-11-10T03:12:45Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 25,
-  "unadopted": 13,
+  "colonists": 26,
+  "unadopted": 14,
   "pawns": [
     {
       "id": "Human2813132",
@@ -780,6 +780,43 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Human3486496",
+      "name": "Baby #Rynyk",
+      "nick": "#Rynyk",
+      "age": 0,
+      "gender": "Male",
+      "childhood": "Newborn",
+      "adulthood": null,
+      "traits": [],
+      "passions": [],
+      "topSkills": [
+        {
+          "skill": "Shooting",
+          "level": 0,
+          "passion": 0
+        },
+        {
+          "skill": "Melee",
+          "level": 0,
+          "passion": 0
+        },
+        {
+          "skill": "Animals",
+          "level": 0,
+          "passion": 0
+        }
+      ],
+      "incapable": [
+        "Construction",
+        "Mining",
+        "Cooking",
+        "Plants",
+        "Artistic",
+        "Medical"
+      ],
+      "health": []
     }
   ]
 }
