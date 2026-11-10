@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-10T02:14:45Z",
+  "updatedUtc": "2026-11-10T02:15:45Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -312,7 +312,7 @@
       "childhood": "Child",
       "adulthood": null,
       "traits": [
-        "Magically gifted"
+        "Paladin"
       ],
       "passions": [],
       "topSkills": [
