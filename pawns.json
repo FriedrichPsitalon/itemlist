@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-10T01:49:44Z",
+  "updatedUtc": "2026-11-10T01:52:44Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -707,22 +707,6 @@
           "count": 1,
           "parts": [
             "left hand"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bruise (heavy SMG grip)",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Crack (heavy SMG grip)",
-          "count": 1,
-          "parts": [
-            "ribcage"
           ]
         }
       ]
