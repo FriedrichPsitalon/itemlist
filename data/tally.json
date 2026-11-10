@@ -4,7 +4,7 @@
   "wand of fire": 3,
   "shroud of the soulreaper": 7,
   "druid spell: regrow limb": 1,
-  "unrefined magicyte": 1500,
+  "unrefined magicyte": 5496,
   "Revive random pawn": 2,
   "necrotic orb": 2,
   "couch": 1,
@@ -25,7 +25,7 @@
   "body modder": 1,
   "archotech eye": 2,
   "reinforced barrel": 2,
-  "Military aid": 2,
+  "Military aid": 3,
   "Fire mage": 1,
   "thick skinned": 1,
   "major arcane gem of regeneration": 1,
@@ -119,5 +119,7 @@
   "otters": 12,
   "animal beds": 12,
   "unrefined magicytes": 999,
-  "nutrient paste meals": 10
+  "nutrient paste meals": 10,
+  "unique minigun": 1,
+  "serketist slab (medium)": 1
 }
