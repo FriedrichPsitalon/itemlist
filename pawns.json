@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-10T01:10:44Z",
+  "updatedUtc": "2026-11-10T01:12:44Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -469,7 +469,8 @@
       "adulthood": "Plank cutter",
       "traits": [
         "Perfectionist",
-        "Teetotaler"
+        "Teetotaler",
+        "Physically adept"
       ],
       "passions": [
         {
