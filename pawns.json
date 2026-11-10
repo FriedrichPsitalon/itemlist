@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-10T01:06:44Z",
+  "updatedUtc": "2026-11-10T01:10:44Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -609,7 +609,7 @@
       "adulthood": "Forester",
       "traits": [
         "Kind",
-        "Magically gifted"
+        "Priest"
       ],
       "passions": [
         {
@@ -660,7 +660,10 @@
           "passion": 2
         }
       ],
-      "incapable": [],
+      "incapable": [
+        "Melee",
+        "Shooting"
+      ],
       "health": []
     },
     {
