@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-10T03:06:45Z",
+  "updatedUtc": "2026-11-10T03:11:45Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -519,7 +519,7 @@
       "passions": [
         {
           "skill": "Cooking",
-          "level": 12,
+          "level": 13,
           "passion": 2
         },
         {
@@ -541,7 +541,7 @@
       "topSkills": [
         {
           "skill": "Cooking",
-          "level": 12,
+          "level": 13,
           "passion": 2
         },
         {
