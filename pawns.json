@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-10T02:12:45Z",
+  "updatedUtc": "2026-11-10T02:14:45Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -311,7 +311,9 @@
       "gender": "Female",
       "childhood": "Child",
       "adulthood": null,
-      "traits": [],
+      "traits": [
+        "Magically gifted"
+      ],
       "passions": [],
       "topSkills": [
         {
