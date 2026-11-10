@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-10T03:35:46Z",
+  "updatedUtc": "2026-11-10T03:36:13Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 24,
-  "unadopted": 13,
+  "colonists": 26,
+  "unadopted": 14,
   "pawns": [
     {
       "id": "Human2813132",
@@ -201,14 +201,7 @@
         "Artistic",
         "Social"
       ],
-      "health": [
-        {
-          "kind": "missing",
-          "label": "Missing right arm",
-          "count": 1,
-          "parts": []
-        }
-      ]
+      "health": []
     },
     {
       "id": "Human3198748",
@@ -404,6 +397,45 @@
         }
       ],
       "incapable": [],
+      "health": []
+    },
+    {
+      "id": "Human2188977",
+      "name": "Legalia Durnin",
+      "nick": "Durnin",
+      "age": 5,
+      "gender": "Female",
+      "childhood": "Child",
+      "adulthood": null,
+      "traits": [
+        "Fire mage"
+      ],
+      "passions": [],
+      "topSkills": [
+        {
+          "skill": "Melee",
+          "level": 2,
+          "passion": 0
+        },
+        {
+          "skill": "Shooting",
+          "level": 1,
+          "passion": 0
+        },
+        {
+          "skill": "Animals",
+          "level": 1,
+          "passion": 0
+        }
+      ],
+      "incapable": [
+        "Medical",
+        "Construction",
+        "Cooking",
+        "Artistic",
+        "Plants",
+        "Mining"
+      ],
       "health": []
     },
     {
@@ -749,17 +781,7 @@
         "Melee",
         "Shooting"
       ],
-      "health": [
-        {
-          "kind": "injury",
-          "label": "Holy Wrath",
-          "count": 2,
-          "parts": [
-            "torso",
-            "left arm"
-          ]
-        }
-      ]
+      "health": []
     },
     {
       "id": "Human3486496",
