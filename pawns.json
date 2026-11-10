@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-10T01:03:44Z",
+  "updatedUtc": "2026-11-10T01:06:44Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -608,7 +608,8 @@
       "childhood": "Sickly child",
       "adulthood": "Forester",
       "traits": [
-        "Kind"
+        "Kind",
+        "Magically gifted"
       ],
       "passions": [
         {
