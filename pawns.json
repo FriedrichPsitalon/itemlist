@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-10T03:14:45Z",
+  "updatedUtc": "2026-11-10T03:15:45Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -408,7 +408,7 @@
       "childhood": "Child",
       "adulthood": null,
       "traits": [
-        "Magically gifted"
+        "Fire mage"
       ],
       "passions": [],
       "topSkills": [
@@ -785,7 +785,7 @@
     },
     {
       "id": "Human3486496",
-      "name": "Baby #Rynyk",
+      "name": "Rock #Rynyk",
       "nick": "#Rynyk",
       "age": 0,
       "gender": "Male",
