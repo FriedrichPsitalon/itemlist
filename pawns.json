@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-11T01:16:30Z",
+  "updatedUtc": "2026-11-11T01:22:30Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -640,7 +640,25 @@
         "Cooking",
         "Social"
       ],
-      "health": []
+      "health": [
+        {
+          "kind": "injury",
+          "label": "Bruise (assault rifle)",
+          "count": 1,
+          "parts": [
+            "left leg"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Gunshot (assault rifle)",
+          "count": 2,
+          "parts": [
+            "right arm",
+            "left leg"
+          ]
+        }
+      ]
     },
     {
       "id": "Human2885381",
