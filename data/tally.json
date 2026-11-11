@@ -1,11 +1,11 @@
 {
   "marble golem": 1,
-  "steel": 1024,
+  "steel": 2023,
   "wand of fire": 3,
   "shroud of the soulreaper": 7,
   "druid spell: regrow limb": 1,
   "unrefined magicyte": 5496,
-  "Revive random pawn": 2,
+  "Revive random pawn": 3,
   "necrotic orb": 2,
   "couch": 1,
   "piranha": 2,
@@ -79,7 +79,7 @@
   "mastodon": 2,
   "eltex helmet": 1,
   "christmas tree": 1,
-  "archean seed": 2,
+  "archean seed": 14,
   "gastronomist": 1,
   "gourmand": 1,
   "Weather rain": 1,
@@ -121,5 +121,12 @@
   "unrefined magicytes": 999,
   "nutrient paste meals": 10,
   "unique minigun": 1,
-  "serketist slab (medium)": 1
+  "serketist slab (medium)": 1,
+  "ancient mining charge": 10,
+  "chess table": 1,
+  "armchair": 4,
+  "glitterworld medicine": 100,
+  "tanning rack": 3,
+  "xenogerm": 1,
+  "logs": 5
 }
