@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-11T03:40:20Z",
+  "updatedUtc": "2026-11-11T03:41:20Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -72,15 +72,6 @@
           "count": 1,
           "parts": [
             "right ear"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bruise (human)",
-          "count": 2,
-          "parts": [
-            "right leg",
-            "left leg"
           ]
         }
       ]
