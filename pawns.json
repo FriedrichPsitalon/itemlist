@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-11T01:39:30Z",
+  "updatedUtc": "2026-11-11T01:41:30Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -349,7 +349,7 @@
       "id": "Human2193517",
       "name": "Poinug 'Warthog' Maen",
       "nick": "Warthog",
-      "age": 11,
+      "age": 12,
       "gender": "Male",
       "childhood": "Child",
       "adulthood": null,
