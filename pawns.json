@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-11T03:53:21Z",
+  "updatedUtc": "2026-11-11T03:56:21Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -14,7 +14,7 @@
       "id": "Human3664395",
       "name": "Tristen 'Trus' Morgan",
       "nick": "Trus",
-      "age": 37,
+      "age": 38,
       "gender": "Male",
       "childhood": "Abandoned child",
       "adulthood": "Herder",
