@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T02:12:14Z",
+  "updatedUtc": "2026-11-16T02:17:14Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -135,6 +135,14 @@
           "count": 1,
           "parts": [
             "torso"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (frag grenades)",
+          "count": 1,
+          "parts": [
+            "left leg"
           ]
         }
       ]
