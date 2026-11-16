@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:47:13Z",
+  "updatedUtc": "2026-11-16T06:48:13Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 3,
-  "unadopted": 3,
+  "colonists": 4,
+  "unadopted": 4,
   "pawns": [
     {
       "id": "Human164",
@@ -221,6 +221,94 @@
       ],
       "incapable": [],
       "health": []
+    },
+    {
+      "id": "Human38682",
+      "name": "Lilith Luxemburg",
+      "nick": "Luxemburg",
+      "age": 64,
+      "gender": "Female",
+      "childhood": "High baroness",
+      "adulthood": "Exiled researcher",
+      "traits": [
+        "Drunken master",
+        "Psychically dull"
+      ],
+      "passions": [
+        {
+          "skill": "Social",
+          "level": 17,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 16,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 14,
+          "passion": 1
+        },
+        {
+          "skill": "Medical",
+          "level": 12,
+          "passion": 1
+        },
+        {
+          "skill": "Shooting",
+          "level": 10,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Social",
+          "level": 17,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 16,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 14,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": [
+        {
+          "kind": "missing",
+          "label": "Missing left middle finger",
+          "count": 1,
+          "parts": []
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (human fist)",
+          "count": 6,
+          "parts": [
+            "left arm",
+            "left hand",
+            "left leg",
+            "head",
+            "torso"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crack (human fist)",
+          "count": 3,
+          "parts": [
+            "skull",
+            "pelvis",
+            "spine"
+          ]
+        }
+      ]
     }
   ]
 }
