@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:36:37Z",
+  "updatedUtc": "2026-11-16T06:38:27Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,171 +11,173 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human728",
-      "name": "Keaton Roach",
-      "nick": "Roach",
-      "age": 18,
-      "gender": "Female",
-      "childhood": "Caveworld tender",
-      "adulthood": null,
+      "id": "Human307",
+      "name": "Martin 'Sheo' Totzke",
+      "nick": "Sheo",
+      "age": 37,
+      "gender": "Male",
+      "childhood": "Caveworld tunneler",
+      "adulthood": "Urbworld rebel",
       "traits": [
-        "Undergrounder"
+        "Undergrounder",
+        "Hard worker"
       ],
       "passions": [
         {
           "skill": "Mining",
-          "level": 7,
+          "level": 12,
           "passion": 2
         },
         {
-          "skill": "Plants",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 4,
+          "skill": "Construction",
+          "level": 9,
           "passion": 1
         },
         {
-          "skill": "Animals",
-          "level": 4,
+          "skill": "Melee",
+          "level": 7,
           "passion": 1
         }
       ],
       "topSkills": [
         {
           "skill": "Mining",
-          "level": 7,
+          "level": 12,
           "passion": 2
         },
         {
-          "skill": "Plants",
-          "level": 6,
-          "passion": 2
+          "skill": "Construction",
+          "level": 9,
+          "passion": 1
         },
         {
           "skill": "Melee",
-          "level": 4,
+          "level": 7,
           "passion": 1
         }
       ],
-      "incapable": [],
+      "incapable": [
+        "Crafting",
+        "Intellectual"
+      ],
+      "health": []
+    },
+    {
+      "id": "Human311",
+      "name": "Alyssa 'Sparkles' Orchard",
+      "nick": "Sparkles",
+      "age": 54,
+      "gender": "Female",
+      "childhood": "Coreworld student",
+      "adulthood": "Coreworld jeweler",
+      "traits": [
+        "Slothful",
+        "Neat",
+        "Stoner"
+      ],
+      "passions": [
+        {
+          "skill": "Crafting",
+          "level": 15,
+          "passion": 1
+        },
+        {
+          "skill": "Artistic",
+          "level": 14,
+          "passion": 1
+        },
+        {
+          "skill": "Construction",
+          "level": 10,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 6,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Crafting",
+          "level": 15,
+          "passion": 1
+        },
+        {
+          "skill": "Artistic",
+          "level": 14,
+          "passion": 1
+        },
+        {
+          "skill": "Construction",
+          "level": 10,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Cooking",
+        "Plants"
+      ],
       "health": [
         {
+          "kind": "scar",
+          "label": "Stab scar",
+          "count": 1,
+          "parts": [
+            "left arm"
+          ]
+        },
+        {
           "kind": "addiction",
-          "label": "Smokeleaf dependence (36%)",
+          "label": "Smokeleaf dependence (50%)",
           "count": 1,
           "parts": []
         }
       ]
     },
     {
-      "id": "Human732",
-      "name": "Joshua 'Zug' Hamby",
-      "nick": "Zug",
+      "id": "Human316",
+      "name": "Nina Galloway",
+      "nick": "Nina",
       "age": 13,
-      "gender": "Male",
-      "childhood": "Hex-cell artist",
+      "gender": "Female",
+      "childhood": "Caveworld tender",
       "adulthood": null,
       "traits": [
-        "Beautiful",
-        "Squeamish",
-        "Clumsy"
+        "Undergrounder",
+        "Refined palate"
       ],
       "passions": [
         {
-          "skill": "Artistic",
+          "skill": "Plants",
           "level": 4,
           "passion": 2
         },
         {
-          "skill": "Cooking",
+          "skill": "Melee",
           "level": 3,
           "passion": 2
         },
         {
-          "skill": "Plants",
+          "skill": "Mining",
           "level": 3,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 2,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Artistic",
+          "skill": "Plants",
           "level": 4,
           "passion": 2
         },
         {
-          "skill": "Cooking",
+          "skill": "Melee",
           "level": 3,
           "passion": 2
         },
         {
-          "skill": "Plants",
+          "skill": "Mining",
           "level": 3,
-          "passion": 2
-        }
-      ],
-      "incapable": [
-        "Intellectual"
-      ],
-      "health": []
-    },
-    {
-      "id": "Human735",
-      "name": "Anatoly Cline",
-      "nick": "Cline",
-      "age": 53,
-      "gender": "Male",
-      "childhood": "Wreckage explorer",
-      "adulthood": "Corporate drone",
-      "traits": [
-        "Body purist",
-        "Dog person",
-        "Chemical interest"
-      ],
-      "passions": [
-        {
-          "skill": "Intellectual",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Animals",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 6,
-          "passion": 1
-        },
-        {
-          "skill": "Social",
-          "level": 6,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Intellectual",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Animals",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 6,
           "passion": 1
         }
       ],
