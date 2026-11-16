@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T02:20:14Z",
+  "updatedUtc": "2026-11-16T02:24:14Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 8,
-  "unadopted": 2,
+  "colonists": 9,
+  "unadopted": 3,
   "pawns": [
     {
       "id": "Human3738935",
@@ -135,6 +135,72 @@
           "count": 1,
           "parts": [
             "torso"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human3607321",
+      "name": "Appa Onek",
+      "nick": "Onek",
+      "age": 45,
+      "gender": "Female",
+      "childhood": "Vatgrown soldier",
+      "adulthood": "Sheriff",
+      "traits": [
+        "Trigger-happy",
+        "Bloodlust"
+      ],
+      "passions": [
+        {
+          "skill": "Shooting",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 3,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
+          "level": 3,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Shooting",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 3,
+          "passion": 2
+        }
+      ],
+      "incapable": [
+        "Medical",
+        "Social"
+      ],
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Old gunshot",
+          "count": 1,
+          "parts": [
+            "right leg"
           ]
         }
       ]
