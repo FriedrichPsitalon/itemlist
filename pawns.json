@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:43:15Z",
+  "updatedUtc": "2026-11-16T06:44:32Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,205 +11,199 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human160",
-      "name": "Sarah 'Four Eyes' Renault",
-      "nick": "Four Eyes",
-      "age": 47,
-      "gender": "Female",
-      "childhood": "Aspiring physicist",
-      "adulthood": "Deep space surveyor",
+      "id": "Human782",
+      "name": "Caverlorn 'Cave' Hunter",
+      "nick": "Cave",
+      "age": 43,
+      "gender": "Male",
+      "childhood": "Military recruit",
+      "adulthood": "Destroyer-general",
       "traits": [
-        "Vengeful",
-        "Annoying voice"
+        "Delicate",
+        "Slowpoke",
+        "Fun-loving",
+        "Asexual"
+      ],
+      "passions": [
+        {
+          "skill": "Shooting",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 8,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Shooting",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 8,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Medical"
+      ],
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Bite scar",
+          "count": 1,
+          "parts": [
+            "left arm"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Old gunshot",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human786",
+      "name": "Gavril Acevedo",
+      "nick": "Acevedo",
+      "age": 56,
+      "gender": "Male",
+      "childhood": "Wreckage explorer",
+      "adulthood": "Medieval doctor",
+      "traits": [
+        "Tough",
+        "Jealous"
       ],
       "passions": [
         {
           "skill": "Intellectual",
-          "level": 11,
-          "passion": 1
+          "level": 10,
+          "passion": 2
         },
         {
-          "skill": "Construction",
-          "level": 9,
-          "passion": 1
-        },
-        {
-          "skill": "Crafting",
+          "skill": "Melee",
           "level": 7,
-          "passion": 1
+          "passion": 2
         },
         {
-          "skill": "Shooting",
-          "level": 6,
+          "skill": "Animals",
+          "level": 7,
           "passion": 1
         }
       ],
       "topSkills": [
         {
           "skill": "Intellectual",
-          "level": 11,
-          "passion": 1
+          "level": 10,
+          "passion": 2
         },
         {
-          "skill": "Construction",
-          "level": 9,
-          "passion": 1
+          "skill": "Melee",
+          "level": 7,
+          "passion": 2
         },
         {
-          "skill": "Crafting",
+          "skill": "Animals",
           "level": 7,
           "passion": 1
         }
       ],
+      "incapable": [],
+      "health": [
+        {
+          "kind": "chronic",
+          "label": "Artery blockage (minor)",
+          "count": 1,
+          "parts": [
+            "heart"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human790",
+      "name": "Jiaxin 'Amelia' Tang",
+      "nick": "Amelia",
+      "age": 54,
+      "gender": "Female",
+      "childhood": "Mute",
+      "adulthood": "Human computer",
+      "traits": [
+        "Pyromaniac",
+        "Slow learner",
+        "Prude"
+      ],
+      "passions": [
+        {
+          "skill": "Animals",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 5,
+          "passion": 1
+        },
+        {
+          "skill": "Construction",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Animals",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 5,
+          "passion": 1
+        }
+      ],
       "incapable": [
-        "Cooking",
-        "Medical"
+        "Artistic",
+        "Social"
       ],
       "health": [
         {
           "kind": "scar",
-          "label": "Scratch scar",
-          "count": 1,
-          "parts": [
-            "right leg"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Scratch scar (painful)",
+          "label": "Stab scar",
           "count": 1,
           "parts": [
             "right arm"
           ]
         }
       ]
-    },
-    {
-      "id": "Human163",
-      "name": "Ruben Salat",
-      "nick": "Ruben",
-      "age": 29,
-      "gender": "Male",
-      "childhood": "Story writer",
-      "adulthood": "Geologist",
-      "traits": [
-        "Lush",
-        "Rebel",
-        "Slothful"
-      ],
-      "passions": [
-        {
-          "skill": "Mining",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Crafting",
-          "level": 7,
-          "passion": 2
-        },
-        {
-          "skill": "Artistic",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Mining",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Crafting",
-          "level": 7,
-          "passion": 2
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "scar",
-          "label": "Scratch scar",
-          "count": 1,
-          "parts": [
-            "right leg"
-          ]
-        },
-        {
-          "kind": "addiction",
-          "label": "Alcohol addiction (50%)",
-          "count": 1,
-          "parts": []
-        }
-      ]
-    },
-    {
-      "id": "Human167",
-      "name": "Penelope 'Slick' Bradley",
-      "nick": "Slick",
-      "age": 37,
-      "gender": "Female",
-      "childhood": "Pyromaniac",
-      "adulthood": "Conceptual artist",
-      "traits": [
-        "Pyromaniac",
-        "Anxious"
-      ],
-      "passions": [
-        {
-          "skill": "Artistic",
-          "level": 15,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Intellectual",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Melee",
-          "level": 2,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Artistic",
-          "level": 15,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Intellectual",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Medical",
-        "Social"
-      ],
-      "health": []
     }
   ]
 }
