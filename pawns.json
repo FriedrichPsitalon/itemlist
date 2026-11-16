@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:18:47Z",
+  "updatedUtc": "2026-11-16T06:19:50Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,183 +11,114 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human1010",
-      "name": "Samantha 'Sam' Haxton",
-      "nick": "Sam",
-      "age": 23,
-      "gender": "Female",
-      "childhood": "Ranger child",
-      "adulthood": "Bush sniper",
+      "id": "Human897",
+      "name": "Shigeru 'Bicep' Frank",
+      "nick": "Bicep",
+      "age": 30,
+      "gender": "Male",
+      "childhood": "Mute",
+      "adulthood": "Taxonomist",
       "traits": [
-        "Careful shooter",
-        "Body modder",
-        "Sanguine"
+        "Pretty"
       ],
       "passions": [
         {
           "skill": "Animals",
-          "level": 12,
+          "level": 13,
           "passion": 2
         },
         {
-          "skill": "Shooting",
-          "level": 9,
+          "skill": "Plants",
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Artistic",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Mining",
+          "level": 3,
+          "passion": 1
+        },
+        {
+          "skill": "Construction",
+          "level": 2,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Animals",
+          "level": 13,
           "passion": 2
         },
         {
-          "skill": "Cooking",
-          "level": 7,
-          "passion": 2
+          "skill": "Plants",
+          "level": 8,
+          "passion": 1
         },
         {
-          "skill": "Social",
+          "skill": "Artistic",
           "level": 4,
           "passion": 1
         }
       ],
-      "topSkills": [
-        {
-          "skill": "Animals",
-          "level": 12,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Cooking",
-          "level": 7,
-          "passion": 2
-        }
-      ],
       "incapable": [
-        "Plants",
-        "Medical"
-      ],
-      "health": [
-        {
-          "kind": "addiction",
-          "label": "Alcohol addiction (16%)",
-          "count": 1,
-          "parts": []
-        }
-      ]
-    },
-    {
-      "id": "Human1014",
-      "name": "Matis 'Darkeye' Saro",
-      "nick": "Darkeye",
-      "age": 32,
-      "gender": "Male",
-      "childhood": "Student socialite",
-      "adulthood": "Political assassin",
-      "traits": [
-        "Iron-willed"
-      ],
-      "passions": [
-        {
-          "skill": "Shooting",
-          "level": 12,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Animals",
-          "level": 3,
-          "passion": 1
-        },
-        {
-          "skill": "Intellectual",
-          "level": 0,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Shooting",
-          "level": 12,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Animals",
-          "level": 3,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Construction",
-        "Mining",
-        "Cooking",
-        "Plants",
-        "Crafting",
-        "Artistic",
-        "Medical",
+        "Shooting",
+        "Melee",
         "Social"
       ],
       "health": []
     },
     {
-      "id": "Human1017",
-      "name": "Rhia 'Snoot' Snooterson",
-      "nick": "Snoot",
-      "age": 41,
-      "gender": "Female",
-      "childhood": "Medieval lady",
-      "adulthood": "Slaughterer",
+      "id": "Human900",
+      "name": "Edouard Lyons",
+      "nick": "Lyons",
+      "age": 27,
+      "gender": "Male",
+      "childhood": "Urbworld urchin",
+      "adulthood": "Evangelist",
       "traits": [
-        "Desensitized"
+        "Workaholic",
+        "Psychically sensitive"
       ],
       "passions": [
         {
-          "skill": "Animals",
-          "level": 11,
+          "skill": "Artistic",
+          "level": 8,
           "passion": 2
         },
         {
-          "skill": "Social",
-          "level": 6,
-          "passion": 1
+          "skill": "Shooting",
+          "level": 7,
+          "passion": 2
         },
         {
-          "skill": "Shooting",
+          "skill": "Melee",
           "level": 5,
           "passion": 1
         },
         {
-          "skill": "Melee",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Medical",
-          "level": 4,
+          "skill": "Social",
+          "level": 5,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Animals",
-          "level": 11,
+          "skill": "Artistic",
+          "level": 8,
           "passion": 2
         },
         {
-          "skill": "Social",
-          "level": 6,
-          "passion": 1
+          "skill": "Shooting",
+          "level": 7,
+          "passion": 2
         },
         {
-          "skill": "Shooting",
+          "skill": "Melee",
           "level": 5,
           "passion": 1
         }
@@ -196,13 +127,69 @@
       "health": [
         {
           "kind": "scar",
-          "label": "Scratch scar",
+          "label": "Scratch scar (itchy)",
           "count": 1,
           "parts": [
-            "left leg"
+            "left foot"
           ]
         }
       ]
+    },
+    {
+      "id": "Human911",
+      "name": "Akira 'Ark' Kaneda",
+      "nick": "Ark",
+      "age": 45,
+      "gender": "Male",
+      "childhood": "Hacker kid",
+      "adulthood": "Battle mechanic",
+      "traits": [
+        "Technophobe",
+        "Slothful"
+      ],
+      "passions": [
+        {
+          "skill": "Crafting",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Melee",
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Construction",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Crafting",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Melee",
+          "level": 8,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Social"
+      ],
+      "health": []
     }
   ]
 }
