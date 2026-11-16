@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:40:22Z",
+  "updatedUtc": "2026-11-16T06:41:44Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,51 +11,48 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human746",
-      "name": "Kaileb 'Chop' Chapman",
-      "nick": "Chop",
-      "age": 32,
-      "gender": "Male",
-      "childhood": "Urbworld urchin",
-      "adulthood": "Furniture builder",
+      "id": "Human844",
+      "name": "Sera 'Kaleun' Steiner",
+      "nick": "Kaleun",
+      "age": 47,
+      "gender": "Female",
+      "childhood": "Midworld cadet",
+      "adulthood": "Warship captain",
       "traits": [
-        "Jealous"
+        "Dog person",
+        "Perfectionist",
+        "Eccentric"
       ],
       "passions": [
         {
-          "skill": "Plants",
-          "level": 8,
+          "skill": "Social",
+          "level": 13,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 11,
           "passion": 2
         },
         {
           "skill": "Shooting",
           "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 6,
-          "passion": 1
-        },
-        {
-          "skill": "Melee",
-          "level": 4,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Plants",
-          "level": 8,
+          "skill": "Social",
+          "level": 13,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 11,
           "passion": 2
         },
         {
           "skill": "Shooting",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
           "level": 6,
           "passion": 1
         }
@@ -64,115 +61,137 @@
       "health": []
     },
     {
-      "id": "Human749",
-      "name": "Alyssa 'Sparkles' Orchard",
-      "nick": "Sparkles",
-      "age": 16,
-      "gender": "Female",
-      "childhood": "Coreworld student",
-      "adulthood": null,
+      "id": "Human848",
+      "name": "Travis Murrieta",
+      "nick": "Travis",
+      "age": 43,
+      "gender": "Male",
+      "childhood": "Sickly child",
+      "adulthood": "Escaped convict",
       "traits": [
-        "Slob"
+        "Lush",
+        "Kind",
+        "Xenophobe"
       ],
       "passions": [
         {
-          "skill": "Crafting",
+          "skill": "Mining",
           "level": 8,
           "passion": 2
         },
         {
-          "skill": "Artistic",
-          "level": 5,
-          "passion": 1
-        },
-        {
-          "skill": "Construction",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Medical",
-          "level": 4,
+          "skill": "Intellectual",
+          "level": 7,
           "passion": 1
         },
         {
           "skill": "Shooting",
-          "level": 2,
-          "passion": 1
-        },
-        {
-          "skill": "Mining",
-          "level": 2,
+          "level": 4,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Crafting",
+          "skill": "Mining",
           "level": 8,
           "passion": 2
         },
         {
-          "skill": "Artistic",
-          "level": 5,
+          "skill": "Intellectual",
+          "level": 7,
           "passion": 1
         },
         {
-          "skill": "Construction",
+          "skill": "Shooting",
           "level": 4,
           "passion": 1
         }
       ],
       "incapable": [
-        "Cooking",
-        "Plants"
+        "Medical"
       ],
-      "health": []
+      "health": [
+        {
+          "kind": "chronic",
+          "label": "Asthma (minor)",
+          "count": 2,
+          "parts": [
+            "right lung",
+            "left lung"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Scratch scar (itchy)",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Stab scar",
+          "count": 1,
+          "parts": [
+            "right arm"
+          ]
+        },
+        {
+          "kind": "addiction",
+          "label": "Alcohol addiction (50%)",
+          "count": 1,
+          "parts": []
+        }
+      ]
     },
     {
-      "id": "Human752",
-      "name": "Lia Lu",
-      "nick": "Lu",
-      "age": 17,
+      "id": "Human852",
+      "name": "Aeryn 'Ryn' Zuhro",
+      "nick": "Ryn",
+      "age": 42,
       "gender": "Female",
-      "childhood": "Music idol",
-      "adulthood": null,
+      "childhood": "Apocalypse survivor",
+      "adulthood": "Herbalist",
       "traits": [
-        "Beautiful",
-        "Quick sleeper"
+        "Tycoon"
       ],
       "passions": [
         {
-          "skill": "Animals",
-          "level": 8,
+          "skill": "Crafting",
+          "level": 6,
           "passion": 2
         },
         {
-          "skill": "Artistic",
+          "skill": "Social",
           "level": 6,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 9,
           "passion": 1
         },
         {
-          "skill": "Social",
-          "level": 5,
+          "skill": "Animals",
+          "level": 9,
           "passion": 1
         }
       ],
       "topSkills": [
         {
+          "skill": "Shooting",
+          "level": 9,
+          "passion": 1
+        },
+        {
           "skill": "Animals",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Plants",
           "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Artistic",
-          "level": 6,
-          "passion": 1
-        },
-        {
-          "skill": "Social",
-          "level": 5,
-          "passion": 1
+          "passion": 0
         }
       ],
       "incapable": [],
