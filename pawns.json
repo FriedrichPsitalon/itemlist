@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:34:07Z",
+  "updatedUtc": "2026-11-16T06:35:33Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,203 +11,180 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human1014",
-      "name": "Sturg Octavian",
-      "nick": "Sturg",
-      "age": 41,
-      "gender": "Male",
-      "childhood": "Story writer",
-      "adulthood": "Defector",
+      "id": "Human636",
+      "name": "Irina Walker",
+      "nick": "Irina",
+      "age": 30,
+      "gender": "Female",
+      "childhood": "Industrial orphan",
+      "adulthood": "Counselor",
       "traits": [
-        "Gourmand"
+        "Hard worker",
+        "Rebel"
       ],
       "passions": [
         {
-          "skill": "Shooting",
-          "level": 7,
-          "passion": 1
+          "skill": "Social",
+          "level": 14,
+          "passion": 2
         },
         {
-          "skill": "Intellectual",
+          "skill": "Crafting",
           "level": 6,
-          "passion": 1
+          "passion": 2
         },
         {
-          "skill": "Animals",
-          "level": 5,
+          "skill": "Melee",
+          "level": 4,
           "passion": 1
         },
         {
           "skill": "Mining",
           "level": 4,
           "passion": 1
-        },
-        {
-          "skill": "Cooking",
-          "level": 4,
-          "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Shooting",
-          "level": 7,
-          "passion": 1
+          "skill": "Social",
+          "level": 14,
+          "passion": 2
         },
         {
-          "skill": "Intellectual",
+          "skill": "Crafting",
           "level": 6,
-          "passion": 1
+          "passion": 2
         },
         {
-          "skill": "Animals",
-          "level": 5,
+          "skill": "Melee",
+          "level": 4,
           "passion": 1
         }
       ],
       "incapable": [
-        "Artistic"
+        "Cooking"
       ],
-      "health": [
-        {
-          "kind": "bionic",
-          "label": "Surrogate liver",
-          "count": 1,
-          "parts": [
-            "liver"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Old gunshot (painful)",
-          "count": 1,
-          "parts": [
-            "left leg"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Stab scar (painful)",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        }
-      ]
+      "health": []
     },
     {
-      "id": "Human1017",
-      "name": "Aurora Verseere",
-      "nick": "Verseere",
-      "age": 19,
+      "id": "Human639",
+      "name": "Beka Pham",
+      "nick": "Pham",
+      "age": 41,
       "gender": "Female",
-      "childhood": "War refugee",
-      "adulthood": null,
+      "childhood": "Shop kid",
+      "adulthood": "Psychiatric patient",
       "traits": [
-        "Volatile",
-        "Slowpoke",
-        "Chemical fascination"
+        "Squeamish",
+        "Refined palate"
       ],
       "passions": [
         {
-          "skill": "Construction",
-          "level": 4,
-          "passion": 2
-        },
-        {
-          "skill": "Cooking",
-          "level": 4,
+          "skill": "Intellectual",
+          "level": 6,
           "passion": 2
         },
         {
           "skill": "Animals",
           "level": 4,
           "passion": 1
+        },
+        {
+          "skill": "Construction",
+          "level": 3,
+          "passion": 1
+        },
+        {
+          "skill": "Cooking",
+          "level": 2,
+          "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Construction",
-          "level": 4,
-          "passion": 2
-        },
-        {
-          "skill": "Cooking",
-          "level": 4,
+          "skill": "Intellectual",
+          "level": 6,
           "passion": 2
         },
         {
           "skill": "Animals",
           "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Construction",
+          "level": 3,
           "passion": 1
         }
       ],
       "incapable": [
         "Shooting",
-        "Melee"
+        "Melee",
+        "Medical",
+        "Social"
       ],
       "health": []
     },
     {
-      "id": "Human1020",
-      "name": "Cora 'Lockjaw' Whitlock",
-      "nick": "Lockjaw",
-      "age": 32,
-      "gender": "Female",
-      "childhood": "Medieval lady",
-      "adulthood": "Defector",
+      "id": "Human642",
+      "name": "Martinus 'Ele' van de Bride",
+      "nick": "Ele",
+      "age": 29,
+      "gender": "Male",
+      "childhood": "Child spy",
+      "adulthood": "Counselor",
       "traits": [
+        "Ecologist",
         "Xenophile",
-        "Psychically sensitive"
+        "Kind"
       ],
       "passions": [
         {
-          "skill": "Shooting",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Medical",
-          "level": 5,
-          "passion": 2
-        },
-        {
           "skill": "Social",
-          "level": 5,
+          "level": 14,
           "passion": 2
         },
         {
           "skill": "Animals",
-          "level": 4,
+          "level": 5,
           "passion": 2
         },
         {
-          "skill": "Mining",
-          "level": 3,
+          "skill": "Plants",
+          "level": 8,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Shooting",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Medical",
-          "level": 5,
-          "passion": 2
-        },
-        {
           "skill": "Social",
+          "level": 14,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
           "level": 5,
           "passion": 2
         }
       ],
       "incapable": [
-        "Artistic"
+        "Cooking"
       ],
-      "health": []
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Frostbite scar",
+          "count": 1,
+          "parts": [
+            "right foot"
+          ]
+        }
+      ]
     }
   ]
 }
