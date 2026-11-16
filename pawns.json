@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:55:02Z",
+  "updatedUtc": "2026-11-16T06:56:08Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,148 +11,32 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human116",
-      "name": "Pyrrha Trovatelli",
-      "nick": "Pyrrha",
-      "age": 36,
-      "gender": "Female",
-      "childhood": "Noble ward",
-      "adulthood": "Information broker",
+      "id": "Human624",
+      "name": "Danny 'Dan' Zitro",
+      "nick": "Dan",
+      "age": 60,
+      "gender": "Male",
+      "childhood": "Forest child",
+      "adulthood": "Forest prowler",
       "traits": [
-        "Fast learner",
-        "Insatiable"
+        "Slob",
+        "Gourmand",
+        "Jealous"
       ],
       "passions": [
         {
           "skill": "Social",
-          "level": 13,
-          "passion": 1
-        },
-        {
-          "skill": "Intellectual",
-          "level": 12,
-          "passion": 1
-        },
-        {
-          "skill": "Medical",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Social",
-          "level": 13,
-          "passion": 1
-        },
-        {
-          "skill": "Intellectual",
-          "level": 12,
-          "passion": 1
-        },
-        {
-          "skill": "Medical",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Mining",
-        "Plants"
-      ],
-      "health": []
-    },
-    {
-      "id": "Human119",
-      "name": "Yutaka Stephenson",
-      "nick": "Yutaka",
-      "age": 51,
-      "gender": "Male",
-      "childhood": "War refugee",
-      "adulthood": "Ascetic priest",
-      "traits": [
-        "Ascetic",
-        "Tough",
-        "Heat inclined"
-      ],
-      "passions": [
-        {
-          "skill": "Plants",
-          "level": 9,
+          "level": 11,
           "passion": 2
         },
-        {
-          "skill": "Cooking",
-          "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 5,
-          "passion": 1
-        },
-        {
-          "skill": "Medical",
-          "level": 5,
-          "passion": 1
-        },
-        {
-          "skill": "Mining",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Plants",
-          "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Cooking",
-          "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Shooting",
-        "Melee",
-        "Social"
-      ],
-      "health": []
-    },
-    {
-      "id": "Human122",
-      "name": "Krandus 'Krand' Zaxsen",
-      "nick": "Krand",
-      "age": 27,
-      "gender": "Male",
-      "childhood": "Rich boy",
-      "adulthood": "Hired gun",
-      "traits": [
-        "Creepy breathing",
-        "Slow learner",
-        "Technophobe"
-      ],
-      "passions": [
         {
           "skill": "Melee",
           "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 6,
-          "passion": 2
+          "passion": 1
         },
         {
           "skill": "Cooking",
-          "level": 6,
+          "level": 8,
           "passion": 1
         },
         {
@@ -163,27 +47,199 @@
       ],
       "topSkills": [
         {
-          "skill": "Melee",
-          "level": 9,
+          "skill": "Social",
+          "level": 11,
           "passion": 2
         },
         {
-          "skill": "Shooting",
-          "level": 6,
-          "passion": 2
+          "skill": "Melee",
+          "level": 9,
+          "passion": 1
         },
         {
           "skill": "Cooking",
-          "level": 6,
+          "level": 8,
           "passion": 1
         }
       ],
       "incapable": [
-        "Plants",
-        "Medical",
-        "Social"
+        "Mining",
+        "Intellectual"
       ],
-      "health": []
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Bite scar",
+          "count": 1,
+          "parts": [
+            "left leg"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Scarification (itchy)",
+          "count": 3,
+          "parts": [
+            "right eye",
+            "torso",
+            "nose"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Stab scar",
+          "count": 2,
+          "parts": [
+            "right leg",
+            "neck"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human627",
+      "name": "Vincent 'Wyce' Weber",
+      "nick": "Wyce",
+      "age": 21,
+      "gender": "Male",
+      "childhood": "Caveworld tender",
+      "adulthood": "Corporate drone",
+      "traits": [
+        "Undergrounder",
+        "Body purist",
+        "Brawler"
+      ],
+      "passions": [
+        {
+          "skill": "Intellectual",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Mining",
+          "level": 7,
+          "passion": 1
+        },
+        {
+          "skill": "Plants",
+          "level": 5,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Intellectual",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Mining",
+          "level": 7,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Old gunshot",
+          "count": 1,
+          "parts": [
+            "left arm"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Scarification (itchy)",
+          "count": 3,
+          "parts": [
+            "left arm",
+            "left eye"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human630",
+      "name": "David 'Scottish' Reid",
+      "nick": "Scottish",
+      "age": 30,
+      "gender": "Male",
+      "childhood": "Blackjack player",
+      "adulthood": "Hedge fund manager",
+      "traits": [
+        "Greedy",
+        "Cannibal"
+      ],
+      "passions": [
+        {
+          "skill": "Social",
+          "level": 12,
+          "passion": 1
+        },
+        {
+          "skill": "Intellectual",
+          "level": 10,
+          "passion": 1
+        },
+        {
+          "skill": "Artistic",
+          "level": 7,
+          "passion": 1
+        },
+        {
+          "skill": "Mining",
+          "level": 3,
+          "passion": 1
+        },
+        {
+          "skill": "Crafting",
+          "level": 3,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Social",
+          "level": 12,
+          "passion": 1
+        },
+        {
+          "skill": "Intellectual",
+          "level": 10,
+          "passion": 1
+        },
+        {
+          "skill": "Artistic",
+          "level": 7,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Shooting",
+        "Melee"
+      ],
+      "health": [
+        {
+          "kind": "chronic",
+          "label": "Asthma (minor)",
+          "count": 2,
+          "parts": [
+            "right lung",
+            "left lung"
+          ]
+        }
+      ]
     }
   ]
 }
