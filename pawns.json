@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:28:10Z",
+  "updatedUtc": "2026-11-16T06:29:16Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,172 +11,192 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human783",
-      "name": "Jessie Carmain",
-      "nick": "Jessie",
-      "age": 30,
+      "id": "Human218",
+      "name": "Nelly Beck",
+      "nick": "Nelly",
+      "age": 46,
       "gender": "Female",
-      "childhood": "Shop kid",
-      "adulthood": "Machine collector",
+      "childhood": "Vatgrown soldier",
+      "adulthood": "Hunter",
       "traits": [
-        "Slob"
+        "Kleptomaniac"
       ],
       "passions": [
-        {
-          "skill": "Crafting",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Cooking",
-          "level": 4,
-          "passion": 1
-        },
         {
           "skill": "Shooting",
-          "level": 3,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Crafting",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Cooking",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": []
-    },
-    {
-      "id": "Human786",
-      "name": "Velius 'Veli' Ayalp",
-      "nick": "Veli",
-      "age": 20,
-      "gender": "Male",
-      "childhood": "Apprentice smith",
-      "adulthood": "Blacksmith",
-      "traits": [
-        "Industrious",
-        "Sickly",
-        "Asexual"
-      ],
-      "passions": [
-        {
-          "skill": "Crafting",
           "level": 12,
           "passion": 2
         },
         {
-          "skill": "Medical",
-          "level": 8,
-          "passion": 1
+          "skill": "Animals",
+          "level": 7,
+          "passion": 2
         },
         {
           "skill": "Melee",
-          "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Animals",
           "level": 6,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Crafting",
+          "skill": "Shooting",
           "level": 12,
           "passion": 2
         },
         {
-          "skill": "Medical",
-          "level": 8,
-          "passion": 1
-        },
-        {
-          "skill": "Melee",
+          "skill": "Animals",
           "level": 7,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 6,
           "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "bionic",
-          "label": "Surrogate liver",
-          "count": 1,
-          "parts": [
-            "liver"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human789",
-      "name": "Savanna Barr",
-      "nick": "Savanna",
-      "age": 51,
-      "gender": "Female",
-      "childhood": "Child spy",
-      "adulthood": "Conceptual artist",
-      "traits": [
-        "Trigger-happy"
-      ],
-      "passions": [
-        {
-          "skill": "Artistic",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Animals",
-          "level": 5,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 5,
-          "passion": 2
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Artistic",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 5,
-          "passion": 2
-        },
-        {
-          "skill": "Animals",
-          "level": 5,
-          "passion": 2
         }
       ],
       "incapable": [
         "Medical",
         "Social"
       ],
-      "health": []
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Stab scar",
+          "count": 1,
+          "parts": [
+            "right leg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human221",
+      "name": "Aaron Righter",
+      "nick": "Righter",
+      "age": 47,
+      "gender": "Female",
+      "childhood": "Frightened child",
+      "adulthood": "Furniture builder",
+      "traits": [
+        "Nimble",
+        "Menagerist"
+      ],
+      "passions": [
+        {
+          "skill": "Construction",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
+          "level": 6,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Medical",
+          "level": 7,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Construction",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Medical",
+          "level": 7,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Shooting",
+        "Melee"
+      ],
+      "health": [
+        {
+          "kind": "chronic",
+          "label": "Asthma (minor)",
+          "count": 2,
+          "parts": [
+            "left lung",
+            "right lung"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human224",
+      "name": "Judd Light",
+      "nick": "Judd",
+      "age": 70,
+      "gender": "Male",
+      "childhood": "Mute",
+      "adulthood": "Sheriff",
+      "traits": [
+        "Neat",
+        "Kleptomaniac",
+        "Very neurotic"
+      ],
+      "passions": [
+        {
+          "skill": "Animals",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 6,
+          "passion": 1
+        },
+        {
+          "skill": "Shooting",
+          "level": 5,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Animals",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 6,
+          "passion": 1
+        },
+        {
+          "skill": "Shooting",
+          "level": 5,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Social"
+      ],
+      "health": [
+        {
+          "kind": "chronic",
+          "label": "Bad back",
+          "count": 1,
+          "parts": [
+            "spine"
+          ]
+        }
+      ]
     }
   ]
 }
