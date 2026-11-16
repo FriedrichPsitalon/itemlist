@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T02:11:14Z",
+  "updatedUtc": "2026-11-16T02:12:14Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 7,
-  "unadopted": 1,
+  "colonists": 8,
+  "unadopted": 2,
   "pawns": [
     {
       "id": "Human3738935",
@@ -63,6 +63,81 @@
       ],
       "incapable": [],
       "health": []
+    },
+    {
+      "id": "Human3607273",
+      "name": "Dopos Kascoslis",
+      "nick": "Kascoslis",
+      "age": 21,
+      "gender": "Male",
+      "childhood": "Caveworld tunneler",
+      "adulthood": "Medieval farm oaf",
+      "traits": [
+        "Undergrounder"
+      ],
+      "passions": [
+        {
+          "skill": "Mining",
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 10,
+          "passion": 1
+        },
+        {
+          "skill": "Plants",
+          "level": 10,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 6,
+          "passion": 1
+        },
+        {
+          "skill": "Melee",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Mining",
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 10,
+          "passion": 1
+        },
+        {
+          "skill": "Plants",
+          "level": 10,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Bite scar (aching)",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Scratch scar (itchy)",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        }
+      ]
     }
   ]
 }
