@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:31:35Z",
+  "updatedUtc": "2026-11-16T06:32:49Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,67 +11,86 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human225",
-      "name": "Yutong Li",
-      "nick": "Li",
-      "age": 45,
+      "id": "Human882",
+      "name": "Fletcher Hazeldean",
+      "nick": "Hazeldean",
+      "age": 66,
       "gender": "Male",
-      "childhood": "Cadet",
-      "adulthood": "Flaneur",
+      "childhood": "Vatgrown soldier",
+      "adulthood": "Ascetic priest",
       "traits": [
-        "Technophobe",
-        "Misogynist"
+        "Ascetic",
+        "Chemical fascination"
       ],
       "passions": [
         {
-          "skill": "Social",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
+          "skill": "Plants",
           "level": 9,
-          "passion": 1
+          "passion": 2
         },
         {
           "skill": "Cooking",
-          "level": 9,
+          "level": 4,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Intellectual",
+          "level": 4,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Social",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
+          "skill": "Plants",
           "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Cooking",
+          "level": 4,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
+          "level": 4,
           "passion": 1
         }
       ],
       "incapable": [
         "Shooting",
-        "Melee"
+        "Melee",
+        "Medical",
+        "Social"
       ],
       "health": [
         {
-          "kind": "scar",
-          "label": "Scratch scar",
+          "kind": "chronic",
+          "label": "Artery blockage (minor)",
+          "count": 1,
+          "parts": [
+            "heart"
+          ]
+        },
+        {
+          "kind": "chronic",
+          "label": "Frail",
           "count": 1,
           "parts": [
             "torso"
+          ]
+        },
+        {
+          "kind": "chronic",
+          "label": "Hearing loss",
+          "count": 2,
+          "parts": [
+            "left ear",
+            "right ear"
           ]
         },
         {
@@ -79,132 +98,133 @@
           "label": "Scratch scar (aching)",
           "count": 1,
           "parts": [
-            "left leg"
+            "right leg"
           ]
-        },
-        {
-          "kind": "addiction",
-          "label": "Smokeleaf dependence (15%)",
-          "count": 1,
-          "parts": []
         }
       ]
     },
     {
-      "id": "Human229",
-      "name": "Samantha von Aachen",
-      "nick": "Samantha",
-      "age": 33,
+      "id": "Human886",
+      "name": "Maria Haas",
+      "nick": "Haas",
+      "age": 44,
       "gender": "Female",
-      "childhood": "Displaced noble",
-      "adulthood": "Minister",
+      "childhood": "Story writer",
+      "adulthood": "Recruiter",
       "traits": [
-        "Hard worker"
+        "Night owl",
+        "Rebel",
+        "Xenophile"
       ],
       "passions": [
         {
-          "skill": "Shooting",
-          "level": 10,
-          "passion": 2
-        },
-        {
           "skill": "Social",
-          "level": 9,
+          "level": 11,
           "passion": 2
-        },
-        {
-          "skill": "Crafting",
-          "level": 8,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Shooting",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Crafting",
-          "level": 8,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": []
-    },
-    {
-      "id": "Human232",
-      "name": "Vasilisa Dodson",
-      "nick": "Dodson",
-      "age": 14,
-      "gender": "Female",
-      "childhood": "Shop kid",
-      "adulthood": null,
-      "traits": [
-        "Neat",
-        "Rebel"
-      ],
-      "passions": [
-        {
-          "skill": "Melee",
-          "level": 3,
-          "passion": 2
-        },
-        {
-          "skill": "Crafting",
-          "level": 3,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 3,
-          "passion": 1
         },
         {
           "skill": "Intellectual",
-          "level": 3,
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 7,
+          "passion": 2
+        },
+        {
+          "skill": "Artistic",
+          "level": 7,
           "passion": 1
         },
         {
           "skill": "Construction",
-          "level": 2,
+          "level": 4,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Melee",
-          "level": 3,
+          "skill": "Social",
+          "level": 11,
           "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 7,
+          "passion": 2
+        }
+      ],
+      "incapable": [
+        "Medical"
+      ],
+      "health": []
+    },
+    {
+      "id": "Human890",
+      "name": "Christo Giles",
+      "nick": "Christo",
+      "age": 43,
+      "gender": "Male",
+      "childhood": "War refugee",
+      "adulthood": "Navy scientist",
+      "traits": [
+        "Psychically dull"
+      ],
+      "passions": [
+        {
+          "skill": "Intellectual",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
+          "level": 7,
+          "passion": 1
+        },
+        {
+          "skill": "Cooking",
+          "level": 6,
+          "passion": 1
+        },
+        {
+          "skill": "Plants",
+          "level": 3,
+          "passion": 1
         },
         {
           "skill": "Crafting",
           "level": 3,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 3,
           "passion": 1
         }
       ],
-      "incapable": [],
-      "health": [
+      "topSkills": [
         {
-          "kind": "scar",
-          "label": "Stab scar",
-          "count": 1,
-          "parts": [
-            "left leg"
-          ]
+          "skill": "Intellectual",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
+          "level": 7,
+          "passion": 1
+        },
+        {
+          "skill": "Cooking",
+          "level": 6,
+          "passion": 1
         }
-      ]
+      ],
+      "incapable": [
+        "Shooting",
+        "Melee"
+      ],
+      "health": []
     }
   ]
 }
