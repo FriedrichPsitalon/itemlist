@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T02:53:14Z",
+  "updatedUtc": "2026-11-16T02:55:14Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -78,7 +78,7 @@
       "passions": [
         {
           "skill": "Mining",
-          "level": 11,
+          "level": 12,
           "passion": 2
         },
         {
@@ -105,7 +105,7 @@
       "topSkills": [
         {
           "skill": "Mining",
-          "level": 11,
+          "level": 12,
           "passion": 2
         },
         {
@@ -164,7 +164,7 @@
         },
         {
           "skill": "Construction",
-          "level": 5,
+          "level": 6,
           "passion": 2
         },
         {
@@ -186,7 +186,7 @@
         },
         {
           "skill": "Construction",
-          "level": 5,
+          "level": 6,
           "passion": 2
         }
       ],
