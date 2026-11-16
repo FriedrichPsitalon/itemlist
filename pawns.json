@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:52:23Z",
+  "updatedUtc": "2026-11-16T06:53:35Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,99 +11,53 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human262",
-      "name": "Subira 'Stars' Astari",
-      "nick": "Stars",
-      "age": 20,
-      "gender": "Female",
-      "childhood": "Caveworld tunneler",
-      "adulthood": "Sheriff",
-      "traits": [
-        "Undergrounder"
-      ],
-      "passions": [
-        {
-          "skill": "Mining",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 7,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Mining",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 7,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Crafting",
-        "Intellectual"
-      ],
-      "health": []
-    },
-    {
-      "id": "Human265",
-      "name": "Yutong Li",
-      "nick": "Li",
-      "age": 23,
+      "id": "Human269",
+      "name": "Florian 'Skater' Haas",
+      "nick": "Skater",
+      "age": 45,
       "gender": "Male",
-      "childhood": "Cadet",
-      "adulthood": "Flaneur",
+      "childhood": "Philosopher",
+      "adulthood": "Upright diplomat",
       "traits": [
-        "Rebel",
-        "Squeamish"
+        "Clumsy",
+        "Dunce"
       ],
       "passions": [
         {
-          "skill": "Intellectual",
-          "level": 11,
+          "skill": "Social",
+          "level": 13,
           "passion": 2
         },
         {
-          "skill": "Social",
-          "level": 10,
+          "skill": "Intellectual",
+          "level": 6,
           "passion": 1
         },
         {
-          "skill": "Crafting",
-          "level": 7,
+          "skill": "Mining",
+          "level": 5,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 4,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Intellectual",
-          "level": 11,
+          "skill": "Social",
+          "level": 13,
           "passion": 2
         },
         {
-          "skill": "Social",
-          "level": 10,
+          "skill": "Intellectual",
+          "level": 6,
           "passion": 1
         },
         {
-          "skill": "Crafting",
-          "level": 7,
+          "skill": "Mining",
+          "level": 5,
           "passion": 1
         }
       ],
@@ -114,64 +68,104 @@
       "health": []
     },
     {
-      "id": "Human268",
-      "name": "Alexey Kurguzov",
-      "nick": "Alexey",
-      "age": 21,
+      "id": "Human272",
+      "name": "Billy 'Bell' Belloch",
+      "nick": "Bell",
+      "age": 44,
       "gender": "Male",
-      "childhood": "Sickly child",
-      "adulthood": "Counselor",
+      "childhood": "Animal caretaker",
+      "adulthood": "Wildlife ranger",
       "traits": [
         "Mountain lover",
-        "Creepy breathing"
+        "Very neurotic",
+        "Animal lover"
       ],
       "passions": [
         {
-          "skill": "Social",
-          "level": 11,
+          "skill": "Animals",
+          "level": 17,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 7,
+          "passion": 2
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Animals",
+          "level": 17,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 7,
+          "passion": 2
+        },
+        {
+          "skill": "Medical",
+          "level": 4,
+          "passion": 0
+        }
+      ],
+      "incapable": [
+        "Artistic",
+        "Intellectual"
+      ],
+      "health": []
+    },
+    {
+      "id": "Human275",
+      "name": "Vasilisa 'Zippy' Dennis",
+      "nick": "Zippy",
+      "age": 21,
+      "gender": "Female",
+      "childhood": "Medical assistant",
+      "adulthood": "Crop farmer",
+      "traits": [
+        "Psychically hypersensitive"
+      ],
+      "passions": [
+        {
+          "skill": "Plants",
+          "level": 13,
           "passion": 2
         },
         {
           "skill": "Medical",
           "level": 9,
-          "passion": 1
+          "passion": 2
         },
         {
           "skill": "Intellectual",
-          "level": 5,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
           "level": 4,
           "passion": 1
         },
         {
-          "skill": "Shooting",
+          "skill": "Cooking",
           "level": 3,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Social",
-          "level": 11,
+          "skill": "Plants",
+          "level": 13,
           "passion": 2
         },
         {
           "skill": "Medical",
           "level": 9,
-          "passion": 1
+          "passion": 2
         },
         {
           "skill": "Intellectual",
-          "level": 5,
+          "level": 4,
           "passion": 1
         }
       ],
-      "incapable": [
-        "Cooking"
-      ],
+      "incapable": [],
       "health": []
     }
   ]
