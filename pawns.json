@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:12:07Z",
+  "updatedUtc": "2026-11-16T06:13:37Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,194 +11,183 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human140",
-      "name": "Vincent 'Vince' Rucka",
-      "nick": "Vince",
-      "age": 71,
-      "gender": "Male",
-      "childhood": "Medical assistant",
-      "adulthood": "Glitterworld officer",
+      "id": "Human367",
+      "name": "Candice Roughchild",
+      "nick": "Candice",
+      "age": 29,
+      "gender": "Female",
+      "childhood": "Core dilettante",
+      "adulthood": "Reporter",
       "traits": [
-        "Nervous",
-        "Careful shooter",
-        "Menagerist"
+        "Big-boned",
+        "Ocean lover"
       ],
       "passions": [
         {
-          "skill": "Artistic",
-          "level": 12,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
+          "skill": "Social",
           "level": 10,
           "passion": 2
         },
         {
-          "skill": "Medical",
-          "level": 9,
-          "passion": 2
+          "skill": "Artistic",
+          "level": 8,
+          "passion": 1
         },
         {
-          "skill": "Animals",
-          "level": 3,
-          "passion": 2
-        },
-        {
-          "skill": "Cooking",
+          "skill": "Intellectual",
           "level": 6,
           "passion": 1
         },
         {
-          "skill": "Crafting",
+          "skill": "Animals",
           "level": 5,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Artistic",
-          "level": 12,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
+          "skill": "Social",
           "level": 10,
           "passion": 2
         },
         {
-          "skill": "Medical",
-          "level": 9,
+          "skill": "Artistic",
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Intellectual",
+          "level": 6,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Shooting",
+        "Melee"
+      ],
+      "health": []
+    },
+    {
+      "id": "Human370",
+      "name": "Owen 'Cali' Clarke",
+      "nick": "Cali",
+      "age": 17,
+      "gender": "Male",
+      "childhood": "Spaceyacht pilot",
+      "adulthood": null,
+      "traits": [
+        "Psychically dull",
+        "Couch potato"
+      ],
+      "passions": [
+        {
+          "skill": "Animals",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 6,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 4,
+          "passion": 2
+        },
+        {
+          "skill": "Crafting",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Animals",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 6,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 4,
           "passion": 2
         }
       ],
-      "incapable": [],
+      "incapable": [
+        "Cooking"
+      ],
       "health": [
         {
-          "kind": "chronic",
-          "label": "Bad back",
+          "kind": "scar",
+          "label": "Scratch scar",
           "count": 1,
           "parts": [
-            "spine"
-          ]
-        },
-        {
-          "kind": "chronic",
-          "label": "Cataract",
-          "count": 2,
-          "parts": [
-            "right eye",
-            "left eye"
+            "torso"
           ]
         }
       ]
     },
     {
-      "id": "Human143",
-      "name": "Grigoriy 'Gregory' Nikitin",
-      "nick": "Gregory",
-      "age": 36,
-      "gender": "Male",
+      "id": "Human373",
+      "name": "Amy McCloud",
+      "nick": "Amy",
+      "age": 34,
+      "gender": "Female",
       "childhood": "Caveworld tunneler",
-      "adulthood": "Ranger",
+      "adulthood": "Crop farmer",
       "traits": [
         "Undergrounder",
-        "Super-immune"
+        "Ecologist",
+        "Volatile"
       ],
       "passions": [
         {
-          "skill": "Plants",
-          "level": 11,
+          "skill": "Animals",
+          "level": 7,
           "passion": 2
         },
         {
-          "skill": "Mining",
-          "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Melee",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Cooking",
-          "level": 3,
+          "skill": "Plants",
+          "level": 12,
           "passion": 1
         }
       ],
       "topSkills": [
         {
           "skill": "Plants",
-          "level": 11,
-          "passion": 2
+          "level": 12,
+          "passion": 1
         },
         {
           "skill": "Mining",
-          "level": 7,
-          "passion": 1
+          "level": 8,
+          "passion": 0
         },
         {
-          "skill": "Melee",
-          "level": 4,
-          "passion": 1
+          "skill": "Animals",
+          "level": 7,
+          "passion": 2
         }
       ],
       "incapable": [
         "Crafting",
         "Intellectual"
       ],
-      "health": []
-    },
-    {
-      "id": "Human146",
-      "name": "Velma Wheeler",
-      "nick": "Velma",
-      "age": 17,
-      "gender": "Female",
-      "childhood": "Mute",
-      "adulthood": null,
-      "traits": [
-        "Body modder"
-      ],
-      "passions": [
+      "health": [
         {
-          "skill": "Animals",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Crafting",
-          "level": 4,
-          "passion": 1
+          "kind": "scar",
+          "label": "Bite scar",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
         }
-      ],
-      "topSkills": [
-        {
-          "skill": "Animals",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Crafting",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Social"
-      ],
-      "health": []
+      ]
     }
   ]
 }
