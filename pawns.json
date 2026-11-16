@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:38:27Z",
+  "updatedUtc": "2026-11-16T06:39:27Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -119,14 +119,6 @@
         "Plants"
       ],
       "health": [
-        {
-          "kind": "scar",
-          "label": "Stab scar",
-          "count": 1,
-          "parts": [
-            "left arm"
-          ]
-        },
         {
           "kind": "addiction",
           "label": "Smokeleaf dependence (50%)",
