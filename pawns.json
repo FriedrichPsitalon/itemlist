@@ -1,314 +1,174 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:48:13Z",
+  "updatedUtc": "2026-11-16T06:50:03Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 4,
-  "unadopted": 4,
+  "colonists": 3,
+  "unadopted": 3,
   "pawns": [
     {
-      "id": "Human164",
-      "name": "Vaska 'Vas' Neemor",
-      "nick": "Vas",
-      "age": 64,
-      "gender": "Male",
-      "childhood": "Vatgrown assassin",
-      "adulthood": "Mercenary",
+      "id": "Human208",
+      "name": "Kelly Chen",
+      "nick": "Chen",
+      "age": 38,
+      "gender": "Female",
+      "childhood": "Coma child",
+      "adulthood": "Recruiter",
       "traits": [
-        "Psychopath"
+        "Masochist"
       ],
       "passions": [
         {
-          "skill": "Shooting",
-          "level": 12,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 9,
+          "skill": "Social",
+          "level": 13,
           "passion": 2
         },
         {
           "skill": "Melee",
-          "level": 7,
+          "level": 9,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Social",
+          "level": 13,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Shooting",
+          "level": 4,
+          "passion": 0
+        }
+      ],
+      "incapable": [
+        "Medical"
+      ],
+      "health": []
+    },
+    {
+      "id": "Human211",
+      "name": "David Bishop",
+      "nick": "Bishop",
+      "age": 31,
+      "gender": "Male",
+      "childhood": "Technical kid",
+      "adulthood": "Network engineer",
+      "traits": [
+        "Delicate",
+        "Psychically deaf",
+        "Misogynist"
+      ],
+      "passions": [
+        {
+          "skill": "Construction",
+          "level": 11,
           "passion": 2
         },
         {
           "skill": "Crafting",
-          "level": 5,
-          "passion": 1
+          "level": 8,
+          "passion": 2
         },
         {
-          "skill": "Social",
-          "level": 4,
-          "passion": 1
+          "skill": "Intellectual",
+          "level": 8,
+          "passion": 2
         }
       ],
       "topSkills": [
         {
-          "skill": "Shooting",
-          "level": 12,
-          "passion": 2
-        },
-        {
           "skill": "Construction",
-          "level": 9,
+          "level": 11,
           "passion": 2
         },
         {
-          "skill": "Melee",
-          "level": 7,
+          "skill": "Crafting",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 8,
           "passion": 2
         }
       ],
       "incapable": [
-        "Cooking",
-        "Plants",
-        "Artistic",
-        "Medical"
+        "Artistic"
       ],
       "health": [
         {
           "kind": "scar",
-          "label": "Bite scar (aching)",
+          "label": "Bite scar",
           "count": 1,
           "parts": [
-            "left leg"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Scarification (itchy)",
-          "count": 1,
-          "parts": [
-            "right leg"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Stab scar (aching)",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Stab scar (painful)",
-          "count": 1,
-          "parts": [
-            "right arm"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human167",
-      "name": "Jason Law",
-      "nick": "Law",
-      "age": 20,
-      "gender": "Male",
-      "childhood": "Apocalypse survivor",
-      "adulthood": "Colony settler",
-      "traits": [
-        "Bloodlust"
-      ],
-      "passions": [
-        {
-          "skill": "Construction",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Mining",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Construction",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Mining",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "scar",
-          "label": "Scarification (itchy)",
-          "count": 2,
-          "parts": [
-            "torso",
             "right leg"
           ]
         }
       ]
     },
     {
-      "id": "Human170",
-      "name": "Wade Bell",
-      "nick": "Bell",
-      "age": 32,
+      "id": "Human214",
+      "name": "Alexis Wilpert",
+      "nick": "Wilpert",
+      "age": 29,
       "gender": "Male",
-      "childhood": "Pyromaniac",
-      "adulthood": "Glitterworld surgeon",
+      "childhood": "Shop kid",
+      "adulthood": "Ascetic priest",
       "traits": [
-        "Pyromaniac"
+        "Ascetic",
+        "Night owl",
+        "Fast walker"
       ],
       "passions": [
         {
-          "skill": "Artistic",
-          "level": 12,
+          "skill": "Plants",
+          "level": 8,
           "passion": 2
         },
         {
+          "skill": "Cooking",
+          "level": 7,
+          "passion": 1
+        },
+        {
           "skill": "Medical",
-          "level": 5,
-          "passion": 1
-        },
-        {
-          "skill": "Melee",
-          "level": 3,
-          "passion": 1
-        },
-        {
-          "skill": "Construction",
-          "level": 3,
-          "passion": 1
-        },
-        {
-          "skill": "Mining",
-          "level": 3,
+          "level": 6,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Artistic",
-          "level": 12,
+          "skill": "Plants",
+          "level": 8,
           "passion": 2
         },
         {
-          "skill": "Medical",
-          "level": 5,
+          "skill": "Cooking",
+          "level": 7,
           "passion": 1
         },
         {
-          "skill": "Melee",
-          "level": 3,
+          "skill": "Medical",
+          "level": 6,
           "passion": 1
         }
       ],
-      "incapable": [],
+      "incapable": [
+        "Shooting",
+        "Melee",
+        "Social"
+      ],
       "health": []
-    },
-    {
-      "id": "Human38682",
-      "name": "Lilith Luxemburg",
-      "nick": "Luxemburg",
-      "age": 64,
-      "gender": "Female",
-      "childhood": "High baroness",
-      "adulthood": "Exiled researcher",
-      "traits": [
-        "Drunken master",
-        "Psychically dull"
-      ],
-      "passions": [
-        {
-          "skill": "Social",
-          "level": 17,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 16,
-          "passion": 1
-        },
-        {
-          "skill": "Animals",
-          "level": 14,
-          "passion": 1
-        },
-        {
-          "skill": "Medical",
-          "level": 12,
-          "passion": 1
-        },
-        {
-          "skill": "Shooting",
-          "level": 10,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Social",
-          "level": 17,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 16,
-          "passion": 1
-        },
-        {
-          "skill": "Animals",
-          "level": 14,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "missing",
-          "label": "Missing left middle finger",
-          "count": 1,
-          "parts": []
-        },
-        {
-          "kind": "injury",
-          "label": "Bruise (human fist)",
-          "count": 6,
-          "parts": [
-            "left arm",
-            "left hand",
-            "left leg",
-            "head",
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Crack (human fist)",
-          "count": 3,
-          "parts": [
-            "skull",
-            "pelvis",
-            "spine"
-          ]
-        }
-      ]
     }
   ]
 }
