@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:19:50Z",
+  "updatedUtc": "2026-11-16T06:21:19Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,160 +11,35 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human897",
-      "name": "Shigeru 'Bicep' Frank",
-      "nick": "Bicep",
-      "age": 30,
+      "id": "Human487",
+      "name": "Darby Dougherty",
+      "nick": "Darby",
+      "age": 36,
       "gender": "Male",
-      "childhood": "Mute",
-      "adulthood": "Taxonomist",
+      "childhood": "Coma child",
+      "adulthood": "Blacksmith",
       "traits": [
-        "Pretty"
-      ],
-      "passions": [
-        {
-          "skill": "Animals",
-          "level": 13,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 8,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Mining",
-          "level": 3,
-          "passion": 1
-        },
-        {
-          "skill": "Construction",
-          "level": 2,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Animals",
-          "level": 13,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 8,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Shooting",
-        "Melee",
-        "Social"
-      ],
-      "health": []
-    },
-    {
-      "id": "Human900",
-      "name": "Edouard Lyons",
-      "nick": "Lyons",
-      "age": 27,
-      "gender": "Male",
-      "childhood": "Urbworld urchin",
-      "adulthood": "Evangelist",
-      "traits": [
-        "Workaholic",
-        "Psychically sensitive"
-      ],
-      "passions": [
-        {
-          "skill": "Artistic",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 7,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 5,
-          "passion": 1
-        },
-        {
-          "skill": "Social",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Artistic",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 7,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "scar",
-          "label": "Scratch scar (itchy)",
-          "count": 1,
-          "parts": [
-            "left foot"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human911",
-      "name": "Akira 'Ark' Kaneda",
-      "nick": "Ark",
-      "age": 45,
-      "gender": "Male",
-      "childhood": "Hacker kid",
-      "adulthood": "Battle mechanic",
-      "traits": [
-        "Technophobe",
+        "Squeamish",
         "Slothful"
       ],
       "passions": [
         {
           "skill": "Crafting",
-          "level": 12,
+          "level": 11,
           "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 8,
-          "passion": 1
         },
         {
           "skill": "Melee",
           "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 6,
           "passion": 1
         },
         {
-          "skill": "Construction",
+          "skill": "Plants",
           "level": 4,
           "passion": 1
         }
@@ -172,23 +47,152 @@
       "topSkills": [
         {
           "skill": "Crafting",
-          "level": 12,
+          "level": 11,
           "passion": 2
         },
         {
+          "skill": "Melee",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 6,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Intellectual"
+      ],
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Stab scar (itchy)",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human490",
+      "name": "Hayden 'Hayhouse' Simons",
+      "nick": "Hayhouse",
+      "age": 33,
+      "gender": "Male",
+      "childhood": "Orphan",
+      "adulthood": "Bounty hunter",
+      "traits": [
+        "Kind",
+        "Careful shooter"
+      ],
+      "passions": [
+        {
+          "skill": "Melee",
+          "level": 10,
+          "passion": 1
+        },
+        {
           "skill": "Shooting",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Medical",
           "level": 8,
           "passion": 1
         },
         {
+          "skill": "Mining",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
           "skill": "Melee",
+          "level": 10,
+          "passion": 1
+        },
+        {
+          "skill": "Shooting",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Medical",
           "level": 8,
           "passion": 1
         }
       ],
       "incapable": [
-        "Social"
+        "Crafting"
       ],
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Scratch scar",
+          "count": 1,
+          "parts": [
+            "right pinky"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human493",
+      "name": "Jarad 'Jake' Hesseling",
+      "nick": "Jake",
+      "age": 13,
+      "gender": "Male",
+      "childhood": "Disaster survivor",
+      "adulthood": null,
+      "traits": [
+        "Desensitized",
+        "Neat",
+        "Mad surgeon"
+      ],
+      "passions": [
+        {
+          "skill": "Melee",
+          "level": 3,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 3,
+          "passion": 1
+        },
+        {
+          "skill": "Cooking",
+          "level": 3,
+          "passion": 1
+        },
+        {
+          "skill": "Intellectual",
+          "level": 3,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Melee",
+          "level": 3,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 3,
+          "passion": 1
+        },
+        {
+          "skill": "Cooking",
+          "level": 3,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
       "health": []
     }
   ]
