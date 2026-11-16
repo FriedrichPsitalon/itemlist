@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T02:55:14Z",
+  "updatedUtc": "2026-11-16T02:59:14Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -82,12 +82,12 @@
           "passion": 2
         },
         {
-          "skill": "Shooting",
+          "skill": "Plants",
           "level": 10,
           "passion": 1
         },
         {
-          "skill": "Plants",
+          "skill": "Shooting",
           "level": 10,
           "passion": 1
         },
@@ -109,12 +109,12 @@
           "passion": 2
         },
         {
-          "skill": "Shooting",
+          "skill": "Plants",
           "level": 10,
           "passion": 1
         },
         {
-          "skill": "Plants",
+          "skill": "Shooting",
           "level": 10,
           "passion": 1
         }
@@ -191,8 +191,8 @@
         }
       ],
       "incapable": [
-        "Medical",
-        "Social"
+        "Social",
+        "Medical"
       ],
       "health": [
         {
