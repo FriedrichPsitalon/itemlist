@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:21:19Z",
+  "updatedUtc": "2026-11-16T06:22:29Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,35 +11,29 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human487",
-      "name": "Darby Dougherty",
-      "nick": "Darby",
-      "age": 36,
-      "gender": "Male",
-      "childhood": "Coma child",
-      "adulthood": "Blacksmith",
+      "id": "Human1004",
+      "name": "Tristan Evans",
+      "nick": "Tristan",
+      "age": 25,
+      "gender": "Female",
+      "childhood": "Caveworld tender",
+      "adulthood": "Assembler",
       "traits": [
-        "Squeamish",
-        "Slothful"
+        "Undergrounder"
       ],
       "passions": [
         {
           "skill": "Crafting",
-          "level": 11,
+          "level": 12,
           "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 6,
-          "passion": 1
         },
         {
           "skill": "Plants",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
           "level": 4,
           "passion": 1
         }
@@ -47,153 +41,141 @@
       "topSkills": [
         {
           "skill": "Crafting",
-          "level": 11,
+          "level": 12,
           "passion": 2
         },
         {
-          "skill": "Melee",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 6,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Intellectual"
-      ],
-      "health": [
-        {
-          "kind": "scar",
-          "label": "Stab scar (itchy)",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human490",
-      "name": "Hayden 'Hayhouse' Simons",
-      "nick": "Hayhouse",
-      "age": 33,
-      "gender": "Male",
-      "childhood": "Orphan",
-      "adulthood": "Bounty hunter",
-      "traits": [
-        "Kind",
-        "Careful shooter"
-      ],
-      "passions": [
-        {
-          "skill": "Melee",
-          "level": 10,
-          "passion": 1
-        },
-        {
-          "skill": "Shooting",
+          "skill": "Plants",
           "level": 9,
-          "passion": 1
+          "passion": 2
         },
         {
-          "skill": "Medical",
-          "level": 8,
-          "passion": 1
-        },
-        {
-          "skill": "Mining",
+          "skill": "Construction",
           "level": 4,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Melee",
-          "level": 10,
-          "passion": 1
-        },
-        {
-          "skill": "Shooting",
-          "level": 9,
-          "passion": 1
-        },
-        {
-          "skill": "Medical",
-          "level": 8,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Crafting"
-      ],
-      "health": [
-        {
-          "kind": "scar",
-          "label": "Scratch scar",
-          "count": 1,
-          "parts": [
-            "right pinky"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human493",
-      "name": "Jarad 'Jake' Hesseling",
-      "nick": "Jake",
-      "age": 13,
-      "gender": "Male",
-      "childhood": "Disaster survivor",
-      "adulthood": null,
-      "traits": [
-        "Desensitized",
-        "Neat",
-        "Mad surgeon"
-      ],
-      "passions": [
-        {
-          "skill": "Melee",
-          "level": 3,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 3,
-          "passion": 1
-        },
-        {
-          "skill": "Cooking",
-          "level": 3,
-          "passion": 1
-        },
-        {
-          "skill": "Intellectual",
-          "level": 3,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Melee",
-          "level": 3,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 3,
-          "passion": 1
-        },
-        {
-          "skill": "Cooking",
-          "level": 3,
           "passion": 1
         }
       ],
       "incapable": [],
+      "health": [
+        {
+          "kind": "addiction",
+          "label": "Go-juice addiction (39%)",
+          "count": 1,
+          "parts": []
+        }
+      ]
+    },
+    {
+      "id": "Human1009",
+      "name": "Daniel Stone",
+      "nick": "Stone",
+      "age": 13,
+      "gender": "Male",
+      "childhood": "Urbworld army brat",
+      "adulthood": null,
+      "traits": [
+        "Fast learner",
+        "Recluse"
+      ],
+      "passions": [
+        {
+          "skill": "Construction",
+          "level": 5,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 3,
+          "passion": 2
+        },
+        {
+          "skill": "Cooking",
+          "level": 3,
+          "passion": 2
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Construction",
+          "level": 5,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 3,
+          "passion": 2
+        },
+        {
+          "skill": "Cooking",
+          "level": 3,
+          "passion": 2
+        }
+      ],
+      "incapable": [],
       "health": []
+    },
+    {
+      "id": "Human1013",
+      "name": "Odette Miller",
+      "nick": "Odette",
+      "age": 69,
+      "gender": "Female",
+      "childhood": "Coma child",
+      "adulthood": "Paramedic",
+      "traits": [
+        "Insomniac",
+        "Psychically deaf"
+      ],
+      "passions": [
+        {
+          "skill": "Medical",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
+          "level": 5,
+          "passion": 1
+        },
+        {
+          "skill": "Cooking",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Medical",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
+          "level": 5,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Old gunshot",
+          "count": 1,
+          "parts": [
+            "right shoulder"
+          ]
+        }
+      ]
     }
   ]
 }
