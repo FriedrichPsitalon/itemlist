@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:44:32Z",
+  "updatedUtc": "2026-11-16T06:45:40Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,160 +11,169 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human782",
-      "name": "Caverlorn 'Cave' Hunter",
-      "nick": "Cave",
-      "age": 43,
+      "id": "Human181",
+      "name": "Kiko 'Squirt' Simon",
+      "nick": "Squirt",
+      "age": 21,
       "gender": "Male",
-      "childhood": "Military recruit",
-      "adulthood": "Destroyer-general",
+      "childhood": "Story writer",
+      "adulthood": "Medieval sailor",
       "traits": [
-        "Delicate",
-        "Slowpoke",
-        "Fun-loving",
-        "Asexual"
+        "Fast learner",
+        "Nudist",
+        "Night owl"
       ],
       "passions": [
         {
-          "skill": "Shooting",
-          "level": 12,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 8,
+          "skill": "Animals",
+          "level": 7,
           "passion": 2
         },
         {
           "skill": "Social",
-          "level": 8,
+          "level": 6,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 5,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Shooting",
-          "level": 12,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 8,
+          "skill": "Animals",
+          "level": 7,
           "passion": 2
         },
         {
           "skill": "Social",
-          "level": 8,
+          "level": 6,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 5,
           "passion": 1
         }
       ],
       "incapable": [
-        "Medical"
+        "Construction",
+        "Mining",
+        "Cooking",
+        "Plants",
+        "Crafting"
       ],
-      "health": [
-        {
-          "kind": "scar",
-          "label": "Bite scar",
-          "count": 1,
-          "parts": [
-            "left arm"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Old gunshot",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        }
-      ]
+      "health": []
     },
     {
-      "id": "Human786",
-      "name": "Gavril Acevedo",
-      "nick": "Acevedo",
-      "age": 56,
-      "gender": "Male",
-      "childhood": "Wreckage explorer",
-      "adulthood": "Medieval doctor",
+      "id": "Human184",
+      "name": "Broq Rox",
+      "nick": "Broq",
+      "age": 32,
+      "gender": "Female",
+      "childhood": "Shop kid",
+      "adulthood": "Navy scientist",
       "traits": [
-        "Tough",
-        "Jealous"
+        "Greedy"
       ],
       "passions": [
         {
           "skill": "Intellectual",
-          "level": 10,
+          "level": 11,
           "passion": 2
         },
         {
-          "skill": "Melee",
-          "level": 7,
-          "passion": 2
+          "skill": "Social",
+          "level": 5,
+          "passion": 1
         },
         {
-          "skill": "Animals",
-          "level": 7,
+          "skill": "Cooking",
+          "level": 4,
           "passion": 1
         }
       ],
       "topSkills": [
         {
           "skill": "Intellectual",
-          "level": 10,
+          "level": 11,
           "passion": 2
         },
         {
-          "skill": "Melee",
-          "level": 7,
-          "passion": 2
+          "skill": "Social",
+          "level": 5,
+          "passion": 1
         },
         {
-          "skill": "Animals",
-          "level": 7,
+          "skill": "Cooking",
+          "level": 4,
           "passion": 1
         }
       ],
       "incapable": [],
       "health": [
         {
-          "kind": "chronic",
-          "label": "Artery blockage (minor)",
+          "kind": "scar",
+          "label": "Scarification (itchy)",
           "count": 1,
           "parts": [
-            "heart"
+            "left eye"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Scratch scar (itchy)",
+          "count": 1,
+          "parts": [
+            "left leg"
           ]
         }
       ]
     },
     {
-      "id": "Human790",
-      "name": "Jiaxin 'Amelia' Tang",
-      "nick": "Amelia",
+      "id": "Human195",
+      "name": "Edouard Garrison",
+      "nick": "Edouard",
       "age": 54,
-      "gender": "Female",
-      "childhood": "Mute",
-      "adulthood": "Human computer",
+      "gender": "Male",
+      "childhood": "Vatgrown soldier",
+      "adulthood": "Space marine",
       "traits": [
-        "Pyromaniac",
-        "Slow learner",
-        "Prude"
+        "Nudist",
+        "Hard worker"
       ],
       "passions": [
         {
-          "skill": "Animals",
-          "level": 12,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 12,
-          "passion": 2
+          "skill": "Melee",
+          "level": 17,
+          "passion": 1
         },
         {
           "skill": "Shooting",
-          "level": 5,
+          "level": 14,
+          "passion": 1
+        },
+        {
+          "skill": "Construction",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Mining",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Melee",
+          "level": 17,
+          "passion": 1
+        },
+        {
+          "skill": "Shooting",
+          "level": 14,
           "passion": 1
         },
         {
@@ -173,34 +182,19 @@
           "passion": 1
         }
       ],
-      "topSkills": [
-        {
-          "skill": "Animals",
-          "level": 12,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 12,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 5,
-          "passion": 1
-        }
-      ],
       "incapable": [
-        "Artistic",
+        "Medical",
         "Social"
       ],
       "health": [
         {
           "kind": "scar",
-          "label": "Stab scar",
-          "count": 1,
+          "label": "Scarification (itchy)",
+          "count": 3,
           "parts": [
-            "right arm"
+            "head",
+            "left arm",
+            "left leg"
           ]
         }
       ]
