@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T07:02:11Z",
+  "updatedUtc": "2026-11-16T07:03:31Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,118 +11,47 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human1005",
-      "name": "Benjamin 'Ben' Frick",
-      "nick": "Ben",
+      "id": "Human342",
+      "name": "Yury McKay",
+      "nick": "McKay",
       "age": 15,
       "gender": "Male",
-      "childhood": "Farmer boy",
+      "childhood": "Shop kid",
       "adulthood": null,
       "traits": [
-        "Hard worker",
-        "Xenophobe"
+        "Gourmand"
       ],
       "passions": [
         {
-          "skill": "Crafting",
+          "skill": "Cooking",
+          "level": 6,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
           "level": 5,
           "passion": 2
         },
         {
-          "skill": "Plants",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Melee",
+          "skill": "Shooting",
           "level": 3,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Crafting",
+          "skill": "Cooking",
+          "level": 6,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
           "level": 5,
           "passion": 2
         },
         {
-          "skill": "Plants",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Melee",
+          "skill": "Shooting",
           "level": 3,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Medical",
-        "Social"
-      ],
-      "health": [
-        {
-          "kind": "missing",
-          "label": "Missing left eye",
-          "count": 1,
-          "parts": []
-        },
-        {
-          "kind": "missing",
-          "label": "Missing right eye",
-          "count": 1,
-          "parts": []
-        }
-      ]
-    },
-    {
-      "id": "Human1008",
-      "name": "Eugene Chandler",
-      "nick": "Eugene",
-      "age": 65,
-      "gender": "Male",
-      "childhood": "Child spy",
-      "adulthood": "Cave explorer",
-      "traits": [
-        "Careful shooter",
-        "Very neurotic"
-      ],
-      "passions": [
-        {
-          "skill": "Mining",
-          "level": 16,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 6,
-          "passion": 1
-        },
-        {
-          "skill": "Medical",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Mining",
-          "level": 16,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 6,
           "passion": 1
         }
       ],
@@ -130,58 +59,128 @@
       "health": []
     },
     {
-      "id": "Human1011",
-      "name": "Kyle Anderson",
-      "nick": "Kyle",
-      "age": 79,
-      "gender": "Male",
-      "childhood": "Musical kid",
-      "adulthood": "Caveworld illuminator",
+      "id": "Human345",
+      "name": "Amaya 'Jumper' Hurst",
+      "nick": "Jumper",
+      "age": 20,
+      "gender": "Female",
+      "childhood": "Child spy",
+      "adulthood": "Contract miner",
       "traits": [
-        "Undergrounder"
+        "Ecologist",
+        "Greedy",
+        "Neat"
       ],
       "passions": [
         {
           "skill": "Mining",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
           "level": 6,
           "passion": 2
         },
         {
-          "skill": "Artistic",
-          "level": 6,
-          "passion": 1
+          "skill": "Animals",
+          "level": 5,
+          "passion": 2
         },
         {
-          "skill": "Shooting",
-          "level": 5,
+          "skill": "Social",
+          "level": 8,
           "passion": 1
         }
       ],
       "topSkills": [
         {
           "skill": "Mining",
-          "level": 6,
+          "level": 8,
           "passion": 2
         },
         {
-          "skill": "Artistic",
+          "skill": "Social",
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Plants",
+          "level": 6,
+          "passion": 2
+        }
+      ],
+      "incapable": [],
+      "health": []
+    },
+    {
+      "id": "Human349",
+      "name": "Sjoerd 'Bowman' Lukas",
+      "nick": "Bowman",
+      "age": 51,
+      "gender": "Female",
+      "childhood": "Pilot fan",
+      "adulthood": "Starfighter pilot",
+      "traits": [
+        "Fast walker"
+      ],
+      "passions": [
+        {
+          "skill": "Shooting",
+          "level": 16,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 13,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
           "level": 6,
           "passion": 1
         },
         {
-          "skill": "Shooting",
-          "level": 5,
+          "skill": "Construction",
+          "level": 6,
           "passion": 1
         }
       ],
-      "incapable": [],
+      "topSkills": [
+        {
+          "skill": "Shooting",
+          "level": 16,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 13,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 6,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Medical"
+      ],
       "health": [
         {
-          "kind": "chronic",
-          "label": "Dementia",
+          "kind": "bionic",
+          "label": "Surrogate kidney",
           "count": 1,
           "parts": [
-            "brain"
+            "right kidney"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Old gunshot",
+          "count": 1,
+          "parts": [
+            "torso"
           ]
         }
       ]
