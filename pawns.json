@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T07:01:10Z",
+  "updatedUtc": "2026-11-16T07:02:11Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,179 +11,180 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human313",
-      "name": "Alyona 'Bucky' Hurley",
-      "nick": "Bucky",
-      "age": 54,
-      "gender": "Female",
-      "childhood": "Organ farm",
-      "adulthood": "Veterinarian",
+      "id": "Human1005",
+      "name": "Benjamin 'Ben' Frick",
+      "nick": "Ben",
+      "age": 15,
+      "gender": "Male",
+      "childhood": "Farmer boy",
+      "adulthood": null,
       "traits": [
-        "Slow learner"
+        "Hard worker",
+        "Xenophobe"
       ],
       "passions": [
         {
-          "skill": "Medical",
-          "level": 16,
-          "passion": 1
-        },
-        {
-          "skill": "Animals",
-          "level": 9,
-          "passion": 1
+          "skill": "Crafting",
+          "level": 5,
+          "passion": 2
         },
         {
           "skill": "Plants",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Melee",
           "level": 3,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Medical",
-          "level": 16,
-          "passion": 1
-        },
-        {
-          "skill": "Animals",
-          "level": 9,
-          "passion": 1
+          "skill": "Crafting",
+          "level": 5,
+          "passion": 2
         },
         {
           "skill": "Plants",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Melee",
           "level": 3,
           "passion": 1
         }
       ],
       "incapable": [
-        "Shooting",
-        "Melee"
+        "Medical",
+        "Social"
       ],
       "health": [
         {
-          "kind": "scar",
-          "label": "Stab scar",
+          "kind": "missing",
+          "label": "Missing left eye",
           "count": 1,
-          "parts": [
-            "torso"
-          ]
+          "parts": []
+        },
+        {
+          "kind": "missing",
+          "label": "Missing right eye",
+          "count": 1,
+          "parts": []
         }
       ]
     },
     {
-      "id": "Human316",
-      "name": "Kirill Larson",
-      "nick": "Larson",
-      "age": 54,
+      "id": "Human1008",
+      "name": "Eugene Chandler",
+      "nick": "Eugene",
+      "age": 65,
       "gender": "Male",
-      "childhood": "Scout",
-      "adulthood": "Escaped convict",
+      "childhood": "Child spy",
+      "adulthood": "Cave explorer",
       "traits": [
-        "Fast learner",
-        "Insatiable",
-        "Jealous"
+        "Careful shooter",
+        "Very neurotic"
       ],
       "passions": [
         {
-          "skill": "Crafting",
-          "level": 12,
+          "skill": "Mining",
+          "level": 16,
           "passion": 2
         },
         {
-          "skill": "Mining",
-          "level": 11,
+          "skill": "Social",
+          "level": 7,
           "passion": 1
         },
         {
-          "skill": "Plants",
-          "level": 4,
+          "skill": "Artistic",
+          "level": 6,
           "passion": 1
         },
         {
-          "skill": "Shooting",
-          "level": 3,
+          "skill": "Medical",
+          "level": 5,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Crafting",
-          "level": 12,
+          "skill": "Mining",
+          "level": 16,
           "passion": 2
         },
         {
-          "skill": "Mining",
-          "level": 11,
+          "skill": "Social",
+          "level": 7,
           "passion": 1
         },
         {
-          "skill": "Plants",
-          "level": 4,
+          "skill": "Artistic",
+          "level": 6,
           "passion": 1
         }
       ],
-      "incapable": [
-        "Artistic",
-        "Medical",
-        "Intellectual"
-      ],
+      "incapable": [],
       "health": []
     },
     {
-      "id": "Human319",
-      "name": "Reece 'Beast' Beasley",
-      "nick": "Beast",
-      "age": 74,
-      "gender": "Female",
-      "childhood": "Scout",
-      "adulthood": "Furniture builder",
+      "id": "Human1011",
+      "name": "Kyle Anderson",
+      "nick": "Kyle",
+      "age": 79,
+      "gender": "Male",
+      "childhood": "Musical kid",
+      "adulthood": "Caveworld illuminator",
       "traits": [
-        "Beautiful"
+        "Undergrounder"
       ],
       "passions": [
         {
-          "skill": "Animals",
-          "level": 12,
+          "skill": "Mining",
+          "level": 6,
           "passion": 2
         },
         {
-          "skill": "Construction",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 11,
+          "skill": "Artistic",
+          "level": 6,
           "passion": 1
         },
         {
           "skill": "Shooting",
-          "level": 7,
+          "level": 5,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Animals",
-          "level": 12,
+          "skill": "Mining",
+          "level": 6,
           "passion": 2
         },
         {
-          "skill": "Construction",
-          "level": 11,
-          "passion": 2
+          "skill": "Artistic",
+          "level": 6,
+          "passion": 1
         },
         {
-          "skill": "Plants",
-          "level": 11,
+          "skill": "Shooting",
+          "level": 5,
           "passion": 1
         }
       ],
-      "incapable": [
-        "Artistic",
-        "Intellectual"
-      ],
-      "health": []
+      "incapable": [],
+      "health": [
+        {
+          "kind": "chronic",
+          "label": "Dementia",
+          "count": 1,
+          "parts": [
+            "brain"
+          ]
+        }
+      ]
     }
   ]
 }
