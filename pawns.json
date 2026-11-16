@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:56:08Z",
+  "updatedUtc": "2026-11-16T06:57:33Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,17 +11,86 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human624",
-      "name": "Danny 'Dan' Zitro",
-      "nick": "Dan",
-      "age": 60,
-      "gender": "Male",
-      "childhood": "Forest child",
-      "adulthood": "Forest prowler",
+      "id": "Human824",
+      "name": "Nictis Dade",
+      "nick": "Nictis",
+      "age": 48,
+      "gender": "Female",
+      "childhood": "Test subject",
+      "adulthood": "Machine collector",
       "traits": [
-        "Slob",
-        "Gourmand",
-        "Jealous"
+        "Slowpoke",
+        "Volatile"
+      ],
+      "passions": [
+        {
+          "skill": "Crafting",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 10,
+          "passion": 1
+        },
+        {
+          "skill": "Shooting",
+          "level": 7,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Crafting",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 10,
+          "passion": 1
+        },
+        {
+          "skill": "Shooting",
+          "level": 7,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Medical",
+        "Social"
+      ],
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Frostbite scar (itchy)",
+          "count": 1,
+          "parts": [
+            "left thumb"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Stab scar",
+          "count": 1,
+          "parts": [
+            "left leg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human827",
+      "name": "Yiyang 'Mitsuya' Jiang",
+      "nick": "Mitsuya",
+      "age": 31,
+      "gender": "Female",
+      "childhood": "Transfer student",
+      "adulthood": "Politician",
+      "traits": [
+        "Sanguine",
+        "Beautiful",
+        "Cold inclined"
       ],
       "passions": [
         {
@@ -31,7 +100,74 @@
         },
         {
           "skill": "Melee",
-          "level": 9,
+          "level": 5,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Intellectual",
+          "level": 3,
+          "passion": 1
+        },
+        {
+          "skill": "Construction",
+          "level": 2,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Social",
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 5,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Mining",
+        "Plants"
+      ],
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Stab scar",
+          "count": 1,
+          "parts": [
+            "left arm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human830",
+      "name": "Ahria 'Winter' Rose",
+      "nick": "Winter",
+      "age": 42,
+      "gender": "Female",
+      "childhood": "Urbworld urchin",
+      "adulthood": "Drifter",
+      "traits": [
+        "Stoner",
+        "Great memory",
+        "Optimist"
+      ],
+      "passions": [
+        {
+          "skill": "Melee",
+          "level": 10,
           "passion": 1
         },
         {
@@ -41,110 +177,29 @@
         },
         {
           "skill": "Animals",
+          "level": 6,
+          "passion": 1
+        },
+        {
+          "skill": "Shooting",
           "level": 5,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Social",
-          "level": 11,
-          "passion": 2
-        },
-        {
           "skill": "Melee",
-          "level": 9,
+          "level": 10,
           "passion": 1
         },
         {
           "skill": "Cooking",
           "level": 8,
           "passion": 1
-        }
-      ],
-      "incapable": [
-        "Mining",
-        "Intellectual"
-      ],
-      "health": [
-        {
-          "kind": "scar",
-          "label": "Bite scar",
-          "count": 1,
-          "parts": [
-            "left leg"
-          ]
         },
         {
-          "kind": "scar",
-          "label": "Scarification (itchy)",
-          "count": 3,
-          "parts": [
-            "right eye",
-            "torso",
-            "nose"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Stab scar",
-          "count": 2,
-          "parts": [
-            "right leg",
-            "neck"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human627",
-      "name": "Vincent 'Wyce' Weber",
-      "nick": "Wyce",
-      "age": 21,
-      "gender": "Male",
-      "childhood": "Caveworld tender",
-      "adulthood": "Corporate drone",
-      "traits": [
-        "Undergrounder",
-        "Body purist",
-        "Brawler"
-      ],
-      "passions": [
-        {
-          "skill": "Intellectual",
-          "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Mining",
-          "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Plants",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Intellectual",
-          "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Mining",
-          "level": 7,
+          "skill": "Animals",
+          "level": 6,
           "passion": 1
         }
       ],
@@ -152,92 +207,17 @@
       "health": [
         {
           "kind": "scar",
-          "label": "Old gunshot",
+          "label": "Bite scar (aching)",
           "count": 1,
           "parts": [
-            "left arm"
+            "right shoulder"
           ]
         },
         {
-          "kind": "scar",
-          "label": "Scarification (itchy)",
-          "count": 3,
-          "parts": [
-            "left arm",
-            "left eye"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human630",
-      "name": "David 'Scottish' Reid",
-      "nick": "Scottish",
-      "age": 30,
-      "gender": "Male",
-      "childhood": "Blackjack player",
-      "adulthood": "Hedge fund manager",
-      "traits": [
-        "Greedy",
-        "Cannibal"
-      ],
-      "passions": [
-        {
-          "skill": "Social",
-          "level": 12,
-          "passion": 1
-        },
-        {
-          "skill": "Intellectual",
-          "level": 10,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Mining",
-          "level": 3,
-          "passion": 1
-        },
-        {
-          "skill": "Crafting",
-          "level": 3,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Social",
-          "level": 12,
-          "passion": 1
-        },
-        {
-          "skill": "Intellectual",
-          "level": 10,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 7,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Shooting",
-        "Melee"
-      ],
-      "health": [
-        {
-          "kind": "chronic",
-          "label": "Asthma (minor)",
-          "count": 2,
-          "parts": [
-            "right lung",
-            "left lung"
-          ]
+          "kind": "addiction",
+          "label": "Smokeleaf dependence (50%)",
+          "count": 1,
+          "parts": []
         }
       ]
     }
