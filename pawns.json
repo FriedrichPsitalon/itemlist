@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:59:53Z",
+  "updatedUtc": "2026-11-16T07:01:10Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,162 +11,177 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human510",
-      "name": "Afeeba 'Feeb' Dafo",
-      "nick": "Feeb",
-      "age": 42,
+      "id": "Human313",
+      "name": "Alyona 'Bucky' Hurley",
+      "nick": "Bucky",
+      "age": 54,
       "gender": "Female",
-      "childhood": "Test subject",
-      "adulthood": "Test subject",
+      "childhood": "Organ farm",
+      "adulthood": "Veterinarian",
       "traits": [
-        "Industrious"
+        "Slow learner"
       ],
       "passions": [
         {
-          "skill": "Intellectual",
-          "level": 12,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 9,
-          "passion": 1
-        },
-        {
-          "skill": "Cooking",
-          "level": 6,
-          "passion": 1
-        },
-        {
-          "skill": "Crafting",
-          "level": 4,
+          "skill": "Medical",
+          "level": 16,
           "passion": 1
         },
         {
           "skill": "Animals",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Plants",
           "level": 3,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Intellectual",
+          "skill": "Medical",
+          "level": 16,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Plants",
+          "level": 3,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Shooting",
+        "Melee"
+      ],
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Stab scar",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human316",
+      "name": "Kirill Larson",
+      "nick": "Larson",
+      "age": 54,
+      "gender": "Male",
+      "childhood": "Scout",
+      "adulthood": "Escaped convict",
+      "traits": [
+        "Fast learner",
+        "Insatiable",
+        "Jealous"
+      ],
+      "passions": [
+        {
+          "skill": "Crafting",
           "level": 12,
           "passion": 2
         },
         {
-          "skill": "Melee",
-          "level": 9,
+          "skill": "Mining",
+          "level": 11,
           "passion": 1
         },
         {
-          "skill": "Cooking",
-          "level": 6,
+          "skill": "Plants",
+          "level": 4,
           "passion": 1
-        }
-      ],
-      "incapable": [
-        "Mining",
-        "Plants",
-        "Medical",
-        "Social"
-      ],
-      "health": []
-    },
-    {
-      "id": "Human513",
-      "name": "Cory 'Stomp' Gustafson",
-      "nick": "Stomp",
-      "age": 46,
-      "gender": "Male",
-      "childhood": "Cat herder",
-      "adulthood": "Feline scientist",
-      "traits": [
-        "Ugly",
-        "Nimble",
-        "Tycoon"
-      ],
-      "passions": [
-        {
-          "skill": "Crafting",
-          "level": 10,
-          "passion": 2
         },
         {
-          "skill": "Social",
-          "level": 13,
+          "skill": "Shooting",
+          "level": 3,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Social",
-          "level": 13,
-          "passion": 1
-        },
-        {
           "skill": "Crafting",
-          "level": 10,
+          "level": 12,
           "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 8,
-          "passion": 0
-        }
-      ],
-      "incapable": [],
-      "health": []
-    },
-    {
-      "id": "Human524",
-      "name": "Caitlin 'Cait' Stirr",
-      "nick": "Cait",
-      "age": 46,
-      "gender": "Female",
-      "childhood": "Gymnast",
-      "adulthood": "Intimate assassin",
-      "traits": [
-        "Pretty",
-        "Groundbreaker",
-        "Recluse"
-      ],
-      "passions": [
-        {
-          "skill": "Construction",
-          "level": 5,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 18,
-          "passion": 1
         },
         {
           "skill": "Mining",
-          "level": 5,
+          "level": 11,
+          "passion": 1
+        },
+        {
+          "skill": "Plants",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Artistic",
+        "Medical",
+        "Intellectual"
+      ],
+      "health": []
+    },
+    {
+      "id": "Human319",
+      "name": "Reece 'Beast' Beasley",
+      "nick": "Beast",
+      "age": 74,
+      "gender": "Female",
+      "childhood": "Scout",
+      "adulthood": "Furniture builder",
+      "traits": [
+        "Beautiful"
+      ],
+      "passions": [
+        {
+          "skill": "Animals",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 11,
+          "passion": 1
+        },
+        {
+          "skill": "Shooting",
+          "level": 7,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Melee",
-          "level": 18,
-          "passion": 1
-        },
-        {
-          "skill": "Social",
-          "level": 9,
-          "passion": 0
+          "skill": "Animals",
+          "level": 12,
+          "passion": 2
         },
         {
           "skill": "Construction",
-          "level": 5,
+          "level": 11,
           "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 11,
+          "passion": 1
         }
       ],
       "incapable": [
-        "Medical"
+        "Artistic",
+        "Intellectual"
       ],
       "health": []
     }
