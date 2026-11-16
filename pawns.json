@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:13:37Z",
+  "updatedUtc": "2026-11-16T06:15:00Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,183 +11,153 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human367",
-      "name": "Candice Roughchild",
-      "nick": "Candice",
-      "age": 29,
+      "id": "Human928",
+      "name": "Helen 'Francis' Holman",
+      "nick": "Francis",
+      "age": 15,
       "gender": "Female",
-      "childhood": "Core dilettante",
-      "adulthood": "Reporter",
+      "childhood": "Shelter child",
+      "adulthood": null,
       "traits": [
-        "Big-boned",
-        "Ocean lover"
+        "Great memory"
       ],
       "passions": [
         {
-          "skill": "Social",
-          "level": 10,
+          "skill": "Medical",
+          "level": 5,
           "passion": 2
         },
         {
-          "skill": "Artistic",
-          "level": 8,
+          "skill": "Social",
+          "level": 4,
           "passion": 1
         },
         {
-          "skill": "Intellectual",
-          "level": 6,
+          "skill": "Plants",
+          "level": 3,
           "passion": 1
         },
         {
-          "skill": "Animals",
-          "level": 5,
+          "skill": "Crafting",
+          "level": 3,
           "passion": 1
         }
       ],
       "topSkills": [
         {
+          "skill": "Medical",
+          "level": 5,
+          "passion": 2
+        },
+        {
           "skill": "Social",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Plants",
+          "level": 3,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": []
+    },
+    {
+      "id": "Human931",
+      "name": "Skye Lorne",
+      "nick": "Skye",
+      "age": 25,
+      "gender": "Female",
+      "childhood": "Labor camp orphan",
+      "adulthood": "Urbworld enforcer",
+      "traits": [
+        "Tough"
+      ],
+      "passions": [
+        {
+          "skill": "Shooting",
           "level": 10,
           "passion": 2
         },
         {
-          "skill": "Artistic",
-          "level": 8,
-          "passion": 1
+          "skill": "Melee",
+          "level": 6,
+          "passion": 2
         },
         {
-          "skill": "Intellectual",
+          "skill": "Mining",
+          "level": 6,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Shooting",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 6,
+          "passion": 2
+        },
+        {
+          "skill": "Mining",
           "level": 6,
           "passion": 1
         }
       ],
       "incapable": [
-        "Shooting",
-        "Melee"
+        "Artistic",
+        "Intellectual"
       ],
       "health": []
     },
     {
-      "id": "Human370",
-      "name": "Owen 'Cali' Clarke",
-      "nick": "Cali",
-      "age": 17,
+      "id": "Human934",
+      "name": "Lewis Heathershaw",
+      "nick": "Lewis",
+      "age": 36,
       "gender": "Male",
-      "childhood": "Spaceyacht pilot",
-      "adulthood": null,
+      "childhood": "Shelter child",
+      "adulthood": "Herbalist",
       "traits": [
-        "Psychically dull",
-        "Couch potato"
+        "Teetotaler",
+        "Very neurotic",
+        "Thin skinned"
       ],
       "passions": [
         {
-          "skill": "Animals",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 4,
-          "passion": 2
-        },
-        {
-          "skill": "Crafting",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Animals",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 4,
-          "passion": 2
-        }
-      ],
-      "incapable": [
-        "Cooking"
-      ],
-      "health": [
-        {
-          "kind": "scar",
-          "label": "Scratch scar",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human373",
-      "name": "Amy McCloud",
-      "nick": "Amy",
-      "age": 34,
-      "gender": "Female",
-      "childhood": "Caveworld tunneler",
-      "adulthood": "Crop farmer",
-      "traits": [
-        "Undergrounder",
-        "Ecologist",
-        "Volatile"
-      ],
-      "passions": [
-        {
-          "skill": "Animals",
-          "level": 7,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 12,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Plants",
-          "level": 12,
-          "passion": 1
-        },
-        {
-          "skill": "Mining",
+          "skill": "Medical",
           "level": 8,
-          "passion": 0
+          "passion": 2
         },
         {
-          "skill": "Animals",
+          "skill": "Intellectual",
           "level": 7,
-          "passion": 2
+          "passion": 1
         }
       ],
-      "incapable": [
-        "Crafting",
-        "Intellectual"
-      ],
-      "health": [
+      "topSkills": [
         {
-          "kind": "scar",
-          "label": "Bite scar",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
+          "skill": "Medical",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 7,
+          "passion": 1
+        },
+        {
+          "skill": "Plants",
+          "level": 5,
+          "passion": 0
         }
-      ]
+      ],
+      "incapable": [],
+      "health": []
     }
   ]
 }
