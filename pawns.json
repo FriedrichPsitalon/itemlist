@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:11:03Z",
+  "updatedUtc": "2026-11-16T06:12:07Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,121 +11,68 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human441",
-      "name": "Erie 'Diver' Riggs",
-      "nick": "Diver",
-      "age": 42,
-      "gender": "Female",
-      "childhood": "Crime boss' child",
-      "adulthood": "Mercenary leader",
-      "traits": [
-        "Ocean lover"
-      ],
-      "passions": [
-        {
-          "skill": "Shooting",
-          "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 9,
-          "passion": 1
-        },
-        {
-          "skill": "Social",
-          "level": 6,
-          "passion": 1
-        },
-        {
-          "skill": "Plants",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Shooting",
-          "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 9,
-          "passion": 1
-        },
-        {
-          "skill": "Social",
-          "level": 6,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Cooking",
-        "Artistic",
-        "Medical"
-      ],
-      "health": [
-        {
-          "kind": "scar",
-          "label": "Scratch scar",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human444",
-      "name": "Gordon Slone",
-      "nick": "Slone",
-      "age": 87,
+      "id": "Human140",
+      "name": "Vincent 'Vince' Rucka",
+      "nick": "Vince",
+      "age": 71,
       "gender": "Male",
-      "childhood": "Shop kid",
-      "adulthood": "Torturer",
+      "childhood": "Medical assistant",
+      "adulthood": "Glitterworld officer",
       "traits": [
-        "Psychopath",
-        "Careful shooter"
+        "Nervous",
+        "Careful shooter",
+        "Menagerist"
       ],
       "passions": [
+        {
+          "skill": "Artistic",
+          "level": 12,
+          "passion": 2
+        },
         {
           "skill": "Melee",
           "level": 10,
           "passion": 2
         },
         {
-          "skill": "Mining",
+          "skill": "Medical",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
+          "level": 3,
+          "passion": 2
+        },
+        {
+          "skill": "Cooking",
           "level": 6,
           "passion": 1
         },
         {
-          "skill": "Animals",
+          "skill": "Crafting",
           "level": 5,
           "passion": 1
         }
       ],
       "topSkills": [
         {
+          "skill": "Artistic",
+          "level": 12,
+          "passion": 2
+        },
+        {
           "skill": "Melee",
           "level": 10,
           "passion": 2
         },
         {
-          "skill": "Mining",
-          "level": 6,
-          "passion": 1
-        },
-        {
-          "skill": "Animals",
-          "level": 5,
-          "passion": 1
+          "skill": "Medical",
+          "level": 9,
+          "passion": 2
         }
       ],
-      "incapable": [
-        "Medical",
-        "Social"
-      ],
+      "incapable": [],
       "health": [
         {
           "kind": "chronic",
@@ -137,72 +84,120 @@
         },
         {
           "kind": "chronic",
-          "label": "Dementia",
-          "count": 1,
+          "label": "Cataract",
+          "count": 2,
           "parts": [
-            "brain"
+            "right eye",
+            "left eye"
           ]
         }
       ]
     },
     {
-      "id": "Human447",
-      "name": "Patty Doyle",
-      "nick": "Patty",
-      "age": 17,
-      "gender": "Female",
-      "childhood": "Wreckage explorer",
-      "adulthood": null,
+      "id": "Human143",
+      "name": "Grigoriy 'Gregory' Nikitin",
+      "nick": "Gregory",
+      "age": 36,
+      "gender": "Male",
+      "childhood": "Caveworld tunneler",
+      "adulthood": "Ranger",
       "traits": [
-        "Misandrist",
-        "Careful shooter",
-        "Submissive"
+        "Undergrounder",
+        "Super-immune"
       ],
       "passions": [
         {
-          "skill": "Animals",
-          "level": 10,
+          "skill": "Plants",
+          "level": 11,
           "passion": 2
         },
         {
           "skill": "Mining",
-          "level": 4,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Intellectual",
-          "level": 4,
+          "level": 7,
           "passion": 1
         },
         {
           "skill": "Melee",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Cooking",
           "level": 3,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Animals",
-          "level": 10,
+          "skill": "Plants",
+          "level": 11,
           "passion": 2
         },
         {
           "skill": "Mining",
-          "level": 4,
-          "passion": 2
+          "level": 7,
+          "passion": 1
         },
         {
-          "skill": "Social",
+          "skill": "Melee",
           "level": 4,
           "passion": 1
         }
       ],
-      "incapable": [],
+      "incapable": [
+        "Crafting",
+        "Intellectual"
+      ],
+      "health": []
+    },
+    {
+      "id": "Human146",
+      "name": "Velma Wheeler",
+      "nick": "Velma",
+      "age": 17,
+      "gender": "Female",
+      "childhood": "Mute",
+      "adulthood": null,
+      "traits": [
+        "Body modder"
+      ],
+      "passions": [
+        {
+          "skill": "Animals",
+          "level": 6,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Crafting",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Animals",
+          "level": 6,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Crafting",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Social"
+      ],
       "health": []
     }
   ]
