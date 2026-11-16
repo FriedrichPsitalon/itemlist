@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T00:10:03Z",
+  "updatedUtc": "2026-11-16T00:14:45Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 6,
-  "unadopted": 1,
+  "colonists": 7,
+  "unadopted": 2,
   "pawns": [
     {
       "id": "Human3664395",
@@ -75,6 +75,60 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Human3738935",
+      "name": "Shurka 'Mania' Shapovalov",
+      "nick": "Mania",
+      "age": 48,
+      "gender": "Male",
+      "childhood": "Coma child",
+      "adulthood": "Evangelist",
+      "traits": [
+        "Mountain lover",
+        "Slob"
+      ],
+      "passions": [
+        {
+          "skill": "Shooting",
+          "level": 16,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Artistic",
+          "level": 6,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 5,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Shooting",
+          "level": 16,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Artistic",
+          "level": 6,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": []
     }
   ]
 }
