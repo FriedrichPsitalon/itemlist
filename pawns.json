@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:30:30Z",
+  "updatedUtc": "2026-11-16T06:31:35Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,59 +11,127 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human429",
-      "name": "Alexander 'Doctor' Five",
-      "nick": "Doctor",
-      "age": 26,
+      "id": "Human225",
+      "name": "Yutong Li",
+      "nick": "Li",
+      "age": 45,
       "gender": "Male",
-      "childhood": "World slider",
-      "adulthood": "Villain",
+      "childhood": "Cadet",
+      "adulthood": "Flaneur",
       "traits": [
-        "Bloodlust",
-        "Ascetic",
-        "Menagerist"
+        "Technophobe",
+        "Misogynist"
       ],
       "passions": [
         {
-          "skill": "Melee",
-          "level": 8,
-          "passion": 1
-        },
-        {
-          "skill": "Medical",
-          "level": 8,
-          "passion": 1
-        },
-        {
           "skill": "Social",
-          "level": 7,
-          "passion": 1
+          "level": 11,
+          "passion": 2
         },
         {
           "skill": "Intellectual",
-          "level": 7,
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 9,
           "passion": 1
         },
         {
-          "skill": "Animals",
-          "level": 4,
+          "skill": "Cooking",
+          "level": 9,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Melee",
-          "level": 8,
-          "passion": 1
+          "skill": "Social",
+          "level": 11,
+          "passion": 2
         },
         {
-          "skill": "Medical",
-          "level": 8,
+          "skill": "Intellectual",
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 9,
           "passion": 1
+        }
+      ],
+      "incapable": [
+        "Shooting",
+        "Melee"
+      ],
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Scratch scar",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Scratch scar (aching)",
+          "count": 1,
+          "parts": [
+            "left leg"
+          ]
+        },
+        {
+          "kind": "addiction",
+          "label": "Smokeleaf dependence (15%)",
+          "count": 1,
+          "parts": []
+        }
+      ]
+    },
+    {
+      "id": "Human229",
+      "name": "Samantha von Aachen",
+      "nick": "Samantha",
+      "age": 33,
+      "gender": "Female",
+      "childhood": "Displaced noble",
+      "adulthood": "Minister",
+      "traits": [
+        "Hard worker"
+      ],
+      "passions": [
+        {
+          "skill": "Shooting",
+          "level": 10,
+          "passion": 2
         },
         {
           "skill": "Social",
-          "level": 7,
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Crafting",
+          "level": 8,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Shooting",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Crafting",
+          "level": 8,
           "passion": 1
         }
       ],
@@ -71,144 +139,69 @@
       "health": []
     },
     {
-      "id": "Human432",
-      "name": "Gil 'Giggles' Durnin",
-      "nick": "Giggles",
-      "age": 54,
+      "id": "Human232",
+      "name": "Vasilisa Dodson",
+      "nick": "Dodson",
+      "age": 14,
       "gender": "Female",
-      "childhood": "Traumatized youth",
-      "adulthood": "Mental patient",
-      "traits": [
-        "Slowpoke",
-        "Misandrist"
-      ],
-      "passions": [
-        {
-          "skill": "Plants",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Crafting",
-          "level": 8,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 8,
-          "passion": 1
-        },
-        {
-          "skill": "Medical",
-          "level": 7,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Plants",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Crafting",
-          "level": 8,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 8,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Mining",
-        "Cooking",
-        "Social"
-      ],
-      "health": [
-        {
-          "kind": "scar",
-          "label": "Scarification (aching)",
-          "count": 2,
-          "parts": [
-            "left leg",
-            "left arm"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Scarification (itchy)",
-          "count": 1,
-          "parts": [
-            "right arm"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human435",
-      "name": "Scott Pruitt",
-      "nick": "Pruitt",
-      "age": 16,
-      "gender": "Male",
-      "childhood": "Apocalypse survivor",
+      "childhood": "Shop kid",
       "adulthood": null,
       "traits": [
-        "Beautiful",
-        "Jogger",
-        "Ascetic"
+        "Neat",
+        "Rebel"
       ],
       "passions": [
-        {
-          "skill": "Shooting",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 4,
-          "passion": 2
-        },
         {
           "skill": "Melee",
           "level": 3,
           "passion": 2
+        },
+        {
+          "skill": "Crafting",
+          "level": 3,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 3,
+          "passion": 1
+        },
+        {
+          "skill": "Intellectual",
+          "level": 3,
+          "passion": 1
+        },
+        {
+          "skill": "Construction",
+          "level": 2,
+          "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Shooting",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 4,
-          "passion": 2
-        },
-        {
           "skill": "Melee",
           "level": 3,
           "passion": 2
+        },
+        {
+          "skill": "Crafting",
+          "level": 3,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 3,
+          "passion": 1
         }
       ],
       "incapable": [],
       "health": [
         {
           "kind": "scar",
-          "label": "Scarification (aching)",
-          "count": 2,
-          "parts": [
-            "right leg"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Scarification (itchy)",
+          "label": "Stab scar",
           "count": 1,
           "parts": [
-            "left eye"
+            "left leg"
           ]
         }
       ]
