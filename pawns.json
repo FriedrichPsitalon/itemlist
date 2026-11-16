@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:45:40Z",
+  "updatedUtc": "2026-11-16T06:47:13Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,103 +11,143 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human181",
-      "name": "Kiko 'Squirt' Simon",
-      "nick": "Squirt",
-      "age": 21,
+      "id": "Human164",
+      "name": "Vaska 'Vas' Neemor",
+      "nick": "Vas",
+      "age": 64,
       "gender": "Male",
-      "childhood": "Story writer",
-      "adulthood": "Medieval sailor",
+      "childhood": "Vatgrown assassin",
+      "adulthood": "Mercenary",
       "traits": [
-        "Fast learner",
-        "Nudist",
-        "Night owl"
+        "Psychopath"
       ],
       "passions": [
         {
-          "skill": "Animals",
+          "skill": "Shooting",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
           "level": 7,
           "passion": 2
         },
         {
-          "skill": "Social",
-          "level": 6,
-          "passion": 2
+          "skill": "Crafting",
+          "level": 5,
+          "passion": 1
         },
         {
-          "skill": "Intellectual",
-          "level": 5,
+          "skill": "Social",
+          "level": 4,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Animals",
+          "skill": "Shooting",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
           "level": 7,
           "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 5,
-          "passion": 1
         }
       ],
       "incapable": [
-        "Construction",
-        "Mining",
         "Cooking",
         "Plants",
-        "Crafting"
+        "Artistic",
+        "Medical"
       ],
-      "health": []
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Bite scar (aching)",
+          "count": 1,
+          "parts": [
+            "left leg"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Scarification (itchy)",
+          "count": 1,
+          "parts": [
+            "right leg"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Stab scar (aching)",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Stab scar (painful)",
+          "count": 1,
+          "parts": [
+            "right arm"
+          ]
+        }
+      ]
     },
     {
-      "id": "Human184",
-      "name": "Broq Rox",
-      "nick": "Broq",
-      "age": 32,
-      "gender": "Female",
-      "childhood": "Shop kid",
-      "adulthood": "Navy scientist",
+      "id": "Human167",
+      "name": "Jason Law",
+      "nick": "Law",
+      "age": 20,
+      "gender": "Male",
+      "childhood": "Apocalypse survivor",
+      "adulthood": "Colony settler",
       "traits": [
-        "Greedy"
+        "Bloodlust"
       ],
       "passions": [
         {
-          "skill": "Intellectual",
-          "level": 11,
+          "skill": "Construction",
+          "level": 6,
           "passion": 2
         },
         {
-          "skill": "Social",
-          "level": 5,
-          "passion": 1
+          "skill": "Mining",
+          "level": 6,
+          "passion": 2
         },
         {
-          "skill": "Cooking",
-          "level": 4,
+          "skill": "Plants",
+          "level": 5,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Intellectual",
-          "level": 11,
+          "skill": "Construction",
+          "level": 6,
           "passion": 2
         },
         {
-          "skill": "Social",
-          "level": 5,
-          "passion": 1
+          "skill": "Mining",
+          "level": 6,
+          "passion": 2
         },
         {
-          "skill": "Cooking",
-          "level": 4,
+          "skill": "Plants",
+          "level": 5,
           "passion": 1
         }
       ],
@@ -116,88 +156,71 @@
         {
           "kind": "scar",
           "label": "Scarification (itchy)",
-          "count": 1,
+          "count": 2,
           "parts": [
-            "left eye"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Scratch scar (itchy)",
-          "count": 1,
-          "parts": [
-            "left leg"
+            "torso",
+            "right leg"
           ]
         }
       ]
     },
     {
-      "id": "Human195",
-      "name": "Edouard Garrison",
-      "nick": "Edouard",
-      "age": 54,
+      "id": "Human170",
+      "name": "Wade Bell",
+      "nick": "Bell",
+      "age": 32,
       "gender": "Male",
-      "childhood": "Vatgrown soldier",
-      "adulthood": "Space marine",
+      "childhood": "Pyromaniac",
+      "adulthood": "Glitterworld surgeon",
       "traits": [
-        "Nudist",
-        "Hard worker"
+        "Pyromaniac"
       ],
       "passions": [
         {
-          "skill": "Melee",
-          "level": 17,
+          "skill": "Artistic",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Medical",
+          "level": 5,
           "passion": 1
         },
         {
-          "skill": "Shooting",
-          "level": 14,
+          "skill": "Melee",
+          "level": 3,
           "passion": 1
         },
         {
           "skill": "Construction",
-          "level": 4,
+          "level": 3,
           "passion": 1
         },
         {
           "skill": "Mining",
-          "level": 4,
+          "level": 3,
           "passion": 1
         }
       ],
       "topSkills": [
         {
+          "skill": "Artistic",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Medical",
+          "level": 5,
+          "passion": 1
+        },
+        {
           "skill": "Melee",
-          "level": 17,
-          "passion": 1
-        },
-        {
-          "skill": "Shooting",
-          "level": 14,
-          "passion": 1
-        },
-        {
-          "skill": "Construction",
-          "level": 4,
+          "level": 3,
           "passion": 1
         }
       ],
-      "incapable": [
-        "Medical",
-        "Social"
-      ],
-      "health": [
-        {
-          "kind": "scar",
-          "label": "Scarification (itchy)",
-          "count": 3,
-          "parts": [
-            "head",
-            "left arm",
-            "left leg"
-          ]
-        }
-      ]
+      "incapable": [],
+      "health": []
     }
   ]
 }
