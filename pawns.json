@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:35:33Z",
+  "updatedUtc": "2026-11-16T06:36:37Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,25 +11,24 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human636",
-      "name": "Irina Walker",
-      "nick": "Irina",
-      "age": 30,
+      "id": "Human728",
+      "name": "Keaton Roach",
+      "nick": "Roach",
+      "age": 18,
       "gender": "Female",
-      "childhood": "Industrial orphan",
-      "adulthood": "Counselor",
+      "childhood": "Caveworld tender",
+      "adulthood": null,
       "traits": [
-        "Hard worker",
-        "Rebel"
+        "Undergrounder"
       ],
       "passions": [
         {
-          "skill": "Social",
-          "level": 14,
+          "skill": "Mining",
+          "level": 7,
           "passion": 2
         },
         {
-          "skill": "Crafting",
+          "skill": "Plants",
           "level": 6,
           "passion": 2
         },
@@ -39,19 +38,19 @@
           "passion": 1
         },
         {
-          "skill": "Mining",
+          "skill": "Animals",
           "level": 4,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Social",
-          "level": 14,
+          "skill": "Mining",
+          "level": 7,
           "passion": 2
         },
         {
-          "skill": "Crafting",
+          "skill": "Plants",
           "level": 6,
           "passion": 2
         },
@@ -61,130 +60,127 @@
           "passion": 1
         }
       ],
-      "incapable": [
-        "Cooking"
-      ],
-      "health": []
+      "incapable": [],
+      "health": [
+        {
+          "kind": "addiction",
+          "label": "Smokeleaf dependence (36%)",
+          "count": 1,
+          "parts": []
+        }
+      ]
     },
     {
-      "id": "Human639",
-      "name": "Beka Pham",
-      "nick": "Pham",
-      "age": 41,
-      "gender": "Female",
-      "childhood": "Shop kid",
-      "adulthood": "Psychiatric patient",
+      "id": "Human732",
+      "name": "Joshua 'Zug' Hamby",
+      "nick": "Zug",
+      "age": 13,
+      "gender": "Male",
+      "childhood": "Hex-cell artist",
+      "adulthood": null,
       "traits": [
+        "Beautiful",
         "Squeamish",
-        "Refined palate"
+        "Clumsy"
       ],
       "passions": [
         {
-          "skill": "Intellectual",
-          "level": 6,
+          "skill": "Artistic",
+          "level": 4,
           "passion": 2
         },
         {
-          "skill": "Animals",
-          "level": 4,
-          "passion": 1
+          "skill": "Cooking",
+          "level": 3,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 3,
+          "passion": 2
         },
         {
           "skill": "Construction",
-          "level": 3,
-          "passion": 1
-        },
-        {
-          "skill": "Cooking",
           "level": 2,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Intellectual",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Animals",
+          "skill": "Artistic",
           "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Construction",
-          "level": 3,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Shooting",
-        "Melee",
-        "Medical",
-        "Social"
-      ],
-      "health": []
-    },
-    {
-      "id": "Human642",
-      "name": "Martinus 'Ele' van de Bride",
-      "nick": "Ele",
-      "age": 29,
-      "gender": "Male",
-      "childhood": "Child spy",
-      "adulthood": "Counselor",
-      "traits": [
-        "Ecologist",
-        "Xenophile",
-        "Kind"
-      ],
-      "passions": [
-        {
-          "skill": "Social",
-          "level": 14,
           "passion": 2
         },
         {
-          "skill": "Animals",
-          "level": 5,
+          "skill": "Cooking",
+          "level": 3,
           "passion": 2
         },
         {
           "skill": "Plants",
+          "level": 3,
+          "passion": 2
+        }
+      ],
+      "incapable": [
+        "Intellectual"
+      ],
+      "health": []
+    },
+    {
+      "id": "Human735",
+      "name": "Anatoly Cline",
+      "nick": "Cline",
+      "age": 53,
+      "gender": "Male",
+      "childhood": "Wreckage explorer",
+      "adulthood": "Corporate drone",
+      "traits": [
+        "Body purist",
+        "Dog person",
+        "Chemical interest"
+      ],
+      "passions": [
+        {
+          "skill": "Intellectual",
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
           "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 6,
+          "passion": 1
+        },
+        {
+          "skill": "Social",
+          "level": 6,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Social",
-          "level": 14,
+          "skill": "Intellectual",
+          "level": 11,
           "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 8,
-          "passion": 1
         },
         {
           "skill": "Animals",
-          "level": 5,
+          "level": 8,
           "passion": 2
-        }
-      ],
-      "incapable": [
-        "Cooking"
-      ],
-      "health": [
+        },
         {
-          "kind": "scar",
-          "label": "Frostbite scar",
-          "count": 1,
-          "parts": [
-            "right foot"
-          ]
+          "skill": "Melee",
+          "level": 6,
+          "passion": 1
         }
-      ]
+      ],
+      "incapable": [],
+      "health": []
     }
   ]
 }
