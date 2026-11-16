@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:16:16Z",
+  "updatedUtc": "2026-11-16T06:17:32Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,163 +11,28 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human77",
-      "name": "Miesha 'Mie' Aldemar",
-      "nick": "Mie",
-      "age": 52,
+      "id": "Human566",
+      "name": "Natalya Goodman",
+      "nick": "Natalya",
+      "age": 35,
       "gender": "Female",
-      "childhood": "Pampered",
-      "adulthood": "Ninja assassin",
+      "childhood": "Wreckage explorer",
+      "adulthood": "Medieval doctor",
       "traits": [
-        "Masochist",
-        "Steadfast",
-        "Chemical interest"
+        "Careful shooter",
+        "Snob",
+        "Psychically dull"
       ],
       "passions": [
         {
-          "skill": "Shooting",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 9,
-          "passion": 1
-        },
-        {
-          "skill": "Medical",
-          "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Crafting",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Shooting",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 9,
-          "passion": 1
-        },
-        {
-          "skill": "Medical",
-          "level": 7,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Cooking",
-        "Plants"
-      ],
-      "health": [
-        {
-          "kind": "scar",
-          "label": "Bite scar",
-          "count": 1,
-          "parts": [
-            "left leg"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Scratch scar",
-          "count": 2,
-          "parts": [
-            "torso",
-            "head"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human80",
-      "name": "Jason 'Agent' Roland",
-      "nick": "Agent",
-      "age": 39,
-      "gender": "Male",
-      "childhood": "Aspergers rebel",
-      "adulthood": "Government agent",
-      "traits": [
-        "Clumsy"
-      ],
-      "passions": [
-        {
-          "skill": "Shooting",
-          "level": 10,
-          "passion": 2
-        },
-        {
           "skill": "Melee",
-          "level": 8,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Shooting",
-          "level": 10,
+          "level": 9,
           "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 8,
-          "passion": 1
         },
         {
           "skill": "Intellectual",
           "level": 8,
-          "passion": 0
-        }
-      ],
-      "incapable": [
-        "Medical"
-      ],
-      "health": [
-        {
-          "kind": "bionic",
-          "label": "Prosthetic hand",
-          "count": 1,
-          "parts": [
-            "right hand"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human83",
-      "name": "Caitlin 'Cait' Stirr",
-      "nick": "Cait",
-      "age": 64,
-      "gender": "Female",
-      "childhood": "Gymnast",
-      "adulthood": "Intimate assassin",
-      "traits": [
-        "Pretty",
-        "Super-immune",
-        "Thick skinned"
-      ],
-      "passions": [
-        {
-          "skill": "Melee",
-          "level": 14,
           "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 6,
-          "passion": 1
         },
         {
           "skill": "Animals",
@@ -175,58 +40,145 @@
           "passion": 1
         },
         {
-          "skill": "Shooting",
-          "level": 3,
+          "skill": "Medical",
+          "level": 4,
           "passion": 1
         }
       ],
       "topSkills": [
         {
           "skill": "Melee",
-          "level": 14,
+          "level": 9,
           "passion": 2
         },
         {
-          "skill": "Social",
-          "level": 11,
+          "skill": "Intellectual",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
+          "level": 5,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Old gunshot",
+          "count": 1,
+          "parts": [
+            "right ear"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human569",
+      "name": "Sergio 'Squint' Gentry",
+      "nick": "Squint",
+      "age": 21,
+      "gender": "Male",
+      "childhood": "Frightened child",
+      "adulthood": "Ranger",
+      "traits": [
+        "World weary",
+        "Fun-loving"
+      ],
+      "passions": [
+        {
+          "skill": "Cooking",
+          "level": 8,
           "passion": 2
         },
         {
           "skill": "Plants",
-          "level": 6,
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Medical",
+          "level": 8,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Cooking",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Medical",
+          "level": 8,
           "passion": 1
         }
       ],
       "incapable": [
-        "Medical"
+        "Shooting",
+        "Melee"
       ],
-      "health": [
+      "health": []
+    },
+    {
+      "id": "Human572",
+      "name": "Afeeba 'Feeb' Dafo",
+      "nick": "Feeb",
+      "age": 39,
+      "gender": "Female",
+      "childhood": "Test subject",
+      "adulthood": "Test subject",
+      "traits": [
+        "Nudist",
+        "Ocean lover"
+      ],
+      "passions": [
         {
-          "kind": "chronic",
-          "label": "Asthma (minor)",
-          "count": 2,
-          "parts": [
-            "right lung",
-            "left lung"
-          ]
+          "skill": "Intellectual",
+          "level": 11,
+          "passion": 2
         },
         {
-          "kind": "scar",
-          "label": "Scratch scar (aching)",
-          "count": 1,
-          "parts": [
-            "left leg"
-          ]
+          "skill": "Melee",
+          "level": 10,
+          "passion": 2
         },
         {
-          "kind": "scar",
-          "label": "Stab scar",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
+          "skill": "Cooking",
+          "level": 7,
+          "passion": 1
         }
-      ]
+      ],
+      "topSkills": [
+        {
+          "skill": "Intellectual",
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Cooking",
+          "level": 7,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Mining",
+        "Plants",
+        "Medical",
+        "Social"
+      ],
+      "health": []
     }
   ]
 }
