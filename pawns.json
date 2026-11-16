@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:22:29Z",
+  "updatedUtc": "2026-11-16T06:23:35Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,157 +11,208 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human1004",
-      "name": "Tristan Evans",
-      "nick": "Tristan",
-      "age": 25,
+      "id": "Human826",
+      "name": "Holly 'Kit' Kettu",
+      "nick": "Kit",
+      "age": 70,
       "gender": "Female",
-      "childhood": "Caveworld tender",
-      "adulthood": "Assembler",
+      "childhood": "Reclusive prodigy",
+      "adulthood": "Fervent researcher",
       "traits": [
-        "Undergrounder"
+        "Too smart",
+        "Body modder",
+        "Animal lover"
       ],
       "passions": [
         {
-          "skill": "Crafting",
-          "level": 12,
+          "skill": "Medical",
+          "level": 17,
           "passion": 2
         },
         {
-          "skill": "Plants",
-          "level": 9,
-          "passion": 2
+          "skill": "Intellectual",
+          "level": 16,
+          "passion": 1
         },
         {
-          "skill": "Construction",
-          "level": 4,
+          "skill": "Shooting",
+          "level": 6,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 5,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Crafting",
-          "level": 12,
+          "skill": "Medical",
+          "level": 17,
           "passion": 2
         },
         {
-          "skill": "Plants",
-          "level": 9,
+          "skill": "Intellectual",
+          "level": 16,
+          "passion": 1
+        },
+        {
+          "skill": "Shooting",
+          "level": 6,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Construction",
+        "Mining",
+        "Cooking",
+        "Plants",
+        "Crafting",
+        "Artistic",
+        "Social"
+      ],
+      "health": [
+        {
+          "kind": "chronic",
+          "label": "Cataract",
+          "count": 2,
+          "parts": [
+            "right eye",
+            "left eye"
+          ]
+        },
+        {
+          "kind": "chronic",
+          "label": "Frail",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Bite scar",
+          "count": 1,
+          "parts": [
+            "head"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human830",
+      "name": "Anton 'Waltz' Walther",
+      "nick": "Waltz",
+      "age": 63,
+      "gender": "Male",
+      "childhood": "Student",
+      "adulthood": "Chemist",
+      "traits": [
+        "Kind"
+      ],
+      "passions": [
+        {
+          "skill": "Medical",
+          "level": 13,
           "passion": 2
         },
         {
-          "skill": "Construction",
-          "level": 4,
+          "skill": "Intellectual",
+          "level": 13,
+          "passion": 1
+        },
+        {
+          "skill": "Social",
+          "level": 8,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Medical",
+          "level": 13,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 13,
+          "passion": 1
+        },
+        {
+          "skill": "Social",
+          "level": 8,
           "passion": 1
         }
       ],
       "incapable": [],
       "health": [
         {
-          "kind": "addiction",
-          "label": "Go-juice addiction (39%)",
+          "kind": "bionic",
+          "label": "Prosthetic hand",
           "count": 1,
-          "parts": []
+          "parts": [
+            "left hand"
+          ]
+        },
+        {
+          "kind": "chronic",
+          "label": "Artery blockage (minor)",
+          "count": 1,
+          "parts": [
+            "heart"
+          ]
         }
       ]
     },
     {
-      "id": "Human1009",
-      "name": "Daniel Stone",
-      "nick": "Stone",
-      "age": 13,
+      "id": "Human834",
+      "name": "Yoshi Fuller",
+      "nick": "Fuller",
+      "age": 31,
       "gender": "Male",
-      "childhood": "Urbworld army brat",
-      "adulthood": null,
+      "childhood": "Shop kid",
+      "adulthood": "Colony settler",
       "traits": [
-        "Fast learner",
-        "Recluse"
+        "Lush",
+        "Wimp",
+        "Bisexual"
       ],
       "passions": [
-        {
-          "skill": "Construction",
-          "level": 5,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 3,
-          "passion": 2
-        },
-        {
-          "skill": "Cooking",
-          "level": 3,
-          "passion": 2
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Construction",
-          "level": 5,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 3,
-          "passion": 2
-        },
-        {
-          "skill": "Cooking",
-          "level": 3,
-          "passion": 2
-        }
-      ],
-      "incapable": [],
-      "health": []
-    },
-    {
-      "id": "Human1013",
-      "name": "Odette Miller",
-      "nick": "Odette",
-      "age": 69,
-      "gender": "Female",
-      "childhood": "Coma child",
-      "adulthood": "Paramedic",
-      "traits": [
-        "Insomniac",
-        "Psychically deaf"
-      ],
-      "passions": [
-        {
-          "skill": "Medical",
-          "level": 10,
-          "passion": 2
-        },
         {
           "skill": "Social",
-          "level": 9,
+          "level": 8,
           "passion": 2
         },
         {
-          "skill": "Animals",
-          "level": 5,
+          "skill": "Plants",
+          "level": 7,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 7,
           "passion": 1
         },
         {
-          "skill": "Cooking",
-          "level": 4,
+          "skill": "Construction",
+          "level": 6,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Medical",
-          "level": 10,
-          "passion": 2
-        },
-        {
           "skill": "Social",
-          "level": 9,
+          "level": 8,
           "passion": 2
         },
         {
-          "skill": "Animals",
-          "level": 5,
+          "skill": "Plants",
+          "level": 7,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 7,
           "passion": 1
         }
       ],
@@ -172,8 +223,14 @@
           "label": "Old gunshot",
           "count": 1,
           "parts": [
-            "right shoulder"
+            "left leg"
           ]
+        },
+        {
+          "kind": "addiction",
+          "label": "Alcohol addiction (50%)",
+          "count": 1,
+          "parts": []
         }
       ]
     }
