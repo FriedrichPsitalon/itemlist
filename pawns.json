@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:41:44Z",
+  "updatedUtc": "2026-11-16T06:43:15Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,28 +11,32 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human844",
-      "name": "Sera 'Kaleun' Steiner",
-      "nick": "Kaleun",
+      "id": "Human160",
+      "name": "Sarah 'Four Eyes' Renault",
+      "nick": "Four Eyes",
       "age": 47,
       "gender": "Female",
-      "childhood": "Midworld cadet",
-      "adulthood": "Warship captain",
+      "childhood": "Aspiring physicist",
+      "adulthood": "Deep space surveyor",
       "traits": [
-        "Dog person",
-        "Perfectionist",
-        "Eccentric"
+        "Vengeful",
+        "Annoying voice"
       ],
       "passions": [
         {
-          "skill": "Social",
-          "level": 13,
-          "passion": 2
-        },
-        {
           "skill": "Intellectual",
           "level": 11,
-          "passion": 2
+          "passion": 1
+        },
+        {
+          "skill": "Construction",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Crafting",
+          "level": 7,
+          "passion": 1
         },
         {
           "skill": "Shooting",
@@ -42,98 +46,104 @@
       ],
       "topSkills": [
         {
-          "skill": "Social",
-          "level": 13,
-          "passion": 2
-        },
-        {
           "skill": "Intellectual",
           "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 6,
           "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": []
-    },
-    {
-      "id": "Human848",
-      "name": "Travis Murrieta",
-      "nick": "Travis",
-      "age": 43,
-      "gender": "Male",
-      "childhood": "Sickly child",
-      "adulthood": "Escaped convict",
-      "traits": [
-        "Lush",
-        "Kind",
-        "Xenophobe"
-      ],
-      "passions": [
-        {
-          "skill": "Mining",
-          "level": 8,
-          "passion": 2
         },
         {
-          "skill": "Intellectual",
+          "skill": "Construction",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Crafting",
           "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Shooting",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Mining",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Shooting",
-          "level": 4,
           "passion": 1
         }
       ],
       "incapable": [
+        "Cooking",
         "Medical"
       ],
       "health": [
         {
-          "kind": "chronic",
-          "label": "Asthma (minor)",
-          "count": 2,
-          "parts": [
-            "right lung",
-            "left lung"
-          ]
-        },
-        {
           "kind": "scar",
-          "label": "Scratch scar (itchy)",
+          "label": "Scratch scar",
           "count": 1,
           "parts": [
-            "torso"
+            "right leg"
           ]
         },
         {
           "kind": "scar",
-          "label": "Stab scar",
+          "label": "Scratch scar (painful)",
           "count": 1,
           "parts": [
             "right arm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human163",
+      "name": "Ruben Salat",
+      "nick": "Ruben",
+      "age": 29,
+      "gender": "Male",
+      "childhood": "Story writer",
+      "adulthood": "Geologist",
+      "traits": [
+        "Lush",
+        "Rebel",
+        "Slothful"
+      ],
+      "passions": [
+        {
+          "skill": "Mining",
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Crafting",
+          "level": 7,
+          "passion": 2
+        },
+        {
+          "skill": "Artistic",
+          "level": 5,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Mining",
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Crafting",
+          "level": 7,
+          "passion": 2
+        }
+      ],
+      "incapable": [],
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Scratch scar",
+          "count": 1,
+          "parts": [
+            "right leg"
           ]
         },
         {
@@ -145,56 +155,60 @@
       ]
     },
     {
-      "id": "Human852",
-      "name": "Aeryn 'Ryn' Zuhro",
-      "nick": "Ryn",
-      "age": 42,
+      "id": "Human167",
+      "name": "Penelope 'Slick' Bradley",
+      "nick": "Slick",
+      "age": 37,
       "gender": "Female",
-      "childhood": "Apocalypse survivor",
-      "adulthood": "Herbalist",
+      "childhood": "Pyromaniac",
+      "adulthood": "Conceptual artist",
       "traits": [
-        "Tycoon"
+        "Pyromaniac",
+        "Anxious"
       ],
       "passions": [
         {
-          "skill": "Crafting",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 6,
+          "skill": "Artistic",
+          "level": 15,
           "passion": 2
         },
         {
           "skill": "Shooting",
-          "level": 9,
+          "level": 4,
           "passion": 1
         },
         {
-          "skill": "Animals",
-          "level": 9,
+          "skill": "Intellectual",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Melee",
+          "level": 2,
           "passion": 1
         }
       ],
       "topSkills": [
         {
+          "skill": "Artistic",
+          "level": 15,
+          "passion": 2
+        },
+        {
           "skill": "Shooting",
-          "level": 9,
+          "level": 4,
           "passion": 1
         },
         {
-          "skill": "Animals",
-          "level": 9,
+          "skill": "Intellectual",
+          "level": 4,
           "passion": 1
-        },
-        {
-          "skill": "Plants",
-          "level": 8,
-          "passion": 0
         }
       ],
-      "incapable": [],
+      "incapable": [
+        "Medical",
+        "Social"
+      ],
       "health": []
     }
   ]
