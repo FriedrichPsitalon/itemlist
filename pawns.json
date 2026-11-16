@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T02:09:14Z",
+  "updatedUtc": "2026-11-16T02:11:14Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -62,26 +62,7 @@
         }
       ],
       "incapable": [],
-      "health": [
-        {
-          "kind": "injury",
-          "label": "Bite (cougar teeth)",
-          "count": 2,
-          "parts": [
-            "right arm",
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Scratch (cougar claw)",
-          "count": 4,
-          "parts": [
-            "left leg",
-            "torso"
-          ]
-        }
-      ]
+      "health": []
     }
   ]
 }
