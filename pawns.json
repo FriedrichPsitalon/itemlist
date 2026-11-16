@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:53:35Z",
+  "updatedUtc": "2026-11-16T06:55:02Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,35 +11,30 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human269",
-      "name": "Florian 'Skater' Haas",
-      "nick": "Skater",
-      "age": 45,
-      "gender": "Male",
-      "childhood": "Philosopher",
-      "adulthood": "Upright diplomat",
+      "id": "Human116",
+      "name": "Pyrrha Trovatelli",
+      "nick": "Pyrrha",
+      "age": 36,
+      "gender": "Female",
+      "childhood": "Noble ward",
+      "adulthood": "Information broker",
       "traits": [
-        "Clumsy",
-        "Dunce"
+        "Fast learner",
+        "Insatiable"
       ],
       "passions": [
         {
           "skill": "Social",
           "level": 13,
-          "passion": 2
+          "passion": 1
         },
         {
           "skill": "Intellectual",
-          "level": 6,
+          "level": 12,
           "passion": 1
         },
         {
-          "skill": "Mining",
-          "level": 5,
-          "passion": 1
-        },
-        {
-          "skill": "Animals",
+          "skill": "Medical",
           "level": 4,
           "passion": 1
         }
@@ -48,124 +43,146 @@
         {
           "skill": "Social",
           "level": 13,
-          "passion": 2
+          "passion": 1
         },
         {
           "skill": "Intellectual",
-          "level": 6,
+          "level": 12,
+          "passion": 1
+        },
+        {
+          "skill": "Medical",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Mining",
+        "Plants"
+      ],
+      "health": []
+    },
+    {
+      "id": "Human119",
+      "name": "Yutaka Stephenson",
+      "nick": "Yutaka",
+      "age": 51,
+      "gender": "Male",
+      "childhood": "War refugee",
+      "adulthood": "Ascetic priest",
+      "traits": [
+        "Ascetic",
+        "Tough",
+        "Heat inclined"
+      ],
+      "passions": [
+        {
+          "skill": "Plants",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Cooking",
+          "level": 7,
+          "passion": 1
+        },
+        {
+          "skill": "Artistic",
+          "level": 5,
+          "passion": 1
+        },
+        {
+          "skill": "Medical",
+          "level": 5,
           "passion": 1
         },
         {
           "skill": "Mining",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Plants",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Cooking",
+          "level": 7,
+          "passion": 1
+        },
+        {
+          "skill": "Artistic",
           "level": 5,
           "passion": 1
         }
       ],
       "incapable": [
         "Shooting",
-        "Melee"
+        "Melee",
+        "Social"
       ],
       "health": []
     },
     {
-      "id": "Human272",
-      "name": "Billy 'Bell' Belloch",
-      "nick": "Bell",
-      "age": 44,
+      "id": "Human122",
+      "name": "Krandus 'Krand' Zaxsen",
+      "nick": "Krand",
+      "age": 27,
       "gender": "Male",
-      "childhood": "Animal caretaker",
-      "adulthood": "Wildlife ranger",
+      "childhood": "Rich boy",
+      "adulthood": "Hired gun",
       "traits": [
-        "Mountain lover",
-        "Very neurotic",
-        "Animal lover"
+        "Creepy breathing",
+        "Slow learner",
+        "Technophobe"
       ],
       "passions": [
         {
-          "skill": "Animals",
-          "level": 17,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 7,
-          "passion": 2
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Animals",
-          "level": 17,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 7,
-          "passion": 2
-        },
-        {
-          "skill": "Medical",
-          "level": 4,
-          "passion": 0
-        }
-      ],
-      "incapable": [
-        "Artistic",
-        "Intellectual"
-      ],
-      "health": []
-    },
-    {
-      "id": "Human275",
-      "name": "Vasilisa 'Zippy' Dennis",
-      "nick": "Zippy",
-      "age": 21,
-      "gender": "Female",
-      "childhood": "Medical assistant",
-      "adulthood": "Crop farmer",
-      "traits": [
-        "Psychically hypersensitive"
-      ],
-      "passions": [
-        {
-          "skill": "Plants",
-          "level": 13,
-          "passion": 2
-        },
-        {
-          "skill": "Medical",
+          "skill": "Melee",
           "level": 9,
           "passion": 2
         },
         {
-          "skill": "Intellectual",
-          "level": 4,
-          "passion": 1
+          "skill": "Shooting",
+          "level": 6,
+          "passion": 2
         },
         {
           "skill": "Cooking",
-          "level": 3,
+          "level": 6,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 5,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Plants",
-          "level": 13,
-          "passion": 2
-        },
-        {
-          "skill": "Medical",
+          "skill": "Melee",
           "level": 9,
           "passion": 2
         },
         {
-          "skill": "Intellectual",
-          "level": 4,
+          "skill": "Shooting",
+          "level": 6,
+          "passion": 2
+        },
+        {
+          "skill": "Cooking",
+          "level": 6,
           "passion": 1
         }
       ],
-      "incapable": [],
+      "incapable": [
+        "Plants",
+        "Medical",
+        "Social"
+      ],
       "health": []
     }
   ]
