@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:39:27Z",
+  "updatedUtc": "2026-11-16T06:40:22Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,106 +11,115 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human307",
-      "name": "Martin 'Sheo' Totzke",
-      "nick": "Sheo",
-      "age": 37,
+      "id": "Human746",
+      "name": "Kaileb 'Chop' Chapman",
+      "nick": "Chop",
+      "age": 32,
       "gender": "Male",
-      "childhood": "Caveworld tunneler",
-      "adulthood": "Urbworld rebel",
+      "childhood": "Urbworld urchin",
+      "adulthood": "Furniture builder",
       "traits": [
-        "Undergrounder",
-        "Hard worker"
+        "Jealous"
       ],
       "passions": [
         {
-          "skill": "Mining",
-          "level": 12,
+          "skill": "Plants",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 6,
           "passion": 2
         },
         {
           "skill": "Construction",
-          "level": 9,
+          "level": 6,
           "passion": 1
         },
         {
           "skill": "Melee",
-          "level": 7,
+          "level": 4,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Mining",
-          "level": 12,
+          "skill": "Plants",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 6,
           "passion": 2
         },
         {
           "skill": "Construction",
-          "level": 9,
-          "passion": 1
-        },
-        {
-          "skill": "Melee",
-          "level": 7,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Crafting",
-        "Intellectual"
-      ],
-      "health": []
-    },
-    {
-      "id": "Human311",
-      "name": "Alyssa 'Sparkles' Orchard",
-      "nick": "Sparkles",
-      "age": 54,
-      "gender": "Female",
-      "childhood": "Coreworld student",
-      "adulthood": "Coreworld jeweler",
-      "traits": [
-        "Slothful",
-        "Neat",
-        "Stoner"
-      ],
-      "passions": [
-        {
-          "skill": "Crafting",
-          "level": 15,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 14,
-          "passion": 1
-        },
-        {
-          "skill": "Construction",
-          "level": 10,
-          "passion": 1
-        },
-        {
-          "skill": "Animals",
           "level": 6,
           "passion": 1
         }
       ],
-      "topSkills": [
+      "incapable": [],
+      "health": []
+    },
+    {
+      "id": "Human749",
+      "name": "Alyssa 'Sparkles' Orchard",
+      "nick": "Sparkles",
+      "age": 16,
+      "gender": "Female",
+      "childhood": "Coreworld student",
+      "adulthood": null,
+      "traits": [
+        "Slob"
+      ],
+      "passions": [
         {
           "skill": "Crafting",
-          "level": 15,
-          "passion": 1
+          "level": 8,
+          "passion": 2
         },
         {
           "skill": "Artistic",
-          "level": 14,
+          "level": 5,
           "passion": 1
         },
         {
           "skill": "Construction",
-          "level": 10,
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Medical",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Shooting",
+          "level": 2,
+          "passion": 1
+        },
+        {
+          "skill": "Mining",
+          "level": 2,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Crafting",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Artistic",
+          "level": 5,
+          "passion": 1
+        },
+        {
+          "skill": "Construction",
+          "level": 4,
           "passion": 1
         }
       ],
@@ -118,58 +127,51 @@
         "Cooking",
         "Plants"
       ],
-      "health": [
-        {
-          "kind": "addiction",
-          "label": "Smokeleaf dependence (50%)",
-          "count": 1,
-          "parts": []
-        }
-      ]
+      "health": []
     },
     {
-      "id": "Human316",
-      "name": "Nina Galloway",
-      "nick": "Nina",
-      "age": 13,
+      "id": "Human752",
+      "name": "Lia Lu",
+      "nick": "Lu",
+      "age": 17,
       "gender": "Female",
-      "childhood": "Caveworld tender",
+      "childhood": "Music idol",
       "adulthood": null,
       "traits": [
-        "Undergrounder",
-        "Refined palate"
+        "Beautiful",
+        "Quick sleeper"
       ],
       "passions": [
         {
-          "skill": "Plants",
-          "level": 4,
+          "skill": "Animals",
+          "level": 8,
           "passion": 2
         },
         {
-          "skill": "Melee",
-          "level": 3,
-          "passion": 2
+          "skill": "Artistic",
+          "level": 6,
+          "passion": 1
         },
         {
-          "skill": "Mining",
-          "level": 3,
+          "skill": "Social",
+          "level": 5,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Plants",
-          "level": 4,
+          "skill": "Animals",
+          "level": 8,
           "passion": 2
         },
         {
-          "skill": "Melee",
-          "level": 3,
-          "passion": 2
+          "skill": "Artistic",
+          "level": 6,
+          "passion": 1
         },
         {
-          "skill": "Mining",
-          "level": 3,
+          "skill": "Social",
+          "level": 5,
           "passion": 1
         }
       ],
