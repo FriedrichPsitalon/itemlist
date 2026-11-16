@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:32:49Z",
+  "updatedUtc": "2026-11-16T06:34:07Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,218 +11,201 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human882",
-      "name": "Fletcher Hazeldean",
-      "nick": "Hazeldean",
-      "age": 66,
+      "id": "Human1014",
+      "name": "Sturg Octavian",
+      "nick": "Sturg",
+      "age": 41,
       "gender": "Male",
-      "childhood": "Vatgrown soldier",
-      "adulthood": "Ascetic priest",
+      "childhood": "Story writer",
+      "adulthood": "Defector",
       "traits": [
-        "Ascetic",
-        "Chemical fascination"
+        "Gourmand"
       ],
       "passions": [
         {
-          "skill": "Plants",
-          "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Cooking",
-          "level": 4,
-          "passion": 2
-        },
-        {
-          "skill": "Animals",
-          "level": 4,
+          "skill": "Shooting",
+          "level": 7,
           "passion": 1
         },
         {
           "skill": "Intellectual",
+          "level": 6,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 5,
+          "passion": 1
+        },
+        {
+          "skill": "Mining",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Cooking",
           "level": 4,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Plants",
-          "level": 9,
-          "passion": 2
+          "skill": "Shooting",
+          "level": 7,
+          "passion": 1
         },
         {
-          "skill": "Cooking",
-          "level": 4,
-          "passion": 2
+          "skill": "Intellectual",
+          "level": 6,
+          "passion": 1
         },
         {
           "skill": "Animals",
-          "level": 4,
+          "level": 5,
           "passion": 1
         }
       ],
       "incapable": [
-        "Shooting",
-        "Melee",
-        "Medical",
-        "Social"
+        "Artistic"
       ],
       "health": [
         {
-          "kind": "chronic",
-          "label": "Artery blockage (minor)",
+          "kind": "bionic",
+          "label": "Surrogate liver",
           "count": 1,
           "parts": [
-            "heart"
-          ]
-        },
-        {
-          "kind": "chronic",
-          "label": "Frail",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "chronic",
-          "label": "Hearing loss",
-          "count": 2,
-          "parts": [
-            "left ear",
-            "right ear"
+            "liver"
           ]
         },
         {
           "kind": "scar",
-          "label": "Scratch scar (aching)",
+          "label": "Old gunshot (painful)",
           "count": 1,
           "parts": [
-            "right leg"
+            "left leg"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Stab scar (painful)",
+          "count": 1,
+          "parts": [
+            "torso"
           ]
         }
       ]
     },
     {
-      "id": "Human886",
-      "name": "Maria Haas",
-      "nick": "Haas",
-      "age": 44,
+      "id": "Human1017",
+      "name": "Aurora Verseere",
+      "nick": "Verseere",
+      "age": 19,
       "gender": "Female",
-      "childhood": "Story writer",
-      "adulthood": "Recruiter",
+      "childhood": "War refugee",
+      "adulthood": null,
       "traits": [
-        "Night owl",
-        "Rebel",
-        "Xenophile"
+        "Volatile",
+        "Slowpoke",
+        "Chemical fascination"
       ],
       "passions": [
         {
-          "skill": "Social",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 7,
-          "passion": 2
-        },
-        {
-          "skill": "Artistic",
-          "level": 7,
-          "passion": 1
-        },
-        {
           "skill": "Construction",
+          "level": 4,
+          "passion": 2
+        },
+        {
+          "skill": "Cooking",
+          "level": 4,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
           "level": 4,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Social",
-          "level": 11,
+          "skill": "Construction",
+          "level": 4,
           "passion": 2
         },
         {
-          "skill": "Intellectual",
-          "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 7,
-          "passion": 2
-        }
-      ],
-      "incapable": [
-        "Medical"
-      ],
-      "health": []
-    },
-    {
-      "id": "Human890",
-      "name": "Christo Giles",
-      "nick": "Christo",
-      "age": 43,
-      "gender": "Male",
-      "childhood": "War refugee",
-      "adulthood": "Navy scientist",
-      "traits": [
-        "Psychically dull"
-      ],
-      "passions": [
-        {
-          "skill": "Intellectual",
-          "level": 12,
+          "skill": "Cooking",
+          "level": 4,
           "passion": 2
         },
         {
           "skill": "Animals",
-          "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Cooking",
-          "level": 6,
-          "passion": 1
-        },
-        {
-          "skill": "Plants",
-          "level": 3,
-          "passion": 1
-        },
-        {
-          "skill": "Crafting",
-          "level": 3,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Intellectual",
-          "level": 12,
-          "passion": 2
-        },
-        {
-          "skill": "Animals",
-          "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Cooking",
-          "level": 6,
+          "level": 4,
           "passion": 1
         }
       ],
       "incapable": [
         "Shooting",
         "Melee"
+      ],
+      "health": []
+    },
+    {
+      "id": "Human1020",
+      "name": "Cora 'Lockjaw' Whitlock",
+      "nick": "Lockjaw",
+      "age": 32,
+      "gender": "Female",
+      "childhood": "Medieval lady",
+      "adulthood": "Defector",
+      "traits": [
+        "Xenophile",
+        "Psychically sensitive"
+      ],
+      "passions": [
+        {
+          "skill": "Shooting",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Medical",
+          "level": 5,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 5,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
+          "level": 4,
+          "passion": 2
+        },
+        {
+          "skill": "Mining",
+          "level": 3,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Shooting",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Medical",
+          "level": 5,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 5,
+          "passion": 2
+        }
+      ],
+      "incapable": [
+        "Artistic"
       ],
       "health": []
     }
