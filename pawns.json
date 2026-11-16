@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:15:00Z",
+  "updatedUtc": "2026-11-16T06:16:16Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,68 +11,91 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human928",
-      "name": "Helen 'Francis' Holman",
-      "nick": "Francis",
-      "age": 15,
+      "id": "Human77",
+      "name": "Miesha 'Mie' Aldemar",
+      "nick": "Mie",
+      "age": 52,
       "gender": "Female",
-      "childhood": "Shelter child",
-      "adulthood": null,
+      "childhood": "Pampered",
+      "adulthood": "Ninja assassin",
       "traits": [
-        "Great memory"
+        "Masochist",
+        "Steadfast",
+        "Chemical interest"
       ],
       "passions": [
         {
-          "skill": "Medical",
-          "level": 5,
+          "skill": "Shooting",
+          "level": 10,
           "passion": 2
         },
         {
           "skill": "Social",
-          "level": 4,
+          "level": 9,
           "passion": 1
         },
         {
-          "skill": "Plants",
-          "level": 3,
+          "skill": "Medical",
+          "level": 7,
           "passion": 1
         },
         {
           "skill": "Crafting",
-          "level": 3,
+          "level": 4,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Medical",
-          "level": 5,
+          "skill": "Shooting",
+          "level": 10,
           "passion": 2
         },
         {
           "skill": "Social",
-          "level": 4,
+          "level": 9,
           "passion": 1
         },
         {
-          "skill": "Plants",
-          "level": 3,
+          "skill": "Medical",
+          "level": 7,
           "passion": 1
         }
       ],
-      "incapable": [],
-      "health": []
+      "incapable": [
+        "Cooking",
+        "Plants"
+      ],
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Bite scar",
+          "count": 1,
+          "parts": [
+            "left leg"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Scratch scar",
+          "count": 2,
+          "parts": [
+            "torso",
+            "head"
+          ]
+        }
+      ]
     },
     {
-      "id": "Human931",
-      "name": "Skye Lorne",
-      "nick": "Skye",
-      "age": 25,
-      "gender": "Female",
-      "childhood": "Labor camp orphan",
-      "adulthood": "Urbworld enforcer",
+      "id": "Human80",
+      "name": "Jason 'Agent' Roland",
+      "nick": "Agent",
+      "age": 39,
+      "gender": "Male",
+      "childhood": "Aspergers rebel",
+      "adulthood": "Government agent",
       "traits": [
-        "Tough"
+        "Clumsy"
       ],
       "passions": [
         {
@@ -82,12 +105,7 @@
         },
         {
           "skill": "Melee",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Mining",
-          "level": 6,
+          "level": 8,
           "passion": 1
         }
       ],
@@ -99,65 +117,116 @@
         },
         {
           "skill": "Melee",
-          "level": 6,
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Intellectual",
+          "level": 8,
+          "passion": 0
+        }
+      ],
+      "incapable": [
+        "Medical"
+      ],
+      "health": [
+        {
+          "kind": "bionic",
+          "label": "Prosthetic hand",
+          "count": 1,
+          "parts": [
+            "right hand"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human83",
+      "name": "Caitlin 'Cait' Stirr",
+      "nick": "Cait",
+      "age": 64,
+      "gender": "Female",
+      "childhood": "Gymnast",
+      "adulthood": "Intimate assassin",
+      "traits": [
+        "Pretty",
+        "Super-immune",
+        "Thick skinned"
+      ],
+      "passions": [
+        {
+          "skill": "Melee",
+          "level": 14,
           "passion": 2
         },
         {
-          "skill": "Mining",
+          "skill": "Social",
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 6,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 5,
+          "passion": 1
+        },
+        {
+          "skill": "Shooting",
+          "level": 3,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Melee",
+          "level": 14,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
           "level": 6,
           "passion": 1
         }
       ],
       "incapable": [
-        "Artistic",
-        "Intellectual"
+        "Medical"
       ],
-      "health": []
-    },
-    {
-      "id": "Human934",
-      "name": "Lewis Heathershaw",
-      "nick": "Lewis",
-      "age": 36,
-      "gender": "Male",
-      "childhood": "Shelter child",
-      "adulthood": "Herbalist",
-      "traits": [
-        "Teetotaler",
-        "Very neurotic",
-        "Thin skinned"
-      ],
-      "passions": [
+      "health": [
         {
-          "skill": "Medical",
-          "level": 8,
-          "passion": 2
+          "kind": "chronic",
+          "label": "Asthma (minor)",
+          "count": 2,
+          "parts": [
+            "right lung",
+            "left lung"
+          ]
         },
         {
-          "skill": "Intellectual",
-          "level": 7,
-          "passion": 1
+          "kind": "scar",
+          "label": "Scratch scar (aching)",
+          "count": 1,
+          "parts": [
+            "left leg"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Stab scar",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
         }
-      ],
-      "topSkills": [
-        {
-          "skill": "Medical",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Plants",
-          "level": 5,
-          "passion": 0
-        }
-      ],
-      "incapable": [],
-      "health": []
+      ]
     }
   ]
 }
