@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:25:05Z",
+  "updatedUtc": "2026-11-16T06:26:46Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,199 +11,174 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human631",
-      "name": "Jhet 'Whistler' Brazil",
-      "nick": "Whistler",
-      "age": 71,
+      "id": "Human548",
+      "name": "Chris 'Fiddler' Langdon",
+      "nick": "Fiddler",
+      "age": 52,
       "gender": "Male",
-      "childhood": "Corporate slave",
-      "adulthood": "Colony engineer",
+      "childhood": "Vatgrown soldier",
+      "adulthood": "Conceptual artist",
       "traits": [
-        "Wanderlust",
-        "Nudist",
-        "Insomniac"
+        "Perfectionist",
+        "Rebel",
+        "Gastronomist"
       ],
       "passions": [
         {
-          "skill": "Shooting",
-          "level": 11,
+          "skill": "Cooking",
+          "level": 7,
           "passion": 2
         },
         {
-          "skill": "Construction",
-          "level": 10,
+          "skill": "Artistic",
+          "level": 19,
           "passion": 1
         },
         {
-          "skill": "Crafting",
-          "level": 10,
+          "skill": "Shooting",
+          "level": 7,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Shooting",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 10,
+          "skill": "Artistic",
+          "level": 19,
           "passion": 1
         },
         {
-          "skill": "Crafting",
-          "level": 10,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Cooking",
-        "Artistic"
-      ],
-      "health": [
-        {
-          "kind": "chronic",
-          "label": "Bad back",
-          "count": 1,
-          "parts": [
-            "spine"
-          ]
-        },
-        {
-          "kind": "chronic",
-          "label": "Frail",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human635",
-      "name": "Skye Lorne",
-      "nick": "Skye",
-      "age": 36,
-      "gender": "Female",
-      "childhood": "Labor camp orphan",
-      "adulthood": "Urbworld enforcer",
-      "traits": [
-        "Tough",
-        "Misandrist",
-        "Depressive"
-      ],
-      "passions": [
-        {
-          "skill": "Shooting",
-          "level": 12,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
+          "skill": "Cooking",
           "level": 7,
-          "passion": 1
+          "passion": 2
         },
-        {
-          "skill": "Mining",
-          "level": 6,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
         {
           "skill": "Shooting",
-          "level": 12,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
           "level": 7,
           "passion": 1
         }
       ],
       "incapable": [
-        "Artistic",
-        "Intellectual"
+        "Medical",
+        "Social"
       ],
-      "health": [
-        {
-          "kind": "scar",
-          "label": "Old gunshot (itchy)",
-          "count": 1,
-          "parts": [
-            "right leg"
-          ]
-        }
-      ]
+      "health": []
     },
     {
-      "id": "Human638",
-      "name": "Wanda Moon",
-      "nick": "Moon",
-      "age": 43,
-      "gender": "Female",
-      "childhood": "Wreckage explorer",
-      "adulthood": "Animal farmer",
+      "id": "Human551",
+      "name": "David 'Dave' Ginsbach",
+      "nick": "Dave",
+      "age": 39,
+      "gender": "Male",
+      "childhood": "Story writer",
+      "adulthood": "Paramedic",
       "traits": [
-        "Very neurotic"
+        "Teetotaler",
+        "Misogynist",
+        "Brave"
       ],
       "passions": [
-        {
-          "skill": "Animals",
-          "level": 16,
-          "passion": 2
-        },
         {
           "skill": "Medical",
-          "level": 5,
+          "level": 11,
           "passion": 2
         },
         {
-          "skill": "Shooting",
-          "level": 4,
+          "skill": "Artistic",
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 5,
           "passion": 1
         },
         {
           "skill": "Intellectual",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Construction",
-          "level": 3,
+          "level": 5,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Animals",
-          "level": 16,
-          "passion": 2
-        },
-        {
           "skill": "Medical",
-          "level": 5,
+          "level": 11,
           "passion": 2
         },
         {
-          "skill": "Shooting",
-          "level": 4,
+          "skill": "Artistic",
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 5,
           "passion": 1
         }
       ],
       "incapable": [],
       "health": []
+    },
+    {
+      "id": "Human554",
+      "name": "Linda Lutz",
+      "nick": "Linda",
+      "age": 59,
+      "gender": "Female",
+      "childhood": "Caveworld tender",
+      "adulthood": "Drifter",
+      "traits": [
+        "Undergrounder"
+      ],
+      "passions": [
+        {
+          "skill": "Construction",
+          "level": 7,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 6,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 5,
+          "passion": 1
+        },
+        {
+          "skill": "Cooking",
+          "level": 5,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Construction",
+          "level": 7,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 6,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 5,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": [
+        {
+          "kind": "scar",
+          "label": "Bite scar (itchy)",
+          "count": 1,
+          "parts": [
+            "left leg"
+          ]
+        }
+      ]
     }
   ]
 }
