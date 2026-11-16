@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:58:41Z",
+  "updatedUtc": "2026-11-16T06:59:53Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,203 +11,162 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human869",
-      "name": "Rhaemir 'Rhae' Moryn",
-      "nick": "Rhae",
-      "age": 15,
-      "gender": "Male",
-      "childhood": "Commoner heir",
-      "adulthood": null,
+      "id": "Human510",
+      "name": "Afeeba 'Feeb' Dafo",
+      "nick": "Feeb",
+      "age": 42,
+      "gender": "Female",
+      "childhood": "Test subject",
+      "adulthood": "Test subject",
       "traits": [
-        "Absent-minded",
-        "Insatiable"
+        "Industrious"
       ],
       "passions": [
         {
-          "skill": "Crafting",
-          "level": 5,
+          "skill": "Intellectual",
+          "level": 12,
           "passion": 2
         },
         {
           "skill": "Melee",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Cooking",
+          "level": 6,
+          "passion": 1
+        },
+        {
+          "skill": "Crafting",
           "level": 4,
           "passion": 1
         },
         {
-          "skill": "Intellectual",
-          "level": 4,
+          "skill": "Animals",
+          "level": 3,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Crafting",
-          "level": 5,
+          "skill": "Intellectual",
+          "level": 12,
           "passion": 2
         },
         {
           "skill": "Melee",
-          "level": 4,
+          "level": 9,
           "passion": 1
         },
         {
-          "skill": "Intellectual",
-          "level": 4,
+          "skill": "Cooking",
+          "level": 6,
           "passion": 1
+        }
+      ],
+      "incapable": [
+        "Mining",
+        "Plants",
+        "Medical",
+        "Social"
+      ],
+      "health": []
+    },
+    {
+      "id": "Human513",
+      "name": "Cory 'Stomp' Gustafson",
+      "nick": "Stomp",
+      "age": 46,
+      "gender": "Male",
+      "childhood": "Cat herder",
+      "adulthood": "Feline scientist",
+      "traits": [
+        "Ugly",
+        "Nimble",
+        "Tycoon"
+      ],
+      "passions": [
+        {
+          "skill": "Crafting",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 13,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Social",
+          "level": 13,
+          "passion": 1
+        },
+        {
+          "skill": "Crafting",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Intellectual",
+          "level": 8,
+          "passion": 0
         }
       ],
       "incapable": [],
       "health": []
     },
     {
-      "id": "Human872",
-      "name": "Katsumi Trevino",
-      "nick": "Trevino",
-      "age": 79,
-      "gender": "Male",
-      "childhood": "Musical kid",
-      "adulthood": "Deep space miner",
+      "id": "Human524",
+      "name": "Caitlin 'Cait' Stirr",
+      "nick": "Cait",
+      "age": 46,
+      "gender": "Female",
+      "childhood": "Gymnast",
+      "adulthood": "Intimate assassin",
       "traits": [
-        "Lush",
-        "Jealous",
-        "Gastronomist",
-        "Elder"
+        "Pretty",
+        "Groundbreaker",
+        "Recluse"
       ],
       "passions": [
         {
-          "skill": "Cooking",
-          "level": 7,
-          "passion": 2
-        },
-        {
-          "skill": "Artistic",
-          "level": 16,
-          "passion": 1
-        },
-        {
-          "skill": "Mining",
-          "level": 15,
-          "passion": 1
-        },
-        {
           "skill": "Construction",
-          "level": 8,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Artistic",
-          "level": 16,
-          "passion": 1
-        },
-        {
-          "skill": "Mining",
-          "level": 15,
-          "passion": 1
-        },
-        {
-          "skill": "Construction",
-          "level": 8,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "chronic",
-          "label": "Alzheimer's (minor)",
-          "count": 1,
-          "parts": [
-            "brain"
-          ]
-        },
-        {
-          "kind": "chronic",
-          "label": "Asthma (minor)",
-          "count": 2,
-          "parts": [
-            "left lung",
-            "right lung"
-          ]
-        },
-        {
-          "kind": "chronic",
-          "label": "Bad back",
-          "count": 1,
-          "parts": [
-            "spine"
-          ]
-        },
-        {
-          "kind": "chronic",
-          "label": "Dementia",
-          "count": 1,
-          "parts": [
-            "brain"
-          ]
-        },
-        {
-          "kind": "addiction",
-          "label": "Alcohol addiction (50%)",
-          "count": 1,
-          "parts": []
-        }
-      ]
-    },
-    {
-      "id": "Human876",
-      "name": "Jerry 'Jerbear' Welch",
-      "nick": "Jerbear",
-      "age": 25,
-      "gender": "Male",
-      "childhood": "Abductee",
-      "adulthood": "Spy",
-      "traits": [
-        "Nudist",
-        "Brave"
-      ],
-      "passions": [
-        {
-          "skill": "Social",
-          "level": 9,
+          "level": 5,
           "passion": 2
         },
         {
           "skill": "Melee",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Mining",
-          "level": 6,
+          "level": 18,
           "passion": 1
         },
         {
-          "skill": "Construction",
+          "skill": "Mining",
           "level": 5,
           "passion": 1
         }
       ],
       "topSkills": [
         {
+          "skill": "Melee",
+          "level": 18,
+          "passion": 1
+        },
+        {
           "skill": "Social",
           "level": 9,
-          "passion": 2
+          "passion": 0
         },
         {
-          "skill": "Melee",
-          "level": 8,
+          "skill": "Construction",
+          "level": 5,
           "passion": 2
-        },
-        {
-          "skill": "Mining",
-          "level": 6,
-          "passion": 1
         }
       ],
       "incapable": [
-        "Intellectual"
+        "Medical"
       ],
       "health": []
     }
