@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:23:35Z",
+  "updatedUtc": "2026-11-16T06:25:05Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,74 +11,63 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human826",
-      "name": "Holly 'Kit' Kettu",
-      "nick": "Kit",
-      "age": 70,
-      "gender": "Female",
-      "childhood": "Reclusive prodigy",
-      "adulthood": "Fervent researcher",
+      "id": "Human631",
+      "name": "Jhet 'Whistler' Brazil",
+      "nick": "Whistler",
+      "age": 71,
+      "gender": "Male",
+      "childhood": "Corporate slave",
+      "adulthood": "Colony engineer",
       "traits": [
-        "Too smart",
-        "Body modder",
-        "Animal lover"
+        "Wanderlust",
+        "Nudist",
+        "Insomniac"
       ],
       "passions": [
         {
-          "skill": "Medical",
-          "level": 17,
+          "skill": "Shooting",
+          "level": 11,
           "passion": 2
         },
         {
-          "skill": "Intellectual",
-          "level": 16,
+          "skill": "Construction",
+          "level": 10,
           "passion": 1
         },
         {
-          "skill": "Shooting",
-          "level": 6,
-          "passion": 1
-        },
-        {
-          "skill": "Animals",
-          "level": 5,
+          "skill": "Crafting",
+          "level": 10,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Medical",
-          "level": 17,
+          "skill": "Shooting",
+          "level": 11,
           "passion": 2
         },
         {
-          "skill": "Intellectual",
-          "level": 16,
+          "skill": "Construction",
+          "level": 10,
           "passion": 1
         },
         {
-          "skill": "Shooting",
-          "level": 6,
+          "skill": "Crafting",
+          "level": 10,
           "passion": 1
         }
       ],
       "incapable": [
-        "Construction",
-        "Mining",
         "Cooking",
-        "Plants",
-        "Crafting",
-        "Artistic",
-        "Social"
+        "Artistic"
       ],
       "health": [
         {
           "kind": "chronic",
-          "label": "Cataract",
-          "count": 2,
+          "label": "Bad back",
+          "count": 1,
           "parts": [
-            "right eye",
-            "left eye"
+            "spine"
           ]
         },
         {
@@ -88,151 +77,133 @@
           "parts": [
             "torso"
           ]
-        },
-        {
-          "kind": "scar",
-          "label": "Bite scar",
-          "count": 1,
-          "parts": [
-            "head"
-          ]
         }
       ]
     },
     {
-      "id": "Human830",
-      "name": "Anton 'Waltz' Walther",
-      "nick": "Waltz",
-      "age": 63,
-      "gender": "Male",
-      "childhood": "Student",
-      "adulthood": "Chemist",
+      "id": "Human635",
+      "name": "Skye Lorne",
+      "nick": "Skye",
+      "age": 36,
+      "gender": "Female",
+      "childhood": "Labor camp orphan",
+      "adulthood": "Urbworld enforcer",
       "traits": [
-        "Kind"
+        "Tough",
+        "Misandrist",
+        "Depressive"
       ],
       "passions": [
         {
-          "skill": "Medical",
-          "level": 13,
+          "skill": "Shooting",
+          "level": 12,
           "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 13,
-          "passion": 1
-        },
-        {
-          "skill": "Social",
-          "level": 8,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Medical",
-          "level": 13,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 13,
-          "passion": 1
-        },
-        {
-          "skill": "Social",
-          "level": 8,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "bionic",
-          "label": "Prosthetic hand",
-          "count": 1,
-          "parts": [
-            "left hand"
-          ]
-        },
-        {
-          "kind": "chronic",
-          "label": "Artery blockage (minor)",
-          "count": 1,
-          "parts": [
-            "heart"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human834",
-      "name": "Yoshi Fuller",
-      "nick": "Fuller",
-      "age": 31,
-      "gender": "Male",
-      "childhood": "Shop kid",
-      "adulthood": "Colony settler",
-      "traits": [
-        "Lush",
-        "Wimp",
-        "Bisexual"
-      ],
-      "passions": [
-        {
-          "skill": "Social",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 7,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
-          "level": 7,
-          "passion": 1
         },
         {
           "skill": "Construction",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 7,
+          "passion": 1
+        },
+        {
+          "skill": "Mining",
           "level": 6,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Social",
+          "skill": "Shooting",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
           "level": 8,
           "passion": 2
         },
         {
-          "skill": "Plants",
-          "level": 7,
-          "passion": 2
-        },
-        {
-          "skill": "Intellectual",
+          "skill": "Social",
           "level": 7,
           "passion": 1
         }
       ],
-      "incapable": [],
+      "incapable": [
+        "Artistic",
+        "Intellectual"
+      ],
       "health": [
         {
           "kind": "scar",
-          "label": "Old gunshot",
+          "label": "Old gunshot (itchy)",
           "count": 1,
           "parts": [
-            "left leg"
+            "right leg"
           ]
-        },
-        {
-          "kind": "addiction",
-          "label": "Alcohol addiction (50%)",
-          "count": 1,
-          "parts": []
         }
       ]
+    },
+    {
+      "id": "Human638",
+      "name": "Wanda Moon",
+      "nick": "Moon",
+      "age": 43,
+      "gender": "Female",
+      "childhood": "Wreckage explorer",
+      "adulthood": "Animal farmer",
+      "traits": [
+        "Very neurotic"
+      ],
+      "passions": [
+        {
+          "skill": "Animals",
+          "level": 16,
+          "passion": 2
+        },
+        {
+          "skill": "Medical",
+          "level": 5,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Intellectual",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Construction",
+          "level": 3,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Animals",
+          "level": 16,
+          "passion": 2
+        },
+        {
+          "skill": "Medical",
+          "level": 5,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": []
     }
   ]
 }
