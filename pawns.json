@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-16T06:26:46Z",
+  "updatedUtc": "2026-11-16T06:28:10Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -11,50 +11,165 @@
   "unadopted": 3,
   "pawns": [
     {
-      "id": "Human548",
-      "name": "Chris 'Fiddler' Langdon",
-      "nick": "Fiddler",
-      "age": 52,
-      "gender": "Male",
-      "childhood": "Vatgrown soldier",
-      "adulthood": "Conceptual artist",
+      "id": "Human783",
+      "name": "Jessie Carmain",
+      "nick": "Jessie",
+      "age": 30,
+      "gender": "Female",
+      "childhood": "Shop kid",
+      "adulthood": "Machine collector",
       "traits": [
-        "Perfectionist",
-        "Rebel",
-        "Gastronomist"
+        "Slob"
       ],
       "passions": [
         {
-          "skill": "Cooking",
-          "level": 7,
+          "skill": "Crafting",
+          "level": 10,
           "passion": 2
         },
         {
-          "skill": "Artistic",
-          "level": 19,
+          "skill": "Intellectual",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Cooking",
+          "level": 4,
           "passion": 1
         },
         {
           "skill": "Shooting",
-          "level": 7,
+          "level": 3,
           "passion": 1
         }
       ],
       "topSkills": [
         {
-          "skill": "Artistic",
-          "level": 19,
-          "passion": 1
-        },
-        {
-          "skill": "Cooking",
-          "level": 7,
+          "skill": "Crafting",
+          "level": 10,
           "passion": 2
         },
         {
-          "skill": "Shooting",
+          "skill": "Intellectual",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Cooking",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": []
+    },
+    {
+      "id": "Human786",
+      "name": "Velius 'Veli' Ayalp",
+      "nick": "Veli",
+      "age": 20,
+      "gender": "Male",
+      "childhood": "Apprentice smith",
+      "adulthood": "Blacksmith",
+      "traits": [
+        "Industrious",
+        "Sickly",
+        "Asexual"
+      ],
+      "passions": [
+        {
+          "skill": "Crafting",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Medical",
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Melee",
           "level": 7,
           "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 6,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Crafting",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Medical",
+          "level": 8,
+          "passion": 1
+        },
+        {
+          "skill": "Melee",
+          "level": 7,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": [
+        {
+          "kind": "bionic",
+          "label": "Surrogate liver",
+          "count": 1,
+          "parts": [
+            "liver"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human789",
+      "name": "Savanna Barr",
+      "nick": "Savanna",
+      "age": 51,
+      "gender": "Female",
+      "childhood": "Child spy",
+      "adulthood": "Conceptual artist",
+      "traits": [
+        "Trigger-happy"
+      ],
+      "passions": [
+        {
+          "skill": "Artistic",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
+          "level": 5,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 5,
+          "passion": 2
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Artistic",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 5,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
+          "level": 5,
+          "passion": 2
         }
       ],
       "incapable": [
@@ -62,123 +177,6 @@
         "Social"
       ],
       "health": []
-    },
-    {
-      "id": "Human551",
-      "name": "David 'Dave' Ginsbach",
-      "nick": "Dave",
-      "age": 39,
-      "gender": "Male",
-      "childhood": "Story writer",
-      "adulthood": "Paramedic",
-      "traits": [
-        "Teetotaler",
-        "Misogynist",
-        "Brave"
-      ],
-      "passions": [
-        {
-          "skill": "Medical",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Artistic",
-          "level": 8,
-          "passion": 1
-        },
-        {
-          "skill": "Animals",
-          "level": 5,
-          "passion": 1
-        },
-        {
-          "skill": "Intellectual",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Medical",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Artistic",
-          "level": 8,
-          "passion": 1
-        },
-        {
-          "skill": "Animals",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": []
-    },
-    {
-      "id": "Human554",
-      "name": "Linda Lutz",
-      "nick": "Linda",
-      "age": 59,
-      "gender": "Female",
-      "childhood": "Caveworld tender",
-      "adulthood": "Drifter",
-      "traits": [
-        "Undergrounder"
-      ],
-      "passions": [
-        {
-          "skill": "Construction",
-          "level": 7,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 5,
-          "passion": 1
-        },
-        {
-          "skill": "Cooking",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Construction",
-          "level": 7,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 6,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "scar",
-          "label": "Bite scar (itchy)",
-          "count": 1,
-          "parts": [
-            "left leg"
-          ]
-        }
-      ]
     }
   ]
 }
