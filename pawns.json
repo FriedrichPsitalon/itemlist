@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-17T02:49:29Z",
+  "updatedUtc": "2026-11-17T02:50:29Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -244,9 +244,9 @@
           "passion": 0
         },
         {
-          "skill": "Melee",
-          "level": 1,
-          "passion": 1
+          "skill": "Plants",
+          "level": 2,
+          "passion": 0
         }
       ],
       "incapable": [
