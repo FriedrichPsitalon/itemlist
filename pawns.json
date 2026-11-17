@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-17T00:31:28Z",
+  "updatedUtc": "2026-11-17T00:36:28Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -140,7 +140,8 @@
       "childhood": "Caveworld tunneler",
       "adulthood": "Medieval farm oaf",
       "traits": [
-        "Undergrounder"
+        "Undergrounder",
+        "Magically gifted"
       ],
       "passions": [
         {
