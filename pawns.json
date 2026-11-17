@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-17T00:26:28Z",
+  "updatedUtc": "2026-11-17T00:31:28Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -90,7 +90,7 @@
         },
         {
           "skill": "Construction",
-          "level": 6,
+          "level": 7,
           "passion": 2
         },
         {
@@ -112,7 +112,7 @@
         },
         {
           "skill": "Construction",
-          "level": 6,
+          "level": 7,
           "passion": 2
         }
       ],
