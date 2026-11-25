@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T01:54:37Z",
+  "updatedUtc": "2026-11-25T01:58:37Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -142,7 +142,7 @@
       "passions": [
         {
           "skill": "Intellectual",
-          "level": 18,
+          "level": 19,
           "passion": 2
         },
         {
@@ -174,7 +174,7 @@
       "topSkills": [
         {
           "skill": "Intellectual",
-          "level": 18,
+          "level": 19,
           "passion": 2
         },
         {
@@ -314,7 +314,7 @@
         },
         {
           "skill": "Construction",
-          "level": 11,
+          "level": 12,
           "passion": 1
         },
         {
@@ -341,7 +341,7 @@
         },
         {
           "skill": "Construction",
-          "level": 11,
+          "level": 12,
           "passion": 1
         },
         {
