@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T02:00:37Z",
+  "updatedUtc": "2026-11-25T02:01:37Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -78,18 +78,9 @@
         },
         {
           "kind": "injury",
-          "label": "Bruise (human fist)",
-          "count": 1,
-          "parts": [
-            "left shoulder"
-          ]
-        },
-        {
-          "kind": "injury",
           "label": "Bruise (sniper rifle barrel)",
-          "count": 4,
+          "count": 3,
           "parts": [
-            "torso",
             "right arm",
             "neck"
           ]
@@ -104,18 +95,9 @@
         },
         {
           "kind": "injury",
-          "label": "Crush (sniper rifle barrel)",
+          "label": "Gunshot (LMG)",
           "count": 1,
           "parts": [
-            "heart"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Gunshot (LMG)",
-          "count": 2,
-          "parts": [
-            "left femur",
             "left leg"
           ]
         }
