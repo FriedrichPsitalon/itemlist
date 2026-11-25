@@ -238,7 +238,7 @@
  },
  {
   "defName": "AdvancedBionicArm",
-  "price": 300,
+  "price": 240,
   "abr": "advancedbionicarm",
   "label": "advanced bionic arm",
   "description": "An ultra advanced artificial arm, further improved from the standard models. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage. It is better than a biological arm in almost every way.",
@@ -316,7 +316,7 @@
  },
  {
   "defName": "AdvancedBionicFoot",
-  "price": 200,
+  "price": 180,
   "abr": "advancedbionicfoot",
   "label": "advanced bionic foot",
   "description": "An ultra advanced artificial foot, further improved from the standard models. With its biogel nerve-link, powerful mini-servos, and lattice-dust healing system, it is better than a biological foot in almost every way.",
@@ -342,7 +342,7 @@
  },
  {
   "defName": "AdvancedBionicHand",
-  "price": 200,
+  "price": 180,
   "abr": "advancedbionichand",
   "label": "advanced bionic hand",
   "description": "An ultra advanced artificial hand, further improved from the standard models. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage. It is better than a biological hand in almost every way.",
@@ -394,7 +394,7 @@
  },
  {
   "defName": "AdvancedBionicLeg",
-  "price": 300,
+  "price": 240,
   "abr": "advancedbionicleg",
   "label": "advanced bionic leg",
   "description": "An ultra advanced artificial leg, further improved from the standard models. With its biogel nerve-link, powerful mini-servos, and lattice-dust healing system, it is better than a biological leg in almost every way.",
@@ -420,7 +420,7 @@
  },
  {
   "defName": "AdvancedBionicSpine",
-  "price": 300,
+  "price": 240,
   "abr": "advancedbionicspine",
   "label": "advanced bionic spine",
   "description": "An ultra advanced artificial spine, further improved from the standard models. A biogel nerve bundle runs down an articulated plasteel core, surrounded by a lattice-dust healing system. It is better than a biological spine in almost every way.",
@@ -446,7 +446,7 @@
  },
  {
   "defName": "AdvancedPowerArm",
-  "price": 300,
+  "price": 240,
   "abr": "advancedpowerarm",
   "label": "advanced power arm",
   "description": "An ultra advanced combat-oriented arm replacement consisting of a mechanical hand with a hooked claw on each finger. It cuts deep, and it is strong enough to crush a skull like a hand crushes an egg. The claws can be retracted, making it as useful as a natural hand for non-combat tasks.",
@@ -524,7 +524,7 @@
  },
  {
   "defName": "Alligator",
-  "price": 150,
+  "price": 70,
   "abr": "alligator",
   "label": "alligator",
   "description": "A large semi-aquatic reptile with a powerful bite. Alligators are slow on land, but deadly in the water.",
@@ -552,7 +552,7 @@
  },
  {
   "defName": "Alpaca",
-  "price": 200,
+  "price": 35,
   "abr": "alpaca",
   "label": "alpaca",
   "description": "A medium-sized ungulate closely related to the llama, the alpaca is usually raised for its remarkably soft and insulating wool. Alpacas have also been used as pack animals since they hauled cargo on the rugged mountain trails of ancient South America.",
@@ -658,7 +658,7 @@
  },
  {
   "defName": "AncientMail",
-  "price": 300,
+  "price": 200,
   "abr": "ancientmail",
   "label": "Ancient Mail",
   "description": "Chain mail forged with an ancient design that provides above average physical defense. The design of the armor includes a symmetrical etching of arcane runes that bestow the wearer with enhanced power. Once crafted, these runes will attract an ancient spirit to embody the mail and grants the wearer a chance to cause additional arcane damage following any attack; however, this comes at a price - all abilities will require more energy to use, and the bearer is beset with nightmares that slowly break down mental resistances.\n\t\nAncient mail is enchanted and provides additional benefits to trained mages and fighters:\nMax Energy: +8%\nEnergy Regen: +10%\nEnergy Costs: +15%\nArcane Resistance: +20%\n\nAugmented by Arcane Spectre: 50% chance to deal 20% bonus damage",
@@ -868,7 +868,7 @@
  },
  {
   "defName": "Apparel_AirwireHeadset",
-  "price": 200,
+  "price": 50,
   "abr": "airwireheadset",
   "label": "airwire headset",
   "description": "A simple head-mounted comms computer that slightly enhances a mechanitor's control bandwidth. This allows them to control more mechs.",
@@ -1026,7 +1026,7 @@
  },
  {
   "defName": "Apparel_ArmorHelmetCataphractPrestige",
-  "price": 140,
+  "price": 220,
   "abr": "prestigecataphracthelmet",
   "label": "prestige cataphract helmet",
   "description": "A heavily-armored high-tech helmet, with a solid plasteel-weave shell and indirect visual system for non-frontal view angles. It protects against all but the most powerful or luckily-aimed shots.\\n\\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.",
@@ -1059,7 +1059,7 @@
  },
  {
   "defName": "Apparel_ArmorHelmetMechCommander",
-  "price": 100,
+  "price": 80,
   "abr": "mechcommanderhelmet",
   "label": "mechcommander helmet",
   "description": "A plasteel-weave combat helmet designed for battle mechanitors. It is embedded with computers and signal enhancers that moderately increase the wearer's maximum control bandwidth. This allows the mechanitor to control more mechs.",
@@ -1125,7 +1125,7 @@
  },
  {
   "defName": "Apparel_ArmorHelmetRecon",
-  "price": 60,
+  "price": 120,
   "abr": "reconhelmet",
   "label": "recon helmet",
   "description": "A high-tech armored helmet with a built-in status computer and a protective plasteel-weave plate.\\n\\nArmor like this is often used by imperial scout troops or glitterworld police forces.",
@@ -1158,7 +1158,7 @@
  },
  {
   "defName": "Apparel_ArmorHelmetReconPrestige",
-  "price": 130,
+  "price": 140,
   "abr": "prestigereconhelmet",
   "label": "prestige recon helmet",
   "description": "A high-tech armored helmet with a built-in status computer and a protective plasteel-weave plate.\\n\\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.",
@@ -1258,7 +1258,7 @@
  },
  {
   "defName": "Apparel_ArmorMarineHelmetPrestige",
-  "price": 120,
+  "price": 160,
   "abr": "prestigemarinehelmet",
   "label": "prestige marine helmet",
   "description": "A marine armor helmet, with a built-in status computer and layered plasteel-weave plates.\\n\\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.",
@@ -1291,7 +1291,7 @@
  },
  {
   "defName": "Apparel_ArmorMarinePrestige",
-  "price": 220,
+  "price": 270,
   "abr": "prestigemarinearmor",
   "label": "prestige marine armor",
   "description": "A suit of powered armor. Layered plasteel-weave plates are very effective at stopping attacks, with few vulnerable joint sections. Neuro-memetic assistors allow a human to wear the armor and still move easily.\\n\\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.",
@@ -1357,7 +1357,7 @@
  },
  {
   "defName": "Apparel_ArmorReconPrestige",
-  "price": 215,
+  "price": 230,
   "abr": "prestigereconarmor",
   "label": "prestige recon armor",
   "description": "A suit of light partially-powered armor, designed to permit quick movement. Plasteel-weave plates block attacks without compromising mobility, and neuro-memetic assistors in the lower body allow a human to wear the armor and still move easily.\\n\\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.",
@@ -1390,7 +1390,7 @@
  },
  {
   "defName": "Apparel_ArrayHeadset",
-  "price": 140,
+  "price": 90,
   "abr": "arrayheadset",
   "label": "array headset",
   "description": "A head-mounted computer and signaling array that enhances a mechanitor's control bandwidth. This allows them to control more mechs.",
@@ -1416,7 +1416,7 @@
  },
  {
   "defName": "Apparel_AuthorityCap",
-  "price": 50,
+  "price": 25,
   "abr": "authoritycap",
   "label": "authority cap",
   "description": "A hat with a stiff brim and peaked top. It's not particularly protective, but it creates a sense of authority and makes the wearer more effective in suppressing slaves.",
@@ -1443,7 +1443,7 @@
  },
  {
   "defName": "Apparel_Bandolier",
-  "price": 60,
+  "price": 25,
   "abr": "heavybandolier",
   "label": "heavy bandolier",
   "description": "A heavy shoulder-belt for keeping spare munitions close at hand. It allows quick access to bullets, grenades, arrows, or whatever the user needs, reducing their weapon's ranged cooldown. Due to its bulk, it can't be worn under other clothing. It doesn't cover the body, so it can be worn happily by nudists and yttakin.",
@@ -1472,7 +1472,7 @@
  },
  {
   "defName": "Apparel_BasicShirt",
-  "price": 40,
+  "price": 10,
   "abr": "t-shirt",
   "label": "T-shirt",
   "description": "A simple T-shirt.",
@@ -1499,7 +1499,7 @@
  },
  {
   "defName": "Apparel_Beret",
-  "price": 40,
+  "price": 25,
   "abr": "beret",
   "label": "beret",
   "description": "A soft, round, flat-crowned hat.",
@@ -1552,7 +1552,7 @@
  },
  {
   "defName": "Apparel_Blindfold",
-  "price": 40,
+  "price": 10,
   "abr": "blindfold",
   "label": "blindfold",
   "description": "A long strip of cloth that is wrapped over the eyes to block vision.",
@@ -1579,7 +1579,7 @@
  },
  {
   "defName": "Apparel_BodyStrap",
-  "price": 40,
+  "price": 10,
   "abr": "slavebodystrap",
   "label": "slave body strap",
   "description": "An uncomfortable arrangement of straps around the torso made for slaves. It reminds the wearer of their slave status and psychologically suppresses them, reducing the chance of a slave rebellion.",
@@ -1606,7 +1606,7 @@
  },
  {
   "defName": "Apparel_BowlerHat",
-  "price": 40,
+  "price": 25,
   "abr": "bowlerhat",
   "label": "bowler hat",
   "description": "A good-looking hat which projects a slightly urban, money-loving style. Improves social impact.",
@@ -1633,7 +1633,7 @@
  },
  {
   "defName": "Apparel_Broadwrap",
-  "price": 40,
+  "price": 10,
   "abr": "broadwrap",
   "label": "broadwrap",
   "description": "Wrapped fabric sheets that loosely cover the wearer's head and shoulders.",
@@ -1662,7 +1662,7 @@
  },
  {
   "defName": "Apparel_Burka",
-  "price": 40,
+  "price": 25,
   "abr": "burka",
   "label": "burka",
   "description": "A large garment that conceals the wearer's entire head and body.",
@@ -1691,7 +1691,7 @@
  },
  {
   "defName": "Apparel_Cape",
-  "price": 40,
+  "price": 25,
   "abr": "cape",
   "label": "cape",
   "description": "A long cape of elegant design. It hangs over one side of the torso.",
@@ -1773,7 +1773,7 @@
  },
  {
   "defName": "Apparel_ClothMask",
-  "price": 40,
+  "price": 10,
   "abr": "facemask",
   "label": "face mask",
   "description": "A piece of fabric which covers the wearer's mouth and nose with several layers of textile. It is remarkably effective in reducing the effects of environmental toxins.",
@@ -1829,7 +1829,7 @@
  },
  {
   "defName": "Apparel_CollarShirt",
-  "price": 40,
+  "price": 10,
   "abr": "button-downshirt",
   "label": "button-down shirt",
   "description": "A nice-looking collared shirt with buttons.",
@@ -1880,7 +1880,7 @@
  },
  {
   "defName": "Apparel_Corset",
-  "price": 40,
+  "price": 25,
   "abr": "corset",
   "label": "corset",
   "description": "An embroidered corset with strong wire support to maintain a ladylike shape.",
@@ -1907,7 +1907,7 @@
  },
  {
   "defName": "Apparel_CowboyHat",
-  "price": 40,
+  "price": 25,
   "abr": "cowboyhat",
   "label": "cowboy hat",
   "description": "Stylish yet rugged, this hat keeps the sun and rain off - and it gives anyone who wears it a bit of extra charm. It is the most important part of traditional western attire.",
@@ -2089,7 +2089,7 @@
  },
  {
   "defName": "Apparel_EltexSkullcap",
-  "price": 60,
+  "price": 70,
   "abr": "eltexskullcap",
   "label": "eltex skullcap",
   "description": "A tight skullcap designed for psychic focusing. It provides no physical protection, but its special materials enhance the wearer's psychic sensitivity and dissipate neural heat.",
@@ -2140,7 +2140,7 @@
  },
  {
   "defName": "Apparel_FlakJacket",
-  "price": 100,
+  "price": 60,
   "abr": "flakjacket",
   "label": "flak jacket",
   "description": "A tough fabric jacket with armor plates sewn in. While it's not as good as solid armor, it offers effective protection against all manner of attacks while remaining quite comfortable.",
@@ -2175,7 +2175,7 @@
  },
  {
   "defName": "Apparel_FlakPants",
-  "price": 80,
+  "price": 60,
   "abr": "flakpants",
   "label": "flak pants",
   "description": "A pair of pants with armor plates sewn in. While it's not as good as solid armor, it offers effective protection against all manner of attacks while remaining quite comfortable.",
@@ -2244,7 +2244,7 @@
  },
  {
   "defName": "Apparel_Flophat",
-  "price": 40,
+  "price": 25,
   "abr": "flophat",
   "label": "flophat",
   "description": "A large, thick cap, similar to a tuque. It has extra fabric along the back.",
@@ -2304,7 +2304,7 @@
  },
  {
   "defName": "Apparel_Gunlink",
-  "price": 80,
+  "price": 120,
   "abr": "gunlink",
   "label": "gunlink",
   "description": "A targeting computer that helps the user aim. It detects and analyzes targets using infrared, visible, and millimeter-wave electromagnetic sensors. An onboard targeting computer displays firing solutions on a retinal projection. It offers no protection at all.",
@@ -2333,7 +2333,7 @@
  },
  {
   "defName": "Apparel_HatHood",
-  "price": 40,
+  "price": 25,
   "abr": "hood",
   "label": "hood",
   "description": "A draped hood which covers the head and ears.",
@@ -2360,7 +2360,7 @@
  },
  {
   "defName": "Apparel_HatLadies",
-  "price": 40,
+  "price": 25,
   "abr": "ladieshat",
   "label": "ladies hat",
   "description": "A decorative traditional hat with complex embroidery.",
@@ -2386,7 +2386,7 @@
  },
  {
   "defName": "Apparel_HatTop",
-  "price": 50,
+  "price": 25,
   "abr": "tophat",
   "label": "top hat",
   "description": "A tall, stiff, shiny hat.",
@@ -2412,7 +2412,7 @@
  },
  {
   "defName": "Apparel_Headwrap",
-  "price": 40,
+  "price": 10,
   "abr": "headwrap",
   "label": "headwrap",
   "description": "A wrapped piece of fabric which covers the wearer's hair.",
@@ -2470,7 +2470,7 @@
  },
  {
   "defName": "Apparel_Jacket",
-  "price": 40,
+  "price": 25,
   "abr": "jacket",
   "label": "jacket",
   "description": "A tough jacket to stop scrapes and bruises, and to keep one warm in chilly weather.",
@@ -2526,7 +2526,7 @@
  },
  {
   "defName": "Apparel_KidPants",
-  "price": 40,
+  "price": 10,
   "abr": "kidpants",
   "label": "kid pants",
   "description": "A small set of pants sized to fit children.",
@@ -2553,7 +2553,7 @@
  },
  {
   "defName": "Apparel_KidParka",
-  "price": 40,
+  "price": 25,
   "abr": "kidparka",
   "label": "kid parka",
   "description": "A heavy jacket for keeping a child warm in cold temperatures.",
@@ -2582,7 +2582,7 @@
  },
  {
   "defName": "Apparel_KidRomper",
-  "price": 40,
+  "price": 10,
   "abr": "kidromper",
   "label": "kid romper",
   "description": "A combined t-shirt and pants sized for kids, with a snuggly built-in undergarment. Little ones love it!",
@@ -2609,7 +2609,7 @@
  },
  {
   "defName": "Apparel_KidShirt",
-  "price": 40,
+  "price": 10,
   "abr": "kidshirt",
   "label": "kid shirt",
   "description": "A small, simple t-shirt sized to fit children.",
@@ -2636,7 +2636,7 @@
  },
  {
   "defName": "Apparel_KidTribal",
-  "price": 40,
+  "price": 10,
   "abr": "kidtribalwear",
   "label": "kid tribalwear",
   "description": "A one-piece garment sized for kids, crafted using neolithic tools. It provides effective insulation against the elements.",
@@ -2665,7 +2665,7 @@
  },
  {
   "defName": "Apparel_LabCoat",
-  "price": 40,
+  "price": 25,
   "abr": "labcoat",
   "label": "lab coat",
   "description": "A knee-length overcoat worn over other clothing. It has a number of large pockets for holding scientific equipment, helping the wearer conduct research more efficiently.",
@@ -2727,7 +2727,7 @@
  },
  {
   "defName": "Apparel_PackBandwidth",
-  "price": 180,
+  "price": 120,
   "abr": "bandwidthpack",
   "label": "bandwidth pack",
   "description": "A backpack containing bandwidth-expansion computer and antenna. It can increase a mechanitor's maximum total bandwidth.",
@@ -2753,7 +2753,7 @@
  },
  {
   "defName": "Apparel_PackBroadshield",
-  "price": 100,
+  "price": 70,
   "abr": "low-shieldpack",
   "label": "low-shield pack",
   "description": "A single-use man-portable low-shield projector. Deployed on the ground, it generates a circular shield that allows bullets out but not in. The unit is designed to last only a short time before burning out.\\n\\nMany ultratech combat squads owe their lives to a shield pack deployed at just the right time.",
@@ -2910,7 +2910,7 @@
  },
  {
   "defName": "Apparel_Pants",
-  "price": 40,
+  "price": 10,
   "abr": "pants",
   "label": "pants",
   "description": "A simple set of pants.",
@@ -2937,7 +2937,7 @@
  },
  {
   "defName": "Apparel_Parka",
-  "price": 40,
+  "price": 50,
   "abr": "parka",
   "label": "parka",
   "description": "A parka for staying warm in even the coldest of temperatures.",
@@ -3026,7 +3026,7 @@
  },
  {
   "defName": "Apparel_PowerArmorHelmet",
-  "price": 80,
+  "price": 140,
   "abr": "marinehelmet",
   "label": "marine helmet",
   "description": "A marine armor helmet, with a built-in status computer and layered plasteel-weave plates.\\n\\nArmor like this is often used by rapid-incursion space marines.",
@@ -3144,7 +3144,7 @@
  },
  {
   "defName": "Apparel_PsyfocusHelmet",
-  "price": 80,
+  "price": 60,
   "abr": "eltexhelmet",
   "label": "eltex helmet",
   "description": "A lightweight helmet designed for psychic focusing. While it provides little physical protection, its special materials enhance the wearer's psychic sensitivity and dissipate neural heat.",
@@ -3177,7 +3177,7 @@
  },
  {
   "defName": "Apparel_PsyfocusRobe",
-  "price": 120,
+  "price": 80,
   "abr": "eltexrobe",
   "label": "eltex robe",
   "description": "A long robe embedded with special psychic focusing materials. These enhance psychic sensitivity and help dissipate neural heat.",
@@ -3210,7 +3210,7 @@
  },
  {
   "defName": "Apparel_PsyfocusShirt",
-  "price": 80,
+  "price": 40,
   "abr": "eltexshirt",
   "label": "eltex shirt",
   "description": "A shirt embedded with special psychic focusing materials. These enhance psychic sensitivity and help dissipate neural heat.",
@@ -3243,7 +3243,7 @@
  },
  {
   "defName": "Apparel_PsyfocusVest",
-  "price": 80,
+  "price": 50,
   "abr": "eltexvest",
   "label": "eltex vest",
   "description": "A thin vest embedded with special psychic focusing materials. These enhance psychic sensitivity and help dissipate neural heat.",
@@ -3276,7 +3276,7 @@
  },
  {
   "defName": "Apparel_Robe",
-  "price": 40,
+  "price": 25,
   "abr": "robe",
   "label": "robe",
   "description": "A long, flowing robe without a hood.",
@@ -3303,7 +3303,7 @@
  },
  {
   "defName": "Apparel_RobeRoyal",
-  "price": 40,
+  "price": 25,
   "abr": "prestigerobe",
   "label": "prestige robe",
   "description": "A long, flowing robe embroidered with complex decorative designs.",
@@ -3330,7 +3330,7 @@
  },
  {
   "defName": "Apparel_Sash",
-  "price": 40,
+  "price": 10,
   "abr": "sash",
   "label": "sash",
   "description": "A long strip of material worn over one shoulder. It offers minimal protection from heat, cold, and attacks. Due to its minimalist nature, nudists won't complain about wearing it.",
@@ -3359,7 +3359,7 @@
  },
  {
   "defName": "Apparel_Shadecone",
-  "price": 40,
+  "price": 25,
   "abr": "shadecone",
   "label": "shadecone",
   "description": "A conical woven hat. Good for keeping cool during long hours in the sun.",
@@ -3438,7 +3438,7 @@
  },
  {
   "defName": "Apparel_ShieldBelt",
-  "price": 60,
+  "price": 100,
   "abr": "shieldbelt",
   "label": "shield belt",
   "description": "A projectile-repulsion device. It will attempt to stop incoming projectiles or shrapnel, but does nothing against melee attacks or heat. It prevents the wearer from firing out, and shuts down instantly if hit by EMP.",
@@ -3466,7 +3466,7 @@
  },
  {
   "defName": "Apparel_ShirtRuffle",
-  "price": 40,
+  "price": 10,
   "abr": "formalshirt",
   "label": "formal shirt",
   "description": "A decorated formal shirt with buttons.",
@@ -3628,7 +3628,7 @@
  },
  {
   "defName": "Apparel_TribalA",
-  "price": 30,
+  "price": 10,
   "abr": "tribalwear",
   "label": "tribalwear",
   "description": "A full-body garment crafted using neolithic tools. While it may look primitive, it is effective at insulating the wearer.",
@@ -3657,7 +3657,7 @@
  },
  {
   "defName": "Apparel_TribalHeaddress",
-  "price": 40,
+  "price": 25,
   "abr": "tribalheaddress",
   "label": "tribal headdress",
   "description": "Elegant traditional garb, often with religious significance. Improves social impact.",
@@ -3686,7 +3686,7 @@
  },
  {
   "defName": "Apparel_Tuque",
-  "price": 40,
+  "price": 25,
   "abr": "tuque",
   "label": "tuque",
   "description": "A soft, thick cap. Great for keeping warm in winter.",
@@ -3818,7 +3818,7 @@
  },
  {
   "defName": "Apparel_VestRoyal",
-  "price": 40,
+  "price": 25,
   "abr": "formalvest",
   "label": "formal vest",
   "description": "A vest embroidered with complex decorative designs.",
@@ -3903,7 +3903,7 @@
  },
  {
   "defName": "Apparel_WarVeil",
-  "price": 30,
+  "price": 10,
   "abr": "veil",
   "label": "veil",
   "description": "A piece of fabric which covers the wearer's face.",
@@ -3932,7 +3932,7 @@
  },
  {
   "defName": "ArcaneHood",
-  "price": 150,
+  "price": 80,
   "abr": "arcanehood",
   "label": "Arcane Hood",
   "description": "A hood preferred by mages for its magical properties, light weight, and comfort. The method of infusing fabric with enchantments prior to weaving the hood returns improved enchanting results.\n\nThe Arcane Hood is enchanted and provides additional benefits to trained mages and fighters:\nMax Energy: +10%\nEnergy Regen: +10%\nArcane Resistance: +10%",
@@ -4064,7 +4064,7 @@
  },
  {
   "defName": "ArchotechArm",
-  "price": 300,
+  "price": 360,
   "abr": "archotecharm",
   "label": "archotech arm",
   "description": "An artificial arm built by an archotech. It's strong enough to crush a thick hardwood branch in its hand, and precise enough to write a sonnet on a grain of rice. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time. Its internal workings are a mystery to all human minds.",
@@ -4090,7 +4090,7 @@
  },
  {
   "defName": "ArchotechEye",
-  "price": 250,
+  "price": 300,
   "abr": "archotecheye",
   "label": "archotech eye",
   "description": "An artificial eye built by an archotech. It perceives every type of electromagnetic radiation, including radio waves, infrared, light, x-rays, and gamma rays. Its visual acuity is precise enough to read handwriting from twenty meters away. It can emit various wavelengths of radiation like a flashlight, and has an internal subpersona AI which helps highlight useful visual information. Its internal workings are a mystery to human minds.",
@@ -4116,7 +4116,7 @@
  },
  {
   "defName": "ArchotechLeg",
-  "price": 300,
+  "price": 360,
   "abr": "archotechleg",
   "label": "archotech leg",
   "description": "An artificial leg built by an archotech. It looks and feels like natural flesh, but a pair of these can move the user as fast as a decent car, and it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time. Its internal workings are a mystery to all human minds.",
@@ -4458,7 +4458,7 @@
  },
  {
   "defName": "BedGuest",
-  "price": 60,
+  "price": 40,
   "abr": "guestbed",
   "label": "bed (guest)",
   "description": "A cozy mattress and sheets on a frame for resting. ...and this is for a guest. You should have already known that, genius.",
@@ -4534,7 +4534,7 @@
  },
  {
   "defName": "BedrollDoubleGuest",
-  "price": 80,
+  "price": 60,
   "abr": "guestdoublebedroll",
   "label": "double bedroll (guest)",
   "description": "A simple double-wide bed that lays on the floor, usually made of cloth or leather, often lined with fur. It is lightweight and can be rolled up for easy transport, but it is not quite as comfortable as a typical bed. Caravans can use bedrolls while traveling for better sleep. ...and this is for a guest. You should have already known that, genius.",
@@ -4557,7 +4557,7 @@
  },
  {
   "defName": "BedrollGuest",
-  "price": 40,
+  "price": 20,
   "abr": "guestbedroll",
   "label": "bedroll (guest)",
   "description": "A simple bed that lays on the floor, usually made of cloth or leather, often lined with fur. It is lightweight and can be rolled up for easy transport, but it is not quite as comfortable as a typical bed. Caravans can use bedrolls while traveling for better sleep. ...and this is for a guest. You should have already known that, genius.",
@@ -4883,7 +4883,7 @@
  },
  {
   "defName": "BionicHeart",
-  "price": 60,
+  "price": 90,
   "abr": "syntheticheart",
   "label": "synthetic heart",
   "description": "An advanced artificial heart. It has synthetic muscle fibers for a realistic heartbeat, plus a high-flow pump for rapid circulation during high stress. It is better than a biological heart in almost every way.",
@@ -4987,7 +4987,7 @@
  },
  {
   "defName": "BionicStomach",
-  "price": 60,
+  "price": 90,
   "abr": "syntheticstomach",
   "label": "synthetic stomach",
   "description": "An advanced artificial stomach. A set of sensors and chemical synthesizers efficiently digest nearly any energy-bearing foodstuff. An integrated lattice-dust healing system automatically repairs any damage caused by the powerful acids. It is better than a biological stomach in almost every way.",
@@ -6330,7 +6330,7 @@
  },
  {
   "defName": "Bow_Great",
-  "price": 60,
+  "price": 70,
   "abr": "greatbow",
   "label": "greatbow",
   "description": "A powerful greatbow. Fires a heavy arrow long distances.",
@@ -6365,7 +6365,7 @@
  },
  {
   "defName": "Bow_Great_Unique",
-  "price": 100,
+  "price": 85,
   "abr": "uniquegreatbow",
   "label": "unique greatbow",
   "description": "A greatbow with customized parts.",
@@ -6541,7 +6541,7 @@
  },
  {
   "defName": "BroadshieldCore",
-  "price": 9999,
+  "price": 350,
   "abr": "shieldcore",
   "label": "shield core",
   "description": "A piece of ultratechnology that can generate a momentum-repulsor shield. This can't do anything on its own, but it is necessary to craft some other usable shield items.\\n\\nShield cores can be obtained by deconstructing mechanoid shield generators.",
@@ -6660,7 +6660,7 @@
  },
  {
   "defName": "Burnbong",
-  "price": 99999,
+  "price": 60,
   "abr": "burnbong",
   "label": "burnbong",
   "description": "A wood structure packed with smokeleaf. It can be ignited during a ritual and produce a huge amount of smokeleaf smoke for a few hours, after which it is destroyed.",
@@ -7378,7 +7378,7 @@
  },
  {
   "defName": "Cougar",
-  "price": 40,
+  "price": 50,
   "abr": "cougar",
   "label": "cougar",
   "description": "One of the most dangerous big cats, cougars are solitary hunters with long, sharp teeth and claws. They stalk prey from hidden positions before pouncing.\\n\\nWhile humans are not their normal diet, they won't turn down a meal of vulnerable human meat.",
@@ -8009,7 +8009,7 @@
  },
  {
   "defName": "DoubleBedGuest",
-  "price": 100,
+  "price": 80,
   "abr": "guestdoublebed",
   "label": "double bed (guest)",
   "description": "A simple double-wide bed that fits two people. ...and this is for a guest. You should have already known that, genius.",
@@ -10824,7 +10824,7 @@
  },
  {
   "defName": "FuelOptimizer",
-  "price": 99999,
+  "price": 700,
   "abr": "fueloptimizer",
   "label": "fuel optimizer",
   "description": "A gravtech unit that allows grav engine lift to coordinate more efficiently with traditional thrusters. It reduces the fuel needed for gravship flight.\\n\\nA gravship can support two fuel optimizers.",
@@ -11457,7 +11457,7 @@
  },
  {
   "defName": "GravEngine",
-  "price": 9999,
+  "price": 6000,
   "abr": "gravengine",
   "label": "grav engine",
   "description": "The ultratech heart of a gravship. The grav engine generates lift by inverting and intensifying the effect of gravity in a field around itself. This engine can lift upwards, but does not produce forward thrust. It can't function far from a large gravity well like a planet, so it is useless for interplanetary travel.\\n\\nWhen launched, anything on substructure that's connected to the grav engine will be transported to a new map. Without a grav anchor, launching a gravship will abandon your current map.\\n\\nGlitterworld engineers use gravships to launch orbital platforms and build skyrippers. They require massive and hyper-specialized facilities to produce, making them a rare sight outside of glitterworlds.",
@@ -11482,7 +11482,7 @@
  },
  {
   "defName": "GravFieldExtender",
-  "price": 9999,
+  "price": 2000,
   "abr": "gravfieldextender",
   "label": "grav field extender",
   "description": "An ultratech device used to increase the size of a gravship. It extends the area in which substructure can be built, and increases the amount of substructure that a gravship can support. Must be built near a grav engine.\\n\\nA gravship can support up to six grav field extenders.",
@@ -11505,7 +11505,7 @@
  },
  {
   "defName": "Gravcore",
-  "price": 9999,
+  "price": 1250,
   "abr": "gravcore",
   "label": "gravcore",
   "description": "An ultratech device that generates an unstructured graviton field. It is useless by itself, but it can be used to construct gravtech buildings.",
@@ -11529,7 +11529,7 @@
  },
  {
   "defName": "GravcorePowerCell",
-  "price": 9999,
+  "price": 2000,
   "abr": "gravcorepowercell",
   "label": "gravcore power cell",
   "description": "A power generator that passively draws a small amount of energy from gravitational waves passing through the gravship.",
@@ -11552,7 +11552,7 @@
  },
  {
   "defName": "GravlitePanel",
-  "price": 9999,
+  "price": 8,
   "abr": "gravlitepanel",
   "label": "gravlite panel",
   "description": "A sheet of advanced polymer used in the construction of gravships. It's lightweight and has a high graviton conductance, making it ideal for gravtech structures.\\n\\nRequires vacstone blocks, which can be obtained from orbital asteroids.",
@@ -11576,7 +11576,7 @@
  },
  {
   "defName": "GravshipShieldGenerator",
-  "price": 9999,
+  "price": 1800,
   "abr": "gravshipshieldgenerator",
   "label": "gravship shield generator",
   "description": "A shielding device that can protect a gravship. It modulates the grav field to create a short-lived momentum repulsor surface that blocks projectiles. It works against normal shots and mortars. Those inside can still shoot out.\\n\\nIt must be charged before use. One gravship can support two gravship shield generators.",
@@ -11661,7 +11661,7 @@
  },
  {
   "defName": "Gun_AssaultRifle_Unique",
-  "price": 140,
+  "price": 240,
   "abr": "uniqueassaultrifle",
   "label": "unique assault rifle",
   "description": "An assault rifle with customized parts.",
@@ -11763,7 +11763,7 @@
  },
  {
   "defName": "Gun_BeamRepeater",
-  "price": 200,
+  "price": 230,
   "abr": "beamrepeater",
   "label": "beam repeater",
   "description": "An ultratech weapon that emits gamma ray laser bursts in a rapid sequence. The tight gamma beams can pierce shields.",
@@ -11799,7 +11799,7 @@
  },
  {
   "defName": "Gun_BeamRepeater_Unique",
-  "price": 180,
+  "price": 275,
   "abr": "uniquebeamrepeater",
   "label": "unique beam repeater",
   "description": "A beam repeater with customized parts.",
@@ -11869,7 +11869,7 @@
  },
  {
   "defName": "Gun_BoltActionRifle_Unique",
-  "price": 110,
+  "price": 95,
   "abr": "uniquebolt-actionrifle",
   "label": "unique bolt-action rifle",
   "description": "A bolt-action rifle with customized parts.",
@@ -12010,7 +12010,7 @@
  },
  {
   "defName": "Gun_ChargeLance_Unique",
-  "price": 160,
+  "price": 180,
   "abr": "uniquechargelance",
   "label": "unique charge lance",
   "description": "A charge lance with customized parts.",
@@ -12045,7 +12045,7 @@
  },
  {
   "defName": "Gun_ChargeRifle",
-  "price": 150,
+  "price": 230,
   "abr": "chargerifle",
   "label": "charge rifle",
   "description": "A charged-shot assault rifle. Pulse-charge technology charges each shot with unstable energy as it leaves the barrel. Released on impact, the charged energy greatly increases the damage done.",
@@ -12081,7 +12081,7 @@
  },
  {
   "defName": "Gun_ChargeRifle_Unique",
-  "price": 140,
+  "price": 275,
   "abr": "uniquechargerifle",
   "label": "unique charge rifle",
   "description": "A charge rifle with customized parts.",
@@ -12241,7 +12241,7 @@
  },
  {
   "defName": "Gun_HellcatRifle",
-  "price": 140,
+  "price": 175,
   "abr": "hellcatrifle",
   "label": "hellcat rifle",
   "description": "A versatile assault rifle with good range, decent power, and good accuracy.\\n\\nIt also comes equipped with a bioferrite-powered mini-burner unit which generates a blast of flame from pressurized bioferrite charges. The mini-burner unit can be used twice before refueling.",
@@ -12276,7 +12276,7 @@
  },
  {
   "defName": "Gun_HellcatRifle_Unique",
-  "price": 180,
+  "price": 210,
   "abr": "uniquehellcatrifle",
   "label": "unique hellcat rifle",
   "description": "A hellcat rifle with customized parts.",
@@ -12400,7 +12400,7 @@
  },
  {
   "defName": "Gun_LMG_Unique",
-  "price": 140,
+  "price": 145,
   "abr": "uniquelmg",
   "label": "unique LMG",
   "description": "An LMG with customized parts.",
@@ -12470,7 +12470,7 @@
  },
  {
   "defName": "Gun_Minigun",
-  "price": 140,
+  "price": 170,
   "abr": "minigun",
   "label": "minigun",
   "description": "A multi-barrel machine gun. It's unwieldy, but once it starts firing it fires very fast. Where most self-loading guns are powered by the energy from the gunpowder, the minigun uses an electric motor to rapidly cycle cartridges through the weapon.",
@@ -12506,7 +12506,7 @@
  },
  {
   "defName": "Gun_Minigun_Unique",
-  "price": 200,
+  "price": 205,
   "abr": "uniqueminigun",
   "label": "unique minigun",
   "description": "A minigun with customized parts.",
@@ -12611,7 +12611,7 @@
  },
  {
   "defName": "Gun_Revolver_Unique",
-  "price": 100,
+  "price": 95,
   "abr": "uniquerevolver",
   "label": "unique revolver",
   "description": "A revolver with customized parts.",
@@ -12708,7 +12708,7 @@
  },
  {
   "defName": "Gun_SniperRifle_Unique",
-  "price": 140,
+  "price": 145,
   "abr": "uniquesniperrifle",
   "label": "unique sniper rifle",
   "description": "A sniper rifle with customized parts.",
@@ -12847,7 +12847,7 @@
  },
  {
   "defName": "HarbingerSeed",
-  "price": 9999,
+  "price": 120,
   "abr": "harbingerseed",
   "label": "harbinger seed",
   "description": "The seed of a harbinger tree. It can be planted to grow a new harbinger tree, which will eat any corpses or meat placed nearby.",
@@ -12991,7 +12991,7 @@
  },
  {
   "defName": "Heart",
-  "price": 100,
+  "price": 70,
   "abr": "heart",
   "label": "heart",
   "description": "A biological human heart. Pumps blood around the body.",
@@ -13454,7 +13454,7 @@
  },
  {
   "defName": "HospitalBedGuest",
-  "price": 60,
+  "price": 80,
   "abr": "guesthospitalbed",
   "label": "hospital bed (guest)",
   "description": "A bed specially designed for use in hospitals. Adjustable for a patient and festooned with built-in equipment, it improves medical outcomes over normal beds. ...and this is for a guest. You should have already known that, genius.",
@@ -13907,7 +13907,7 @@
  },
  {
   "defName": "Kidney",
-  "price": 80,
+  "price": 60,
   "abr": "kidney",
   "label": "kidney",
   "description": "A biological human kidney. Filters and removes waste products from the blood.",
@@ -14173,7 +14173,7 @@
  },
  {
   "defName": "LargeThruster",
-  "price": 9999,
+  "price": 300,
   "abr": "largethruster",
   "label": "large thruster",
   "description": "An advanced chemfuel thruster with a heat-resistant vacstone liner. It greatly increases the range of a gravship. Thrusters require an unobstructed area free of large buildings and gravship substructure.\\n\\nRequires vacstone blocks, which can be obtained from orbital asteroids.\\n\\nA gravship can support up to six large thrusters.",
@@ -15138,7 +15138,7 @@
  },
  {
   "defName": "Liver",
-  "price": 80,
+  "price": 60,
   "abr": "liver",
   "label": "liver",
   "description": "A biological human liver. Plays an important role in metabolism.",
@@ -15265,7 +15265,7 @@
  },
  {
   "defName": "Lung",
-  "price": 80,
+  "price": 60,
   "abr": "lung",
   "label": "lung",
   "description": "A biological human lung. A pair of these form the core of the human respiratory system.",
@@ -15347,7 +15347,7 @@
  },
  {
   "defName": "MagicArtifact_RerollSpiritBond",
-  "price": 800,
+  "price": 100,
   "abr": "scrollofspiritbinding",
   "label": "Scroll of Spirit Binding",
   "description": "This scroll may be used to change the shaman's spirit animal. The new bond will randomly select a new spirit type to bond.",
@@ -17633,7 +17633,7 @@
  },
  {
   "defName": "MeleeWeapon_LongSword",
-  "price": 60,
+  "price": 80,
   "abr": "longsword",
   "label": "longsword",
   "description": "The ancient weapon of kings, the longsword can be used for slashing or stabbing.",
@@ -17695,7 +17695,7 @@
  },
  {
   "defName": "MeleeWeapon_MonoSword",
-  "price": 100,
+  "price": 140,
   "abr": "monosword",
   "label": "monosword",
   "description": "A crystal-metallic longsword infused with mechanites that maintain a mono-molecular cutting edge. It cuts through even thick armor with ease, and its light weight permits fast attacks.",
@@ -17785,7 +17785,7 @@
  },
  {
   "defName": "MeleeWeapon_PlasmaSwordBladelink",
-  "price": 200,
+  "price": 250,
   "abr": "personaplasmasword",
   "label": "persona plasmasword",
   "description": "A metal-cored sword with a cutting edge. Plasma is wrapped around the core, held in place by an energy field. Targets are both sliced by the metal core, as well as burned or ignited by the plasma sheath.\n\\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.",
@@ -17846,7 +17846,7 @@
  },
  {
   "defName": "MeleeWeapon_Spear",
-  "price": 40,
+  "price": 60,
   "abr": "spear",
   "label": "spear",
   "description": "A polearm tipped with a sharp point for stabbing opponents.",
@@ -17877,7 +17877,7 @@
  },
  {
   "defName": "MeleeWeapon_Warhammer",
-  "price": 80,
+  "price": 70,
   "abr": "warhammer",
   "label": "warhammer",
   "description": "A long polearm topped with a brutal hammer. The powerful blunt impacts can pulverize an enemy's insides, even through armor.",
@@ -17908,7 +17908,7 @@
  },
  {
   "defName": "MeleeWeapon_ZeusHammerBladelink",
-  "price": 200,
+  "price": 290,
   "abr": "personazeushammer",
   "label": "persona zeushammer",
   "description": "A warhammer with an embedded EMP capacitor. Upon impact, it blasts the target with an EMP burst in addition to the physical damage.\n\\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.",
@@ -19068,7 +19068,7 @@
  },
  {
   "defName": "Panther",
-  "price": 60,
+  "price": 50,
   "abr": "panther",
   "label": "panther",
   "description": "An agile and powerful big cat native to the jungles of old Earth. As solitary ambush predators, panthers are masters of taking down both large and small prey. Onlookers tend to focus on their graceful movements, while those in closer contact usually notice their skull-crushing strength.",
@@ -19097,7 +19097,7 @@
  },
  {
   "defName": "ParagonHelm",
-  "price": 120,
+  "price": 150,
   "abr": "paragon'shelm",
   "label": "Paragon's Helm",
   "description": "A heavily enchanted helm meant to identify elite warriors of the Valiant.\n\nParagon's Helm is enchanted and provides additional benefits to trained mages and fighters:\nEnergy Costs: -5%\nClass XP Gain: +15%\nMax Energy: +5%\nArcane Res: +10%",
@@ -19407,7 +19407,7 @@
  },
  {
   "defName": "PilotConsole",
-  "price": 99999,
+  "price": 150,
   "abr": "pilotconsole",
   "label": "pilot console",
   "description": "An interface that allows launching and piloting a gravship. It draws power directly from the grav engine.",
@@ -19430,7 +19430,7 @@
  },
  {
   "defName": "PilotSubpersonaCore",
-  "price": 99999,
+  "price": 400,
   "abr": "pilotsubpersonacore",
   "label": "pilot subpersona core",
   "description": "A low-grade subpersona specialized in gravship flight. It reduces the chance of an accident when flying a gravship, though it can't fully account for human error.\\n\\nA gravship can support up to two pilot subpersona cores.",
@@ -21068,7 +21068,7 @@
  },
  {
   "defName": "RoyalBedGuest",
-  "price": 150,
+  "price": 120,
   "abr": "guestroyalbed",
   "label": "royal bed (guest)",
   "description": "A luxurious gold-inlaid bed fit for the highborn. Very comfy and beautiful, it is a work of art in itself. Fits two. ...and this is for a guest. You should have already known that, genius.",
@@ -21095,7 +21095,7 @@
  },
  {
   "defName": "RoyalHelm",
-  "price": 120,
+  "price": 110,
   "abr": "helmofthevaliant",
   "label": "Helm of the Valiant",
   "description": "A barbute shaped helm designed to maximize protection without restricting vision or voice. These helmets are a complementary piece to the Armor of the Valiant set and further enhance a wearers arcane capabilities while also providing noteworthy physical protection.\n\nHelm of the Valiant is enchanted and provides additional benefits to trained mages and fighters:\nEnergy Costs: -5%\nClass XP Gain: +10%",
@@ -21965,7 +21965,7 @@
  },
  {
   "defName": "ShuttleEngine",
-  "price": 9999,
+  "price": 2500,
   "abr": "shuttleengine",
   "label": "shuttle engine",
   "description": "An engine capable of powering a small shuttle. Shuttle engines can only be manufactured in large specialized factories, making them rare on the rim.",
@@ -22959,7 +22959,7 @@
  },
  {
   "defName": "SmallThruster",
-  "price": 9999,
+  "price": 150,
   "abr": "smallthruster",
   "label": "small thruster",
   "description": "A chemfuel thruster that increases the range of a gravship. Thrusters require an unobstructed area free of large buildings and gravship substructure.\\n\\nA gravship can support up to four small thrusters.",
@@ -25106,7 +25106,7 @@
  },
  {
   "defName": "SteelArm",
-  "price": 60,
+  "price": 40,
   "abr": "steelarm",
   "label": "steel arm",
   "description": "A very poor arm replacement. Looks bad, feels bad, is bad.",
@@ -25132,7 +25132,7 @@
  },
  {
   "defName": "Stomach",
-  "price": 80,
+  "price": 60,
   "abr": "stomach",
   "label": "stomach",
   "description": "Digests food and turns it into energy and nutrients.",
@@ -25536,7 +25536,7 @@
  },
  {
   "defName": "SyntheticKidney",
-  "price": 60,
+  "price": 90,
   "abr": "synthetickidney",
   "label": "synthetic kidney",
   "description": "An advanced artificial kidney. A set of sensors and synthetic filters that efficiently removes waste products from the blood. It is better than a biological kidney in almost every way.",
@@ -25562,7 +25562,7 @@
  },
  {
   "defName": "SyntheticLiver",
-  "price": 60,
+  "price": 90,
   "abr": "syntheticliver",
   "label": "synthetic liver",
   "description": "An advanced artificial liver. A set of sensors and chemical synthesizers monitors and replicate the liver's role in metabolism, instantly adapting to changes in the body. It is better than a biological liver in almost every way.",
@@ -25588,7 +25588,7 @@
  },
  {
   "defName": "SyntheticLung",
-  "price": 60,
+  "price": 90,
   "abr": "syntheticlung",
   "label": "synthetic lung",
   "description": "An advanced artificial lung. It has synthetic muscle fibers for a realistic breathing, plus a high-flow pump for rapid deep breathes during intensive activities. It is better than a biological lung in almost every way.",
@@ -26287,7 +26287,7 @@
  },
  {
   "defName": "TM_Dire_WolfR",
-  "price": 50,
+  "price": 200,
   "abr": "direwolf",
   "label": "dire wolf",
   "description": "Dire wolves roam the north in great packs and fear neither man nor megasloth. A savage predator armed with razor sharp teeth and a coat like steel thread, dire wolves are as fierce as any known creature. They are often tied to mythical lore and are said to possess a unique link to arcane powers.",
@@ -27430,7 +27430,7 @@
  },
  {
   "defName": "TM_HoodOfProtection",
-  "price": 100,
+  "price": 40,
   "abr": "hoodofprotection",
   "label": "Hood of Protection",
   "description": "A simple hood that increases protection, both magical and mundane. The method of infusing fabric with enchantments prior to weaving the hood returns improved enchanting results.\n\nThe Hood of Protection is enchanted and provides additional benefits to trained mages and fighters:\nArcane Resistance: +10%",
@@ -28374,7 +28374,7 @@
  },
  {
   "defName": "TM_WizardHat",
-  "price": 80,
+  "price": 50,
   "abr": "wizardhat",
   "label": "Wizard Hat",
   "description": "A classic hat styled for any wizard or witch. This hat has secret carrying compartments and also has social and drug production bonuses.\n\nThe Wizard Hat is enchanted and provides additional benefits to trained mages and fighters:\nMax Energy: +5%\nArcane Power: +5%",
@@ -28927,7 +28927,7 @@
  },
  {
   "defName": "Thrumbo",
-  "price": 100,
+  "price": 300,
   "abr": "thrumbo",
   "label": "thrumbo",
   "description": "A gigantic, graceful creature of unknown origin. The thrumbo is gentle by nature, but extremely dangerous when enraged. While its long fur is exceptionally beautiful, its hide is also incredibly resistant to damage. Its razor-sharp horn fetches a huge price.\\n\\nLegends say that an old thrumbo is the wisest creature in the universe - it simply chooses not to speak.",
@@ -31844,7 +31844,7 @@
  },
  {
   "defName": "VanometricPowerCell",
-  "price": 9999,
+  "price": 1500,
   "abr": "vanometricpowercell",
   "label": "vanometric power cell",
   "description": "Generates free energy, forever, without using fuel. This technology is developed by archotechs, and is beyond even most glitterworld societies. While nobody knows exactly how it works, scholars believe it somehow extracts energy directly from fluctuations in the quantum foam.",
@@ -42507,7 +42507,7 @@
  },
  {
   "defName": "ReelStorageLargeSpacerContainer",
-  "price": 9999,
+  "price": 250,
   "abr": "largespacercontainer",
   "label": "large spacer container",
   "description": "Large spacer-tech storage container. From Reel's Expanded Storage.",
@@ -42612,7 +42612,7 @@
  },
  {
   "defName": "ReelStorageSpacerContainer",
-  "price": 9999,
+  "price": 150,
   "abr": "spacercontainer",
   "label": "spacer container",
   "description": "Spacer-tech storage container. From Reel's Expanded Storage.",
@@ -42627,7 +42627,7 @@
  },
  {
   "defName": "ReelStorageSpacerContainerStack",
-  "price": 9999,
+  "price": 400,
   "abr": "spacercontainerstack",
   "label": "spacer container stack",
   "description": "Stacked spacer-tech storage containers. From Reel's Expanded Storage.",
@@ -42642,7 +42642,7 @@
  },
  {
   "defName": "ReelStorageSpacerLocker",
-  "price": 4450,
+  "price": 250,
   "abr": "spacerlocker",
   "label": "spacer locker",
   "description": "Spacer-tech storage locker. From Reel's Expanded Storage.",
