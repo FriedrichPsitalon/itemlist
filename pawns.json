@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T01:43:37Z",
+  "updatedUtc": "2026-11-25T01:47:37Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -26,7 +26,7 @@
       "passions": [
         {
           "skill": "Construction",
-          "level": 16,
+          "level": 17,
           "passion": 2
         },
         {
@@ -48,7 +48,7 @@
       "topSkills": [
         {
           "skill": "Construction",
-          "level": 16,
+          "level": 17,
           "passion": 2
         },
         {
