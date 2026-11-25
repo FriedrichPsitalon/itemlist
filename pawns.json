@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T03:01:38Z",
+  "updatedUtc": "2026-11-25T20:09:57Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -249,7 +249,14 @@
       "incapable": [
         "Artistic"
       ],
-      "health": []
+      "health": [
+        {
+          "kind": "addiction",
+          "label": "Smokeleaf dependence (50%)",
+          "count": 1,
+          "parts": []
+        }
+      ]
     },
     {
       "id": "Human3607321",
