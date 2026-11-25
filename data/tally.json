@@ -5,11 +5,11 @@
   "shroud of the soulreaper": 7,
   "druid spell: regrow limb": 1,
   "unrefined magicyte": 5496,
-  "Revive random pawn": 3,
+  "Revive random pawn": 4,
   "necrotic orb": 2,
   "couch": 1,
   "piranha": 2,
-  "Trader caravan arrival": 10,
+  "Trader caravan arrival": 12,
   "unique hellcat rifle": 1,
   "techprint (specialized limbs)": 1,
   "armadillo": 1,
@@ -147,5 +147,8 @@
   "major arcane gem of resistance": 8,
   "Resource pod crash": 1,
   "skull": 3,
-  "silk golem": 3
+  "silk golem": 3,
+  "staff of blazing power": 1,
+  "guest deathrest casket": 4,
+  "disciple robe": 12
 }
