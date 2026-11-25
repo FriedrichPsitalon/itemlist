@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T00:21:35Z",
+  "updatedUtc": "2026-11-25T00:22:35Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 19,
-  "unadopted": 13,
+  "colonists": 18,
+  "unadopted": 12,
   "pawns": [
     {
       "id": "Human3607321",
@@ -241,220 +241,6 @@
       "health": []
     },
     {
-      "id": "Human4005874",
-      "name": "Pateria Posariere",
-      "nick": "Pateria",
-      "age": 22,
-      "gender": "Female",
-      "childhood": "Ship girl",
-      "adulthood": "Demolitionist",
-      "traits": [
-        "Steadfast",
-        "Nudist",
-        "Physically adept"
-      ],
-      "passions": [
-        {
-          "skill": "Crafting",
-          "level": 13,
-          "passion": 2
-        },
-        {
-          "skill": "Animals",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Cooking",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Crafting",
-          "level": 13,
-          "passion": 2
-        },
-        {
-          "skill": "Animals",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 10,
-          "passion": 2
-        }
-      ],
-      "incapable": [
-        "Plants"
-      ],
-      "health": [
-        {
-          "kind": "bionic",
-          "label": "Death acidifier",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bite (warg razorfangs)",
-          "count": 1,
-          "parts": [
-            "right leg"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bruise (warg claw)",
-          "count": 2,
-          "parts": [
-            "torso",
-            "neck"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bruise (warg razorfangs)",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Scratch (warg claw)",
-          "count": 4,
-          "parts": [
-            "left arm",
-            "left shoulder",
-            "torso"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human4005889",
-      "name": "Calcos Askospa",
-      "nick": "Askospa",
-      "age": 14,
-      "gender": "Male",
-      "childhood": "Sickly child",
-      "adulthood": null,
-      "traits": [
-        "Drunken master",
-        "Kind",
-        "Necromancer"
-      ],
-      "passions": [
-        {
-          "skill": "Melee",
-          "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Medical",
-          "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Intellectual",
-          "level": 6,
-          "passion": 1
-        },
-        {
-          "skill": "Shooting",
-          "level": 3,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Melee",
-          "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Medical",
-          "level": 7,
-          "passion": 1
-        },
-        {
-          "skill": "Intellectual",
-          "level": 6,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "bionic",
-          "label": "Death acidifier",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Bite scar",
-          "count": 1,
-          "parts": [
-            "left leg"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Scratch scar (warg claw)",
-          "count": 1,
-          "parts": [
-            "left eye"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bruise (warg claw)",
-          "count": 2,
-          "parts": [
-            "right arm",
-            "right shoulder"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Crack (warg claw)",
-          "count": 1,
-          "parts": [
-            "jaw"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Scratch (warg claw)",
-          "count": 6,
-          "parts": [
-            "left shoulder",
-            "torso",
-            "right leg",
-            "right foot"
-          ]
-        }
-      ]
-    },
-    {
       "id": "Human4005897",
       "name": "Vaa Proari",
       "nick": "Vaa",
@@ -513,124 +299,6 @@
           "count": 1,
           "parts": [
             "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bruise (warg claw)",
-          "count": 5,
-          "parts": [
-            "torso",
-            "neck",
-            "right leg",
-            "right foot"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bruise (warg razorfangs)",
-          "count": 3,
-          "parts": [
-            "left leg",
-            "torso"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human4005905",
-      "name": "Therosia Kynos",
-      "nick": "Kynos",
-      "age": 31,
-      "gender": "Female",
-      "childhood": "Child spy",
-      "adulthood": "Pious soldier",
-      "traits": [
-        "Prude"
-      ],
-      "passions": [
-        {
-          "skill": "Shooting",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 8,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Shooting",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 9,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 8,
-          "passion": 2
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "bionic",
-          "label": "Death acidifier",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Bite scar (itchy)",
-          "count": 1,
-          "parts": [
-            "left leg"
-          ]
-        },
-        {
-          "kind": "scar",
-          "label": "Old gunshot",
-          "count": 1,
-          "parts": [
-            "left hand"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bite (warg razorfangs)",
-          "count": 2,
-          "parts": [
-            "torso",
-            "right arm"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Scratch (warg claw)",
-          "count": 4,
-          "parts": [
-            "left arm",
-            "left hand",
-            "right leg",
-            "right foot"
           ]
         }
       ]
@@ -819,94 +487,6 @@
       "health": []
     },
     {
-      "id": "Human4005936",
-      "name": "Mastica Laskaris",
-      "nick": "Mastica",
-      "age": 23,
-      "gender": "Female",
-      "childhood": "Serving girl",
-      "adulthood": "Pious soldier",
-      "traits": [
-        "Drunken master",
-        "Recluse",
-        "Psychically deaf"
-      ],
-      "passions": [
-        {
-          "skill": "Melee",
-          "level": 18,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 17,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Mining",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Melee",
-          "level": 18,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 17,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "bionic",
-          "label": "Death acidifier",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bite (warg razorfangs)",
-          "count": 1,
-          "parts": [
-            "left leg"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Scratch (warg claw)",
-          "count": 10,
-          "parts": [
-            "left leg",
-            "left foot",
-            "torso",
-            "right leg",
-            "right foot",
-            "left arm",
-            "left hand",
-            "right arm",
-            "right hand"
-          ]
-        }
-      ]
-    },
-    {
       "id": "Human4005928",
       "name": "Opposa Vabas",
       "nick": "Vabas",
@@ -1001,6 +581,318 @@
             "right pinky",
             "right index finger",
             "left arm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human4005905",
+      "name": "Therosia Kynos",
+      "nick": "Kynos",
+      "age": 31,
+      "gender": "Female",
+      "childhood": "Child spy",
+      "adulthood": "Pious soldier",
+      "traits": [
+        "Prude"
+      ],
+      "passions": [
+        {
+          "skill": "Shooting",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Shooting",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 8,
+          "passion": 2
+        }
+      ],
+      "incapable": [],
+      "health": [
+        {
+          "kind": "bionic",
+          "label": "Death acidifier",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Bite scar (itchy)",
+          "count": 1,
+          "parts": [
+            "left leg"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Old gunshot",
+          "count": 1,
+          "parts": [
+            "left hand"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bite (warg razorfangs)",
+          "count": 2,
+          "parts": [
+            "torso",
+            "right arm"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Scratch (warg claw)",
+          "count": 4,
+          "parts": [
+            "left arm",
+            "left hand",
+            "right leg",
+            "right foot"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human4005889",
+      "name": "Calcos Askospa",
+      "nick": "Askospa",
+      "age": 14,
+      "gender": "Male",
+      "childhood": "Sickly child",
+      "adulthood": null,
+      "traits": [
+        "Drunken master",
+        "Kind",
+        "Necromancer"
+      ],
+      "passions": [
+        {
+          "skill": "Melee",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Medical",
+          "level": 7,
+          "passion": 1
+        },
+        {
+          "skill": "Intellectual",
+          "level": 6,
+          "passion": 1
+        },
+        {
+          "skill": "Shooting",
+          "level": 3,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Melee",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Medical",
+          "level": 7,
+          "passion": 1
+        },
+        {
+          "skill": "Intellectual",
+          "level": 6,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": [
+        {
+          "kind": "bionic",
+          "label": "Death acidifier",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Bite scar",
+          "count": 1,
+          "parts": [
+            "left leg"
+          ]
+        },
+        {
+          "kind": "scar",
+          "label": "Scratch scar (warg claw)",
+          "count": 1,
+          "parts": [
+            "left eye"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (warg claw)",
+          "count": 2,
+          "parts": [
+            "right arm",
+            "right shoulder"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crack (warg claw)",
+          "count": 1,
+          "parts": [
+            "jaw"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Scratch (warg claw)",
+          "count": 6,
+          "parts": [
+            "left shoulder",
+            "torso",
+            "right leg",
+            "right foot"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human4005874",
+      "name": "Pateria Posariere",
+      "nick": "Pateria",
+      "age": 22,
+      "gender": "Female",
+      "childhood": "Ship girl",
+      "adulthood": "Demolitionist",
+      "traits": [
+        "Steadfast",
+        "Nudist",
+        "Physically adept"
+      ],
+      "passions": [
+        {
+          "skill": "Crafting",
+          "level": 13,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Cooking",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Crafting",
+          "level": 13,
+          "passion": 2
+        },
+        {
+          "skill": "Animals",
+          "level": 11,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 10,
+          "passion": 2
+        }
+      ],
+      "incapable": [
+        "Plants"
+      ],
+      "health": [
+        {
+          "kind": "bionic",
+          "label": "Death acidifier",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bite (warg razorfangs)",
+          "count": 1,
+          "parts": [
+            "right leg"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (warg claw)",
+          "count": 2,
+          "parts": [
+            "torso",
+            "neck"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (warg razorfangs)",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Scratch (warg claw)",
+          "count": 4,
+          "parts": [
+            "left arm",
+            "left shoulder",
+            "torso"
           ]
         }
       ]
