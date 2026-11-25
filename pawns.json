@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T00:23:35Z",
+  "updatedUtc": "2026-11-25T00:28:35Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -152,7 +152,7 @@
         },
         {
           "skill": "Plants",
-          "level": 13,
+          "level": 14,
           "passion": 2
         },
         {
@@ -184,7 +184,7 @@
         },
         {
           "skill": "Plants",
-          "level": 13,
+          "level": 14,
           "passion": 2
         }
       ],
