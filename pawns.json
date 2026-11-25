@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T00:46:36Z",
+  "updatedUtc": "2026-11-25T00:47:36Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -198,7 +198,7 @@
       "id": "Human3869834",
       "name": "Gleog 'Bicep' Glepoiogg",
       "nick": "Bicep",
-      "age": 10,
+      "age": 11,
       "gender": "Male",
       "childhood": "Child",
       "adulthood": null,
@@ -296,10 +296,10 @@
         {
           "kind": "injury",
           "label": "Scratch",
-          "count": 4,
+          "count": 3,
           "parts": [
-            "right fourth toe",
-            "left middle toe"
+            "left middle toe",
+            "right fourth toe"
           ]
         }
       ]
