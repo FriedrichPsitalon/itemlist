@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T00:19:35Z",
+  "updatedUtc": "2026-11-25T00:21:35Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 21,
-  "unadopted": 15,
+  "colonists": 19,
+  "unadopted": 13,
   "pawns": [
     {
       "id": "Human3607321",
@@ -239,220 +239,6 @@
       ],
       "incapable": [],
       "health": []
-    },
-    {
-      "id": "Human4005858",
-      "name": "Petronas Mavronis",
-      "nick": "Mavronis",
-      "age": 13,
-      "gender": "Male",
-      "childhood": "Child spy",
-      "adulthood": null,
-      "traits": [
-        "Wanderlust",
-        "Technophobe",
-        "Anxious",
-        "Psychically deaf"
-      ],
-      "passions": [
-        {
-          "skill": "Melee",
-          "level": 19,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 8,
-          "passion": 1
-        },
-        {
-          "skill": "Construction",
-          "level": 1,
-          "passion": 1
-        },
-        {
-          "skill": "Mining",
-          "level": 1,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Melee",
-          "level": 19,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 8,
-          "passion": 1
-        },
-        {
-          "skill": "Construction",
-          "level": 1,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "bionic",
-          "label": "Death acidifier",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "missing",
-          "label": "Missing left thumb",
-          "count": 1,
-          "parts": []
-        },
-        {
-          "kind": "injury",
-          "label": "Bite (warg razorfangs)",
-          "count": 2,
-          "parts": [
-            "right leg",
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Crack (warg claw)",
-          "count": 2,
-          "parts": [
-            "nose",
-            "jaw"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Scratch (warg claw)",
-          "count": 9,
-          "parts": [
-            "right leg",
-            "torso",
-            "left eye",
-            "left pinky",
-            "left ear",
-            "left foot",
-            "left second toe",
-            "left leg"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human2355040",
-      "name": "Julian Cesber",
-      "nick": "Julian",
-      "age": 36,
-      "gender": "Male",
-      "childhood": "Vatgrown soldier",
-      "adulthood": "Infantry engineer",
-      "traits": [
-        "Depressive"
-      ],
-      "passions": [
-        {
-          "skill": "Melee",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 9,
-          "passion": 1
-        },
-        {
-          "skill": "Mining",
-          "level": 6,
-          "passion": 1
-        },
-        {
-          "skill": "Shooting",
-          "level": 5,
-          "passion": 1
-        },
-        {
-          "skill": "Animals",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Melee",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 9,
-          "passion": 1
-        },
-        {
-          "skill": "Mining",
-          "level": 6,
-          "passion": 1
-        }
-      ],
-      "incapable": [
-        "Medical",
-        "Social"
-      ],
-      "health": [
-        {
-          "kind": "bionic",
-          "label": "Death acidifier",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bite (warg razorfangs)",
-          "count": 2,
-          "parts": [
-            "left arm"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bruise (warg claw)",
-          "count": 2,
-          "parts": [
-            "right arm",
-            "right hand"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bruise (warg razorfangs)",
-          "count": 1,
-          "parts": [
-            "right arm"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Scratch (warg claw)",
-          "count": 14,
-          "parts": [
-            "torso",
-            "neck",
-            "left shoulder",
-            "left leg",
-            "left foot",
-            "left fourth toe",
-            "right leg",
-            "right foot"
-          ]
-        }
-      ]
     },
     {
       "id": "Human4005874",
@@ -730,19 +516,10 @@
           ]
         },
         {
-          "kind": "scar",
-          "label": "Old gunshot",
-          "count": 1,
-          "parts": [
-            "right leg"
-          ]
-        },
-        {
           "kind": "injury",
           "label": "Bruise (warg claw)",
-          "count": 6,
+          "count": 5,
           "parts": [
-            "left leg",
             "torso",
             "neck",
             "right leg",
@@ -753,15 +530,6 @@
           "kind": "injury",
           "label": "Bruise (warg razorfangs)",
           "count": 3,
-          "parts": [
-            "left leg",
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Scratch (warg claw)",
-          "count": 2,
           "parts": [
             "left leg",
             "torso"
@@ -997,6 +765,148 @@
       ]
     },
     {
+      "id": "Human3738935",
+      "name": "Shurka 'Mania' Shapovalov",
+      "nick": "Mania",
+      "age": 49,
+      "gender": "Male",
+      "childhood": "Coma child",
+      "adulthood": "Evangelist",
+      "traits": [
+        "Mountain lover",
+        "Slob"
+      ],
+      "passions": [
+        {
+          "skill": "Shooting",
+          "level": 14,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Artistic",
+          "level": 5,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Shooting",
+          "level": 14,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Artistic",
+          "level": 5,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": []
+    },
+    {
+      "id": "Human4005936",
+      "name": "Mastica Laskaris",
+      "nick": "Mastica",
+      "age": 23,
+      "gender": "Female",
+      "childhood": "Serving girl",
+      "adulthood": "Pious soldier",
+      "traits": [
+        "Drunken master",
+        "Recluse",
+        "Psychically deaf"
+      ],
+      "passions": [
+        {
+          "skill": "Melee",
+          "level": 18,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 17,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 4,
+          "passion": 1
+        },
+        {
+          "skill": "Mining",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Melee",
+          "level": 18,
+          "passion": 2
+        },
+        {
+          "skill": "Shooting",
+          "level": 17,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": [
+        {
+          "kind": "bionic",
+          "label": "Death acidifier",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bite (warg razorfangs)",
+          "count": 1,
+          "parts": [
+            "left leg"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Scratch (warg claw)",
+          "count": 10,
+          "parts": [
+            "left leg",
+            "left foot",
+            "torso",
+            "right leg",
+            "right foot",
+            "left arm",
+            "left hand",
+            "right arm",
+            "right hand"
+          ]
+        }
+      ]
+    },
+    {
       "id": "Human4005928",
       "name": "Opposa Vabas",
       "nick": "Vabas",
@@ -1094,148 +1004,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": "Human4005936",
-      "name": "Mastica Laskaris",
-      "nick": "Mastica",
-      "age": 23,
-      "gender": "Female",
-      "childhood": "Serving girl",
-      "adulthood": "Pious soldier",
-      "traits": [
-        "Drunken master",
-        "Recluse",
-        "Psychically deaf"
-      ],
-      "passions": [
-        {
-          "skill": "Melee",
-          "level": 18,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 17,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 4,
-          "passion": 1
-        },
-        {
-          "skill": "Mining",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Melee",
-          "level": 18,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 17,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "bionic",
-          "label": "Death acidifier",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bite (warg razorfangs)",
-          "count": 1,
-          "parts": [
-            "left leg"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Scratch (warg claw)",
-          "count": 10,
-          "parts": [
-            "left leg",
-            "left foot",
-            "torso",
-            "right leg",
-            "right foot",
-            "left arm",
-            "left hand",
-            "right arm",
-            "right hand"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human3738935",
-      "name": "Shurka 'Mania' Shapovalov",
-      "nick": "Mania",
-      "age": 49,
-      "gender": "Male",
-      "childhood": "Coma child",
-      "adulthood": "Evangelist",
-      "traits": [
-        "Mountain lover",
-        "Slob"
-      ],
-      "passions": [
-        {
-          "skill": "Shooting",
-          "level": 14,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 9,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 5,
-          "passion": 1
-        },
-        {
-          "skill": "Animals",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Shooting",
-          "level": 14,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 9,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": []
     }
   ]
 }
