@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T02:34:38Z",
+  "updatedUtc": "2026-11-25T02:35:38Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -200,9 +200,9 @@
       "adulthood": null,
       "traits": [
         "Slothful",
-        "Magically gifted",
         "Enlightened",
-        "Slowpoke"
+        "Slowpoke",
+        "Paladin"
       ],
       "passions": [
         {
