@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T01:22:37Z",
+  "updatedUtc": "2026-11-25T01:23:37Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -209,7 +209,7 @@
       "passions": [
         {
           "skill": "Shooting",
-          "level": 14,
+          "level": 15,
           "passion": 2
         },
         {
@@ -231,7 +231,7 @@
       "topSkills": [
         {
           "skill": "Shooting",
-          "level": 14,
+          "level": 15,
           "passion": 2
         },
         {
@@ -360,24 +360,7 @@
         }
       ],
       "incapable": [],
-      "health": [
-        {
-          "kind": "injury",
-          "label": "Crack",
-          "count": 1,
-          "parts": [
-            "right humerus"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Stab",
-          "count": 1,
-          "parts": [
-            "right arm"
-          ]
-        }
-      ]
+      "health": []
     }
   ]
 }
