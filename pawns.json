@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T00:16:35Z",
+  "updatedUtc": "2026-11-25T00:17:35Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -126,80 +126,6 @@
       ],
       "incapable": [],
       "health": []
-    },
-    {
-      "id": "Human3738935",
-      "name": "Shurka 'Mania' Shapovalov",
-      "nick": "Mania",
-      "age": 49,
-      "gender": "Male",
-      "childhood": "Coma child",
-      "adulthood": "Evangelist",
-      "traits": [
-        "Mountain lover",
-        "Slob"
-      ],
-      "passions": [
-        {
-          "skill": "Shooting",
-          "level": 14,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 9,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 5,
-          "passion": 1
-        },
-        {
-          "skill": "Animals",
-          "level": 4,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Shooting",
-          "level": 14,
-          "passion": 2
-        },
-        {
-          "skill": "Social",
-          "level": 9,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "injury",
-          "label": "Bruise (warhammer head)",
-          "count": 3,
-          "parts": [
-            "left arm",
-            "right leg",
-            "left leg"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Crack (warhammer head)",
-          "count": 2,
-          "parts": [
-            "left humerus",
-            "right femur"
-          ]
-        }
-      ]
     },
     {
       "id": "Human1676175",
@@ -1009,6 +935,80 @@
           "count": 1,
           "parts": [
             "torso"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Human3738935",
+      "name": "Shurka 'Mania' Shapovalov",
+      "nick": "Mania",
+      "age": 49,
+      "gender": "Male",
+      "childhood": "Coma child",
+      "adulthood": "Evangelist",
+      "traits": [
+        "Mountain lover",
+        "Slob"
+      ],
+      "passions": [
+        {
+          "skill": "Shooting",
+          "level": 14,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Artistic",
+          "level": 5,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Shooting",
+          "level": 14,
+          "passion": 2
+        },
+        {
+          "skill": "Social",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Artistic",
+          "level": 5,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": [
+        {
+          "kind": "injury",
+          "label": "Bruise (warhammer head)",
+          "count": 3,
+          "parts": [
+            "left arm",
+            "right leg",
+            "left leg"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crack (warhammer head)",
+          "count": 2,
+          "parts": [
+            "left humerus",
+            "right femur"
           ]
         }
       ]
