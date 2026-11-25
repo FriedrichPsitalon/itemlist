@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T00:18:35Z",
+  "updatedUtc": "2026-11-25T00:19:35Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -302,6 +302,45 @@
           "parts": [
             "torso"
           ]
+        },
+        {
+          "kind": "missing",
+          "label": "Missing left thumb",
+          "count": 1,
+          "parts": []
+        },
+        {
+          "kind": "injury",
+          "label": "Bite (warg razorfangs)",
+          "count": 2,
+          "parts": [
+            "right leg",
+            "torso"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crack (warg claw)",
+          "count": 2,
+          "parts": [
+            "nose",
+            "jaw"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Scratch (warg claw)",
+          "count": 9,
+          "parts": [
+            "right leg",
+            "torso",
+            "left eye",
+            "left pinky",
+            "left ear",
+            "left foot",
+            "left second toe",
+            "left leg"
+          ]
         }
       ]
     },
@@ -372,6 +411,46 @@
           "parts": [
             "torso"
           ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bite (warg razorfangs)",
+          "count": 2,
+          "parts": [
+            "left arm"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (warg claw)",
+          "count": 2,
+          "parts": [
+            "right arm",
+            "right hand"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (warg razorfangs)",
+          "count": 1,
+          "parts": [
+            "right arm"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Scratch (warg claw)",
+          "count": 14,
+          "parts": [
+            "torso",
+            "neck",
+            "left shoulder",
+            "left leg",
+            "left foot",
+            "left fourth toe",
+            "right leg",
+            "right foot"
+          ]
         }
       ]
     },
@@ -441,6 +520,41 @@
           "label": "Death acidifier",
           "count": 1,
           "parts": [
+            "torso"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bite (warg razorfangs)",
+          "count": 1,
+          "parts": [
+            "right leg"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (warg claw)",
+          "count": 2,
+          "parts": [
+            "torso",
+            "neck"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (warg razorfangs)",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Scratch (warg claw)",
+          "count": 4,
+          "parts": [
+            "left arm",
+            "left shoulder",
             "torso"
           ]
         }
@@ -515,6 +629,42 @@
           "parts": [
             "left leg"
           ]
+        },
+        {
+          "kind": "scar",
+          "label": "Scratch scar (warg claw)",
+          "count": 1,
+          "parts": [
+            "left eye"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (warg claw)",
+          "count": 2,
+          "parts": [
+            "right arm",
+            "right shoulder"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crack (warg claw)",
+          "count": 1,
+          "parts": [
+            "jaw"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Scratch (warg claw)",
+          "count": 6,
+          "parts": [
+            "left shoulder",
+            "torso",
+            "right leg",
+            "right foot"
+          ]
         }
       ]
     },
@@ -585,6 +735,36 @@
           "count": 1,
           "parts": [
             "right leg"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (warg claw)",
+          "count": 6,
+          "parts": [
+            "left leg",
+            "torso",
+            "neck",
+            "right leg",
+            "right foot"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (warg razorfangs)",
+          "count": 3,
+          "parts": [
+            "left leg",
+            "torso"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Scratch (warg claw)",
+          "count": 2,
+          "parts": [
+            "left leg",
+            "torso"
           ]
         }
       ]
@@ -663,6 +843,26 @@
           "count": 1,
           "parts": [
             "left hand"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bite (warg razorfangs)",
+          "count": 2,
+          "parts": [
+            "torso",
+            "right arm"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Scratch (warg claw)",
+          "count": 4,
+          "parts": [
+            "left arm",
+            "left hand",
+            "right leg",
+            "right foot"
           ]
         }
       ]
@@ -872,6 +1072,26 @@
           "parts": [
             "right ear"
           ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bite (warg razorfangs)",
+          "count": 1,
+          "parts": [
+            "right leg"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Scratch (warg claw)",
+          "count": 6,
+          "parts": [
+            "left shoulder",
+            "torso",
+            "right pinky",
+            "right index finger",
+            "left arm"
+          ]
         }
       ]
     },
@@ -936,6 +1156,30 @@
           "parts": [
             "torso"
           ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bite (warg razorfangs)",
+          "count": 1,
+          "parts": [
+            "left leg"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Scratch (warg claw)",
+          "count": 10,
+          "parts": [
+            "left leg",
+            "left foot",
+            "torso",
+            "right leg",
+            "right foot",
+            "left arm",
+            "left hand",
+            "right arm",
+            "right hand"
+          ]
         }
       ]
     },
@@ -991,24 +1235,7 @@
         }
       ],
       "incapable": [],
-      "health": [
-        {
-          "kind": "injury",
-          "label": "Bruise (warhammer head)",
-          "count": 1,
-          "parts": [
-            "left leg"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Crack (warhammer head)",
-          "count": 1,
-          "parts": [
-            "right femur"
-          ]
-        }
-      ]
+      "health": []
     }
   ]
 }
