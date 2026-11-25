@@ -1,73 +1,15 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T01:59:37Z",
+  "updatedUtc": "2026-11-25T02:00:37Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 12,
-  "unadopted": 6,
+  "colonists": 11,
+  "unadopted": 5,
   "pawns": [
-    {
-      "id": "Human3607321",
-      "name": "Appa Onek",
-      "nick": "Onek",
-      "age": 46,
-      "gender": "Female",
-      "childhood": "Vatgrown soldier",
-      "adulthood": "Sheriff",
-      "traits": [
-        "Trigger-happy",
-        "Bloodlust",
-        "Faceless"
-      ],
-      "passions": [
-        {
-          "skill": "Construction",
-          "level": 17,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 13,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 11,
-          "passion": 2
-        },
-        {
-          "skill": "Animals",
-          "level": 3,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Construction",
-          "level": 17,
-          "passion": 2
-        },
-        {
-          "skill": "Shooting",
-          "level": 13,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 11,
-          "passion": 2
-        }
-      ],
-      "incapable": [
-        "Social",
-        "Medical"
-      ],
-      "health": []
-    },
     {
       "id": "Human3607273",
       "name": "Dopos Kascoslis",
@@ -128,10 +70,53 @@
       "health": [
         {
           "kind": "injury",
-          "label": "Bruise (sniper rifle barrel)",
+          "label": "Bruise (LMG)",
           "count": 1,
           "parts": [
             "torso"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (human fist)",
+          "count": 1,
+          "parts": [
+            "left shoulder"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (sniper rifle barrel)",
+          "count": 4,
+          "parts": [
+            "torso",
+            "right arm",
+            "neck"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crack (sniper rifle barrel)",
+          "count": 1,
+          "parts": [
+            "right humerus"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crush (sniper rifle barrel)",
+          "count": 1,
+          "parts": [
+            "heart"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Gunshot (LMG)",
+          "count": 2,
+          "parts": [
+            "left femur",
+            "left leg"
           ]
         }
       ]
