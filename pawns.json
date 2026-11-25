@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T00:42:36Z",
+  "updatedUtc": "2026-11-25T00:46:36Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -292,7 +292,17 @@
         }
       ],
       "incapable": [],
-      "health": []
+      "health": [
+        {
+          "kind": "injury",
+          "label": "Scratch",
+          "count": 4,
+          "parts": [
+            "right fourth toe",
+            "left middle toe"
+          ]
+        }
+      ]
     }
   ]
 }
