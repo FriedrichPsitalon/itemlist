@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T02:41:38Z",
+  "updatedUtc": "2026-11-25T02:45:38Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -256,7 +256,7 @@
         },
         {
           "skill": "Construction",
-          "level": 12,
+          "level": 13,
           "passion": 1
         },
         {
@@ -277,14 +277,14 @@
       ],
       "topSkills": [
         {
+          "skill": "Construction",
+          "level": 13,
+          "passion": 1
+        },
+        {
           "skill": "Medical",
           "level": 12,
           "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 12,
-          "passion": 1
         },
         {
           "skill": "Cooking",
