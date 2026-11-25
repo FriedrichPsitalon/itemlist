@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T00:14:35Z",
+  "updatedUtc": "2026-11-25T00:16:35Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 22,
-  "unadopted": 16,
+  "colonists": 21,
+  "unadopted": 15,
   "pawns": [
     {
       "id": "Human3607321",
@@ -179,7 +179,27 @@
         }
       ],
       "incapable": [],
-      "health": []
+      "health": [
+        {
+          "kind": "injury",
+          "label": "Bruise (warhammer head)",
+          "count": 3,
+          "parts": [
+            "left arm",
+            "right leg",
+            "left leg"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crack (warhammer head)",
+          "count": 2,
+          "parts": [
+            "left humerus",
+            "right femur"
+          ]
+        }
+      ]
     },
     {
       "id": "Human1676175",
@@ -489,66 +509,6 @@
       "incapable": [
         "Plants"
       ],
-      "health": [
-        {
-          "kind": "bionic",
-          "label": "Death acidifier",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Human4005881",
-      "name": "Tarasios Aspietes",
-      "nick": "Tarasios",
-      "age": 28,
-      "gender": "Male",
-      "childhood": "Medical assistant",
-      "adulthood": "Disgraced officer",
-      "traits": [
-        "Wimp",
-        "Too smart",
-        "Entertainer",
-        "Psychically deaf"
-      ],
-      "passions": [
-        {
-          "skill": "Shooting",
-          "level": 18,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 18,
-          "passion": 1
-        },
-        {
-          "skill": "Medical",
-          "level": 6,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Shooting",
-          "level": 18,
-          "passion": 2
-        },
-        {
-          "skill": "Melee",
-          "level": 18,
-          "passion": 1
-        },
-        {
-          "skill": "Medical",
-          "level": 6,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
       "health": [
         {
           "kind": "bionic",
