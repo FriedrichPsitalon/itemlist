@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T01:33:37Z",
+  "updatedUtc": "2026-11-25T01:35:37Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -333,7 +333,7 @@
       "passions": [
         {
           "skill": "Mining",
-          "level": 4,
+          "level": 5,
           "passion": 1
         },
         {
@@ -345,7 +345,7 @@
       "topSkills": [
         {
           "skill": "Mining",
-          "level": 4,
+          "level": 5,
           "passion": 1
         },
         {
