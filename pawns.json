@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T02:01:37Z",
+  "updatedUtc": "2026-11-25T02:02:37Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -67,41 +67,7 @@
         }
       ],
       "incapable": [],
-      "health": [
-        {
-          "kind": "injury",
-          "label": "Bruise (LMG)",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bruise (sniper rifle barrel)",
-          "count": 3,
-          "parts": [
-            "right arm",
-            "neck"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Crack (sniper rifle barrel)",
-          "count": 1,
-          "parts": [
-            "right humerus"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Gunshot (LMG)",
-          "count": 1,
-          "parts": [
-            "left leg"
-          ]
-        }
-      ]
+      "health": []
     },
     {
       "id": "Human1676175",
