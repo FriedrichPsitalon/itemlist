@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T00:54:36Z",
+  "updatedUtc": "2026-11-25T00:55:36Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 11,
-  "unadopted": 5,
+  "colonists": 12,
+  "unadopted": 6,
   "pawns": [
     {
       "id": "Human3607321",
@@ -293,6 +293,74 @@
       ],
       "incapable": [],
       "health": []
+    },
+    {
+      "id": "Human3965292",
+      "name": "Fedon Cand",
+      "nick": "Fedon",
+      "age": 45,
+      "gender": "Male",
+      "childhood": "Trainee alchemist",
+      "adulthood": "Religious hierarch",
+      "traits": [
+        "Stoner",
+        "Martial artist"
+      ],
+      "passions": [
+        {
+          "skill": "Medical",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Cooking",
+          "level": 11,
+          "passion": 1
+        },
+        {
+          "skill": "Social",
+          "level": 11,
+          "passion": 1
+        },
+        {
+          "skill": "Construction",
+          "level": 9,
+          "passion": 1
+        },
+        {
+          "skill": "Intellectual",
+          "level": 6,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Medical",
+          "level": 12,
+          "passion": 2
+        },
+        {
+          "skill": "Cooking",
+          "level": 11,
+          "passion": 1
+        },
+        {
+          "skill": "Social",
+          "level": 11,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Artistic"
+      ],
+      "health": [
+        {
+          "kind": "addiction",
+          "label": "Smokeleaf dependence (withdrawal 70%)",
+          "count": 1,
+          "parts": []
+        }
+      ]
     }
   ]
 }
