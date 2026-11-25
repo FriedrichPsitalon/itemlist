@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-25T01:35:37Z",
+  "updatedUtc": "2026-11-25T01:41:37Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -189,8 +189,8 @@
         }
       ],
       "incapable": [
-        "Melee",
-        "Shooting"
+        "Shooting",
+        "Melee"
       ],
       "health": []
     },
@@ -354,7 +354,7 @@
           "passion": 0
         },
         {
-          "skill": "Artistic",
+          "skill": "Medical",
           "level": 2,
           "passion": 0
         }
