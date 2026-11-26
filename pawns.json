@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T01:25:09Z",
+  "updatedUtc": "2026-11-26T01:26:09Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -259,7 +259,7 @@
       "health": [
         {
           "kind": "addiction",
-          "label": "Smokeleaf dependence (withdrawal 64%)",
+          "label": "Smokeleaf dependence (withdrawal 100%)",
           "count": 1,
           "parts": []
         }
@@ -427,12 +427,11 @@
         {
           "kind": "injury",
           "label": "Burn",
-          "count": 4,
+          "count": 3,
           "parts": [
             "head",
             "right arm",
-            "left leg",
-            "right leg"
+            "left leg"
           ]
         }
       ]
