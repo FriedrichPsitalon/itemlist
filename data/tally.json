@@ -25,7 +25,7 @@
   "body modder": 1,
   "archotech eye": 2,
   "reinforced barrel": 2,
-  "Military aid": 4,
+  "Military aid": 5,
   "Fire mage": 1,
   "thick skinned": 1,
   "major arcane gem of regeneration": 1,
@@ -96,7 +96,7 @@
   "medicine cabinet": 1,
   "shard": 70,
   "mechanoid transponder": 1,
-  "Orbital trader arrival": 1,
+  "Orbital trader arrival": 2,
   "Technomancer": 1,
   "technomancer spell: kinetic shield": 1,
   "guest royal bed": 1,
@@ -150,5 +150,12 @@
   "silk golem": 3,
   "staff of blazing power": 1,
   "guest deathrest casket": 4,
-  "disciple robe": 12
+  "disciple robe": 12,
+  "orb of conviction": 1,
+  "stun baton": 1,
+  "wood": 500,
+  "bed": 10,
+  "flounder": 1,
+  "shuttle engine": 1,
+  "goat": 1
 }
