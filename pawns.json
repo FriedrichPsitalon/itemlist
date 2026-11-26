@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T00:32:08Z",
+  "updatedUtc": "2026-11-26T00:33:08Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -194,14 +194,6 @@
           "label": "Missing left second toe",
           "count": 1,
           "parts": []
-        },
-        {
-          "kind": "injury",
-          "label": "Cut (megaspider head claw)",
-          "count": 1,
-          "parts": [
-            "left foot"
-          ]
         }
       ]
     },
