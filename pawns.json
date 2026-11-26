@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T01:08:09Z",
+  "updatedUtc": "2026-11-26T01:11:09Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -259,7 +259,7 @@
       "health": [
         {
           "kind": "addiction",
-          "label": "Smokeleaf dependence (withdrawal 59%)",
+          "label": "Smokeleaf dependence (withdrawal 60%)",
           "count": 1,
           "parts": []
         }
@@ -321,7 +321,34 @@
         "Social",
         "Medical"
       ],
-      "health": []
+      "health": [
+        {
+          "kind": "injury",
+          "label": "Bite (human)",
+          "count": 1,
+          "parts": [
+            "right arm"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (human)",
+          "count": 2,
+          "parts": [
+            "torso",
+            "left leg"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crack (human)",
+          "count": 2,
+          "parts": [
+            "ribcage",
+            "left femur"
+          ]
+        }
+      ]
     },
     {
       "id": "Human3869834",
@@ -616,8 +643,8 @@
           "passion": 0
         },
         {
-          "skill": "Crafting",
-          "level": 0,
+          "skill": "Intellectual",
+          "level": 1,
           "passion": 0
         }
       ],
