@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T01:16:09Z",
+  "updatedUtc": "2026-11-26T01:19:09Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -259,7 +259,7 @@
       "health": [
         {
           "kind": "addiction",
-          "label": "Smokeleaf dependence (withdrawal 62%)",
+          "label": "Smokeleaf dependence (withdrawal 63%)",
           "count": 1,
           "parts": []
         }
@@ -327,7 +327,7 @@
       "id": "Human3869834",
       "name": "Gleog 'Bicep' Glepoiogg",
       "nick": "Bicep",
-      "age": 11,
+      "age": 12,
       "gender": "Male",
       "childhood": "Child",
       "adulthood": null,
