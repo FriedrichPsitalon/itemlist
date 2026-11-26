@@ -27,21 +27,15 @@ Edit `calculator/index.html` (all CSS/JS inline) and refresh. `calc-data.json` i
 - **Default material:** pre-selected and starred. It is priced as "material left off" (base price) and the copied command omits it.
 
 ## The price rule (read from ToolkitUtils' own code, Oct 2026; matches 22 of 22 real chat quotes)
-Source: `PurchaseHelper.GetItemPrice` in ToolkitUtils.dll. All arithmetic is in 32-bit floats and rounds UP (`Mathf.CeilToInt`) at every step.
+Since 2026-11-26 weapons and apparel are priced by how good the result is, not by material cost. The rule lives in two places that must change together: `priceOf` in `calculator/calc-core.js`, and the game mod `RimstreamBot-src/rimworld-mod/Source/PriceFormula.cs` (which replaces ToolkitUtils' own price).
 
-| You type | Price |
-|---|---|
-| `!buy gladius` | base price (the store price) |
-| `!buy gladius[steel]` | ceil((base + units x unit cost) x 1.05) |
-| `!buy gladius[good]` | ceil( ceil(base x quality factor) x 1.1 ) |
-| `!buy gladius[steel,good]` | ceil( ceil( ceil((base + units x unit cost) x 1.05) x quality factor ) x 1.1 ) |
-
-- Quality factors are Toolkit settings (defaults, which the stream uses): awful 0.5, poor 0.75, normal 1, good 1.25, excellent 1.5, masterwork 2.5, legendary 5.
-- `units` = the item's `costStuffCount` from the game.
-- **Unit cost** = the material's store price, but **x10 for materials the game flags `smallVolume`**. Of the materials we use only **Gold and Silver** have that flag (checked against the core game and mod defs). The set lives in `SMALL_VOLUME_MATERIALS` in `build_data.py`; add to it if a future material is flagged. The data carries `unitCost` per material and the page uses it (`unitCostOf` in `calc-core.js`).
-- Naming a quality, even `normal`, costs 10% more than leaving it off.
-- To verify after a change: the page's `priceOf` must reproduce real quotes, e.g. Stellic crown `[gold,legendary]` = 10,049, `[gold]` = 1,827, `[silver]` = 2,720, `[steel]` = 132, `[plasteel]` = 578; shroud `[hyperweave,excellent]` = 2,600, `[sheepwool]` = 1,155; gladius `[gold]` = 1,113, `[steel,legendary]` = 638.
-- Store prices in the files are already on the stream's x10-inflated item scale (gladius 60), so no extra scaling is applied to them.
+- **Base** (default material, no quality named): the store price.
+- **Score:** melee = average DPS; apparel = sharp + blunt + 0.5 heat armour + 0.02 x (cold + heat insulation).
+- **Material:** base x (score / default score) ^ k, where k = ln M / ln max(best score / default score, 1.4); never below 0.4 x base. M rises 2.5 to 4.5 as base goes 20 to 300 (log scale).
+- **Quality:** x Q ^ step (awful -0.5, poor -0.25, normal 0, good 0.25, excellent 0.5, masterwork 0.75, legendary 1). With a material choice Q rises 3 to 6 over base 20 to 300; fixed-material gear: 3 to 10 over base 20 to 200, then 10 x sqrt(200 / base).
+- Round up, at least 1. Furniture and other non-gear keep ToolkitUtils' rule.
+- To verify: the in-game test `PriceFormula PF` compares the game with calc-core.js for every item, material and quality (17,388 rows matched on 2026-11-26).
+- Reference quotes: plasteel plate armor 189, legendary arcalleum plate armor 2,288, legendary assault rifle 2,000.
 
 ## Confirmed in the store (Oct 2026)
 - Materials with spaces must be typed without the space: `[alpacawool]` works, `[alpaca wool]` does not. The calculator uses the store name without spaces.

@@ -53,6 +53,10 @@ const EVENT_USAGE = {
   levelskill: { usage: '!levelskill <skill> <coins>', example: '!levelskill shooting 50' },
   passion: { usage: '!passion <skill>', example: '!passion shooting' },
   removepassion: { usage: '!removepassion <skill>', example: '!removepassion shooting' },
+  // These take a coin amount (their listed price is the minimum); without one Toolkit refuses the purchase.
+  manhunterpack: { usage: '!buy manhunterpack <coins>', example: '!buy manhunterpack 250' },
+  randomdisease: { usage: '!buy randomdisease <coins>', example: '!buy randomdisease 150' },
+  disease: { usage: '!buy disease <name> <coins>', example: '!buy disease plague 250' },
 };
 
 // Display name for the single visible row of a group of items that share one command.

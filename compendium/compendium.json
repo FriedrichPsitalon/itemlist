@@ -33719,7 +33719,9 @@
   "tags": [
    "Chaos",
    "Event"
-  ]
+  ],
+  "usage": "!buy manhunterpack <coins>",
+  "example": "!buy manhunterpack 250"
  },
  {
   "type": "event",
@@ -33755,7 +33757,9 @@
   "tags": [
    "Chaos",
    "Event"
-  ]
+  ],
+  "usage": "!buy randomdisease <coins>",
+  "example": "!buy randomdisease 150"
  },
  {
   "type": "event",
@@ -33773,7 +33777,9 @@
   "tags": [
    "Chaos",
    "Event"
-  ]
+  ],
+  "usage": "!buy disease <name> <coins>",
+  "example": "!buy disease plague 250"
  },
  {
   "type": "event",

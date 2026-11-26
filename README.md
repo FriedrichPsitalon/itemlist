@@ -1,4 +1,7 @@
-# Item List
+# RimStream item list
 
-Please refer to the [documentation](https://sirrandoo.github.io/toolkit-utils/itemlist)
-for instructions on how to set up your item list.
+The public website for the RimStream Twitch channel: store, guide, commands, mod list, gear calculator, paper doll and pawn board.
+Published by GitHub Pages from `main`.
+
+Prices are copied from the game (`_data/`, `compendium/compendium.json`, `calculator/calc-data.json`) and must be changed together.
+Checks: `node _tools/check.js` before publishing, `node _tools/check-live.js` after.
