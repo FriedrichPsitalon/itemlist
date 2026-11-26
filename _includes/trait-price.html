@@ -1,0 +1,1 @@
+{%- assign priced = site.data.ShopExt.traits | where: "name", include.t | first -%}{{ priced.addPrice }}

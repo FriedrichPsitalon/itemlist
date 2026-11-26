@@ -85,11 +85,11 @@ Jump to one:
 <p><strong>Armor</strong></p>
 <p>No armor specific to this class, but enchanted apparel benefits "trained mages and fighters" broadly, and Apothecary qualifies as a fighter — the standard set still applies.</p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% energy, +10% regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% energy, +10% regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -153,21 +153,21 @@ Jump to one:
 <p><strong>Weapons</strong></p>
 <p>Magic Missile is this class's one real damage spell — the rest of the kit is utility. Worth a staff if you want it to contribute damage at all, but it's optional rather than essential the way it is for a class built entirely around direct-cast damage.</p>
 <ul>
-<li><strong>Wand of Fire / Wand of Lightning</strong> (12 each) — +5 max energy, +5% energy regen, +15% Damage Boost.</li>
-<li><strong>Staff of Blazing Power</strong> (25) — +20 max energy, +10% energy regen, +40% Damage Boost.</li>
+<li><strong>Wand of Fire / Wand of Lightning</strong> ({% include price.html d="TM_FireWand" %} each) — +5 max energy, +5% energy regen, +15% Damage Boost.</li>
+<li><strong>Staff of Blazing Power</strong> ({% include price.html d="TM_BlazingPowerStaff" %}) — +20 max energy, +10% energy regen, +40% Damage Boost.</li>
 </ul>
 <p>A shield belt is also worth real consideration here specifically, given the note above about it not blocking this class's core kit.</p>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% energy, +10% regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% energy, +10% regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
-<h3 id="bard">Bard</h3><p><strong>Good for these jobs:</strong> Morale (dedicated)</p><p>Not a formal job category, but worth calling out: the Social/Negotiation/Trade bonuses make this the natural pick to be the colony's "face" — the one doing the trading, negotiating, and diplomacy — even apart from its Morale duties.</p><p><strong>Bonuses:</strong> +35% Social impact, +40% Negotiation ability, +25% Trade price improvement</p><p><strong>Penalties:</strong> -15% Pain shock threshold, -20 Carrying capacity, -15% Global work speed</p><p><strong>Restriction:</strong> Incapable of dumb labor</p><p><strong>Spells learned as part of the class</strong> <em style="color:var(--ink-faint); font-size:0.85rem;">— click a name, then click Perks</em></p><ul class="ability-list">
+<h3 id="bard">Bard</h3><p>Buy this class with <code>!buy trait entertainer</code> ({% include trait-price.html t="entertainer" %} coins). Higher ranks are earned by training and are not sold.</p><p><strong>Good for these jobs:</strong> Morale (dedicated)</p><p>Not a formal job category, but worth calling out: the Social/Negotiation/Trade bonuses make this the natural pick to be the colony's "face" — the one doing the trading, negotiating, and diplomacy — even apart from its Morale duties.</p><p><strong>Bonuses:</strong> +35% Social impact, +40% Negotiation ability, +25% Trade price improvement</p><p><strong>Penalties:</strong> -15% Pain shock threshold, -20 Carrying capacity, -15% Global work speed</p><p><strong>Restriction:</strong> Incapable of dumb labor</p><p><strong>Spells learned as part of the class</strong> <em style="color:var(--ink-faint); font-size:0.85rem;">— click a name, then click Perks</em></p><ul class="ability-list">
 <li>
 <details class="ability-row" markdown="1"><summary><strong>Bard Training</strong></summary><div class="ability-body"><p class="ability-desc">A passive that levels through four ranks (Entertainer → Performer → Minstrel → Bard) as it trains, each rank raising the class's own bonuses and penalties above.</p><details class="perk-toggle" markdown="1"><summary>Perks</summary><div class="perk-panel">
 <p class="perk-cap-line">Caps at 3 points. Costs 2 skill points per rank instead of the usual 1.</p>
@@ -226,22 +226,22 @@ Jump to one:
 <p>No direct-damage spells here — the kit is mood, inspiration, and crowd control, so energy and cooldown matter more than offense.</p>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% max energy, +10% energy regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% max energy, +10% energy regen, -15% ability cooldown, -15% energy cost, +10% class XP gain, +10% arcane power.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 max energy, +25% energy regen, -20% ability cooldown, -10% energy cost, +15% arcane resist, +20% ability damage.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% max energy, +10% energy regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% max energy, +10% energy regen, -15% ability cooldown, -15% energy cost, +10% class XP gain, +10% arcane power.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 max energy, +25% energy regen, -20% ability cooldown, -10% energy cost, +15% arcane resist, +20% ability damage.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
-<h3 id="bladedancer">Bladedancer</h3><p>Tiered class — Bladesman is the entry point, Blademaster, Bladedancer, and Legendary Bladedancer are straight upgrades bought on top, not separate choices. Each tier's full stat block:</p><table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin:1em 0;">
+<h3 id="bladedancer">Bladedancer</h3><p>Tiered class — buy Bladesman with <code>!buy trait bladesman</code>. Blademaster, Bladedancer, and Legendary Bladedancer are earned by training and are not sold. Each tier's full stat block:</p><table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin:1em 0;">
 <tr style="border-bottom:1px solid var(--rule); color:var(--ink);">
 <th style="text-align:left; padding:4px;">Tier</th><th>Price</th><th>Move speed</th><th>Mental break threshold</th><th>Melee hit chance</th><th>Melee dodge chance</th><th>Pain shock threshold</th><th>Shooting accuracy</th><th>Global work speed</th>
 </tr>
-<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Bladesman</td><td>20</td><td>+0.15</td><td>-3%</td><td>+3.0</td><td>+5.0</td><td>—</td><td>-20.0</td><td>-10%</td></tr>
-<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Blademaster</td><td>30</td><td>+0.20</td><td>-5%</td><td>+6.0</td><td>+10.0</td><td>—</td><td>-25.0</td><td>-8%</td></tr>
-<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Bladedancer</td><td>30</td><td>+0.30</td><td>-8%</td><td>+10.0</td><td>+15.0</td><td>+5%</td><td>-28.0</td><td>-6%</td></tr>
-<tr><td style="padding:4px;">Legendary Bladedancer</td><td>20</td><td>+0.40</td><td>-10%</td><td>+15.0</td><td>+20.0</td><td>+10%</td><td>-30.0</td><td>-5%</td></tr>
+<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Bladesman</td><td>{% include trait-price.html t="bladesman" %}</td><td>+0.15</td><td>-3%</td><td>+3.0</td><td>+5.0</td><td>—</td><td>-20.0</td><td>-10%</td></tr>
+<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Blademaster</td><td>earned</td><td>+0.20</td><td>-5%</td><td>+6.0</td><td>+10.0</td><td>—</td><td>-25.0</td><td>-8%</td></tr>
+<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Bladedancer</td><td>earned</td><td>+0.30</td><td>-8%</td><td>+10.0</td><td>+15.0</td><td>+5%</td><td>-28.0</td><td>-6%</td></tr>
+<tr><td style="padding:4px;">Legendary Bladedancer</td><td>earned</td><td>+0.40</td><td>-10%</td><td>+15.0</td><td>+20.0</td><td>+10%</td><td>-30.0</td><td>-5%</td></tr>
 </table><p><strong>Good for these jobs:</strong> Tank (side pick — a mobile duelist rather than a front-line holder). Also worth a look for Manipulation- or Moving-heavy colony work (crafting, doctoring, hauling) once Body Training is leveled up — see the note under Abilities below.</p><p><strong>Restriction:</strong> None</p><p><strong>Runs on Stamina, not mana.</strong></p><p><strong>Abilities (same across all four tiers — the tiers upgrade the numbers above, not the ability list)</strong> <em style="color:var(--ink-faint); font-size:0.85rem;">— click a name, then click Perks</em></p><ul class="ability-list">
 <li>
 <details class="ability-row" markdown="1"><summary><strong>Body Training</strong></summary><div class="ability-body"><p class="ability-desc">A passive that improves Moving and Manipulation, adding Breathing and Blood Pumping/Filtration at higher levels. Like every ability in this mod, it levels up with use, running from +10% Moving/+10% Manipulation at its base up to +25%/+25% at max level — and that leveling is independent of which purchased tier the pawn is at. A well-leveled Body Training is genuinely worth having on a pawn doing Manipulation- or Moving-driven colony work, not just combat.</p><details class="perk-toggle" markdown="1"><summary>Perks</summary><div class="perk-panel">
@@ -297,19 +297,19 @@ Jump to one:
 <p><strong>Weapons</strong></p>
 <p>Blade Spin, Seismic Slash, and Phase Strike all scale their damage off the weapon's own quality, so a Legendary or Masterwork weapon meaningfully increases what these abilities hit for. Nothing in the kit requires an actual bladed weapon; any melee weapon works.</p>
 <ul>
-<li><strong>Thrumbo Saber</strong> (12) — -10% ability cooldown, +10% Damage Boost, 25% chance to Haste on hit.</li>
-<li><strong>Thrumbo Axe</strong> (18) — +10 max energy, +20% Damage Boost, +30% arcane resistance, grants Cleaving Strike.</li>
-<li><strong>Demon's Fang</strong> (20) — -10% energy cost, -15% ability cooldown, +25% Damage Boost, 20% chance to inflict Nightshade Toxin on hit.</li>
-<li><strong>Glory Maul</strong> (20) — +20 max energy, +20% arcane resistance, +10% Damage Boost, 15% chance to Bestow Might on hit.</li>
-<li><strong>Decimation</strong> (25) — +40 max energy, +40% arcane resistance, +30% Damage Boost, 50% chance to inflict Frailty on hit.</li>
-<li><strong>Ruunbled</strong> (30) — -20% ability cooldown, -20% energy cost, +25% Damage Boost, +25% arcane resistance, 20% chance to Haste on hit, 30% Deflection, grants Cleaving Strike. The best melee weapon in the shop.</li>
+<li><strong>Thrumbo Saber</strong> ({% include price.html d="TM_ThrumboSaber" %}) — -10% ability cooldown, +10% Damage Boost, 25% chance to Haste on hit.</li>
+<li><strong>Thrumbo Axe</strong> ({% include price.html d="TM_ThrumboAxe" %}) — +10 max energy, +20% Damage Boost, +30% arcane resistance, grants Cleaving Strike.</li>
+<li><strong>Demon's Fang</strong> ({% include price.html d="TM_DemonFang" %}) — -10% energy cost, -15% ability cooldown, +25% Damage Boost, 20% chance to inflict Nightshade Toxin on hit.</li>
+<li><strong>Glory Maul</strong> ({% include price.html d="TM_GloryMaul" %}) — +20 max energy, +20% arcane resistance, +10% Damage Boost, 15% chance to Bestow Might on hit.</li>
+<li><strong>Decimation</strong> ({% include price.html d="TM_Decimation" %}) — +40 max energy, +40% arcane resistance, +30% Damage Boost, 50% chance to inflict Frailty on hit.</li>
+<li><strong>Ruunbled</strong> ({% include price.html d="TM_Ruunbled" %}) — -20% ability cooldown, -20% energy cost, +25% Damage Boost, +25% arcane resistance, 20% chance to Haste on hit, 30% Deflection, grants Cleaving Strike. The best melee weapon in the shop.</li>
 </ul>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Helm of the Valiant</strong> (12) — -5% energy cost, +10% class XP gain.</li>
-<li><strong>Armor of the Valiant</strong> (18) — -10% energy cost, +10% class XP gain.</li>
-<li><strong>Ancient Mail</strong> (30) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
-<li><strong>Dragon Slayer Plate</strong> (30) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
+<li><strong>Helm of the Valiant</strong> ({% include price.html d="RoyalHelm" %}) — -5% energy cost, +10% class XP gain.</li>
+<li><strong>Armor of the Valiant</strong> ({% include price.html d="RoyalArmor" %}) — -10% energy cost, +10% class XP gain.</li>
+<li><strong>Ancient Mail</strong> ({% include price.html d="AncientMail" %}) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
+<li><strong>Dragon Slayer Plate</strong> ({% include price.html d="TM_DragonSlayer" %}) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -384,11 +384,11 @@ Jump to one:
 <p>No weapon requirement for this class's own spells — gear it for whatever fight it's actually walking into.</p>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% energy, +10% regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% energy, +10% regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -461,17 +461,17 @@ Jump to one:
 <p><strong>Weapons</strong></p>
 <p>This isn't a close-range kit — Light Lance and Sunfire both work best fired into a fight from a distance, not up close.</p>
 <ul>
-<li><strong>Wand of Fire</strong> (12) — +5 max energy, +5% energy regen, +15% Damage Boost — cheap, and keeps the caster shooting from range instead of closing distance.</li>
-<li><strong>Wand of Ice</strong> (12) — same +5 max energy, +5% energy regen, +15% Damage Boost as the Wand of Fire, with better accuracy at range if the fire theme doesn't matter to you.</li>
-<li><strong>Staff of Blazing Power</strong> (25) — +20 max energy, +10% energy regen, +40% Damage Boost — the biggest offensive upgrade in the shop for a kit built entirely around direct-damage spells.</li>
+<li><strong>Wand of Fire</strong> ({% include price.html d="TM_FireWand" %}) — +5 max energy, +5% energy regen, +15% Damage Boost — cheap, and keeps the caster shooting from range instead of closing distance.</li>
+<li><strong>Wand of Ice</strong> ({% include price.html d="TM_IceWand" %}) — same +5 max energy, +5% energy regen, +15% Damage Boost as the Wand of Fire, with better accuracy at range if the fire theme doesn't matter to you.</li>
+<li><strong>Staff of Blazing Power</strong> ({% include price.html d="TM_BlazingPowerStaff" %}) — +20 max energy, +10% energy regen, +40% Damage Boost — the biggest offensive upgrade in the shop for a kit built entirely around direct-damage spells.</li>
 </ul>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% energy, +10% regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% energy, +10% regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -495,11 +495,11 @@ Jump to one:
 <p>The kit reshuffles every time Chaos Tradition is cast, so there's no fixed weapon pick that makes sense — gear for whatever the current roll actually needs.</p>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% energy, +10% regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% energy, +10% regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -573,11 +573,11 @@ Jump to one:
 <p>No inherent close-range advantage on this class — every spell in the kit is cast from range or on self. A ranged weapon is the better default over melee.</p>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% energy, +10% regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% energy, +10% regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -648,8 +648,8 @@ Jump to one:
 <p>No specialized gear; they benefit from being near other pawns, so gear them like the majority of your fighting force. Enchanted apparel benefits "trained mages and fighters," and Commander qualifies as a fighter.</p>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Robe</strong> (12) — +20% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +30% arcane resist.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 max energy, +25% energy regen, -20% ability cooldown, +15% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +30% arcane resist.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 max energy, +25% energy regen, -20% ability cooldown, +15% arcane resist.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -758,20 +758,20 @@ Jump to one:
 <summary><strong>Suggested gear</strong></summary>
 <p><strong>Weapons</strong></p>
 <ul>
-<li><strong>Thrumbo Saber</strong> (12) — -10% ability cooldown, +10% Damage Boost, 25% chance to Haste on hit. Budget pick if you don't want to spend 18+.</li>
-<li><strong>Thrumbo Axe</strong> (18) — +10 max energy, +20% Damage Boost, +30% arcane resistance, grants Cleaving Strike. Solid mid-tier.</li>
-<li><strong>Demon's Fang</strong> (20) — -10% energy cost, -15% ability cooldown, +25% Damage Boost, 20% chance to inflict Nightshade Toxin on hit. Its own flavor text admits lower raw damage than the high-tier weapons, but the cooldown and cost cut are real.</li>
-<li><strong>Glory Maul</strong> (20) — +20 max energy, +20% arcane resistance, +10% Damage Boost, 15% chance to Bestow Might on hit. The weakest of the higher-priced options.</li>
-<li><strong>Decimation</strong> (25) — +40 max energy, +40% arcane resistance, +30% Damage Boost, 50% chance to inflict Frailty on hit. Highest raw damage and resistance numbers, but no cooldown or energy-cost help.</li>
-<li><strong>Ruunbled</strong> (30) — -20% ability cooldown, -20% energy cost, +25% Damage Boost, +25% arcane resistance, 20% chance to Haste on hit, 30% Deflection, grants Cleaving Strike. The best melee weapon in the shop — every stat helps, plus a defensive proc nothing else here has.</li>
+<li><strong>Thrumbo Saber</strong> ({% include price.html d="TM_ThrumboSaber" %}) — -10% ability cooldown, +10% Damage Boost, 25% chance to Haste on hit. Budget pick if you don't want to spend {% include price.html d="TM_ThrumboAxe" %}+.</li>
+<li><strong>Thrumbo Axe</strong> ({% include price.html d="TM_ThrumboAxe" %}) — +10 max energy, +20% Damage Boost, +30% arcane resistance, grants Cleaving Strike. Solid mid-tier.</li>
+<li><strong>Demon's Fang</strong> ({% include price.html d="TM_DemonFang" %}) — -10% energy cost, -15% ability cooldown, +25% Damage Boost, 20% chance to inflict Nightshade Toxin on hit. Its own flavor text admits lower raw damage than the high-tier weapons, but the cooldown and cost cut are real.</li>
+<li><strong>Glory Maul</strong> ({% include price.html d="TM_GloryMaul" %}) — +20 max energy, +20% arcane resistance, +10% Damage Boost, 15% chance to Bestow Might on hit. The weakest of the higher-priced options.</li>
+<li><strong>Decimation</strong> ({% include price.html d="TM_Decimation" %}) — +40 max energy, +40% arcane resistance, +30% Damage Boost, 50% chance to inflict Frailty on hit. Highest raw damage and resistance numbers, but no cooldown or energy-cost help.</li>
+<li><strong>Ruunbled</strong> ({% include price.html d="TM_Ruunbled" %}) — -20% ability cooldown, -20% energy cost, +25% Damage Boost, +25% arcane resistance, 20% chance to Haste on hit, 30% Deflection, grants Cleaving Strike. The best melee weapon in the shop — every stat helps, plus a defensive proc nothing else here has.</li>
 </ul>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Paragon's Helm</strong> (12) — -5% energy cost, +15% class XP gain, +5% max energy, +10% arcane resist.</li>
-<li><strong>Helm of the Valiant</strong> (12) — -5% energy cost, +10% class XP gain. Pairs with Armor of the Valiant below as a matched set.</li>
-<li><strong>Armor of the Valiant</strong> (18) — -10% energy cost, +10% class XP gain.</li>
-<li><strong>Ancient Mail</strong> (30) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage. Real tradeoff: that damage proc is genuinely good on a melee class, but the energy-cost tax is a real cost too.</li>
-<li><strong>Dragon Slayer Plate</strong> (30) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage. Best-in-slot on every stat available.</li>
+<li><strong>Paragon's Helm</strong> ({% include price.html d="ParagonHelm" %}) — -5% energy cost, +15% class XP gain, +5% max energy, +10% arcane resist.</li>
+<li><strong>Helm of the Valiant</strong> ({% include price.html d="RoyalHelm" %}) — -5% energy cost, +10% class XP gain. Pairs with Armor of the Valiant below as a matched set.</li>
+<li><strong>Armor of the Valiant</strong> ({% include price.html d="RoyalArmor" %}) — -10% energy cost, +10% class XP gain.</li>
+<li><strong>Ancient Mail</strong> ({% include price.html d="AncientMail" %}) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage. Real tradeoff: that damage proc is genuinely good on a melee class, but the energy-cost tax is a real cost too.</li>
+<li><strong>Dragon Slayer Plate</strong> ({% include price.html d="TM_DragonSlayer" %}) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage. Best-in-slot on every stat available.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -837,14 +837,14 @@ Jump to one:
 <summary><strong>Suggested gear</strong></summary>
 <p><strong>Weapons</strong></p>
 <ul>
-<li><strong>Staff of the Defender</strong> (20) — +30 max energy, +20% energy regen, +20% arcane resistance, grants Arcane Barrier — the barrier buys time for Poison and Briar Patch to actually work. Neither kills instantly; both need the target to stick around a few seconds, and Arcane Barrier is what keeps that from going wrong.</li>
+<li><strong>Staff of the Defender</strong> ({% include price.html d="TM_DefenderStaff" %}) — +30 max energy, +20% energy regen, +20% arcane resistance, grants Arcane Barrier — the barrier buys time for Poison and Briar Patch to actually work. Neither kills instantly; both need the target to stick around a few seconds, and Arcane Barrier is what keeps that from going wrong.</li>
 </ul>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% energy regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% max energy, +10% energy regen, +10% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% max energy, +10% energy regen, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 max energy, +25% energy regen, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% energy regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% max energy, +10% energy regen, +10% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% max energy, +10% energy regen, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 max energy, +25% energy regen, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -956,11 +956,11 @@ Jump to one:
 <p><strong>Armor</strong></p>
 <p>None of this class's spells show a mana cost — they're paid for in mood and joy instead. That makes the usual mage robes' Max Energy and Energy Regen lines dead weight here; Ability Cooldown and Arcane Resistance are what still pull weight.</p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% max energy, +10% energy regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% max energy, +10% energy regen, -15% ability cooldown, -15% energy cost, +10% class XP gain, +10% arcane power.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 max energy, +25% energy regen, -20% ability cooldown, -10% energy cost, +15% arcane resist, +20% ability damage.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% max energy, +10% energy regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% max energy, +10% energy regen, -15% ability cooldown, -15% energy cost, +10% class XP gain, +10% arcane power.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 max energy, +25% energy regen, -20% ability cooldown, -10% energy cost, +15% arcane resist, +20% ability damage.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -1037,15 +1037,15 @@ Jump to one:
 <p><strong>Weapons</strong></p>
 <p>No direct-damage spell of its own to chase Damage Boost gear for, and losing the Enchanter drops every weapon it's currently keeping enchanted across the squad — this is a backline caster, kept well clear of the front line, not a melee build. That makes the Staff of the Defender the real pick here.</p>
 <ul>
-<li><strong>Staff of the Defender</strong> (20) — +30 max energy, +20% energy regen, +20% arcane resistance, grants Arcane Barrier (non-damaging).</li>
+<li><strong>Staff of the Defender</strong> ({% include price.html d="TM_DefenderStaff" %}) — +30 max energy, +20% energy regen, +20% arcane resistance, grants Arcane Barrier (non-damaging).</li>
 </ul>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% energy, +10% regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% energy, +10% regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -1108,10 +1108,10 @@ Jump to one:
 <p>No weapon requirement for this class's own spells — gear it for whatever fight it's actually walking into.</p>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Helm of the Valiant</strong> (12) — -5% energy cost, +10% class XP gain. Pairs with Armor of the Valiant below as a matched set.</li>
-<li><strong>Armor of the Valiant</strong> (18) — -10% energy cost, +10% class XP gain.</li>
-<li><strong>Ancient Mail</strong> (30) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
-<li><strong>Dragon Slayer Plate</strong> (30) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
+<li><strong>Helm of the Valiant</strong> ({% include price.html d="RoyalHelm" %}) — -5% energy cost, +10% class XP gain. Pairs with Armor of the Valiant below as a matched set.</li>
+<li><strong>Armor of the Valiant</strong> ({% include price.html d="RoyalArmor" %}) — -10% energy cost, +10% class XP gain.</li>
+<li><strong>Ancient Mail</strong> ({% include price.html d="AncientMail" %}) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
+<li><strong>Dragon Slayer Plate</strong> ({% include price.html d="TM_DragonSlayer" %}) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -1180,15 +1180,15 @@ Jump to one:
 <summary><strong>Suggested gear</strong></summary>
 <p><strong>Weapons</strong></p>
 <ul>
-<li><strong>Wand of Fire</strong> (12) — +5 max energy, +5% energy regen, +15% Damage Boost — cheap, safe, and thematically on the nose, though the boost isn't actually locked to fire damage.</li>
-<li><strong>Staff of Blazing Power</strong> (25) — +20 max energy, +10% energy regen, +40% Damage Boost — the clearest offensive upgrade in the shop for a class whose entire kit is direct-damage spells.</li>
+<li><strong>Wand of Fire</strong> ({% include price.html d="TM_FireWand" %}) — +5 max energy, +5% energy regen, +15% Damage Boost — cheap, safe, and thematically on the nose, though the boost isn't actually locked to fire damage.</li>
+<li><strong>Staff of Blazing Power</strong> ({% include price.html d="TM_BlazingPowerStaff" %}) — +20 max energy, +10% energy regen, +40% Damage Boost — the clearest offensive upgrade in the shop for a class whose entire kit is direct-damage spells.</li>
 </ul>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% energy regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% max energy, +10% energy regen, +10% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% max energy, +10% energy regen, -15% ability cooldown — worth it for Firestorm's recast alone.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 max energy, +25% energy regen, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% energy regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% max energy, +10% energy regen, +10% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% max energy, +10% energy regen, -15% ability cooldown — worth it for Firestorm's recast alone.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 max energy, +25% energy regen, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -1261,16 +1261,16 @@ Jump to one:
 <p>Geomancer has real damage spells (Loose Stone, Meteor), so offensive foci are worth prioritizing here.</p>
 <p><strong>Weapons</strong></p>
 <ul>
-<li><strong>Wand of Fire / Wand of Lightning</strong> (12 each) — +5 max energy, +5% energy regen, +15% Damage Boost. Cheap, safe, generic — the "Damage Boost" stat isn't locked to that wand's element.</li>
-<li><strong>Staff of Blazing Power</strong> (25) — +20 max energy, +10% energy regen, +40% Damage Boost.</li>
+<li><strong>Wand of Fire / Wand of Lightning</strong> ({% include price.html d="TM_FireWand" %} each) — +5 max energy, +5% energy regen, +15% Damage Boost. Cheap, safe, generic — the "Damage Boost" stat isn't locked to that wand's element.</li>
+<li><strong>Staff of Blazing Power</strong> ({% include price.html d="TM_BlazingPowerStaff" %}) — +20 max energy, +10% energy regen, +40% Damage Boost.</li>
 </ul>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% energy, +10% regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% energy, +10% regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -1329,19 +1329,19 @@ Jump to one:
 <p><strong>Weapons</strong></p>
 <p>Weapon quality matters more here than for most classes — Cleave's damage is explicitly tied to it, so a Legendary or Masterwork weapon is worth more to a Gladiator than the same weapon would be to most other classes. That's separate from and stacks with the enchant stats below.</p>
 <ul>
-<li><strong>Thrumbo Saber</strong> (12) — -10% ability cooldown, +10% Damage Boost, 25% chance to Haste on hit. Budget pick if you don't want to spend 18+.</li>
-<li><strong>Thrumbo Axe</strong> (18) — +10 max energy, +20% Damage Boost, +30% arcane resistance, grants Cleaving Strike. Solid mid-tier.</li>
-<li><strong>Demon's Fang</strong> (20) — -10% energy cost, -15% ability cooldown, +25% Damage Boost, 20% chance to inflict Nightshade Toxin on hit.</li>
-<li><strong>Glory Maul</strong> (20) — +20 max energy, +20% arcane resistance, +10% Damage Boost, 15% chance to Bestow Might on hit. The weakest of the higher-priced options.</li>
-<li><strong>Decimation</strong> (25) — +40 max energy, +40% arcane resistance, +30% Damage Boost, 50% chance to inflict Frailty on hit. Highest raw damage and resistance numbers, but no cooldown or energy-cost help.</li>
-<li><strong>Ruunbled</strong> (30) — -20% ability cooldown, -20% energy cost, +25% Damage Boost, +25% arcane resistance, 20% chance to Haste on hit, 30% Deflection, grants Cleaving Strike. The actual best melee weapon in the shop.</li>
+<li><strong>Thrumbo Saber</strong> ({% include price.html d="TM_ThrumboSaber" %}) — -10% ability cooldown, +10% Damage Boost, 25% chance to Haste on hit. Budget pick if you don't want to spend {% include price.html d="TM_ThrumboAxe" %}+.</li>
+<li><strong>Thrumbo Axe</strong> ({% include price.html d="TM_ThrumboAxe" %}) — +10 max energy, +20% Damage Boost, +30% arcane resistance, grants Cleaving Strike. Solid mid-tier.</li>
+<li><strong>Demon's Fang</strong> ({% include price.html d="TM_DemonFang" %}) — -10% energy cost, -15% ability cooldown, +25% Damage Boost, 20% chance to inflict Nightshade Toxin on hit.</li>
+<li><strong>Glory Maul</strong> ({% include price.html d="TM_GloryMaul" %}) — +20 max energy, +20% arcane resistance, +10% Damage Boost, 15% chance to Bestow Might on hit. The weakest of the higher-priced options.</li>
+<li><strong>Decimation</strong> ({% include price.html d="TM_Decimation" %}) — +40 max energy, +40% arcane resistance, +30% Damage Boost, 50% chance to inflict Frailty on hit. Highest raw damage and resistance numbers, but no cooldown or energy-cost help.</li>
+<li><strong>Ruunbled</strong> ({% include price.html d="TM_Ruunbled" %}) — -20% ability cooldown, -20% energy cost, +25% Damage Boost, +25% arcane resistance, 20% chance to Haste on hit, 30% Deflection, grants Cleaving Strike. The actual best melee weapon in the shop.</li>
 </ul>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Helm of the Valiant</strong> (12) — -5% energy cost, +10% class XP gain. Pairs with Armor of the Valiant below.</li>
-<li><strong>Armor of the Valiant</strong> (18) — -10% energy cost, +10% class XP gain.</li>
-<li><strong>Ancient Mail</strong> (30) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
-<li><strong>Dragon Slayer Plate</strong> (30) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
+<li><strong>Helm of the Valiant</strong> ({% include price.html d="RoyalHelm" %}) — -5% energy cost, +10% class XP gain. Pairs with Armor of the Valiant below.</li>
+<li><strong>Armor of the Valiant</strong> ({% include price.html d="RoyalArmor" %}) — -10% energy cost, +10% class XP gain.</li>
+<li><strong>Ancient Mail</strong> ({% include price.html d="AncientMail" %}) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
+<li><strong>Dragon Slayer Plate</strong> ({% include price.html d="TM_DragonSlayer" %}) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -1461,15 +1461,16 @@ Jump to one:
 </li>
 </ul><p>No master spell confirmed for this class.</p><p><strong>Golems themselves</strong> are craftable at their own workbenches after the right research, or purchasable directly as pre-made items. TL;DR on all 13:</p><table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin:1em 0;">
 <tr style="border-bottom:1px solid var(--rule); color:var(--ink);"><th style="text-align:left; padding:4px;">Golem</th><th>Price</th><th style="text-align:left;">Note</th></tr>
-<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Straw</td><td>6</td><td>Cheapest, basic materials</td></tr>
-<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Wood</td><td>8</td><td>Wood and stone</td></tr>
-<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Silk</td><td>14</td><td>Cloth and thread, "a friendly, expressive face"</td></tr>
-<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Granite / Limestone / Sandstone / Marble</td><td>20 each</td><td>Plain stone variants, no unique flavor text between them</td></tr>
-<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Maharal</td><td>20</td><td>Clay wrapped in leather, upgradeable for heat and power generation</td></tr>
-<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Stone</td><td>25</td><td>The "generic" stone golem — slow, tanky, has a rock-compactor upgrade</td></tr>
-<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Hollow</td><td>25</td><td>Condensed magic and arcane catalysts — rivals the strongest mages in raw potential, depends on magic items to focus it</td></tr>
-<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Mecha</td><td>25</td><td>Raw material plus circuitry and magic</td></tr>
-<tr><td style="padding:4px;">Flesh</td><td>30</td><td>Priciest — built from flesh, bones, and organs via bioengineering and magic</td></tr>
+<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Wood</td><td>{% include price.html d="TM_WoodGolem" %}</td><td>Cheapest, made of wood and stone</td></tr>
+<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Straw</td><td>{% include price.html d="TM_StrawGolem" %}</td><td>Basic materials</td></tr>
+<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Silk</td><td>{% include price.html d="TM_SilkGolem" %}</td><td>Cloth and thread, "a friendly, expressive face"</td></tr>
+<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Granite / Limestone / Sandstone / Slate</td><td>{% include price.html d="TM_GraniteGolem" %} each</td><td>Plain stone variants, no unique flavor text between them</td></tr>
+<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Stone</td><td>{% include price.html d="TM_StoneGolem" %}</td><td>The "generic" stone golem — slow, tanky, has a rock-compactor upgrade</td></tr>
+<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Marble</td><td>{% include price.html d="TM_MarbleGolem" %}</td><td>A pricier plain stone variant</td></tr>
+<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Hollow</td><td>{% include price.html d="TM_HollowGolem" %}</td><td>Condensed magic and arcane catalysts — rivals the strongest mages in raw potential, depends on magic items to focus it</td></tr>
+<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Maharal</td><td>{% include price.html d="TM_MaharalGolem" %}</td><td>Clay wrapped in leather, upgradeable for heat and power generation</td></tr>
+<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Flesh</td><td>{% include price.html d="TM_FleshGolem" %}</td><td>Built from flesh, bones, and organs via bioengineering and magic</td></tr>
+<tr><td style="padding:4px;">Mecha</td><td>{% include price.html d="TM_MechaGolem" %}</td><td>Priciest — raw material plus circuitry and magic</td></tr>
 </table><details open>
 <summary><strong>Suggested implants</strong></summary>
 <p>Nothing stands out — none of this class's bonuses are body-part stats.</p>
@@ -1478,17 +1479,17 @@ Jump to one:
 <p><strong>Weapons</strong></p>
 <p>This class has no direct means of confrontation otherwise — Brands and Living Wall are utility and support, not attacks — so an offensive weapon matters more here than it does for most casters. Worth prioritizing, not just optional.</p>
 <ul>
-<li><strong>Wand of Fire / Wand of Lightning</strong> (12 each) — +5 max energy, +5% energy regen, +15% Damage Boost.</li>
-<li><strong>Staff of Blazing Power</strong> (25) — +20 max energy, +10% energy regen, +40% Damage Boost.</li>
+<li><strong>Wand of Fire / Wand of Lightning</strong> ({% include price.html d="TM_FireWand" %} each) — +5 max energy, +5% energy regen, +15% Damage Boost.</li>
+<li><strong>Staff of Blazing Power</strong> ({% include price.html d="TM_BlazingPowerStaff" %}) — +20 max energy, +10% energy regen, +40% Damage Boost.</li>
 </ul>
 <p><strong>Armor</strong></p>
 <p>Usual mage suspects — the energy-conversion quirk noted above doesn't block this gear from working.</p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% energy, +10% regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% energy, +10% regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -1556,16 +1557,16 @@ Jump to one:
 <p><strong>Weapons</strong></p>
 <p>Icebolt, Frost Ray, and Blizzard are all real damage spells, so the offensive foci are worth prioritizing.</p>
 <ul>
-<li><strong>Wand of Fire / Wand of Lightning</strong> (12 each) — +5 max energy, +5% energy regen, +15% Damage Boost. Generic Damage Boost, not locked to the wand's own element.</li>
-<li><strong>Staff of Blazing Power</strong> (25) — +20 max energy, +10% energy regen, +40% Damage Boost.</li>
+<li><strong>Wand of Fire / Wand of Lightning</strong> ({% include price.html d="TM_FireWand" %} each) — +5 max energy, +5% energy regen, +15% Damage Boost. Generic Damage Boost, not locked to the wand's own element.</li>
+<li><strong>Staff of Blazing Power</strong> ({% include price.html d="TM_BlazingPowerStaff" %}) — +20 max energy, +10% energy regen, +40% Damage Boost.</li>
 </ul>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% energy, +10% regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% energy, +10% regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -1629,16 +1630,16 @@ Jump to one:
 <p><strong>Weapons</strong></p>
 <p>Lightning Storm, Lightning Cloud, Lightning Bolt, and Eye of the Storm are all real damage spells.</p>
 <ul>
-<li><strong>Wand of Fire / Wand of Lightning</strong> (12 each) — +5 max energy, +5% energy regen, +15% Damage Boost.</li>
-<li><strong>Staff of Blazing Power</strong> (25) — +20 max energy, +10% energy regen, +40% Damage Boost.</li>
+<li><strong>Wand of Fire / Wand of Lightning</strong> ({% include price.html d="TM_FireWand" %} each) — +5 max energy, +5% energy regen, +15% Damage Boost.</li>
+<li><strong>Staff of Blazing Power</strong> ({% include price.html d="TM_BlazingPowerStaff" %}) — +20 max energy, +10% energy regen, +40% Damage Boost.</li>
 </ul>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% energy, +10% regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% energy, +10% regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -1705,10 +1706,10 @@ Jump to one:
 <p><strong>Armor</strong></p>
 <p>Don't build a loadout around going light for this class — weight doesn't slow it down, mitigate damage, or interact with Mind Over Body in any way. RimWorld's move speed penalties on armor are flat per-item values, not a weight curve, and most of this set doesn't carry one at all.</p>
 <ul>
-<li><strong>Helm of the Valiant</strong> (12) — -5% energy cost, +10% class XP gain, +2% melee hit chance, faster aiming. No move speed penalty.</li>
-<li><strong>Armor of the Valiant</strong> (18) — -10% energy cost, +10% class XP gain, +5% melee hit chance, faster aiming. No move speed penalty despite being the heaviest confirmed piece in this set — the strongest pick for this class.</li>
-<li><strong>Ancient Mail</strong> (30) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage — all mostly wasted on a class that doesn't use mana. It also carries a flat -0.25 c/s move speed penalty and +50% Psychic sensitivity, which cuts hard against this class's own -80% resistance to that same stat.</li>
-<li><strong>Dragon Slayer Plate</strong> (30) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage. Its move speed and melee effects aren't in the mod's public source to confirm one way or the other.</li>
+<li><strong>Helm of the Valiant</strong> ({% include price.html d="RoyalHelm" %}) — -5% energy cost, +10% class XP gain, +2% melee hit chance, faster aiming. No move speed penalty.</li>
+<li><strong>Armor of the Valiant</strong> ({% include price.html d="RoyalArmor" %}) — -10% energy cost, +10% class XP gain, +5% melee hit chance, faster aiming. No move speed penalty despite being the heaviest confirmed piece in this set — the strongest pick for this class.</li>
+<li><strong>Ancient Mail</strong> ({% include price.html d="AncientMail" %}) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage — all mostly wasted on a class that doesn't use mana. It also carries a flat -0.25 c/s move speed penalty and +50% Psychic sensitivity, which cuts hard against this class's own -80% resistance to that same stat.</li>
+<li><strong>Dragon Slayer Plate</strong> ({% include price.html d="TM_DragonSlayer" %}) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage. Its move speed and melee effects aren't in the mod's public source to confirm one way or the other.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -1793,21 +1794,21 @@ Jump to one:
 <p><strong>Weapons</strong></p>
 <p>Corpse Explosion is a real damage spell, and the Lich master form's Death Bolt is too — both benefit from the offensive foci below.</p>
 <ul>
-<li><strong>Wand of Fire / Wand of Lightning</strong> (12 each) — +5 max energy, +5% energy regen, +15% Damage Boost.</li>
-<li><strong>Staff of Blazing Power</strong> (25) — +20 max energy, +10% energy regen, +40% Damage Boost.</li>
+<li><strong>Wand of Fire / Wand of Lightning</strong> ({% include price.html d="TM_FireWand" %} each) — +5 max energy, +5% energy regen, +15% Damage Boost.</li>
+<li><strong>Staff of Blazing Power</strong> ({% include price.html d="TM_BlazingPowerStaff" %}) — +20 max energy, +10% energy regen, +40% Damage Boost.</li>
 </ul>
 <p><strong>Accessories</strong></p>
 <ul>
-<li><strong>Necrotic Orb</strong> (20) — cuts undead upkeep cost by 25%, and can stand in for the Necromancer to keep undead alive when worn by another pawn. Necromancer-specific, and close to essential if you're running more than one or two undead at a time.</li>
+<li><strong>Necrotic Orb</strong> ({% include price.html d="TM_Artifact_NecroticOrb" %}) — cuts undead upkeep cost by 25%, and can stand in for the Necromancer to keep undead alive when worn by another pawn. Necromancer-specific, and close to essential if you're running more than one or two undead at a time.</li>
 </ul>
 <p><strong>Armor</strong></p>
 <p>Raise Undead has an ongoing mana upkeep cost per undead, so energy regen matters more for this class than most.</p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% energy, +10% regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% energy, +10% regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -1877,17 +1878,17 @@ Jump to one:
 <summary><strong>Suggested gear</strong></summary>
 <p><strong>Weapons</strong></p>
 <ul>
-<li><strong>Thrumbo Saber</strong> (12) — -10% ability cooldown, +10% Damage Boost, 25% chance to Haste on hit.</li>
-<li><strong>Thrumbo Axe</strong> (18) — +10 max energy, +20% Damage Boost, +30% arcane resistance, grants Cleaving Strike.</li>
-<li><strong>Ruunbled</strong> (30) — -20% ability cooldown, -20% energy cost, +25% Damage Boost, +25% arcane resistance, 20% chance to Haste on hit, 30% Deflection, grants Cleaving Strike.</li>
+<li><strong>Thrumbo Saber</strong> ({% include price.html d="TM_ThrumboSaber" %}) — -10% ability cooldown, +10% Damage Boost, 25% chance to Haste on hit.</li>
+<li><strong>Thrumbo Axe</strong> ({% include price.html d="TM_ThrumboAxe" %}) — +10 max energy, +20% Damage Boost, +30% arcane resistance, grants Cleaving Strike.</li>
+<li><strong>Ruunbled</strong> ({% include price.html d="TM_Ruunbled" %}) — -20% ability cooldown, -20% energy cost, +25% Damage Boost, +25% arcane resistance, 20% chance to Haste on hit, 30% Deflection, grants Cleaving Strike.</li>
 </ul>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown.</li>
-<li><strong>Dragon Slayer Plate</strong> (30) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown.</li>
+<li><strong>Dragon Slayer Plate</strong> ({% include price.html d="TM_DragonSlayer" %}) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -1951,15 +1952,15 @@ Jump to one:
 <p>Priests can still use a staff defensively.</p>
 <p><strong>Weapons</strong></p>
 <ul>
-<li><strong>Staff of the Defender</strong> (20) — +30 max energy, +20% energy regen, +20% arcane resistance, grants Arcane Barrier (non-damaging).</li>
+<li><strong>Staff of the Defender</strong> ({% include price.html d="TM_DefenderStaff" %}) — +30 max energy, +20% energy regen, +20% arcane resistance, grants Arcane Barrier (non-damaging).</li>
 </ul>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% energy, +10% regen, +10% arcane resist. Cheaper isn't weaker here — Disciple has the bigger energy bonus.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown. Cooldown reduction only shows up on the two pricier robes.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% energy, +10% regen, +10% arcane resist. The Disciple Hood has the bigger energy bonus.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown. Cooldown reduction only shows up on the two pricier robes.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -2023,14 +2024,14 @@ Jump to one:
 <p>Go unarmed, or as light as possible: Augment Mind casts faster and cheaper the lighter the weapon, best of all with nothing in hand, and the free Augment Movement dash only triggers on a melee attack made without a ranged weapon. Carry a ranged weapon instead and you get normal ranged damage plus Psionic Blast/Storm as backup, but lose both of those.</p>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Helm of the Valiant</strong> (12) — -5% energy cost, +10% class XP gain. Pairs with Armor of the Valiant below as a matched set.</li>
-<li><strong>Armor of the Valiant</strong> (18) — -10% energy cost, +10% class XP gain.</li>
-<li><strong>Ancient Mail</strong> (30) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
-<li><strong>Dragon Slayer Plate</strong> (30) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
+<li><strong>Helm of the Valiant</strong> ({% include price.html d="RoyalHelm" %}) — -5% energy cost, +10% class XP gain. Pairs with Armor of the Valiant below as a matched set.</li>
+<li><strong>Armor of the Valiant</strong> ({% include price.html d="RoyalArmor" %}) — -10% energy cost, +10% class XP gain.</li>
+<li><strong>Ancient Mail</strong> ({% include price.html d="AncientMail" %}) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
+<li><strong>Dragon Slayer Plate</strong> ({% include price.html d="TM_DragonSlayer" %}) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
-<h3 id="ranger">Ranger</h3><p><strong>Good for these jobs:</strong> Hunter (dedicated)</p><p><strong>Bonuses:</strong> +0.30 Move speed, +35% Immunity gain speed, +20°C max comfortable temperature, -20°C min comfortable temperature (a genuinely wider comfort range in both directions), -40% Aiming time, +25% Toxic resistance, +20% Butchery speed, +15% Tame animal chance, +15% Train animal chance, +5.0 Shooting accuracy</p><p><strong>Penalties:</strong> -20% Smelting speed, -20% Construction speed</p><p><strong>Restriction:</strong> None outright, but Arrow Storm specifically cannot be used without a bow equipped.</p><p><strong>Runs on Stamina, not mana.</strong></p><p><strong>Abilities</strong> <em style="color:var(--ink-faint); font-size:0.85rem;">— click a name, then click Perks</em></p><ul class="ability-list">
+<h3 id="ranger">Ranger</h3><p>Buy this class with <code>!buy trait woodsman</code> ({% include trait-price.html t="woodsman" %} coins). Higher ranks are earned by training and are not sold.</p><p><strong>Good for these jobs:</strong> Hunter (dedicated)</p><p><strong>Bonuses:</strong> +0.30 Move speed, +35% Immunity gain speed, +20°C max comfortable temperature, -20°C min comfortable temperature (a genuinely wider comfort range in both directions), -40% Aiming time, +25% Toxic resistance, +20% Butchery speed, +15% Tame animal chance, +15% Train animal chance, +5.0 Shooting accuracy</p><p><strong>Penalties:</strong> -20% Smelting speed, -20% Construction speed</p><p><strong>Restriction:</strong> None outright, but Arrow Storm specifically cannot be used without a bow equipped.</p><p><strong>Runs on Stamina, not mana.</strong></p><p><strong>Abilities</strong> <em style="color:var(--ink-faint); font-size:0.85rem;">— click a name, then click Perks</em></p><ul class="ability-list">
 <li>
 <details class="ability-row" markdown="1"><summary><strong>Ranger Training</strong></summary><div class="ability-body"><p class="ability-desc">A passive that improves Manipulation, Hearing, and Sight as it levels.</p><details class="perk-toggle" markdown="1"><summary>Perks</summary><div class="perk-panel">
 <p class="perk-cap-line">One perk, caps at 3 points. Costs 2 skill points per rank instead of the usual 1.</p>
@@ -2083,16 +2084,16 @@ Jump to one:
 <p><strong>Weapons</strong></p>
 <p>A bow isn't optional for this class — Arrow Storm requires one.</p>
 <ul>
-<li><strong>Elephant Bow</strong> (8) — 64% long-range accuracy, +5 max energy, +5% energy regen, +10% Damage Boost, -10% ability cooldown. Cheap, solid, no real downside.</li>
-<li><strong>Thrum Bow</strong> (20) — 76% long-range accuracy, +20 max energy, +10% energy regen, +20% Damage Boost, -10% ability cooldown, -20% Class XP Gain. Stronger numbers across the board, but its own flavor text admits why: the bow does enough of the work that the Ranger levels up slower using it.</li>
+<li><strong>Elephant Bow</strong> ({% include price.html d="TM_ElephantBow" %}) — 64% long-range accuracy, +5 max energy, +5% energy regen, +10% Damage Boost, -10% ability cooldown. Solid, with no real downside.</li>
+<li><strong>Thrum Bow</strong> ({% include price.html d="TM_ThrumBow" %}) — 76% long-range accuracy, +20 max energy, +10% energy regen, +20% Damage Boost, -10% ability cooldown, -20% Class XP Gain. Stronger numbers across the board, but its own flavor text admits why: the bow does enough of the work that the Ranger levels up slower using it.</li>
 </ul>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Helm of the Valiant</strong> (12) — -5% energy cost, +10% class XP gain. Pairs with Armor of the Valiant below as a matched set.</li>
-<li><strong>Paragon's Helm</strong> (12) — -5% energy cost, +15% class XP gain, +5% max energy, +10% arcane resist.</li>
-<li><strong>Armor of the Valiant</strong> (18) — -10% energy cost, +10% class XP gain.</li>
-<li><strong>Ancient Mail</strong> (30) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
-<li><strong>Dragon Slayer Plate</strong> (30) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
+<li><strong>Helm of the Valiant</strong> ({% include price.html d="RoyalHelm" %}) — -5% energy cost, +10% class XP gain. Pairs with Armor of the Valiant below as a matched set.</li>
+<li><strong>Paragon's Helm</strong> ({% include price.html d="ParagonHelm" %}) — -5% energy cost, +15% class XP gain, +5% max energy, +10% arcane resist.</li>
+<li><strong>Armor of the Valiant</strong> ({% include price.html d="RoyalArmor" %}) — -10% energy cost, +10% class XP gain.</li>
+<li><strong>Ancient Mail</strong> ({% include price.html d="AncientMail" %}) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
+<li><strong>Dragon Slayer Plate</strong> ({% include price.html d="TM_DragonSlayer" %}) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -2145,19 +2146,19 @@ Jump to one:
 <p><strong>Weapons</strong></p>
 <p>Go light and melee. Shadow Strike's crit chance gets worse as the weapon gets heavier, and a ranged weapon forfeits the crit entirely even though it can still fire the ability — a fast dagger-class weapon is the actual damage play here, not whatever hits hardest per swing. Ranked by mass, the actual top five:</p>
 <ol>
-<li><strong>Demon's Fang</strong> (20) — 0.45kg, the lightest weapon in the mod. -10% energy cost, -15% ability cooldown, +25% Damage Boost, and a 20% chance per hit to inflict the same Nightshade toxin this class's own ability applies.</li>
-<li><strong>Knife</strong> (2) — 0.5kg, no enchantment, but nearly ties Demon's Fang on crit odds for two silver. Crafting it from a better material (plasteel, uranium, or anything else) won't push it any higher on this list — RimWorld doesn't vary an item's mass by material, only its damage and armor penetration, so a plasteel knife hits harder without climbing the ranking.</li>
-<li><strong>Elephant Tusk</strong> (6) — 0.8kg, also no enchantment — a plain light blade.</li>
-<li><strong>Gladius</strong> (6) — 0.85kg, no enchantment; its own flavor text calls out that it's "light and nimble" enough to "beat bigger, heavier weapons."</li>
-<li><strong>Stun Baton</strong> (6) — ties the Gladius at 0.85kg, but it's a non-lethal EMP weapon, not a damage pick — skip it for a capture build only. For a straight damage build, Breach Axe or Ikwa (4, 1.1kg) is the next real option instead.</li>
+<li><strong>Demon's Fang</strong> ({% include price.html d="TM_DemonFang" %}) — 0.45kg, the lightest weapon in the mod. -10% energy cost, -15% ability cooldown, +25% Damage Boost, and a 20% chance per hit to inflict the same Nightshade toxin this class's own ability applies.</li>
+<li><strong>Knife</strong> ({% include price.html d="MeleeWeapon_Knife" %}) — 0.5kg, no enchantment, but nearly ties Demon's Fang on crit odds for two silver. Crafting it from a better material (plasteel, uranium, or anything else) won't push it any higher on this list — RimWorld doesn't vary an item's mass by material, only its damage and armor penetration, so a plasteel knife hits harder without climbing the ranking.</li>
+<li><strong>Elephant Tusk</strong> ({% include price.html d="ElephantTusk" %}) — 0.8kg, also no enchantment — a plain light blade.</li>
+<li><strong>Gladius</strong> ({% include price.html d="MeleeWeapon_Gladius" %}) — 0.85kg, no enchantment; its own flavor text calls out that it's "light and nimble" enough to "beat bigger, heavier weapons."</li>
+<li><strong>Stun Baton</strong> ({% include price.html d="VWE_MeleeWeapon_StunBaton" %}) — ties the Gladius at 0.85kg, but it's a non-lethal EMP weapon, not a damage pick — skip it for a capture build only. For a straight damage build, Breach Axe or Ikwa ({% include price.html d="MeleeWeapon_BreachAxe" %}, 1.1kg) is the next real option instead.</li>
 </ol>
 <p><strong>Armor</strong></p>
 <p>Because this class draws on both mana and stamina, the energy-cost and energy-regen bonuses below apply to both pools rather than going to waste on one of them.</p>
 <ul>
-<li><strong>Helm of the Valiant</strong> (12) — -5% energy cost, +10% class XP gain.</li>
-<li><strong>Armor of the Valiant</strong> (18) — -10% energy cost, +10% class XP gain.</li>
-<li><strong>Ancient Mail</strong> (30) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
-<li><strong>Dragon Slayer Plate</strong> (30) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
+<li><strong>Helm of the Valiant</strong> ({% include price.html d="RoyalHelm" %}) — -5% energy cost, +10% class XP gain.</li>
+<li><strong>Armor of the Valiant</strong> ({% include price.html d="RoyalArmor" %}) — -10% energy cost, +10% class XP gain.</li>
+<li><strong>Ancient Mail</strong> ({% include price.html d="AncientMail" %}) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
+<li><strong>Dragon Slayer Plate</strong> ({% include price.html d="TM_DragonSlayer" %}) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -2231,24 +2232,25 @@ Jump to one:
 <p><strong>Weapons</strong></p>
 <p>Chain Lightning and Spirit Wolves are real damage spells, so the offensive foci are worth prioritizing.</p>
 <ul>
-<li><strong>Wand of Fire / Wand of Lightning</strong> (12 each) — +5 max energy, +5% energy regen, +15% Damage Boost.</li>
-<li><strong>Staff of Blazing Power</strong> (25) — +20 max energy, +10% energy regen, +40% Damage Boost.</li>
+<li><strong>Wand of Fire / Wand of Lightning</strong> ({% include price.html d="TM_FireWand" %} each) — +5 max energy, +5% energy regen, +15% Damage Boost.</li>
+<li><strong>Staff of Blazing Power</strong> ({% include price.html d="TM_BlazingPowerStaff" %}) — +20 max energy, +10% energy regen, +40% Damage Boost.</li>
 </ul>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% energy, +10% regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% energy, +10% regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
-<h3 id="sniper">Sniper</h3><p><strong>Good for these jobs:</strong> Hunter (dedicated)</p><p>Tiered class — Sniper is the entry point, Master Sniper and Legendary Sniper are straight upgrades bought on top, not separate choices. Each tier's full stat block:</p><table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin:1em 0;">
+<h3 id="sniper">Sniper</h3><p><strong>Good for these jobs:</strong> Hunter (dedicated)</p><p>Tiered class — buy Sharpshooter with <code>!buy trait sharpshooter</code>. Sniper, Master Sniper, and Legendary Sniper are earned by training and are not sold. Each tier's full stat block:</p><table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin:1em 0;">
 <tr style="border-bottom:1px solid var(--rule); color:var(--ink);"><th style="text-align:left; padding:4px;">Tier</th><th>Price</th><th>Move speed</th><th>Aiming time</th><th>Shooting accuracy</th><th>Research speed</th><th>Global work speed</th><th>Tame/Train animal chance</th></tr>
-<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Sniper</td><td>30</td><td>+0.15</td><td>-15%</td><td>+6.0</td><td>-13%</td><td>-13%</td><td>-13%</td></tr>
-<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Master Sniper</td><td>20</td><td>+0.20</td><td>-22%</td><td>+8.0</td><td>-15%</td><td>-15%</td><td>-15%</td></tr>
-<tr><td style="padding:4px;">Legendary Sniper</td><td>20</td><td>+0.25</td><td>-30%</td><td>+10.0</td><td>-16%</td><td>-16%</td><td>-16%</td></tr>
+<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Sharpshooter</td><td>{% include trait-price.html t="sharpshooter" %}</td><td>+0.10</td><td>-10%</td><td>+3.0</td><td>-10%</td><td>-10%</td><td>-10%</td></tr>
+<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Sniper</td><td>earned</td><td>+0.15</td><td>-15%</td><td>+6.0</td><td>-13%</td><td>-13%</td><td>-13%</td></tr>
+<tr style="border-bottom:1px solid var(--rule-soft);"><td style="padding:4px;">Master Sniper</td><td>earned</td><td>+0.20</td><td>-22%</td><td>+8.0</td><td>-15%</td><td>-15%</td><td>-15%</td></tr>
+<tr><td style="padding:4px;">Legendary Sniper</td><td>earned</td><td>+0.25</td><td>-30%</td><td>+10.0</td><td>-16%</td><td>-16%</td><td>-16%</td></tr>
 </table><p><strong>Restriction:</strong> Description flavor notes growing social distance from other colonists at each tier — no mechanical restriction, just a roleplay note.</p><p><strong>Runs on Stamina, not mana.</strong></p><p><strong>Abilities (same across all three tiers — the tiers upgrade the numbers above, not the ability list)</strong> <em style="color:var(--ink-faint); font-size:0.85rem;">— click a name, then click Perks</em></p><ul class="ability-list">
 <li>
 <details class="ability-row" markdown="1"><summary><strong>Sniper Training</strong></summary><div class="ability-body"><p class="ability-desc">A passive that increases ranged combat skill over time.</p><details class="perk-toggle" markdown="1"><summary>Perks</summary><div class="perk-panel">
@@ -2305,20 +2307,20 @@ Jump to one:
 <p><strong>Weapons</strong></p>
 <p>Pulled real accuracy and damage stats rather than going by name alone — "sounds like a sniper weapon" isn't always true here.</p>
 <ul>
-<li><strong>Elephant Bow</strong> (8) — 64% long-range accuracy. Cheapest option, enchanted (magicyte-infused), but the weakest accuracy of the bunch.</li>
-<li><strong>Bolt-Action Rifle</strong> (8) — 80% long-range accuracy, 5.6 DPS, 1.5s cooldown. Cheaper than the Sniper Rifle and hits harder per shot, at a real accuracy cost.</li>
-<li><strong>Charge Lance</strong> (12) — 75% long-range accuracy, 6.8 DPS, 2.7s cooldown. More damage than a rifle, slower to fire.</li>
-<li><strong>Sniper Rifle</strong> (12) — 90% long-range accuracy, 5.0 DPS, 1.5s cooldown. The best long-range accuracy of any weapon in the shop — the name isn't just flavor, the numbers back it up. The correct default pick.</li>
-<li><strong>Thrum Bow</strong> (20) — 76% long-range accuracy, enchanted. A real alternative if you'd rather go the bow route, priced at a premium for it.</li>
+<li><strong>Elephant Bow</strong> ({% include price.html d="TM_ElephantBow" %}) — 64% long-range accuracy. Enchanted (magicyte-infused), but the weakest accuracy of the bunch.</li>
+<li><strong>Bolt-Action Rifle</strong> ({% include price.html d="Gun_BoltActionRifle" %}) — 80% long-range accuracy, 5.6 DPS, 1.5s cooldown. Cheaper than the Sniper Rifle and hits harder per shot, at a real accuracy cost.</li>
+<li><strong>Charge Lance</strong> ({% include price.html d="Gun_ChargeLance" %}) — 75% long-range accuracy, 6.8 DPS, 2.7s cooldown. More damage than a rifle, slower to fire.</li>
+<li><strong>Sniper Rifle</strong> ({% include price.html d="Gun_SniperRifle" %}) — 90% long-range accuracy, 5.0 DPS, 1.5s cooldown. The best long-range accuracy of any weapon in the shop — the name isn't just flavor, the numbers back it up. The correct default pick.</li>
+<li><strong>Thrum Bow</strong> ({% include price.html d="TM_ThrumBow" %}) — 76% long-range accuracy, enchanted. A real alternative if you'd rather go the bow route, priced at a premium for it.</li>
 </ul>
 <p>Skip, despite the tempting damage numbers: Charge Rifle/Beam Repeater. High DPS, but very low accuracy.</p>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Helm of the Valiant</strong> (12) — -5% energy cost, +10% class XP gain. Pairs with Armor of the Valiant below as a matched set.</li>
-<li><strong>Paragon's Helm</strong> (12) — -5% energy cost, +15% class XP gain, +5% max energy, +10% arcane resist.</li>
-<li><strong>Armor of the Valiant</strong> (18) — -10% energy cost, +10% class XP gain.</li>
-<li><strong>Ancient Mail</strong> (30) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
-<li><strong>Dragon Slayer Plate</strong> (30) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
+<li><strong>Helm of the Valiant</strong> ({% include price.html d="RoyalHelm" %}) — -5% energy cost, +10% class XP gain. Pairs with Armor of the Valiant below as a matched set.</li>
+<li><strong>Paragon's Helm</strong> ({% include price.html d="ParagonHelm" %}) — -5% energy cost, +15% class XP gain, +5% max energy, +10% arcane resist.</li>
+<li><strong>Armor of the Valiant</strong> ({% include price.html d="RoyalArmor" %}) — -10% energy cost, +10% class XP gain.</li>
+<li><strong>Ancient Mail</strong> ({% include price.html d="AncientMail" %}) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
+<li><strong>Dragon Slayer Plate</strong> ({% include price.html d="TM_DragonSlayer" %}) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -2381,11 +2383,11 @@ Jump to one:
 <p>No direct-damage spells here — everything this class does is summon-and-maintain, so energy and cooldown matter more than offense.</p>
 <p><strong>Armor</strong></p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% energy, +10% regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% energy, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% energy, -15% ability cooldown.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 energy, -20% ability cooldown.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% energy, +10% regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% energy, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% energy, -15% ability cooldown.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 energy, -20% ability cooldown.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -2553,10 +2555,10 @@ Jump to one:
 <p><strong>Armor</strong></p>
 <p>Cooldown is always good.</p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% energy regen, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% max energy, +10% energy regen, +10% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% max energy, +10% energy regen, -15% ability cooldown, +10% class XP gain, +10% arcane power.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 max energy, +25% energy regen, -20% ability cooldown, +15% arcane resistance.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% energy regen, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% max energy, +10% energy regen, +10% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% max energy, +10% energy regen, -15% ability cooldown, +10% class XP gain, +10% arcane power.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 max energy, +25% energy regen, -20% ability cooldown, +15% arcane resistance.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -2591,11 +2593,11 @@ Jump to one:
 <p><strong>Armor</strong></p>
 <p>The usual mage set works, since every piece's energy/XP/arcane bonuses apply the same way here as on any other magic-using class:</p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% max energy, +10% energy regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% max energy, +10% energy regen, -15% ability cooldown, -15% energy cost, +10% class XP gain, +10% arcane power.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 max energy, +25% energy regen, -20% ability cooldown, -10% energy cost, +15% arcane resist, +20% ability damage.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% max energy, +10% energy regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% max energy, +10% energy regen, -15% ability cooldown, -15% energy cost, +10% class XP gain, +10% arcane power.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 max energy, +25% energy regen, -20% ability cooldown, -10% energy cost, +15% arcane resist, +20% ability damage.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -2682,11 +2684,11 @@ Jump to one:
 <p><strong>Armor</strong></p>
 <p>This is a mage-type class, not a melee one — mage robes, not plate armor:</p>
 <ul>
-<li><strong>Disciple Hood</strong> (8) — +25% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +15% arcane resist.</li>
-<li><strong>Arcane Hood</strong> (10) — +10% max energy, +10% energy regen, +10% arcane resist.</li>
-<li><strong>Disciple Robe</strong> (12) — +20% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +30% arcane resist.</li>
-<li><strong>Mage Robe</strong> (20) — +17.5% max energy, +10% energy regen, -15% ability cooldown, -15% energy cost, +10% class XP gain, +10% arcane power.</li>
-<li><strong>Robes of the Archmage</strong> (25) — +25 max energy, +25% energy regen, -20% ability cooldown, -10% energy cost, +15% arcane resist, +20% ability damage.</li>
+<li><strong>Disciple Hood</strong> ({% include price.html d="TM_DiscipleHood" %}) — +25% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +15% arcane resist.</li>
+<li><strong>Arcane Hood</strong> ({% include price.html d="ArcaneHood" %}) — +10% max energy, +10% energy regen, +10% arcane resist.</li>
+<li><strong>Disciple Robe</strong> ({% include price.html d="TM_DiscipleRobe" %}) — +20% max energy, +5% energy regen, -5% energy cost, +10% class XP gain, +30% arcane resist.</li>
+<li><strong>Mage Robe</strong> ({% include price.html d="DarkRobe" %}) — +17.5% max energy, +10% energy regen, -15% ability cooldown, -15% energy cost, +10% class XP gain, +10% arcane power.</li>
+<li><strong>Robes of the Archmage</strong> ({% include price.html d="ArchMageRobe" %}) — +25 max energy, +25% energy regen, -20% ability cooldown, -10% energy cost, +15% arcane resist, +20% ability damage.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 
@@ -2721,10 +2723,10 @@ Jump to one:
 <p><strong>Armor</strong></p>
 <p>The usual fighter set works, since every piece's energy/XP/melee bonuses apply the same way here as on any other Might class:</p>
 <ul>
-<li><strong>Helm of the Valiant</strong> (12) — -5% energy cost, +10% class XP gain, +2% melee hit chance, faster aiming.</li>
-<li><strong>Armor of the Valiant</strong> (18) — -10% energy cost, +10% class XP gain, +5% melee hit chance, faster aiming.</li>
-<li><strong>Ancient Mail</strong> (30) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
-<li><strong>Dragon Slayer Plate</strong> (30) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
+<li><strong>Helm of the Valiant</strong> ({% include price.html d="RoyalHelm" %}) — -5% energy cost, +10% class XP gain, +2% melee hit chance, faster aiming.</li>
+<li><strong>Armor of the Valiant</strong> ({% include price.html d="RoyalArmor" %}) — -10% energy cost, +10% class XP gain, +5% melee hit chance, faster aiming.</li>
+<li><strong>Ancient Mail</strong> ({% include price.html d="AncientMail" %}) — +8% max energy, +10% energy regen, +15% energy cost, +20% arcane resistance, 50% chance per hit to deal 20% bonus damage.</li>
+<li><strong>Dragon Slayer Plate</strong> ({% include price.html d="TM_DragonSlayer" %}) — +30 max energy, +20% energy regen, -20% ability cooldown, -20% energy cost, +30% arcane resistance, +30% Ability Damage.</li>
 </ul>
 </details><p><a href="#top">↑ Back to top</a></p><hr>
 

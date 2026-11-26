@@ -72,7 +72,7 @@ This is "buy a helper instead of upgrading a pawn." [Summoner](/itemlist/guide/c
 ## Combat jobs
 
 #### Hunter
-Covers single-target hunters and assassins. [Ranger](/itemlist/guide/classes/#ranger) (animal companion, generalist), [Sniper](/itemlist/guide/classes/#sniper) with its own tier ladder (Sniper → Master Sniper → Legendary Sniper), and [Psionic](/itemlist/guide/classes/#psionic)'s physical-augmented strikes. Ranger specifically wants a bow in hand — Arrow Storm doesn't work without one. [Shadow](/itemlist/guide/classes/#shadow) is the pure assassin of the bunch — teleport behind a target, land one heavy crit-capable hit, then get pulled back out before anything can retaliate.
+Covers single-target hunters and assassins. [Ranger](/itemlist/guide/classes/#ranger) (animal companion, generalist), [Sniper](/itemlist/guide/classes/#sniper) with its own tier ladder (buy Sharpshooter; Sniper, Master Sniper, and Legendary Sniper are earned), and [Psionic](/itemlist/guide/classes/#psionic)'s physical-augmented strikes. Ranger specifically wants a bow in hand — Arrow Storm doesn't work without one. [Shadow](/itemlist/guide/classes/#shadow) is the pure assassin of the bunch — teleport behind a target, land one heavy crit-capable hit, then get pulled back out before anything can retaliate.
 [↑ Back to top](#top)
 
 #### Tank

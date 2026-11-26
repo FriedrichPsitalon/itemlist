@@ -117,7 +117,8 @@
   }
 
   function basePrice(item) {
-    if (item.type === 'trait') return item.addPrice != null ? item.addPrice : item.removePrice;
+    // A trait that can't be added has no headline price; its removal price shows in the details.
+    if (item.type === 'trait') return item.canAdd === false ? null : (item.addPrice != null ? item.addPrice : item.removePrice);
     return item.price;
   }
 

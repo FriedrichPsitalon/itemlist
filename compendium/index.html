@@ -1269,9 +1269,11 @@ function purchaseBarHtml(item) {
     const remCmd = cmds.find(c => c.id === 'remove');
     const pair = (price, c) => `<div class="purchase-pair">${priceTag(price)}${c ? `<code class="cmd-preview" data-cmd="${escapeHtml(c.cmd)}">${escapeHtml(c.cmd)}</code>${copyBtnHtml(c)}` : ''}</div>`;
     const parts = [];
-    if (item.addPrice != null) parts.push(pair(item.addPrice, addCmd));
-    if (item.removePrice != null) parts.push(pair(item.removePrice, remCmd));
-    return parts.length ? `<div class="purchase-bar">${parts.join('')}</div>` : '';
+    // A price with no command next to it reads as "for sale", so show only what can actually be bought.
+    if (item.addPrice != null && addCmd) parts.push(pair(item.addPrice, addCmd));
+    if (item.removePrice != null && remCmd) parts.push(pair(item.removePrice, remCmd));
+    const note = addCmd ? '' : `<p class="no-desc-note">${remCmd ? 'Not sold: this trait can only be removed.' : 'Not sold.'}</p>`;
+    return (parts.length ? `<div class="purchase-bar">${parts.join('')}</div>` : '') + note;
   }
   if (item.type === 'race') {
     return item.price != null

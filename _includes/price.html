@@ -1,0 +1,1 @@
+{%- assign priced = site.data.StoreItems.items | where: "defname", include.d | first -%}{{ priced.price }}
