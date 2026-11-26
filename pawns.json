@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T00:34:08Z",
+  "updatedUtc": "2026-11-26T00:39:08Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -341,11 +341,9 @@
         {
           "kind": "injury",
           "label": "Cut (spelopede head claw)",
-          "count": 3,
+          "count": 1,
           "parts": [
-            "torso",
-            "left foot",
-            "left leg"
+            "left foot"
           ]
         }
       ]
