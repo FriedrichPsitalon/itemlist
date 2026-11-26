@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T00:31:08Z",
+  "updatedUtc": "2026-11-26T00:32:08Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -270,6 +270,14 @@
           "label": "Smokeleaf dependence (53%)",
           "count": 1,
           "parts": []
+        },
+        {
+          "kind": "injury",
+          "label": "Blazing Power (blazing power)",
+          "count": 1,
+          "parts": [
+            "neck"
+          ]
         }
       ]
     },
