@@ -14,23 +14,49 @@ const CAT_ORDER = ['Metallic', 'Woody', 'Stony', 'Fabric', 'Leathery'];
 
 let DATA = null;
 
-// ---------------------------------------------------------------- pricing (verified against real store prices)
-// ToolkitUtils (PurchaseHelper.GetItemPrice) does this in 32-bit floats and rounds UP (Mathf.CeilToInt) at every step:
-//   naming a material:  ceil((base + units x unit cost) x 1.05)
-//   naming a quality:   ceil(ceil(price x quality factor) x 1.1)
-//   naming neither:     the plain store price
-// A material's unit cost is its store price, x10 for the few the game flags smallVolume (gold, silver).
-const f32 = Math.fround;
-const ceil32 = x => Math.ceil(f32(x));
+// ---------------------------------------------------------------- pricing
+// KEEP IN STEP with the in-game rule (Rimstream Label Exporter mod, Source/PriceFormula.cs).
+//   base      the store price: default material, normal quality
+//   score     melee: average DPS. apparel: sharp + blunt + 0.5 heat armour + 0.02 x (cold + heat insulation)
+//   material  base x (score / default score) ^ k, k = ln M / ln max(best score / default score, 1.4),
+//             never below 0.4 x base. M rises 2.5 -> 4.5 as base goes 20 -> 300: the best material costs M x base.
+//   quality   x Q ^ step. Gear with a material choice: Q rises 3 -> 6 as base goes 20 -> 300.
+//             Gear with a fixed material: Q rises 3 -> 10 as base goes 20 -> 200, then 10 x sqrt(200 / base).
+//   result    rounded up, at least 1
 const unitCostOf = mat => { const m = DATA.materials[mat]; return m.unitCost != null ? m.unitCost : m.price; };
 // The item's default material (starred in the UI) is what you get when no material is named, so it
 // costs the base price and needs no bracket entry.
 function isDefaultMat(item, mat) { return !mat || mat === item.defaultStuff; }
+const QUALITY_STEP = { awful: -0.5, poor: -0.25, std: 0, good: 0.25, excellent: 0.5, masterwork: 0.75, legendary: 1 };
+// lo at price 20 or less, hi at price `top` or more, even steps on a log scale between.
+const scaled = (price, lo, hi, top) => lo + (hi - lo) * Math.max(0, Math.min(1, Math.log(price / 20) / Math.log(top / 20)));
+function priceScore(item, mat) {
+  const row = item.stats[mat];
+  if (!row) return 0;
+  const g = n => { const i = item.statNames.indexOf(n); return i < 0 ? 0 : row[i] || 0; };
+  if (item.kind === 'apparel') return g('ArmorRating_Sharp') + g('ArmorRating_Blunt') + 0.5 * g('ArmorRating_Heat')
+    + 0.02 * (Math.abs(g('Insulation_Cold')) + Math.abs(g('Insulation_Heat')));
+  return item.kind === 'melee' ? g('MeleeWeapon_AverageDPS') : 0;
+}
 function priceOf(item, mat, q) {
-  let p = item.price;
-  if (!isDefaultMat(item, mat)) p = ceil32(f32(item.price + item.units * unitCostOf(mat)) * f32(DATA.rules.materialMarkup));
-  if (q && q !== 'std') p = ceil32(f32(ceil32(f32(p) * f32(PRICE_QUALITY[q]))) * f32(DATA.rules.qualityMarkup));
-  return p;
+  const base = item.price;
+  const otherMat = item.madeFromStuff && !isDefaultMat(item, mat);
+  const named = item.hasQuality && q && q !== 'std';
+  if (base <= 0 || (!otherMat && !named)) return base;
+  let p = base;
+  if (otherMat) {
+    const usual = priceScore(item, item.defaultStuff);
+    if (usual > 0) {
+      const best = Math.max(usual, ...item.mats.map(m => priceScore(item, m)));
+      const k = Math.log(scaled(base, 2.5, 4.5, 300)) / Math.log(Math.max(best / usual, 1.4));
+      p = Math.max(0.4 * base, base * Math.pow(priceScore(item, mat) / usual, k));
+    }
+  }
+  if (named) {
+    const top = item.madeFromStuff ? scaled(base, 3, 6, 300) : (base <= 200 ? scaled(base, 3, 10, 200) : 10 * Math.sqrt(200 / base));
+    p *= Math.pow(top, QUALITY_STEP[q]);
+  }
+  return Math.max(1, Math.ceil(p - 0.000001));
 }
 function commandOf(item, mat, q, qty) {
   const parts = [];

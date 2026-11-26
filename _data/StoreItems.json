@@ -86,7 +86,7 @@
 	},
 	{
 		"abr": "psylinkneuroformer",
-		"price": 160,
+		"price": 300,
 		"category": "Archotech",
 		"defname": "PsychicAmplifier"
 	},
@@ -650,7 +650,7 @@
 	},
 	{
 		"abr": "iedantigrainwarheadtrap",
-		"price": 80,
+		"price": 500,
 		"category": "Security",
 		"defname": "TrapIED_AntigrainWarhead"
 	},
@@ -716,13 +716,13 @@
 	},
 	{
 		"abr": "healermechserum",
-		"price": 80,
+		"price": 150,
 		"category": "Drugs",
 		"defname": "MechSerumHealer"
 	},
 	{
 		"abr": "resurrectormechserum",
-		"price": 160,
+		"price": 300,
 		"category": "Drugs",
 		"defname": "MechSerumResurrector"
 	},
@@ -818,13 +818,13 @@
 	},
 	{
 		"abr": "milk",
-		"price": 5,
+		"price": 1,
 		"category": "Animal products",
 		"defname": "Milk"
 	},
 	{
 		"abr": "insectjelly",
-		"price": 5,
+		"price": 2,
 		"category": "Animal products",
 		"defname": "InsectJelly"
 	},
@@ -836,79 +836,79 @@
 	},
 	{
 		"abr": "chickenegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggChickenUnfertilized"
 	},
 	{
 		"abr": "chickenegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggChickenFertilized"
 	},
 	{
 		"abr": "cobraegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggCobraFertilized"
 	},
 	{
 		"abr": "iguanaegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggIguanaFertilized"
 	},
 	{
 		"abr": "tortoiseegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggTortoiseFertilized"
 	},
 	{
 		"abr": "cassowaryegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggCassowaryFertilized"
 	},
 	{
 		"abr": "emuegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggEmuFertilized"
 	},
 	{
 		"abr": "ostrichegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggOstrichFertilized"
 	},
 	{
 		"abr": "turkeyegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggTurkeyFertilized"
 	},
 	{
 		"abr": "duckegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggDuckUnfertilized"
 	},
 	{
 		"abr": "duckegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggDuckFertilized"
 	},
 	{
 		"abr": "gooseegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggGooseUnfertilized"
 	},
 	{
 		"abr": "gooseegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggGooseFertilized"
 	},
@@ -926,13 +926,13 @@
 	},
 	{
 		"abr": "glitterworldmedicine",
-		"price": 30,
+		"price": 50,
 		"category": "Medicine",
 		"defname": "MedicineUltratech"
 	},
 	{
 		"abr": "component",
-		"price": 4,
+		"price": 15,
 		"category": "Manufactured",
 		"defname": "ComponentIndustrial"
 	},
@@ -1052,19 +1052,19 @@
 	},
 	{
 		"abr": "antigrainwarhead",
-		"price": 100,
+		"price": 750,
 		"category": "Mortar shells",
 		"defname": "Shell_AntigrainWarhead"
 	},
 	{
 		"abr": "silver",
-		"price": 3,
+		"price": 1,
 		"category": "Raw resources",
 		"defname": "Silver"
 	},
 	{
 		"abr": "gold",
-		"price": 2,
+		"price": 8,
 		"category": "Raw resources",
 		"defname": "Gold"
 	},
@@ -1076,7 +1076,7 @@
 	},
 	{
 		"abr": "plasteel",
-		"price": 6,
+		"price": 3,
 		"category": "Raw resources",
 		"defname": "Plasteel"
 	},
@@ -1088,7 +1088,7 @@
 	},
 	{
 		"abr": "uranium",
-		"price": 3,
+		"price": 2,
 		"category": "Raw resources",
 		"defname": "Uranium"
 	},
@@ -1100,175 +1100,175 @@
 	},
 	{
 		"abr": "cloth",
-		"price": 2,
+		"price": 1,
 		"category": "Textiles",
 		"defname": "Cloth"
 	},
 	{
 		"abr": "synthread",
-		"price": 4,
+		"price": 2,
 		"category": "Textiles",
 		"defname": "Synthread"
 	},
 	{
 		"abr": "devilstrand",
-		"price": 6,
+		"price": 2,
 		"category": "Textiles",
 		"defname": "DevilstrandCloth"
 	},
 	{
 		"abr": "hyperweave",
-		"price": 6,
+		"price": 2,
 		"category": "Textiles",
 		"defname": "Hyperweave"
 	},
 	{
 		"abr": "sheepwool",
-		"price": 4,
+		"price": 2,
 		"category": "Wools",
 		"defname": "WoolSheep"
 	},
 	{
 		"abr": "alpacawool",
-		"price": 4,
+		"price": 2,
 		"category": "Wools",
 		"defname": "WoolAlpaca"
 	},
 	{
 		"abr": "megaslothwool",
-		"price": 4,
+		"price": 2,
 		"category": "Wools",
 		"defname": "WoolMegasloth"
 	},
 	{
 		"abr": "muffalowool",
-		"price": 4,
+		"price": 2,
 		"category": "Wools",
 		"defname": "WoolMuffalo"
 	},
 	{
 		"abr": "bisonwool",
-		"price": 8,
+		"price": 2,
 		"category": "Wools",
 		"defname": "WoolBison"
 	},
 	{
 		"abr": "plainleather",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Plain"
 	},
 	{
 		"abr": "dogleather",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Dog"
 	},
 	{
 		"abr": "wolfskin",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Wolf"
 	},
 	{
 		"abr": "pantherafur",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Panthera"
 	},
 	{
 		"abr": "camelhide",
-		"price": 8,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Camel"
 	},
 	{
 		"abr": "bluefur",
-		"price": 8,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Bluefur"
 	},
 	{
 		"abr": "bearskin",
-		"price": 8,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Bear"
 	},
 	{
 		"abr": "guineapigfur",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_GuineaPig"
 	},
 	{
 		"abr": "humanleather",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Human"
 	},
 	{
 		"abr": "pigskin",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Pig"
 	},
 	{
 		"abr": "lightleather",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Light"
 	},
 	{
 		"abr": "birdskin",
-		"price": 8,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Bird"
 	},
 	{
 		"abr": "chinchillafur",
-		"price": 7,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Chinchilla"
 	},
 	{
 		"abr": "foxfur",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Fox"
 	},
 	{
 		"abr": "lizardskin",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Lizard"
 	},
 	{
 		"abr": "elephantleather",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Elephant"
 	},
 	{
 		"abr": "heavyfur",
-		"price": 7,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Heavy"
 	},
 	{
 		"abr": "rhinocerosleather",
-		"price": 8,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Rhinoceros"
 	},
 	{
 		"abr": "thrumbofur",
-		"price": 5,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Thrumbo"
 	},
 	{
 		"abr": "patchleather",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Patch"
 	},
@@ -3512,13 +3512,13 @@
 	},
 	{
 		"abr": "bioferrite",
-		"price": 10,
+		"price": 3,
 		"category": "Raw resources",
 		"defname": "Bioferrite"
 	},
 	{
 		"abr": "dreadleather",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Dread"
 	},
@@ -3536,7 +3536,7 @@
 	},
 	{
 		"abr": "twistedmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Twisted"
 	},
@@ -3896,25 +3896,25 @@
 	},
 	{
 		"abr": "manaweave",
-		"price": 4,
+		"price": 2,
 		"category": "Textiles",
 		"defname": "TM_Manaweave"
 	},
 	{
 		"abr": "arcalleum",
-		"price": 8,
+		"price": 2,
 		"category": "Raw resources",
 		"defname": "TM_Arcalleum"
 	},
 	{
 		"abr": "demonhide",
-		"price": 8,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "TM_Demonhide"
 	},
 	{
 		"abr": "demonscale",
-		"price": 8,
+		"price": 2,
 		"category": "Raw resources",
 		"defname": "TM_Demonscale"
 	},
@@ -6134,499 +6134,499 @@
 	},
 	{
 		"abr": "bearmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Bear_Grizzly"
 	},
 	{
 		"abr": "birdmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Cassowary"
 	},
 	{
 		"abr": "cougarmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Cougar"
 	},
 	{
 		"abr": "panthermeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Panther"
 	},
 	{
 		"abr": "lynxmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Lynx"
 	},
 	{
 		"abr": "catmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Cat"
 	},
 	{
 		"abr": "yorkshireterriermeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_YorkshireTerrier"
 	},
 	{
 		"abr": "guineapigmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_GuineaPig"
 	},
 	{
 		"abr": "labradorretrievermeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_LabradorRetriever"
 	},
 	{
 		"abr": "huskymeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Husky"
 	},
 	{
 		"abr": "monkeymeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Monkey"
 	},
 	{
 		"abr": "chickenmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Chicken"
 	},
 	{
 		"abr": "duckmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Duck"
 	},
 	{
 		"abr": "turkeymeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Turkey"
 	},
 	{
 		"abr": "beef",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Cow"
 	},
 	{
 		"abr": "boomalopemeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Boomalope"
 	},
 	{
 		"abr": "muffalomeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Muffalo"
 	},
 	{
 		"abr": "bisonmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Bison"
 	},
 	{
 		"abr": "dromedarymeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Dromedary"
 	},
 	{
 		"abr": "goatmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Goat"
 	},
 	{
 		"abr": "elkmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Elk"
 	},
 	{
 		"abr": "yakbeef",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Yak"
 	},
 	{
 		"abr": "cariboumeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Caribou"
 	},
 	{
 		"abr": "horsemeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Horse"
 	},
 	{
 		"abr": "donkeymeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Donkey"
 	},
 	{
 		"abr": "elephantmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Elephant"
 	},
 	{
 		"abr": "rhinocerosmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Rhinoceros"
 	},
 	{
 		"abr": "haremeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Hare"
 	},
 	{
 		"abr": "insectmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Megaspider"
 	},
 	{
 		"abr": "thrumbomeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Thrumbo"
 	},
 	{
 		"abr": "cobrameat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Cobra"
 	},
 	{
 		"abr": "tortoisemeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Tortoise"
 	},
 	{
 		"abr": "alphabeavermeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Alphabeaver"
 	},
 	{
 		"abr": "pork",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Pig"
 	},
 	{
 		"abr": "ibexmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Ibex"
 	},
 	{
 		"abr": "venison",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Deer"
 	},
 	{
 		"abr": "gazellemeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Gazelle"
 	},
 	{
 		"abr": "chinchillameat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Chinchilla"
 	},
 	{
 		"abr": "sheepmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Sheep"
 	},
 	{
 		"abr": "alpacameat",
-		"price": 10,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Alpaca"
 	},
 	{
 		"abr": "megaslothmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Megasloth"
 	},
 	{
 		"abr": "capybarameat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Capybara"
 	},
 	{
 		"abr": "squirrelmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Squirrel"
 	},
 	{
 		"abr": "ratmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Rat"
 	},
 	{
 		"abr": "boomratmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Boomrat"
 	},
 	{
 		"abr": "raccoonmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Raccoon"
 	},
 	{
 		"abr": "iguanameat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Iguana"
 	},
 	{
 		"abr": "wargmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Warg"
 	},
 	{
 		"abr": "wolfmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Wolf_Timber"
 	},
 	{
 		"abr": "foxmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Fox_Fennec"
 	},
 	{
 		"abr": "humanmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Human"
 	},
 	{
 		"abr": "immaturedryadmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Dryad_Basic"
 	},
 	{
 		"abr": "wasteratmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_WasteRat"
 	},
 	{
 		"abr": "toxalopemeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Toxalope"
 	},
 	{
 		"abr": "hollowgolemmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_HollowGolem"
 	},
 	{
 		"abr": "demonflesh",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_DemonR"
 	},
 	{
 		"abr": "demonflesh",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_LesserDemonR"
 	},
 	{
 		"abr": "wolfmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_Dire_WolfR"
 	},
 	{
 		"abr": "elementaldust",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_LesserEarth_ElementalR"
 	},
 	{
 		"abr": "elementaldust",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_Earth_ElementalR"
 	},
 	{
 		"abr": "elementaldust",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_GreaterEarth_ElementalR"
 	},
 	{
 		"abr": "elementaldust",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_LesserFire_ElementalR"
 	},
 	{
 		"abr": "elementaldust",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_Fire_ElementalR"
 	},
 	{
 		"abr": "elementaldust",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_GreaterFire_ElementalR"
 	},
 	{
 		"abr": "elementaldust",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_LesserWater_ElementalR"
 	},
 	{
 		"abr": "elementaldust",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_Water_ElementalR"
 	},
 	{
 		"abr": "elementaldust",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_GreaterWater_ElementalR"
 	},
 	{
 		"abr": "elementaldust",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_LesserWind_ElementalR"
 	},
 	{
 		"abr": "elementaldust",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_Wind_ElementalR"
 	},
 	{
 		"abr": "elementaldust",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_GreaterWind_ElementalR"
 	},
 	{
 		"abr": "mysterymeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_MinionR"
 	},
 	{
 		"abr": "mysterymeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_GreaterMinionR"
 	},
 	{
 		"abr": "stone",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_Lesser_SentinelR"
 	},
 	{
 		"abr": "stone",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_SentinelR"
 	},
 	{
 		"abr": "stone",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_Greater_SentinelR"
 	},
 	{
 		"abr": "skeletonlichmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_SkeletonLichR"
 	},
 	{
 		"abr": "giantskeletonmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_GiantSkeletonR"
 	},
 	{
 		"abr": "skeletonmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_SkeletonR"
 	},
 	{
 		"abr": "spiritbearmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_SpiritBearR"
 	},
 	{
 		"abr": "spiritmongoosemeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_SpiritMongooseR"
 	},
 	{
 		"abr": "spiritcrowmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_SpiritCrowR"
 	},
 	{
 		"abr": "meat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_SpiritWolfR"
 	},
 	{
 		"abr": "poppimeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_TM_Poppi"
 	},
@@ -6710,73 +6710,73 @@
 	},
 	{
 		"abr": "psytrainer(painblock)",
-		"price": 100,
+		"price": 80,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_Painblock"
 	},
 	{
 		"abr": "psytrainer(stun)",
-		"price": 100,
+		"price": 80,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_Stun"
 	},
 	{
 		"abr": "psytrainer(burden)",
-		"price": 120,
+		"price": 80,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_Burden"
 	},
 	{
 		"abr": "psytrainer(blindingpulse)",
-		"price": 140,
+		"price": 100,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_BlindingPulse"
 	},
 	{
 		"abr": "psytrainer(neuralheatdump)",
-		"price": 120,
+		"price": 100,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_EntropyDump"
 	},
 	{
 		"abr": "psytrainer(beckon)",
-		"price": 180,
+		"price": 120,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_Beckon"
 	},
 	{
 		"abr": "psytrainer(vertigopulse)",
-		"price": 100,
+		"price": 120,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_VertigoPulse"
 	},
 	{
 		"abr": "psytrainer(chaosskip)",
-		"price": 180,
+		"price": 120,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_ChaosSkip"
 	},
 	{
 		"abr": "psytrainer(skip)",
-		"price": 120,
+		"price": 150,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_Skip"
 	},
 	{
 		"abr": "psytrainer(wallraise)",
-		"price": 120,
+		"price": 150,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_Wallraise"
 	},
 	{
 		"abr": "psytrainer(smokepop)",
-		"price": 120,
+		"price": 150,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_Smokepop"
 	},
 	{
 		"abr": "psytrainer(focus)",
-		"price": 120,
+		"price": 150,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_Focus"
 	},
@@ -6788,25 +6788,25 @@
 	},
 	{
 		"abr": "psytrainer(invisibility)",
-		"price": 160,
+		"price": 180,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_Invisibility"
 	},
 	{
 		"abr": "psytrainer(berserkpulse)",
-		"price": 180,
+		"price": 250,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_BerserkPulse"
 	},
 	{
 		"abr": "psytrainer(manhunterpulse)",
-		"price": 160,
+		"price": 250,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_ManhunterPulse"
 	},
 	{
 		"abr": "psytrainer(masschaosskip)",
-		"price": 160,
+		"price": 250,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_MassChaosSkip"
 	},
@@ -6818,19 +6818,19 @@
 	},
 	{
 		"abr": "psytrainer(flashstorm)",
-		"price": 140,
+		"price": 180,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_Flashstorm"
 	},
 	{
 		"abr": "psytrainer(skipshield)",
-		"price": 160,
+		"price": 250,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_BulletShield"
 	},
 	{
 		"abr": "psytrainer(solarpinhole)",
-		"price": 60,
+		"price": 80,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_SolarPinhole"
 	},
@@ -6854,13 +6854,13 @@
 	},
 	{
 		"abr": "psytrainer(wordofserenity)",
-		"price": 120,
+		"price": 150,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_WordOfSerenity"
 	},
 	{
 		"abr": "psytrainer(wordofinspiration)",
-		"price": 120,
+		"price": 180,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_WordOfInspiration"
 	},
@@ -6872,85 +6872,85 @@
 	},
 	{
 		"abr": "psytrainer(neuroquake)",
-		"price": 160,
+		"price": 250,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_Neuroquake"
 	},
 	{
 		"abr": "psytrainer(chunkskip)",
-		"price": 120,
+		"price": 80,
 		"category": "Psytrainers",
 		"defname": "Psytrainer_Chunkskip"
 	},
 	{
 		"abr": "skilltrainer(shooting)",
-		"price": 100,
+		"price": 1000,
 		"category": "Skilltrainers",
 		"defname": "Neurotrainer_Shooting"
 	},
 	{
 		"abr": "skilltrainer(melee)",
-		"price": 100,
+		"price": 1000,
 		"category": "Skilltrainers",
 		"defname": "Neurotrainer_Melee"
 	},
 	{
 		"abr": "skilltrainer(construction)",
-		"price": 100,
+		"price": 1000,
 		"category": "Skilltrainers",
 		"defname": "Neurotrainer_Construction"
 	},
 	{
 		"abr": "skilltrainer(mining)",
-		"price": 100,
+		"price": 1000,
 		"category": "Skilltrainers",
 		"defname": "Neurotrainer_Mining"
 	},
 	{
 		"abr": "skilltrainer(cooking)",
-		"price": 100,
+		"price": 1000,
 		"category": "Skilltrainers",
 		"defname": "Neurotrainer_Cooking"
 	},
 	{
 		"abr": "skilltrainer(plants)",
-		"price": 100,
+		"price": 1000,
 		"category": "Skilltrainers",
 		"defname": "Neurotrainer_Plants"
 	},
 	{
 		"abr": "skilltrainer(animals)",
-		"price": 100,
+		"price": 1000,
 		"category": "Skilltrainers",
 		"defname": "Neurotrainer_Animals"
 	},
 	{
 		"abr": "skilltrainer(crafting)",
-		"price": 100,
+		"price": 1000,
 		"category": "Skilltrainers",
 		"defname": "Neurotrainer_Crafting"
 	},
 	{
 		"abr": "skilltrainer(artistic)",
-		"price": 100,
+		"price": 1000,
 		"category": "Skilltrainers",
 		"defname": "Neurotrainer_Artistic"
 	},
 	{
 		"abr": "skilltrainer(medical)",
-		"price": 100,
+		"price": 1000,
 		"category": "Skilltrainers",
 		"defname": "Neurotrainer_Medicine"
 	},
 	{
 		"abr": "skilltrainer(social)",
-		"price": 100,
+		"price": 1000,
 		"category": "Skilltrainers",
 		"defname": "Neurotrainer_Social"
 	},
 	{
 		"abr": "skilltrainer(intellectual)",
-		"price": 100,
+		"price": 1000,
 		"category": "Skilltrainers",
 		"defname": "Neurotrainer_Intellectual"
 	},
@@ -6962,19 +6962,19 @@
 	},
 	{
 		"abr": "alligatoregg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggAlligatorFertilized"
 	},
 	{
 		"abr": "alligatoregg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggAlligatorUnfertilized"
 	},
 	{
 		"abr": "alligatormeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Alligator"
 	},
@@ -6986,7 +6986,7 @@
 	},
 	{
 		"abr": "alphathrumbomeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_AlphaThrumbo"
 	},
@@ -7118,13 +7118,13 @@
 	},
 	{
 		"abr": "armadilloleather",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Armadillo"
 	},
 	{
 		"abr": "armadillomeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Armadillo"
 	},
@@ -7136,13 +7136,13 @@
 	},
 	{
 		"abr": "badgermeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Badger"
 	},
 	{
 		"abr": "bass",
-		"price": 10,
+		"price": 5,
 		"category": "Fish",
 		"defname": "Fish_Bass"
 	},
@@ -7172,19 +7172,19 @@
 	},
 	{
 		"abr": "bluebirdegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggBluebirdFertilized"
 	},
 	{
 		"abr": "bluebirdegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggBluebirdUnfertilized"
 	},
 	{
 		"abr": "bluefish",
-		"price": 20,
+		"price": 5,
 		"category": "Fish",
 		"defname": "Fish_Bluefish"
 	},
@@ -7196,7 +7196,7 @@
 	},
 	{
 		"abr": "boghoundmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_BogHound"
 	},
@@ -7208,19 +7208,19 @@
 	},
 	{
 		"abr": "bullfrogmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Bullfrog"
 	},
 	{
 		"abr": "cassowaryegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggCassowaryUnfertilized"
 	},
 	{
 		"abr": "catfish",
-		"price": 20,
+		"price": 5,
 		"category": "Fish",
 		"defname": "Fish_Catfish"
 	},
@@ -7232,13 +7232,13 @@
 	},
 	{
 		"abr": "cobraegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggCobraUnfertilized"
 	},
 	{
 		"abr": "cod",
-		"price": 8,
+		"price": 5,
 		"category": "Fish",
 		"defname": "Fish_Cod"
 	},
@@ -7250,7 +7250,7 @@
 	},
 	{
 		"abr": "colossustoadmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_ColossusToad"
 	},
@@ -7268,25 +7268,25 @@
 	},
 	{
 		"abr": "crowegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggCrowFertilized"
 	},
 	{
 		"abr": "crowegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggCrowUnfertilized"
 	},
 	{
 		"abr": "dogfish",
-		"price": 20,
+		"price": 5,
 		"category": "Fish",
 		"defname": "Fish_Dogfish"
 	},
 	{
 		"abr": "emuegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggEmuUnfertilized"
 	},
@@ -7298,25 +7298,25 @@
 	},
 	{
 		"abr": "flamingoegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggFlamingoFertilized"
 	},
 	{
 		"abr": "flamingoegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggFlamingoUnfertilized"
 	},
 	{
 		"abr": "flounder",
-		"price": 20,
+		"price": 5,
 		"category": "Fish",
 		"defname": "Fish_Flounder"
 	},
 	{
 		"abr": "frostfish",
-		"price": 20,
+		"price": 5,
 		"category": "Fish",
 		"defname": "Fish_Frostfish"
 	},
@@ -7334,7 +7334,7 @@
 	},
 	{
 		"abr": "gorillameat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Gorilla"
 	},
@@ -7382,7 +7382,7 @@
 	},
 	{
 		"abr": "greatwolfmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Wolf_Great"
 	},
@@ -7460,7 +7460,7 @@
 	},
 	{
 		"abr": "guppy",
-		"price": 20,
+		"price": 5,
 		"category": "Fish",
 		"defname": "Fish_Guppy"
 	},
@@ -7472,7 +7472,7 @@
 	},
 	{
 		"abr": "hermitcrabmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_HermitCrab"
 	},
@@ -7484,13 +7484,13 @@
 	},
 	{
 		"abr": "heronegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggHeronFertilized"
 	},
 	{
 		"abr": "heronegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggHeronUnfertilized"
 	},
@@ -7502,13 +7502,13 @@
 	},
 	{
 		"abr": "hippoleather",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Hippo"
 	},
 	{
 		"abr": "hippomeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Hippo"
 	},
@@ -7532,7 +7532,7 @@
 	},
 	{
 		"abr": "iguanaegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggIguanaUnfertilized"
 	},
@@ -7568,7 +7568,7 @@
 	},
 	{
 		"abr": "lavasnailmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_LavaSnail"
 	},
@@ -7586,13 +7586,13 @@
 	},
 	{
 		"abr": "macawegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggMacawFertilized"
 	},
 	{
 		"abr": "macawegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggMacawUnfertilized"
 	},
@@ -7604,7 +7604,7 @@
 	},
 	{
 		"abr": "marlin",
-		"price": 20,
+		"price": 5,
 		"category": "Fish",
 		"defname": "Fish_Marlin"
 	},
@@ -7616,13 +7616,13 @@
 	},
 	{
 		"abr": "mastodonleather",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Mastodon"
 	},
 	{
 		"abr": "mastodonmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Mastodon"
 	},
@@ -7634,7 +7634,7 @@
 	},
 	{
 		"abr": "mastodonwool",
-		"price": 4,
+		"price": 2,
 		"category": "Wools",
 		"defname": "WoolMastodon"
 	},
@@ -7646,7 +7646,7 @@
 	},
 	{
 		"abr": "megavolemeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Megavole"
 	},
@@ -7658,13 +7658,13 @@
 	},
 	{
 		"abr": "minkfur",
-		"price": 7,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_Mink"
 	},
 	{
 		"abr": "minkmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Mink"
 	},
@@ -7676,19 +7676,19 @@
 	},
 	{
 		"abr": "monitorlizardegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggMonitorLizardFertilized"
 	},
 	{
 		"abr": "monitorlizardegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggMonitorLizardUnfertilized"
 	},
 	{
 		"abr": "monitorlizardmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_MonitorLizard"
 	},
@@ -7700,7 +7700,7 @@
 	},
 	{
 		"abr": "moosemeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Moose"
 	},
@@ -7712,13 +7712,13 @@
 	},
 	{
 		"abr": "muskoxmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Muskox"
 	},
 	{
 		"abr": "muskoxwool",
-		"price": 4,
+		"price": 2,
 		"category": "Wools",
 		"defname": "WoolMuskox"
 	},
@@ -7730,7 +7730,7 @@
 	},
 	{
 		"abr": "ostrichegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggOstrichUnfertilized"
 	},
@@ -7742,7 +7742,7 @@
 	},
 	{
 		"abr": "ottermeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Otter"
 	},
@@ -7766,7 +7766,7 @@
 	},
 	{
 		"abr": "pandameat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Panda"
 	},
@@ -7778,13 +7778,13 @@
 	},
 	{
 		"abr": "peafowlegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggPeacockFertilized"
 	},
 	{
 		"abr": "peafowlegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggPeacockUnfertilized"
 	},
@@ -7796,13 +7796,13 @@
 	},
 	{
 		"abr": "penguinegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggPenguinFertilized"
 	},
 	{
 		"abr": "penguinegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggPenguinUnfertilized"
 	},
@@ -7826,7 +7826,7 @@
 	},
 	{
 		"abr": "piranha",
-		"price": 20,
+		"price": 5,
 		"category": "Fish",
 		"defname": "Fish_Piranha"
 	},
@@ -7838,7 +7838,7 @@
 	},
 	{
 		"abr": "porcupinemeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Porcupine"
 	},
@@ -7850,7 +7850,7 @@
 	},
 	{
 		"abr": "prairiedogmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_PrairieDog"
 	},
@@ -7868,19 +7868,19 @@
 	},
 	{
 		"abr": "quailegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggQuailFertilized"
 	},
 	{
 		"abr": "quailegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggQuailUnfertilized"
 	},
 	{
 		"abr": "salmon",
-		"price": 20,
+		"price": 5,
 		"category": "Fish",
 		"defname": "Fish_Salmon"
 	},
@@ -7892,7 +7892,7 @@
 	},
 	{
 		"abr": "scimitarcatmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Cat_Scimitar"
 	},
@@ -7904,7 +7904,7 @@
 	},
 	{
 		"abr": "sealionmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_SeaLion"
 	},
@@ -7916,19 +7916,19 @@
 	},
 	{
 		"abr": "seaturtleegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggSeaTurtleFertilized"
 	},
 	{
 		"abr": "seaturtleegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggSeaTurtleUnfertilized"
 	},
 	{
 		"abr": "seaturtlemeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_SeaTurtle"
 	},
@@ -7940,7 +7940,7 @@
 	},
 	{
 		"abr": "sealmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Seal"
 	},
@@ -7994,13 +7994,13 @@
 	},
 	{
 		"abr": "sparrowegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggSparrowFertilized"
 	},
 	{
 		"abr": "sparrowegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggSparrowUnfertilized"
 	},
@@ -8018,7 +8018,7 @@
 	},
 	{
 		"abr": "stonecrabmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_StoneCrab"
 	},
@@ -8030,19 +8030,19 @@
 	},
 	{
 		"abr": "swanegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggSwanFertilized"
 	},
 	{
 		"abr": "swanegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggSwanUnfertilized"
 	},
 	{
 		"abr": "thrumbomane",
-		"price": 6,
+		"price": 2,
 		"category": "Leathers",
 		"defname": "Leather_AlphaThrumbo"
 	},
@@ -8054,37 +8054,37 @@
 	},
 	{
 		"abr": "tigermeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Tiger"
 	},
 	{
 		"abr": "tilapia",
-		"price": 20,
+		"price": 5,
 		"category": "Fish",
 		"defname": "Fish_Tilapia"
 	},
 	{
 		"abr": "tortoiseegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggTortoiseUnfertilized"
 	},
 	{
 		"abr": "toxfish",
-		"price": 10,
+		"price": 5,
 		"category": "Fish",
 		"defname": "Fish_Toxfish"
 	},
 	{
 		"abr": "tuna",
-		"price": 25,
+		"price": 5,
 		"category": "Fish",
 		"defname": "Fish_Tuna"
 	},
 	{
 		"abr": "turkeyegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggTurkeyUnfertilized"
 	},
@@ -8198,13 +8198,13 @@
 	},
 	{
 		"abr": "vultureegg(fert.)",
-		"price": 6,
+		"price": 4,
 		"category": "Eggs (fert.)",
 		"defname": "EggVultureFertilized"
 	},
 	{
 		"abr": "vultureegg(unfert.)",
-		"price": 5,
+		"price": 3,
 		"category": "Eggs (unfert.)",
 		"defname": "EggVultureUnfertilized"
 	},
@@ -8216,7 +8216,7 @@
 	},
 	{
 		"abr": "walrusmeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Walrus"
 	},
@@ -8234,7 +8234,7 @@
 	},
 	{
 		"abr": "wolverinemeat",
-		"price": 5,
+		"price": 1,
 		"category": "Meat",
 		"defname": "Meat_Wolverine"
 	},

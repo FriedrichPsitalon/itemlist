@@ -1282,7 +1282,7 @@ function openBuy() {
     el('h2', { text: 'Buy ' + OUTFIT_NAME[state.active] }),
     el('p', { class: 'small muted', text: cmds.length + ' commands, ' + total.toLocaleString() + ' coins in all. Paste them into chat one at a time — sending several in a burst can trip Twitch’s chat rate limits, so give each a moment.' }),
     el('div', null, ...rows),
-    el('p', { class: 'note', text: 'Normal quality and each piece’s default material are left off the command because naming them costs extra.' }),
+    el('p', { class: 'note', text: 'Normal quality and each piece’s default material are left off the command because they are what you get anyway.' }),
     el('div', { class: 'actions' }, nextBtn, el('button', { class: 'ghost-btn', type: 'button', text: 'Close', onclick: () => dlg.close() })));
   dlg.showModal();
 }
