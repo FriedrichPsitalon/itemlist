@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T00:55:08Z",
+  "updatedUtc": "2026-11-26T00:56:08Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -426,20 +426,32 @@
       "health": [
         {
           "kind": "injury",
-          "label": "Crack (spelopede head claw)",
-          "count": 1,
+          "label": "Bruise (spelopede head claw)",
+          "count": 2,
           "parts": [
-            "left femur"
+            "left hand",
+            "left arm"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crack (spelopede head claw)",
+          "count": 2,
+          "parts": [
+            "left femur",
+            "left radius"
           ]
         },
         {
           "kind": "injury",
           "label": "Cut (spelopede head claw)",
-          "count": 3,
+          "count": 6,
           "parts": [
             "left little toe",
             "left middle toe",
-            "left foot"
+            "left foot",
+            "torso",
+            "left leg"
           ]
         }
       ]
