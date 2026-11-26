@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T02:13:09Z",
+  "updatedUtc": "2026-11-26T02:15:09Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -550,17 +550,17 @@
       "passions": [],
       "topSkills": [
         {
+          "skill": "Intellectual",
+          "level": 2,
+          "passion": 0
+        },
+        {
           "skill": "Shooting",
           "level": 1,
           "passion": 0
         },
         {
           "skill": "Melee",
-          "level": 1,
-          "passion": 0
-        },
-        {
-          "skill": "Intellectual",
           "level": 1,
           "passion": 0
         }
