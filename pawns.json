@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T01:43:09Z",
+  "updatedUtc": "2026-11-26T01:44:09Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -67,16 +67,7 @@
         }
       ],
       "incapable": [],
-      "health": [
-        {
-          "kind": "injury",
-          "label": "Bruise (human)",
-          "count": 1,
-          "parts": [
-            "left shoulder"
-          ]
-        }
-      ]
+      "health": []
     },
     {
       "id": "Human1676175",
