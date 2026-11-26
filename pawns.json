@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T01:13:09Z",
+  "updatedUtc": "2026-11-26T01:16:09Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -259,7 +259,7 @@
       "health": [
         {
           "kind": "addiction",
-          "label": "Smokeleaf dependence (withdrawal 61%)",
+          "label": "Smokeleaf dependence (withdrawal 62%)",
           "count": 1,
           "parts": []
         }
@@ -439,20 +439,20 @@
       "passions": [
         {
           "skill": "Crafting",
-          "level": 1,
+          "level": 2,
           "passion": 1
         }
       ],
       "topSkills": [
         {
+          "skill": "Crafting",
+          "level": 2,
+          "passion": 1
+        },
+        {
           "skill": "Shooting",
           "level": 2,
           "passion": 0
-        },
-        {
-          "skill": "Crafting",
-          "level": 1,
-          "passion": 1
         },
         {
           "skill": "Melee",
