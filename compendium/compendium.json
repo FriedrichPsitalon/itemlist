@@ -5366,7 +5366,7 @@
  },
  {
   "defName": "BookOfApothecary",
-  "price": 100,
+  "price": 300,
   "abr": "combatstyle:apothecary",
   "label": "Combat Style: Apothecary",
   "description": "Teaches a physically adept pawn how to become an apothecary.",
@@ -5392,7 +5392,7 @@
  },
  {
   "defName": "BookOfArcanist",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:power",
   "label": "Arcane Tome: Power",
   "description": "Teaches a gifted pawn how to harness arcane powers.",
@@ -5418,7 +5418,7 @@
  },
  {
   "defName": "BookOfBard",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:bard",
   "label": "Arcane Tome: Bard",
   "description": "Teaches a gifted pawn how to become a Bard. Bards are incapable of dumb labor and this work type will be disabled.",
@@ -5444,7 +5444,7 @@
  },
  {
   "defName": "BookOfBladedancer",
-  "price": 100,
+  "price": 300,
   "abr": "combatstyle:bladedancer",
   "label": "Combat Style: Bladedancer",
   "description": "Teaches a physically adept pawn how to train as a Bladedancer",
@@ -5470,7 +5470,7 @@
  },
  {
   "defName": "BookOfChaos",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:chaosmage",
   "label": "Arcane Tome: Chaos Mage",
   "description": "Teaches a gifted pawn how to become a chaos mage - adaptable to any and all classes of magic.",
@@ -5496,7 +5496,7 @@
  },
  {
   "defName": "BookOfChronomancer",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:chronomancer",
   "label": "Arcane Tome: Chronomancer",
   "description": "Teaches a gifted pawn how to become a chronomancer, able to see and manipulate realities across time.",
@@ -5522,7 +5522,7 @@
  },
  {
   "defName": "BookOfCommander",
-  "price": 100,
+  "price": 300,
   "abr": "combatstyle:commander",
   "label": "Combat Style: Commander",
   "description": "Teaches a physically adept pawn how to become a charismatic leader.",
@@ -5548,7 +5548,7 @@
  },
  {
   "defName": "BookOfDeathKnight",
-  "price": 100,
+  "price": 300,
   "abr": "combatstyle:deathknight",
   "label": "Combat Style: Death Knight",
   "description": "Teaches a physically adept pawn to embrace the inevitable and become a death knight.",
@@ -5574,7 +5574,7 @@
  },
  {
   "defName": "BookOfDemons",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:demonology",
   "label": "Arcane Tome: Demonology",
   "description": "Details the process to enter an agreement with a demon to gain power. This contract binds the patron, in a literal sense, with demonic essence that affects their genetic makeup. This binding affects males and females differently. Demons will only agree to the contract if the user is magically gifted. \n\t\n*Note scribbled at the bottom of the first page* This script is not clear on exactly what the demon gets out of the agreement... use with caution.",
@@ -5600,7 +5600,7 @@
  },
  {
   "defName": "BookOfDruid",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:nature",
   "label": "Arcane Tome: Nature",
   "description": "Teaches a gifted pawn how to become a Druid.",
@@ -5626,7 +5626,7 @@
  },
  {
   "defName": "BookOfEarth",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:earth",
   "label": "Arcane Tome: Earth",
   "description": "Teaches a gifted pawn mastery of the earth, combining and altering physical laws and its elements with the arcane.",
@@ -5652,7 +5652,7 @@
  },
  {
   "defName": "BookOfEnchanter",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:enchanter",
   "label": "Arcane Tome: Enchanter",
   "description": "Teaches a gifted pawn how to become an enchanter, able to manipulate matter and material to serve their purpose.",
@@ -5678,7 +5678,7 @@
  },
  {
   "defName": "BookOfFaceless",
-  "price": 100,
+  "price": 300,
   "abr": "combatform:faceless",
   "label": "Combat Form: Faceless",
   "description": "Teaches a physically adept pawn how to adapt their form and fighting style to any situation.",
@@ -5704,7 +5704,7 @@
  },
  {
   "defName": "BookOfGladiator",
-  "price": 100,
+  "price": 300,
   "abr": "combatform:gladiator",
   "label": "Combat Form: Gladiator",
   "description": "Teaches a physically adept pawn how to train in the Gladiator combat form.",
@@ -5730,7 +5730,7 @@
  },
  {
   "defName": "BookOfGolemancy",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:golemancer",
   "label": "Arcane Tome: Golemancer",
   "description": "Teaches a gifted pawn how to become a golemancer; a reclusive mage that channels arcane energy into mundane objects using sigils and runes.",
@@ -5756,7 +5756,7 @@
  },
  {
   "defName": "BookOfHeartOfFrost",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:ice",
   "label": "Arcane Tome: Ice",
   "description": "Teaches a gifted pawn how to harness elemental ice and water.",
@@ -5782,7 +5782,7 @@
  },
  {
   "defName": "BookOfHemomancy",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:hemomancy",
   "label": "Arcane Tome: Hemomancy",
   "description": "Teaches a gifted pawn how to become a hemomancer, or blood mage, and use the power of blood to fuel their magic.",
@@ -5808,7 +5808,7 @@
  },
  {
   "defName": "BookOfInnerFire",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:fire",
   "label": "Arcane Tome: Fire",
   "description": "Teaches a gifted pawn how to harness elements of fire.",
@@ -5834,7 +5834,7 @@
  },
  {
   "defName": "BookOfMagitech",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:technomancy",
   "label": "Arcane Tome: Technomancy",
   "description": "Teaches a gifted pawn in the ways of the Technomancer, able to see the connection between science and magic.",
@@ -5860,7 +5860,7 @@
  },
  {
   "defName": "BookOfMonk",
-  "price": 100,
+  "price": 300,
   "abr": "combatstyle:monk",
   "label": "Combat Style: Monk",
   "description": "Teaches a physically adept pawn to hone their mind and body into a lethal weapon.",
@@ -5886,7 +5886,7 @@
  },
  {
   "defName": "BookOfNecromancer",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:necromancer",
   "label": "Arcane Tome: Necromancer",
   "description": "Teaches a gifted pawn how to become a Necromancer. *Note: The necromancer may become a lich at a later stage, lichs are incapable of all activity except fighting and research. Many other magic classes dislike necromancers. Choose carefully.",
@@ -5912,7 +5912,7 @@
  },
  {
   "defName": "BookOfPriest",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:priest",
   "label": "Arcane Tome: Priest",
   "description": "Teaches a gifted pawn how to become a Priest. Priests are incapable of violence and these skills will be disabled.",
@@ -5938,7 +5938,7 @@
  },
  {
   "defName": "BookOfPsionic",
-  "price": 100,
+  "price": 300,
   "abr": "combatpower:psionic",
   "label": "Combat Power: Psionic",
   "description": "Teaches a physically adept pawn how to harness psionic power.\n\n*there is a footnote at the bottom of the page etched in charcoal: \"seems only those with high psychic sensitivity can learn to manipulate psionic energy... either that or find a way to jump start psychic activity\"",
@@ -5964,7 +5964,7 @@
  },
  {
   "defName": "BookOfQuestion",
-  "price": 120,
+  "price": 300,
   "abr": "arcanescript:???",
   "label": "Arcane Script: ???",
   "description": "Teaches a gifted pawn how to harness magical powers...",
@@ -5990,7 +5990,7 @@
  },
  {
   "defName": "BookOfRanger",
-  "price": 100,
+  "price": 300,
   "abr": "combatstyle:ranger",
   "label": "Combat Style: Ranger",
   "description": "Teaches a physically adept pawn how to train as a Ranger",
@@ -6016,7 +6016,7 @@
  },
  {
   "defName": "BookOfShadow",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:shadow",
   "label": "Arcane Tome: Shadow",
   "description": "In the dead of night, fear reveals itself in the blade's reflection - the shadow awakens.",
@@ -6042,7 +6042,7 @@
  },
  {
   "defName": "BookOfShamanism",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:shaman",
   "label": "Arcane Tome: Shaman",
   "description": "Teaches a gifted pawn how to become a shaman; a tribal leader focused on ritualistic magic to create powerful curses and enchantments, and extends their influence through totems.",
@@ -6068,7 +6068,7 @@
  },
  {
   "defName": "BookOfSniper",
-  "price": 100,
+  "price": 300,
   "abr": "combatstyle:sniper",
   "label": "Combat Style: Sniper",
   "description": "Teaches a physically adept pawn how to train as a sniper.",
@@ -6094,7 +6094,7 @@
  },
  {
   "defName": "BookOfStormBorn",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:lightning",
   "label": "Arcane Tome: Lightning",
   "description": "Teaches a gifted pawn how to harness elements of lightning.",
@@ -6120,7 +6120,7 @@
  },
  {
   "defName": "BookOfSummoner",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:summoning",
   "label": "Arcane Tome: Summoning",
   "description": "Teaches a gifted pawn how to become a Summoner.",
@@ -6146,7 +6146,7 @@
  },
  {
   "defName": "BookOfSuperSoldier",
-  "price": 100,
+  "price": 300,
   "abr": "serum:supersoldier",
   "label": "Serum: Super Soldier",
   "description": "Inject a pawn with a serum that enhances their physical abilities. Incapacitates a pawn for a couple days while the serum takes affect and develops over several stages. The serum takes about 100 days to fully develop. Any pawn may take SS Serum, but only physically adept pawns may acquire the Super Soldier trait. This serum will reduce magical potency and potential.",
@@ -6173,7 +6173,7 @@
  },
  {
   "defName": "BookOfTheSun",
-  "price": 100,
+  "price": 300,
   "abr": "arcanetome:brightmage",
   "label": "Arcane Tome: Brightmage",
   "description": "Teaches a gifted pawn how to become a brightmage. Brightmages manipulate the power of sunlight to create intense, destructive magic.",
@@ -6199,7 +6199,7 @@
  },
  {
   "defName": "BookOfValiant",
-  "price": 100,
+  "price": 300,
   "abr": "divinetome:paladin",
   "label": "Divine Tome: Paladin",
   "description": "Teaches a gifted pawn how to become a Paladin.",
@@ -10990,7 +10990,7 @@
  },
  {
   "defName": "GemstoneOfInsight_Magic",
-  "price": 20,
+  "price": 100,
   "abr": "gemofarcaneinsight",
   "label": "Gem of Arcane Insight",
   "description": "Imbues the user with an arcane spirit, granting them the \"magically gifted\" trait. \n\t\n**Note: use of this item will replace a random trait if the user has more than 7 traits and cannot be used by a pawn with existing magic or fighter traits**",
@@ -11016,7 +11016,7 @@
  },
  {
   "defName": "GemstoneOfInsight_Might",
-  "price": 20,
+  "price": 100,
   "abr": "gemofphysicalinsight",
   "label": "Gem of Physical Insight",
   "description": "Imbues the user with the spirit of a warrior, granting them the \"physically adept\" trait.\t\n\n**Note: use of this item will replace a random trait if the user has more than 7 traits and cannot be used by a pawn with existing magic or fighter traits**",
@@ -21511,7 +21511,7 @@
  },
  {
   "defName": "SeedofRegrowth",
-  "price": 20,
+  "price": 100,
   "abr": "seedofregrowth",
   "label": "Seed of Regrowth",
   "description": "A seed required by a druid to begin the limb regrowth process. A druid must be trained in the art of regrowth to use this magical item successfully.",
@@ -23143,7 +23143,7 @@
  },
  {
   "defName": "SpellOf_BattleHymn",
-  "price": 150,
+  "price": 250,
   "abr": "bardspell:battlehymn",
   "label": "Bard Spell: Battle Hymn",
   "description": "Teaches a bard how to perform Battle Hymn.",
@@ -23224,7 +23224,7 @@
  },
  {
   "defName": "SpellOf_Blizzard",
-  "price": 150,
+  "price": 250,
   "abr": "icespell:blizzard",
   "label": "Ice Spell: Blizzard",
   "description": "Teaches an ice mage how to call forth a blizzard to bury your foes in a hail of ice and snow.",
@@ -23251,7 +23251,7 @@
  },
  {
   "defName": "SpellOf_BloodMoon",
-  "price": 150,
+  "price": 250,
   "abr": "bloodmagespell:bloodmoon",
   "label": "Blood Mage Spell: Blood Moon",
   "description": "Teaches a blood mage how to summon a vicious pack of blood demons.",
@@ -23629,7 +23629,7 @@
  },
  {
   "defName": "SpellOf_Discord",
-  "price": 10,
+  "price": 100,
   "abr": "bardspell:discord",
   "label": "Bard Spell: Discord",
   "description": "Teaches a bard how to distort the mental harmony of a target pawn.",
@@ -23737,7 +23737,7 @@
  },
  {
   "defName": "SpellOf_EyeOfTheStorm",
-  "price": 150,
+  "price": 250,
   "abr": "lightningspell:eyeofthestorm",
   "label": "Lightning Spell: Eye of the Storm",
   "description": "Teaches a lightning mage how to contain the raw fury of a lightning storm into a small sphere and project it along a set path.",
@@ -23818,7 +23818,7 @@
  },
  {
   "defName": "SpellOf_Firestorm",
-  "price": 200,
+  "price": 300,
   "abr": "firespell:firestorm",
   "label": "Fire Spell: Firestorm",
   "description": "Teaches a fire mage how to wield the full fury of the fire element to scorch the earth with a firestorm.",
@@ -23845,7 +23845,7 @@
  },
  {
   "defName": "SpellOf_FoldReality",
-  "price": 200,
+  "price": 300,
   "abr": "arcanespell:gateway",
   "label": "Arcane Spell: Gateway",
   "description": "Teaches an arcane mage how to fold reality in order to open a temporary window between colonies.",
@@ -23872,7 +23872,7 @@
  },
  {
   "defName": "SpellOf_GuardianSpirit",
-  "price": 150,
+  "price": 250,
   "abr": "shamanspell:guardianspirit",
   "label": "Shaman Spell: Guardian Spirit",
   "description": "Teaches a shaman how to call forth their guardian spirit.",
@@ -23980,7 +23980,7 @@
  },
  {
   "defName": "SpellOf_HolyWrath",
-  "price": 150,
+  "price": 250,
   "abr": "paladinspell:holywrath",
   "label": "Paladin Spell: Holy Wrath",
   "description": "Teaches a paladin how to call forth the wrath of the gods.",
@@ -24061,7 +24061,7 @@
  },
  {
   "defName": "SpellOf_LichForm",
-  "price": 150,
+  "price": 250,
   "abr": "necromancerspell:lichform",
   "label": "Necromancer Spell: Lich Form",
   "description": "Teaches a necromancer how to transform into a lich.",
@@ -24115,7 +24115,7 @@
  },
  {
   "defName": "SpellOf_LivingWall",
-  "price": 150,
+  "price": 250,
   "abr": "golemancerspell:livingwall",
   "label": "Golemancer Spell: Living Wall",
   "description": "Teaches a golemancer how to give a wall a will of its own.",
@@ -24250,7 +24250,7 @@
  },
  {
   "defName": "SpellOf_Meteor",
-  "price": 150,
+  "price": 250,
   "abr": "geomancerspell:meteor",
   "label": "Geomancer Spell: Meteor",
   "description": "Teaches a geomancer how to summon a massive meteor to bury an area in rock and debris.",
@@ -24277,7 +24277,7 @@
  },
  {
   "defName": "SpellOf_OrbitalStrike",
-  "price": 150,
+  "price": 250,
   "abr": "technomancerspell:orbitalstrike",
   "label": "Technomancer Spell: Orbital Strike",
   "description": "Teaches a technomancer how to access ancient satellites and orbital systems and use them to launch an orbital strike.",
@@ -24358,7 +24358,7 @@
  },
  {
   "defName": "SpellOf_PsychicShock",
-  "price": 150,
+  "price": 250,
   "abr": "warlockspell:psychicshock",
   "label": "Warlock Spell: Psychic Shock",
   "description": "Teaches a Warlock how to use his psychic powers to emit powerful psychic shock that overwhelms and reverberates from nearby pawn.",
@@ -24412,7 +24412,7 @@
  },
  {
   "defName": "SpellOf_Recall",
-  "price": 150,
+  "price": 250,
   "abr": "chronomancerspell:recall",
   "label": "Chronomancer Spell: Recall",
   "description": "Teaches a chronomancer how to recall their physical being to a past condition.",
@@ -24439,7 +24439,7 @@
  },
  {
   "defName": "SpellOf_RegrowLimb",
-  "price": 100,
+  "price": 150,
   "abr": "druidspell:regrowlimb",
   "label": "Druid Spell: Regrow Limb",
   "description": "Teaches a druid how to regrow limbs by combining nature, arcane powers, and medical science.",
@@ -24466,7 +24466,7 @@
  },
  {
   "defName": "SpellOf_Resurrection",
-  "price": 150,
+  "price": 250,
   "abr": "priestspell:resurrection",
   "label": "Priest Spell: Resurrection",
   "description": "Teaches a priest how to restore the spark of life to the recently deceased.",
@@ -24520,7 +24520,7 @@
  },
  {
   "defName": "SpellOf_Scorn",
-  "price": 150,
+  "price": 250,
   "abr": "succubusspell:scorn",
   "label": "Succubus Spell: Scorn",
   "description": "Teaches a succubus how to unleash the full malice harbored by their demon heart.",
@@ -24709,7 +24709,7 @@
  },
  {
   "defName": "SpellOf_SpiritOfLight",
-  "price": 150,
+  "price": 250,
   "abr": "brightmagespell:spiritoflight",
   "label": "Brightmage Spell: Spirit Of Light",
   "description": "Teaches a Brightmage how to summon a Spirit of Light.",
@@ -25821,7 +25821,7 @@
  },
  {
   "defName": "TM_Artifact_NecroticOrb",
-  "price": 20,
+  "price": 100,
   "abr": "necroticorb",
   "label": "Necrotic Orb",
   "description": "An artifact that enhances the necrotic energy required to sustain the undead. The Necrotic Orb functions much like a battery; when equipped by a pawn that is sustaining undead, it absorbs energy from a necromancer as if it were an undead itself, however, it also reduces the total upkeep cost to sustain undead by 25%. When no energy is available from a necromancer, it will disperse energy to sustain undead.\n\t\nOnly one orb may be equipped by a pawn. Orbs only take affect when equipped by a pawn sustaining undead.",
@@ -25849,7 +25849,7 @@
  },
  {
   "defName": "TM_Artifact_OrbOfConviction",
-  "price": 160,
+  "price": 250,
   "abr": "orbofconviction",
   "label": "Orb Of Conviction",
   "description": "Also known as the Traitors Trinket, Orb of Insanity, and Mind Thief - the Orb of Conviction is a powerful and dangerous artifact. When filled with the conviction and magic of a caster, it can be used to press that conviction upon another.\n\t\nIf successful, the target will immediately join the casters faction, but will be affected by psychic shock.\n\nOnly the most powerful mages can direct the power of this artifact; even then, it will exact a heavy price. The orb will implode once the spell has been cast and can only be used once.",
@@ -25876,7 +25876,7 @@
  },
  {
   "defName": "TM_Artifact_OrbOfEternal",
-  "price": 140,
+  "price": 150,
   "abr": "orboftheeternal",
   "label": "Orb of the Eternal",
   "description": "A single use infusion of magical energy prepared to heal wounds, restore limbs, and cure diseases. The healing energy will target and heal the single worst health condition affecting someone at any given time.\n\nOrbs of the Eternal have been used by mages, rulers, and the elite to prolong life. These orbs are valuable and rare due mostly to the secrecy surrounding the process of crafting an orb.",
@@ -25931,7 +25931,7 @@
  },
  {
   "defName": "TM_Artifact_OrbOfSouls_Full",
-  "price": 200,
+  "price": 300,
   "abr": "orbofsouls(filled)",
   "label": "Orb of Souls (filled)",
   "description": "The Orb of Souls is a powerful and dangerous artifact. This orb has absorbed traits and can be used to infuse these traits into a human-like pawn.\n\nConflicting traits can never transfer into the target pawn. If the pawn possesses over 7 traits, then there is a 75% chance that a random, existing trait will be replaced with the trait being infused.\n\nThe orb will implode and be destroyed once the traits have been released.",
@@ -26521,7 +26521,7 @@
  },
  {
   "defName": "TM_EStone_arcaneDmg",
-  "price": 100,
+  "price": 150,
   "abr": "arcanegemofforce",
   "label": "Arcane Gem of Force",
   "description": "A magical stone that can be used by a mage to enchant an item with magical energy. When imbued into an item, this enchantment augments the force of an attack, increasing the damage output by 8%.",
@@ -26547,7 +26547,7 @@
  },
  {
   "defName": "TM_EStone_arcaneDmg_major",
-  "price": 240,
+  "price": 300,
   "abr": "majorarcanegemofforce",
   "label": "Major Arcane Gem of Force",
   "description": "A magical stone that can be used by a mage to enchant an item with magical energy. When imbued into an item, this enchantment augments the force of an attack, increasing the damage output by 12%.",
@@ -26599,7 +26599,7 @@
  },
  {
   "defName": "TM_EStone_arcaneRes",
-  "price": 100,
+  "price": 150,
   "abr": "arcanegemofresistance",
   "label": "Arcane Gem of Resistance",
   "description": "A magical stone that can be used by a mage to enchant an item with magical energy. When imbued into an item, this gem creates a barrier that repels active arcane energy, reducing damage taken from arcane sources by 20%.",
@@ -26625,7 +26625,7 @@
  },
  {
   "defName": "TM_EStone_arcaneRes_major",
-  "price": 240,
+  "price": 300,
   "abr": "majorarcanegemofresistance",
   "label": "Major Arcane Gem of Resistance",
   "description": "A magical stone that can be used by a mage to enchant an item with magical energy. When imbued into an item, this gem creates a barrier that repels active arcane energy, reducing damage taken from arcane sources by 30%.",
@@ -26677,7 +26677,7 @@
  },
  {
   "defName": "TM_EStone_coolDown",
-  "price": 100,
+  "price": 150,
   "abr": "arcanegemofacceleration",
   "label": "Arcane Gem of Acceleration",
   "description": "A magical stone that can be used by a mage to enchant an item with magical energy. When imbued into an item, this gem decreases the cooldown timer of any ability by 5%.",
@@ -26703,7 +26703,7 @@
  },
  {
   "defName": "TM_EStone_coolDown_major",
-  "price": 240,
+  "price": 300,
   "abr": "majorarcanegemofacceleration",
   "label": "Major Arcane Gem of Acceleration",
   "description": "A magical stone that can be used by a mage to enchant an item with magical energy. When imbued into an item, this gem decreases the cooldown timer of any ability by 7%.",
@@ -26755,7 +26755,7 @@
  },
  {
   "defName": "TM_EStone_maxMP",
-  "price": 100,
+  "price": 150,
   "abr": "arcanegemofholding",
   "label": "Arcane Gem of Holding",
   "description": "A magical stone that can be used by a mage to enchant an item with magical energy. Gazing into the stone gives the observer an eerie sense of vertigo, as if looking into a bottomless well. This gem can be used to imbue an item with magical potential, increasing the maximum energy of any mage or fighter wearing the item by 10%.",
@@ -26781,7 +26781,7 @@
  },
  {
   "defName": "TM_EStone_maxMP_major",
-  "price": 240,
+  "price": 300,
   "abr": "majorarcanegemofholding",
   "label": "Major Arcane Gem of Holding",
   "description": "A magical stone that can be used by a mage to enchant an item with magical energy. Gazing into the stone gives the observer an eerie sense of vertigo, as if looking into a bottomless well. This gem can be used to imbue an item with magical potential, increasing the maximum energy of any mage or fighter wearing the item by 15%.",
@@ -26833,7 +26833,7 @@
  },
  {
   "defName": "TM_EStone_mpCost",
-  "price": 100,
+  "price": 150,
   "abr": "arcanegemofconservation",
   "label": "Arcane Gem of Conservation",
   "description": "A magical stone that can be used by a mage to enchant an item with magical energy. When imbued into an item, this gem decreases the energy cost of any spell by 5%.",
@@ -26859,7 +26859,7 @@
  },
  {
   "defName": "TM_EStone_mpCost_major",
-  "price": 240,
+  "price": 300,
   "abr": "majorarcanegemofconservation",
   "label": "Major Arcane Gem of Conservation",
   "description": "A magical stone that can be used by a mage to enchant an item with magical energy. When imbued into an item, this gem decreases the energy cost of any spell by 7%.",
@@ -26911,7 +26911,7 @@
  },
  {
   "defName": "TM_EStone_mpRegenRate",
-  "price": 100,
+  "price": 150,
   "abr": "arcanegemofregeneration",
   "label": "Arcane Gem of Regeneration",
   "description": "A magical stone that can be used by a mage to enchant an item with magical energy. This gem can be used to imbue an item, increasing the energy regeneration rate of any mage or fighter wearing the item by 10%.",
@@ -26937,7 +26937,7 @@
  },
  {
   "defName": "TM_EStone_mpRegenRate_major",
-  "price": 240,
+  "price": 300,
   "abr": "majorarcanegemofregeneration",
   "label": "Major Arcane Gem of Regeneration",
   "description": "A magical stone that can be used by a mage to enchant an item with magical energy. This gem can be used to imbue an item, increasing the energy regeneration rate of any mage or fighter wearing the item by 15%.",
@@ -26989,7 +26989,7 @@
  },
  {
   "defName": "TM_EStone_wonder",
-  "price": 100,
+  "price": 200,
   "abr": "arcanegemofwonder",
   "label": "Arcane Gem of Wonder",
   "description": "A magical stone that can be used by a mage to enchant an item with magical energy. This gem hums with intense power. This gem can be used to imbue an item with magical potential, granting moderate bonuses to all enchantment categories.",
@@ -27067,7 +27067,7 @@
  },
  {
   "defName": "TM_EStone_xpGain",
-  "price": 100,
+  "price": 150,
   "abr": "arcanegemoflearning",
   "label": "Arcane Gem of Learning",
   "description": "A magical stone that can be used by a mage to enchant an item with magical energy. When imbued into an item, this gem assists the wearer by storing a residual mimicry of the ability, allowing the wielder additional introspection and increasing XP gained by 10%.",
@@ -27093,7 +27093,7 @@
  },
  {
   "defName": "TM_EStone_xpGain_major",
-  "price": 240,
+  "price": 300,
   "abr": "majorarcanegemoflearning",
   "label": "Major Arcane Gem of Learning",
   "description": "A magical stone that can be used by a mage to enchant an item with magical energy. When imbued into an item, this gem assists the wearer by storing a residual mimicry of the ability, allowing the wielder additional introspection and increasing XP gained by 15%.",
@@ -27599,7 +27599,7 @@
  },
  {
   "defName": "TM_MagicArtifact_MagicEssence",
-  "price": 10,
+  "price": 50,
   "abr": "essenceofmagic",
   "label": "Essence of Magic",
   "description": "The essence of raw, magical skill. Absorbing the essence grants arcane experience.",
@@ -27625,7 +27625,7 @@
  },
  {
   "defName": "TM_MagicArtifact_MightEssence",
-  "price": 10,
+  "price": 50,
   "abr": "essenceofmight",
   "label": "Essence of Might",
   "description": "The essence of raw, martial skill. Absorbing the essence grants martial experience.",
@@ -29060,7 +29060,7 @@
  },
  {
   "defName": "Torn_BookOfArcanist",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:power",
   "label": "Torn Script: Power",
   "description": "Teaches a gifted pawn how to harness arcane powers.  \nThis arcane script is incomplete and the reader may not be able to learn some, or any, arcane spells.",
@@ -29086,7 +29086,7 @@
  },
  {
   "defName": "Torn_BookOfBard",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:bard",
   "label": "Torn Script: Bard",
   "description": "Teaches a gifted pawn how to become a professional bard. Bards are incapable of dumb labor and this work type will be disabled.\nThis arcane script is incomplete and the reader may not be able to learn some, or any, bard abilities.",
@@ -29112,7 +29112,7 @@
  },
  {
   "defName": "Torn_BookOfChaos",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:chaos",
   "label": "Torn Script: Chaos",
   "description": "Teaches a gifted pawn chaos tradition.",
@@ -29138,7 +29138,7 @@
  },
  {
   "defName": "Torn_BookOfChronomancer",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:chronomancy",
   "label": "Torn Script: Chronomancy",
   "description": "Teaches a gifted pawn how to become a chronomancer, able to see and manipulate realities across time.\nThis arcane script is incomplete and the reader may not be able to learn some, or any, chronomancer abilities.",
@@ -29164,7 +29164,7 @@
  },
  {
   "defName": "Torn_BookOfDemons",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:demonology",
   "label": "Torn Script: Demonology",
   "description": "Details the process to enter an agreement with a demon to gain power. This contract binds the patron, in a literal sense, with demonic essence that affects their genetic makeup. This binding affects males and females differently. Demons will only agree to the contract if the user is magically gifted. \n\t\n*Note scribbled at the bottom of the first page* This script is not clear on exactly what the demon gets out of the agreement... use with caution.\n\nThis arcane script is incomplete and does not explain the full contract process; the result might not immediately provide full access to all abilities.",
@@ -29190,7 +29190,7 @@
  },
  {
   "defName": "Torn_BookOfEarth",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:geomancy",
   "label": "Torn Script: Geomancy",
   "description": "Teaches a gifted pawn to combine physical law, elements, and the arcane.\nThis arcane script is incomplete and the reader may not be able to learn some, or any, geomancer abilities.",
@@ -29216,7 +29216,7 @@
  },
  {
   "defName": "Torn_BookOfEnchanter",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:enchanter",
   "label": "Torn Script: Enchanter",
   "description": "Teaches a gifted pawn how to become an enchanter, able to manipulate matter and material to serve their purpose.\nThis arcane script is incomplete and the reader may not be able to learn some, or any, enchanter abilities.",
@@ -29242,7 +29242,7 @@
  },
  {
   "defName": "Torn_BookOfGolemancy",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:golemancer",
   "label": "Torn Script: Golemancer",
   "description": "Teaches a gifted pawn how to become a golemancer; a reclusive mage that channels arcane energy into mundane objects using sigils and runes.",
@@ -29268,7 +29268,7 @@
  },
  {
   "defName": "Torn_BookOfHeartOfFrost",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:ice",
   "label": "Torn Script: Ice",
   "description": "Teaches a gifted pawn how to harness elemental ice and water.  \nThis arcane script is incomplete and the reader may not be able to learn some, or any, ice mage spells.",
@@ -29294,7 +29294,7 @@
  },
  {
   "defName": "Torn_BookOfHemomancy",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:hemomancy",
   "label": "Torn Script: Hemomancy",
   "description": "Teaches a gifted pawn how to become a hemomancer, or blood mage, and use the power of blood to fuel their magic.\nThis arcane script is incomplete and the reader may not be able to learn some, or any, blood mage abilities.",
@@ -29320,7 +29320,7 @@
  },
  {
   "defName": "Torn_BookOfInnerFire",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:fire",
   "label": "Torn Script: Fire",
   "description": "Teaches a gifted pawn how to harness elements of fire.  \nThis arcane script is incomplete and the reader may not be able to learn some, or any, fire spells.",
@@ -29346,7 +29346,7 @@
  },
  {
   "defName": "Torn_BookOfMagitech",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:technomancy",
   "label": "Torn Script: Technomancy",
   "description": "Teaches a gifted pawn in the ways of the Technomancer, able to see the connection between science and magic.\nThis arcane script is incomplete and the reader will not learn any supporting technomancer abilities, but may still select their primary technomancy path.",
@@ -29372,7 +29372,7 @@
  },
  {
   "defName": "Torn_BookOfNature",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:nature",
   "label": "Torn Script: Nature",
   "description": "Teaches a gifted pawn how to harness elements of nature.  \nThis arcane script is incomplete and the reader may not be able to learn some, or any, druid spells.",
@@ -29398,7 +29398,7 @@
  },
  {
   "defName": "Torn_BookOfPriest",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:priest",
   "label": "Torn Script: Priest",
   "description": "Teaches a gifted pawn how to confer powers of life and healing. Priests are incapable of violence and these skills will be disabled.\nThis arcane script is incomplete and the reader may not be able to learn some, or any, priest spells.",
@@ -29424,7 +29424,7 @@
  },
  {
   "defName": "Torn_BookOfShamanism",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:shaman",
   "label": "Torn Script: Shaman",
   "description": "Teaches a gifted pawn how to become a shaman; a tribal leader focused on ritualistic magic to create powerful curses and enchantments, and extends their influence through totems.",
@@ -29450,7 +29450,7 @@
  },
  {
   "defName": "Torn_BookOfStormBorn",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:lightning",
   "label": "Torn Script: Lightning",
   "description": "Teaches a gifted pawn how to harness elements of lightning.  \nThis arcane script is incomplete and the reader may not be able to learn some, or any,  lightning spells.",
@@ -29476,7 +29476,7 @@
  },
  {
   "defName": "Torn_BookOfSummoner",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:summoning",
   "label": "Torn Script: Summoning",
   "description": "Teaches a gifted pawn how to summon and interact with elements across dimensions.  \nThis arcane script is incomplete and the reader may not be able to learn some, or any, summoning spells.",
@@ -29502,7 +29502,7 @@
  },
  {
   "defName": "Torn_BookOfTheSun",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:brightmage",
   "label": "Torn Script: Brightmage",
   "description": "Teaches a gifted pawn how to become a brightmage. Brightmages manipulate the power of sunlight to create intense, destructive magic.",
@@ -29528,7 +29528,7 @@
  },
  {
   "defName": "Torn_BookOfUndead",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:necromancy",
   "label": "Torn Script: Necromancy",
   "description": "Teaches a gifted pawn how to manipulate forces of life and death. *Note: The necromancer may become a lich at a later stage, lichs are incapable of all activity except fighting and research. Many other magic classes dislike necromancers. Choose carefully.\nThis arcane script is incomplete and the reader may not be able to learn some, or any, necromancer spells.",
@@ -29554,7 +29554,7 @@
  },
  {
   "defName": "Torn_BookOfValiant",
-  "price": 80,
+  "price": 200,
   "abr": "tornscript:paladin",
   "label": "Torn Script: Paladin",
   "description": "Teaches a gifted pawn how to harness holy powers.  \nThis arcane script is incomplete and the reader may not be able to learn some, or any, holy spells.",
@@ -30103,7 +30103,7 @@
  },
  {
   "defName": "UnfinishedAdvArcane",
-  "price": 80,
+  "price": 300,
   "abr": "unfinishedarcanebook",
   "label": "Unfinished Arcane Book",
   "description": "An arcane tome ready to be filled with the secrets of unlocking magical powers...\n\t\t\nUse a trained mage to record their arcane secrets in the book. The book can then be used to teach another, gifted pawn how to become the same class. Arcane Tomes will promote a gifted pawn to a magic class and all class abilities except the master ability.\n\nGifted pawns can journal their theories and experiments in this book and learn to become a random magic class.",
@@ -30129,7 +30129,7 @@
  },
  {
   "defName": "UnfinishedArcane",
-  "price": 80,
+  "price": 200,
   "abr": "unfinishedtornscript",
   "label": "Unfinished Torn Script",
   "description": "An arcane script ready to be filled with the secrets of unlocking magical powers...\n\t\t\nUse a trained mage to record their arcane secrets in the book. The book can then be used to teach another, gifted pawn how to become the same class. Torn scripts will promote a gifted pawn to a magic class but will start with a random set of class abilities.\n\nMagically Gifted pawns can journal their theories and experiments in this book and learn to become a random magic class.",
@@ -30155,7 +30155,7 @@
  },
  {
   "defName": "UnfinishedMartial",
-  "price": 80,
+  "price": 300,
   "abr": "unfinishedmartialbook",
   "label": "Unfinished Martial Book",
   "description": "A book ready to be filled with the secrets of unlocking martial powers...\n\nUse a trained fighter to record their combat techniques in the book. The book can then be used to teach another pawn this combat technique.\n\nPhysically adept pawns can journal their research and training in this book to develop the concepts of a random fighter class.",
