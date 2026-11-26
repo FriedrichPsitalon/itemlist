@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T00:17:08Z",
+  "updatedUtc": "2026-11-26T00:19:08Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -294,7 +294,7 @@
         },
         {
           "skill": "Shooting",
-          "level": 13,
+          "level": 14,
           "passion": 2
         },
         {
@@ -316,7 +316,7 @@
         },
         {
           "skill": "Shooting",
-          "level": 13,
+          "level": 14,
           "passion": 2
         },
         {
@@ -329,7 +329,26 @@
         "Social",
         "Medical"
       ],
-      "health": []
+      "health": [
+        {
+          "kind": "injury",
+          "label": "Crack (spelopede head claw)",
+          "count": 1,
+          "parts": [
+            "left tibia"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Cut (spelopede head claw)",
+          "count": 3,
+          "parts": [
+            "torso",
+            "left foot",
+            "left leg"
+          ]
+        }
+      ]
     },
     {
       "id": "Human3869834",
