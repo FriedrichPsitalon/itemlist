@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T00:49:08Z",
+  "updatedUtc": "2026-11-26T00:55:08Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -259,7 +259,7 @@
       "health": [
         {
           "kind": "addiction",
-          "label": "Smokeleaf dependence (withdrawal 56%)",
+          "label": "Smokeleaf dependence (withdrawal 57%)",
           "count": 1,
           "parts": []
         }
@@ -423,7 +423,26 @@
         }
       ],
       "incapable": [],
-      "health": []
+      "health": [
+        {
+          "kind": "injury",
+          "label": "Crack (spelopede head claw)",
+          "count": 1,
+          "parts": [
+            "left femur"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Cut (spelopede head claw)",
+          "count": 3,
+          "parts": [
+            "left little toe",
+            "left middle toe",
+            "left foot"
+          ]
+        }
+      ]
     }
   ]
 }
