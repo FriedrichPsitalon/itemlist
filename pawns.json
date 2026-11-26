@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T00:48:08Z",
+  "updatedUtc": "2026-11-26T00:49:08Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 12,
-  "unadopted": 6,
+  "colonists": 13,
+  "unadopted": 7,
   "pawns": [
     {
       "id": "Human3607273",
@@ -259,7 +259,7 @@
       "health": [
         {
           "kind": "addiction",
-          "label": "Smokeleaf dependence (56%)",
+          "label": "Smokeleaf dependence (withdrawal 56%)",
           "count": 1,
           "parts": []
         }
@@ -364,6 +364,62 @@
           "skill": "Medical",
           "level": 3,
           "passion": 0
+        }
+      ],
+      "incapable": [],
+      "health": []
+    },
+    {
+      "id": "Human4069039",
+      "name": "Benjamin 'Big' Howard",
+      "nick": "Big",
+      "age": 31,
+      "gender": "Male",
+      "childhood": "Medieval slave",
+      "adulthood": "Blacksmith",
+      "traits": [
+        "Perfectionist",
+        "Fun-loving",
+        "Shadow",
+        "Arcane Conduit"
+      ],
+      "passions": [
+        {
+          "skill": "Shooting",
+          "level": 13,
+          "passion": 2
+        },
+        {
+          "skill": "Crafting",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 7,
+          "passion": 1
+        },
+        {
+          "skill": "Melee",
+          "level": 5,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Shooting",
+          "level": 13,
+          "passion": 2
+        },
+        {
+          "skill": "Crafting",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 7,
+          "passion": 1
         }
       ],
       "incapable": [],
