@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T01:28:09Z",
+  "updatedUtc": "2026-11-26T01:29:09Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -423,17 +423,7 @@
         }
       ],
       "incapable": [],
-      "health": [
-        {
-          "kind": "injury",
-          "label": "Burn",
-          "count": 2,
-          "parts": [
-            "head",
-            "left leg"
-          ]
-        }
-      ]
+      "health": []
     },
     {
       "id": "Human4070409",
