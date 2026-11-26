@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T02:01:09Z",
+  "updatedUtc": "2026-11-26T02:02:09Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 17,
-  "unadopted": 11,
+  "colonists": 18,
+  "unadopted": 12,
   "pawns": [
     {
       "id": "Human3607273",
@@ -631,6 +631,61 @@
         }
       ],
       "incapable": [],
+      "health": []
+    },
+    {
+      "id": "Human4080389",
+      "name": "Kaori Shea",
+      "nick": "Kaori",
+      "age": 40,
+      "gender": "Female",
+      "childhood": "Bully",
+      "adulthood": "Logger",
+      "traits": [
+        "Prude"
+      ],
+      "passions": [
+        {
+          "skill": "Shooting",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 7,
+          "passion": 1
+        },
+        {
+          "skill": "Animals",
+          "level": 4,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Shooting",
+          "level": 9,
+          "passion": 2
+        },
+        {
+          "skill": "Plants",
+          "level": 8,
+          "passion": 2
+        },
+        {
+          "skill": "Melee",
+          "level": 7,
+          "passion": 1
+        }
+      ],
+      "incapable": [
+        "Medical"
+      ],
       "health": []
     }
   ]
