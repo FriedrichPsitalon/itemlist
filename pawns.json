@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-26T01:56:09Z",
+  "updatedUtc": "2026-11-26T01:58:09Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -131,8 +131,8 @@
         }
       ],
       "incapable": [
-        "Shooting",
-        "Melee"
+        "Melee",
+        "Shooting"
       ],
       "health": []
     },
@@ -221,12 +221,12 @@
           "passion": 1
         },
         {
-          "skill": "Cooking",
+          "skill": "Social",
           "level": 11,
           "passion": 1
         },
         {
-          "skill": "Social",
+          "skill": "Cooking",
           "level": 11,
           "passion": 1
         },
@@ -248,7 +248,7 @@
           "passion": 2
         },
         {
-          "skill": "Cooking",
+          "skill": "Social",
           "level": 11,
           "passion": 1
         }
@@ -405,14 +405,14 @@
         }
       ],
       "incapable": [
-        "Construction",
-        "Mining",
-        "Cooking",
-        "Plants",
-        "Animals",
-        "Artistic",
+        "Social",
         "Medical",
-        "Social"
+        "Construction",
+        "Plants",
+        "Mining",
+        "Animals",
+        "Cooking",
+        "Artistic"
       ],
       "health": []
     },
@@ -463,12 +463,12 @@
         }
       ],
       "incapable": [
+        "Plants",
+        "Artistic",
         "Construction",
         "Mining",
         "Cooking",
-        "Plants",
         "Animals",
-        "Artistic",
         "Medical"
       ],
       "health": []
@@ -521,12 +521,12 @@
         }
       ],
       "incapable": [
-        "Construction",
+        "Artistic",
+        "Plants",
         "Mining",
         "Cooking",
-        "Plants",
         "Animals",
-        "Artistic",
+        "Construction",
         "Medical"
       ],
       "health": [
@@ -566,14 +566,14 @@
         }
       ],
       "incapable": [
-        "Construction",
         "Mining",
+        "Construction",
         "Cooking",
-        "Plants",
-        "Animals",
-        "Artistic",
         "Medical",
-        "Social"
+        "Artistic",
+        "Social",
+        "Animals",
+        "Plants"
       ],
       "health": []
     },
