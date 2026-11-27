@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T00:07:53Z",
+  "updatedUtc": "2026-11-27T00:09:53Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -84,7 +84,7 @@
       "passions": [
         {
           "skill": "Intellectual",
-          "level": 19,
+          "level": 20,
           "passion": 2
         },
         {
@@ -116,7 +116,7 @@
       "topSkills": [
         {
           "skill": "Intellectual",
-          "level": 19,
+          "level": 20,
           "passion": 2
         },
         {
