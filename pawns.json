@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T01:00:54Z",
+  "updatedUtc": "2026-11-27T01:03:54Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -219,7 +219,7 @@
         },
         {
           "skill": "Shooting",
-          "level": 14,
+          "level": 15,
           "passion": 2
         },
         {
@@ -241,7 +241,7 @@
         },
         {
           "skill": "Shooting",
-          "level": 14,
+          "level": 15,
           "passion": 2
         },
         {
@@ -254,7 +254,16 @@
         "Social",
         "Medical"
       ],
-      "health": []
+      "health": [
+        {
+          "kind": "injury",
+          "label": "Stab (ikwa head)",
+          "count": 1,
+          "parts": [
+            "right foot"
+          ]
+        }
+      ]
     },
     {
       "id": "Human4070409",
