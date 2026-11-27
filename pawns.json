@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T02:06:54Z",
+  "updatedUtc": "2026-11-27T02:07:54Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -213,30 +213,6 @@
           "label": "Smokeleaf dependence (99%)",
           "count": 1,
           "parts": []
-        },
-        {
-          "kind": "injury",
-          "label": "Bruise (assault rifle)",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bruise (autopistol)",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Crush (assault rifle)",
-          "count": 1,
-          "parts": [
-            "stomach"
-          ]
         }
       ]
     },
@@ -740,14 +716,6 @@
       "health": [
         {
           "kind": "injury",
-          "label": "Bruise (assault rifle)",
-          "count": 1,
-          "parts": [
-            "right arm"
-          ]
-        },
-        {
-          "kind": "injury",
           "label": "Burn",
           "count": 5,
           "parts": [
@@ -755,15 +723,6 @@
             "left foot",
             "right hand",
             "right arm",
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Gunshot (assault rifle)",
-          "count": 2,
-          "parts": [
-            "right lung",
             "torso"
           ]
         }
