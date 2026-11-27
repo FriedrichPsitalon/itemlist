@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T01:11:54Z",
+  "updatedUtc": "2026-11-27T01:13:54Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -254,16 +254,7 @@
         "Social",
         "Medical"
       ],
-      "health": [
-        {
-          "kind": "injury",
-          "label": "Stab (ikwa head)",
-          "count": 1,
-          "parts": [
-            "right foot"
-          ]
-        }
-      ]
+      "health": []
     },
     {
       "id": "Human4070409",
