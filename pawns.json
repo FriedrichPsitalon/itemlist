@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T02:30:55Z",
+  "updatedUtc": "2026-11-27T02:31:55Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -393,7 +393,7 @@
         },
         {
           "skill": "Construction",
-          "level": 10,
+          "level": 11,
           "passion": 1
         },
         {
@@ -409,14 +409,14 @@
           "passion": 2
         },
         {
+          "skill": "Construction",
+          "level": 11,
+          "passion": 1
+        },
+        {
           "skill": "Crafting",
           "level": 10,
           "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 10,
-          "passion": 1
         }
       ],
       "incapable": [],
