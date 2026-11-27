@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T02:01:54Z",
+  "updatedUtc": "2026-11-27T02:02:54Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -224,6 +224,23 @@
         },
         {
           "kind": "injury",
+          "label": "Bruise (assault rifle)",
+          "count": 2,
+          "parts": [
+            "left leg",
+            "torso"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (autopistol)",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        },
+        {
+          "kind": "injury",
           "label": "Bruise (human fist)",
           "count": 1,
           "parts": [
@@ -236,6 +253,22 @@
           "count": 1,
           "parts": [
             "left humerus"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crush (assault rifle)",
+          "count": 1,
+          "parts": [
+            "stomach"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Gunshot (heavy SMG)",
+          "count": 1,
+          "parts": [
+            "torso"
           ]
         },
         {
@@ -571,29 +604,43 @@
       "health": [
         {
           "kind": "injury",
-          "label": "Bruise (LMG)",
+          "label": "Bruise (assault rifle)",
           "count": 1,
           "parts": [
-            "torso"
+            "right arm"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crack (assault rifle)",
+          "count": 1,
+          "parts": [
+            "right radius"
           ]
         },
         {
           "kind": "injury",
           "label": "Gunshot (assault rifle)",
-          "count": 2,
+          "count": 5,
           "parts": [
+            "torso",
             "ribcage",
-            "torso"
+            "right lung"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Gunshot (autopistol)",
+          "count": 1,
+          "parts": [
+            "right leg"
           ]
         },
         {
           "kind": "injury",
           "label": "Gunshot (heavy SMG)",
-          "count": 5,
+          "count": 1,
           "parts": [
-            "right arm",
-            "torso",
-            "left lung",
             "right leg"
           ]
         }
