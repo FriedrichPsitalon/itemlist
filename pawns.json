@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T00:09:53Z",
+  "updatedUtc": "2026-11-27T00:11:53Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -486,7 +486,7 @@
       "health": [
         {
           "kind": "addiction",
-          "label": "Alcohol addiction (85%)",
+          "label": "Alcohol addiction (86%)",
           "count": 1,
           "parts": []
         }
