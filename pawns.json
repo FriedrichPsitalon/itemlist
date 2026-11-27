@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T02:22:55Z",
+  "updatedUtc": "2026-11-27T02:25:55Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -127,6 +127,14 @@
           "label": "Missing left second toe",
           "count": 1,
           "parts": []
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (short bow limb)",
+          "count": 1,
+          "parts": [
+            "right leg"
+          ]
         }
       ]
     },
