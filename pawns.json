@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T02:26:55Z",
+  "updatedUtc": "2026-11-27T02:30:55Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -269,12 +269,12 @@
       ],
       "passions": [
         {
-          "skill": "Shooting",
-          "level": 9,
+          "skill": "Plants",
+          "level": 10,
           "passion": 2
         },
         {
-          "skill": "Plants",
+          "skill": "Shooting",
           "level": 9,
           "passion": 2
         },
@@ -291,12 +291,12 @@
       ],
       "topSkills": [
         {
-          "skill": "Shooting",
-          "level": 9,
+          "skill": "Plants",
+          "level": 10,
           "passion": 2
         },
         {
-          "skill": "Plants",
+          "skill": "Shooting",
           "level": 9,
           "passion": 2
         },
