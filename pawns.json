@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T02:05:54Z",
+  "updatedUtc": "2026-11-27T02:06:54Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -217,9 +217,8 @@
         {
           "kind": "injury",
           "label": "Bruise (assault rifle)",
-          "count": 2,
+          "count": 1,
           "parts": [
-            "left leg",
             "torso"
           ]
         },
@@ -757,14 +756,6 @@
             "right hand",
             "right arm",
             "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Crack (assault rifle)",
-          "count": 1,
-          "parts": [
-            "right radius"
           ]
         },
         {
