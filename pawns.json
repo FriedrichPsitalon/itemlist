@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T02:52:10Z",
+  "updatedUtc": "2026-11-27T02:56:10Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -224,7 +224,7 @@
         },
         {
           "skill": "Melee",
-          "level": 11,
+          "level": 12,
           "passion": 2
         },
         {
@@ -246,7 +246,7 @@
         },
         {
           "skill": "Melee",
-          "level": 11,
+          "level": 12,
           "passion": 2
         }
       ],
@@ -254,7 +254,24 @@
         "Social",
         "Medical"
       ],
-      "health": []
+      "health": [
+        {
+          "kind": "injury",
+          "label": "Bruise (human)",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crack (human)",
+          "count": 1,
+          "parts": [
+            "pelvis"
+          ]
+        }
+      ]
     },
     {
       "id": "Human4080389",
