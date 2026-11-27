@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T00:34:53Z",
+  "updatedUtc": "2026-11-27T00:36:53Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -321,7 +321,46 @@
         "Social",
         "Medical"
       ],
-      "health": []
+      "health": [
+        {
+          "kind": "injury",
+          "label": "Bite (human)",
+          "count": 1,
+          "parts": [
+            "torso"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (human)",
+          "count": 8,
+          "parts": [
+            "right leg",
+            "right thumb",
+            "torso",
+            "left foot"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crack (human)",
+          "count": 3,
+          "parts": [
+            "right femur",
+            "pelvis",
+            "ribcage"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Gunshot",
+          "count": 2,
+          "parts": [
+            "ribcage",
+            "torso"
+          ]
+        }
+      ]
     },
     {
       "id": "Human4070409",
