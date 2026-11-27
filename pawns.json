@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T02:10:54Z",
+  "updatedUtc": "2026-11-27T02:12:55Z",
   "adoption": {
     "status": "ok",
     "sources": [
       "twitchtoolkit"
     ]
   },
-  "colonists": 18,
-  "unadopted": 12,
+  "colonists": 14,
+  "unadopted": 11,
   "pawns": [
     {
       "id": "Human3607273",
@@ -646,73 +646,6 @@
         }
       ],
       "incapable": [],
-      "health": []
-    },
-    {
-      "id": "Human1676175",
-      "name": "Squorg 'Wart' Poipoilag",
-      "nick": "Wart",
-      "age": 47,
-      "gender": "Female",
-      "childhood": "Sickly child",
-      "adulthood": "Forester",
-      "traits": [
-        "Kind",
-        "Priest"
-      ],
-      "passions": [
-        {
-          "skill": "Intellectual",
-          "level": 20,
-          "passion": 2
-        },
-        {
-          "skill": "Medical",
-          "level": 18,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 15,
-          "passion": 2
-        },
-        {
-          "skill": "Animals",
-          "level": 3,
-          "passion": 1
-        },
-        {
-          "skill": "Artistic",
-          "level": 2,
-          "passion": 1
-        },
-        {
-          "skill": "Cooking",
-          "level": 0,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Intellectual",
-          "level": 20,
-          "passion": 2
-        },
-        {
-          "skill": "Medical",
-          "level": 18,
-          "passion": 2
-        },
-        {
-          "skill": "Plants",
-          "level": 15,
-          "passion": 2
-        }
-      ],
-      "incapable": [
-        "Melee",
-        "Shooting"
-      ],
       "health": []
     }
   ]
