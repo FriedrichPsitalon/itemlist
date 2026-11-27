@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T01:23:54Z",
+  "updatedUtc": "2026-11-27T01:25:54Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -192,7 +192,7 @@
       "health": [
         {
           "kind": "addiction",
-          "label": "Smokeleaf dependence (94%)",
+          "label": "Smokeleaf dependence (95%)",
           "count": 1,
           "parts": []
         }
@@ -655,7 +655,7 @@
         },
         {
           "skill": "Plants",
-          "level": 14,
+          "level": 15,
           "passion": 2
         },
         {
@@ -687,7 +687,7 @@
         },
         {
           "skill": "Plants",
-          "level": 14,
+          "level": 15,
           "passion": 2
         }
       ],
