@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T01:21:54Z",
+  "updatedUtc": "2026-11-27T01:23:54Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -575,18 +575,8 @@
       ],
       "health": [
         {
-          "kind": "injury",
-          "label": "Bite (human)",
-          "count": 3,
-          "parts": [
-            "left shoulder",
-            "left leg",
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bruise (human)",
+          "kind": "scar",
+          "label": "Bite scar (human)",
           "count": 1,
           "parts": [
             "left leg"
