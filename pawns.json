@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T00:39:53Z",
+  "updatedUtc": "2026-11-27T00:41:53Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -89,7 +89,7 @@
         },
         {
           "skill": "Medical",
-          "level": 17,
+          "level": 18,
           "passion": 2
         },
         {
@@ -121,7 +121,7 @@
         },
         {
           "skill": "Medical",
-          "level": 17,
+          "level": 18,
           "passion": 2
         },
         {
@@ -321,16 +321,7 @@
         "Social",
         "Medical"
       ],
-      "health": [
-        {
-          "kind": "injury",
-          "label": "Gunshot",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        }
-      ]
+      "health": []
     },
     {
       "id": "Human4070409",
