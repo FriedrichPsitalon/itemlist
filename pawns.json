@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T02:03:54Z",
+  "updatedUtc": "2026-11-27T02:04:54Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -540,117 +540,6 @@
       "health": []
     },
     {
-      "id": "Human4069039",
-      "name": "Benjamin 'Big' Howard",
-      "nick": "Big",
-      "age": 32,
-      "gender": "Male",
-      "childhood": "Medieval slave",
-      "adulthood": "Blacksmith",
-      "traits": [
-        "Perfectionist",
-        "Fun-loving",
-        "Shadow",
-        "Arcane Conduit"
-      ],
-      "passions": [
-        {
-          "skill": "Shooting",
-          "level": 13,
-          "passion": 2
-        },
-        {
-          "skill": "Crafting",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 10,
-          "passion": 1
-        },
-        {
-          "skill": "Melee",
-          "level": 5,
-          "passion": 1
-        }
-      ],
-      "topSkills": [
-        {
-          "skill": "Shooting",
-          "level": 13,
-          "passion": 2
-        },
-        {
-          "skill": "Crafting",
-          "level": 10,
-          "passion": 2
-        },
-        {
-          "skill": "Construction",
-          "level": 10,
-          "passion": 1
-        }
-      ],
-      "incapable": [],
-      "health": [
-        {
-          "kind": "injury",
-          "label": "Bruise (assault rifle)",
-          "count": 1,
-          "parts": [
-            "right arm"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Burn",
-          "count": 5,
-          "parts": [
-            "left shoulder",
-            "left foot",
-            "right hand",
-            "right arm",
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Crack (assault rifle)",
-          "count": 1,
-          "parts": [
-            "right radius"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Gunshot (assault rifle)",
-          "count": 5,
-          "parts": [
-            "torso",
-            "ribcage",
-            "right lung"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Gunshot (autopistol)",
-          "count": 1,
-          "parts": [
-            "right leg"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Gunshot (heavy SMG)",
-          "count": 1,
-          "parts": [
-            "right leg"
-          ]
-        }
-      ]
-    },
-    {
       "id": "Human4080389",
       "name": "Kaori Shea",
       "nick": "Kaori",
@@ -826,6 +715,109 @@
         "Shooting"
       ],
       "health": []
+    },
+    {
+      "id": "Human4069039",
+      "name": "Benjamin 'Big' Howard",
+      "nick": "Big",
+      "age": 32,
+      "gender": "Male",
+      "childhood": "Medieval slave",
+      "adulthood": "Blacksmith",
+      "traits": [
+        "Perfectionist",
+        "Fun-loving",
+        "Shadow",
+        "Arcane Conduit"
+      ],
+      "passions": [
+        {
+          "skill": "Shooting",
+          "level": 13,
+          "passion": 2
+        },
+        {
+          "skill": "Crafting",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 10,
+          "passion": 1
+        },
+        {
+          "skill": "Melee",
+          "level": 5,
+          "passion": 1
+        }
+      ],
+      "topSkills": [
+        {
+          "skill": "Shooting",
+          "level": 13,
+          "passion": 2
+        },
+        {
+          "skill": "Crafting",
+          "level": 10,
+          "passion": 2
+        },
+        {
+          "skill": "Construction",
+          "level": 10,
+          "passion": 1
+        }
+      ],
+      "incapable": [],
+      "health": [
+        {
+          "kind": "injury",
+          "label": "Bruise (assault rifle)",
+          "count": 1,
+          "parts": [
+            "right arm"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Burn",
+          "count": 5,
+          "parts": [
+            "left shoulder",
+            "left foot",
+            "right hand",
+            "right arm",
+            "torso"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Crack (assault rifle)",
+          "count": 1,
+          "parts": [
+            "right radius"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Gunshot (assault rifle)",
+          "count": 5,
+          "parts": [
+            "torso",
+            "ribcage",
+            "right lung"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Gunshot (autopistol)",
+          "count": 1,
+          "parts": [
+            "right leg"
+          ]
+        }
+      ]
     }
   ]
 }
