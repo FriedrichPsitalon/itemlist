@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T01:13:54Z",
+  "updatedUtc": "2026-11-27T01:15:54Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -573,7 +573,26 @@
       "incapable": [
         "Medical"
       ],
-      "health": []
+      "health": [
+        {
+          "kind": "injury",
+          "label": "Bite (human)",
+          "count": 3,
+          "parts": [
+            "left shoulder",
+            "left leg",
+            "torso"
+          ]
+        },
+        {
+          "kind": "injury",
+          "label": "Bruise (human)",
+          "count": 1,
+          "parts": [
+            "left leg"
+          ]
+        }
+      ]
     },
     {
       "id": "Human3869834",
