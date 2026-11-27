@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T01:53:54Z",
+  "updatedUtc": "2026-11-27T01:59:54Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -192,7 +192,7 @@
       "health": [
         {
           "kind": "addiction",
-          "label": "Smokeleaf dependence (98%)",
+          "label": "Smokeleaf dependence (99%)",
           "count": 1,
           "parts": []
         }
