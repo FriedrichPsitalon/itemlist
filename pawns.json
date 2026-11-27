@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T02:32:55Z",
+  "updatedUtc": "2026-11-27T02:34:55Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -309,16 +309,7 @@
       "incapable": [
         "Medical"
       ],
-      "health": [
-        {
-          "kind": "scar",
-          "label": "Bite scar (human)",
-          "count": 1,
-          "parts": [
-            "left leg"
-          ]
-        }
-      ]
+      "health": []
     },
     {
       "id": "Human3869834",
