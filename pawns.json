@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T01:45:54Z",
+  "updatedUtc": "2026-11-27T01:47:54Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -580,14 +580,6 @@
           "count": 1,
           "parts": [
             "left leg"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Poison",
-          "count": 1,
-          "parts": [
-            "right lung"
           ]
         }
       ]
