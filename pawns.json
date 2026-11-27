@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T00:32:53Z",
+  "updatedUtc": "2026-11-27T00:34:53Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -327,7 +327,7 @@
       "id": "Human4070409",
       "name": "Emu Begu",
       "nick": "Begu",
-      "age": 8,
+      "age": 9,
       "gender": "Male",
       "childhood": "Child",
       "adulthood": null,
@@ -337,14 +337,14 @@
       "passions": [
         {
           "skill": "Crafting",
-          "level": 3,
+          "level": 4,
           "passion": 1
         }
       ],
       "topSkills": [
         {
           "skill": "Crafting",
-          "level": 3,
+          "level": 4,
           "passion": 1
         },
         {
