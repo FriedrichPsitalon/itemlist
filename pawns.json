@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T00:38:53Z",
+  "updatedUtc": "2026-11-27T00:39:53Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -324,26 +324,9 @@
       "health": [
         {
           "kind": "injury",
-          "label": "Bite (human)",
+          "label": "Gunshot",
           "count": 1,
           "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Bruise (human)",
-          "count": 2,
-          "parts": [
-            "right leg"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Gunshot",
-          "count": 2,
-          "parts": [
-            "ribcage",
             "torso"
           ]
         }
