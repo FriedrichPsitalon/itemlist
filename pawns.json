@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T00:36:53Z",
+  "updatedUtc": "2026-11-27T00:38:53Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -333,22 +333,9 @@
         {
           "kind": "injury",
           "label": "Bruise (human)",
-          "count": 8,
+          "count": 2,
           "parts": [
-            "right leg",
-            "right thumb",
-            "torso",
-            "left foot"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Crack (human)",
-          "count": 3,
-          "parts": [
-            "right femur",
-            "pelvis",
-            "ribcage"
+            "right leg"
           ]
         },
         {
