@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T00:41:53Z",
+  "updatedUtc": "2026-11-27T00:44:53Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -217,7 +217,7 @@
         },
         {
           "skill": "Construction",
-          "level": 13,
+          "level": 14,
           "passion": 1
         },
         {
@@ -239,7 +239,7 @@
       "topSkills": [
         {
           "skill": "Construction",
-          "level": 13,
+          "level": 14,
           "passion": 1
         },
         {
@@ -606,7 +606,7 @@
         },
         {
           "skill": "Plants",
-          "level": 8,
+          "level": 9,
           "passion": 2
         },
         {
@@ -628,7 +628,7 @@
         },
         {
           "skill": "Plants",
-          "level": 8,
+          "level": 9,
           "passion": 2
         },
         {
