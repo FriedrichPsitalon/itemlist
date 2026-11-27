@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T02:56:10Z",
+  "updatedUtc": "2026-11-27T02:57:10Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -254,24 +254,7 @@
         "Social",
         "Medical"
       ],
-      "health": [
-        {
-          "kind": "injury",
-          "label": "Bruise (human)",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Crack (human)",
-          "count": 1,
-          "parts": [
-            "pelvis"
-          ]
-        }
-      ]
+      "health": []
     },
     {
       "id": "Human4080389",
