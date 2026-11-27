@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T02:07:54Z",
+  "updatedUtc": "2026-11-27T02:08:54Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -713,20 +713,7 @@
         }
       ],
       "incapable": [],
-      "health": [
-        {
-          "kind": "injury",
-          "label": "Burn",
-          "count": 5,
-          "parts": [
-            "left shoulder",
-            "left foot",
-            "right hand",
-            "right arm",
-            "torso"
-          ]
-        }
-      ]
+      "health": []
     }
   ]
 }
