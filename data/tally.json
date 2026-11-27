@@ -9,7 +9,7 @@
   "necrotic orb": 2,
   "couch": 1,
   "piranha": 2,
-  "Trader caravan arrival": 12,
+  "Trader caravan arrival": 14,
   "unique hellcat rifle": 1,
   "techprint (specialized limbs)": 1,
   "armadillo": 1,
@@ -82,7 +82,7 @@
   "archean seed": 14,
   "gastronomist": 1,
   "gourmand": 1,
-  "Weather rain": 1,
+  "Weather rain": 2,
   "industrious": 2,
   "bionic leg": 2,
   "archotech arm": 3,
@@ -96,7 +96,7 @@
   "medicine cabinet": 1,
   "shard": 70,
   "mechanoid transponder": 1,
-  "Orbital trader arrival": 2,
+  "Orbital trader arrival": 3,
   "Technomancer": 1,
   "technomancer spell: kinetic shield": 1,
   "guest royal bed": 1,
@@ -157,5 +157,7 @@
   "bed": 10,
   "flounder": 1,
   "shuttle engine": 1,
-  "goat": 1
+  "goat": 1,
+  "incendiary launcher": 1,
+  "demonhide": 1000
 }
