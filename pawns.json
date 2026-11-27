@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedUtc": "2026-11-27T02:04:54Z",
+  "updatedUtc": "2026-11-27T02:05:54Z",
   "adoption": {
     "status": "ok",
     "sources": [
@@ -233,42 +233,10 @@
         },
         {
           "kind": "injury",
-          "label": "Bruise (human fist)",
-          "count": 1,
-          "parts": [
-            "left arm"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Crack (human fist)",
-          "count": 1,
-          "parts": [
-            "left humerus"
-          ]
-        },
-        {
-          "kind": "injury",
           "label": "Crush (assault rifle)",
           "count": 1,
           "parts": [
             "stomach"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Gunshot (heavy SMG)",
-          "count": 1,
-          "parts": [
-            "torso"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Gunshot (hellcat rifle)",
-          "count": 1,
-          "parts": [
-            "right hand"
           ]
         }
       ]
@@ -802,19 +770,10 @@
         {
           "kind": "injury",
           "label": "Gunshot (assault rifle)",
-          "count": 5,
+          "count": 2,
           "parts": [
-            "torso",
-            "ribcage",
-            "right lung"
-          ]
-        },
-        {
-          "kind": "injury",
-          "label": "Gunshot (autopistol)",
-          "count": 1,
-          "parts": [
-            "right leg"
+            "right lung",
+            "torso"
           ]
         }
       ]
